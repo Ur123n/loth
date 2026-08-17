@@ -3,9 +3,12 @@ extends Node
 ## 全局状态（跨场景共享，Autoload）。
 ## 保存：四人小队数据（技能库、牌组）、大世界位置、光点状态。
 ## 数据持久化：save_game() / load_game()，默认写入 user://savegame.json。
+## 存档为带 version 的字典载荷；load_game() 按版本迁移（旧档缺省字段兼容）。
+## v4 预留 flags（剧情 Flag）/ quest_state（任务状态）/ world_state（世界状态），空实现缺省安全。
 ## 启动时为每名角色卡组补足 5 张打击 + 5 张防御（基础牌）。
 
 const SAVE_PATH := "user://savegame.json"
+const SAVE_VERSION := 4
 const DECK_CAPACITY := 20
 const BASIC_STRIKE_NAME := "打击"
 const BASIC_DEFEND_NAME := "防御"
@@ -21,6 +24,9 @@ var money: int = 0                    # 钱币（战斗结算获得）
 var inventory: Inventory = Inventory.new()   # 背包（跨场景共享，战斗结束/拾取时写入）
 var demo_mode: bool = false           # 战斗测试 Demo 模式
 var demo_battle_number: int = 0       # Demo 已通关战斗数（决定下一场难度/敌怪构成）
+var flags: Dictionary = {}            # 剧情 Flag（v4 预留，剧情系统写入）
+var quest_state: Dictionary = {}      # 任务状态（v4 预留，任务系统写入）
+var world_state: Dictionary = {}      # 世界状态（v4 预留，世界系统写入）
 var save_path: String = SAVE_PATH
 
 var _loaded: bool = false
@@ -120,15 +126,20 @@ func grant_battle_exp(amount: int) -> int:
 	return total_levels
 
 
-## 写入存档：大世界位置、光点状态、各角色技能库与牌组。
+## 写入存档：版本化载荷（大世界位置/触发状态/钱币/背包/队伍/预留状态字段）。
 func save_game() -> void:
 	var data := {
-		"version": 3,
+		"version": SAVE_VERSION,
 		"overworld_position": [overworld_position.x, overworld_position.y],
+		"battle_trigger_consumed": battle_trigger_consumed,
+		"skill_light_position": [skill_light_position.x, skill_light_position.y],
 		"skill_light_consumed": skill_light_consumed,
 		"money": money,
 		"inventory": inventory.serialize(),
 		"party": _serialize_party(),
+		"flags": flags,
+		"quest_state": quest_state,
+		"world_state": world_state,
 	}
 	var file := FileAccess.open(save_path, FileAccess.WRITE)
 	if file == null:
@@ -152,13 +163,44 @@ func load_game() -> void:
 	file.close()
 	if not parsed is Dictionary:
 		return
+	var version := int(parsed.get("version", 0))
+	parsed = _migrate_save_data(parsed, version)
 	var pos = parsed.get("overworld_position", [])
 	if pos is Array and pos.size() >= 2:
 		overworld_position = Vector2(float(pos[0]), float(pos[1]))
+	battle_trigger_consumed = bool(parsed.get("battle_trigger_consumed", false))
+	var light_pos = parsed.get("skill_light_position", [])
+	if light_pos is Array and light_pos.size() >= 2:
+		skill_light_position = Vector2(float(light_pos[0]), float(light_pos[1]))
 	skill_light_consumed = bool(parsed.get("skill_light_consumed", false))
 	money = maxi(int(parsed.get("money", 0)), 0)
 	inventory.deserialize(parsed.get("inventory", []))
 	_apply_party(parsed.get("party", []))
+	flags = _as_dict(parsed.get("flags", {}))
+	quest_state = _as_dict(parsed.get("quest_state", {}))
+	world_state = _as_dict(parsed.get("world_state", {}))
+
+
+## 存档迁移：旧档（version < 4）缺省新增字段，保证可读；未来版本升级在此补字段。
+## 规则：只补缺省值，不破坏已有字段；新字段缺省安全（空字典/默认值）。
+func _migrate_save_data(data: Dictionary, version: int) -> Dictionary:
+	var result: Dictionary = data.duplicate(true)
+	if version < 4:
+		if not result.has("battle_trigger_consumed"):
+			result["battle_trigger_consumed"] = false
+		if not result.has("skill_light_position"):
+			result["skill_light_position"] = [skill_light_position.x, skill_light_position.y]
+		if not result.has("flags"):
+			result["flags"] = {}
+		if not result.has("quest_state"):
+			result["quest_state"] = {}
+		if not result.has("world_state"):
+			result["world_state"] = {}
+	return result
+
+
+func _as_dict(value) -> Dictionary:
+	return value if value is Dictionary else {}
 
 
 func _serialize_party() -> Array:

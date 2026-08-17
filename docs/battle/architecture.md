@@ -4,7 +4,7 @@
 
 ```
 core/battle/
-├── battle_manager.gd    战斗主流程：回合推进、出牌结算、buff 结算、胜负与战利品
+├── battle_manager.gd    战斗主流程：回合推进、行动顺序、出牌入口、胜负与战利品
 ├── battle_map.gd        战斗场景根脚本：地图/敌怪生成、战斗触发、结束后切场景
 ├── battle_map_data.gd   地图数据（网格尺寸、障碍、出生点）
 ├── battle_unit.gd       单位（HP/格挡/移动力/位置/存活）
@@ -13,12 +13,31 @@ core/battle/
 ├── enemy_data.gd        敌怪数据类（EnemyData）
 ├── enemy_database.gd    EnemyDB（Autoload）：content/enemies/*.json
 └── enemy_pack_database.gd EnemyPackDB（Autoload）：content/encounters/enemy_packs.json
+core/effect/
+├── effect_system.gd     EffectSystem：效果结算层（卡牌效果 / buff / 通用伤害 / 牌堆辅助）
+└── logic_chains/        组件化效果资源（AttackEffect / BuffEffect / DrawEffect …）
 core/grid/hex_grid.gd    六边形网格数学（坐标/距离/邻居/寻路）
 core/ai/enemy_ai.gd      AI 决策引擎：目标选择 / 行动评分 / 位置评价（纯逻辑，可测试）
 core/ai/ai_archetype.gd  行为模板（性格参数、角色→模板推导、Boss 规则）
 ui/battle/               手牌、血条、行动顺序条、结算面板、AI 决策调试面板
 world/encounters/BattleMap.tscn  战斗场景
 ```
+
+## 类图与数据流（2026-08-17 效果层拆分后）
+
+```
+BattleManager（回合流程 / 出牌入口 / 胜负战利品）
+   │ 持有并驱动
+   ▼
+EffectSystem（效果结算：卡牌效果 / buff / 通用伤害 / 牌堆辅助）
+   │ 通过 setup() 注入
+   ├─ units / RNG / card_lookup
+   ├─ battle_log / hp_changed / unit_defeated（信号，转发给 BattleManager 对外接口）
+   └─ battle_over_check（单位阵亡 → 回调 BattleManager 判定胜负）
+```
+
+数据流：`play_card`（扣费 / 移出手牌）→ `EffectSystem.resolve_effects`（攻击 / 格挡 / buff / 抽弃牌 / 生成复制…）
+→ `take_damage` / `lose_hp` / `heal_unit` → 发出 `hp_changed` / `unit_defeated` → `BattleManager._check_battle_over`。
 
 ## 关键数据流
 
@@ -30,8 +49,9 @@ world/encounters/BattleMap.tscn  战斗场景
 
 ## 与 Card / Effect 的协作
 
-- BattleManager 不直接实现卡牌效果：卡牌效果由 core/card/ 解析、core/effect/ 的逻辑链 Resource 承载，BattleManager 按顺序结算 effects。
-- buff 结算集中在 BattleManager（`_resolve_buff_*` 系列），buff 数据来自 BuffDB。
+- BattleManager 不直接实现卡牌效果：卡牌效果由 core/card/ 解析、core/effect/ 的逻辑链 Resource 承载，结算统一由 EffectSystem（`resolve_effects` / `resolve_attack`）执行。
+- buff 结算集中在 EffectSystem（`resolve_buff_*` 系列、按触发时机结算、buff 触发 / 衰减），buff 数据来自 BuffDB。
+- BattleManager 仅保留回合流程 / 行动顺序 / 出牌入口 / 胜负战利品；为兼容既有测试与调用方，私有方法保留为转发（行为与拆分前一致）。
 
 ## Demo 接入
 

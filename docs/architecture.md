@@ -27,7 +27,7 @@
 | `core/items/` | 物品数据结构、物品数据库、背包 |
 | `core/progression/` | 道途（PathData/PathDB）、被动（PassiveData）、成长接口 |
 | `core/world/` | 大世界逻辑（main 场景脚本、技能光点）、NPC 数据与数据库 |
-| `core/save/` | 全局状态与存档（GameState） |
+| `core/save/` | 全局状态与存档（GameState）：版本化载荷、按版本迁移、唯一持久化入口 |
 | `core/art/` | 统一美术资源加载器（ArtLoader） |
 | `content/` | 具体内容数据：characters / cards / equipment / items / npcs / paths / buffs / enemies / encounters |
 | `world/` | 世界场景（map / encounters 的 .tscn） |
@@ -60,6 +60,13 @@ Card / Effect / Grid / AI
 - 数据库类（CardDB / EnemyDB / NpcDB / EquipDB / BuffDB / ItemDB / PathDB / CardDropDB / EnemyPackDB）为 Autoload 单例，负责把 `content/` 数据解析为 Resource 对象。
 - 数据类（CardData / CharacterData / EnemyData / …）只承载数据，不包含业务规则。
 - 跨模块状态尽量通过参数 / 返回值 / Signal 传递；全局状态集中在 GameState。
+
+### 存档（Save）
+
+- `core/save/game_state.gd` 是唯一持久化入口：其他系统只调用 `GameState.save_game()` / `load_game()`，不自行写文件（Demo 换档也仅改 `save_path`）。
+- 存档为带 `version` 的字典载荷（当前 v4）：玩家位置、触发状态（战斗触发 / 技能光点）、钱币、背包、队伍（等级 / 经验 / 属性点 / 技能 / 卡组 / 装备），以及预留状态字段。
+- `load_game()` 按版本迁移：旧档缺省字段自动补默认值（新字段缺省安全），未来版本升级在 `_migrate_save_data()` 扩展。
+- `flags`（剧情 Flag）、`quest_state`（任务状态）、`world_state`（世界状态）为 v4 预留的空实现；剧情 / 任务 / 世界系统上线后通过 GameState 读写，不新建持久化通道。
 
 ## 5. 内容生产原则
 

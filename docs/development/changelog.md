@@ -1,5 +1,20 @@
 # 变更日志
 
+## 2026-08-17　存档扩展设计（待办第 3 项）
+
+- 存档载荷版本化（v4）：新增 battle_trigger_consumed / skill_light_position（触发状态持久化），并预留 flags（剧情 Flag）/ quest_state（任务状态）/ world_state（世界状态）字段，缺省安全。
+- load_game() 显式按版本迁移：旧档（<v4）缺失字段自动补默认值，既有字段读取逻辑保留。
+- 确认 SaveSystem 唯一入口：全项目仅 game_state.gd 写存档文件；Demo 换档仅改 save_path，不另建持久化通道。
+- 新增 tests/save/test_save_roundtrip.gd（26 断言）：v4 保存→加载往返一致；v3 旧档缺省字段可用。
+- 更新 docs/architecture.md 的存档模块说明。
+
+## 2026-08-17　拆分 battle_manager.gd（待办第 6 项）
+
+- 新建 core/effect/effect_system.gd（EffectSystem）接管效果结算：卡牌效果（resolve_effects / resolve_attack，含伤害/格挡/pierce/条件）、buff 结算（resolve_buff_* 系列、按触发时机、衰减）、通用伤害（lose_hp / take_damage / heal_unit）、牌堆辅助（抽/弃/消耗/生成/复制/固有牌）。
+- battle_manager.gd 瘦身：只保留回合流程、行动顺序、出牌入口、胜负判定、战利品；既有信号与对外接口不变，私有方法保留为转发兼容。
+- 全量 13 个无头测试通过（393 断言 / 0 失败）；4 个场景无头加载无错误。
+- 更新 docs/battle/architecture.md（类图与数据流）。
+
 ## 2026-08-17　装备流程闭环（有舍有得）
 
 - 装备定位落实 GDD 第 14 节：不是单纯的数值提升，而是「有舍有得」的机制修正——每件装备的 mods 既有收益（正修正）也有代价（负修正）。
