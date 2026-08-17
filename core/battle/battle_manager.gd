@@ -181,6 +181,16 @@ func _on_turn_started(unit: BattleUnit) -> void:
 		battle_log.emit("%s 的回合" % unit.get_display_name())
 		turn_started.emit(unit)        # AI 行动由 battle_map 执行
 		return
+	# 装备修正（有舍有得）：每回合抽牌/费用 ±N、回合开始获得格挡
+	if unit.character_data != null:
+		extra_draw += unit.character_data.get_equipment_mod_total("draw_modifier")
+		extra_energy += unit.character_data.get_equipment_mod_total("energy_modifier")
+		var equip_block := unit.character_data.get_equipment_mod_total("block_on_turn_start")
+		if equip_block != 0:
+			unit.block_value += equip_block
+			unit.refresh_block_display()
+			battle_log.emit("%s 因装备获得 %d 点格挡（当前 %d）" % [
+				unit.get_display_name(), equip_block, unit.block_value])
 	_draw_cards(unit, HAND_SIZE + extra_draw)       # 抽基础牌 + 预抽牌额外张数
 	unit.energy = ENERGY_PER_TURN + extra_energy    # 基础费用 + 费用预支额外费用
 	battle_log.emit("%s 行动：抽 %d 张牌，获得 %d 费用" % [
@@ -417,6 +427,11 @@ func _resolve_effects(unit: BattleUnit, card: CardData, target = null) -> void:
 		elif effect is DefenseEffect:
 			var defense := effect as DefenseEffect
 			var defense_value := defense.alt_value if (defense.alt_value > 0 and unit.moved_this_turn) else defense.value
+			# 装备「防御卡格挡 ±N」修正（铁剑：攻强守弱）
+			var equip_defend := unit.character_data.get_equipment_mod_total("defend_bonus") if unit.character_data != null else 0
+			if equip_defend != 0:
+				defense_value = maxi(defense_value + equip_defend, 0)
+				battle_log.emit("装备修正：%s 的防御卡格挡 %+d" % [unit.get_display_name(), equip_defend])
 			unit.block_value += defense_value
 			battle_log.emit("%s 获得 %d 点格挡（当前 %d）" % [
 				unit.get_display_name(), defense_value, unit.block_value])

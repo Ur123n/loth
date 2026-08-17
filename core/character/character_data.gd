@@ -45,7 +45,7 @@ const EXP_GROWTH := 50
 
 
 func get_max_hp() -> int:
-	return base_hp + endurance * endurance_hp_bonus
+	return base_hp + get_effective_endurance() * endurance_hp_bonus + get_equipment_mod_total("max_hp")
 
 
 func get_path_display() -> String:
@@ -118,10 +118,94 @@ func allocate_attribute(stat: String) -> bool:
 
 ## 力量对攻击伤害的倍率（浮点，用于展示/参考）。
 func get_strength_damage_multiplier() -> float:
-	return 1.0 + strength_damage_bonus * float(strength - 10)
+	var basis := float(get_strength_damage_basis())
+	return basis / 100.0
 
 
 ## 力量伤害基数（整数百分比）：100 表示 ×1.0。
 ## 伤害计算全程使用整数：面板 * 基数 / 100，再按攻防方向取整。
+## 装备「攻击伤害 ±%」修正在此乘算（GDD：装备改变卡牌效果）。
 func get_strength_damage_basis() -> int:
-	return 100 + int(round(strength_damage_bonus * 100.0)) * (strength - 10)
+	var basis := 100 + int(round(strength_damage_bonus * 100.0)) * (get_effective_strength() - 10)
+	var pct := get_equipment_mod_total("attack_damage_pct")
+	if pct != 0:
+		basis = maxi(1, int(round(basis * (100 + pct) / 100.0)))
+	return basis
+
+
+# ============================================================
+# 装备（有舍有得）
+# ============================================================
+
+## 合并后属性：基础值 + 装备修正（得与舍叠加）。
+func get_effective_strength() -> int:
+	return strength + get_equipment_mod_total("stat", "力量")
+
+
+func get_effective_agility() -> int:
+	return agility + get_equipment_mod_total("stat", "敏捷")
+
+
+func get_effective_endurance() -> int:
+	return endurance + get_equipment_mod_total("stat", "耐力")
+
+
+func get_effective_willpower() -> int:
+	return willpower + get_equipment_mod_total("stat", "意志力")
+
+
+## 卡牌荷载容量：GDD「意志力 = 卡牌荷载容量」，再叠加装备修正。
+func get_effective_load_capacity() -> int:
+	return get_effective_willpower() + get_equipment_mod_total("load_capacity")
+
+
+## 当前已穿装备中某类型修正总和。
+func get_equipment_mod_total(mod_type: String, stat_name := "") -> int:
+	var total := 0
+	for equip in equipment:
+		if equip is EquipmentData:
+			total += equip.get_mod_total(mod_type, stat_name)
+	return total
+
+
+## 某槽位已穿装备（无则 null）。
+func get_equipped_in_slot(slot_name: String) -> EquipmentData:
+	for equip in equipment:
+		if equip is EquipmentData and equip.slot == slot_name:
+			return equip
+	return null
+
+
+## 穿装备：槽位非法或已被占用时返回 false。
+func equip_equipment(equip: EquipmentData) -> bool:
+	if equip == null or not EquipmentData.SLOT_NAMES.has(equip.slot):
+		return false
+	if get_equipped_in_slot(equip.slot) != null:
+		return false
+	equipment.append(equip)
+	return true
+
+
+## 按名称穿装备（从 EquipDB 查）；成功返回 true。
+func equip_by_name(equip_name: String) -> bool:
+	var db := _get_equip_db()
+	if db == null:
+		return false
+	var equip: EquipmentData = db.get_equipment(equip_name)
+	return equip_equipment(equip)
+
+
+## 卸下某槽位装备；返回被卸下的装备（该槽为空则 null）。
+func unequip_slot(slot_name: String) -> EquipmentData:
+	for i in equipment.size():
+		if equipment[i] is EquipmentData and equipment[i].slot == slot_name:
+			return equipment.pop_at(i)
+	return null
+
+
+## EquipDB 自动加载（无头脚本模式可能缺失，返回 null 由调用方兜底）。
+func _get_equip_db() -> Node:
+	var tree := Engine.get_main_loop()
+	if tree is SceneTree:
+		return (tree as SceneTree).root.get_node_or_null("EquipDB")
+	return null

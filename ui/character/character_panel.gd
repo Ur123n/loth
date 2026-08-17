@@ -38,6 +38,7 @@ var _agility_value: Label
 var _endurance_value: Label
 var _willpower_value: Label
 var _hp_value: Label
+var _load_capacity_value: Label
 var _attribute_points_label: Label
 var _alloc_buttons: Dictionary = {}   # 属性名 -> Button
 
@@ -63,11 +64,14 @@ func refresh() -> void:
 	_name_value.text = _data.character_name
 	_path_value.text = _data.get_path_display()
 	_level_value.text = str(_data.level)
-	_strength_value.text = str(_data.strength)
-	_agility_value.text = str(_data.agility)
-	_endurance_value.text = str(_data.endurance)
-	_willpower_value.text = str(_data.willpower)
-	_hp_value.text = str(_data.get_max_hp())
+	# 装备合并后属性（基础 + 得/舍），有修正时显示差值
+	_strength_value.text = _stat_text(_data.strength, _data.get_effective_strength())
+	_agility_value.text = _stat_text(_data.agility, _data.get_effective_agility())
+	_endurance_value.text = _stat_text(_data.endurance, _data.get_effective_endurance())
+	_willpower_value.text = _stat_text(_data.willpower, _data.get_effective_willpower())
+	var base_max_hp := _data.base_hp + _data.endurance * _data.endurance_hp_bonus
+	_hp_value.text = _stat_text(base_max_hp, _data.get_max_hp())
+	_load_capacity_value.text = "%d（意志力派生）" % _data.get_effective_load_capacity()
 	_attribute_points_label.text = "剩余可分配属性点：%d" % _data.attribute_points
 	var has_points := _data.attribute_points > 0
 	for stat in _alloc_buttons:
@@ -209,6 +213,7 @@ func _build_main_view() -> VBoxContainer:
 	hp_grid.add_theme_constant_override("h_separation", 24)
 	hp_grid.add_theme_constant_override("v_separation", 6)
 	_hp_value = _add_row(hp_grid, "生命值")
+	_load_capacity_value = _add_row(hp_grid, "荷载容量")
 	view.add_child(hp_grid)
 
 	_skill_button = _make_section_button("技能库", _on_skill_button_pressed)
@@ -232,8 +237,15 @@ func _build_equipment_view() -> VBoxContainer:
 	view.name = "EquipmentView"
 	view.add_theme_constant_override("separation", 10)
 	view.add_child(_make_view_title("装备栏"))
+	var hint := Label.new()
+	hint.text = "点击已穿装备卸下（放回背包）　|　打开背包（B）点击装备穿上"
+	hint.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	hint.add_theme_font_size_override("font_size", 13)
+	hint.add_theme_color_override("font_color", Color(0.62, 0.66, 0.72))
+	view.add_child(hint)
 	_equipment_panel = EquipmentPanel.new()
 	_equipment_panel.name = "EquipmentGrid"
+	_equipment_panel.slot_pressed.connect(_on_equipment_slot_pressed)
 	view.add_child(_equipment_panel)
 	view.add_child(_make_back_button())
 	return view
@@ -285,6 +297,44 @@ func _on_skill_button_pressed() -> void:
 func _on_equipment_button_pressed() -> void:
 	_equipment_panel.refresh(_data)
 	_open_view(_equipment_view)
+
+
+## 点击装备槽位：有装备则卸下并放回背包；空槽提示从背包穿戴。
+func _on_equipment_slot_pressed(slot_name: String) -> void:
+	if _data == null:
+		return
+	var equipped := _data.get_equipped_in_slot(slot_name)
+	if equipped == null:
+		_detail_popup.show_info("装备", ["该槽位为空。", "打开背包（B），点击对应装备穿到当前角色。"])
+		return
+	var removed := _data.unequip_slot(slot_name)
+	if removed == null:
+		return
+	var item := _item_by_name(removed.equipment_name)
+	if item != null:
+		var spot := GameState.inventory.find_free_spot(item)
+		if not spot.get("found", false):
+			# 背包已满：取消卸下，装备还原
+			_data.equip_equipment(removed)
+			_detail_popup.show_info("提示", ["背包已满，无法卸下「%s」" % removed.equipment_name])
+			return
+		GameState.inventory.place(item, spot.page, spot.x, spot.y)
+	refresh()
+	data_changed.emit()
+	_detail_popup.show_info("已卸下", ["「%s」已放回背包。" % removed.equipment_name])
+
+
+## 按名称查物品（卸下装备时放回背包用）。
+func _item_by_name(item_name: String) -> ItemData:
+	var db := get_node_or_null("/root/ItemDB")
+	return db.get_item(item_name) if db != null else null
+
+
+## 属性显示：合并后数值，有修正时附（+N/-N）。
+func _stat_text(base: int, effective: int) -> String:
+	if effective != base:
+		return "%d（%+d）" % [effective, effective - base]
+	return str(effective)
 
 
 func _on_deck_button_pressed() -> void:

@@ -1,0 +1,19 @@
+{
+  "id": "长枪",
+  "name": "长枪",
+  "slot": "右手武器",
+  "description": "杆部修长的长枪：攻击范围+1，但攻击伤害-15%（刺击够远，力道稍逊）。",
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "mods": [
+    {
+      "type": "attack_range",
+      "value": 1
+    },
+    {
+      "type": "attack_damage_pct",
+      "value": -15
+    }
+  ]
+}

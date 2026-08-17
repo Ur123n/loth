@@ -2,8 +2,18 @@
   "id": "皮甲",
   "name": "皮甲",
   "slot": "身体",
-  "description": "基础皮甲，防御+2。",
+  "description": "厚实皮甲：生命上限+20，但移动力-1（耐打而笨重）。",
   "icon": "",
   "art": "",
-  "animation": ""
+  "animation": "",
+  "mods": [
+    {
+      "type": "max_hp",
+      "value": 20
+    },
+    {
+      "type": "move_points",
+      "value": -1
+    }
+  ]
 }

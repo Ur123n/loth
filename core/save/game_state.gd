@@ -123,7 +123,7 @@ func grant_battle_exp(amount: int) -> int:
 ## 写入存档：大世界位置、光点状态、各角色技能库与牌组。
 func save_game() -> void:
 	var data := {
-		"version": 2,
+		"version": 3,
 		"overworld_position": [overworld_position.x, overworld_position.y],
 		"skill_light_consumed": skill_light_consumed,
 		"money": money,
@@ -166,11 +166,14 @@ func _serialize_party() -> Array:
 	for character in party_characters:
 		var entry := {"name": character.character_name, "level": character.level,
 			"exp": character.exp, "attribute_points": character.attribute_points,
-			"skills": [], "deck": []}
+			"skills": [], "deck": [], "equipment": []}
 		for skill in character.skill_library:
 			entry["skills"].append({"name": skill.skill_name, "description": skill.description})
 		for card in character.deck:
 			entry["deck"].append(card.card_name)
+		for equip in character.equipment:
+			if equip is EquipmentData:
+				entry["equipment"].append(equip.equipment_name)
 		result.append(entry)
 	return result
 
@@ -200,6 +203,13 @@ func _apply_party(saved_party: Array) -> void:
 				var card := _card_from_name(str(card_name))
 				if card != null:
 					character.deck.append(card)
+			# 装备（v3）：按名称从 EquipDB 还原；旧存档缺省为空
+			character.equipment.clear()
+			var equip_db := get_node_or_null("/root/EquipDB")
+			for equip_name in entry.get("equipment", []):
+				var equip: EquipmentData = equip_db.get_equipment(str(equip_name)) if equip_db != null else null
+				if equip != null:
+					character.equipment.append(equip)
 			break
 
 

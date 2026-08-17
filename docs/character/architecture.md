@@ -30,8 +30,13 @@ EquipDB / ItemDB / Inventory（core/equipment、core/items）
 
 ## 装备系统现状
 
-- EquipmentPanel 已接入角色面板显示装备栏位。
-- 属性修正链路：CharacterData 提供力量伤害补正等；穿戴装备后的属性合并接口待完善（见 docs/development/known_issues.md）。
+- EquipmentPanel 显示 8 槽位（头部/身体/腿部/足部/首饰×2/左右手），点击已穿装备卸下回背包；
+  背包点击装备物品穿到当前角色（槽位被占先卸旧装备，背包无空位则取消）。
+- 数据模型：EquipmentData.mods（type/value/stat），正修正=得、负修正=舍（有舍有得，见 GDD 第 14 节）。
+- 合并链路：CharacterData 提供 equip/unequip_slot、get_effective_*、get_equipment_mod_total；
+  BattleUnit/TurnSystem/BattleManager/BattleMap 使用合并后属性与修正
+  （HP、伤害基数、行动值、移动力、攻击范围、抽牌/费用、回合开始格挡、防御卡格挡）。
+- 存档：装备按名称随角色持久化（save version 3；旧档缺省为空，读档由 EquipDB 还原）。
 
 ## 存档协作
 

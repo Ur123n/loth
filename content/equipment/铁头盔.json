@@ -2,8 +2,18 @@
   "id": "铁头盔",
   "name": "铁头盔",
   "slot": "头部",
-  "description": "基础头盔，防御+1。",
+  "description": "铁制头盔：回合开始获得 3 格挡，但每回合费用-1（稳守而沉重）。",
   "icon": "",
   "art": "",
-  "animation": ""
+  "animation": "",
+  "mods": [
+    {
+      "type": "block_on_turn_start",
+      "value": 3
+    },
+    {
+      "type": "energy_modifier",
+      "value": -1
+    }
+  ]
 }

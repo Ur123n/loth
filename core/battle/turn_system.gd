@@ -40,7 +40,7 @@ func start_round() -> void:
 	for i in units.size():
 		var unit := units[i]
 		var agility: int = unit.get_agility()
-		var value: int = agility + _rng.randi_range(-RANDOM_SPREAD, RANDOM_SPREAD)
+		var value: int = agility + unit.get_initiative_bonus() + _rng.randi_range(-RANDOM_SPREAD, RANDOM_SPREAD)
 		action_values[unit] = value
 		entries.append([value, agility, i])
 		unit.remaining_move_points = unit.get_max_move_points()

@@ -33,6 +33,16 @@ func load_all() -> void:
 			item.icon_path = str(parsed.get("icon", ""))
 			item.art_path = str(parsed.get("art", ""))
 			item.animation_path = str(parsed.get("animation", ""))
+			# 有舍有得修正列表：[{type, value, stat?}]，旧数据缺省为空
+			var parsed_mods = parsed.get("mods", [])
+			if parsed_mods is Array:
+				for mod in parsed_mods:
+					if mod is Dictionary:
+						item.mods.append({
+							"type": str(mod.get("type", "")),
+							"value": int(mod.get("value", 0)),
+							"stat": str(mod.get("stat", "")),
+						})
 			equipment.append(item)
 
 

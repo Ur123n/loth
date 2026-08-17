@@ -2,8 +2,19 @@
   "id": "铜戒指",
   "name": "铜戒指",
   "slot": "首饰1",
-  "description": "朴素铜戒。",
+  "description": "朴素铜戒：每回合抽牌+1，但意志力-2（更灵活，荷载容量下降）。",
   "icon": "",
   "art": "",
-  "animation": ""
+  "animation": "",
+  "mods": [
+    {
+      "type": "draw_modifier",
+      "value": 1
+    },
+    {
+      "type": "stat",
+      "stat": "意志力",
+      "value": -2
+    }
+  ]
 }

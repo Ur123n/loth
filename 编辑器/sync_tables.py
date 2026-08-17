@@ -136,6 +136,7 @@ def _column_map(headers):
         "art": ["美术资源"],
         "icon": ["美术图标", "图标"],
         "animation": ["美术动画", "动画资源", "动画"],
+        "mods": ["修正", "mods"],
         "portrait": ["立绘", "头像"],
         "interaction": ["互动选项"],
         "dialogue": ["对话树"],
@@ -270,6 +271,24 @@ def sync_equipment():
         name = _cell(row, col["name"])
         if not name:
             continue
+        # 有舍有得修正：优先读表格「修正」JSON 列；表格无该列时保留现有 JSON 的 mods
+        json_path = EQUIPMENT_DIR / ("%s.json" % _sanitize(name))
+        mods = []
+        if json_path.exists():
+            try:
+                existing = json.loads(json_path.read_text(encoding="utf-8"))
+                if isinstance(existing, dict) and isinstance(existing.get("mods"), list):
+                    mods = existing["mods"]
+            except Exception:
+                mods = []
+        mods_raw = _cell(row, col["mods"]) if col.get("mods", -1) >= 0 else ""
+        if mods_raw:
+            try:
+                parsed = json.loads(mods_raw)
+                if isinstance(parsed, list):
+                    mods = parsed
+            except Exception:
+                pass
         data = {
             "id": _sanitize(name),
             "name": name,
@@ -278,9 +297,10 @@ def sync_equipment():
             "icon": _cell(row, col["icon"]),
             "art": _cell(row, col["art"]),
             "animation": _cell(row, col["animation"]),
+            "mods": mods,
         }
         EQUIPMENT_DIR.mkdir(parents=True, exist_ok=True)
-        (EQUIPMENT_DIR / ("%s.json" % _sanitize(name))).write_text(
+        json_path.write_text(
             json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
         count += 1
     print("装备同步：%d 件" % count)

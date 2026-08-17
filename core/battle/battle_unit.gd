@@ -91,22 +91,40 @@ func get_max_hp_value() -> int:
 func get_agility() -> int:
 	if is_enemy:
 		return enemy_data.agility if enemy_data != null else 5
-	return character_data.agility if character_data != null else 10
+	# 合并后敏捷（基础 + 装备修正）
+	return character_data.get_effective_agility() if character_data != null else 10
+
+
+## 装备「行动值」修正（独立于敏捷，直接叠加到行动值）。
+func get_initiative_bonus() -> int:
+	if is_enemy or character_data == null:
+		return 0
+	return character_data.get_equipment_mod_total("initiative")
 
 
 func get_max_move_points() -> int:
 	if is_enemy:
 		return enemy_data.move_points if enemy_data != null else 1
 	var passive := character_data.get_passive() if character_data != null else null
+	var base := MAX_MOVE_POINTS
 	if passive != null and passive.passive_name == "孢子怪力":
-		return 2
-	return MAX_MOVE_POINTS
+		base = 2
+	var equip_bonus := character_data.get_equipment_mod_total("move_points") if character_data != null else 0
+	return maxi(base + equip_bonus, 1)
 
 
 func get_attack_range() -> int:
 	if is_enemy:
 		return enemy_data.attack_range if enemy_data != null else 1
-	return 1
+	# 玩家基础攻击范围 1 + 装备修正（长枪等）
+	return maxi(1 + get_attack_range_bonus(), 1)
+
+
+## 装备「攻击范围」修正（卡牌目标射程 max(card.range, 效果范围) 之上叠加）。
+func get_attack_range_bonus() -> int:
+	if is_enemy or character_data == null:
+		return 0
+	return character_data.get_equipment_mod_total("attack_range")
 
 
 func get_attack_damage() -> int:

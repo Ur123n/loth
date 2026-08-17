@@ -5,6 +5,7 @@ extends Control
 ## 显示背包物品（含体积/形状）、钱币与占用统计；悬停查看物品信息。
 
 signal closed
+signal equip_requested(item_name: String)
 
 const WINDOW_SIZE := Vector2(720, 600)
 const CELL_SIZE := 52.0
@@ -120,7 +121,7 @@ func _ready() -> void:
 	vbox.add_child(_tooltip_label)
 
 	var hint := Label.new()
-	hint.text = "滚轮翻页　|　B / Esc 关闭"
+	hint.text = "滚轮翻页　|　点击物品装备到当前角色　|　B / Esc 关闭"
 	hint.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	hint.add_theme_font_size_override("font_size", 12)
 	hint.add_theme_color_override("font_color", Color(0.52, 0.56, 0.62))
@@ -235,7 +236,12 @@ func _gui_input(event: InputEvent) -> void:
 				_set_page(_page + 1)
 				accept_event()
 			MOUSE_BUTTON_LEFT:
-				_update_tooltip()
+				var cell := _cell_at(get_global_mouse_position())
+				if cell != Vector2i(-1, -1):
+					var item := GameState.inventory.item_at(_page, cell.x, cell.y)
+					if item != null:
+						equip_requested.emit(item.item_name)
+				accept_event()
 
 
 func _set_page(page: int) -> void:
@@ -252,3 +258,8 @@ func open() -> void:
 func close() -> void:
 	visible = false
 	closed.emit()
+
+
+## 外部反馈（装备成功/失败/不可装备）显示在底部提示行。
+func show_tooltip_message(text: String) -> void:
+	_tooltip_label.text = text

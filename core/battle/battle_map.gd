@@ -610,7 +610,7 @@ func _on_card_play_requested(card: CardData, screen_position: Vector2) -> void:
 			unit.pending_knockback = 0
 
 
-## 目标距离校验：有效范围 = max(card.range, 效果攻击范围)；超出范围不可指定。
+## 目标距离校验：有效范围 = max(card.range, 效果攻击范围) + 装备攻击范围修正；超出范围不可指定。
 func _target_in_range(unit: BattleUnit, target: BattleUnit, card: CardData) -> bool:
 	if unit == null or target == null or card == null:
 		return false
@@ -618,6 +618,7 @@ func _target_in_range(unit: BattleUnit, target: BattleUnit, card: CardData) -> b
 	for effect in card.effects:
 		if effect is AttackEffect:
 			effective_range = maxi(effective_range, (effect as AttackEffect).attack_range)
+	effective_range = maxi(effective_range + unit.get_attack_range_bonus(), 1)
 	if effective_range <= 0:
 		return true
 	return HexGrid.hex_distance(unit.hex_coords, target.hex_coords) <= effective_range

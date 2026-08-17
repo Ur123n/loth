@@ -2,8 +2,19 @@
   "id": "草鞋",
   "name": "草鞋",
   "slot": "足部",
-  "description": "轻便草鞋。",
+  "description": "轻便草鞋：敏捷+2，但生命上限-10（轻装而脆）。",
   "icon": "",
   "art": "",
-  "animation": ""
+  "animation": "",
+  "mods": [
+    {
+      "type": "stat",
+      "stat": "敏捷",
+      "value": 2
+    },
+    {
+      "type": "max_hp",
+      "value": -10
+    }
+  ]
 }

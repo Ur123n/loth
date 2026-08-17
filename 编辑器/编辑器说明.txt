@@ -22,6 +22,11 @@
 角色数据.xlsx 另有 立绘（portrait）列。
 填写 res:// 路径后，游戏会用对应资源替代色块/文本占位；留空则继续使用占位。
 
+装备创建.xlsx 可选「修正」（mods）列：JSON 数组，实现装备的“有舍有得”机制修正。
+示例：[{"type": "attack_damage_pct", "value": 20}, {"type": "defend_bonus", "value": -2}]
+表格没有该列时，同步会保留现有 JSON 中的 mods（以 JSON 为准）。
+支持的类型见 docs/character/rules.md 第 6 节。
+
 NPC创建.xlsx 扩展字段：
 - 美术资源：贴图路径（可空）
 - AI：NPC 行为占位（如 待机/巡逻）

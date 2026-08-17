@@ -67,6 +67,7 @@ func _ready() -> void:
 	add_child(_inventory_panel)
 	_inventory_panel.visible = false
 	_inventory_panel.closed.connect(_on_inventory_closed)
+	_inventory_panel.equip_requested.connect(_on_equip_requested)
 
 	# 选择“否”后的触发冷却：2 秒内不再弹出提示，避免反复卡住
 	_skill_light_cooldown_timer = Timer.new()
@@ -240,3 +241,63 @@ func _close_inventory() -> void:
 
 func _on_inventory_closed() -> void:
 	_character.input_enabled = true
+
+
+## 背包点击物品：可装备 → 穿到当前角色（槽位被占先卸下旧装备回背包）。
+func _on_equip_requested(item_name: String) -> void:
+	var character := _party.get_current_character()
+	if character == null:
+		return
+	var equip_db := get_node_or_null("/root/EquipDB")
+	if equip_db == null:
+		return
+	var equip: EquipmentData = equip_db.get_equipment(item_name)
+	if equip == null:
+		_inventory_panel.show_tooltip_message("「%s」不是可装备物品" % item_name)
+		return
+	var occupied := character.get_equipped_in_slot(equip.slot)
+	if occupied != null:
+		if not _return_equipment_to_inventory(character, occupied):
+			_inventory_panel.show_tooltip_message("背包已满，无法更换「%s」" % item_name)
+			return
+	if not character.equip_equipment(equip):
+		if occupied != null:
+			character.equip_equipment(occupied)   # 兜底还原旧装备
+		_inventory_panel.show_tooltip_message("无法装备「%s」" % item_name)
+		return
+	_remove_inventory_item(item_name)
+	_inventory_panel.refresh()
+	_panel.setup(character)
+	GameState.save_game()
+	_inventory_panel.show_tooltip_message("已装备「%s」：%s" % [equip.equipment_name, equip.description])
+
+
+## 卸下装备并放回背包；背包无空位则还原并返回 false。
+func _return_equipment_to_inventory(character: CharacterData, equip: EquipmentData) -> bool:
+	var removed := character.unequip_slot(equip.slot)
+	if removed == null:
+		return false
+	var item := _item_by_name(removed.equipment_name)
+	if item == null:
+		return true    # 无对应物品（旧数据）直接卸下
+	var spot := GameState.inventory.find_free_spot(item)
+	if not spot.get("found", false):
+		character.equip_equipment(removed)
+		return false
+	GameState.inventory.place(item, spot.page, spot.x, spot.y)
+	return true
+
+
+func _item_by_name(item_name: String) -> ItemData:
+	var db := get_node_or_null("/root/ItemDB")
+	return db.get_item(item_name) if db != null else null
+
+
+## 从背包移除指定名称的第一件物品（已穿上的装备）。
+func _remove_inventory_item(item_name: String) -> void:
+	for i in GameState.inventory.items.size():
+		var entry: Dictionary = GameState.inventory.items[i]
+		var item: ItemData = entry.get("item")
+		if item != null and item.item_name == item_name:
+			GameState.inventory.items.remove_at(i)
+			return

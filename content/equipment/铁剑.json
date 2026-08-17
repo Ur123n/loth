@@ -2,8 +2,18 @@
   "id": "铁剑",
   "name": "铁剑",
   "slot": "左手武器",
-  "description": "基础铁剑。",
+  "description": "锋利的铁剑：攻击伤害+20%，但防御卡格挡-2（攻强守弱）。",
   "icon": "",
   "art": "",
-  "animation": ""
+  "animation": "",
+  "mods": [
+    {
+      "type": "attack_damage_pct",
+      "value": 20
+    },
+    {
+      "type": "defend_bonus",
+      "value": -2
+    }
+  ]
 }
