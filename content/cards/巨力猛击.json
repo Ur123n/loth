@@ -1,0 +1,35 @@
+{
+  "id": "巨力猛击",
+  "name": "巨力猛击",
+  "category": "道途专属卡牌",
+  "path": "孢子卫士",
+  "card_type": "攻击",
+  "cost": 2,
+  "load": 2,
+  "target_type": "Enemy",
+  "range": 1,
+  "area": 0,
+  "discard_on_use": false,
+  "keywords": [
+    "消耗"
+  ],
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "description": "",
+  "effects": [
+    {
+      "logic": "attack",
+      "value": 18,
+      "attack_range": 1
+    },
+    {
+      "logic": "move",
+      "distance": 1
+    },
+    {
+      "logic": "knockback",
+      "value": 1
+    }
+  ]
+}

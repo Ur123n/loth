@@ -1,0 +1,327 @@
+{
+  "version": 1,
+  "packs": [
+    {
+      "id": "骷髅巡逻队",
+      "name": "骷髅巡逻队",
+      "tier": "普通",
+      "description": "两具近战骷髅挡住去路，骷髅弓箭手在后方放箭。",
+      "members": [
+        {
+          "enemy": "骷髅",
+          "count": 2,
+          "role": "前排"
+        },
+        {
+          "enemy": "骷髅弓箭手",
+          "count": 1,
+          "role": "远程"
+        }
+      ]
+    },
+    {
+      "id": "亡者围猎队",
+      "name": "亡者围猎队",
+      "tier": "普通",
+      "description": "邪秽亡者蜂拥缠斗，弓箭手在远处收割。",
+      "members": [
+        {
+          "enemy": "邪秽亡者",
+          "count": 2,
+          "role": "炮灰"
+        },
+        {
+          "enemy": "骷髅弓箭手",
+          "count": 1,
+          "role": "远程"
+        }
+      ]
+    },
+    {
+      "id": "孢子侵袭队",
+      "name": "孢子侵袭队",
+      "tier": "普通",
+      "description": "孢子感染者成群逼近，被污染的亡者充当先锋。",
+      "members": [
+        {
+          "enemy": "孢子感染者",
+          "count": 2,
+          "role": "近战"
+        },
+        {
+          "enemy": "邪秽亡者",
+          "count": 1,
+          "role": "炮灰"
+        }
+      ]
+    },
+    {
+      "id": "蛛群奔袭队",
+      "name": "蛛群奔袭队",
+      "tier": "普通",
+      "description": "三只暴食蜘蛛幼体高速集群撕咬，先咬脆皮。",
+      "members": [
+        {
+          "enemy": "暴食蜘蛛幼体",
+          "count": 3,
+          "role": "侧翼"
+        }
+      ]
+    },
+    {
+      "id": "猪人劫掠队",
+      "name": "猪人劫掠队",
+      "tier": "普通",
+      "description": "猪人掠夺者正面冲锋，骷髅在侧翼掩护。",
+      "members": [
+        {
+          "enemy": "猪人掠夺者",
+          "count": 2,
+          "role": "前排"
+        },
+        {
+          "enemy": "骷髅",
+          "count": 1,
+          "role": "近战"
+        }
+      ]
+    },
+    {
+      "id": "亡者尸潮队",
+      "name": "亡者尸潮队",
+      "tier": "普通",
+      "description": "尸潮推进，夹杂一具持剑骷髅。",
+      "members": [
+        {
+          "enemy": "邪秽亡者",
+          "count": 3,
+          "role": "炮灰"
+        },
+        {
+          "enemy": "骷髅",
+          "count": 1,
+          "role": "近战"
+        }
+      ]
+    },
+    {
+      "id": "孢子巨兽队",
+      "name": "孢子巨兽队",
+      "tier": "精英",
+      "description": "孢子巨人开路碾压，感染者紧随其后再补一刀。",
+      "members": [
+        {
+          "enemy": "孢子巨人",
+          "count": 1,
+          "role": "前排",
+          "leader": true
+        },
+        {
+          "enemy": "孢子感染者",
+          "count": 2,
+          "role": "近战"
+        }
+      ]
+    },
+    {
+      "id": "蛛巢绞杀队",
+      "name": "蛛巢绞杀队",
+      "tier": "精英",
+      "description": "成蛛在后织网狙击，幼体高速缠住目标。",
+      "members": [
+        {
+          "enemy": "暴食蜘蛛",
+          "count": 1,
+          "role": "远程",
+          "leader": true
+        },
+        {
+          "enemy": "暴食蜘蛛幼体",
+          "count": 2,
+          "role": "近战"
+        }
+      ]
+    },
+    {
+      "id": "母蛛巢穴队",
+      "name": "母蛛巢穴队",
+      "tier": "精英",
+      "description": "母蛛坐镇巢穴，幼体与亡者充当爪牙。",
+      "members": [
+        {
+          "enemy": "暴食母蛛",
+          "count": 1,
+          "role": "前排",
+          "leader": true
+        },
+        {
+          "enemy": "暴食蜘蛛幼体",
+          "count": 2,
+          "role": "护卫"
+        },
+        {
+          "enemy": "邪秽亡者",
+          "count": 1,
+          "role": "炮灰"
+        }
+      ]
+    },
+    {
+      "id": "血裔猎杀队",
+      "name": "血裔猎杀队",
+      "tier": "精英",
+      "description": "渴血者侧翼设伏，嗜血者正面突进，骷髅断后。",
+      "members": [
+        {
+          "enemy": "血裔·渴血者",
+          "count": 1,
+          "role": "侧翼",
+          "leader": true
+        },
+        {
+          "enemy": "血裔·嗜血者",
+          "count": 1,
+          "role": "近战"
+        },
+        {
+          "enemy": "骷髅",
+          "count": 1,
+          "role": "炮灰"
+        }
+      ]
+    },
+    {
+      "id": "灵教净坛队",
+      "name": "灵教净坛队",
+      "tier": "精英",
+      "description": "净坛者督战加持，邪秽亡者充当圣战炮灰。",
+      "members": [
+        {
+          "enemy": "净坛者",
+          "count": 1,
+          "role": "前排",
+          "leader": true
+        },
+        {
+          "enemy": "邪秽亡者",
+          "count": 2,
+          "role": "炮灰"
+        }
+      ]
+    },
+    {
+      "id": "血裔狂暴队",
+      "name": "血裔狂暴队",
+      "tier": "精英",
+      "description": "两名嗜血者双线压阵，弓箭手远程支援。",
+      "members": [
+        {
+          "enemy": "血裔·嗜血者",
+          "count": 2,
+          "role": "近战"
+        },
+        {
+          "enemy": "骷髅弓箭手",
+          "count": 1,
+          "role": "远程"
+        }
+      ]
+    },
+    {
+      "id": "终焉惧像战团",
+      "name": "终焉惧像战团",
+      "tier": "Boss",
+      "description": "残影统帅战阵，感染者护卫左右，亡者填满两翼。",
+      "members": [
+        {
+          "enemy": "终焉惧像·残影",
+          "count": 1,
+          "role": "首领",
+          "leader": true
+        },
+        {
+          "enemy": "孢子感染者",
+          "count": 1,
+          "role": "护卫"
+        },
+        {
+          "enemy": "邪秽亡者",
+          "count": 2,
+          "role": "炮灰"
+        }
+      ]
+    },
+    {
+      "id": "牧首影卫",
+      "name": "牧首影卫",
+      "tier": "Boss",
+      "description": "牧首之影亲临，净坛者与亡者组成圣痕卫队。",
+      "members": [
+        {
+          "enemy": "拉提奥尼斯·牧首之影",
+          "count": 1,
+          "role": "首领",
+          "leader": true
+        },
+        {
+          "enemy": "净坛者",
+          "count": 1,
+          "role": "护卫"
+        },
+        {
+          "enemy": "邪秽亡者",
+          "count": 1,
+          "role": "炮灰"
+        }
+      ]
+    },
+    {
+      "id": "深渊血宴",
+      "name": "深渊血宴",
+      "tier": "Boss",
+      "description": "牧首之影携两名血裔亲卫赴宴。",
+      "members": [
+        {
+          "enemy": "拉提奥尼斯·牧首之影",
+          "count": 1,
+          "role": "首领",
+          "leader": true
+        },
+        {
+          "enemy": "血裔·渴血者",
+          "count": 1,
+          "role": "护卫"
+        },
+        {
+          "enemy": "血裔·嗜血者",
+          "count": 1,
+          "role": "近战"
+        }
+      ]
+    },
+    {
+      "id": "惧像蛛群",
+      "name": "惧像蛛群",
+      "tier": "Boss",
+      "description": "残影降临时蛛群随之倾巢而出。",
+      "members": [
+        {
+          "enemy": "终焉惧像·残影",
+          "count": 1,
+          "role": "首领",
+          "leader": true
+        },
+        {
+          "enemy": "暴食蜘蛛",
+          "count": 1,
+          "role": "远程"
+        },
+        {
+          "enemy": "暴食蜘蛛幼体",
+          "count": 1,
+          "role": "近战"
+        }
+      ]
+    }
+  ]
+}

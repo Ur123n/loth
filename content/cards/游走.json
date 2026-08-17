@@ -1,0 +1,33 @@
+{
+  "id": "游走",
+  "name": "游走",
+  "category": "通用卡牌",
+  "path": "",
+  "card_type": "行动",
+  "cost": 1,
+  "load": 1,
+  "target_type": "Self",
+  "range": 0,
+  "area": 0,
+  "discard_on_use": false,
+  "keywords": [],
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "description": "",
+  "effects": [
+    {
+      "logic": "move",
+      "distance": 1
+    },
+    {
+      "logic": "lose_hp",
+      "value": 1,
+      "target": "self"
+    },
+    {
+      "logic": "gain_energy",
+      "value": 2
+    }
+  ]
+}

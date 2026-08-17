@@ -1,0 +1,26 @@
+{
+  "id": "蓄力",
+  "name": "蓄力",
+  "category": "通用卡牌",
+  "path": "",
+  "card_type": "行动",
+  "cost": 0,
+  "load": 1,
+  "target_type": "Self",
+  "range": 0,
+  "area": 0,
+  "discard_on_use": false,
+  "keywords": [
+    "消耗"
+  ],
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "description": "",
+  "effects": [
+    {
+      "logic": "gain_energy",
+      "value": 1
+    }
+  ]
+}

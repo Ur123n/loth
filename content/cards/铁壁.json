@@ -1,0 +1,27 @@
+{
+  "id": "铁壁",
+  "name": "铁壁",
+  "category": "通用卡牌",
+  "path": "",
+  "card_type": "行动",
+  "cost": 1,
+  "load": 1,
+  "target_type": "Self",
+  "range": 0,
+  "area": 0,
+  "discard_on_use": false,
+  "keywords": [
+    "保留"
+  ],
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "description": "",
+  "effects": [
+    {
+      "logic": "defense",
+      "value": 7,
+      "alt_value": 0
+    }
+  ]
+}

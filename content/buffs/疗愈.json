@@ -1,0 +1,18 @@
+{
+  "id": "疗愈",
+  "name": "疗愈",
+  "alignment": "正面",
+  "type": "层数增益",
+  "value": 1,
+  "base_duration": 10,
+  "duration_per_stack": 0,
+  "decay_per_turn": false,
+  "decay_amount": 1,
+  "consumed_on_trigger": false,
+  "trigger_timing": "下回合角色行动阶段",
+  "trigger_condition": "角色行动阶段",
+  "description": "行动阶段恢复等于层数的生命值，每次触发层数减一",
+  "icon": "",
+  "art": "",
+  "animation": ""
+}

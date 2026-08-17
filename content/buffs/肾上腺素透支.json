@@ -1,0 +1,18 @@
+{
+  "id": "肾上腺素透支",
+  "name": "肾上腺素透支",
+  "alignment": "负面",
+  "type": "即时",
+  "value": -2,
+  "base_duration": 3,
+  "duration_per_stack": 0,
+  "decay_per_turn": false,
+  "decay_amount": 1,
+  "consumed_on_trigger": true,
+  "trigger_timing": "下回合抽牌时",
+  "trigger_condition": "下回合抽牌",
+  "description": "3回合后，抽牌阶段少抽2张牌，触发后消失",
+  "icon": "",
+  "art": "",
+  "animation": ""
+}

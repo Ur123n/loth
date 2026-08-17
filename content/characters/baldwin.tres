@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="CharacterData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://core/character/character_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+character_name = "鲍德温"
+path_name = "孢子卫士"
+level = 0
+strength = 10
+agility = 10
+endurance = 10
+willpower = 10
+strength_damage_bonus = 0.000
+base_hp = 100
+endurance_hp_bonus = 5
+block_color = Color(0.851, 0.420, 0.361, 1)
+icon_path = ""
+portrait_path = ""
+art_path = ""
+animation_path = ""

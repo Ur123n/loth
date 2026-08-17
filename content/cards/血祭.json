@@ -1,0 +1,31 @@
+{
+  "id": "血祭",
+  "name": "血祭",
+  "category": "通用卡牌",
+  "path": "",
+  "card_type": "行动",
+  "cost": 1,
+  "load": 1,
+  "target_type": "Self",
+  "range": 1,
+  "area": 0,
+  "discard_on_use": false,
+  "keywords": [
+    "消耗"
+  ],
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "description": "",
+  "effects": [
+    {
+      "logic": "lose_hp",
+      "value": 2,
+      "target": "self"
+    },
+    {
+      "logic": "gain_energy",
+      "value": 3
+    }
+  ]
+}

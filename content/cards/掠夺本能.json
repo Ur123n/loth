@@ -1,0 +1,30 @@
+{
+  "id": "掠夺本能",
+  "name": "掠夺本能",
+  "category": "道途专属卡牌",
+  "path": "侠盗",
+  "card_type": "行动",
+  "cost": 0,
+  "load": 1,
+  "target_type": "Self",
+  "range": 0,
+  "area": 0,
+  "discard_on_use": false,
+  "keywords": [],
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "description": "",
+  "effects": [
+    {
+      "logic": "move",
+      "distance": 1
+    },
+    {
+      "logic": "buff",
+      "target": "self",
+      "buff_type": "预抽牌",
+      "duration": 0
+    }
+  ]
+}

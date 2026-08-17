@@ -1,0 +1,31 @@
+{
+  "id": "腐蚀孢子",
+  "name": "腐蚀孢子",
+  "category": "道途专属卡牌",
+  "path": "孢子卫士",
+  "card_type": "攻击",
+  "cost": 1,
+  "load": 1,
+  "target_type": "Enemy",
+  "range": 1,
+  "area": 0,
+  "discard_on_use": false,
+  "keywords": [],
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "description": "",
+  "effects": [
+    {
+      "logic": "attack",
+      "value": 4,
+      "attack_range": 1
+    },
+    {
+      "logic": "buff",
+      "target": "enemy",
+      "buff_type": "易伤",
+      "duration": 2
+    }
+  ]
+}

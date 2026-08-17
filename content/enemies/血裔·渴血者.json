@@ -1,0 +1,39 @@
+{
+  "id": "血裔·渴血者",
+  "name": "血裔·渴血者",
+  "hp_min": 50,
+  "hp_max": 65,
+  "attack_min": 9,
+  "attack_max": 11,
+  "attack_range": 1,
+  "move_points": 2,
+  "agility": 7,
+  "ai": "靠近",
+  "archetype": "刺客",
+  "coin_min": 22,
+  "coin_max": 35,
+  "exp": 42,
+  "loot_table": [
+    {
+      "item": "血酿残渣",
+      "chance": 70,
+      "count": 1
+    },
+    {
+      "item": "铜戒指",
+      "chance": 25,
+      "count": 1
+    },
+    {
+      "item": "皮甲",
+      "chance": 25,
+      "count": 1
+    }
+  ],
+  "tier": "精英",
+  "color": "#a83838",
+  "description": "尚未陷入嗜血狂暴的血裔战士，保留着优雅与残忍的猎杀技巧。",
+  "icon": "",
+  "art": "",
+  "animation": ""
+}

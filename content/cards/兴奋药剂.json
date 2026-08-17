@@ -1,0 +1,33 @@
+{
+  "id": "兴奋药剂",
+  "name": "兴奋药剂",
+  "category": "道途专属卡牌",
+  "path": "解剖学者",
+  "card_type": "行动",
+  "cost": 1,
+  "load": 1,
+  "target_type": "Self",
+  "range": 0,
+  "area": 0,
+  "discard_on_use": false,
+  "keywords": [],
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "description": "",
+  "effects": [
+    {
+      "logic": "buff",
+      "target": "self",
+      "buff_type": "疗愈",
+      "duration": 0,
+      "stacks": 3
+    },
+    {
+      "logic": "buff",
+      "target": "self",
+      "buff_type": "预抽牌",
+      "duration": 0
+    }
+  ]
+}

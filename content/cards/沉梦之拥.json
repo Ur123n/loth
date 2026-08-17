@@ -1,0 +1,33 @@
+{
+  "id": "沉梦之拥",
+  "name": "沉梦之拥",
+  "category": "道途专属卡牌",
+  "path": "梦魇行者",
+  "card_type": "行动",
+  "cost": 1,
+  "load": 1,
+  "target_type": "Self",
+  "range": 0,
+  "area": 0,
+  "discard_on_use": false,
+  "keywords": [
+    "沉梦"
+  ],
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "description": "",
+  "effects": [
+    {
+      "logic": "defense",
+      "value": 5
+    },
+    {
+      "logic": "buff",
+      "target": "self",
+      "buff_type": "疗愈",
+      "duration": 0,
+      "stacks": 2
+    }
+  ]
+}

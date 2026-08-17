@@ -1,0 +1,49 @@
+{
+  "id": "拉提奥尼斯·牧首之影",
+  "name": "拉提奥尼斯·牧首之影",
+  "hp_min": 130,
+  "hp_max": 160,
+  "attack_min": 12,
+  "attack_max": 16,
+  "attack_range": 2,
+  "move_points": 3,
+  "agility": 9,
+  "ai": "靠近",
+  "archetype": "首领",
+  "coin_min": 80,
+  "coin_max": 120,
+  "exp": 150,
+  "loot_table": [
+    {
+      "item": "巨兽残片",
+      "chance": 60,
+      "count": 1
+    },
+    {
+      "item": "污浊晶核",
+      "chance": 60,
+      "count": 1
+    },
+    {
+      "item": "圣水",
+      "chance": 50,
+      "count": 1
+    },
+    {
+      "item": "铁剑",
+      "chance": 40,
+      "count": 1
+    },
+    {
+      "item": "铜戒指",
+      "chance": 40,
+      "count": 1
+    }
+  ],
+  "tier": "Boss",
+  "color": "#3f3a52",
+  "description": "灵教牧首现世之影：终焉惧像披着人皮布道，以理智为食，吞噬所有痕迹。",
+  "icon": "",
+  "art": "",
+  "animation": ""
+}

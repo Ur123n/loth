@@ -1,0 +1,29 @@
+{
+  "id": "终焉之梦",
+  "name": "终焉之梦",
+  "category": "道途专属卡牌",
+  "path": "梦魇行者",
+  "card_type": "攻击",
+  "cost": 3,
+  "load": 3,
+  "target_type": "Enemy",
+  "range": 1,
+  "area": 0,
+  "discard_on_use": false,
+  "keywords": [
+    "灾梦"
+  ],
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "description": "",
+  "effects": [
+    {
+      "logic": "attack",
+      "value": 64,
+      "attack_range": 3,
+      "pierce": false,
+      "alt_value": 0
+    }
+  ]
+}

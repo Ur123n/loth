@@ -1,0 +1,39 @@
+{
+  "id": "孢子感染者",
+  "name": "孢子感染者",
+  "hp_min": 22,
+  "hp_max": 28,
+  "attack_min": 5,
+  "attack_max": 7,
+  "attack_range": 1,
+  "move_points": 2,
+  "agility": 4,
+  "ai": "靠近",
+  "archetype": "狂战士",
+  "coin_min": 6,
+  "coin_max": 12,
+  "exp": 16,
+  "loot_table": [
+    {
+      "item": "草药",
+      "chance": 40,
+      "count": 1
+    },
+    {
+      "item": "污浊晶核",
+      "chance": 30,
+      "count": 1
+    },
+    {
+      "item": "肉块",
+      "chance": 30,
+      "count": 1
+    }
+  ],
+  "tier": "普通",
+  "color": "#a3a05a",
+  "description": "被超凡污染感染的人类，真菌在皮肤下蔓延，凶悍而迟缓。",
+  "icon": "",
+  "art": "",
+  "animation": ""
+}

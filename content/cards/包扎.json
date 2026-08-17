@@ -1,0 +1,27 @@
+{
+  "id": "包扎",
+  "name": "包扎",
+  "category": "通用卡牌",
+  "path": "",
+  "card_type": "行动",
+  "cost": 1,
+  "load": 1,
+  "target_type": "Self",
+  "range": 0,
+  "area": 0,
+  "discard_on_use": false,
+  "keywords": [],
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "description": "",
+  "effects": [
+    {
+      "logic": "buff",
+      "target": "self",
+      "buff_type": "疗愈",
+      "duration": 0,
+      "stacks": 3
+    }
+  ]
+}

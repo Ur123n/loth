@@ -1,0 +1,27 @@
+{
+  "id": "测试关键词_1786560117989",
+  "name": "测试关键词",
+  "category": "通用卡牌",
+  "path": "",
+  "card_type": "攻击",
+  "cost": 1,
+  "load": 1,
+  "target_type": "Self",
+  "range": 0,
+  "area": 0,
+  "discard_on_use": false,
+  "keywords": [
+    "消耗",
+    "虚无",
+    "固有"
+  ],
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [
+    {
+      "logic": "draw",
+      "value": 2
+    }
+  ]
+}

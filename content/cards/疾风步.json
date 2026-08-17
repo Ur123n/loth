@@ -1,0 +1,28 @@
+{
+  "id": "疾风步",
+  "name": "疾风步",
+  "category": "通用卡牌",
+  "path": "",
+  "card_type": "行动",
+  "cost": 0,
+  "load": 1,
+  "target_type": "Self",
+  "range": 0,
+  "area": 0,
+  "discard_on_use": false,
+  "keywords": [],
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "description": "",
+  "effects": [
+    {
+      "logic": "move",
+      "distance": 2
+    },
+    {
+      "logic": "draw",
+      "value": 1
+    }
+  ]
+}

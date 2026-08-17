@@ -1,0 +1,30 @@
+{
+  "id": "夹击",
+  "name": "夹击",
+  "category": "通用卡牌",
+  "path": "",
+  "card_type": "攻击",
+  "cost": 1,
+  "load": 1,
+  "target_type": "Enemy",
+  "range": 1,
+  "area": 0,
+  "discard_on_use": false,
+  "keywords": [],
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "description": "",
+  "effects": [
+    {
+      "logic": "move",
+      "distance": 1
+    },
+    {
+      "logic": "attack",
+      "value": 8,
+      "attack_range": 1,
+      "alt_value": 13
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "id": "手术刀",
+  "name": "手术刀",
+  "category": "道途专属卡牌",
+  "path": "解剖学者",
+  "card_type": "攻击",
+  "cost": 0,
+  "load": 1,
+  "target_type": "Enemy",
+  "range": 1,
+  "area": 0,
+  "discard_on_use": false,
+  "keywords": [
+    "消耗"
+  ],
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "description": "",
+  "effects": [
+    {
+      "logic": "attack",
+      "value": 6,
+      "attack_range": 1,
+      "pierce": true,
+      "alt_value": 0
+    },
+    {
+      "logic": "draw",
+      "value": 1
+    }
+  ]
+}

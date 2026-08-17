@@ -1,0 +1,10 @@
+{
+  "id": "铁剑",
+  "name": "铁剑",
+  "description": "基础铁剑，可装备或出售。",
+  "shape": "2x1",
+  "value": 30,
+  "icon": "",
+  "art": "",
+  "animation": ""
+}

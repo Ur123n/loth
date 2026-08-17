@@ -1,0 +1,25 @@
+{
+  "id": "巨剑挥砍",
+  "name": "巨剑挥砍",
+  "category": "道途专属卡牌",
+  "path": "孢子卫士",
+  "card_type": "攻击",
+  "cost": 2,
+  "load": 2,
+  "target_type": "Enemy",
+  "range": 1,
+  "area": 0,
+  "discard_on_use": false,
+  "keywords": [],
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "description": "",
+  "effects": [
+    {
+      "logic": "attack",
+      "value": 8,
+      "attack_range": 1
+    }
+  ]
+}

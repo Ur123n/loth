@@ -1,0 +1,33 @@
+{
+  "id": "肾上腺素",
+  "name": "肾上腺素",
+  "category": "道途专属卡牌",
+  "path": "解剖学者",
+  "card_type": "行动",
+  "cost": 0,
+  "load": 1,
+  "target_type": "Self",
+  "range": 0,
+  "area": 0,
+  "discard_on_use": false,
+  "keywords": [
+    "消耗"
+  ],
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "description": "",
+  "effects": [
+    {
+      "logic": "draw",
+      "value": 3
+    },
+    {
+      "logic": "buff",
+      "target": "self",
+      "buff_type": "肾上腺素透支",
+      "duration": 3,
+      "stacks": -2
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "conditions": [
+    {"name": "敌人数量在攻击范围内", "type": "enemies_in_range", "params": [{"key": "count", "name": "数量", "kind": "int", "default": 1, "min": 0, "max": 12}]},
+    {"name": "本回合已移动", "type": "moved_this_turn", "params": []},
+    {"name": "本回合未移动", "type": "not_moved_this_turn", "params": []},
+    {"name": "生命低于百分比", "type": "hp_below_pct", "params": [{"key": "pct", "name": "百分比", "kind": "int", "default": 50, "min": 1, "max": 100}]},
+    {"name": "手牌不少于", "type": "hand_size_at_least", "params": [{"key": "count", "name": "张数", "kind": "int", "default": 1, "min": 0, "max": 20}]},
+    {"name": "费用不少于", "type": "energy_at_least", "params": [{"key": "value", "name": "费用", "kind": "int", "default": 1, "min": 0, "max": 20}]},
+    {"name": "自身持有buff", "type": "has_buff", "params": [{"key": "buff_name", "name": "buff名", "kind": "str", "default": ""}]},
+    {"name": "场上敌人不少于", "type": "enemies_alive_at_least", "params": [{"key": "count", "name": "数量", "kind": "int", "default": 1, "min": 0, "max": 12}]},
+    {"name": "上一张牌带词条", "type": "last_card_keyword", "params": [{"key": "keyword", "name": "词条", "kind": "str", "default": ""}]}
+  ]
+}

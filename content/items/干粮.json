@@ -1,0 +1,10 @@
+{
+  "id": "干粮",
+  "name": "干粮",
+  "description": "便于携带的干粮，战斗间隙补充体力。",
+  "shape": "1x1",
+  "value": 8,
+  "icon": "",
+  "art": "",
+  "animation": ""
+}

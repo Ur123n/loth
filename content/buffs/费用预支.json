@@ -1,0 +1,18 @@
+{
+  "id": "费用预支",
+  "name": "费用预支",
+  "alignment": "正面",
+  "type": "层数增益",
+  "value": 1,
+  "base_duration": 1,
+  "duration_per_stack": 0,
+  "decay_per_turn": false,
+  "decay_amount": 1,
+  "consumed_on_trigger": true,
+  "trigger_timing": "下回合获得费用时",
+  "trigger_condition": "下回合获得费用",
+  "description": "下回合获得费用阶段额外获得等于层数的费用，触发后消失",
+  "icon": "",
+  "art": "",
+  "animation": ""
+}

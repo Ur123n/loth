@@ -1,0 +1,44 @@
+{
+  "id": "孢子巨人",
+  "name": "孢子巨人",
+  "hp_min": 55,
+  "hp_max": 70,
+  "attack_min": 9,
+  "attack_max": 12,
+  "attack_range": 1,
+  "move_points": 1,
+  "agility": 2,
+  "ai": "靠近",
+  "archetype": "狂战士",
+  "coin_min": 15,
+  "coin_max": 25,
+  "exp": 35,
+  "loot_table": [
+    {
+      "item": "污浊晶核",
+      "chance": 50,
+      "count": 1
+    },
+    {
+      "item": "兽皮",
+      "chance": 40,
+      "count": 1
+    },
+    {
+      "item": "草药",
+      "chance": 30,
+      "count": 1
+    },
+    {
+      "item": "皮甲",
+      "chance": 20,
+      "count": 1
+    }
+  ],
+  "tier": "精英",
+  "color": "#6d8f5a",
+  "description": "骨骼二次发育至两米五以上的巨大感染者，力量惊人。",
+  "icon": "",
+  "art": "",
+  "animation": ""
+}

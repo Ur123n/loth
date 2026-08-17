@@ -1,0 +1,27 @@
+{
+  "id": "兽性觉醒",
+  "name": "兽性觉醒",
+  "category": "道途专属卡牌",
+  "path": "梦魇行者",
+  "card_type": "攻击",
+  "cost": 2,
+  "load": 2,
+  "target_type": "Enemy",
+  "range": 1,
+  "area": 0,
+  "discard_on_use": false,
+  "keywords": [
+    "吸血"
+  ],
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "description": "",
+  "effects": [
+    {
+      "logic": "attack",
+      "value": 8,
+      "attack_range": 1
+    }
+  ]
+}

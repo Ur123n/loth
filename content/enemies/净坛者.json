@@ -1,0 +1,39 @@
+{
+  "id": "净坛者",
+  "name": "净坛者",
+  "hp_min": 24,
+  "hp_max": 30,
+  "attack_min": 5,
+  "attack_max": 7,
+  "attack_range": 1,
+  "move_points": 2,
+  "agility": 5,
+  "ai": "靠近",
+  "archetype": "狂战士",
+  "coin_min": 10,
+  "coin_max": 16,
+  "exp": 24,
+  "loot_table": [
+    {
+      "item": "圣水",
+      "chance": 40,
+      "count": 1
+    },
+    {
+      "item": "干粮",
+      "chance": 30,
+      "count": 1
+    },
+    {
+      "item": "铁头盔",
+      "chance": 15,
+      "count": 1
+    }
+  ],
+  "tier": "精英",
+  "color": "#8f6a3a",
+  "description": "灵教武装成员，体内嵌有“圣痕”，狂热而无所畏惧。",
+  "icon": "",
+  "art": "",
+  "animation": ""
+}

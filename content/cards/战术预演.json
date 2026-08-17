@@ -1,0 +1,29 @@
+{
+  "id": "战术预演",
+  "name": "战术预演",
+  "category": "通用卡牌",
+  "path": "",
+  "card_type": "行动",
+  "cost": 1,
+  "load": 1,
+  "target_type": "Self",
+  "range": 1,
+  "area": 0,
+  "discard_on_use": false,
+  "keywords": [],
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "description": "",
+  "effects": [
+    {
+      "logic": "draw",
+      "value": 3
+    },
+    {
+      "logic": "discard",
+      "value": 1,
+      "mode": "random"
+    }
+  ]
+}

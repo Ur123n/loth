@@ -1,0 +1,18 @@
+{
+  "id": "易伤",
+  "name": "易伤",
+  "alignment": "负面",
+  "type": "层数持续",
+  "value": 0,
+  "base_duration": 1,
+  "duration_per_stack": 1,
+  "decay_per_turn": true,
+  "decay_amount": 1,
+  "consumed_on_trigger": false,
+  "trigger_timing": "受到攻击时",
+  "trigger_condition": "受到攻击",
+  "description": "所受伤害＋50%",
+  "icon": "",
+  "art": "",
+  "animation": ""
+}

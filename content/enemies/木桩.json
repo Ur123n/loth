@@ -1,0 +1,23 @@
+{
+  "id": "木桩",
+  "name": "木桩",
+  "hp_min": 100,
+  "hp_max": 100,
+  "attack_min": 0,
+  "attack_max": 0,
+  "attack_range": 0,
+  "move_points": 0,
+  "agility": 5,
+  "ai": "无",
+  "archetype": "木桩",
+  "coin_min": 0,
+  "coin_max": 0,
+  "exp": 0,
+  "loot_table": [],
+  "tier": "普通",
+  "color": "#b8854a",
+  "description": "训练用木桩，无 AI。",
+  "icon": "",
+  "art": "",
+  "animation": ""
+}

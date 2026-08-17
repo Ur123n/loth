@@ -1,0 +1,29 @@
+{
+  "id": "拦截",
+  "name": "拦截",
+  "category": "通用卡牌",
+  "path": "",
+  "card_type": "攻击",
+  "cost": 1,
+  "load": 1,
+  "target_type": "Enemy",
+  "range": 1,
+  "area": 0,
+  "discard_on_use": false,
+  "keywords": [],
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "description": "",
+  "effects": [
+    {
+      "logic": "attack",
+      "value": 10,
+      "attack_range": 1
+    },
+    {
+      "logic": "knockback",
+      "value": 1
+    }
+  ]
+}

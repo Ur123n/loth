@@ -1,0 +1,11 @@
+[gd_scene load_steps=6 format=3]
+
+[ext_resource type="Script" path="res://core/world/main.gd" id="1"]
+[ext_resource type="Resource" path="res://content/characters/alice.tres" id="2"]
+[ext_resource type="Resource" path="res://content/characters/baldwin.tres" id="3"]
+[ext_resource type="Resource" path="res://content/characters/dismas.tres" id="4"]
+[ext_resource type="Resource" path="res://content/characters/kasha.tres" id="5"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1")
+party_characters = [ExtResource("2"), ExtResource("3"), ExtResource("4"), ExtResource("5")]

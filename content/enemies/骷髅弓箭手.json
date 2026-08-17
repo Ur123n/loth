@@ -1,0 +1,34 @@
+{
+  "id": "骷髅弓箭手",
+  "name": "骷髅弓箭手",
+  "hp_min": 17,
+  "hp_max": 21,
+  "attack_min": 4,
+  "attack_max": 6,
+  "attack_range": 3,
+  "move_points": 1,
+  "agility": 6,
+  "ai": "远离",
+  "archetype": "猎人",
+  "coin_min": 8,
+  "coin_max": 14,
+  "exp": 18,
+  "loot_table": [
+    {
+      "item": "骨头",
+      "chance": 60,
+      "count": 1
+    },
+    {
+      "item": "干粮",
+      "chance": 25,
+      "count": 1
+    }
+  ],
+  "tier": "普通",
+  "color": "#8fa8c8",
+  "description": "远程弓箭手，优先远离玩家。",
+  "icon": "",
+  "art": "",
+  "animation": ""
+}

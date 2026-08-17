@@ -1,0 +1,32 @@
+{
+  "id": "测试多逻辑_1786560724405",
+  "name": "测试多逻辑",
+  "category": "通用卡牌",
+  "path": "",
+  "card_type": "行动",
+  "cost": 2,
+  "load": 2,
+  "target_type": "Self",
+  "range": 0,
+  "area": 0,
+  "discard_on_use": false,
+  "keywords": [],
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [
+    {
+      "logic": "move",
+      "distance": 2
+    },
+    {
+      "logic": "defense",
+      "value": 3
+    },
+    {
+      "logic": "attack",
+      "value": 5,
+      "attack_range": 1
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://cr651e43aw1m0"
+
+[deps]
+
+files=["res://assets/hex_切片图格/图格清单.来源.translation", "res://assets/hex_切片图格/图格清单.尺寸.translation", "res://assets/hex_切片图格/图格清单.地形类型.translation", "res://assets/hex_切片图格/图格清单.建议分类.translation"]
+
+source_file="res://assets/hex_切片图格/图格清单.csv"
+dest_files=["res://assets/hex_切片图格/图格清单.来源.translation", "res://assets/hex_切片图格/图格清单.尺寸.translation", "res://assets/hex_切片图格/图格清单.地形类型.translation", "res://assets/hex_切片图格/图格清单.建议分类.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true

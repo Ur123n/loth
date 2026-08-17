@@ -1,0 +1,20 @@
+{
+  "id": "解剖学者",
+  "name": "解剖学者",
+  "character": "卡莎",
+  "description": "研究人体的大学生，对药理与解剖了如指掌。她以手术刀般的精准剖析敌人，用药剂维系队伍。",
+  "passive": {
+    "name": "药理精通",
+    "description": "对中毒的敌人造成额外1（等级每五级加一）点伤害",
+    "trigger_timing": "造成攻击伤害时",
+    "value": 0
+  },
+  "starter_cards": [
+    "腐蚀试剂",
+    "兴奋药剂",
+    "手术刀"
+  ],
+  "icon": "",
+  "art": "",
+  "animation": ""
+}

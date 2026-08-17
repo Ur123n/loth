@@ -1,0 +1,39 @@
+{
+  "id": "暴食母蛛",
+  "name": "暴食母蛛",
+  "hp_min": 60,
+  "hp_max": 75,
+  "attack_min": 9,
+  "attack_max": 12,
+  "attack_range": 1,
+  "move_points": 2,
+  "agility": 6,
+  "ai": "靠近",
+  "archetype": "首领",
+  "coin_min": 20,
+  "coin_max": 32,
+  "exp": 45,
+  "loot_table": [
+    {
+      "item": "蛛丝",
+      "chance": 80,
+      "count": 1
+    },
+    {
+      "item": "肉块",
+      "chance": 60,
+      "count": 1
+    },
+    {
+      "item": "草药",
+      "chance": 30,
+      "count": 1
+    }
+  ],
+  "tier": "精英",
+  "color": "#5a3f72",
+  "description": "盘踞巢穴深处的母蛛，蛛网覆盖整个洞穴，捕猎耐心而致命。",
+  "icon": "",
+  "art": "",
+  "animation": ""
+}

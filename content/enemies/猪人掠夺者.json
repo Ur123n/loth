@@ -1,0 +1,44 @@
+{
+  "id": "猪人掠夺者",
+  "name": "猪人掠夺者",
+  "hp_min": 30,
+  "hp_max": 38,
+  "attack_min": 6,
+  "attack_max": 8,
+  "attack_range": 1,
+  "move_points": 2,
+  "agility": 5,
+  "ai": "靠近",
+  "archetype": "士兵",
+  "coin_min": 10,
+  "coin_max": 18,
+  "exp": 25,
+  "loot_table": [
+    {
+      "item": "肉块",
+      "chance": 45,
+      "count": 1
+    },
+    {
+      "item": "兽皮",
+      "chance": 40,
+      "count": 1
+    },
+    {
+      "item": "干粮",
+      "chance": 30,
+      "count": 1
+    },
+    {
+      "item": "铁剑",
+      "chance": 15,
+      "count": 1
+    }
+  ],
+  "tier": "普通",
+  "color": "#b07a5a",
+  "description": "有组织的猪人巢穴战士，擅长夜间突袭营寨。",
+  "icon": "",
+  "art": "",
+  "animation": ""
+}

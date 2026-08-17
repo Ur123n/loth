@@ -1,0 +1,34 @@
+{
+  "id": "腐蚀试剂",
+  "name": "腐蚀试剂",
+  "category": "道途专属卡牌",
+  "path": "解剖学者",
+  "card_type": "攻击",
+  "cost": 1,
+  "load": 1,
+  "target_type": "Enemy",
+  "range": 1,
+  "area": 0,
+  "discard_on_use": false,
+  "keywords": [],
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "description": "",
+  "effects": [
+    {
+      "logic": "attack",
+      "value": 6,
+      "attack_range": 1,
+      "pierce": false,
+      "alt_value": 0
+    },
+    {
+      "logic": "buff",
+      "target": "enemy",
+      "buff_type": "中毒",
+      "duration": 2,
+      "stacks": 3
+    }
+  ]
+}

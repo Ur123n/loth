@@ -1,0 +1,21 @@
+{
+  "id": "侠盗",
+  "name": "侠盗",
+  "character": "迪马斯",
+  "description": "出身强盗却恪守道义的流浪者。手快、眼准、心软，劫富济贫是他的赎罪，也是他的本能。",
+  "passive": {
+    "name": "先下手为强",
+    "description": "每场战斗第一回合额外抽 2张牌，同时移动力加1",
+    "trigger_timing": "抽牌时",
+    "value": 0
+  },
+  "starter_cards": [
+    "双枪连射",
+    "掠夺本能",
+    "弹雨",
+    "顺手牵羊"
+  ],
+  "icon": "",
+  "art": "",
+  "animation": ""
+}

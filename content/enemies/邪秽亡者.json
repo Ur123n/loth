@@ -1,0 +1,34 @@
+{
+  "id": "邪秽亡者",
+  "name": "邪秽亡者",
+  "hp_min": 15,
+  "hp_max": 20,
+  "attack_min": 3,
+  "attack_max": 5,
+  "attack_range": 1,
+  "move_points": 1,
+  "agility": 3,
+  "ai": "靠近",
+  "archetype": "鲁莽",
+  "coin_min": 4,
+  "coin_max": 8,
+  "exp": 14,
+  "loot_table": [
+    {
+      "item": "肉块",
+      "chance": 50,
+      "count": 1
+    },
+    {
+      "item": "骨头",
+      "chance": 40,
+      "count": 1
+    }
+  ],
+  "tier": "普通",
+  "color": "#6b8f71",
+  "description": "未焚烧的尸体被残魂占据，没有智力，只会本能撕咬活物。",
+  "icon": "",
+  "art": "",
+  "animation": ""
+}

@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="CharacterData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://core/character/character_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+character_name = "卡莎"
+path_name = "解剖学者"
+level = 0
+strength = 10
+agility = 10
+endurance = 10
+willpower = 10
+strength_damage_bonus = 0.000
+base_hp = 100
+endurance_hp_bonus = 5
+block_color = Color(0.722, 0.478, 0.851, 1)
+icon_path = ""
+portrait_path = ""
+art_path = ""
+animation_path = ""

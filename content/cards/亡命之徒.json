@@ -1,0 +1,36 @@
+{
+  "id": "亡命之徒",
+  "name": "亡命之徒",
+  "category": "道途专属卡牌",
+  "path": "侠盗",
+  "card_type": "攻击",
+  "cost": 2,
+  "load": 2,
+  "target_type": "Enemy",
+  "range": 1,
+  "area": 0,
+  "discard_on_use": false,
+  "keywords": [
+    "消耗"
+  ],
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "description": "",
+  "effects": [
+    {
+      "logic": "attack",
+      "value": 30,
+      "attack_range": 1,
+      "pierce": false,
+      "alt_value": 0
+    },
+    {
+      "logic": "buff",
+      "target": "self",
+      "buff_type": "易伤",
+      "duration": 2,
+      "stacks": 1
+    }
+  ]
+}

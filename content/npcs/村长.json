@@ -1,0 +1,40 @@
+{
+  "id": "村长",
+  "name": "村长",
+  "description": "村庄的守望者，知晓许多旧事。",
+  "color": "#5c7aa0",
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "ai": "待机",
+  "interaction": [
+    "打招呼",
+    "询问近况"
+  ],
+  "dialogue": [
+    {
+      "id": "start",
+      "text": "年轻人，最近村里不太平。",
+      "options": [
+        {
+          "text": "发生了什么？",
+          "next": "news"
+        },
+        {
+          "text": "告辞。",
+          "next": ""
+        }
+      ]
+    },
+    {
+      "id": "news",
+      "text": "听说山里有骷髅出没。",
+      "options": [
+        {
+          "text": "我去看看。",
+          "next": ""
+        }
+      ]
+    }
+  ]
+}

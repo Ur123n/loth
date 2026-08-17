@@ -1,0 +1,44 @@
+{
+  "id": "血裔·嗜血者",
+  "name": "血裔·嗜血者",
+  "hp_min": 42,
+  "hp_max": 52,
+  "attack_min": 8,
+  "attack_max": 11,
+  "attack_range": 1,
+  "move_points": 2,
+  "agility": 6,
+  "ai": "靠近",
+  "archetype": "狂战士",
+  "coin_min": 15,
+  "coin_max": 25,
+  "exp": 35,
+  "loot_table": [
+    {
+      "item": "血酿残渣",
+      "chance": 60,
+      "count": 1
+    },
+    {
+      "item": "肉块",
+      "chance": 40,
+      "count": 1
+    },
+    {
+      "item": "铜戒指",
+      "chance": 20,
+      "count": 1
+    },
+    {
+      "item": "皮甲",
+      "chance": 20,
+      "count": 1
+    }
+  ],
+  "tier": "精英",
+  "color": "#a83838",
+  "description": "饮下猩红血酿的血裔，化作理智全无的狂暴绞肉机。",
+  "icon": "",
+  "art": "",
+  "animation": ""
+}

@@ -1,0 +1,24 @@
+{
+  "id": "测试攻击_1786560724405",
+  "name": "测试攻击",
+  "category": "通用卡牌",
+  "path": "",
+  "card_type": "攻击",
+  "cost": 1,
+  "load": 2,
+  "target_type": "Enemy",
+  "range": 2,
+  "area": 0,
+  "discard_on_use": false,
+  "keywords": [],
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [
+    {
+      "logic": "attack",
+      "value": 7,
+      "attack_range": 2
+    }
+  ]
+}

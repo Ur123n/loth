@@ -1,0 +1,30 @@
+{
+  "id": "孢子硬化",
+  "name": "孢子硬化",
+  "category": "道途专属卡牌",
+  "path": "孢子卫士",
+  "card_type": "行动",
+  "cost": 1,
+  "load": 1,
+  "target_type": "Self",
+  "range": 0,
+  "area": 0,
+  "discard_on_use": false,
+  "keywords": [],
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "description": "",
+  "effects": [
+    {
+      "logic": "defense",
+      "value": 5
+    },
+    {
+      "logic": "buff",
+      "target": "self",
+      "buff_type": "预格挡",
+      "duration": 0
+    }
+  ]
+}

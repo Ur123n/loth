@@ -1,0 +1,43 @@
+﻿文件名,来源,尺寸,地形类型,建议分类
+hex_平坦_无描边/hex_平坦_00_沙漠沙地.png,180+ Seamless Hex Tiles(Flat 无描边),128x128,沙漠沙地,平坦地面
+hex_平坦_无描边/hex_平坦_01_沙地变体.png,180+ Seamless Hex Tiles(Flat 无描边),128x128,沙地变体,平坦地面
+hex_平坦_无描边/hex_平坦_02_泥泞岩土.png,180+ Seamless Hex Tiles(Flat 无描边),128x128,泥泞岩土,平坦地面
+hex_平坦_无描边/hex_平坦_03_泥土.png,180+ Seamless Hex Tiles(Flat 无描边),128x128,泥土,平坦地面
+hex_平坦_无描边/hex_平坦_04_深色泥土.png,180+ Seamless Hex Tiles(Flat 无描边),128x128,深色泥土,平坦地面
+hex_平坦_无描边/hex_平坦_05_岩石土.png,180+ Seamless Hex Tiles(Flat 无描边),128x128,岩石土,平坦地面
+hex_平坦_无描边/hex_平坦_06_沙土.png,180+ Seamless Hex Tiles(Flat 无描边),128x128,沙土,平坦地面
+hex_平坦_无描边/hex_平坦_07_浅色泥土.png,180+ Seamless Hex Tiles(Flat 无描边),128x128,浅色泥土,平坦地面
+hex_平坦_无描边/hex_平坦_08_森林草地.png,180+ Seamless Hex Tiles(Flat 无描边),128x128,森林草地,平坦地面
+hex_平坦_无描边/hex_平坦_09_火山岩.png,180+ Seamless Hex Tiles(Flat 无描边),128x128,火山岩,平坦地面
+hex_平坦_无描边/hex_平坦_10_熔岩沙.png,180+ Seamless Hex Tiles(Flat 无描边),128x128,熔岩沙,平坦地面
+hex_平坦_无描边/hex_平坦_11_水面.png,180+ Seamless Hex Tiles(Flat 无描边),128x128,水面,平坦地面
+hex_立体_无描边/hex_立体_00_沙漠沙地.png,180+ Seamless Hex Tiles(Thick 无描边),128x144,沙漠沙地,高地/立体地形
+hex_立体_无描边/hex_立体_01_沙地变体.png,180+ Seamless Hex Tiles(Thick 无描边),128x144,沙地变体,高地/立体地形
+hex_立体_无描边/hex_立体_02_泥泞岩土.png,180+ Seamless Hex Tiles(Thick 无描边),128x144,泥泞岩土,高地/立体地形
+hex_立体_无描边/hex_立体_03_泥土.png,180+ Seamless Hex Tiles(Thick 无描边),128x144,泥土,高地/立体地形
+hex_立体_无描边/hex_立体_04_深色泥土.png,180+ Seamless Hex Tiles(Thick 无描边),128x144,深色泥土,高地/立体地形
+hex_立体_无描边/hex_立体_05_岩石土.png,180+ Seamless Hex Tiles(Thick 无描边),128x144,岩石土,高地/立体地形
+hex_立体_无描边/hex_立体_06_沙土.png,180+ Seamless Hex Tiles(Thick 无描边),128x144,沙土,高地/立体地形
+hex_立体_无描边/hex_立体_07_浅色泥土.png,180+ Seamless Hex Tiles(Thick 无描边),128x144,浅色泥土,高地/立体地形
+hex_立体_无描边/hex_立体_08_森林草地.png,180+ Seamless Hex Tiles(Thick 无描边),128x144,森林草地,高地/立体地形
+hex_立体_无描边/hex_立体_09_火山岩.png,180+ Seamless Hex Tiles(Thick 无描边),128x144,火山岩,高地/立体地形
+hex_立体_无描边/hex_立体_10_熔岩沙.png,180+ Seamless Hex Tiles(Thick 无描边),128x144,熔岩沙,高地/立体地形
+hex_立体_无描边/hex_立体_11_水面.png,180+ Seamless Hex Tiles(Thick 无描边),128x144,水面,高地/立体地形
+hex_bonus/hex_bonus_00_泥岩.png,180+ Seamless Hex Tiles(Bonus),128x144,泥岩,地面/水面/熔岩混合
+hex_bonus/hex_bonus_01_泥岩变体.png,180+ Seamless Hex Tiles(Bonus),128x144,泥岩变体,地面/水面/熔岩混合
+hex_bonus/hex_bonus_02_岩石火山.png,180+ Seamless Hex Tiles(Bonus),128x144,岩石火山,地面/水面/熔岩混合
+hex_bonus/hex_bonus_03_泥土.png,180+ Seamless Hex Tiles(Bonus),128x144,泥土,地面/水面/熔岩混合
+hex_bonus/hex_bonus_04_水面浅滩.png,180+ Seamless Hex Tiles(Bonus),128x144,水面浅滩,地面/水面/熔岩混合
+hex_bonus/hex_bonus_05_水面.png,180+ Seamless Hex Tiles(Bonus),128x144,水面,地面/水面/熔岩混合
+hex_bonus/hex_bonus_06_沙地.png,180+ Seamless Hex Tiles(Bonus),128x144,沙地,地面/水面/熔岩混合
+hex_bonus/hex_bonus_07_沙地变体.png,180+ Seamless Hex Tiles(Bonus),128x144,沙地变体,地面/水面/熔岩混合
+hex_bonus/hex_bonus_08_沙土岩.png,180+ Seamless Hex Tiles(Bonus),128x144,沙土岩,地面/水面/熔岩混合
+hex_bonus/hex_bonus_09_火山岩.png,180+ Seamless Hex Tiles(Bonus),128x144,火山岩,地面/水面/熔岩混合
+hex_bonus/hex_bonus_10_火山岩变体.png,180+ Seamless Hex Tiles(Bonus),128x144,火山岩变体,地面/水面/熔岩混合
+hex_bonus/hex_bonus_11_熔岩.png,180+ Seamless Hex Tiles(Bonus),128x144,熔岩,地面/水面/熔岩混合
+hex_bonus/hex_bonus_12_草地岩石.png,180+ Seamless Hex Tiles(Bonus),128x144,草地岩石,地面/水面/熔岩混合
+hex_bonus/hex_bonus_13_草地.png,180+ Seamless Hex Tiles(Bonus),128x144,草地,地面/水面/熔岩混合
+hex_bonus/hex_bonus_14_森林.png,180+ Seamless Hex Tiles(Bonus),128x144,森林,地面/水面/熔岩混合
+hex_bonus/hex_bonus_15_混合过渡.png,180+ Seamless Hex Tiles(Bonus),128x144,混合过渡,地面/水面/熔岩混合
+hex_bonus/hex_bonus_16_水面.png,180+ Seamless Hex Tiles(Bonus),128x144,水面,地面/水面/熔岩混合
+hex_bonus/hex_bonus_17_深水.png,180+ Seamless Hex Tiles(Bonus),128x144,深水,地面/水面/熔岩混合

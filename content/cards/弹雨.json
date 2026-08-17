@@ -1,0 +1,35 @@
+{
+  "id": "弹雨",
+  "name": "弹雨",
+  "category": "道途专属卡牌",
+  "path": "侠盗",
+  "card_type": "攻击",
+  "cost": 1,
+  "load": 1,
+  "target_type": "Enemy",
+  "range": 1,
+  "area": 0,
+  "discard_on_use": false,
+  "keywords": [],
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "description": "",
+  "effects": [
+    {
+      "logic": "attack",
+      "value": 2,
+      "attack_range": 1
+    },
+    {
+      "logic": "attack",
+      "value": 2,
+      "attack_range": 1
+    },
+    {
+      "logic": "add_to_hand",
+      "card": "小刀",
+      "value": 1
+    }
+  ]
+}

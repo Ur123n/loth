@@ -1,0 +1,32 @@
+{
+  "id": "幻梦利爪",
+  "name": "幻梦利爪",
+  "category": "道途专属卡牌",
+  "path": "梦魇行者",
+  "card_type": "攻击",
+  "cost": 1,
+  "load": 1,
+  "target_type": "Enemy",
+  "range": 1,
+  "area": 0,
+  "discard_on_use": false,
+  "keywords": [
+    "幻梦"
+  ],
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "description": "",
+  "effects": [
+    {
+      "logic": "attack",
+      "value": 3,
+      "attack_range": 1
+    },
+    {
+      "logic": "attack",
+      "value": 3,
+      "attack_range": 1
+    }
+  ]
+}

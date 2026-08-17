@@ -1,0 +1,10 @@
+{
+  "id": "肉块",
+  "name": "肉块",
+  "description": "从敌怪身上割下的肉，腥味很重。",
+  "shape": "1x1",
+  "value": 6,
+  "icon": "",
+  "art": "",
+  "animation": ""
+}

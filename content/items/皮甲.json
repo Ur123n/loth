@@ -1,0 +1,10 @@
+{
+  "id": "皮甲",
+  "name": "皮甲",
+  "description": "基础皮甲，防御+2。",
+  "shape": "2x2",
+  "value": 35,
+  "icon": "",
+  "art": "",
+  "animation": ""
+}
