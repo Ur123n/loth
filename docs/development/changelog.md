@@ -1,5 +1,11 @@
 # 变更日志
 
+## 2026-08-17　Git 仓库初始化
+
+- 在 `C:\游戏` 初始化 Git 仓库并完成首次提交（630 个文件基线：core/content/ui/world/docs/tests 等）。
+- `.gitignore` 确认已忽略 `.godot/`、`android/`，并补充 `__pycache__/`、`*.pyc` 缓存规则；已入库的 pyc 缓存文件移出版本控制。
+- docs/development/known_issues.md 的“未初始化 Git 仓库”条目已标记为已处理。
+
 ## 2026-08-17　敌人 AI 重构（行为模板 + 评分决策）
 
 - 按《敌人ai重构方案》落地三层决策：行为模板（AiArchetype）→ 战术层（目标选择 + 行动评分）→ 行动层（六边形位置评价）。
