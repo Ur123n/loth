@@ -1,0 +1,42 @@
+{
+	"candidate_revision": "map_rework_20261005_r01",
+	"captures": [
+		{
+			"map": "MONASTERY",
+			"name": "iserra_candidate_overview",
+			"path": "res://dev/map_versions/map_rework_20261005_r01/qa/iserra_candidate_overview.png"
+		},
+		{
+			"map": "MONASTERY",
+			"name": "iserra_active_overview",
+			"path": "res://dev/map_versions/map_rework_20261005_r01/qa/iserra_active_overview.png"
+		},
+		{
+			"map": "MONASTERY",
+			"name": "iserra_candidate_courtyard",
+			"path": "res://dev/map_versions/map_rework_20261005_r01/qa/iserra_candidate_courtyard.png"
+		},
+		{
+			"map": "MONASTERY",
+			"name": "iserra_candidate_gate",
+			"path": "res://dev/map_versions/map_rework_20261005_r01/qa/iserra_candidate_gate.png"
+		},
+		{
+			"map": "M02",
+			"name": "m02_candidate_overview",
+			"path": "res://dev/map_versions/map_rework_20261005_r01/qa/m02_candidate_overview.png"
+		},
+		{
+			"map": "M02",
+			"name": "m02_active_overview",
+			"path": "res://dev/map_versions/map_rework_20261005_r01/qa/m02_active_overview.png"
+		},
+		{
+			"map": "M02",
+			"name": "m02_candidate_north_street",
+			"path": "res://dev/map_versions/map_rework_20261005_r01/qa/m02_candidate_north_street.png"
+		}
+	],
+	"failed": 0,
+	"renderer": "NVIDIA GeForce RTX 4060 Ti"
+}

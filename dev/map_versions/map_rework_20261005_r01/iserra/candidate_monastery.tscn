@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="PackedScene" path="res://maps/godot/scenes/iserra_monastery_highlands.tscn" id="1_map"]
+[ext_resource type="Script" path="res://dev/map_versions/map_rework_20261005_r01/iserra/candidate_monastery.gd" id="2_script"]
+
+[node name="MonasteryCandidate" instance=ExtResource("1_map")]
+script = ExtResource("2_script")
+map_id = "MONASTERY"

@@ -1,0 +1,4 @@
+Use case: precise-object-edit
+Asset type: layered game building Base material source for Godot
+Input: active Iserra monastery base.png as exact geometry/composition target.
+Request: retexture the complete highland border monastery with cold rough granite, charcoal slate, old oak, restrained oxidized bronze, soot, sparse moss and damp staining. Preserve every wall, roof, tower, arcade, opening, courtyard void, well, service wing, south gate, scale and parallel line. Dim upper-left overcast light, sacred but decayed. Transparent background. No new geometry, props, terrain, broad warm light, text or characters.

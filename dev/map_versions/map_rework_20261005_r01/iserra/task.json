@@ -1,0 +1,34 @@
+{
+  "schema": "codex_map_revision_task/1",
+  "template_only": false,
+  "revision_id": "iserra_surface_20261005_r01",
+  "task_kind": "surface",
+  "target_maps": ["iserra_monastery_highlands", "MONASTERY"],
+  "objective": "重制修道院南门—中庭—教堂前视觉材质，并以同一 2400x2880 逻辑画布扩展为完整 Base 候选；保持全部逻辑不变量。",
+  "authorization": {
+    "iserra_existing_textures_may_be_replaced": true,
+    "evidence": "2026-10-05 user implementation request and later explicit approval: 可以发布，记得帮我git",
+    "layout_or_gameplay_change": false,
+    "deployment_scope": "active_version_published"
+  },
+  "baseline": {"file": "baseline.json"},
+  "allowed_changes": ["Base material RGB", "candidate binding", "candidate review entry"],
+  "invariants": ["48x58 footprint", "placement cell 18,12", "bottom_center anchor", "south gate passage", "courtyard walkability", "12 marker names and positions", "collision/walkable/doors masks", "default and demo active sources unchanged"],
+  "candidate": {
+    "scene": "res://dev/map_versions/map_rework_20261005_r01/iserra/candidate_monastery.tscn",
+    "layout_document": null,
+    "asset_directory": "res://assets/map_versions/iserra_surface_20261005_r01",
+    "shared_dependencies": ["res://assets/dark48/色板/map_env.json", "res://dev/hall_art_v1/surface.gdshader"]
+  },
+  "before_backup": "before/",
+  "changed_files": ["assets/buildings/iserra_monastery_highland/IserraMonasteryHighland.tscn", "assets/map_versions/iserra_surface_20261005_r01/base_surface_v1.png", "assets/map_versions/iserra_surface_20261005_r01/surface_binding.gd", "assets/map_versions/shared/surface.gdshader", "assets/map_versions/shared/surface_material.gd"],
+  "checks": {"targeted": ["tools/check.gd: 22/22", "tools/check_release.gd: 17/17", "tools/verify_release_hashes.ps1: 23 unchanged, 2 published, 8 assets"], "regression": ["maps/leyton/tools/validate.ps1: 13/13 failed=0; scripts=160 failed=0"], "gpu_report": "../qa/gpu_qa.json", "screenshots": ["../qa/released_iserra_overview.png", "../qa/iserra_active_overview.png", "../qa/iserra_candidate_gate.png", "../qa/iserra_candidate_courtyard.png"], "runtime_loaded_paths": ["res://world/map/MainHighlandMap.tscn", "res://dev/leyton_world_demo/world_demo.tscn", "res://assets/buildings/iserra_monastery_highland/IserraMonasteryHighland.tscn"]},
+  "status": "released",
+  "source_revision": "active_20261005",
+  "candidate_revision": "iserra_surface_20261005_r01",
+  "active_revision": "iserra_surface_20261005_r01",
+  "user_decisions": ["允许更换修道院现有贴图", "2026-10-05 确认发布并提交 Git"],
+  "unresolved_questions": [],
+  "rollback": {"restore_files": ["../publish_before/IserraMonasteryHighland.tscn -> assets/buildings/iserra_monastery_highland/IserraMonasteryHighland.tscn"], "expected_hashes": {"IserraMonasteryHighland.tscn": "1AEBB574A6911BB06C8FF12A480F6B97BCA51BDF8DDBB6868568FA51AC457E09"}, "validation": ["Godot import", "tools/check_release.gd adapted for old revision", "tools/verify_active_hashes.ps1"]},
+  "worklog": "../WORKLOG.md"
+}

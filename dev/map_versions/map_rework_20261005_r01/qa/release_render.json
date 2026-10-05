@@ -1,0 +1,18 @@
+{
+	"captures": [
+		{
+			"map": "MONASTERY",
+			"path": "res://dev/map_versions/map_rework_20261005_r01/qa/released_iserra_overview.png"
+		},
+		{
+			"map": "M02",
+			"path": "res://dev/map_versions/map_rework_20261005_r01/qa/released_m02_overview.png"
+		},
+		{
+			"map": "M02",
+			"path": "res://dev/map_versions/map_rework_20261005_r01/qa/released_m02_north_street.png"
+		}
+	],
+	"failed": 0,
+	"renderer": "NVIDIA GeForce RTX 4060 Ti"
+}

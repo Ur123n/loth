@@ -1,0 +1,39 @@
+{
+  "schema": "codex_map_release/1",
+  "released_at": "2026-10-05 Asia/Shanghai",
+  "release_revision": "map_rework_20261005_r01",
+  "active_revisions": {
+    "iserra": "iserra_surface_20261005_r01",
+    "leyton_m02": "leyton_m02_surface_20261005_r01"
+  },
+  "baseline": "iserra/baseline.json",
+  "unchanged_baseline_files": 23,
+  "before_hashes": {
+    "assets/buildings/iserra_monastery_highland/IserraMonasteryHighland.tscn": "1AEBB574A6911BB06C8FF12A480F6B97BCA51BDF8DDBB6868568FA51AC457E09",
+    "maps/leyton/scenes/m02.tscn": "AC0470F315103659BAE655C0518E56959FF0EEA388C3E0B97890C9FF163E9B46"
+  },
+  "active_hashes": {
+    "assets/buildings/iserra_monastery_highland/IserraMonasteryHighland.tscn": "2B69334B69D3F2789D4965ED073BF1AF80E148442E12EAA7BE5FE01213D948F9",
+    "maps/leyton/scenes/m02.tscn": "5812B356EC317C0E3D546905E5B98F0853FAFD842982CAD46D70308E1FA3EE73"
+  },
+  "asset_hashes": {
+    "assets/map_versions/shared/surface.gdshader": "D0EA7344E4C00F726354C7C21A1C1D32825697E686660D94742E2228A7D1766D",
+    "assets/map_versions/shared/surface_material.gd": "14E1C8261519AB9D449CB5952B7985EA2052194B15EA2E0B9AC1C71EDD7562E7",
+    "assets/map_versions/iserra_surface_20261005_r01/surface_binding.gd": "448EAD613D924AEE1EC5EF80C6DE30251CCBD6A6E7B518180BFD35CEFC074A40",
+    "assets/map_versions/iserra_surface_20261005_r01/base_surface_v1.png": "9081BEEECECA443E58F843557E1BC0C060EE16793F26ADD61BD3DED636CA6BA5",
+    "assets/map_versions/leyton_m02_surface_20261005_r01/m02_surface_v1.gd": "C351C9836579C7C274C10DD412255BC9D612466D7F2781A956B8976714F905A3",
+    "assets/map_versions/leyton_m02_surface_20261005_r01/noble_surface_a.png": "14F83DFEC9A234DDE6BEA9516BF8E0F9C30CF1C0289DB5BC2667ACFC7DF6E514",
+    "assets/map_versions/leyton_m02_surface_20261005_r01/noble_surface_b.png": "9568323B11E026634FB47F7653DE74AB9CB9B3B6FBC0958B8038E2ADA02EE01D",
+    "assets/map_versions/leyton_m02_surface_20261005_r01/noble_surface_c.png": "69FE83910415184829005AC0091469CC7C3B2FF7B4399F016BA17DEB78270B75"
+  },
+  "rollback_sources": {
+    "assets/buildings/iserra_monastery_highland/IserraMonasteryHighland.tscn": "publish_before/IserraMonasteryHighland.tscn",
+    "maps/leyton/scenes/m02.tscn": "publish_before/m02.tscn"
+  },
+  "validation": {
+    "release_smoke": "17/17 failed=0",
+    "map_regression": "13/13 failed=0",
+    "script_compile": "scripts=160 failed=0",
+    "gpu_render": "qa/release_render.json failed=0"
+  }
+}

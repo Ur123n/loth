@@ -1,0 +1,54 @@
+{
+	"layers": {
+		"iserra_base": {
+			"alpha_mismatch_pixels": 0,
+			"logical_canvas": [
+				2400.0,
+				2880.0
+			],
+			"off_palette_colors_tolerance_1": 0,
+			"opaque_unique_colors": 32,
+			"passed": true,
+			"semi_transparent_pixels": 49136,
+			"unique_colors": 854
+		},
+		"m02_variant_a": {
+			"alpha_mismatch_pixels": 0,
+			"logical_canvas": [
+				384.0,
+				480.0
+			],
+			"off_palette_colors_tolerance_1": 0,
+			"opaque_unique_colors": 26,
+			"passed": true,
+			"semi_transparent_pixels": 165785,
+			"unique_colors": 425
+		},
+		"m02_variant_b": {
+			"alpha_mismatch_pixels": 0,
+			"logical_canvas": [
+				384.0,
+				480.0
+			],
+			"off_palette_colors_tolerance_1": 0,
+			"opaque_unique_colors": 22,
+			"passed": true,
+			"semi_transparent_pixels": 165785,
+			"unique_colors": 387
+		},
+		"m02_variant_c": {
+			"alpha_mismatch_pixels": 0,
+			"logical_canvas": [
+				384.0,
+				480.0
+			],
+			"off_palette_colors_tolerance_1": 0,
+			"opaque_unique_colors": 19,
+			"passed": true,
+			"semi_transparent_pixels": 165785,
+			"unique_colors": 363
+		}
+	},
+	"passed": true,
+	"renderer": "NVIDIA GeForce RTX 4060 Ti"
+}

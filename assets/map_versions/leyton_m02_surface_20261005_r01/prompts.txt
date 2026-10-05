@@ -1,0 +1,5 @@
+Variant A: precise edit of stone_house.png using street_row.png only as material/detail reference. Cold stone ground floor, dark old timber above, charcoal slate, sparse ivy, restrained amber. Preserve exact geometry and transparent background.
+
+Variant B: precise edit of stone_house.png using corner_residence.png only as material/detail reference. Dark dressed granite, restrained half timber, heavy oak, rain streaks and sparse moss. Preserve exact geometry and transparent background.
+
+Variant C: precise edit of stone_house.png using service_wing.png only as material/detail reference. Dark cut stone, weathered lime plaster, old oak framing, mostly dark windows, sparse soot and damp. Preserve exact geometry and transparent background.
