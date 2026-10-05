@@ -1,15 +1,14 @@
 {
   "schema_version": 1,
   "purpose": "design_only mechanism planning; family matches are candidates, not runtime support",
-  "total": 169,
+  "total": 165,
   "families": {
     "player_choice": {
       "name": "玩家选择与随机展示",
-      "count": 25,
+      "count": 24,
       "card_ids": [
         "A023",
         "A035",
-        "A037",
         "A038",
         "A040",
         "A050",
@@ -36,11 +35,9 @@
     },
     "pile_operations": {
       "name": "抽牌堆、弃牌堆、牌库与复制品",
-      "count": 11,
+      "count": 9,
       "card_ids": [
-        "A037",
         "A038",
-        "A041",
         "A044",
         "A051",
         "A059",
@@ -53,11 +50,9 @@
     },
     "hand_operations": {
       "name": "抽牌、主动弃牌、保留",
-      "count": 29,
+      "count": 26,
       "card_ids": [
-        "A010",
         "A023",
-        "A037",
         "A038",
         "A039",
         "A040",
@@ -66,7 +61,6 @@
         "A048",
         "A056",
         "A059",
-        "A060",
         "A062",
         "A064",
         "A065",
@@ -270,11 +264,10 @@
     },
     "turn_triggers": {
       "name": "跨回合、下次与能力牌触发",
-      "count": 46,
+      "count": 45,
       "card_ids": [
         "A039",
         "A040",
-        "A041",
         "A050",
         "A061",
         "A062",
@@ -342,7 +335,7 @@
     },
     "damage_block_conditions": {
       "name": "伤害、格挡与 Armor 条件",
-      "count": 111,
+      "count": 110,
       "card_ids": [
         "A014",
         "A018",
@@ -362,7 +355,6 @@
         "A053",
         "A057",
         "A058",
-        "A060",
         "A065",
         "A066",
         "A069",
@@ -516,15 +508,6 @@
   },
   "cards": [
     {
-      "id": "A010",
-      "families": [
-        "hand_operations"
-      ],
-      "description": "主动弃置1张其他手牌，然后抽1张。",
-      "source_file": "艾莉丝_完整卡组_重制v1.0.md",
-      "source_line": 27
-    },
-    {
       "id": "A014",
       "families": [
         "status_layers",
@@ -611,17 +594,6 @@
       "source_line": 56
     },
     {
-      "id": "A037",
-      "families": [
-        "player_choice",
-        "pile_operations",
-        "hand_operations"
-      ],
-      "description": "选择弃牌堆1张牌置顶；主动弃置1张其他手牌；抽1张。",
-      "source_file": "艾莉丝_完整卡组_重制v1.0.md",
-      "source_line": 62
-    },
-    {
       "id": "A038",
       "families": [
         "player_choice",
@@ -654,16 +626,6 @@
       "description": "获得6格挡；选择至多2张其他手牌保留；下回合少抽1张牌。",
       "source_file": "艾莉丝_完整卡组_重制v1.0.md",
       "source_line": 65
-    },
-    {
-      "id": "A041",
-      "families": [
-        "pile_operations",
-        "turn_triggers"
-      ],
-      "description": "从弃牌堆拿回1张非Power牌；该牌下一次打出后消耗。",
-      "source_file": "艾莉丝_完整卡组_重制v1.0.md",
-      "source_line": 66
     },
     {
       "id": "A043",
@@ -804,16 +766,6 @@
       "description": "随机展示本场战斗你已经打出过的3种不同非Power牌；选择1张生成临时复制品加入手牌。",
       "source_file": "艾莉丝_完整卡组_重制v1.0.md",
       "source_line": 84
-    },
-    {
-      "id": "A060",
-      "families": [
-        "hand_operations",
-        "damage_block_conditions"
-      ],
-      "description": "主动弃置至多2张牌；每弃1张，获得3格挡。",
-      "source_file": "艾莉丝_完整卡组_重制v1.0.md",
-      "source_line": 85
     },
     {
       "id": "A061",

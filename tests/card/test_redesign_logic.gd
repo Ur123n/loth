@@ -46,6 +46,7 @@ func _process(_delta: float) -> bool:
 	_test_persistent_card_sources()
 	_test_attack_deck_choices()
 	_test_persistent_multi_choices()
+	_test_active_hand_discard()
 	print("RESULT: passed=%d failed=%d" % [_passed, _failed])
 	quit(0 if _failed == 0 else 1)
 	return true
@@ -575,6 +576,113 @@ func _test_persistent_multi_choices() -> void:
 		and _caster.hand.size() == 1 and _caster.draw_pile.size() == 2
 		and _caster.draw_pile.back().card_id == drug_b.card_id,
 		"K074 候选不足时自动放置唯一剩余牌并结束事务")
+
+
+func _test_active_hand_discard() -> void:
+	_manager.turn_system.current_index = 0
+	var redraw := _card("A010")
+	var sequence := _card("A037")
+	var compression := _card("A060")
+	var filler_a := _card("A001")
+	var filler_b := _card("A002")
+	var drawn := _card("D001")
+	_check(redraw != null and sequence != null and compression != null,
+		"A010、A037、A060 已加载主动弃牌效果")
+	if redraw == null or sequence == null or compression == null:
+		return
+	_caster.active_discards_this_turn = 0
+	_caster.hand = [redraw, filler_a, filler_b]
+	_caster.draw_pile = [drawn]
+	_caster.discard_pile.clear()
+	_caster.energy = 20
+	_check(_manager.play_card(redraw) and _manager.has_pending_card_choice()
+		and _manager.card_choice_options() == [filler_a, filler_b]
+		and not _manager.card_choice_can_skip(),
+		"A010 当前牌先离手，必须选择其他手牌弃置")
+	_check(not _manager.choose_card_option(-2) and _manager.has_pending_card_choice(),
+		"A010 强制弃牌阶段不能跳过")
+	_check(_manager.choose_card_option(1) and not _manager.has_pending_card_choice()
+		and _caster.discard_pile.has(filler_b) and not _caster.hand.has(filler_b)
+		and _caster.hand.has(drawn) and _caster.active_discards_this_turn == 1,
+		"A010 选中的实体先弃置，再从实体抽牌堆抽一张")
+	var recovered := _card("K004")
+	_caster.hand = [sequence, filler_a]
+	_caster.draw_pile.clear()
+	_caster.discard_pile = [recovered]
+	_caster.energy = 20
+	_check(_manager.play_card(sequence) and _manager.has_pending_card_choice()
+		and _manager.card_choice_options() == [recovered],
+		"A037 第一阶段列出全部弃牌堆候选")
+	_check(_manager.choose_card_option(0) and _manager.has_pending_card_choice()
+		and _caster.draw_pile.back() == recovered
+		and _manager.card_choice_options() == [filler_a],
+		"A037 弃牌堆选牌置顶后进入主动弃牌阶段")
+	_check(_manager.choose_card_option(0) and not _manager.has_pending_card_choice()
+		and _caster.discard_pile.has(filler_a) and _caster.hand.has(recovered)
+		and _caster.active_discards_this_turn == 2,
+		"A037 主动弃牌完成后才抽到刚置顶的实体牌")
+	_caster.hand = [compression, filler_a, filler_b]
+	_caster.draw_pile.clear()
+	_caster.discard_pile.clear()
+	_caster.energy = 20
+	_caster.block_value = 0
+	_check(_manager.play_card(compression) and _manager.has_pending_card_choice()
+		and _manager.card_choice_can_skip()
+		and _manager.card_choice_skip_label() == "结束弃牌",
+		"A060 可从零张开始结束主动弃牌")
+	_check(_manager.choose_card_option(-2) and not _manager.has_pending_card_choice()
+		and _caster.block_value == 0 and _caster.active_discards_this_turn == 2,
+		"A060 弃零张不给格挡且不增加主动弃牌计数")
+	_caster.hand = [compression.duplicate(true) as CardData, filler_a, filler_b]
+	_caster.energy = 20
+	_caster.block_value = 0
+	_check(_manager.play_card(_caster.hand[0]) and _manager.has_pending_card_choice(),
+		"A060 再次出牌可进入可选弃牌阶段")
+	_check(_manager.choose_card_option(0) and _manager.has_pending_card_choice()
+		and _caster.block_value == 3 and _caster.active_discards_this_turn == 3
+		and _manager.card_choice_options() == [filler_b],
+		"A060 第一张主动弃置立即获得3格挡，并保留第二次选择")
+	_check(_manager.choose_card_option(0) and not _manager.has_pending_card_choice()
+		and _caster.block_value == 6 and _caster.active_discards_this_turn == 4,
+		"A060 第二张主动弃置后获得共6格挡并完成事务")
+	var retrieve := _card("A041")
+	var power := CardData.new()
+	power.card_name = "测试能力牌"
+	power.card_type = CardData.CardType.ABILITY
+	_caster.hand = [retrieve]
+	_caster.discard_pile = [filler_a, power]
+	_caster.energy = 20
+	_check(retrieve != null and _manager.play_card(retrieve) and _manager.has_pending_card_choice(),
+		"A041 从弃牌堆请求拿回非 Power 牌")
+	_check(_manager.card_choice_options() == [filler_a]
+		and _manager.choose_card_option(0) and _caster.hand.size() == 1,
+		"A041 排除 Power，选中牌从弃牌堆进入手牌")
+	var reclaimed: CardData = _caster.hand[0]
+	_check(reclaimed != filler_a and reclaimed.exhaust_on_play and not filler_a.exhaust_on_play,
+		"A041 只让拿回的实体下次打出后消耗")
+	_enemy.current_hp = 100
+	_check(_manager.play_card(reclaimed, _enemy) and _caster.exhaust_pile.has(reclaimed),
+		"A041 拿回的攻击牌打出后进入消耗堆")
+	_caster.hand = [redraw.duplicate(true) as CardData]
+	_caster.draw_pile = [drawn]
+	_caster.energy = 20
+	_check(_manager.play_card(_caster.hand[0]) and not _manager.has_pending_card_choice()
+		and _caster.hand == [drawn] and _caster.active_discards_this_turn == 4,
+		"A010 无其他手牌可弃时跳过选择，仍继续抽一张")
+	_caster.hand = [filler_a]
+	var random_card := CardData.new()
+	random_card.card_name = "随机弃牌测试"
+	random_card.target_type = CardData.TargetType.SELF
+	var random_effect := DiscardEffect.new()
+	random_effect.value = 1
+	random_card.effects.append(random_effect)
+	_caster.hand.append(random_card)
+	_caster.energy = 20
+	_check(_manager.play_card(random_card) and _caster.active_discards_this_turn == 4,
+		"普通随机弃牌不计入玩家主动弃牌次数")
+	_manager.end_turn()
+	_check(_caster.active_discards_this_turn == 0,
+		"行动结束清除主动弃牌次数")
 
 
 func _test_attack_then_move() -> void:

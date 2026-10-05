@@ -137,6 +137,9 @@ def exact_effects(description: str, kind: str, maximum: int) -> list[dict]:
             return [pile_choice_effect("discard", show_all=True),
                     effect_from_mechanic("choose_hand_discard", min_count=1, max_count=1, block_per_card=0),
                     effect_from_mechanic("draw", value=1)]
+        if description == "从弃牌堆拿回1张非Power牌；该牌下一次打出后消耗。":
+            return [pile_choice_effect("discard", "hand", show_all=True, non_power=True,
+                                       exhaust_selected_on_play=True)]
         if description == "主动弃置至多2张牌；每弃1张，获得3格挡。":
             return [effect_from_mechanic("choose_hand_discard", min_count=0, max_count=2, block_per_card=3)]
         deck_drug = re.fullmatch(r"从当前牌组随机展示(\d+)张Drug；选择1张置于牌堆顶，并获得(\d+)格挡。", description)

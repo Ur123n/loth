@@ -42,6 +42,10 @@ func _process(_delta: float) -> bool:
 		if okay:
 			(options.get_child(2) as Button).pressed.emit()
 			okay = picked[0] == -2
+	if okay:
+		panel.show_choices("主动弃牌", [first], true, "结束弃牌")
+		okay = options.get_child_count() == 2 \
+			and (options.get_child(1) as Button).text == "结束弃牌"
 	host.free()
 	print("RESULT: panel_choice=%s failed=%d" % [str(okay), 0 if okay else 1])
 	quit(0 if okay else 1)
