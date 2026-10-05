@@ -1,21 +1,19 @@
 {
   "schema_version": 1,
   "purpose": "design_only mechanism planning; family matches are candidates, not runtime support",
-  "total": 177,
+  "total": 173,
   "families": {
     "player_choice": {
       "name": "玩家选择与随机展示",
-      "count": 33,
+      "count": 29,
       "card_ids": [
         "A023",
-        "A033",
         "A035",
         "A037",
         "A038",
         "A040",
         "A050",
         "A051",
-        "A055",
         "A059",
         "A061",
         "A065",
@@ -32,9 +30,7 @@
         "D064",
         "D066",
         "D075",
-        "K025",
         "K047",
-        "K058",
         "K059",
         "K069",
         "K071",
@@ -44,23 +40,19 @@
     },
     "pile_operations": {
       "name": "抽牌堆、弃牌堆、牌库与复制品",
-      "count": 19,
+      "count": 15,
       "card_ids": [
-        "A033",
         "A037",
         "A038",
         "A041",
         "A044",
         "A051",
-        "A055",
         "A059",
         "A061",
         "A067",
         "A074",
         "D055",
         "D075",
-        "K025",
-        "K058",
         "K059",
         "K071",
         "K074",
@@ -69,11 +61,10 @@
     },
     "hand_operations": {
       "name": "抽牌、主动弃牌、保留",
-      "count": 35,
+      "count": 32,
       "card_ids": [
         "A010",
         "A023",
-        "A033",
         "A037",
         "A038",
         "A039",
@@ -81,7 +72,6 @@
         "A043",
         "A044",
         "A048",
-        "A055",
         "A056",
         "A059",
         "A060",
@@ -102,7 +92,6 @@
         "D069",
         "D070",
         "D075",
-        "K058",
         "K059",
         "K074",
         "K075"
@@ -366,7 +355,7 @@
     },
     "damage_block_conditions": {
       "name": "伤害、格挡与 Armor 条件",
-      "count": 114,
+      "count": 113,
       "card_ids": [
         "A014",
         "A018",
@@ -469,7 +458,6 @@
         "D075",
         "K019",
         "K020",
-        "K025",
         "K032",
         "K043",
         "K046",
@@ -613,17 +601,6 @@
       "description": "目标可移动1格；若移动后与你相邻，双方各获得3格挡。",
       "source_file": "艾莉丝_完整卡组_重制v1.0.md",
       "source_line": 49
-    },
-    {
-      "id": "A033",
-      "families": [
-        "player_choice",
-        "pile_operations",
-        "hand_operations"
-      ],
-      "description": "从你的牌库中随机展示3张非Power牌；选择1张生成临时复制品加入手牌，复制品打出后消失。",
-      "source_file": "艾莉丝_完整卡组_重制v1.0.md",
-      "source_line": 54
     },
     {
       "id": "A034",
@@ -800,17 +777,6 @@
       "description": "【灾梦】区域内所有敌人受到11伤害并获得1层迟缓；结算后进入沉梦。",
       "source_file": "艾莉丝_完整卡组_重制v1.0.md",
       "source_line": 78
-    },
-    {
-      "id": "A055",
-      "families": [
-        "player_choice",
-        "pile_operations",
-        "hand_operations"
-      ],
-      "description": "从牌库随机展示3张Skill；选择1张置于手牌，另外2张洗回牌库。",
-      "source_file": "艾莉丝_完整卡组_重制v1.0.md",
-      "source_line": 80
     },
     {
       "id": "A056",
@@ -2092,17 +2058,6 @@
       "source_line": 45
     },
     {
-      "id": "K025",
-      "families": [
-        "player_choice",
-        "pile_operations",
-        "damage_block_conditions"
-      ],
-      "description": "从当前牌组随机展示3张Drug；选择1张置于牌堆顶，并获得4格挡。",
-      "source_file": "卡莎_完整卡组_重制v1.0.md",
-      "source_line": 46
-    },
-    {
       "id": "K032",
       "families": [
         "turn_triggers",
@@ -2259,17 +2214,6 @@
       "description": "目标下一次受到Attack前先获得9格挡。",
       "source_file": "卡莎_完整卡组_重制v1.0.md",
       "source_line": 82
-    },
-    {
-      "id": "K058",
-      "families": [
-        "player_choice",
-        "pile_operations",
-        "hand_operations"
-      ],
-      "description": "从当前牌组随机展示5张Drug；选择1张加入手牌，另外4张洗回牌库。",
-      "source_file": "卡莎_完整卡组_重制v1.0.md",
-      "source_line": 83
     },
     {
       "id": "K059",

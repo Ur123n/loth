@@ -18,3 +18,4 @@ extends Resource
 @export var selected_cost_override: int = -1
 @export var selected_cost_reduction: int = 0
 @export var grant_retain_selected: bool = false
+@export var temporary_copy: bool = false

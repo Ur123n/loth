@@ -42,6 +42,12 @@ func ensure_basic_deck_cards() -> void:
 		_ensure_card_count(character, BASIC_STRIKE_NAME, BASIC_STRIKE_COUNT)
 		_ensure_card_count(character, BASIC_DEFEND_NAME, BASIC_DEFEND_COUNT)
 		_fill_deck_to_capacity(character)
+		for basic_name in [BASIC_STRIKE_NAME, BASIC_DEFEND_NAME]:
+			if not _skill_has(character, basic_name):
+				var basic_skill := SkillData.new()
+				basic_skill.skill_name = basic_name
+				basic_skill.description = CardDB.describe_card(_card_from_name(basic_name))
+				character.skill_library.append(basic_skill)
 
 
 ## 卡组不足 20 张时，用 打击/防御 交替补齐（GDD：初始牌填充）。

@@ -193,7 +193,9 @@ func _finalize_card_play(unit: BattleUnit, card: CardData, target) -> void:
 		unit.redesign_dream_state = 0
 		battle_log.emit("%s 进入沉梦" % unit.get_display_name())
 	unit.last_played_card = card
-	if card.should_exhaust_on_play():
+	if card.temporary_copy:
+		battle_log.emit("临时复制品「%s」打出后消失" % card.card_name)
+	elif card.should_exhaust_on_play():
 		_exhaust_card(unit, card)
 	else:
 		unit.discard_pile.append(card)

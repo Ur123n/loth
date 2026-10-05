@@ -111,7 +111,8 @@ func _test_roundtrip_v4() -> void:
 	var first: CharacterData = loaded.party_characters[0]
 	_check(first.character_name == "鲍德温" and first.level == 5 and first.exp == 40 \
 			and first.attribute_points == 2, "往返：角色成长")
-	_check(first.skill_library.size() == 1 and first.skill_library[0].skill_name == "打击", "往返：技能库")
+	_check(first.skill_library.size() == 2 and first.skill_library[0].skill_name == "打击"
+		and first.skill_library[1].skill_name == "防御", "往返：初始基础牌也属于已获牌库")
 	var strike_count := 0
 	var defend_count := 0
 	for card in first.deck:

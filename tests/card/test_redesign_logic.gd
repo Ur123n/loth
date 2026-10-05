@@ -43,6 +43,7 @@ func _process(_delta: float) -> bool:
 	_test_card_choice_continuation()
 	_test_hand_retain_choice()
 	_test_temporary_choice_costs()
+	_test_persistent_card_sources()
 	print("RESULT: passed=%d failed=%d" % [_passed, _failed])
 	quit(0 if _failed == 0 else 1)
 	return true
@@ -334,6 +335,89 @@ func _test_temporary_choice_costs() -> void:
 	_manager.end_turn()
 	_check(selected.temporary_cost_reduction == 0 and selected.temporary_cost_override == -1,
 		"行动结束清除临时费用")
+
+
+func _test_persistent_card_sources() -> void:
+	_manager.turn_system.current_index = 0
+	var deck_choice := _card("K025")
+	var library_choice := _card("A033")
+	var drug_a := _card("K004")
+	var drug_b := _card("K005")
+	var attack := _card("A001")
+	var skill_card := _card("A002")
+	_check(deck_choice != null and library_choice != null and drug_a != null and drug_b != null,
+		"K025 和 A033 及候选牌已加载")
+	if deck_choice == null or library_choice == null or drug_a == null or drug_b == null:
+		return
+	_caster.character_data.deck = [drug_a, drug_b, attack]
+	_caster.character_data.skill_library.clear()
+	for owned in [attack, skill_card]:
+		var entry := SkillData.new()
+		entry.skill_name = owned.card_name
+		_caster.character_data.skill_library.append(entry)
+	_caster.hand = [deck_choice]
+	_caster.draw_pile.clear()
+	_caster.discard_pile.clear()
+	_caster.energy = 20
+	_caster.block_value = 0
+	_check(_manager.play_card(deck_choice) and _manager.has_pending_card_choice(),
+		"K025 从携带卡组请求选择")
+	var shown := _manager.card_choice_options()
+	_check(shown.size() == 2 and shown.has(drug_a) and shown.has(drug_b),
+		"卡组来源只展示携带的 Drug，不读取战斗抽牌堆")
+	_check(_manager.choose_card_option(0) and _caster.character_data.deck.size() == 3
+		and _caster.draw_pile.size() == 1 and _caster.draw_pile.back() != shown[0]
+		and _caster.draw_pile.back().card_id == shown[0].card_id and _caster.block_value == 4,
+		"K025 复制选中牌置顶，持久卡组不变并续行获得格挡")
+	_caster.hand = [library_choice]
+	_caster.energy = 20
+	_check(_manager.play_card(library_choice) and _manager.has_pending_card_choice(),
+		"A033 从已获牌库请求选择")
+	shown = _manager.card_choice_options()
+	_check(shown.size() == 2 and shown.has(attack) and shown.has(skill_card)
+		and not shown.has(drug_a), "牌库候选来自已获卡，而非携带卡组或 CardDB 全池")
+	var chosen_index := shown.find(attack)
+	_check(_manager.choose_card_option(chosen_index) and _caster.hand.size() == 1,
+		"A033 选择后获得一张手牌")
+	var copy: CardData = _caster.hand[0]
+	_check(copy != attack and copy.temporary_copy and not attack.temporary_copy
+		and _caster.character_data.skill_library.size() == 2,
+		"临时复制标志仅作用于战斗实体，牌库不变")
+	var discard_before := _caster.discard_pile.size()
+	var exhaust_before := _caster.exhaust_pile.size()
+	_check(_manager.play_card(copy, _enemy) and not _caster.discard_pile.has(copy)
+		and not _caster.exhaust_pile.has(copy)
+		and _caster.discard_pile.size() == discard_before
+		and _caster.exhaust_pile.size() == exhaust_before,
+		"临时复制品结算后消失，不进弃牌堆或消耗堆")
+	var library_skill := _card("A055")
+	var deck_drug := _card("K058")
+	_check(library_skill != null and deck_drug != null, "A055 与 K058 已按确定的牌库规则入库")
+	if library_skill == null or deck_drug == null:
+		return
+	_caster.hand = [library_skill]
+	_caster.energy = 20
+	_check(_manager.play_card(library_skill) and _manager.has_pending_card_choice(),
+		"A055 从已获牌库随机展示 Skill")
+	shown = _manager.card_choice_options()
+	_check(shown.size() == 1 and shown[0] == skill_card,
+		"A055 排除已获 Attack，候选不足时只展示合格 Skill")
+	_check(_manager.choose_card_option(0) and _caster.hand.size() == 1
+		and _caster.hand[0] != skill_card and _caster.hand[0].card_id == skill_card.card_id
+		and _caster.character_data.skill_library.size() == 2,
+		"A055 生成选中牌到手牌，未选牌与永久牌库不变")
+	_caster.hand = [deck_drug]
+	_caster.energy = 20
+	_check(_manager.play_card(deck_drug) and _manager.has_pending_card_choice(),
+		"K058 从携带卡组随机展示 Drug")
+	shown = _manager.card_choice_options()
+	_check(shown.size() == 2 and shown.has(drug_a) and shown.has(drug_b),
+		"K058 不把未携带的牌库牌混入候选")
+	_check(_manager.choose_card_option(1) and _caster.hand.size() == 1
+		and _caster.hand[0] != shown[1] and _caster.hand[0].card_id == shown[1].card_id
+		and _caster.character_data.deck.size() == 3
+		and _caster.character_data.deck.has(drug_a) and _caster.character_data.deck.has(drug_b),
+		"K058 只生成选中战斗牌，未选牌仍在卡组中")
 
 
 func _test_attack_then_move() -> void:

@@ -49,6 +49,7 @@ enum TargetType { SELF, ALLY, ENEMY, HEX, AREA, NONE }
 # 仅战斗实体使用；本行动结束时清除，不能改动数据库原型。
 @export_storage var temporary_cost_override: int = -1
 @export_storage var temporary_cost_reduction: int = 0
+@export_storage var temporary_copy: bool = false
 
 
 ## 能力牌打出后自动消失，不进入弃牌堆（GDD 第 7 节）。

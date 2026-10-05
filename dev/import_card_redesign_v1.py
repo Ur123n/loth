@@ -124,10 +124,20 @@ def exact_effects(description: str, kind: str, maximum: int) -> list[dict]:
                       required_rarity="", base_cost=-1, required_tags=[], played_in_battle=False,
                       not_played_this_turn=False, exhaust_selected_on_play=False,
                       selected_cost_override=-1, selected_cost_reduction=0,
-                      grant_retain_selected=False)
+                      grant_retain_selected=False, temporary_copy=False)
         params.update({key: value for key, value in filters.items() if key != "non_power"})
         return effect_from_mechanic("choose_from_pile", **params)
     if kind == "Self":
+        deck_drug = re.fullmatch(r"从当前牌组随机展示(\d+)张Drug；选择1张置于牌堆顶，并获得(\d+)格挡。", description)
+        if deck_drug:
+            return [pile_choice_effect("deck", required_tags=["Drug"], sample_count=int(deck_drug.group(1))),
+                    effect_from_mechanic("defense", target="self", value=int(deck_drug.group(2)))]
+        if description == "从你的牌库中随机展示3张非Power牌；选择1张生成临时复制品加入手牌，复制品打出后消失。":
+            return [pile_choice_effect("library", "hand", non_power=True, temporary_copy=True)]
+        if description == "从牌库随机展示3张Skill；选择1张置于手牌，另外2张洗回牌库。":
+            return [pile_choice_effect("library", "hand", required_card_type="Skill")]
+        if description == "从当前牌组随机展示5张Drug；选择1张加入手牌，另外4张洗回牌库。":
+            return [pile_choice_effect("deck", "hand", required_tags=["Drug"], sample_count=5)]
         if description == "选择1张其他手牌获得保留；获得5格挡。":
             return [pile_choice_effect("hand", "hand", show_all=True, grant_retain_selected=True),
                     effect_from_mechanic("defense", target="self", value=5)]

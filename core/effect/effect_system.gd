@@ -853,11 +853,22 @@ func transfer_random_cards(unit: BattleUnit, effect: TransferRandomCardEffect) -
 func request_card_choice(unit: BattleUnit, effect: ChooseFromPileEffect) -> void:
 	if not _pending_card_choice.is_empty() or (not effect.show_all and effect.sample_count <= 0):
 		return
-	var source: Array[CardData]
+	var source: Array[CardData] = []
 	match effect.source:
 		"draw": source = unit.draw_pile
 		"discard": source = unit.discard_pile
 		"hand": source = unit.hand
+		"deck":
+			if unit.character_data == null:
+				return
+			source = unit.character_data.deck
+		"library":
+			if unit.character_data == null:
+				return
+			for skill in unit.character_data.skill_library:
+				var owned_card: CardData = _card_lookup.call(skill.skill_name) as CardData
+				if owned_card != null:
+					source.append(owned_card)
 		_: return
 	if effect.destination not in ["draw", "hand"] or effect.position != "top":
 		return
@@ -889,6 +900,7 @@ func request_card_choice(unit: BattleUnit, effect: ChooseFromPileEffect) -> void
 		"selected_cost_override": effect.selected_cost_override,
 		"selected_cost_reduction": effect.selected_cost_reduction,
 		"grant_retain_selected": effect.grant_retain_selected,
+		"temporary_copy": effect.temporary_copy,
 		"indices": indices, "options": options}
 
 
@@ -983,13 +995,16 @@ func choose_card_option(index: int) -> bool:
 		"draw": source = unit.draw_pile
 		"discard": source = unit.discard_pile
 		"hand": source = unit.hand
+		"deck": source = unit.character_data.deck
+		"library": source = options
 		_: return false
 	var source_index: int = _pending_card_choice["indices"][index]
-	var selected: CardData = source[source_index]
+	var is_persistent_source: bool = _pending_card_choice["source"] in ["deck", "library"]
+	var selected: CardData = options[index] if is_persistent_source else source[source_index]
 	var stays_in_hand: bool = _pending_card_choice["source"] == "hand" and _pending_card_choice["destination"] == "hand"
-	if not stays_in_hand:
+	if not stays_in_hand and not is_persistent_source:
 		source.remove_at(source_index)
-	if _pending_card_choice["exhaust_selected_on_play"] or int(_pending_card_choice["selected_cost_override"]) >= 0 or int(_pending_card_choice["selected_cost_reduction"]) > 0 or _pending_card_choice["grant_retain_selected"]:
+	if is_persistent_source or _pending_card_choice["exhaust_selected_on_play"] or int(_pending_card_choice["selected_cost_override"]) >= 0 or int(_pending_card_choice["selected_cost_reduction"]) > 0 or _pending_card_choice["grant_retain_selected"]:
 		selected = selected.duplicate(true) as CardData
 	if _pending_card_choice["exhaust_selected_on_play"]:
 		selected.exhaust_on_play = true
@@ -999,6 +1014,8 @@ func choose_card_option(index: int) -> bool:
 		selected.temporary_cost_reduction += int(_pending_card_choice["selected_cost_reduction"])
 	if _pending_card_choice["grant_retain_selected"]:
 		selected.retain = true
+	if _pending_card_choice["temporary_copy"]:
+		selected.temporary_copy = true
 	var destination: String = _pending_card_choice["destination"]
 	var continuation: Dictionary = _pending_card_choice.get("continuation", {})
 	if stays_in_hand:
@@ -1223,6 +1240,10 @@ func pile_label(pile: String) -> String:
 			return "抽牌堆"
 		"discard":
 			return "弃牌堆"
+		"deck":
+			return "卡组"
+		"library":
+			return "牌库"
 	return pile
 
 

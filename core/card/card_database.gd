@@ -348,6 +348,7 @@ func _parse_effect(data) -> Resource:
 			choice.selected_cost_override = int(data.get("selected_cost_override", -1))
 			choice.selected_cost_reduction = int(data.get("selected_cost_reduction", 0))
 			choice.grant_retain_selected = bool(data.get("grant_retain_selected", false))
+			choice.temporary_copy = bool(data.get("temporary_copy", false))
 			return choice
 		"inspect_top_cards":
 			var inspect := InspectTopCardsEffect.new()

@@ -48,7 +48,8 @@
       "exhaust_selected_on_play": true,
       "selected_cost_override": 0,
       "selected_cost_reduction": 0,
-      "grant_retain_selected": false
+      "grant_retain_selected": false,
+      "temporary_copy": false
     }
   ],
   "mechanism_ids": [

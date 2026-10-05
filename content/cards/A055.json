@@ -32,7 +32,31 @@
   "icon": "",
   "art": "",
   "animation": "",
-  "effects": [],
-  "mechanism_ids": [],
-  "implementation_status": "design_only"
+  "effects": [
+    {
+      "logic": "choose_from_pile",
+      "source": "library",
+      "sample_count": 3,
+      "show_all": false,
+      "destination": "hand",
+      "position": "top",
+      "required_card_type": "Skill",
+      "exclude_card_type": "",
+      "required_rarity": "",
+      "base_cost": -1,
+      "required_tags": [],
+      "played_in_battle": false,
+      "not_played_this_turn": false,
+      "exhaust_selected_on_play": false,
+      "selected_cost_override": -1,
+      "selected_cost_reduction": 0,
+      "grant_retain_selected": false,
+      "temporary_copy": false
+    }
+  ],
+  "mechanism_ids": [
+    "effects.choose_from_pile",
+    "play_rules.three_dreams"
+  ],
+  "implementation_status": "supported"
 }

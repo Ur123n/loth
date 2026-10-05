@@ -47,7 +47,8 @@
       "exhaust_selected_on_play": false,
       "selected_cost_override": -1,
       "selected_cost_reduction": 0,
-      "grant_retain_selected": true
+      "grant_retain_selected": true,
+      "temporary_copy": false
     },
     {
       "logic": "defense",
