@@ -155,6 +155,12 @@ func _resolve_effects_from(unit: BattleUnit, card: CardData, target, start_index
 				_pending_card_choice["continuation"] = {"card": card, "target": target,
 					"next_index": effect_index + 1, "play_context": play_context}
 				return false
+		elif effect is InspectTopCardsEffect:
+			request_top_inspection(unit, effect as InspectTopCardsEffect)
+			if has_pending_card_choice():
+				_pending_card_choice["continuation"] = {"card": card, "target": target,
+					"next_index": effect_index + 1, "play_context": play_context}
+				return false
 		elif effect is MulliganHandEffect:
 			mulligan_hand(unit)
 		elif effect is DiscardEffect:
@@ -886,6 +892,23 @@ func request_card_choice(unit: BattleUnit, effect: ChooseFromPileEffect) -> void
 		"indices": indices, "options": options}
 
 
+func request_top_inspection(unit: BattleUnit, effect: InspectTopCardsEffect) -> void:
+	if not _pending_card_choice.is_empty() or effect.count <= 0 or unit.draw_pile.is_empty():
+		return
+	if effect.pick_to_hand and unit.hand.size() >= MAX_HAND_SIZE:
+		return
+	var options: Array[CardData] = []
+	for i in mini(effect.count, unit.draw_pile.size()):
+		options.append(unit.draw_pile.pop_back())
+	var phase := "hand" if effect.pick_to_hand else (
+		"discard" if effect.pick_to_discard > 0 else "order")
+	_pending_card_choice = {"kind": "inspect_top", "unit": unit, "options": options,
+		"phase": phase, "discard_left": effect.pick_to_discard,
+		"reorder": effect.reorder_remaining, "ordered": []}
+	if phase == "order" and (not effect.reorder_remaining or options.size() <= 1):
+		_finish_top_inspection()
+
+
 func _card_choice_candidate_matches(unit: BattleUnit, card: CardData, effect: ChooseFromPileEffect) -> bool:
 	if effect.required_card_type == "Skill" and card.card_type != CardData.CardType.ACTION:
 		return false
@@ -923,6 +946,11 @@ func card_choice_options() -> Array:
 func card_choice_prompt() -> String:
 	if _pending_card_choice.is_empty():
 		return ""
+	if _pending_card_choice.get("kind", "pile") == "inspect_top":
+		match _pending_card_choice["phase"]:
+			"hand": return "从查看的顶牌中选择 1 张加入手牌"
+			"discard": return "从查看的顶牌中选择 1 张加入弃牌堆"
+			"order": return "选择下一张置于最上方（按牌顶到牌底排序）"
 	if _pending_card_choice["source"] == "hand" and _pending_card_choice["grant_retain_selected"]:
 		return "选择 1 张其他手牌获得保留"
 	var destination := "手牌" if _pending_card_choice["destination"] == "hand" else "抽牌堆顶"
@@ -935,6 +963,8 @@ func choose_card_option(index: int) -> bool:
 	var options: Array = _pending_card_choice["options"]
 	if index < 0 or index >= options.size():
 		return false
+	if _pending_card_choice.get("kind", "pile") == "inspect_top":
+		return _choose_top_inspection_option(index)
 	var unit: BattleUnit = _pending_card_choice["unit"]
 	var source: Array[CardData]
 	match _pending_card_choice["source"]:
@@ -972,6 +1002,52 @@ func choose_card_option(index: int) -> bool:
 		_resolve_effects_from(unit, continuation["card"], continuation["target"],
 			continuation["next_index"], continuation["play_context"])
 	return true
+
+
+func _choose_top_inspection_option(index: int) -> bool:
+	var unit: BattleUnit = _pending_card_choice["unit"]
+	var options: Array = _pending_card_choice["options"]
+	var selected: CardData = options[index]
+	options.remove_at(index)
+	match _pending_card_choice["phase"]:
+		"hand":
+			unit.hand.append(selected)
+			_log("%s 将查看的「%s」加入手牌" % [unit.get_display_name(), selected.card_name])
+			if int(_pending_card_choice["discard_left"]) > 0 and not options.is_empty():
+				_pending_card_choice["phase"] = "discard"
+			elif _pending_card_choice["reorder"] and options.size() > 1:
+				_pending_card_choice["phase"] = "order"
+			else:
+				_finish_top_inspection()
+		"discard":
+			unit.discard_pile.append(selected)
+			_log("%s 将查看的「%s」置入弃牌堆" % [unit.get_display_name(), selected.card_name])
+			_pending_card_choice["discard_left"] = int(_pending_card_choice["discard_left"]) - 1
+			if int(_pending_card_choice["discard_left"]) > 0 and not options.is_empty():
+				pass
+			elif _pending_card_choice["reorder"] and options.size() > 1:
+				_pending_card_choice["phase"] = "order"
+			else:
+				_finish_top_inspection()
+		"order":
+			var ordered: Array = _pending_card_choice["ordered"]
+			ordered.append(selected)
+			if options.size() <= 1:
+				_finish_top_inspection()
+	return true
+
+
+func _finish_top_inspection() -> void:
+	var unit: BattleUnit = _pending_card_choice["unit"]
+	var top_first: Array = _pending_card_choice["ordered"]
+	top_first.append_array(_pending_card_choice["options"])
+	for i in range(top_first.size() - 1, -1, -1):
+		unit.draw_pile.append(top_first[i])
+	var continuation: Dictionary = _pending_card_choice.get("continuation", {})
+	_pending_card_choice.clear()
+	if not continuation.is_empty():
+		_resolve_effects_from(unit, continuation["card"], continuation["target"],
+			continuation["next_index"], continuation["play_context"])
 
 
 func mulligan_hand(unit: BattleUnit) -> void:

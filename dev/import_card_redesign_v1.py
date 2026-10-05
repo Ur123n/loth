@@ -90,6 +90,27 @@ def target_of(label: str) -> tuple[str, int, int, int]:
 
 def exact_effects(description: str, kind: str, maximum: int) -> list[dict]:
     # Complete templates only. A partial clause must never become a live card.
+    def top_inspect_effect(count: int, pick_to_hand: bool = False,
+                           pick_to_discard: int = 0, reorder_remaining: bool = True) -> dict:
+        return effect_from_mechanic("inspect_top_cards", count=count,
+                                    pick_to_hand=pick_to_hand,
+                                    pick_to_discard=pick_to_discard,
+                                    reorder_remaining=reorder_remaining)
+    if kind == "Self":
+        top_reorder = re.fullmatch(r"查看抽牌堆顶(\d+)张并任意排序。", description)
+        if top_reorder:
+            return [top_inspect_effect(int(top_reorder.group(1)))]
+        top_pick = re.fullmatch(r"查看抽牌堆顶(\d+)张；选择1张加入手牌，其余按任意顺序放回顶部。", description)
+        if top_pick:
+            return [top_inspect_effect(int(top_pick.group(1)), pick_to_hand=True)]
+        top_split = re.fullmatch(r"查看抽牌堆顶(\d+)张：1张加入手牌，1张置入弃牌堆，1张留在牌堆顶。", description)
+        if top_split:
+            return [top_inspect_effect(int(top_split.group(1)), pick_to_hand=True,
+                                       pick_to_discard=1, reorder_remaining=False)]
+        block_top_pick = re.fullmatch(r"获得(\d+)格挡；查看抽牌堆顶(\d+)张，选择1张加入手牌，其余任意排序。", description)
+        if block_top_pick:
+            return [effect_from_mechanic("defense", target="self", value=int(block_top_pick.group(1))),
+                    top_inspect_effect(int(block_top_pick.group(2)), pick_to_hand=True)]
     def pile_choice_effect(source: str, destination: str = "draw", **filters: object) -> dict:
         params = dict(source=source, sample_count=3, show_all=False,
                       destination=destination, position="top", required_card_type="",

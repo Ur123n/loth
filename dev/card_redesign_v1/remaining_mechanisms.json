@@ -1,18 +1,15 @@
 {
   "schema_version": 1,
   "purpose": "design_only mechanism planning; family matches are candidates, not runtime support",
-  "total": 182,
+  "total": 178,
   "families": {
     "player_choice": {
       "name": "玩家选择与随机展示",
-      "count": 38,
+      "count": 34,
       "card_ids": [
-        "A006",
         "A023",
-        "A029",
         "A033",
         "A035",
-        "A036",
         "A037",
         "A038",
         "A040",
@@ -25,7 +22,6 @@
         "A065",
         "A066",
         "A067",
-        "A068",
         "A074",
         "B025",
         "B039",
@@ -49,12 +45,9 @@
     },
     "pile_operations": {
       "name": "抽牌堆、弃牌堆、牌库与复制品",
-      "count": 24,
+      "count": 20,
       "card_ids": [
-        "A006",
-        "A029",
         "A033",
-        "A036",
         "A037",
         "A038",
         "A041",
@@ -65,7 +58,6 @@
         "A059",
         "A061",
         "A067",
-        "A068",
         "A074",
         "D055",
         "D075",
@@ -79,13 +71,11 @@
     },
     "hand_operations": {
       "name": "抽牌、主动弃牌、保留",
-      "count": 38,
+      "count": 35,
       "card_ids": [
         "A010",
         "A023",
-        "A029",
         "A033",
-        "A036",
         "A037",
         "A038",
         "A039",
@@ -100,7 +90,6 @@
         "A062",
         "A064",
         "A065",
-        "A068",
         "A075",
         "D008",
         "D025",
@@ -379,7 +368,7 @@
     },
     "damage_block_conditions": {
       "name": "伤害、格挡与 Armor 条件",
-      "count": 115,
+      "count": 114,
       "card_ids": [
         "A014",
         "A018",
@@ -402,7 +391,6 @@
         "A060",
         "A065",
         "A066",
-        "A068",
         "A069",
         "A070",
         "A071",
@@ -557,16 +545,6 @@
   },
   "cards": [
     {
-      "id": "A006",
-      "families": [
-        "player_choice",
-        "pile_operations"
-      ],
-      "description": "查看抽牌堆顶2张并任意排序。",
-      "source_file": "艾莉丝_完整卡组_重制v1.0.md",
-      "source_line": 23
-    },
-    {
       "id": "A010",
       "families": [
         "hand_operations"
@@ -639,17 +617,6 @@
       "source_line": 49
     },
     {
-      "id": "A029",
-      "families": [
-        "player_choice",
-        "pile_operations",
-        "hand_operations"
-      ],
-      "description": "查看抽牌堆顶4张；选择1张加入手牌，其余按任意顺序放回顶部。",
-      "source_file": "艾莉丝_完整卡组_重制v1.0.md",
-      "source_line": 50
-    },
-    {
       "id": "A033",
       "families": [
         "player_choice",
@@ -682,17 +649,6 @@
       "description": "距离2内所有友军获得5格挡；选择其中1名友军移动1格。",
       "source_file": "艾莉丝_完整卡组_重制v1.0.md",
       "source_line": 56
-    },
-    {
-      "id": "A036",
-      "families": [
-        "player_choice",
-        "pile_operations",
-        "hand_operations"
-      ],
-      "description": "查看抽牌堆顶3张：1张加入手牌，1张置入弃牌堆，1张留在牌堆顶。",
-      "source_file": "艾莉丝_完整卡组_重制v1.0.md",
-      "source_line": 61
     },
     {
       "id": "A037",
@@ -987,18 +943,6 @@
       "description": "将整个抽牌堆洗牌；随后从其中随机展示5张牌，选择2张置于牌堆顶，顺序由你决定。",
       "source_file": "艾莉丝_完整卡组_重制v1.0.md",
       "source_line": 96
-    },
-    {
-      "id": "A068",
-      "families": [
-        "player_choice",
-        "pile_operations",
-        "hand_operations",
-        "damage_block_conditions"
-      ],
-      "description": "获得12格挡；查看抽牌堆顶3张，选择1张加入手牌，其余任意排序。",
-      "source_file": "艾莉丝_完整卡组_重制v1.0.md",
-      "source_line": 97
     },
     {
       "id": "A069",

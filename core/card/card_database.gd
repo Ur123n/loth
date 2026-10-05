@@ -87,6 +87,8 @@ static func describe_card(card: CardData) -> String:
 			parts.append("%s从%s随机展示至多 %d 张牌，选择 1 张加入%s" % [
 				cond_prefix, _pile_name(effect.source), effect.sample_count,
 				"手牌" if effect.destination == "hand" else "抽牌堆顶"])
+		elif effect is InspectTopCardsEffect:
+			parts.append("%s查看抽牌堆顶 %d 张并选择去向与顺序" % [cond_prefix, effect.count])
 		elif effect is DiscardEffect:
 			if effect.mode == "all":
 				parts.append("%s弃掉全部手牌" % cond_prefix)
@@ -347,6 +349,13 @@ func _parse_effect(data) -> Resource:
 			choice.selected_cost_reduction = int(data.get("selected_cost_reduction", 0))
 			choice.grant_retain_selected = bool(data.get("grant_retain_selected", false))
 			return choice
+		"inspect_top_cards":
+			var inspect := InspectTopCardsEffect.new()
+			inspect.count = int(data.get("count", 0))
+			inspect.pick_to_hand = bool(data.get("pick_to_hand", false))
+			inspect.pick_to_discard = int(data.get("pick_to_discard", 0))
+			inspect.reorder_remaining = bool(data.get("reorder_remaining", true))
+			return inspect
 		"discard":
 			var discard := DiscardEffect.new()
 			discard.value = int(data.get("value", 1))
