@@ -1,0 +1,59 @@
+{
+  "id": "D018",
+  "name": "回身开火",
+  "character": "迪马斯",
+  "rarity": "Common",
+  "category": "道途专属卡牌",
+  "path": "侠盗",
+  "card_type": "攻击",
+  "cost": 1,
+  "load": 1,
+  "target_type": "Enemy",
+  "hp_payment": 0,
+  "cost_rules": [],
+  "play_conditions": [],
+  "dream_mode": "",
+  "min_range": 2,
+  "range": 3,
+  "target_spec": "敌1 / 距2–3",
+  "area": 0,
+  "keywords": [],
+  "tags": [
+    "Pistol"
+  ],
+  "description": "若本回合打出过Dagger Attack，造成10伤害；否则造成7伤害。",
+  "source_effect": "若本回合打出过Dagger Attack，造成10伤害；否则造成7伤害。",
+  "source_file": "迪马斯_完整卡组_重制v1.0.md",
+  "source_line": 39,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [
+    {
+      "logic": "attack",
+      "value": 10,
+      "attack_range": 3,
+      "condition": {
+        "type": "played_card_tags_this_turn",
+        "tag": "Dagger",
+        "card_type": "Attack"
+      }
+    },
+    {
+      "logic": "attack",
+      "value": 7,
+      "attack_range": 3,
+      "condition": {
+        "type": "played_card_tags_this_turn",
+        "tag": "Dagger",
+        "card_type": "Attack",
+        "negate": true
+      }
+    }
+  ],
+  "mechanism_ids": [
+    "effects.attack",
+    "conditions.played_card_tags_this_turn"
+  ],
+  "implementation_status": "supported"
+}

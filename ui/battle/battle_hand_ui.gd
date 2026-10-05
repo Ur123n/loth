@@ -7,8 +7,8 @@ extends Control
 signal card_play_requested(card: CardData, screen_position: Vector2)
 
 const DRAG_THRESHOLD := 90.0
-const CARD_SIZE := Vector2(96, 132)
-const HAND_PANEL_HEIGHT := 190.0
+const CARD_SIZE := Vector2(96, 165)
+const HAND_PANEL_HEIGHT := 220.0
 
 var _unit: BattleUnit
 var _panel: PanelContainer
@@ -100,21 +100,38 @@ func _make_card_view(card: CardData) -> PanelContainer:
 	var vbox := VBoxContainer.new()
 	vbox.add_theme_constant_override("separation", 2)
 	panel.add_child(vbox)
+	var full_description := CardDatabase.describe_card(card)
+	panel.tooltip_text = full_description
+	if not card.art_path.is_empty():
+		var art_texture := ArtLoader.load_texture("res://content/cards/" + card.art_path)
+		if art_texture != null:
+			var art := TextureRect.new()
+			art.name = "Art"
+			art.texture = art_texture
+			art.custom_minimum_size = Vector2(84, 64)
+			art.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+			art.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_COVERED
+			art.mouse_filter = Control.MOUSE_FILTER_IGNORE
+			vbox.add_child(art)
 
 	var name_label := Label.new()
-	var locked := card.doom_dream and _unit.dream_progress < 2
-	name_label.text = card.card_name + ("（锁定）" if locked else "")
+	var locked := card.doom_dream and (
+		_unit.redesign_dream_state != 1 if card.dream_mode == "three_dreams"
+		else _unit.dream_progress < 2)
+	var cannot_pay_hp := card.hp_payment > 0 and _unit.current_hp <= card.hp_payment
+	name_label.text = card.card_name + ("（锁定）" if locked else "（生命不足）" if cannot_pay_hp else "")
 	name_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	name_label.add_theme_font_size_override("font_size", 14)
 	name_label.add_theme_color_override("font_color",
-		Color(0.55, 0.60, 0.66) if locked else Color(0.95, 0.92, 0.80))
+		Color(0.55, 0.60, 0.66) if locked or cannot_pay_hp else Color(0.95, 0.92, 0.80))
 	vbox.add_child(name_label)
 
 	var cost_label := Label.new()
-	cost_label.text = "费用 %d" % card.cost
+	var min_cost := card.minimum_cost()
+	cost_label.text = "费用 %d→%d" % [card.cost, min_cost] if min_cost < card.cost else "费用 %d" % card.cost
 	cost_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	cost_label.add_theme_font_size_override("font_size", 12)
-	if card.cost > _unit.energy:
+	if min_cost > _unit.energy:
 		cost_label.add_theme_color_override("font_color", Color(0.85, 0.35, 0.35))
 	else:
 		cost_label.add_theme_color_override("font_color", Color(0.80, 0.85, 0.95))
@@ -130,7 +147,7 @@ func _make_card_view(card: CardData) -> PanelContainer:
 		vbox.add_child(keyword_label)
 
 	var effect_label := Label.new()
-	effect_label.text = CardDB.describe_card(card)
+	effect_label.text = full_description.substr(0, 36) + ("…" if full_description.length() > 36 else "")
 	effect_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	effect_label.add_theme_font_size_override("font_size", 10)
 	effect_label.add_theme_color_override("font_color", Color(0.65, 0.70, 0.78))

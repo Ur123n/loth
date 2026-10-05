@@ -1,0 +1,38 @@
+{
+  "id": "A067",
+  "name": "把未来洗掉",
+  "character": "艾莉丝",
+  "rarity": "Rare",
+  "category": "道途专属卡牌",
+  "path": "梦魇行者",
+  "card_type": "行动",
+  "cost": 1,
+  "load": 3,
+  "target_type": "Self",
+  "hp_payment": 0,
+  "cost_rules": [],
+  "play_conditions": [],
+  "dream_mode": "three_dreams",
+  "min_range": 0,
+  "range": 0,
+  "target_spec": "自身",
+  "area": 0,
+  "keywords": [
+    "消耗"
+  ],
+  "tags": [
+    "X",
+    "Random",
+    "Deck"
+  ],
+  "description": "将整个抽牌堆洗牌；随后从其中随机展示5张牌，选择2张置于牌堆顶，顺序由你决定。",
+  "source_effect": "将整个抽牌堆洗牌；随后从其中随机展示5张牌，选择2张置于牌堆顶，顺序由你决定。",
+  "source_file": "艾莉丝_完整卡组_重制v1.0.md",
+  "source_line": 96,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [],
+  "mechanism_ids": [],
+  "implementation_status": "design_only"
+}

@@ -1,0 +1,47 @@
+{
+  "id": "K014",
+  "name": "贴身撒粉",
+  "character": "卡莎",
+  "rarity": "Common",
+  "category": "道途专属卡牌",
+  "path": "解剖学者",
+  "card_type": "行动",
+  "cost": 0,
+  "load": 1,
+  "target_type": "Enemy",
+  "hp_payment": 0,
+  "cost_rules": [],
+  "play_conditions": [],
+  "dream_mode": "",
+  "min_range": 1,
+  "range": 1,
+  "target_spec": "敌1 / 距1",
+  "area": 0,
+  "keywords": [
+    "消耗"
+  ],
+  "tags": [
+    "Drug",
+    "Poison"
+  ],
+  "description": "施加2层毒。",
+  "source_effect": "施加2层毒。",
+  "source_file": "卡莎_完整卡组_重制v1.0.md",
+  "source_line": 35,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [
+    {
+      "logic": "buff",
+      "target": "enemy",
+      "buff_type": "中毒",
+      "stacks": 2,
+      "duration": 2
+    }
+  ],
+  "mechanism_ids": [
+    "effects.buff"
+  ],
+  "implementation_status": "supported"
+}

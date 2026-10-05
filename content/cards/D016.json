@@ -1,0 +1,55 @@
+{
+  "id": "D016",
+  "name": "追身短刺",
+  "character": "迪马斯",
+  "rarity": "Common",
+  "category": "道途专属卡牌",
+  "path": "侠盗",
+  "card_type": "攻击",
+  "cost": 1,
+  "load": 1,
+  "target_type": "Enemy",
+  "hp_payment": 0,
+  "cost_rules": [],
+  "play_conditions": [],
+  "dream_mode": "",
+  "min_range": 1,
+  "range": 1,
+  "target_spec": "敌1 / 距1",
+  "area": 0,
+  "keywords": [],
+  "tags": [
+    "Dagger"
+  ],
+  "description": "若本回合已移动，造成10伤害；否则造成7伤害。",
+  "source_effect": "若本回合已移动，造成10伤害；否则造成7伤害。",
+  "source_file": "迪马斯_完整卡组_重制v1.0.md",
+  "source_line": 37,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [
+    {
+      "logic": "attack",
+      "value": 10,
+      "attack_range": 1,
+      "condition": {
+        "type": "moved_this_turn"
+      }
+    },
+    {
+      "logic": "attack",
+      "value": 7,
+      "attack_range": 1,
+      "condition": {
+        "type": "not_moved_this_turn"
+      }
+    }
+  ],
+  "mechanism_ids": [
+    "effects.attack",
+    "conditions.moved_this_turn",
+    "conditions.not_moved_this_turn"
+  ],
+  "implementation_status": "supported"
+}

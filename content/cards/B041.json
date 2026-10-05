@@ -1,0 +1,45 @@
+{
+  "id": "B041",
+  "name": "剧痛清醒",
+  "character": "鲍德温",
+  "rarity": "Uncommon",
+  "category": "道途专属卡牌",
+  "path": "孢子卫士",
+  "card_type": "行动",
+  "cost": 0,
+  "load": 1,
+  "target_type": "Self",
+  "hp_payment": 4,
+  "cost_rules": [],
+  "play_conditions": [],
+  "dream_mode": "",
+  "min_range": 0,
+  "range": 0,
+  "target_spec": "自身",
+  "area": 0,
+  "keywords": [
+    "消耗"
+  ],
+  "tags": [
+    "Bloodletting",
+    "Draw"
+  ],
+  "description": "放血4；抽1张。",
+  "source_effect": "放血4；抽1张。",
+  "source_file": "鲍德温_完整卡组_重制v1.0.md",
+  "source_line": 66,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [
+    {
+      "logic": "draw",
+      "value": 1
+    }
+  ],
+  "mechanism_ids": [
+    "effects.draw",
+    "play_rules.hp_payment"
+  ],
+  "implementation_status": "supported"
+}

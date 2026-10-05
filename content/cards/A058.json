@@ -1,0 +1,38 @@
+{
+  "id": "A058",
+  "name": "灾梦：空房",
+  "character": "艾莉丝",
+  "rarity": "Uncommon",
+  "category": "道途专属卡牌",
+  "path": "梦魇行者",
+  "card_type": "行动",
+  "cost": 2,
+  "load": 2,
+  "target_type": "Ally",
+  "hp_payment": 0,
+  "cost_rules": [],
+  "play_conditions": [],
+  "dream_mode": "three_dreams",
+  "min_range": 4,
+  "range": 4,
+  "target_spec": "友军群 / 距4",
+  "area": 0,
+  "keywords": [
+    "灾梦",
+    "消耗"
+  ],
+  "tags": [
+    "灾梦",
+    "Support"
+  ],
+  "description": "【灾梦】你获得10格挡；距离4内至多2名友军各获得7格挡；结算后进入沉梦。",
+  "source_effect": "【灾梦】你获得10格挡；距离4内至多2名友军各获得7格挡；结算后进入沉梦。",
+  "source_file": "艾莉丝_完整卡组_重制v1.0.md",
+  "source_line": 83,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [],
+  "mechanism_ids": [],
+  "implementation_status": "design_only"
+}

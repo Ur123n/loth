@@ -47,6 +47,8 @@ func _parse_buff(data: Dictionary) -> BuffData:
 	buff.duration_per_stack = int(data.get("duration_per_stack", 0))
 	buff.decay_per_turn = _parse_bool(data.get("decay_per_turn", false))
 	buff.decay_amount = int(data.get("decay_amount", 1))
+	buff.decay_after_trigger = _parse_bool(data.get("decay_after_trigger", false))
+	buff.max_stacks = int(data.get("max_stacks", 0))
 	buff.consumed_on_trigger = _parse_bool(data.get("consumed_on_trigger", false))
 	buff.trigger_timing = str(data.get("trigger_timing", ""))
 	buff.trigger_condition = str(data.get("trigger_condition", ""))

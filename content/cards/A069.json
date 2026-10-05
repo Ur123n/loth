@@ -1,0 +1,38 @@
+{
+  "id": "A069",
+  "name": "灾梦：无声坠日",
+  "character": "艾莉丝",
+  "rarity": "Rare",
+  "category": "道途专属卡牌",
+  "path": "梦魇行者",
+  "card_type": "攻击",
+  "cost": 2,
+  "load": 3,
+  "target_type": "Area",
+  "hp_payment": 0,
+  "cost_rules": [],
+  "play_conditions": [],
+  "dream_mode": "three_dreams",
+  "min_range": 4,
+  "range": 4,
+  "target_spec": "区域 / 距4 半径1",
+  "area": 1,
+  "keywords": [
+    "灾梦",
+    "消耗"
+  ],
+  "tags": [
+    "灾梦",
+    "AOE"
+  ],
+  "description": "【灾梦】区域内所有敌人受到20伤害并获得1层虚弱；结算后进入沉梦。",
+  "source_effect": "【灾梦】区域内所有敌人受到20伤害并获得1层虚弱；结算后进入沉梦。",
+  "source_file": "艾莉丝_完整卡组_重制v1.0.md",
+  "source_line": 98,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [],
+  "mechanism_ids": [],
+  "implementation_status": "design_only"
+}

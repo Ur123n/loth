@@ -1,0 +1,38 @@
+{
+  "id": "D055",
+  "name": "弹巢里剩什么",
+  "character": "迪马斯",
+  "rarity": "Uncommon",
+  "category": "道途专属卡牌",
+  "path": "侠盗",
+  "card_type": "行动",
+  "cost": 1,
+  "load": 2,
+  "target_type": "Self",
+  "hp_payment": 0,
+  "cost_rules": [],
+  "play_conditions": [],
+  "dream_mode": "",
+  "min_range": 0,
+  "range": 0,
+  "target_spec": "自身",
+  "area": 0,
+  "keywords": [
+    "消耗"
+  ],
+  "tags": [
+    "X",
+    "Random",
+    "Copy"
+  ],
+  "description": "从当前牌组随机展示3张Pistol Attack；选择1张生成临时复制品加入手牌，其本回合费用-1。",
+  "source_effect": "从当前牌组随机展示3张Pistol Attack；选择1张生成临时复制品加入手牌，其本回合费用-1。",
+  "source_file": "迪马斯_完整卡组_重制v1.0.md",
+  "source_line": 80,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [],
+  "mechanism_ids": [],
+  "implementation_status": "design_only"
+}

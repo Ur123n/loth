@@ -1,0 +1,55 @@
+{
+  "id": "A012",
+  "name": "换位步",
+  "character": "艾莉丝",
+  "rarity": "Common",
+  "category": "道途专属卡牌",
+  "path": "梦魇行者",
+  "card_type": "行动",
+  "cost": 1,
+  "load": 1,
+  "target_type": "Self",
+  "hp_payment": 0,
+  "cost_rules": [],
+  "play_conditions": [],
+  "dream_mode": "three_dreams",
+  "min_range": 0,
+  "range": 0,
+  "target_spec": "自身",
+  "area": 0,
+  "keywords": [],
+  "tags": [
+    "Movement",
+    "Defense"
+  ],
+  "description": "移动最多2格；若移动前与敌人相邻，获得3格挡。",
+  "source_effect": "移动最多2格；若移动前与敌人相邻，获得3格挡。",
+  "source_file": "艾莉丝_完整卡组_重制v1.0.md",
+  "source_line": 33,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [
+    {
+      "logic": "move",
+      "target": "self",
+      "distance": 2
+    },
+    {
+      "logic": "defense",
+      "target": "self",
+      "value": 3,
+      "condition": {
+        "type": "adjacent_enemies_at_least",
+        "count": 1
+      }
+    }
+  ],
+  "mechanism_ids": [
+    "effects.move",
+    "effects.defense",
+    "conditions.adjacent_enemies_at_least",
+    "play_rules.three_dreams"
+  ],
+  "implementation_status": "supported"
+}

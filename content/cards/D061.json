@@ -1,0 +1,43 @@
+{
+  "id": "D061",
+  "name": "枪手的完美距离",
+  "character": "迪马斯",
+  "rarity": "Rare",
+  "category": "道途专属卡牌",
+  "path": "侠盗",
+  "card_type": "攻击",
+  "cost": 2,
+  "load": 2,
+  "target_type": "Enemy",
+  "hp_payment": 0,
+  "cost_rules": [],
+  "play_conditions": [],
+  "dream_mode": "",
+  "min_range": 3,
+  "range": 3,
+  "target_spec": "敌1 / 恰距3",
+  "area": 0,
+  "keywords": [],
+  "tags": [
+    "Pistol",
+    "Position"
+  ],
+  "description": "造成24伤害。",
+  "source_effect": "造成24伤害。",
+  "source_file": "迪马斯_完整卡组_重制v1.0.md",
+  "source_line": 90,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [
+    {
+      "logic": "attack",
+      "value": 24,
+      "attack_range": 3
+    }
+  ],
+  "mechanism_ids": [
+    "effects.attack"
+  ],
+  "implementation_status": "supported"
+}

@@ -6,8 +6,8 @@ extends Node2D
 ## 战斗中维护手牌 / 抽牌堆 / 弃牌堆 / 费用 / 生命 / 格挡 / buff。
 ## 格挡（block_value）：护盾与格挡已统一为单一数值；防御卡/「预格挡」等来源获得，
 ## 轮次开始时自动清空，先于生命抵消“受到伤害”。
-## 敌怪死亡后原地变为尸骸（无 AI、原名、血量=原上限/3 向下取整），尸骸血量清零后消失。
-## 美术接口：数据类统一提供 icon_path / art_path / animation_path；
+## 任意单位死亡后原地变为尸骸（无行动、原名、血量=原上限/3 向下取整），尸骸血量清零后消失。
+## 美术接口：数据类统一提供 icon_path / art_path / animation_path / corpse_art_a_path / corpse_art_b_path；
 ## 主体贴图 art_path 非空且存在时经 ArtLoader 加载，替代色块占位。
 
 @export var character_data: CharacterData
@@ -31,7 +31,14 @@ var moved_this_turn: bool = false        # 本回合是否移动过（条件效�
 var flank_trigger_damage: int = 0        # 伺机：本回合离开攻击范围时造成伤害
 var pending_knockback: int = 0           # 击退：本回合下一次攻击命中后推开敌人格数
 var dream_progress: int = 0              # 梦境链进度：0 未开始 / 1 已出沉梦 / 2 已出幻梦（解锁灾梦）
+var redesign_dream_enabled: bool = false
+var redesign_dream_state: int = 0         # 重制三梦：0 沉梦 / 1 幻梦
 var last_played_card: CardData = null    # 上一张打出的牌（幻梦联动判断）
+var tags_played_on_targets: Dictionary = {}  # 本回合成功打出的目标牌标签：instance_id -> Array[String]
+var played_cards_this_turn: Array[CardData] = []  # 本行动已成功结算的牌；供标签/类型条件复用
+var played_card_ids_in_battle: Dictionary = {}  # 本场已打出的卡牌 ID；用于检索候选
+var direct_hp_loss_targets: Dictionary = {}  # 本回合由自己的牌令其直接失去生命的目标 instance_id -> true
+var bled_this_turn: bool = false
 var pack_id: String = ""                 # 所属敌怪小队（空=散兵，无协同）
 var pack_role: String = ""               # 小队角色：前排/近战/远程/护卫/侧翼/炮灰/首领
 var pack_leader: BattleUnit = null       # 护卫对象（本队首领单位，同一小队共享）
@@ -54,8 +61,10 @@ func configure_enemy(data: EnemyData) -> void:
 	block_value = 0
 
 
-## 原地变为尸骸：无 AI、保留原名、血量 = 原上限 / 3（向下取整，至少 1）。
+## 原地变为尸骸：退出行动与存活判定，保留原名，血量 = 原上限 / 3（向下取整，至少 1）。
 func become_corpse() -> void:
+	if is_corpse or is_removed:
+		return
 	var original_max := get_max_hp_value()
 	is_corpse = true
 	corpse_max_hp = maxi(1, original_max / 3)
@@ -63,7 +72,7 @@ func become_corpse() -> void:
 	block_value = 0
 	buffs.clear()
 	if _visual != null:
-		_visual.set_placeholder_color(Color(0.48, 0.48, 0.50))
+		_apply_corpse_visual()
 	refresh_hp_display()
 	refresh_block_display()
 
@@ -149,11 +158,33 @@ func refresh_block_display() -> void:
 
 
 ## 美术接口：art_path 非空且存在时用贴图替代色块。
-## 应用主体贴图：经 ArtLoader 统一加载（路径为空或不存在时返回 null，保持色块占位）。
-func _apply_art_texture(art_path: String) -> void:
+## 应用主体贴图：经 ArtLoader 统一加载；返回是否成功。
+func _apply_art_texture(art_path: String) -> bool:
 	var texture := ArtLoader.load_texture(art_path)
 	if texture != null:
 		_visual.set_texture(texture)
+		return true
+	return false
+
+
+func _corpse_art_paths() -> Array[String]:
+	if is_enemy and enemy_data != null:
+		return enemy_data.get_corpse_art_paths()
+	if not is_enemy and character_data != null:
+		return character_data.get_corpse_art_paths()
+	return []
+
+
+## 同一个单位在同一格始终选中同一版本；首选资源失效时按稳定顺序尝试其余版本。
+func _apply_corpse_visual() -> void:
+	var paths := _corpse_art_paths()
+	if not paths.is_empty():
+		var signature := "%s:%d:%d" % [get_display_name(), hex_coords.x, hex_coords.y]
+		var first_index := absi(signature.hash()) % paths.size()
+		for offset in paths.size():
+			if _apply_art_texture(paths[(first_index + offset) % paths.size()]):
+				return
+	_visual.show_corpse_placeholder()
 
 
 func _ready() -> void:

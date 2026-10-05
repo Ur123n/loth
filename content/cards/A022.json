@@ -1,0 +1,56 @@
+{
+  "id": "A022",
+  "name": "压迫投射",
+  "character": "艾莉丝",
+  "rarity": "Common",
+  "category": "道途专属卡牌",
+  "path": "梦魇行者",
+  "card_type": "攻击",
+  "cost": 1,
+  "load": 1,
+  "target_type": "Enemy",
+  "hp_payment": 0,
+  "cost_rules": [],
+  "play_conditions": [],
+  "dream_mode": "three_dreams",
+  "min_range": 2,
+  "range": 4,
+  "target_spec": "敌1 / 距2–4",
+  "area": 0,
+  "keywords": [],
+  "tags": [
+    "Ranged",
+    "Debuff"
+  ],
+  "description": "造成6伤害；若目标Armor≥2，施加1层虚弱。",
+  "source_effect": "造成6伤害；若目标Armor≥2，施加1层虚弱。",
+  "source_file": "艾莉丝_完整卡组_重制v1.0.md",
+  "source_line": 43,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [
+    {
+      "logic": "attack",
+      "value": 6,
+      "attack_range": 4
+    },
+    {
+      "logic": "buff",
+      "target": "enemy",
+      "buff_type": "虚弱",
+      "stacks": 1,
+      "condition": {
+        "type": "target_block_at_play_at_least",
+        "threshold": 2
+      }
+    }
+  ],
+  "mechanism_ids": [
+    "effects.attack",
+    "effects.buff",
+    "conditions.target_block_at_play_at_least",
+    "play_rules.three_dreams"
+  ],
+  "implementation_status": "supported"
+}

@@ -7,3 +7,4 @@ extends Resource
 
 @export var value: int = 1
 @export var alt_value: int = 0   # 本回合已移动时替换 value（0=无条件）
+@export var target: String = "self"

@@ -1,0 +1,38 @@
+{
+  "id": "B070",
+  "name": "谁站得最近",
+  "character": "鲍德温",
+  "rarity": "Rare",
+  "category": "道途专属卡牌",
+  "path": "孢子卫士",
+  "card_type": "攻击",
+  "cost": 1,
+  "load": 3,
+  "target_type": "Area",
+  "hp_payment": 0,
+  "cost_rules": [],
+  "play_conditions": [],
+  "dream_mode": "",
+  "min_range": 2,
+  "range": 2,
+  "target_spec": "敌群 / 距2",
+  "area": 0,
+  "keywords": [
+    "消耗"
+  ],
+  "tags": [
+    "X",
+    "Random",
+    "Pull"
+  ],
+  "description": "从距离2内随机展示至多3名敌人；选择1名，将其拉至与你相邻的合法空格并造成15伤害。",
+  "source_effect": "从距离2内随机展示至多3名敌人；选择1名，将其拉至与你相邻的合法空格并造成15伤害。",
+  "source_file": "鲍德温_完整卡组_重制v1.0.md",
+  "source_line": 99,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [],
+  "mechanism_ids": [],
+  "implementation_status": "design_only"
+}

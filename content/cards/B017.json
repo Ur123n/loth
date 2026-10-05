@@ -1,0 +1,53 @@
+{
+  "id": "B017",
+  "name": "扎稳脚步",
+  "character": "鲍德温",
+  "rarity": "Common",
+  "category": "道途专属卡牌",
+  "path": "孢子卫士",
+  "card_type": "行动",
+  "cost": 1,
+  "load": 1,
+  "target_type": "Self",
+  "hp_payment": 0,
+  "cost_rules": [],
+  "play_conditions": [],
+  "dream_mode": "",
+  "min_range": 0,
+  "range": 0,
+  "target_spec": "自身",
+  "area": 0,
+  "keywords": [],
+  "tags": [
+    "Defense"
+  ],
+  "description": "获得9格挡；若本回合尚未移动，改为12格挡。",
+  "source_effect": "获得9格挡；若本回合尚未移动，改为12格挡。",
+  "source_file": "鲍德温_完整卡组_重制v1.0.md",
+  "source_line": 38,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [
+    {
+      "logic": "defense",
+      "value": 9,
+      "condition": {
+        "type": "moved_this_turn"
+      }
+    },
+    {
+      "logic": "defense",
+      "value": 12,
+      "condition": {
+        "type": "not_moved_this_turn"
+      }
+    }
+  ],
+  "mechanism_ids": [
+    "effects.defense",
+    "conditions.moved_this_turn",
+    "conditions.not_moved_this_turn"
+  ],
+  "implementation_status": "supported"
+}

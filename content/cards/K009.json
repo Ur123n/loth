@@ -1,0 +1,50 @@
+{
+  "id": "K009",
+  "name": "认准一处",
+  "character": "卡莎",
+  "rarity": "Basic",
+  "category": "道途专属卡牌",
+  "path": "解剖学者",
+  "card_type": "攻击",
+  "cost": 1,
+  "load": 1,
+  "target_type": "Enemy",
+  "hp_payment": 0,
+  "cost_rules": [
+    {
+      "type": "target_has_buff",
+      "buff": "中毒",
+      "amount": 1
+    }
+  ],
+  "play_conditions": [],
+  "dream_mode": "",
+  "min_range": 1,
+  "range": 1,
+  "target_spec": "敌1 / 距1",
+  "area": 0,
+  "keywords": [],
+  "tags": [
+    "Surgery",
+    "Precision"
+  ],
+  "description": "若目标中毒，本牌费用-1；造成5伤害。",
+  "source_effect": "若目标中毒，本牌费用-1；造成5伤害。",
+  "source_file": "卡莎_完整卡组_重制v1.0.md",
+  "source_line": 26,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [
+    {
+      "logic": "attack",
+      "value": 5,
+      "attack_range": 1
+    }
+  ],
+  "mechanism_ids": [
+    "effects.attack",
+    "conditions.target_has_buff"
+  ],
+  "implementation_status": "supported"
+}

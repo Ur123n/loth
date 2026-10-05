@@ -1,0 +1,45 @@
+{
+  "id": "K007",
+  "name": "赤花膏",
+  "character": "卡莎",
+  "rarity": "Basic",
+  "category": "道途专属卡牌",
+  "path": "解剖学者",
+  "card_type": "行动",
+  "cost": 1,
+  "load": 1,
+  "target_type": "Ally",
+  "hp_payment": 0,
+  "cost_rules": [],
+  "play_conditions": [],
+  "dream_mode": "",
+  "min_range": 1,
+  "range": 1,
+  "target_spec": "友军 / 距1",
+  "area": 0,
+  "keywords": [
+    "消耗"
+  ],
+  "tags": [
+    "Drug",
+    "Heal"
+  ],
+  "description": "回复4生命。",
+  "source_effect": "回复4生命。",
+  "source_file": "卡莎_完整卡组_重制v1.0.md",
+  "source_line": 24,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [
+    {
+      "logic": "heal",
+      "target": "ally",
+      "value": 4
+    }
+  ],
+  "mechanism_ids": [
+    "effects.heal"
+  ],
+  "implementation_status": "supported"
+}

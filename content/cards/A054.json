@@ -1,0 +1,56 @@
+{
+  "id": "A054",
+  "name": "随机的一页",
+  "character": "艾莉丝",
+  "rarity": "Uncommon",
+  "category": "道途专属卡牌",
+  "path": "梦魇行者",
+  "card_type": "行动",
+  "cost": 0,
+  "load": 2,
+  "target_type": "Self",
+  "hp_payment": 0,
+  "cost_rules": [],
+  "play_conditions": [],
+  "dream_mode": "three_dreams",
+  "min_range": 0,
+  "range": 0,
+  "target_spec": "自身",
+  "area": 0,
+  "keywords": [
+    "消耗"
+  ],
+  "tags": [
+    "X",
+    "Random",
+    "Deck"
+  ],
+  "description": "从弃牌堆随机展示3张牌；选择1张置于牌堆顶，其余保持不变。",
+  "source_effect": "从弃牌堆随机展示3张牌；选择1张置于牌堆顶，其余保持不变。",
+  "source_file": "艾莉丝_完整卡组_重制v1.0.md",
+  "source_line": 79,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [
+    {
+      "logic": "choose_from_pile",
+      "source": "discard",
+      "sample_count": 3,
+      "destination": "draw",
+      "position": "top",
+      "required_card_type": "",
+      "exclude_card_type": "",
+      "base_cost": -1,
+      "required_tags": [],
+      "played_in_battle": false,
+      "not_played_this_turn": false,
+      "exhaust_selected_on_play": false
+    }
+  ],
+  "mechanism_ids": [
+    "effects.choose_from_pile",
+    "play_rules.three_dreams"
+  ],
+  "implementation_status": "supported"
+}

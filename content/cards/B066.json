@@ -1,0 +1,37 @@
+{
+  "id": "B066",
+  "name": "血肉断头台",
+  "character": "鲍德温",
+  "rarity": "Rare",
+  "category": "道途专属卡牌",
+  "path": "孢子卫士",
+  "card_type": "攻击",
+  "cost": 2,
+  "load": 3,
+  "target_type": "Enemy",
+  "hp_payment": 7,
+  "cost_rules": [],
+  "play_conditions": [],
+  "dream_mode": "",
+  "min_range": 1,
+  "range": 1,
+  "target_spec": "敌1 / 距1",
+  "area": 0,
+  "keywords": [
+    "消耗"
+  ],
+  "tags": [
+    "Bloodletting",
+    "Finisher"
+  ],
+  "description": "放血7；造成36伤害；若目标拥有至少2层破绽，改为46伤害并清除其全部破绽。",
+  "source_effect": "放血7；造成36伤害；若目标拥有至少2层破绽，改为46伤害并清除其全部破绽。",
+  "source_file": "鲍德温_完整卡组_重制v1.0.md",
+  "source_line": 95,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [],
+  "mechanism_ids": [],
+  "implementation_status": "design_only"
+}

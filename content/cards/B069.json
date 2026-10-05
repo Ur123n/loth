@@ -1,0 +1,38 @@
+{
+  "id": "B069",
+  "name": "一剑砸乱",
+  "character": "鲍德温",
+  "rarity": "Rare",
+  "category": "道途专属卡牌",
+  "path": "孢子卫士",
+  "card_type": "攻击",
+  "cost": 2,
+  "load": 3,
+  "target_type": "Enemy",
+  "hp_payment": 0,
+  "cost_rules": [],
+  "play_conditions": [],
+  "dream_mode": "",
+  "min_range": 1,
+  "range": 1,
+  "target_spec": "敌1 / 距1",
+  "area": 0,
+  "keywords": [
+    "消耗"
+  ],
+  "tags": [
+    "X",
+    "Random",
+    "Displace"
+  ],
+  "description": "造成24伤害；然后目标与所有相邻敌人分别随机移动到合法相邻空格。",
+  "source_effect": "造成24伤害；然后目标与所有相邻敌人分别随机移动到合法相邻空格。",
+  "source_file": "鲍德温_完整卡组_重制v1.0.md",
+  "source_line": 98,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [],
+  "mechanism_ids": [],
+  "implementation_status": "design_only"
+}

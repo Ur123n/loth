@@ -1,0 +1,53 @@
+{
+  "id": "A013",
+  "name": "佣兵老手",
+  "character": "艾莉丝",
+  "rarity": "Common",
+  "category": "道途专属卡牌",
+  "path": "梦魇行者",
+  "card_type": "攻击",
+  "cost": 1,
+  "load": 1,
+  "target_type": "Enemy",
+  "hp_payment": 0,
+  "cost_rules": [],
+  "play_conditions": [],
+  "dream_mode": "three_dreams",
+  "min_range": 1,
+  "range": 1,
+  "target_spec": "敌1 / 距1",
+  "area": 0,
+  "keywords": [],
+  "tags": [
+    "Melee"
+  ],
+  "description": "造成8伤害；若处于沉梦，获得3格挡。",
+  "source_effect": "造成8伤害；若处于沉梦，获得3格挡。",
+  "source_file": "艾莉丝_完整卡组_重制v1.0.md",
+  "source_line": 34,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [
+    {
+      "logic": "attack",
+      "value": 8,
+      "attack_range": 1
+    },
+    {
+      "logic": "defense",
+      "value": 3,
+      "condition": {
+        "type": "redesign_dream_state_is",
+        "state": 0
+      }
+    }
+  ],
+  "mechanism_ids": [
+    "effects.attack",
+    "effects.defense",
+    "conditions.redesign_dream_state_is",
+    "play_rules.three_dreams"
+  ],
+  "implementation_status": "supported"
+}

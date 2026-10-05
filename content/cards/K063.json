@@ -1,0 +1,47 @@
+{
+  "id": "K063",
+  "name": "催毒入骨",
+  "character": "卡莎",
+  "rarity": "Rare",
+  "category": "道途专属卡牌",
+  "path": "解剖学者",
+  "card_type": "行动",
+  "cost": 2,
+  "load": 3,
+  "target_type": "Enemy",
+  "hp_payment": 0,
+  "cost_rules": [],
+  "play_conditions": [],
+  "dream_mode": "",
+  "min_range": 3,
+  "range": 3,
+  "target_spec": "敌1 / 距3",
+  "area": 0,
+  "keywords": [
+    "消耗"
+  ],
+  "tags": [
+    "Poison",
+    "Finisher"
+  ],
+  "description": "目标直接失去等于当前毒层数的生命，不减少毒层数；不视为毒正常结算。",
+  "source_effect": "目标直接失去等于当前毒层数的生命，不减少毒层数；不视为毒正常结算。",
+  "source_file": "卡莎_完整卡组_重制v1.0.md",
+  "source_line": 92,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [
+    {
+      "logic": "lose_hp",
+      "target": "enemy",
+      "value": 0,
+      "value_from_target_buff_stacks": "中毒"
+    }
+  ],
+  "mechanism_ids": [
+    "effects.lose_hp",
+    "modifiers.value_from_target_buff_stacks"
+  ],
+  "implementation_status": "supported"
+}

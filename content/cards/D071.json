@@ -1,0 +1,44 @@
+{
+  "id": "D071",
+  "name": "别管计划了",
+  "character": "迪马斯",
+  "rarity": "Rare",
+  "category": "道途专属卡牌",
+  "path": "侠盗",
+  "card_type": "行动",
+  "cost": 1,
+  "load": 3,
+  "target_type": "Self",
+  "hp_payment": 0,
+  "cost_rules": [],
+  "play_conditions": [],
+  "dream_mode": "",
+  "min_range": 0,
+  "range": 0,
+  "target_spec": "自身",
+  "area": 0,
+  "keywords": [
+    "消耗"
+  ],
+  "tags": [
+    "X",
+    "Random",
+    "Hand"
+  ],
+  "description": "将当前手牌除本牌外全部洗入抽牌堆；随机抽取同等数量的牌。",
+  "source_effect": "将当前手牌除本牌外全部洗入抽牌堆；随机抽取同等数量的牌。",
+  "source_file": "迪马斯_完整卡组_重制v1.0.md",
+  "source_line": 100,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [
+    {
+      "logic": "mulligan_hand"
+    }
+  ],
+  "mechanism_ids": [
+    "effects.mulligan_hand"
+  ],
+  "implementation_status": "supported"
+}

@@ -1,0 +1,48 @@
+{
+  "id": "K008",
+  "name": "浅切",
+  "character": "卡莎",
+  "rarity": "Basic",
+  "category": "道途专属卡牌",
+  "path": "解剖学者",
+  "card_type": "攻击",
+  "cost": 1,
+  "load": 1,
+  "target_type": "Enemy",
+  "hp_payment": 0,
+  "cost_rules": [],
+  "play_conditions": [],
+  "dream_mode": "",
+  "min_range": 1,
+  "range": 1,
+  "target_spec": "敌1 / 距1",
+  "area": 0,
+  "keywords": [],
+  "tags": [
+    "Surgery"
+  ],
+  "description": "造成4伤害；目标直接失去2生命。",
+  "source_effect": "造成4伤害；目标直接失去2生命。",
+  "source_file": "卡莎_完整卡组_重制v1.0.md",
+  "source_line": 25,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [
+    {
+      "logic": "attack",
+      "value": 4,
+      "attack_range": 1
+    },
+    {
+      "logic": "lose_hp",
+      "target": "enemy",
+      "value": 2
+    }
+  ],
+  "mechanism_ids": [
+    "effects.attack",
+    "effects.lose_hp"
+  ],
+  "implementation_status": "supported"
+}

@@ -1,0 +1,51 @@
+{
+  "id": "A052",
+  "name": "灾梦：坠落感",
+  "character": "艾莉丝",
+  "rarity": "Uncommon",
+  "category": "道途专属卡牌",
+  "path": "梦魇行者",
+  "card_type": "攻击",
+  "cost": 2,
+  "load": 2,
+  "target_type": "Enemy",
+  "hp_payment": 0,
+  "cost_rules": [],
+  "play_conditions": [],
+  "dream_mode": "three_dreams",
+  "min_range": 1,
+  "range": 2,
+  "target_spec": "敌1 / 距1–2",
+  "area": 0,
+  "keywords": [
+    "灾梦"
+  ],
+  "tags": [
+    "灾梦",
+    "Push"
+  ],
+  "description": "【灾梦】造成22伤害并推动目标1格；结算后进入沉梦。",
+  "source_effect": "【灾梦】造成22伤害并推动目标1格；结算后进入沉梦。",
+  "source_file": "艾莉丝_完整卡组_重制v1.0.md",
+  "source_line": 77,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [
+    {
+      "logic": "attack",
+      "value": 22,
+      "attack_range": 2
+    },
+    {
+      "logic": "knockback",
+      "value": 1
+    }
+  ],
+  "mechanism_ids": [
+    "effects.attack",
+    "effects.knockback",
+    "play_rules.three_dreams"
+  ],
+  "implementation_status": "supported"
+}

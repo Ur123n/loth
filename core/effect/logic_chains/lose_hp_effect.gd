@@ -7,3 +7,4 @@ extends Resource
 
 @export var value: int = 1
 @export var target: String = "self"
+@export var value_from_target_buff_stacks: String = ""  # 非空时以结算时目标状态层数代替固定 value

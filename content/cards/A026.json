@@ -1,0 +1,49 @@
+{
+  "id": "A026",
+  "name": "错位射线",
+  "character": "艾莉丝",
+  "rarity": "Common",
+  "category": "道途专属卡牌",
+  "path": "梦魇行者",
+  "card_type": "攻击",
+  "cost": 1,
+  "load": 1,
+  "target_type": "Enemy",
+  "hp_payment": 0,
+  "cost_rules": [],
+  "play_conditions": [],
+  "dream_mode": "three_dreams",
+  "min_range": 2,
+  "range": 3,
+  "target_spec": "敌1 / 距2–3",
+  "area": 0,
+  "keywords": [],
+  "tags": [
+    "Ranged",
+    "Push"
+  ],
+  "description": "造成5伤害并推动目标1格。",
+  "source_effect": "造成5伤害并推动目标1格。",
+  "source_file": "艾莉丝_完整卡组_重制v1.0.md",
+  "source_line": 47,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [
+    {
+      "logic": "attack",
+      "value": 5,
+      "attack_range": 3
+    },
+    {
+      "logic": "knockback",
+      "value": 1
+    }
+  ],
+  "mechanism_ids": [
+    "effects.attack",
+    "effects.knockback",
+    "play_rules.three_dreams"
+  ],
+  "implementation_status": "supported"
+}

@@ -1,0 +1,56 @@
+{
+  "id": "A063",
+  "name": "我曾见过这一幕",
+  "character": "艾莉丝",
+  "rarity": "Rare",
+  "category": "道途专属卡牌",
+  "path": "梦魇行者",
+  "card_type": "行动",
+  "cost": 1,
+  "load": 3,
+  "target_type": "Self",
+  "hp_payment": 0,
+  "cost_rules": [],
+  "play_conditions": [],
+  "dream_mode": "three_dreams",
+  "min_range": 0,
+  "range": 0,
+  "target_spec": "自身",
+  "area": 0,
+  "keywords": [
+    "消耗"
+  ],
+  "tags": [
+    "X",
+    "Random",
+    "Recovery"
+  ],
+  "description": "从弃牌堆随机展示3张本回合尚未打出过的非Power牌；选择1张加入手牌，其下一次打出后消耗。",
+  "source_effect": "从弃牌堆随机展示3张本回合尚未打出过的非Power牌；选择1张加入手牌，其下一次打出后消耗。",
+  "source_file": "艾莉丝_完整卡组_重制v1.0.md",
+  "source_line": 92,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [
+    {
+      "logic": "choose_from_pile",
+      "source": "discard",
+      "sample_count": 3,
+      "destination": "hand",
+      "position": "top",
+      "required_card_type": "",
+      "exclude_card_type": "Power",
+      "base_cost": -1,
+      "required_tags": [],
+      "played_in_battle": false,
+      "not_played_this_turn": true,
+      "exhaust_selected_on_play": true
+    }
+  ],
+  "mechanism_ids": [
+    "effects.choose_from_pile",
+    "play_rules.three_dreams"
+  ],
+  "implementation_status": "supported"
+}

@@ -1,0 +1,37 @@
+{
+  "id": "K072",
+  "name": "三处皆开",
+  "character": "卡莎",
+  "rarity": "Rare",
+  "category": "道途专属卡牌",
+  "path": "解剖学者",
+  "card_type": "攻击",
+  "cost": 1,
+  "load": 3,
+  "target_type": "Enemy",
+  "hp_payment": 0,
+  "cost_rules": [],
+  "play_conditions": [],
+  "dream_mode": "",
+  "min_range": 1,
+  "range": 1,
+  "target_spec": "敌1 / 距1",
+  "area": 0,
+  "keywords": [
+    "消耗"
+  ],
+  "tags": [
+    "Surgery",
+    "Precision"
+  ],
+  "description": "若本回合已对目标打出2张不同Surgery，本牌费用-1；造成10伤害并使其直接失去8生命。",
+  "source_effect": "若本回合已对目标打出2张不同Surgery，本牌费用-1；造成10伤害并使其直接失去8生命。",
+  "source_file": "卡莎_完整卡组_重制v1.0.md",
+  "source_line": 101,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [],
+  "mechanism_ids": [],
+  "implementation_status": "design_only"
+}

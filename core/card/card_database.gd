@@ -27,6 +27,11 @@ func load_all() -> void:
 			continue
 		var parsed = JSON.parse_string(file.get_as_text())
 		if parsed is Dictionary:
+			if str(parsed.get("id", "")).is_empty() or str(parsed.get("name", "")).is_empty():
+				continue
+			# 设计稿保留在目录中供后续制作；未实现效果的牌不能进入运行时。
+			if parsed.get("implementation_status", "supported") != "supported":
+				continue
 			var card := _parse_card(parsed)
 			if card != null and not card.card_name.is_empty():
 				cards.append(card)
@@ -43,6 +48,8 @@ func get_card(card_name: String) -> CardData:
 static func describe_card(card: CardData) -> String:
 	if card == null:
 		return ""
+	if not card.description.is_empty():
+		return card.description
 	var parts: Array[String] = []
 	var keywords := card.keyword_labels()
 	if not keywords.is_empty():
@@ -51,25 +58,35 @@ static func describe_card(card: CardData) -> String:
 		var cond_prefix := _effect_condition_prefix(effect)
 		if effect is MoveEffect:
 			parts.append("%s移动 %d 格" % [cond_prefix, effect.distance])
+		elif effect is SetDreamStateEffect:
+			parts.append("%s进入%s" % [cond_prefix, "沉梦" if effect.state == 0 else "幻梦"])
 		elif effect is AttackEffect:
 			var pierce := "（无视护甲）" if effect.pierce else ""
 			var alt_cond := ""
 			if effect.alt_value > 0:
-				alt_cond = "（本回合移动过则 %d）" % effect.alt_value
+				alt_cond = "（本回合已放血则 %d）" % effect.alt_value if effect.alt_condition == "bloodlet_this_turn" else "（本回合移动过则 %d）" % effect.alt_value
 			parts.append("%s攻击 %d 点，范围 %d%s%s" % [cond_prefix, effect.value, effect.attack_range, pierce, alt_cond])
 		elif effect is DefenseEffect:
 			var defense_cond := ""
 			if effect.alt_value > 0:
 				defense_cond = "（本回合移动过则 %d）" % effect.alt_value
 			parts.append("%s防御 %d 点%s" % [cond_prefix, effect.value, defense_cond])
+		elif effect is HealEffect:
+			parts.append("%s恢复 %d 点生命" % [cond_prefix, effect.value])
 		elif effect is BuffEffect:
 			var stacks_text := "" if effect.stacks == 1 else "%d 层 " % effect.stacks
 			if effect.duration > 0:
 				parts.append("%sbuff%s持续 %d 回合" % [cond_prefix, stacks_text, effect.duration])
 			else:
 				parts.append("%sbuff%s（持续按 buff 数据自动）" % [cond_prefix, stacks_text])
+		elif effect is TriggerBuffEffect:
+			parts.append("%s立即结算「%s」一次" % [cond_prefix, effect.buff_type])
 		elif effect is DrawEffect:
 			parts.append("%s抽 %d 张牌" % [cond_prefix, effect.value])
+		elif effect is ChooseFromPileEffect:
+			parts.append("%s从%s随机展示至多 %d 张牌，选择 1 张加入%s" % [
+				cond_prefix, _pile_name(effect.source), effect.sample_count,
+				"手牌" if effect.destination == "hand" else "抽牌堆顶"])
 		elif effect is DiscardEffect:
 			if effect.mode == "all":
 				parts.append("%s弃掉全部手牌" % cond_prefix)
@@ -125,6 +142,34 @@ static func _condition_text(condition: Dictionary) -> String:
 			text = "本回合未移动"
 		"hp_below_pct":
 			text = "生命低于 %d%%" % int(condition.get("pct", 50))
+		"hp_at_most_pct":
+			text = "生命不高于 %d%%" % int(condition.get("pct", 50))
+		"target_hp_at_most_pct":
+			text = "目标生命不高于 %d%%" % int(condition.get("pct", 50))
+		"target_buff_stacks_at_least":
+			text = "目标「%s」不少于 %d 层" % [str(condition.get("buff", "")), int(condition.get("stacks", 1))]
+		"played_card_tags_this_turn":
+			text = "本行动已打出「%s」" % str(condition.get("tag", ""))
+			if not str(condition.get("other_tag", "")).is_empty():
+				text += "和「%s」" % str(condition.get("other_tag", ""))
+			if str(condition.get("card_type", "")) == "Attack":
+				text += "攻击牌"
+		"redesign_dream_state_is":
+			text = "处于沉梦" if int(condition.get("state", 0)) == 0 else "处于幻梦"
+		"redesign_dream_state_at_play_is":
+			text = "本牌结算前处于沉梦" if int(condition.get("state", 0)) == 0 else "本牌结算前处于幻梦"
+		"target_has_buff_at_play":
+			text = "目标出牌前持有「%s」" % str(condition.get("buff_name", ""))
+		"target_has_any_debuff_at_play":
+			text = "目标出牌前有负面状态"
+		"target_lost_direct_hp_this_turn":
+			text = "目标本回合曾直接失去生命"
+		"target_moved_this_turn":
+			text = "目标本回合已移动"
+		"caster_target_adjacent":
+			text = "与所选目标相邻"
+		"adjacent_enemies_at_least":
+			text = "相邻敌人不少于 %d 名" % int(condition.get("count", 2))
 		"hand_size_at_least":
 			text = "手牌不少于 %d 张" % int(condition.get("count", 1))
 		"energy_at_least":
@@ -153,7 +198,13 @@ static func _pile_name(pile: String) -> String:
 
 func _parse_card(data: Dictionary) -> CardData:
 	var card := CardData.new()
+	card.card_id = str(data.get("id", ""))
 	card.card_name = str(data.get("name", ""))
+	card.character_name = str(data.get("character", ""))
+	card.rarity = str(data.get("rarity", ""))
+	card.description = str(data.get("description", ""))
+	for tag in data.get("tags", []):
+		card.tags.append(str(tag))
 	card.path_name = str(data.get("path", ""))
 	# 美术接口：icon/art/animation 相对 卡牌/ 目录；art 兼容旧字段 art_path
 	card.icon_path = str(data.get("icon", ""))
@@ -163,8 +214,17 @@ func _parse_card(data: Dictionary) -> CardData:
 	card.card_type = _parse_card_type(str(data.get("card_type", "")))
 	card.cost = int(data.get("cost", 0))
 	card.load = int(data.get("load", 0))
+	card.hp_payment = int(data.get("hp_payment", 0))
+	card.dream_mode = str(data.get("dream_mode", ""))
+	for rule in data.get("cost_rules", []):
+		if rule is Dictionary:
+			card.cost_rules.append(rule.duplicate(true))
+	for condition in data.get("play_conditions", []):
+		if condition is Dictionary:
+			card.play_conditions.append(condition.duplicate(true))
 	card.target_type = _parse_target_type(str(data.get("target_type", "")))
 	card.range = int(data.get("range", 0))
+	card.min_range = int(data.get("min_range", 1))
 	card.area = int(data.get("area", 0))
 	# 关键词：消耗/保留/虚无/固有/沉梦/幻梦/灾梦/衍生（兼容旧字段 discard_on_use=true → 消耗）
 	card.exhaust_on_play = bool(data.get("exhaust_on_play", false))
@@ -219,16 +279,28 @@ func _parse_effect(data) -> Resource:
 			attack.attack_range = int(data.get("attack_range", 0))
 			attack.pierce = bool(data.get("pierce", false))
 			attack.alt_value = int(data.get("alt_value", 0))
+			attack.alt_condition = str(data.get("alt_condition", "moved_this_turn"))
 			return attack
 		"move":
 			var move := MoveEffect.new()
 			move.distance = int(data.get("distance", 0))
+			move.target = str(data.get("target", "self"))
 			return move
+		"set_dream_state":
+			var dream_state := SetDreamStateEffect.new()
+			dream_state.state = int(data.get("state", 0))
+			return dream_state
 		"defense":
 			var defense := DefenseEffect.new()
 			defense.value = int(data.get("value", 0))
 			defense.alt_value = int(data.get("alt_value", 0))
+			defense.target = str(data.get("target", "self"))
 			return defense
+		"heal":
+			var heal := HealEffect.new()
+			heal.value = int(data.get("value", 0))
+			heal.target = str(data.get("target", "self"))
+			return heal
 		"buff":
 			var buff := BuffEffect.new()
 			buff.target = str(data.get("target", "self"))
@@ -236,10 +308,40 @@ func _parse_effect(data) -> Resource:
 			buff.duration = int(data.get("duration", 0))
 			buff.stacks = int(data.get("stacks", 1))
 			return buff
+		"trigger_buff":
+			var trigger := TriggerBuffEffect.new()
+			trigger.target = str(data.get("target", "enemy"))
+			trigger.buff_type = str(data.get("buff_type", ""))
+			return trigger
 		"draw":
 			var draw := DrawEffect.new()
 			draw.value = int(data.get("value", 1))
 			return draw
+		"transfer_random_card":
+			var transfer := TransferRandomCardEffect.new()
+			transfer.source = str(data.get("source", "discard"))
+			transfer.destination = str(data.get("destination", "draw"))
+			transfer.exclude_card_type = str(data.get("exclude_card_type", ""))
+			transfer.position = str(data.get("position", "top"))
+			transfer.count = int(data.get("count", 1))
+			return transfer
+		"mulligan_hand":
+			return MulliganHandEffect.new()
+		"choose_from_pile":
+			var choice := ChooseFromPileEffect.new()
+			choice.source = str(data.get("source", "draw"))
+			choice.sample_count = int(data.get("sample_count", 3))
+			choice.destination = str(data.get("destination", "draw"))
+			choice.position = str(data.get("position", "top"))
+			choice.required_card_type = str(data.get("required_card_type", ""))
+			choice.exclude_card_type = str(data.get("exclude_card_type", ""))
+			choice.base_cost = int(data.get("base_cost", -1))
+			for tag in data.get("required_tags", []):
+				choice.required_tags.append(str(tag))
+			choice.played_in_battle = bool(data.get("played_in_battle", false))
+			choice.not_played_this_turn = bool(data.get("not_played_this_turn", false))
+			choice.exhaust_selected_on_play = bool(data.get("exhaust_selected_on_play", false))
+			return choice
 		"discard":
 			var discard := DiscardEffect.new()
 			discard.value = int(data.get("value", 1))
@@ -277,6 +379,7 @@ func _parse_effect(data) -> Resource:
 			var lose := LoseHpEffect.new()
 			lose.value = int(data.get("value", 1))
 			lose.target = str(data.get("target", "self"))
+			lose.value_from_target_buff_stacks = str(data.get("value_from_target_buff_stacks", ""))
 			return lose
 		"gain_energy":
 			var gain := GainEnergyEffect.new()

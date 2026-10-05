@@ -13,6 +13,8 @@ extends Resource
 @export var duration_per_stack: int = 0       # 每层持续加成（回合，层数持续型使用）
 @export var decay_per_turn: bool = false      # 每回合是否衰减层数
 @export var decay_amount: int = 1             # 每回合衰减层数
+@export var decay_after_trigger: bool = false # 在触发效果结算后衰减，避免先扣层数
+@export var max_stacks: int = 0               # 0 表示无上限
 @export var consumed_on_trigger: bool = false # 触发后是否消失
 @export var trigger_timing: String = ""       # 触发时机（回合开始/结束回合/受到攻击时/造成攻击伤害时 等）
 @export var trigger_condition: String = ""    # 触发条件

@@ -1,0 +1,43 @@
+{
+  "id": "D017",
+  "name": "跨距瞄准",
+  "character": "迪马斯",
+  "rarity": "Common",
+  "category": "道途专属卡牌",
+  "path": "侠盗",
+  "card_type": "攻击",
+  "cost": 1,
+  "load": 1,
+  "target_type": "Enemy",
+  "hp_payment": 0,
+  "cost_rules": [],
+  "play_conditions": [],
+  "dream_mode": "",
+  "min_range": 3,
+  "range": 3,
+  "target_spec": "敌1 / 恰距3",
+  "area": 0,
+  "keywords": [],
+  "tags": [
+    "Pistol",
+    "Position"
+  ],
+  "description": "造成10伤害。",
+  "source_effect": "造成10伤害。",
+  "source_file": "迪马斯_完整卡组_重制v1.0.md",
+  "source_line": 38,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [
+    {
+      "logic": "attack",
+      "value": 10,
+      "attack_range": 3
+    }
+  ],
+  "mechanism_ids": [
+    "effects.attack"
+  ],
+  "implementation_status": "supported"
+}

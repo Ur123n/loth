@@ -1,0 +1,54 @@
+{
+  "id": "K036",
+  "name": "乌藤浓汁",
+  "character": "卡莎",
+  "rarity": "Uncommon",
+  "category": "道途专属卡牌",
+  "path": "解剖学者",
+  "card_type": "行动",
+  "cost": 1,
+  "load": 2,
+  "target_type": "Enemy",
+  "hp_payment": 0,
+  "cost_rules": [],
+  "play_conditions": [],
+  "dream_mode": "",
+  "min_range": 3,
+  "range": 3,
+  "target_spec": "敌1 / 距3",
+  "area": 0,
+  "keywords": [],
+  "tags": [
+    "Drug",
+    "Poison"
+  ],
+  "description": "施加6层毒；若目标已有任意Debuff，再施加3层毒。",
+  "source_effect": "施加6层毒；若目标已有任意Debuff，再施加3层毒。",
+  "source_file": "卡莎_完整卡组_重制v1.0.md",
+  "source_line": 61,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [
+    {
+      "logic": "buff",
+      "target": "enemy",
+      "buff_type": "中毒",
+      "stacks": 6
+    },
+    {
+      "logic": "buff",
+      "target": "enemy",
+      "buff_type": "中毒",
+      "stacks": 3,
+      "condition": {
+        "type": "target_has_any_debuff_at_play"
+      }
+    }
+  ],
+  "mechanism_ids": [
+    "effects.buff",
+    "conditions.target_has_any_debuff_at_play"
+  ],
+  "implementation_status": "supported"
+}

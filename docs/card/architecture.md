@@ -2,6 +2,8 @@
 
 ## 数据 → Resource 解析链路
 
+重制牌的生成链先读取 `content/cards/mechanics.json`：导入器从 `effects` 模板实例化效果，再把该牌用到的效果、条件、修正和出牌规则写入 `mechanism_ids`。数据库保留语义、读取时机与实现位置，便于下一张牌复用和改造；`conditions.json` 是编辑器的参数输入清单，其中新增条件用 `mechanism_id` 对应数据库条目。运行时仍由下面的 CardDB 链解析效果，机制引用只用于索引和校验。
+
 1. `CardDB.load_all()`（Autoload，`_ready()` 时执行）遍历 `content/cards/*.json`。
 2. 每张卡 JSON 解析为 `CardData`：顶层字段（费用/荷载/类型/关键词/美术）直接映射；`effects` 数组交给 `_parse_effect()`。
 3. `_parse_effect()` 按 `logic` 字符串匹配创建对应逻辑链 Resource（`AttackEffect.new()` 等），并写入参数；若有 `condition`，存入效果的 meta（`effect.set_meta("condition", …)`）。
@@ -17,7 +19,7 @@ CardDatabase (Autoload, Node)
                                         AddToHandEffect / AddToDrawEffect /
                                         AddToDiscardEffect / GenerateEffect / CopyEffect /
                                         LoseHpEffect / GainEnergyEffect / FlankEffect /
-                                        KnockbackEffect
+                                        KnockbackEffect / TriggerBuffEffect / SetDreamStateEffect
 ```
 
 ## 描述生成

@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "effects": {
+    "attack": {"name": "攻击", "description": "对所选敌人结算一次攻击伤害；重复条目表示逐段攻击", "implementation": "EffectSystem.resolve_attack", "template": {"logic": "attack", "value": "$value", "attack_range": "$attack_range"}},
+    "defense": {"name": "格挡", "description": "给予自身或所选友军格挡", "implementation": "EffectSystem.resolve_effects", "template": {"logic": "defense", "target": "$target", "value": "$value"}},
+    "buff": {"name": "状态层数", "description": "按 BuffData 施加或叠加指定状态", "implementation": "EffectSystem.resolve_buff_effect", "template": {"logic": "buff", "target": "$target", "buff_type": "$buff_type", "stacks": "$stacks"}},
+    "move": {"name": "额外移动力", "description": "给予自身或所选友军本行动可用于移动的额外格数", "implementation": "EffectSystem.resolve_effects", "template": {"logic": "move", "target": "$target", "distance": "$distance"}},
+    "draw": {"name": "抽牌", "description": "从抽牌堆抽指定张数", "implementation": "EffectSystem.draw_cards", "template": {"logic": "draw", "value": "$value"}},
+    "heal": {"name": "直接治疗", "description": "立即治疗自身或所选友军，不超过生命上限", "implementation": "EffectSystem.heal_unit", "template": {"logic": "heal", "target": "$target", "value": "$value"}},
+    "lose_hp": {"name": "直接失去生命", "description": "目标无视格挡直接失去生命", "implementation": "EffectSystem.resolve_lose_hp_effect", "template": {"logic": "lose_hp", "target": "$target", "value": "$value"}},
+    "gain_energy": {"name": "获得费用", "description": "效果结算时增加当前费用", "implementation": "EffectSystem.resolve_effects", "template": {"logic": "gain_energy", "value": "$value"}},
+    "trigger_buff": {"name": "立即正常结算指定状态", "description": "仅对指定单位的一个状态执行已有触发及衰减流程", "implementation": "EffectSystem.resolve_trigger_buff_effect", "template": {"logic": "trigger_buff", "target": "$target", "buff_type": "$buff_type"}},
+    "set_dream_state": {"name": "切换重制梦态", "description": "立即将出牌者切换到指定沉梦或幻梦状态", "implementation": "EffectSystem.resolve_effects", "template": {"logic": "set_dream_state", "state": "$state"}},
+    "knockback": {"name": "攻击后推动目标", "description": "战斗地图在本牌伤害结算后将存活目标沿远离出牌者方向推动", "implementation": "EffectSystem.resolve_effects / BattleMap._on_card_play_requested", "template": {"logic": "knockback", "value": "$value"}},
+    "transfer_random_card": {"name": "随机转移实体牌", "description": "从指定牌区按类型过滤后不重复随机选实体牌，转移到目标牌区指定位置", "implementation": "EffectSystem.transfer_random_cards", "template": {"logic": "transfer_random_card", "source": "$source", "destination": "$destination", "exclude_card_type": "$exclude_card_type", "position": "$position", "count": "$count"}},
+    "mulligan_hand": {"name": "洗回并重抽其他手牌", "description": "当前牌离手后将其余手牌洗入抽牌堆，再抽相同张数", "implementation": "EffectSystem.mulligan_hand", "template": {"logic": "mulligan_hand"}},
+    "choose_from_pile": {"name": "随机展示牌区实体牌并由玩家选一张", "description": "先按基础类型、费用、标签及出牌历史过滤，再无放回随机展示至多N张实体牌；选中牌移至抽牌堆顶或手牌，可附加下次打出消耗；未选牌保持原位；选择后续行剩余效果与出牌离场", "implementation": "EffectSystem.request_card_choice / BattleManager.choose_card_option", "template": {"logic": "choose_from_pile", "source": "$source", "sample_count": "$sample_count", "destination": "$destination", "position": "$position", "required_card_type": "$required_card_type", "exclude_card_type": "$exclude_card_type", "base_cost": "$base_cost", "required_tags": "$required_tags", "played_in_battle": "$played_in_battle", "not_played_this_turn": "$not_played_this_turn", "exhaust_selected_on_play": "$exhaust_selected_on_play"}}
+  },
+  "conditions": {
+    "hp_at_most_pct": {"name": "生命不高于百分比", "timing": "effect", "implementation": "EffectSystem.evaluate_condition"},
+    "target_hp_at_most_pct": {"name": "目标生命不高于百分比", "timing": "effect_or_play", "implementation": "EffectSystem.evaluate_condition / BattleManager.play_card"},
+    "target_block_at_play_at_least": {"name": "出牌前目标格挡不少于阈值", "description": "读取本牌任一效果结算前的目标格挡（Armor）快照", "timing": "card_start_snapshot", "implementation": "EffectSystem.evaluate_condition"},
+    "target_block_at_play_at_most": {"name": "出牌前目标格挡不高于阈值", "description": "读取本牌任一效果结算前的目标格挡（Armor）快照", "timing": "card_start_snapshot", "implementation": "EffectSystem.evaluate_condition"},
+    "played_card_tags_this_turn": {"name": "本行动已打出指定标签卡牌", "description": "可限定 Attack；distinct 要求不同次出牌；当前牌结算后才计入", "timing": "effect_or_cost", "implementation": "EffectSystem.evaluate_condition / BattleManager.effective_card_cost / BattleManager.play_card"},
+    "has_buff": {"name": "自身持有指定状态", "timing": "effect", "implementation": "EffectSystem.evaluate_condition"},
+    "moved_this_turn": {"name": "本回合已移动", "timing": "effect", "implementation": "EffectSystem.evaluate_condition"},
+    "not_moved_this_turn": {"name": "本回合未移动", "timing": "effect", "implementation": "EffectSystem.evaluate_condition"},
+    "redesign_dream_state_is": {"name": "处于指定梦态", "timing": "effect", "implementation": "EffectSystem.evaluate_condition"},
+    "redesign_dream_state_at_play_is": {"name": "本牌结算前处于指定梦态", "timing": "card_start_snapshot", "implementation": "EffectSystem.evaluate_condition"},
+    "target_has_buff_at_play": {"name": "出牌前目标有指定状态", "timing": "card_start_snapshot", "implementation": "EffectSystem.evaluate_condition"},
+    "target_has_any_debuff_at_play": {"name": "出牌前目标有任意负面状态", "timing": "card_start_snapshot", "implementation": "EffectSystem.evaluate_condition"},
+    "target_lost_direct_hp_this_turn": {"name": "本回合对目标造成过直接失血", "timing": "effect_or_cost", "implementation": "EffectSystem.evaluate_condition / BattleManager.effective_card_cost"},
+    "target_moved_this_turn": {"name": "所选目标本回合已移动", "timing": "effect", "implementation": "EffectSystem.evaluate_condition"},
+    "caster_target_adjacent": {"name": "出牌者与所选目标相邻", "timing": "effect", "implementation": "EffectSystem.evaluate_condition"},
+    "adjacent_enemies_at_least": {"name": "相邻敌人数不少于指定值", "timing": "effect", "implementation": "EffectSystem.evaluate_condition"},
+    "caster_moved_this_turn": {"name": "出牌者本回合已移动", "timing": "cost", "implementation": "BattleManager.effective_card_cost"},
+    "target_buff_stacks_at_least": {"name": "目标状态层数达到阈值", "timing": "effect_or_cost", "implementation": "EffectSystem.evaluate_condition / BattleManager.effective_card_cost"},
+    "target_has_buff": {"name": "目标有指定状态", "timing": "cost", "implementation": "BattleManager.effective_card_cost"},
+    "used_tag_on_target_this_turn": {"name": "本回合对目标使用过指定标签", "timing": "cost", "implementation": "BattleManager.effective_card_cost"}
+  },
+  "modifiers": {
+    "bloodlet_this_turn": {"name": "放血后替换攻击数值", "description": "本行动成功支付过放血生命时，使用 alt_value 作为攻击面板", "implementation": "EffectSystem.resolve_attack"},
+    "value_from_target_buff_stacks": {"name": "目标状态层数作为直接失血值", "description": "结算时读取目标当前状态层数，不触发或衰减该状态", "implementation": "EffectSystem.resolve_lose_hp_effect"}
+  },
+  "play_rules": {
+    "hp_payment": {"name": "放血生命支付", "description": "费用校验后、效果结算前支付生命；不足以存活则拒绝打出", "implementation": "BattleManager.play_card"},
+    "three_dreams": {"name": "沉梦幻梦灾梦状态链", "description": "幻梦牌结算前切换梦态，灾梦牌需要幻梦并在结算后回到沉梦", "implementation": "BattleManager.play_card"},
+    "play_conditions": {"name": "出牌前硬性条件", "description": "目标合法后、费用与生命支付前验证，失败不改变手牌或资源", "implementation": "BattleManager.play_card"}
+  }
+}

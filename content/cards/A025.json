@@ -1,0 +1,37 @@
+{
+  "id": "A025",
+  "name": "虚像穿刺",
+  "character": "艾莉丝",
+  "rarity": "Common",
+  "category": "道途专属卡牌",
+  "path": "梦魇行者",
+  "card_type": "攻击",
+  "cost": 1,
+  "load": 1,
+  "target_type": "Enemy",
+  "hp_payment": 0,
+  "cost_rules": [],
+  "play_conditions": [],
+  "dream_mode": "three_dreams",
+  "min_range": 1,
+  "range": 2,
+  "target_spec": "敌1 / 距1–2",
+  "area": 0,
+  "keywords": [
+    "幻梦"
+  ],
+  "tags": [
+    "幻梦",
+    "Mark"
+  ],
+  "description": "【幻梦】造成7伤害并施加1层标记。",
+  "source_effect": "【幻梦】造成7伤害并施加1层标记。",
+  "source_file": "艾莉丝_完整卡组_重制v1.0.md",
+  "source_line": 46,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [],
+  "mechanism_ids": [],
+  "implementation_status": "design_only"
+}

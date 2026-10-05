@@ -1,0 +1,56 @@
+{
+  "id": "K060",
+  "name": "临床记录",
+  "character": "卡莎",
+  "rarity": "Uncommon",
+  "category": "道途专属卡牌",
+  "path": "解剖学者",
+  "card_type": "行动",
+  "cost": 1,
+  "load": 2,
+  "target_type": "Self",
+  "hp_payment": 0,
+  "cost_rules": [],
+  "play_conditions": [],
+  "dream_mode": "",
+  "min_range": 0,
+  "range": 0,
+  "target_spec": "自身",
+  "area": 0,
+  "keywords": [],
+  "tags": [
+    "X",
+    "Random",
+    "Deck"
+  ],
+  "description": "从弃牌堆随机展示3张本场战斗已打出过的Drug或Surgery；选择1张置于牌堆顶。",
+  "source_effect": "从弃牌堆随机展示3张本场战斗已打出过的Drug或Surgery；选择1张置于牌堆顶。",
+  "source_file": "卡莎_完整卡组_重制v1.0.md",
+  "source_line": 85,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [
+    {
+      "logic": "choose_from_pile",
+      "source": "discard",
+      "sample_count": 3,
+      "destination": "draw",
+      "position": "top",
+      "required_card_type": "",
+      "exclude_card_type": "",
+      "base_cost": -1,
+      "required_tags": [
+        "Drug",
+        "Surgery"
+      ],
+      "played_in_battle": true,
+      "not_played_this_turn": false,
+      "exhaust_selected_on_play": false
+    }
+  ],
+  "mechanism_ids": [
+    "effects.choose_from_pile"
+  ],
+  "implementation_status": "supported"
+}

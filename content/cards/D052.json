@@ -1,0 +1,51 @@
+{
+  "id": "D052",
+  "name": "刀尖上的机会",
+  "character": "迪马斯",
+  "rarity": "Uncommon",
+  "category": "道途专属卡牌",
+  "path": "侠盗",
+  "card_type": "行动",
+  "cost": 0,
+  "load": 2,
+  "target_type": "Self",
+  "hp_payment": 0,
+  "cost_rules": [],
+  "play_conditions": [],
+  "dream_mode": "",
+  "min_range": 0,
+  "range": 0,
+  "target_spec": "自身",
+  "area": 0,
+  "keywords": [
+    "消耗"
+  ],
+  "tags": [
+    "Energy"
+  ],
+  "description": "若本回合已分别打出Dagger和Pistol Attack，获得1费。",
+  "source_effect": "若本回合已分别打出Dagger和Pistol Attack，获得1费。",
+  "source_file": "迪马斯_完整卡组_重制v1.0.md",
+  "source_line": 77,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [
+    {
+      "logic": "gain_energy",
+      "value": 1,
+      "condition": {
+        "type": "played_card_tags_this_turn",
+        "tag": "Dagger",
+        "other_tag": "Pistol",
+        "card_type": "Attack",
+        "distinct": 1
+      }
+    }
+  ],
+  "mechanism_ids": [
+    "effects.gain_energy",
+    "conditions.played_card_tags_this_turn"
+  ],
+  "implementation_status": "supported"
+}

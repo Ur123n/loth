@@ -1,0 +1,45 @@
+{
+  "id": "B022",
+  "name": "忍痛追击",
+  "character": "鲍德温",
+  "rarity": "Common",
+  "category": "道途专属卡牌",
+  "path": "孢子卫士",
+  "card_type": "攻击",
+  "cost": 1,
+  "load": 1,
+  "target_type": "Enemy",
+  "hp_payment": 0,
+  "cost_rules": [],
+  "play_conditions": [],
+  "dream_mode": "",
+  "min_range": 1,
+  "range": 1,
+  "target_spec": "敌1 / 距1",
+  "area": 0,
+  "keywords": [],
+  "tags": [
+    "Melee"
+  ],
+  "description": "造成12伤害；若本回合已经放血，改为16伤害。",
+  "source_effect": "造成12伤害；若本回合已经放血，改为16伤害。",
+  "source_file": "鲍德温_完整卡组_重制v1.0.md",
+  "source_line": 43,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [
+    {
+      "logic": "attack",
+      "value": 12,
+      "alt_value": 16,
+      "alt_condition": "bloodlet_this_turn",
+      "attack_range": 1
+    }
+  ],
+  "mechanism_ids": [
+    "effects.attack",
+    "modifiers.bloodlet_this_turn"
+  ],
+  "implementation_status": "supported"
+}

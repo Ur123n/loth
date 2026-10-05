@@ -1,0 +1,38 @@
+{
+  "id": "D074",
+  "name": "混战里找人",
+  "character": "迪马斯",
+  "rarity": "Rare",
+  "category": "道途专属卡牌",
+  "path": "侠盗",
+  "card_type": "攻击",
+  "cost": 1,
+  "load": 3,
+  "target_type": "Enemy",
+  "hp_payment": 0,
+  "cost_rules": [],
+  "play_conditions": [],
+  "dream_mode": "",
+  "min_range": 1,
+  "range": 1,
+  "target_spec": "敌1 / 距1",
+  "area": 0,
+  "keywords": [
+    "消耗"
+  ],
+  "tags": [
+    "X",
+    "Random",
+    "Displace"
+  ],
+  "description": "造成12伤害；然后该敌人与其周围所有可移动单位分别随机移动到一个合法相邻空格，按行动顺序依次结算。",
+  "source_effect": "造成12伤害；然后该敌人与其周围所有可移动单位分别随机移动到一个合法相邻空格，按行动顺序依次结算。",
+  "source_file": "迪马斯_完整卡组_重制v1.0.md",
+  "source_line": 103,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [],
+  "mechanism_ids": [],
+  "implementation_status": "design_only"
+}

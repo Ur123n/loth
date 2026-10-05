@@ -1,0 +1,38 @@
+{
+  "id": "B074",
+  "name": "把局面砸烂",
+  "character": "鲍德温",
+  "rarity": "Rare",
+  "category": "道途专属卡牌",
+  "path": "孢子卫士",
+  "card_type": "攻击",
+  "cost": 2,
+  "load": 4,
+  "target_type": "Enemy",
+  "hp_payment": 0,
+  "cost_rules": [],
+  "play_conditions": [],
+  "dream_mode": "",
+  "min_range": 1,
+  "range": 1,
+  "target_spec": "相邻敌人",
+  "area": 0,
+  "keywords": [
+    "消耗"
+  ],
+  "tags": [
+    "X",
+    "Random",
+    "AOE"
+  ],
+  "description": "所有相邻敌人受到18伤害；随后所有被命中的单位（包括你）各自随机移动到1个合法相邻空格，你最后移动。",
+  "source_effect": "所有相邻敌人受到18伤害；随后所有被命中的单位（包括你）各自随机移动到1个合法相邻空格，你最后移动。",
+  "source_file": "鲍德温_完整卡组_重制v1.0.md",
+  "source_line": 103,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [],
+  "mechanism_ids": [],
+  "implementation_status": "design_only"
+}

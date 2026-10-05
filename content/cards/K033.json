@@ -1,0 +1,57 @@
+{
+  "id": "K033",
+  "name": "看准退路",
+  "character": "卡莎",
+  "rarity": "Common",
+  "category": "道途专属卡牌",
+  "path": "解剖学者",
+  "card_type": "行动",
+  "cost": 1,
+  "load": 1,
+  "target_type": "Self",
+  "hp_payment": 0,
+  "cost_rules": [],
+  "play_conditions": [],
+  "dream_mode": "",
+  "min_range": 0,
+  "range": 0,
+  "target_spec": "自身",
+  "area": 0,
+  "keywords": [],
+  "tags": [
+    "Movement"
+  ],
+  "description": "移动最多2格；若本回合使用过Drug，改为3格。",
+  "source_effect": "移动最多2格；若本回合使用过Drug，改为3格。",
+  "source_file": "卡莎_完整卡组_重制v1.0.md",
+  "source_line": 54,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [
+    {
+      "logic": "move",
+      "target": "self",
+      "distance": 2,
+      "condition": {
+        "type": "played_card_tags_this_turn",
+        "tag": "Drug",
+        "negate": true
+      }
+    },
+    {
+      "logic": "move",
+      "target": "self",
+      "distance": 3,
+      "condition": {
+        "type": "played_card_tags_this_turn",
+        "tag": "Drug"
+      }
+    }
+  ],
+  "mechanism_ids": [
+    "effects.move",
+    "conditions.played_card_tags_this_turn"
+  ],
+  "implementation_status": "supported"
+}

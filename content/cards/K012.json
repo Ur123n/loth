@@ -1,0 +1,52 @@
+{
+  "id": "K012",
+  "name": "青胆末",
+  "character": "卡莎",
+  "rarity": "Common",
+  "category": "道途专属卡牌",
+  "path": "解剖学者",
+  "card_type": "行动",
+  "cost": 1,
+  "load": 1,
+  "target_type": "Enemy",
+  "hp_payment": 0,
+  "cost_rules": [],
+  "play_conditions": [],
+  "dream_mode": "",
+  "min_range": 3,
+  "range": 3,
+  "target_spec": "敌1 / 距3",
+  "area": 0,
+  "keywords": [],
+  "tags": [
+    "Drug",
+    "Poison"
+  ],
+  "description": "施加4层毒和1层虚弱。",
+  "source_effect": "施加4层毒和1层虚弱。",
+  "source_file": "卡莎_完整卡组_重制v1.0.md",
+  "source_line": 33,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [
+    {
+      "logic": "buff",
+      "target": "enemy",
+      "buff_type": "中毒",
+      "stacks": 4,
+      "duration": 4
+    },
+    {
+      "logic": "buff",
+      "target": "enemy",
+      "buff_type": "虚弱",
+      "stacks": 1,
+      "duration": 1
+    }
+  ],
+  "mechanism_ids": [
+    "effects.buff"
+  ],
+  "implementation_status": "supported"
+}

@@ -1,0 +1,59 @@
+{
+  "id": "A032",
+  "name": "惊醒",
+  "character": "艾莉丝",
+  "rarity": "Common",
+  "category": "道途专属卡牌",
+  "path": "梦魇行者",
+  "card_type": "行动",
+  "cost": 0,
+  "load": 1,
+  "target_type": "Self",
+  "hp_payment": 0,
+  "cost_rules": [],
+  "play_conditions": [],
+  "dream_mode": "three_dreams",
+  "min_range": 0,
+  "range": 0,
+  "target_spec": "自身",
+  "area": 0,
+  "keywords": [],
+  "tags": [
+    "Dream",
+    "Defense"
+  ],
+  "description": "若处于幻梦，立即进入沉梦并获得5格挡。",
+  "source_effect": "若处于幻梦，立即进入沉梦并获得5格挡。",
+  "source_file": "艾莉丝_完整卡组_重制v1.0.md",
+  "source_line": 53,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [
+    {
+      "logic": "set_dream_state",
+      "state": 0,
+      "condition": {
+        "type": "redesign_dream_state_is",
+        "state": 1
+      }
+    },
+    {
+      "logic": "defense",
+      "target": "self",
+      "value": 5,
+      "condition": {
+        "type": "redesign_dream_state_at_play_is",
+        "state": 1
+      }
+    }
+  ],
+  "mechanism_ids": [
+    "effects.set_dream_state",
+    "conditions.redesign_dream_state_is",
+    "effects.defense",
+    "conditions.redesign_dream_state_at_play_is",
+    "play_rules.three_dreams"
+  ],
+  "implementation_status": "supported"
+}

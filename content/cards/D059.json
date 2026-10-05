@@ -1,0 +1,55 @@
+{
+  "id": "D059",
+  "name": "顺手牵羊",
+  "character": "迪马斯",
+  "rarity": "Uncommon",
+  "category": "道途专属卡牌",
+  "path": "侠盗",
+  "card_type": "行动",
+  "cost": 0,
+  "load": 2,
+  "target_type": "Self",
+  "hp_payment": 0,
+  "cost_rules": [],
+  "play_conditions": [],
+  "dream_mode": "",
+  "min_range": 0,
+  "range": 0,
+  "target_spec": "自身",
+  "area": 0,
+  "keywords": [
+    "消耗"
+  ],
+  "tags": [
+    "X",
+    "Random",
+    "Recovery"
+  ],
+  "description": "从弃牌堆随机展示3张基础费用为1的Skill；选择1张加入手牌，该牌打出后消耗。",
+  "source_effect": "从弃牌堆随机展示3张基础费用为1的Skill；选择1张加入手牌，该牌打出后消耗。",
+  "source_file": "迪马斯_完整卡组_重制v1.0.md",
+  "source_line": 84,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [
+    {
+      "logic": "choose_from_pile",
+      "source": "discard",
+      "sample_count": 3,
+      "destination": "hand",
+      "position": "top",
+      "required_card_type": "Skill",
+      "exclude_card_type": "",
+      "base_cost": 1,
+      "required_tags": [],
+      "played_in_battle": false,
+      "not_played_this_turn": false,
+      "exhaust_selected_on_play": true
+    }
+  ],
+  "mechanism_ids": [
+    "effects.choose_from_pile"
+  ],
+  "implementation_status": "supported"
+}

@@ -1,0 +1,41 @@
+{
+  "id": "K002",
+  "name": "护身架势",
+  "character": "卡莎",
+  "rarity": "Basic",
+  "category": "道途专属卡牌",
+  "path": "解剖学者",
+  "card_type": "行动",
+  "cost": 1,
+  "load": 1,
+  "target_type": "Self",
+  "hp_payment": 0,
+  "cost_rules": [],
+  "play_conditions": [],
+  "dream_mode": "",
+  "min_range": 0,
+  "range": 0,
+  "target_spec": "自身",
+  "area": 0,
+  "keywords": [],
+  "tags": [
+    "Defense"
+  ],
+  "description": "获得5格挡。",
+  "source_effect": "获得5格挡。",
+  "source_file": "卡莎_完整卡组_重制v1.0.md",
+  "source_line": 19,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [
+    {
+      "logic": "defense",
+      "value": 5
+    }
+  ],
+  "mechanism_ids": [
+    "effects.defense"
+  ],
+  "implementation_status": "supported"
+}

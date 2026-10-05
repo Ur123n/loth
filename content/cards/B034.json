@@ -1,0 +1,48 @@
+{
+  "id": "B034",
+  "name": "蛮横推开",
+  "character": "鲍德温",
+  "rarity": "Common",
+  "category": "道途专属卡牌",
+  "path": "孢子卫士",
+  "card_type": "攻击",
+  "cost": 1,
+  "load": 1,
+  "target_type": "Enemy",
+  "hp_payment": 0,
+  "cost_rules": [],
+  "play_conditions": [],
+  "dream_mode": "",
+  "min_range": 1,
+  "range": 1,
+  "target_spec": "敌1 / 距1",
+  "area": 0,
+  "keywords": [],
+  "tags": [
+    "Melee",
+    "Push"
+  ],
+  "description": "造成10伤害并推动目标1格。",
+  "source_effect": "造成10伤害并推动目标1格。",
+  "source_file": "鲍德温_完整卡组_重制v1.0.md",
+  "source_line": 55,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [
+    {
+      "logic": "attack",
+      "value": 10,
+      "attack_range": 1
+    },
+    {
+      "logic": "knockback",
+      "value": 1
+    }
+  ],
+  "mechanism_ids": [
+    "effects.attack",
+    "effects.knockback"
+  ],
+  "implementation_status": "supported"
+}

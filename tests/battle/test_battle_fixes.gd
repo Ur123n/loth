@@ -25,6 +25,8 @@ func _process(_delta: float) -> bool:
 func _run_all() -> void:
 	_ensure_path_db()
 	_test_buff_duration_scaling()
+	_test_poison_decay_after_damage()
+	_test_healing_cap_and_end_turn()
 	_test_buff_stack_unlimited()
 	_test_first_strike_passive()
 	_test_dead_unit_skips_turn()
@@ -96,7 +98,7 @@ func _test_buff_duration_scaling() -> void:
 	var manager3 := _make_manager(unit3)
 	_apply_buff(manager3, unit3, "疗愈", 12, 0)
 	var heal := manager3._find_buff(unit3, "疗愈")
-	_check(not heal.is_empty() and int(heal.get("duration", 0)) == 12, "疗愈12层：持续时间跟随层数（12）")
+	_check(not heal.is_empty() and int(heal.get("stacks", 0)) == 7 and int(heal.get("duration", 0)) == 7, "疗愈12层：按上限保留7层")
 
 
 func _test_buff_stack_unlimited() -> void:
@@ -106,6 +108,30 @@ func _test_buff_stack_unlimited() -> void:
 	_apply_buff(manager, unit, "易伤", 5, 5)
 	var vuln := manager._find_buff(unit, "易伤")
 	_check(int(vuln.get("stacks", 0)) == 13, "易伤叠层：8+5 无上限（13）")
+
+
+func _test_poison_decay_after_damage() -> void:
+	var unit := _make_unit()
+	var manager := _make_manager(unit)
+	_apply_buff(manager, unit, "中毒", 3, 0)
+	var starting_hp := unit.current_hp
+	for loss in [3, 5, 6]:
+		manager._resolve_turn_buffs(unit)
+		manager._resolve_end_turn_buffs(unit)
+		_check(unit.current_hp == starting_hp - loss, "中毒先失血后衰减：累计损失 %d" % loss)
+	_check(manager._find_buff(unit, "中毒").is_empty(), "中毒三次触发后消失")
+
+
+func _test_healing_cap_and_end_turn() -> void:
+	var unit := _make_unit()
+	var manager := _make_manager(unit)
+	unit.current_hp = 100
+	_apply_buff(manager, unit, "疗愈", 3, 0)
+	for expected_hp in [103, 105, 106]:
+		manager._resolve_turn_buffs(unit)
+		manager._resolve_end_turn_buffs(unit)
+		_check(unit.current_hp == expected_hp, "疗愈结束回合回复至 %d" % expected_hp)
+	_check(manager._find_buff(unit, "疗愈").is_empty(), "疗愈三次触发后消失")
 
 
 func _test_first_strike_passive() -> void:

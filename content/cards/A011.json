@@ -1,0 +1,56 @@
+{
+  "id": "A011",
+  "name": "压低身形",
+  "character": "艾莉丝",
+  "rarity": "Common",
+  "category": "道途专属卡牌",
+  "path": "梦魇行者",
+  "card_type": "行动",
+  "cost": 1,
+  "load": 1,
+  "target_type": "Self",
+  "hp_payment": 0,
+  "cost_rules": [],
+  "play_conditions": [],
+  "dream_mode": "three_dreams",
+  "min_range": 0,
+  "range": 0,
+  "target_spec": "自身",
+  "area": 0,
+  "keywords": [],
+  "tags": [
+    "Defense"
+  ],
+  "description": "获得8格挡；若处于沉梦，改为10格挡。",
+  "source_effect": "获得8格挡；若处于沉梦，改为10格挡。",
+  "source_file": "艾莉丝_完整卡组_重制v1.0.md",
+  "source_line": 32,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [
+    {
+      "logic": "defense",
+      "value": 8,
+      "condition": {
+        "type": "redesign_dream_state_is",
+        "state": 0,
+        "negate": true
+      }
+    },
+    {
+      "logic": "defense",
+      "value": 10,
+      "condition": {
+        "type": "redesign_dream_state_is",
+        "state": 0
+      }
+    }
+  ],
+  "mechanism_ids": [
+    "effects.defense",
+    "conditions.redesign_dream_state_is",
+    "play_rules.three_dreams"
+  ],
+  "implementation_status": "supported"
+}

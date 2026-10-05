@@ -1,0 +1,60 @@
+{
+  "id": "K015",
+  "name": "冷壶余液",
+  "character": "卡莎",
+  "rarity": "Common",
+  "category": "道途专属卡牌",
+  "path": "解剖学者",
+  "card_type": "行动",
+  "cost": 1,
+  "load": 1,
+  "target_type": "Enemy",
+  "hp_payment": 0,
+  "cost_rules": [],
+  "play_conditions": [],
+  "dream_mode": "",
+  "min_range": 3,
+  "range": 3,
+  "target_spec": "敌1 / 距3",
+  "area": 0,
+  "keywords": [],
+  "tags": [
+    "Drug",
+    "Poison"
+  ],
+  "description": "施加5层毒；若目标已经中毒，改为7层。",
+  "source_effect": "施加5层毒；若目标已经中毒，改为7层。",
+  "source_file": "卡莎_完整卡组_重制v1.0.md",
+  "source_line": 36,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [
+    {
+      "logic": "buff",
+      "target": "enemy",
+      "buff_type": "中毒",
+      "stacks": 5,
+      "condition": {
+        "type": "target_has_buff_at_play",
+        "buff_name": "中毒",
+        "negate": true
+      }
+    },
+    {
+      "logic": "buff",
+      "target": "enemy",
+      "buff_type": "中毒",
+      "stacks": 7,
+      "condition": {
+        "type": "target_has_buff_at_play",
+        "buff_name": "中毒"
+      }
+    }
+  ],
+  "mechanism_ids": [
+    "effects.buff",
+    "conditions.target_has_buff_at_play"
+  ],
+  "implementation_status": "supported"
+}

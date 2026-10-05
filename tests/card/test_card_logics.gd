@@ -114,13 +114,17 @@ func _test_play_exhaust() -> void:
 	var xiao_dao: CardData = _cards_by_name.get("小刀")
 	var unit := _make_unit([strike, xiao_dao])
 	var manager := _make_manager(unit)
+	var enemy := BattleUnit.new()
+	enemy.is_enemy = true
+	enemy.current_hp = 100
+	manager.units.append(enemy)
 	unit.energy = 10
 	unit.hand.append(xiao_dao)
 	unit.hand.append(strike)
-	manager.play_card(xiao_dao, null)
+	manager.play_card(xiao_dao, enemy)
 	_check(unit.exhaust_pile.has(xiao_dao), "消耗牌：打出后进入消耗堆")
 	_check(not unit.discard_pile.has(xiao_dao), "消耗牌：不进入弃牌堆")
-	manager.play_card(strike, null)
+	manager.play_card(strike, enemy)
 	_check(unit.discard_pile.has(strike), "普通牌：打出后进入弃牌堆")
 
 

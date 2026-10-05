@@ -1,0 +1,2543 @@
+{
+  "schema_version": 1,
+  "purpose": "design_only mechanism planning; family matches are candidates, not runtime support",
+  "total": 185,
+  "families": {
+    "player_choice": {
+      "name": "玩家选择与随机展示",
+      "count": 41,
+      "card_ids": [
+        "A006",
+        "A019",
+        "A023",
+        "A029",
+        "A033",
+        "A035",
+        "A036",
+        "A037",
+        "A038",
+        "A040",
+        "A042",
+        "A050",
+        "A051",
+        "A055",
+        "A059",
+        "A061",
+        "A065",
+        "A066",
+        "A067",
+        "A068",
+        "A074",
+        "B025",
+        "B039",
+        "B059",
+        "B070",
+        "B071",
+        "D034",
+        "D044",
+        "D055",
+        "D060",
+        "D064",
+        "D066",
+        "D075",
+        "K025",
+        "K047",
+        "K058",
+        "K059",
+        "K069",
+        "K071",
+        "K074",
+        "K075"
+      ]
+    },
+    "pile_operations": {
+      "name": "抽牌堆、弃牌堆、牌库与复制品",
+      "count": 26,
+      "card_ids": [
+        "A006",
+        "A019",
+        "A029",
+        "A033",
+        "A036",
+        "A037",
+        "A038",
+        "A041",
+        "A042",
+        "A044",
+        "A051",
+        "A055",
+        "A059",
+        "A061",
+        "A067",
+        "A068",
+        "A074",
+        "B071",
+        "D055",
+        "D075",
+        "K025",
+        "K058",
+        "K059",
+        "K071",
+        "K074",
+        "K075"
+      ]
+    },
+    "hand_operations": {
+      "name": "抽牌、主动弃牌、保留",
+      "count": 41,
+      "card_ids": [
+        "A010",
+        "A019",
+        "A023",
+        "A029",
+        "A033",
+        "A036",
+        "A037",
+        "A038",
+        "A039",
+        "A040",
+        "A043",
+        "A044",
+        "A048",
+        "A055",
+        "A056",
+        "A059",
+        "A060",
+        "A062",
+        "A064",
+        "A065",
+        "A068",
+        "A075",
+        "B071",
+        "D008",
+        "D025",
+        "D026",
+        "D029",
+        "D030",
+        "D031",
+        "D034",
+        "D039",
+        "D053",
+        "D054",
+        "D055",
+        "D069",
+        "D070",
+        "D075",
+        "K058",
+        "K059",
+        "K074",
+        "K075"
+      ]
+    },
+    "battlefield_movement": {
+      "name": "主动与强制位移",
+      "count": 54,
+      "card_ids": [
+        "A028",
+        "A034",
+        "A035",
+        "A046",
+        "A051",
+        "A057",
+        "A066",
+        "B012",
+        "B024",
+        "B035",
+        "B038",
+        "B050",
+        "B051",
+        "B052",
+        "B053",
+        "B056",
+        "B058",
+        "B060",
+        "B067",
+        "B069",
+        "B070",
+        "B072",
+        "B074",
+        "D005",
+        "D021",
+        "D024",
+        "D025",
+        "D029",
+        "D032",
+        "D033",
+        "D035",
+        "D036",
+        "D037",
+        "D041",
+        "D042",
+        "D043",
+        "D047",
+        "D048",
+        "D049",
+        "D051",
+        "D058",
+        "D060",
+        "D062",
+        "D065",
+        "D066",
+        "D068",
+        "D070",
+        "D073",
+        "D074",
+        "K024",
+        "K043",
+        "K051",
+        "K054",
+        "K069"
+      ]
+    },
+    "multi_target_geometry": {
+      "name": "区域、直线与多目标选择",
+      "count": 25,
+      "card_ids": [
+        "A035",
+        "A053",
+        "A058",
+        "A069",
+        "A070",
+        "A072",
+        "B026",
+        "B027",
+        "B028",
+        "B053",
+        "B056",
+        "B059",
+        "B068",
+        "B069",
+        "B070",
+        "B072",
+        "B074",
+        "D044",
+        "D064",
+        "K013",
+        "K038",
+        "K051",
+        "K054",
+        "K064",
+        "K069"
+      ]
+    },
+    "counterattack": {
+      "name": "反击窗口与层数",
+      "count": 18,
+      "card_ids": [
+        "D007",
+        "D010",
+        "D021",
+        "D023",
+        "D036",
+        "D038",
+        "D039",
+        "D046",
+        "D047",
+        "D048",
+        "D049",
+        "D050",
+        "D053",
+        "D054",
+        "D065",
+        "D066",
+        "D067",
+        "D072"
+      ]
+    },
+    "status_layers": {
+      "name": "状态施加、移除及层数",
+      "count": 61,
+      "card_ids": [
+        "A014",
+        "A018",
+        "A020",
+        "A025",
+        "A034",
+        "A045",
+        "A049",
+        "A053",
+        "A069",
+        "A071",
+        "B008",
+        "B009",
+        "B015",
+        "B016",
+        "B024",
+        "B025",
+        "B026",
+        "B030",
+        "B032",
+        "B036",
+        "B037",
+        "B039",
+        "B040",
+        "B047",
+        "B048",
+        "B056",
+        "B057",
+        "B061",
+        "B063",
+        "B064",
+        "B065",
+        "B066",
+        "B067",
+        "B068",
+        "B075",
+        "D014",
+        "D019",
+        "D020",
+        "D030",
+        "D043",
+        "D045",
+        "D058",
+        "D062",
+        "K013",
+        "K017",
+        "K019",
+        "K023",
+        "K024",
+        "K035",
+        "K038",
+        "K040",
+        "K049",
+        "K052",
+        "K053",
+        "K054",
+        "K055",
+        "K061",
+        "K062",
+        "K064",
+        "K065",
+        "K068"
+      ]
+    },
+    "turn_triggers": {
+      "name": "跨回合、下次与能力牌触发",
+      "count": 46,
+      "card_ids": [
+        "A039",
+        "A040",
+        "A041",
+        "A050",
+        "A061",
+        "A062",
+        "A064",
+        "A065",
+        "A066",
+        "A072",
+        "A075",
+        "B013",
+        "B037",
+        "B038",
+        "B039",
+        "B049",
+        "B061",
+        "B062",
+        "B063",
+        "B064",
+        "B065",
+        "B073",
+        "B075",
+        "D040",
+        "D067",
+        "D068",
+        "D069",
+        "D070",
+        "D072",
+        "D073",
+        "K020",
+        "K021",
+        "K032",
+        "K035",
+        "K040",
+        "K046",
+        "K051",
+        "K056",
+        "K057",
+        "K061",
+        "K062",
+        "K065",
+        "K066",
+        "K068",
+        "K069",
+        "K070"
+      ]
+    },
+    "cost_rules": {
+      "name": "条件费用与费用返还",
+      "count": 18,
+      "card_ids": [
+        "A019",
+        "B071",
+        "D032",
+        "D033",
+        "D050",
+        "D051",
+        "D055",
+        "D075",
+        "K032",
+        "K035",
+        "K043",
+        "K047",
+        "K056",
+        "K066",
+        "K068",
+        "K070",
+        "K072",
+        "K075"
+      ]
+    },
+    "damage_block_conditions": {
+      "name": "伤害、格挡与 Armor 条件",
+      "count": 116,
+      "card_ids": [
+        "A014",
+        "A018",
+        "A020",
+        "A023",
+        "A025",
+        "A028",
+        "A034",
+        "A035",
+        "A039",
+        "A040",
+        "A043",
+        "A045",
+        "A046",
+        "A048",
+        "A050",
+        "A053",
+        "A057",
+        "A058",
+        "A060",
+        "A065",
+        "A066",
+        "A068",
+        "A069",
+        "A070",
+        "A071",
+        "A072",
+        "A073",
+        "A075",
+        "B009",
+        "B012",
+        "B013",
+        "B015",
+        "B016",
+        "B025",
+        "B027",
+        "B028",
+        "B030",
+        "B032",
+        "B035",
+        "B036",
+        "B038",
+        "B039",
+        "B040",
+        "B047",
+        "B048",
+        "B049",
+        "B050",
+        "B051",
+        "B052",
+        "B053",
+        "B057",
+        "B058",
+        "B059",
+        "B060",
+        "B062",
+        "B064",
+        "B065",
+        "B066",
+        "B067",
+        "B068",
+        "B069",
+        "B070",
+        "B072",
+        "B073",
+        "B074",
+        "B075",
+        "D005",
+        "D007",
+        "D010",
+        "D014",
+        "D019",
+        "D020",
+        "D023",
+        "D031",
+        "D034",
+        "D035",
+        "D036",
+        "D037",
+        "D038",
+        "D039",
+        "D040",
+        "D041",
+        "D042",
+        "D043",
+        "D044",
+        "D045",
+        "D046",
+        "D047",
+        "D055",
+        "D060",
+        "D062",
+        "D064",
+        "D065",
+        "D066",
+        "D067",
+        "D068",
+        "D069",
+        "D072",
+        "D073",
+        "D074",
+        "D075",
+        "K019",
+        "K020",
+        "K025",
+        "K032",
+        "K043",
+        "K046",
+        "K047",
+        "K049",
+        "K051",
+        "K055",
+        "K057",
+        "K061",
+        "K065",
+        "K069",
+        "K072"
+      ]
+    },
+    "dream_cycle": {
+      "name": "三梦状态及切换",
+      "count": 19,
+      "card_ids": [
+        "A020",
+        "A025",
+        "A043",
+        "A048",
+        "A049",
+        "A050",
+        "A051",
+        "A053",
+        "A056",
+        "A058",
+        "A062",
+        "A065",
+        "A066",
+        "A069",
+        "A070",
+        "A071",
+        "A072",
+        "A073",
+        "A075"
+      ]
+    },
+    "hp_events": {
+      "name": "生命支付、直接失血与生命阈值",
+      "count": 26,
+      "card_ids": [
+        "A073",
+        "B009",
+        "B013",
+        "B028",
+        "B036",
+        "B037",
+        "B047",
+        "B051",
+        "B052",
+        "B061",
+        "B062",
+        "B063",
+        "B064",
+        "B066",
+        "B067",
+        "B068",
+        "B071",
+        "B075",
+        "K021",
+        "K043",
+        "K046",
+        "K056",
+        "K062",
+        "K070",
+        "K072",
+        "K073"
+      ]
+    }
+  },
+  "cards": [
+    {
+      "id": "A006",
+      "families": [
+        "player_choice",
+        "pile_operations"
+      ],
+      "description": "查看抽牌堆顶2张并任意排序。",
+      "source_file": "艾莉丝_完整卡组_重制v1.0.md",
+      "source_line": 23
+    },
+    {
+      "id": "A010",
+      "families": [
+        "hand_operations"
+      ],
+      "description": "主动弃置1张其他手牌，然后抽1张。",
+      "source_file": "艾莉丝_完整卡组_重制v1.0.md",
+      "source_line": 27
+    },
+    {
+      "id": "A014",
+      "families": [
+        "status_layers",
+        "damage_block_conditions"
+      ],
+      "description": "造成5伤害并施加1层标记。",
+      "source_file": "艾莉丝_完整卡组_重制v1.0.md",
+      "source_line": 35
+    },
+    {
+      "id": "A018",
+      "families": [
+        "status_layers",
+        "damage_block_conditions"
+      ],
+      "description": "目标获得4格挡，并移除至多2层一种DOT。",
+      "source_file": "艾莉丝_完整卡组_重制v1.0.md",
+      "source_line": 39
+    },
+    {
+      "id": "A019",
+      "families": [
+        "player_choice",
+        "pile_operations",
+        "hand_operations",
+        "cost_rules"
+      ],
+      "description": "从弃牌堆选择1张Basic牌置于手牌；其本回合费用变为0，打出后消耗。",
+      "source_file": "艾莉丝_完整卡组_重制v1.0.md",
+      "source_line": 40
+    },
+    {
+      "id": "A020",
+      "families": [
+        "status_layers",
+        "damage_block_conditions",
+        "dream_cycle"
+      ],
+      "description": "【幻梦】造成8伤害；若目标有标记，再造成3伤害。",
+      "source_file": "艾莉丝_完整卡组_重制v1.0.md",
+      "source_line": 41
+    },
+    {
+      "id": "A023",
+      "families": [
+        "player_choice",
+        "hand_operations",
+        "damage_block_conditions"
+      ],
+      "description": "选择至多2张其他手牌获得保留；获得3格挡。",
+      "source_file": "艾莉丝_完整卡组_重制v1.0.md",
+      "source_line": 44
+    },
+    {
+      "id": "A025",
+      "families": [
+        "status_layers",
+        "damage_block_conditions",
+        "dream_cycle"
+      ],
+      "description": "【幻梦】造成7伤害并施加1层标记。",
+      "source_file": "艾莉丝_完整卡组_重制v1.0.md",
+      "source_line": 46
+    },
+    {
+      "id": "A028",
+      "families": [
+        "battlefield_movement",
+        "damage_block_conditions"
+      ],
+      "description": "目标可移动1格；若移动后与你相邻，双方各获得3格挡。",
+      "source_file": "艾莉丝_完整卡组_重制v1.0.md",
+      "source_line": 49
+    },
+    {
+      "id": "A029",
+      "families": [
+        "player_choice",
+        "pile_operations",
+        "hand_operations"
+      ],
+      "description": "查看抽牌堆顶4张；选择1张加入手牌，其余按任意顺序放回顶部。",
+      "source_file": "艾莉丝_完整卡组_重制v1.0.md",
+      "source_line": 50
+    },
+    {
+      "id": "A033",
+      "families": [
+        "player_choice",
+        "pile_operations",
+        "hand_operations"
+      ],
+      "description": "从你的牌库中随机展示3张非Power牌；选择1张生成临时复制品加入手牌，复制品打出后消失。",
+      "source_file": "艾莉丝_完整卡组_重制v1.0.md",
+      "source_line": 54
+    },
+    {
+      "id": "A034",
+      "families": [
+        "battlefield_movement",
+        "status_layers",
+        "damage_block_conditions"
+      ],
+      "description": "造成7伤害；若目标有标记，推动1格。",
+      "source_file": "艾莉丝_完整卡组_重制v1.0.md",
+      "source_line": 55
+    },
+    {
+      "id": "A035",
+      "families": [
+        "player_choice",
+        "battlefield_movement",
+        "multi_target_geometry",
+        "damage_block_conditions"
+      ],
+      "description": "距离2内所有友军获得5格挡；选择其中1名友军移动1格。",
+      "source_file": "艾莉丝_完整卡组_重制v1.0.md",
+      "source_line": 56
+    },
+    {
+      "id": "A036",
+      "families": [
+        "player_choice",
+        "pile_operations",
+        "hand_operations"
+      ],
+      "description": "查看抽牌堆顶3张：1张加入手牌，1张置入弃牌堆，1张留在牌堆顶。",
+      "source_file": "艾莉丝_完整卡组_重制v1.0.md",
+      "source_line": 61
+    },
+    {
+      "id": "A037",
+      "families": [
+        "player_choice",
+        "pile_operations",
+        "hand_operations"
+      ],
+      "description": "选择弃牌堆1张牌置顶；主动弃置1张其他手牌；抽1张。",
+      "source_file": "艾莉丝_完整卡组_重制v1.0.md",
+      "source_line": 62
+    },
+    {
+      "id": "A038",
+      "families": [
+        "player_choice",
+        "pile_operations",
+        "hand_operations"
+      ],
+      "description": "从弃牌堆选择至多2张放至抽牌堆底；抽2张，然后主动弃1张。",
+      "source_file": "艾莉丝_完整卡组_重制v1.0.md",
+      "source_line": 63
+    },
+    {
+      "id": "A039",
+      "families": [
+        "hand_operations",
+        "turn_triggers",
+        "damage_block_conditions"
+      ],
+      "description": "每回合第一次主动弃牌时，获得4格挡。",
+      "source_file": "艾莉丝_完整卡组_重制v1.0.md",
+      "source_line": 64
+    },
+    {
+      "id": "A040",
+      "families": [
+        "player_choice",
+        "hand_operations",
+        "turn_triggers",
+        "damage_block_conditions"
+      ],
+      "description": "获得6格挡；选择至多2张其他手牌保留；下回合少抽1张牌。",
+      "source_file": "艾莉丝_完整卡组_重制v1.0.md",
+      "source_line": 65
+    },
+    {
+      "id": "A041",
+      "families": [
+        "pile_operations",
+        "turn_triggers"
+      ],
+      "description": "从弃牌堆拿回1张非Power牌；该牌下一次打出后消耗。",
+      "source_file": "艾莉丝_完整卡组_重制v1.0.md",
+      "source_line": 66
+    },
+    {
+      "id": "A042",
+      "families": [
+        "player_choice",
+        "pile_operations"
+      ],
+      "description": "查看抽牌堆顶5张；可将其中至多2张置入弃牌堆，其余任意排序。",
+      "source_file": "艾莉丝_完整卡组_重制v1.0.md",
+      "source_line": 67
+    },
+    {
+      "id": "A043",
+      "families": [
+        "hand_operations",
+        "damage_block_conditions",
+        "dream_cycle"
+      ],
+      "description": "抽2张，主动弃1张；若处于沉梦，获得3格挡。",
+      "source_file": "艾莉丝_完整卡组_重制v1.0.md",
+      "source_line": 68
+    },
+    {
+      "id": "A044",
+      "families": [
+        "pile_operations",
+        "hand_operations"
+      ],
+      "description": "将抽牌堆顶5张替换为从当前战斗牌组中随机抽取的5张临时复制品；原顶5张洗回抽牌堆。临时复制品离开手牌后消失。",
+      "source_file": "艾莉丝_完整卡组_重制v1.0.md",
+      "source_line": 69
+    },
+    {
+      "id": "A045",
+      "families": [
+        "status_layers",
+        "damage_block_conditions"
+      ],
+      "description": "造成6伤害并施加1层虚弱；若目标邻接任意友军，再施加1层标记。",
+      "source_file": "艾莉丝_完整卡组_重制v1.0.md",
+      "source_line": 70
+    },
+    {
+      "id": "A046",
+      "families": [
+        "battlefield_movement",
+        "damage_block_conditions"
+      ],
+      "description": "与目标友军交换位置；双方各获得4格挡。",
+      "source_file": "艾莉丝_完整卡组_重制v1.0.md",
+      "source_line": 71
+    },
+    {
+      "id": "A048",
+      "families": [
+        "hand_operations",
+        "damage_block_conditions",
+        "dream_cycle"
+      ],
+      "description": "造成4伤害2次；若处于幻梦且本回合主动弃过牌，改为4伤害3次。",
+      "source_file": "艾莉丝_完整卡组_重制v1.0.md",
+      "source_line": 73
+    },
+    {
+      "id": "A049",
+      "families": [
+        "status_layers",
+        "dream_cycle"
+      ],
+      "description": "【幻梦】施加1层标记和1层虚弱。",
+      "source_file": "艾莉丝_完整卡组_重制v1.0.md",
+      "source_line": 74
+    },
+    {
+      "id": "A050",
+      "families": [
+        "player_choice",
+        "turn_triggers",
+        "damage_block_conditions",
+        "dream_cycle"
+      ],
+      "description": "每回合第一次进入幻梦时，选择距离2内1名友军获得5格挡。",
+      "source_file": "艾莉丝_完整卡组_重制v1.0.md",
+      "source_line": 75
+    },
+    {
+      "id": "A051",
+      "families": [
+        "player_choice",
+        "pile_operations",
+        "battlefield_movement",
+        "dream_cycle"
+      ],
+      "description": "【幻梦】移动最多2格；然后查看抽牌堆顶2张，可将1张置入弃牌堆。",
+      "source_file": "艾莉丝_完整卡组_重制v1.0.md",
+      "source_line": 76
+    },
+    {
+      "id": "A053",
+      "families": [
+        "multi_target_geometry",
+        "status_layers",
+        "damage_block_conditions",
+        "dream_cycle"
+      ],
+      "description": "【灾梦】区域内所有敌人受到11伤害并获得1层迟缓；结算后进入沉梦。",
+      "source_file": "艾莉丝_完整卡组_重制v1.0.md",
+      "source_line": 78
+    },
+    {
+      "id": "A055",
+      "families": [
+        "player_choice",
+        "pile_operations",
+        "hand_operations"
+      ],
+      "description": "从牌库随机展示3张Skill；选择1张置于手牌，另外2张洗回牌库。",
+      "source_file": "艾莉丝_完整卡组_重制v1.0.md",
+      "source_line": 80
+    },
+    {
+      "id": "A056",
+      "families": [
+        "hand_operations",
+        "dream_cycle"
+      ],
+      "description": "若处于幻梦，进入沉梦；抽1张，然后主动弃1张。",
+      "source_file": "艾莉丝_完整卡组_重制v1.0.md",
+      "source_line": 81
+    },
+    {
+      "id": "A057",
+      "families": [
+        "battlefield_movement",
+        "damage_block_conditions"
+      ],
+      "description": "目标友军移动1格；你移动1格；若最终相邻，双方各获得4格挡。",
+      "source_file": "艾莉丝_完整卡组_重制v1.0.md",
+      "source_line": 82
+    },
+    {
+      "id": "A058",
+      "families": [
+        "multi_target_geometry",
+        "damage_block_conditions",
+        "dream_cycle"
+      ],
+      "description": "【灾梦】你获得10格挡；距离4内至多2名友军各获得7格挡；结算后进入沉梦。",
+      "source_file": "艾莉丝_完整卡组_重制v1.0.md",
+      "source_line": 83
+    },
+    {
+      "id": "A059",
+      "families": [
+        "player_choice",
+        "pile_operations",
+        "hand_operations"
+      ],
+      "description": "随机展示本场战斗你已经打出过的3种不同非Power牌；选择1张生成临时复制品加入手牌。",
+      "source_file": "艾莉丝_完整卡组_重制v1.0.md",
+      "source_line": 84
+    },
+    {
+      "id": "A060",
+      "families": [
+        "hand_operations",
+        "damage_block_conditions"
+      ],
+      "description": "主动弃置至多2张牌；每弃1张，获得3格挡。",
+      "source_file": "艾莉丝_完整卡组_重制v1.0.md",
+      "source_line": 85
+    },
+    {
+      "id": "A061",
+      "families": [
+        "player_choice",
+        "pile_operations",
+        "turn_triggers"
+      ],
+      "description": "每回合开始时查看抽牌堆顶4张并任意排序；可将其中1张放至牌堆底。",
+      "source_file": "艾莉丝_完整卡组_重制v1.0.md",
+      "source_line": 90
+    },
+    {
+      "id": "A062",
+      "families": [
+        "hand_operations",
+        "dream_cycle",
+        "turn_triggers"
+      ],
+      "description": "每场战斗第一次灾梦结算结束时，可主动弃1张牌；若如此做，进入沉梦后立即重新进入幻梦。",
+      "source_file": "艾莉丝_完整卡组_重制v1.0.md",
+      "source_line": 91
+    },
+    {
+      "id": "A064",
+      "families": [
+        "hand_operations",
+        "turn_triggers"
+      ],
+      "description": "每回合第一次主动弃牌后，抽1张。",
+      "source_file": "艾莉丝_完整卡组_重制v1.0.md",
+      "source_line": 93
+    },
+    {
+      "id": "A065",
+      "families": [
+        "player_choice",
+        "hand_operations",
+        "damage_block_conditions",
+        "dream_cycle",
+        "turn_triggers"
+      ],
+      "description": "沉梦回合结束基础格挡由3提高至6；每次从沉梦进入幻梦时，可令1张其他手牌获得保留。",
+      "source_file": "艾莉丝_完整卡组_重制v1.0.md",
+      "source_line": 94
+    },
+    {
+      "id": "A066",
+      "families": [
+        "player_choice",
+        "battlefield_movement",
+        "turn_triggers",
+        "damage_block_conditions",
+        "dream_cycle"
+      ],
+      "description": "每回合第一次进入幻梦时，选择距离3内1名友军：其获得5格挡并移动1格。",
+      "source_file": "艾莉丝_完整卡组_重制v1.0.md",
+      "source_line": 95
+    },
+    {
+      "id": "A067",
+      "families": [
+        "player_choice",
+        "pile_operations"
+      ],
+      "description": "将整个抽牌堆洗牌；随后从其中随机展示5张牌，选择2张置于牌堆顶，顺序由你决定。",
+      "source_file": "艾莉丝_完整卡组_重制v1.0.md",
+      "source_line": 96
+    },
+    {
+      "id": "A068",
+      "families": [
+        "player_choice",
+        "pile_operations",
+        "hand_operations",
+        "damage_block_conditions"
+      ],
+      "description": "获得12格挡；查看抽牌堆顶3张，选择1张加入手牌，其余任意排序。",
+      "source_file": "艾莉丝_完整卡组_重制v1.0.md",
+      "source_line": 97
+    },
+    {
+      "id": "A069",
+      "families": [
+        "multi_target_geometry",
+        "status_layers",
+        "damage_block_conditions",
+        "dream_cycle"
+      ],
+      "description": "【灾梦】区域内所有敌人受到20伤害并获得1层虚弱；结算后进入沉梦。",
+      "source_file": "艾莉丝_完整卡组_重制v1.0.md",
+      "source_line": 98
+    },
+    {
+      "id": "A070",
+      "families": [
+        "multi_target_geometry",
+        "damage_block_conditions",
+        "dream_cycle"
+      ],
+      "description": "【灾梦】目标受到28伤害；其所有邻接敌人受到10伤害；结算后进入沉梦。",
+      "source_file": "艾莉丝_完整卡组_重制v1.0.md",
+      "source_line": 99
+    },
+    {
+      "id": "A071",
+      "families": [
+        "status_layers",
+        "damage_block_conditions",
+        "dream_cycle"
+      ],
+      "description": "【灾梦】造成24伤害；目标每拥有1层标记或虚弱，再造成3伤害，最多额外12；结算后进入沉梦。",
+      "source_file": "艾莉丝_完整卡组_重制v1.0.md",
+      "source_line": 100
+    },
+    {
+      "id": "A072",
+      "families": [
+        "multi_target_geometry",
+        "turn_triggers",
+        "damage_block_conditions",
+        "dream_cycle"
+      ],
+      "description": "【灾梦】本轮每名友军下一张Attack造成的直接伤害无视护甲；结算后进入沉梦。",
+      "source_file": "艾莉丝_完整卡组_重制v1.0.md",
+      "source_line": 101
+    },
+    {
+      "id": "A073",
+      "families": [
+        "damage_block_conditions",
+        "dream_cycle",
+        "hp_events"
+      ],
+      "description": "【灾梦】失去6生命；造成36伤害；结算后进入沉梦。",
+      "source_file": "艾莉丝_完整卡组_重制v1.0.md",
+      "source_line": 102
+    },
+    {
+      "id": "A074",
+      "families": [
+        "player_choice",
+        "pile_operations"
+      ],
+      "description": "从当前牌组随机展示5张不同非Power牌；选择2张生成临时复制品置入弃牌堆。",
+      "source_file": "艾莉丝_完整卡组_重制v1.0.md",
+      "source_line": 103
+    },
+    {
+      "id": "A075",
+      "families": [
+        "hand_operations",
+        "turn_triggers",
+        "damage_block_conditions",
+        "dream_cycle"
+      ],
+      "description": "每回合第一次完成“沉梦→幻梦→灾梦→沉梦”后，抽1张并获得4格挡。",
+      "source_file": "艾莉丝_完整卡组_重制v1.0.md",
+      "source_line": 104
+    },
+    {
+      "id": "B008",
+      "families": [
+        "status_layers"
+      ],
+      "description": "目标获得1层鼓舞。",
+      "source_file": "鲍德温_完整卡组_重制v1.0.md",
+      "source_line": 25
+    },
+    {
+      "id": "B009",
+      "families": [
+        "status_layers",
+        "damage_block_conditions",
+        "hp_events"
+      ],
+      "description": "放血4；造成24伤害并施加1层破绽。",
+      "source_file": "鲍德温_完整卡组_重制v1.0.md",
+      "source_line": 26
+    },
+    {
+      "id": "B012",
+      "families": [
+        "battlefield_movement",
+        "damage_block_conditions"
+      ],
+      "description": "先移动1格，再造成11伤害。",
+      "source_file": "鲍德温_完整卡组_重制v1.0.md",
+      "source_line": 33
+    },
+    {
+      "id": "B013",
+      "families": [
+        "turn_triggers",
+        "damage_block_conditions",
+        "hp_events"
+      ],
+      "description": "放血1；本回合下一张Melee Attack额外造成3点总伤害。",
+      "source_file": "鲍德温_完整卡组_重制v1.0.md",
+      "source_line": 34
+    },
+    {
+      "id": "B015",
+      "families": [
+        "status_layers",
+        "damage_block_conditions"
+      ],
+      "description": "造成11伤害并施加1层破绽。",
+      "source_file": "鲍德温_完整卡组_重制v1.0.md",
+      "source_line": 36
+    },
+    {
+      "id": "B016",
+      "families": [
+        "status_layers",
+        "damage_block_conditions"
+      ],
+      "description": "若目标有破绽，造成16伤害；否则造成12伤害。",
+      "source_file": "鲍德温_完整卡组_重制v1.0.md",
+      "source_line": 37
+    },
+    {
+      "id": "B024",
+      "families": [
+        "battlefield_movement",
+        "status_layers"
+      ],
+      "description": "目标获得1层鼓舞并在本回合移动距离+1。",
+      "source_file": "鲍德温_完整卡组_重制v1.0.md",
+      "source_line": 45
+    },
+    {
+      "id": "B025",
+      "families": [
+        "player_choice",
+        "status_layers",
+        "damage_block_conditions"
+      ],
+      "description": "造成12伤害；选择距离2内1名其他友军获得1层鼓舞。",
+      "source_file": "鲍德温_完整卡组_重制v1.0.md",
+      "source_line": 46
+    },
+    {
+      "id": "B026",
+      "families": [
+        "multi_target_geometry",
+        "status_layers"
+      ],
+      "description": "至多2名其他友军各获得1层鼓舞。",
+      "source_file": "鲍德温_完整卡组_重制v1.0.md",
+      "source_line": 47
+    },
+    {
+      "id": "B027",
+      "families": [
+        "multi_target_geometry",
+        "damage_block_conditions"
+      ],
+      "description": "所有相邻敌人受到14伤害。",
+      "source_file": "鲍德温_完整卡组_重制v1.0.md",
+      "source_line": 48
+    },
+    {
+      "id": "B028",
+      "families": [
+        "multi_target_geometry",
+        "damage_block_conditions",
+        "hp_events"
+      ],
+      "description": "放血4；所有相邻敌人受到18伤害。",
+      "source_file": "鲍德温_完整卡组_重制v1.0.md",
+      "source_line": 49
+    },
+    {
+      "id": "B030",
+      "families": [
+        "status_layers",
+        "damage_block_conditions"
+      ],
+      "description": "造成11伤害并施加1层迟缓。",
+      "source_file": "鲍德温_完整卡组_重制v1.0.md",
+      "source_line": 51
+    },
+    {
+      "id": "B032",
+      "families": [
+        "status_layers",
+        "damage_block_conditions"
+      ],
+      "description": "造成25伤害；若目标Armor>0，施加1层破绽。",
+      "source_file": "鲍德温_完整卡组_重制v1.0.md",
+      "source_line": 53
+    },
+    {
+      "id": "B035",
+      "families": [
+        "battlefield_movement",
+        "damage_block_conditions"
+      ],
+      "description": "造成9伤害；目标随机移动到一个合法相邻空格，若无合法空格则不移动。",
+      "source_file": "鲍德温_完整卡组_重制v1.0.md",
+      "source_line": 56
+    },
+    {
+      "id": "B036",
+      "families": [
+        "status_layers",
+        "damage_block_conditions",
+        "hp_events"
+      ],
+      "description": "放血4；造成27伤害并施加2层破绽。",
+      "source_file": "鲍德温_完整卡组_重制v1.0.md",
+      "source_line": 61
+    },
+    {
+      "id": "B037",
+      "families": [
+        "status_layers",
+        "turn_triggers",
+        "hp_events"
+      ],
+      "description": "每回合第一次放血4或7后，获得1层疗愈。",
+      "source_file": "鲍德温_完整卡组_重制v1.0.md",
+      "source_line": 62
+    },
+    {
+      "id": "B038",
+      "families": [
+        "battlefield_movement",
+        "turn_triggers",
+        "damage_block_conditions"
+      ],
+      "description": "获得12格挡；本回合下一次被近战Attack命中后，推动攻击者1格。",
+      "source_file": "鲍德温_完整卡组_重制v1.0.md",
+      "source_line": 63
+    },
+    {
+      "id": "B039",
+      "families": [
+        "player_choice",
+        "status_layers",
+        "turn_triggers",
+        "damage_block_conditions"
+      ],
+      "description": "每回合第一次以牌面直接伤害≥16的Attack命中后，选择距离3内1名其他友军获得1层鼓舞。",
+      "source_file": "鲍德温_完整卡组_重制v1.0.md",
+      "source_line": 64
+    },
+    {
+      "id": "B040",
+      "families": [
+        "status_layers",
+        "damage_block_conditions"
+      ],
+      "description": "造成27伤害；若击败目标，距离3内其他友军获得1层鼓舞。",
+      "source_file": "鲍德温_完整卡组_重制v1.0.md",
+      "source_line": 65
+    },
+    {
+      "id": "B047",
+      "families": [
+        "status_layers",
+        "damage_block_conditions",
+        "hp_events"
+      ],
+      "description": "放血7；造成32伤害并施加2层破绽。",
+      "source_file": "鲍德温_完整卡组_重制v1.0.md",
+      "source_line": 72
+    },
+    {
+      "id": "B048",
+      "families": [
+        "status_layers",
+        "damage_block_conditions"
+      ],
+      "description": "若目标有破绽，造成31伤害；否则造成25伤害。",
+      "source_file": "鲍德温_完整卡组_重制v1.0.md",
+      "source_line": 73
+    },
+    {
+      "id": "B049",
+      "families": [
+        "turn_triggers",
+        "damage_block_conditions"
+      ],
+      "description": "造成23伤害；目标本轮Armor-1。",
+      "source_file": "鲍德温_完整卡组_重制v1.0.md",
+      "source_line": 74
+    },
+    {
+      "id": "B050",
+      "families": [
+        "battlefield_movement",
+        "damage_block_conditions"
+      ],
+      "description": "先移动最多2格，再造成20伤害。",
+      "source_file": "鲍德温_完整卡组_重制v1.0.md",
+      "source_line": 75
+    },
+    {
+      "id": "B051",
+      "families": [
+        "battlefield_movement",
+        "damage_block_conditions",
+        "hp_events"
+      ],
+      "description": "放血4；先移动1格，再造成27伤害。",
+      "source_file": "鲍德温_完整卡组_重制v1.0.md",
+      "source_line": 76
+    },
+    {
+      "id": "B052",
+      "families": [
+        "battlefield_movement",
+        "damage_block_conditions",
+        "hp_events"
+      ],
+      "description": "若本回合已经放血，移动1格后造成16伤害；否则造成12伤害。",
+      "source_file": "鲍德温_完整卡组_重制v1.0.md",
+      "source_line": 77
+    },
+    {
+      "id": "B053",
+      "families": [
+        "battlefield_movement",
+        "multi_target_geometry",
+        "damage_block_conditions"
+      ],
+      "description": "所有相邻敌人受到12伤害；每名存活敌人分别随机移动到一个合法相邻空格。",
+      "source_file": "鲍德温_完整卡组_重制v1.0.md",
+      "source_line": 78
+    },
+    {
+      "id": "B056",
+      "families": [
+        "battlefield_movement",
+        "multi_target_geometry",
+        "status_layers"
+      ],
+      "description": "至多2名其他友军各获得1层鼓舞，并在本回合移动距离+1。",
+      "source_file": "鲍德温_完整卡组_重制v1.0.md",
+      "source_line": 81
+    },
+    {
+      "id": "B057",
+      "families": [
+        "status_layers",
+        "damage_block_conditions"
+      ],
+      "description": "施加2层破绽；你获得4格挡。",
+      "source_file": "鲍德温_完整卡组_重制v1.0.md",
+      "source_line": 82
+    },
+    {
+      "id": "B058",
+      "families": [
+        "battlefield_movement",
+        "damage_block_conditions"
+      ],
+      "description": "造成14伤害；若目标被其他单位或障碍阻挡而无法被推动，则额外造成5伤害。",
+      "source_file": "鲍德温_完整卡组_重制v1.0.md",
+      "source_line": 83
+    },
+    {
+      "id": "B059",
+      "families": [
+        "player_choice",
+        "multi_target_geometry",
+        "damage_block_conditions"
+      ],
+      "description": "从所有相邻敌人中随机展示至多3名；你选择其中1名，造成18伤害。若只有当前目标则直接命中。",
+      "source_file": "鲍德温_完整卡组_重制v1.0.md",
+      "source_line": 84
+    },
+    {
+      "id": "B060",
+      "families": [
+        "battlefield_movement",
+        "damage_block_conditions"
+      ],
+      "description": "将目标拉近1格；若因此与其相邻，获得5格挡。",
+      "source_file": "鲍德温_完整卡组_重制v1.0.md",
+      "source_line": 85
+    },
+    {
+      "id": "B061",
+      "families": [
+        "status_layers",
+        "turn_triggers",
+        "hp_events"
+      ],
+      "description": "每回合第一次放血4或7后：若当前无疗愈，获得3层疗愈；否则获得1层疗愈。",
+      "source_file": "鲍德温_完整卡组_重制v1.0.md",
+      "source_line": 90
+    },
+    {
+      "id": "B062",
+      "families": [
+        "turn_triggers",
+        "damage_block_conditions",
+        "hp_events"
+      ],
+      "description": "每回合第一次生命降至50%以下时，获得10格挡；每场战斗至多触发2次。",
+      "source_file": "鲍德温_完整卡组_重制v1.0.md",
+      "source_line": 91
+    },
+    {
+      "id": "B063",
+      "families": [
+        "status_layers",
+        "turn_triggers",
+        "hp_events"
+      ],
+      "description": "每回合第一次放血7后，距离3内所有其他友军获得1层鼓舞。",
+      "source_file": "鲍德温_完整卡组_重制v1.0.md",
+      "source_line": 92
+    },
+    {
+      "id": "B064",
+      "families": [
+        "status_layers",
+        "turn_triggers",
+        "damage_block_conditions",
+        "hp_events"
+      ],
+      "description": "每回合第一次打出带放血4或7的Attack并造成伤害后，距离2内所有其他友军获得1层鼓舞。",
+      "source_file": "鲍德温_完整卡组_重制v1.0.md",
+      "source_line": 93
+    },
+    {
+      "id": "B065",
+      "families": [
+        "status_layers",
+        "turn_triggers",
+        "damage_block_conditions"
+      ],
+      "description": "每回合第一次以Attack命中拥有破绽的目标时，该次攻击享受破绽加成但不消耗该层破绽。",
+      "source_file": "鲍德温_完整卡组_重制v1.0.md",
+      "source_line": 94
+    },
+    {
+      "id": "B066",
+      "families": [
+        "status_layers",
+        "damage_block_conditions",
+        "hp_events"
+      ],
+      "description": "放血7；造成36伤害；若目标拥有至少2层破绽，改为46伤害并清除其全部破绽。",
+      "source_file": "鲍德温_完整卡组_重制v1.0.md",
+      "source_line": 95
+    },
+    {
+      "id": "B067",
+      "families": [
+        "battlefield_movement",
+        "status_layers",
+        "damage_block_conditions",
+        "hp_events"
+      ],
+      "description": "放血7；先移动最多2格，再造成40伤害并施加1层破绽。",
+      "source_file": "鲍德温_完整卡组_重制v1.0.md",
+      "source_line": 96
+    },
+    {
+      "id": "B068",
+      "families": [
+        "multi_target_geometry",
+        "status_layers",
+        "damage_block_conditions",
+        "hp_events"
+      ],
+      "description": "放血7；所有相邻敌人受到26伤害并获得1层破绽。",
+      "source_file": "鲍德温_完整卡组_重制v1.0.md",
+      "source_line": 97
+    },
+    {
+      "id": "B069",
+      "families": [
+        "battlefield_movement",
+        "multi_target_geometry",
+        "damage_block_conditions"
+      ],
+      "description": "造成24伤害；然后目标与所有相邻敌人分别随机移动到合法相邻空格。",
+      "source_file": "鲍德温_完整卡组_重制v1.0.md",
+      "source_line": 98
+    },
+    {
+      "id": "B070",
+      "families": [
+        "player_choice",
+        "battlefield_movement",
+        "multi_target_geometry",
+        "damage_block_conditions"
+      ],
+      "description": "从距离2内随机展示至多3名敌人；选择1名，将其拉至与你相邻的合法空格并造成15伤害。",
+      "source_file": "鲍德温_完整卡组_重制v1.0.md",
+      "source_line": 99
+    },
+    {
+      "id": "B071",
+      "families": [
+        "player_choice",
+        "pile_operations",
+        "hand_operations",
+        "cost_rules",
+        "hp_events"
+      ],
+      "description": "放血7；将弃牌堆随机展示3张非Power牌，选择1张置于手牌，其本回合费用-1。",
+      "source_file": "鲍德温_完整卡组_重制v1.0.md",
+      "source_line": 100
+    },
+    {
+      "id": "B072",
+      "families": [
+        "battlefield_movement",
+        "multi_target_geometry",
+        "damage_block_conditions"
+      ],
+      "description": "沿直线最多移动2格；每经过或终止相邻的第一个敌人受到24伤害并被推动1格。",
+      "source_file": "鲍德温_完整卡组_重制v1.0.md",
+      "source_line": 101
+    },
+    {
+      "id": "B073",
+      "families": [
+        "damage_block_conditions",
+        "turn_triggers"
+      ],
+      "description": "若你的回合结束时与至少1名敌人相邻，获得6格挡。",
+      "source_file": "鲍德温_完整卡组_重制v1.0.md",
+      "source_line": 102
+    },
+    {
+      "id": "B074",
+      "families": [
+        "battlefield_movement",
+        "multi_target_geometry",
+        "damage_block_conditions"
+      ],
+      "description": "所有相邻敌人受到18伤害；随后所有被命中的单位（包括你）各自随机移动到1个合法相邻空格，你最后移动。",
+      "source_file": "鲍德温_完整卡组_重制v1.0.md",
+      "source_line": 103
+    },
+    {
+      "id": "B075",
+      "families": [
+        "status_layers",
+        "turn_triggers",
+        "damage_block_conditions",
+        "hp_events"
+      ],
+      "description": "每回合第一次放血4或7后，获得5格挡；若该次放血来自Attack，距离3内1名其他友军获得1层鼓舞。",
+      "source_file": "鲍德温_完整卡组_重制v1.0.md",
+      "source_line": 104
+    },
+    {
+      "id": "D005",
+      "families": [
+        "battlefield_movement",
+        "damage_block_conditions"
+      ],
+      "description": "移动最多1格，然后造成5伤害。",
+      "source_file": "迪马斯_完整卡组_重制v1.0.md",
+      "source_line": 22
+    },
+    {
+      "id": "D007",
+      "families": [
+        "counterattack",
+        "damage_block_conditions"
+      ],
+      "description": "获得4格挡；开启1次反击。",
+      "source_file": "迪马斯_完整卡组_重制v1.0.md",
+      "source_line": 24
+    },
+    {
+      "id": "D008",
+      "families": [
+        "hand_operations"
+      ],
+      "description": "抽2张，然后主动弃1张。",
+      "source_file": "迪马斯_完整卡组_重制v1.0.md",
+      "source_line": 25
+    },
+    {
+      "id": "D010",
+      "families": [
+        "counterattack",
+        "damage_block_conditions"
+      ],
+      "description": "造成3伤害；开启1次反击。",
+      "source_file": "迪马斯_完整卡组_重制v1.0.md",
+      "source_line": 27
+    },
+    {
+      "id": "D014",
+      "families": [
+        "status_layers",
+        "damage_block_conditions"
+      ],
+      "description": "造成5伤害并施加1层标记。",
+      "source_file": "迪马斯_完整卡组_重制v1.0.md",
+      "source_line": 35
+    },
+    {
+      "id": "D019",
+      "families": [
+        "status_layers",
+        "damage_block_conditions"
+      ],
+      "description": "造成6伤害并施加1层迟缓。",
+      "source_file": "迪马斯_完整卡组_重制v1.0.md",
+      "source_line": 40
+    },
+    {
+      "id": "D020",
+      "families": [
+        "status_layers",
+        "damage_block_conditions"
+      ],
+      "description": "造成5伤害；若目标有标记，施加1层虚弱。",
+      "source_file": "迪马斯_完整卡组_重制v1.0.md",
+      "source_line": 41
+    },
+    {
+      "id": "D021",
+      "families": [
+        "battlefield_movement",
+        "counterattack"
+      ],
+      "description": "移动最多1格；开启1次反击。",
+      "source_file": "迪马斯_完整卡组_重制v1.0.md",
+      "source_line": 42
+    },
+    {
+      "id": "D023",
+      "families": [
+        "counterattack",
+        "damage_block_conditions"
+      ],
+      "description": "获得5格挡；开启1次反击。",
+      "source_file": "迪马斯_完整卡组_重制v1.0.md",
+      "source_line": 44
+    },
+    {
+      "id": "D024",
+      "families": [
+        "battlefield_movement"
+      ],
+      "description": "移动最多2格；本次移动可穿过友军。",
+      "source_file": "迪马斯_完整卡组_重制v1.0.md",
+      "source_line": 45
+    },
+    {
+      "id": "D025",
+      "families": [
+        "hand_operations",
+        "battlefield_movement"
+      ],
+      "description": "移动最多2格；若移动至少2格，抽1张。",
+      "source_file": "迪马斯_完整卡组_重制v1.0.md",
+      "source_line": 46
+    },
+    {
+      "id": "D026",
+      "families": [
+        "hand_operations"
+      ],
+      "description": "抽3张，然后主动弃2张。",
+      "source_file": "迪马斯_完整卡组_重制v1.0.md",
+      "source_line": 47
+    },
+    {
+      "id": "D029",
+      "families": [
+        "hand_operations",
+        "battlefield_movement"
+      ],
+      "description": "移动最多2格；若结束后不与敌人相邻，抽2张然后弃1张。",
+      "source_file": "迪马斯_完整卡组_重制v1.0.md",
+      "source_line": 50
+    },
+    {
+      "id": "D030",
+      "families": [
+        "hand_operations",
+        "status_layers"
+      ],
+      "description": "施加1层标记；抽1张。",
+      "source_file": "迪马斯_完整卡组_重制v1.0.md",
+      "source_line": 51
+    },
+    {
+      "id": "D031",
+      "families": [
+        "hand_operations",
+        "damage_block_conditions"
+      ],
+      "description": "获得5格挡；抽1张，然后弃1张。",
+      "source_file": "迪马斯_完整卡组_重制v1.0.md",
+      "source_line": 52
+    },
+    {
+      "id": "D032",
+      "families": [
+        "battlefield_movement",
+        "cost_rules"
+      ],
+      "description": "移动最多2格；若结束后与目标距离2–3，返还本牌实际支付的1费。",
+      "source_file": "迪马斯_完整卡组_重制v1.0.md",
+      "source_line": 53
+    },
+    {
+      "id": "D033",
+      "families": [
+        "battlefield_movement",
+        "cost_rules"
+      ],
+      "description": "移动最多2格；若结束后与目标相邻，返还本牌实际支付的1费。",
+      "source_file": "迪马斯_完整卡组_重制v1.0.md",
+      "source_line": 54
+    },
+    {
+      "id": "D034",
+      "families": [
+        "player_choice",
+        "hand_operations",
+        "damage_block_conditions"
+      ],
+      "description": "选择1张其他手牌获得保留；获得5格挡。",
+      "source_file": "迪马斯_完整卡组_重制v1.0.md",
+      "source_line": 55
+    },
+    {
+      "id": "D035",
+      "families": [
+        "battlefield_movement",
+        "damage_block_conditions"
+      ],
+      "description": "造成7伤害；目标随机移动到一个合法相邻空格；若无合法空格则不移动。",
+      "source_file": "迪马斯_完整卡组_重制v1.0.md",
+      "source_line": 56
+    },
+    {
+      "id": "D036",
+      "families": [
+        "battlefield_movement",
+        "counterattack",
+        "damage_block_conditions"
+      ],
+      "description": "移动最多2格，然后造成5伤害；开启1次反击。",
+      "source_file": "迪马斯_完整卡组_重制v1.0.md",
+      "source_line": 61
+    },
+    {
+      "id": "D037",
+      "families": [
+        "battlefield_movement",
+        "damage_block_conditions"
+      ],
+      "description": "造成22伤害；随后目标后退1格，你也后退1格；任一方受阻不影响另一方。",
+      "source_file": "迪马斯_完整卡组_重制v1.0.md",
+      "source_line": 62
+    },
+    {
+      "id": "D038",
+      "families": [
+        "counterattack",
+        "damage_block_conditions"
+      ],
+      "description": "若自上个己方回合结束后触发过反击，造成12伤害；否则造成8伤害。",
+      "source_file": "迪马斯_完整卡组_重制v1.0.md",
+      "source_line": 63
+    },
+    {
+      "id": "D039",
+      "families": [
+        "hand_operations",
+        "counterattack",
+        "damage_block_conditions"
+      ],
+      "description": "造成7伤害；若自上个己方回合结束后触发过反击，抽1张。",
+      "source_file": "迪马斯_完整卡组_重制v1.0.md",
+      "source_line": 64
+    },
+    {
+      "id": "D040",
+      "families": [
+        "turn_triggers",
+        "damage_block_conditions"
+      ],
+      "description": "造成8伤害；目标下一次受到Attack时，仅该次Attack结算期间Armor-1。",
+      "source_file": "迪马斯_完整卡组_重制v1.0.md",
+      "source_line": 65
+    },
+    {
+      "id": "D041",
+      "families": [
+        "battlefield_movement",
+        "damage_block_conditions"
+      ],
+      "description": "造成6伤害并推动目标1格；若推动成功，你移动1格。",
+      "source_file": "迪马斯_完整卡组_重制v1.0.md",
+      "source_line": 66
+    },
+    {
+      "id": "D042",
+      "families": [
+        "battlefield_movement",
+        "damage_block_conditions"
+      ],
+      "description": "移动1格，造成5伤害，再移动1格。",
+      "source_file": "迪马斯_完整卡组_重制v1.0.md",
+      "source_line": 67
+    },
+    {
+      "id": "D043",
+      "families": [
+        "battlefield_movement",
+        "status_layers",
+        "damage_block_conditions"
+      ],
+      "description": "造成5伤害并施加1层标记；之后移动1格。",
+      "source_file": "迪马斯_完整卡组_重制v1.0.md",
+      "source_line": 68
+    },
+    {
+      "id": "D044",
+      "families": [
+        "player_choice",
+        "multi_target_geometry",
+        "damage_block_conditions"
+      ],
+      "description": "选择至多2名不同敌人，各造成9伤害。",
+      "source_file": "迪马斯_完整卡组_重制v1.0.md",
+      "source_line": 69
+    },
+    {
+      "id": "D045",
+      "families": [
+        "status_layers",
+        "damage_block_conditions"
+      ],
+      "description": "若目标有标记，消耗1层标记并造成7伤害3次；否则造成7伤害2次。",
+      "source_file": "迪马斯_完整卡组_重制v1.0.md",
+      "source_line": 70
+    },
+    {
+      "id": "D046",
+      "families": [
+        "counterattack",
+        "damage_block_conditions"
+      ],
+      "description": "获得6格挡；开启1次反击。",
+      "source_file": "迪马斯_完整卡组_重制v1.0.md",
+      "source_line": 71
+    },
+    {
+      "id": "D047",
+      "families": [
+        "battlefield_movement",
+        "counterattack",
+        "damage_block_conditions"
+      ],
+      "description": "若本回合尚未移动，获得4格挡并开启2次反击；否则仅开启1次反击。",
+      "source_file": "迪马斯_完整卡组_重制v1.0.md",
+      "source_line": 72
+    },
+    {
+      "id": "D048",
+      "families": [
+        "battlefield_movement",
+        "counterattack"
+      ],
+      "description": "移动最多2格；开启1次反击。",
+      "source_file": "迪马斯_完整卡组_重制v1.0.md",
+      "source_line": 73
+    },
+    {
+      "id": "D049",
+      "families": [
+        "battlefield_movement",
+        "counterattack"
+      ],
+      "description": "仅可在自上个己方回合结束后触发过反击时打出；移动最多2格。",
+      "source_file": "迪马斯_完整卡组_重制v1.0.md",
+      "source_line": 74
+    },
+    {
+      "id": "D050",
+      "families": [
+        "counterattack",
+        "cost_rules"
+      ],
+      "description": "仅可在自上个己方回合结束后触发过反击时打出；获得1费。",
+      "source_file": "迪马斯_完整卡组_重制v1.0.md",
+      "source_line": 75
+    },
+    {
+      "id": "D051",
+      "families": [
+        "battlefield_movement",
+        "cost_rules"
+      ],
+      "description": "移动最多1格；若移动后不再与任何敌人相邻，返还本牌实际支付费用。",
+      "source_file": "迪马斯_完整卡组_重制v1.0.md",
+      "source_line": 76
+    },
+    {
+      "id": "D053",
+      "families": [
+        "hand_operations",
+        "counterattack"
+      ],
+      "description": "仅可在自上个己方回合结束后触发过反击时打出；抽1张。",
+      "source_file": "迪马斯_完整卡组_重制v1.0.md",
+      "source_line": 78
+    },
+    {
+      "id": "D054",
+      "families": [
+        "hand_operations",
+        "counterattack"
+      ],
+      "description": "抽2张，弃1张；开启1次反击。",
+      "source_file": "迪马斯_完整卡组_重制v1.0.md",
+      "source_line": 79
+    },
+    {
+      "id": "D055",
+      "families": [
+        "player_choice",
+        "pile_operations",
+        "hand_operations",
+        "cost_rules",
+        "damage_block_conditions"
+      ],
+      "description": "从当前牌组随机展示3张Pistol Attack；选择1张生成临时复制品加入手牌，其本回合费用-1。",
+      "source_file": "迪马斯_完整卡组_重制v1.0.md",
+      "source_line": 80
+    },
+    {
+      "id": "D058",
+      "families": [
+        "battlefield_movement",
+        "status_layers"
+      ],
+      "description": "施加1层虚弱；随后移动1格。",
+      "source_file": "迪马斯_完整卡组_重制v1.0.md",
+      "source_line": 83
+    },
+    {
+      "id": "D060",
+      "families": [
+        "player_choice",
+        "battlefield_movement",
+        "damage_block_conditions"
+      ],
+      "description": "从所有距离2以内的合法空格中随机选择3个展示；选择其中1格移动过去并获得4格挡。若不足3格则全部展示。",
+      "source_file": "迪马斯_完整卡组_重制v1.0.md",
+      "source_line": 85
+    },
+    {
+      "id": "D062",
+      "families": [
+        "battlefield_movement",
+        "status_layers",
+        "damage_block_conditions"
+      ],
+      "description": "若目标有标记，消耗1层标记并造成30伤害；随后目标后退1格，你也后退1格。",
+      "source_file": "迪马斯_完整卡组_重制v1.0.md",
+      "source_line": 91
+    },
+    {
+      "id": "D064",
+      "families": [
+        "player_choice",
+        "multi_target_geometry",
+        "damage_block_conditions"
+      ],
+      "description": "选择一条合法射击直线；线上至多3名敌人各受到15伤害。",
+      "source_file": "迪马斯_完整卡组_重制v1.0.md",
+      "source_line": 93
+    },
+    {
+      "id": "D065",
+      "families": [
+        "battlefield_movement",
+        "counterattack",
+        "damage_block_conditions"
+      ],
+      "description": "移动最多3格，造成24伤害；开启2次反击。",
+      "source_file": "迪马斯_完整卡组_重制v1.0.md",
+      "source_line": 94
+    },
+    {
+      "id": "D066",
+      "families": [
+        "player_choice",
+        "battlefield_movement",
+        "counterattack",
+        "damage_block_conditions"
+      ],
+      "description": "二选一：短刀距1造成19伤害后移动1格；或手枪距2–3造成17伤害并开启1次反击。",
+      "source_file": "迪马斯_完整卡组_重制v1.0.md",
+      "source_line": 95
+    },
+    {
+      "id": "D067",
+      "families": [
+        "counterattack",
+        "turn_triggers",
+        "damage_block_conditions"
+      ],
+      "description": "每轮第一次触发反击时，额外造成1次标准反击伤害；不额外消耗反击层数。",
+      "source_file": "迪马斯_完整卡组_重制v1.0.md",
+      "source_line": 96
+    },
+    {
+      "id": "D068",
+      "families": [
+        "battlefield_movement",
+        "turn_triggers",
+        "damage_block_conditions"
+      ],
+      "description": "每回合第一次通过卡牌主动移动后，获得4格挡。",
+      "source_file": "迪马斯_完整卡组_重制v1.0.md",
+      "source_line": 97
+    },
+    {
+      "id": "D069",
+      "families": [
+        "hand_operations",
+        "turn_triggers",
+        "damage_block_conditions"
+      ],
+      "description": "每回合第一次在同一回合内既打出Dagger Attack又打出Pistol Attack时，抽1张。",
+      "source_file": "迪马斯_完整卡组_重制v1.0.md",
+      "source_line": 98
+    },
+    {
+      "id": "D070",
+      "families": [
+        "hand_operations",
+        "battlefield_movement",
+        "turn_triggers"
+      ],
+      "description": "每回合第一次主动移动使你与任意敌人的距离跨过1格边界时，抽1张。",
+      "source_file": "迪马斯_完整卡组_重制v1.0.md",
+      "source_line": 99
+    },
+    {
+      "id": "D072",
+      "families": [
+        "counterattack",
+        "damage_block_conditions",
+        "turn_triggers"
+      ],
+      "description": "反击伤害变为1.5×CounterDamage(Level)。",
+      "source_file": "迪马斯_完整卡组_重制v1.0.md",
+      "source_line": 101
+    },
+    {
+      "id": "D073",
+      "families": [
+        "battlefield_movement",
+        "turn_triggers",
+        "damage_block_conditions"
+      ],
+      "description": "每回合第一次打出本身不含自身移动的Attack时，可在攻击前或后移动1格。",
+      "source_file": "迪马斯_完整卡组_重制v1.0.md",
+      "source_line": 102
+    },
+    {
+      "id": "D074",
+      "families": [
+        "battlefield_movement",
+        "damage_block_conditions"
+      ],
+      "description": "造成12伤害；然后该敌人与其周围所有可移动单位分别随机移动到一个合法相邻空格，按行动顺序依次结算。",
+      "source_file": "迪马斯_完整卡组_重制v1.0.md",
+      "source_line": 103
+    },
+    {
+      "id": "D075",
+      "families": [
+        "player_choice",
+        "pile_operations",
+        "hand_operations",
+        "cost_rules",
+        "damage_block_conditions"
+      ],
+      "description": "从当前牌组随机展示4张不同Attack；选择1张生成临时复制品加入手牌，其本回合费用变为0，打出后消失。",
+      "source_file": "迪马斯_完整卡组_重制v1.0.md",
+      "source_line": 104
+    },
+    {
+      "id": "K013",
+      "families": [
+        "multi_target_geometry",
+        "status_layers"
+      ],
+      "description": "区域内所有敌人获得5层毒。",
+      "source_file": "卡莎_完整卡组_重制v1.0.md",
+      "source_line": 34
+    },
+    {
+      "id": "K017",
+      "families": [
+        "status_layers"
+      ],
+      "description": "施加4层毒和1层迟缓。",
+      "source_file": "卡莎_完整卡组_重制v1.0.md",
+      "source_line": 38
+    },
+    {
+      "id": "K019",
+      "families": [
+        "status_layers",
+        "damage_block_conditions"
+      ],
+      "description": "目标获得4格挡，并移除至多2层一种DOT。",
+      "source_file": "卡莎_完整卡组_重制v1.0.md",
+      "source_line": 40
+    },
+    {
+      "id": "K020",
+      "families": [
+        "turn_triggers",
+        "damage_block_conditions"
+      ],
+      "description": "目标下一张Attack额外造成4点总伤害；每次Attack至多触发一次。",
+      "source_file": "卡莎_完整卡组_重制v1.0.md",
+      "source_line": 41
+    },
+    {
+      "id": "K021",
+      "families": [
+        "turn_triggers",
+        "hp_events"
+      ],
+      "description": "目标本轮下一次直接失去生命时，减少6点该生命损失。",
+      "source_file": "卡莎_完整卡组_重制v1.0.md",
+      "source_line": 42
+    },
+    {
+      "id": "K023",
+      "families": [
+        "status_layers"
+      ],
+      "description": "施加3层毒和1层脆弱。",
+      "source_file": "卡莎_完整卡组_重制v1.0.md",
+      "source_line": 44
+    },
+    {
+      "id": "K024",
+      "families": [
+        "battlefield_movement",
+        "status_layers"
+      ],
+      "description": "施加3层毒；目标本回合移动距离-2。",
+      "source_file": "卡莎_完整卡组_重制v1.0.md",
+      "source_line": 45
+    },
+    {
+      "id": "K025",
+      "families": [
+        "player_choice",
+        "pile_operations",
+        "damage_block_conditions"
+      ],
+      "description": "从当前牌组随机展示3张Drug；选择1张置于牌堆顶，并获得4格挡。",
+      "source_file": "卡莎_完整卡组_重制v1.0.md",
+      "source_line": 46
+    },
+    {
+      "id": "K032",
+      "families": [
+        "turn_triggers",
+        "cost_rules",
+        "damage_block_conditions"
+      ],
+      "description": "获得5格挡；若本回合使用过Drug，下一张Surgery费用-1。",
+      "source_file": "卡莎_完整卡组_重制v1.0.md",
+      "source_line": 53
+    },
+    {
+      "id": "K035",
+      "families": [
+        "status_layers",
+        "turn_triggers",
+        "cost_rules"
+      ],
+      "description": "施加3层毒；本回合下一张以该目标为目标的Surgery费用-1。",
+      "source_file": "卡莎_完整卡组_重制v1.0.md",
+      "source_line": 56
+    },
+    {
+      "id": "K038",
+      "families": [
+        "multi_target_geometry",
+        "status_layers"
+      ],
+      "description": "区域内敌人获得7层毒。",
+      "source_file": "卡莎_完整卡组_重制v1.0.md",
+      "source_line": 63
+    },
+    {
+      "id": "K040",
+      "families": [
+        "status_layers",
+        "turn_triggers"
+      ],
+      "description": "每回合第一次对已中毒目标施加毒时，额外施加2层毒。",
+      "source_file": "卡莎_完整卡组_重制v1.0.md",
+      "source_line": 65
+    },
+    {
+      "id": "K043",
+      "families": [
+        "battlefield_movement",
+        "cost_rules",
+        "damage_block_conditions",
+        "hp_events"
+      ],
+      "description": "若本回合移动≥2格，本牌费用-1；造成7伤害并使目标直接失去2生命；之后移动1格。",
+      "source_file": "卡莎_完整卡组_重制v1.0.md",
+      "source_line": 68
+    },
+    {
+      "id": "K046",
+      "families": [
+        "turn_triggers",
+        "damage_block_conditions",
+        "hp_events"
+      ],
+      "description": "造成6伤害并使目标直接失去2生命；目标本轮Armor-1。",
+      "source_file": "卡莎_完整卡组_重制v1.0.md",
+      "source_line": 71
+    },
+    {
+      "id": "K047",
+      "families": [
+        "player_choice",
+        "cost_rules",
+        "damage_block_conditions"
+      ],
+      "description": "目标获得4格挡；选择你手中1张基础费用≥2的Surgery，本回合费用-1。",
+      "source_file": "卡莎_完整卡组_重制v1.0.md",
+      "source_line": 72
+    },
+    {
+      "id": "K049",
+      "families": [
+        "status_layers",
+        "damage_block_conditions"
+      ],
+      "description": "目标获得8格挡；移除其1层虚弱或迟缓。",
+      "source_file": "卡莎_完整卡组_重制v1.0.md",
+      "source_line": 74
+    },
+    {
+      "id": "K051",
+      "families": [
+        "battlefield_movement",
+        "multi_target_geometry",
+        "turn_triggers",
+        "damage_block_conditions"
+      ],
+      "description": "至多2名友军本回合移动距离+1，且各自下一张Attack额外造成2点总伤害。",
+      "source_file": "卡莎_完整卡组_重制v1.0.md",
+      "source_line": 76
+    },
+    {
+      "id": "K052",
+      "families": [
+        "status_layers"
+      ],
+      "description": "施加1层虚弱和1层脆弱。",
+      "source_file": "卡莎_完整卡组_重制v1.0.md",
+      "source_line": 77
+    },
+    {
+      "id": "K053",
+      "families": [
+        "status_layers"
+      ],
+      "description": "施加2层毒和1层迟缓；若目标已中毒，再施加1层虚弱。",
+      "source_file": "卡莎_完整卡组_重制v1.0.md",
+      "source_line": 78
+    },
+    {
+      "id": "K054",
+      "families": [
+        "battlefield_movement",
+        "multi_target_geometry",
+        "status_layers"
+      ],
+      "description": "区域内敌人获得1层虚弱，且本回合移动距离-1。",
+      "source_file": "卡莎_完整卡组_重制v1.0.md",
+      "source_line": 79
+    },
+    {
+      "id": "K055",
+      "families": [
+        "status_layers",
+        "damage_block_conditions"
+      ],
+      "description": "目标获得5格挡，并移除至多4层一种DOT。",
+      "source_file": "卡莎_完整卡组_重制v1.0.md",
+      "source_line": 80
+    },
+    {
+      "id": "K056",
+      "families": [
+        "turn_triggers",
+        "cost_rules",
+        "hp_events"
+      ],
+      "description": "目标下一张基础费用≥2的牌费用-2；该牌结算后目标直接失去4生命。",
+      "source_file": "卡莎_完整卡组_重制v1.0.md",
+      "source_line": 81
+    },
+    {
+      "id": "K057",
+      "families": [
+        "turn_triggers",
+        "damage_block_conditions"
+      ],
+      "description": "目标下一次受到Attack前先获得9格挡。",
+      "source_file": "卡莎_完整卡组_重制v1.0.md",
+      "source_line": 82
+    },
+    {
+      "id": "K058",
+      "families": [
+        "player_choice",
+        "pile_operations",
+        "hand_operations"
+      ],
+      "description": "从当前牌组随机展示5张Drug；选择1张加入手牌，另外4张洗回牌库。",
+      "source_file": "卡莎_完整卡组_重制v1.0.md",
+      "source_line": 83
+    },
+    {
+      "id": "K059",
+      "families": [
+        "player_choice",
+        "pile_operations",
+        "hand_operations"
+      ],
+      "description": "从当前牌组随机生成1张Drug的临时复制品加入手牌；展示后你可选择将其保留在手牌或立即弃置并抽1张。",
+      "source_file": "卡莎_完整卡组_重制v1.0.md",
+      "source_line": 84
+    },
+    {
+      "id": "K061",
+      "families": [
+        "status_layers",
+        "damage_block_conditions",
+        "turn_triggers"
+      ],
+      "description": "毒每次正常结算时，按当前层数造成两次毒伤害，但结算后只减少1层毒。",
+      "source_file": "卡莎_完整卡组_重制v1.0.md",
+      "source_line": 90
+    },
+    {
+      "id": "K062",
+      "families": [
+        "status_layers",
+        "turn_triggers",
+        "hp_events"
+      ],
+      "description": "每回合第一次令已中毒目标直接失去生命后，对其施加3层毒。",
+      "source_file": "卡莎_完整卡组_重制v1.0.md",
+      "source_line": 91
+    },
+    {
+      "id": "K064",
+      "families": [
+        "multi_target_geometry",
+        "status_layers"
+      ],
+      "description": "中心敌人获得10层毒，其余敌人获得6层毒；所有目标再获得1层虚弱。",
+      "source_file": "卡莎_完整卡组_重制v1.0.md",
+      "source_line": 93
+    },
+    {
+      "id": "K065",
+      "families": [
+        "status_layers",
+        "turn_triggers",
+        "damage_block_conditions"
+      ],
+      "description": "每回合前两张Drug：若目标为友军，额外给予3格挡；若目标为敌人，额外施加2层毒。",
+      "source_file": "卡莎_完整卡组_重制v1.0.md",
+      "source_line": 94
+    },
+    {
+      "id": "K066",
+      "families": [
+        "turn_triggers",
+        "cost_rules"
+      ],
+      "description": "每回合第二张Drug费用-1。",
+      "source_file": "卡莎_完整卡组_重制v1.0.md",
+      "source_line": 95
+    },
+    {
+      "id": "K068",
+      "families": [
+        "status_layers",
+        "turn_triggers",
+        "cost_rules"
+      ],
+      "description": "每回合第一次对同一目标施加第二种不同Debuff时，本回合下一张Surgery费用-1。",
+      "source_file": "卡莎_完整卡组_重制v1.0.md",
+      "source_line": 97
+    },
+    {
+      "id": "K069",
+      "families": [
+        "player_choice",
+        "battlefield_movement",
+        "multi_target_geometry",
+        "turn_triggers",
+        "damage_block_conditions"
+      ],
+      "description": "每名目标选择：本回合移动距离+1，或下一张Attack额外造成3点总伤害。",
+      "source_file": "卡莎_完整卡组_重制v1.0.md",
+      "source_line": 98
+    },
+    {
+      "id": "K070",
+      "families": [
+        "turn_triggers",
+        "cost_rules",
+        "hp_events"
+      ],
+      "description": "每回合第一次将Surgery降至0费时，该牌额外使目标直接失去3生命。",
+      "source_file": "卡莎_完整卡组_重制v1.0.md",
+      "source_line": 99
+    },
+    {
+      "id": "K071",
+      "families": [
+        "player_choice",
+        "pile_operations"
+      ],
+      "description": "从当前牌组随机展示4张不同Drug；选择2张生成临时复制品，随机放置于抽牌堆顶3张中的两个位置。",
+      "source_file": "卡莎_完整卡组_重制v1.0.md",
+      "source_line": 100
+    },
+    {
+      "id": "K072",
+      "families": [
+        "cost_rules",
+        "damage_block_conditions",
+        "hp_events"
+      ],
+      "description": "若本回合已对目标打出2张不同Surgery，本牌费用-1；造成10伤害并使其直接失去8生命。",
+      "source_file": "卡莎_完整卡组_重制v1.0.md",
+      "source_line": 101
+    },
+    {
+      "id": "K073",
+      "families": [
+        "hp_events"
+      ],
+      "description": "若目标本回合已至少两次直接失去生命，则再直接失去本回合此前直接生命损失总量的一半，最多8。",
+      "source_file": "卡莎_完整卡组_重制v1.0.md",
+      "source_line": 102
+    },
+    {
+      "id": "K074",
+      "families": [
+        "player_choice",
+        "pile_operations",
+        "hand_operations"
+      ],
+      "description": "从牌库随机展示3张Drug；选择1张加入手牌，另1张置于牌堆顶，剩余1张置于牌堆底。",
+      "source_file": "卡莎_完整卡组_重制v1.0.md",
+      "source_line": 103
+    },
+    {
+      "id": "K075",
+      "families": [
+        "player_choice",
+        "pile_operations",
+        "hand_operations",
+        "cost_rules"
+      ],
+      "description": "从当前牌组随机展示3张可合法以该单位为目标的Drug；选择1张生成临时复制品加入手牌，其本回合费用为0。",
+      "source_file": "卡莎_完整卡组_重制v1.0.md",
+      "source_line": 104
+    }
+  ]
+}

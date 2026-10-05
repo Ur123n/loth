@@ -1,0 +1,36 @@
+{
+  "id": "A019",
+  "name": "旧招重拾",
+  "character": "艾莉丝",
+  "rarity": "Common",
+  "category": "道途专属卡牌",
+  "path": "梦魇行者",
+  "card_type": "行动",
+  "cost": 1,
+  "load": 1,
+  "target_type": "Self",
+  "hp_payment": 0,
+  "cost_rules": [],
+  "play_conditions": [],
+  "dream_mode": "three_dreams",
+  "min_range": 0,
+  "range": 0,
+  "target_spec": "自身",
+  "area": 0,
+  "keywords": [
+    "消耗"
+  ],
+  "tags": [
+    "Recovery"
+  ],
+  "description": "从弃牌堆选择1张Basic牌置于手牌；其本回合费用变为0，打出后消耗。",
+  "source_effect": "从弃牌堆选择1张Basic牌置于手牌；其本回合费用变为0，打出后消耗。",
+  "source_file": "艾莉丝_完整卡组_重制v1.0.md",
+  "source_line": 40,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [],
+  "mechanism_ids": [],
+  "implementation_status": "design_only"
+}

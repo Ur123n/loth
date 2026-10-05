@@ -1,0 +1,44 @@
+{
+  "id": "A001",
+  "name": "佣兵打击",
+  "character": "艾莉丝",
+  "rarity": "Basic",
+  "category": "道途专属卡牌",
+  "path": "梦魇行者",
+  "card_type": "攻击",
+  "cost": 1,
+  "load": 1,
+  "target_type": "Enemy",
+  "hp_payment": 0,
+  "cost_rules": [],
+  "play_conditions": [],
+  "dream_mode": "three_dreams",
+  "min_range": 1,
+  "range": 1,
+  "target_spec": "敌1 / 距1",
+  "area": 0,
+  "keywords": [],
+  "tags": [
+    "Melee",
+    "Weapon"
+  ],
+  "description": "造成6伤害。",
+  "source_effect": "造成6伤害。",
+  "source_file": "艾莉丝_完整卡组_重制v1.0.md",
+  "source_line": 18,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [
+    {
+      "logic": "attack",
+      "value": 6,
+      "attack_range": 1
+    }
+  ],
+  "mechanism_ids": [
+    "effects.attack",
+    "play_rules.three_dreams"
+  ],
+  "implementation_status": "supported"
+}

@@ -1,0 +1,49 @@
+{
+  "id": "B019",
+  "name": "伤口封住",
+  "character": "鲍德温",
+  "rarity": "Common",
+  "category": "道途专属卡牌",
+  "path": "孢子卫士",
+  "card_type": "行动",
+  "cost": 1,
+  "load": 1,
+  "target_type": "Self",
+  "hp_payment": 0,
+  "cost_rules": [],
+  "play_conditions": [],
+  "dream_mode": "",
+  "min_range": 0,
+  "range": 0,
+  "target_spec": "自身",
+  "area": 0,
+  "keywords": [],
+  "tags": [
+    "Healing",
+    "Defense"
+  ],
+  "description": "获得6格挡和2层疗愈。",
+  "source_effect": "获得6格挡和2层疗愈。",
+  "source_file": "鲍德温_完整卡组_重制v1.0.md",
+  "source_line": 40,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [
+    {
+      "logic": "defense",
+      "value": 6
+    },
+    {
+      "logic": "buff",
+      "target": "self",
+      "buff_type": "疗愈",
+      "stacks": 2
+    }
+  ],
+  "mechanism_ids": [
+    "effects.defense",
+    "effects.buff"
+  ],
+  "implementation_status": "supported"
+}

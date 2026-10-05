@@ -1,0 +1,37 @@
+{
+  "id": "K056",
+  "name": "醒魂酒",
+  "character": "卡莎",
+  "rarity": "Uncommon",
+  "category": "道途专属卡牌",
+  "path": "解剖学者",
+  "card_type": "行动",
+  "cost": 1,
+  "load": 2,
+  "target_type": "Ally",
+  "hp_payment": 0,
+  "cost_rules": [],
+  "play_conditions": [],
+  "dream_mode": "",
+  "min_range": 2,
+  "range": 2,
+  "target_spec": "友军 / 距2",
+  "area": 0,
+  "keywords": [
+    "消耗"
+  ],
+  "tags": [
+    "Drug",
+    "Support"
+  ],
+  "description": "目标下一张基础费用≥2的牌费用-2；该牌结算后目标直接失去4生命。",
+  "source_effect": "目标下一张基础费用≥2的牌费用-2；该牌结算后目标直接失去4生命。",
+  "source_file": "卡莎_完整卡组_重制v1.0.md",
+  "source_line": 81,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [],
+  "mechanism_ids": [],
+  "implementation_status": "design_only"
+}

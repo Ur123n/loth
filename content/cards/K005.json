@@ -1,0 +1,45 @@
+{
+  "id": "K005",
+  "name": "眠草烟",
+  "character": "卡莎",
+  "rarity": "Basic",
+  "category": "道途专属卡牌",
+  "path": "解剖学者",
+  "card_type": "行动",
+  "cost": 1,
+  "load": 1,
+  "target_type": "Enemy",
+  "hp_payment": 0,
+  "cost_rules": [],
+  "play_conditions": [],
+  "dream_mode": "",
+  "min_range": 3,
+  "range": 3,
+  "target_spec": "敌1 / 距3",
+  "area": 0,
+  "keywords": [],
+  "tags": [
+    "Drug",
+    "Debuff"
+  ],
+  "description": "施加1层虚弱。",
+  "source_effect": "施加1层虚弱。",
+  "source_file": "卡莎_完整卡组_重制v1.0.md",
+  "source_line": 22,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [
+    {
+      "logic": "buff",
+      "target": "enemy",
+      "buff_type": "虚弱",
+      "stacks": 1,
+      "duration": 1
+    }
+  ],
+  "mechanism_ids": [
+    "effects.buff"
+  ],
+  "implementation_status": "supported"
+}

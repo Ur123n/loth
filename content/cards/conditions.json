@@ -6,8 +6,22 @@
     {"name": "生命低于百分比", "type": "hp_below_pct", "params": [{"key": "pct", "name": "百分比", "kind": "int", "default": 50, "min": 1, "max": 100}]},
     {"name": "手牌不少于", "type": "hand_size_at_least", "params": [{"key": "count", "name": "张数", "kind": "int", "default": 1, "min": 0, "max": 20}]},
     {"name": "费用不少于", "type": "energy_at_least", "params": [{"key": "value", "name": "费用", "kind": "int", "default": 1, "min": 0, "max": 20}]},
-    {"name": "自身持有buff", "type": "has_buff", "params": [{"key": "buff_name", "name": "buff名", "kind": "str", "default": ""}]},
+    {"name": "自身持有buff", "type": "has_buff", "mechanism_id": "conditions.has_buff", "params": [{"key": "buff_name", "name": "buff名", "kind": "str", "default": ""}]},
     {"name": "场上敌人不少于", "type": "enemies_alive_at_least", "params": [{"key": "count", "name": "数量", "kind": "int", "default": 1, "min": 0, "max": 12}]},
-    {"name": "上一张牌带词条", "type": "last_card_keyword", "params": [{"key": "keyword", "name": "词条", "kind": "str", "default": ""}]}
+    {"name": "上一张牌带词条", "type": "last_card_keyword", "params": [{"key": "keyword", "name": "词条", "kind": "str", "default": ""}]},
+    {"name": "生命不高于百分比", "type": "hp_at_most_pct", "mechanism_id": "conditions.hp_at_most_pct", "params": [{"key": "pct", "name": "百分比", "kind": "int", "default": 50, "min": 1, "max": 100}]},
+    {"name": "处于指定梦态", "type": "redesign_dream_state_is", "mechanism_id": "conditions.redesign_dream_state_is", "params": [{"key": "state", "name": "梦态(0沉/1幻)", "kind": "int", "default": 0, "min": 0, "max": 1}]},
+    {"name": "目标出牌前有状态", "type": "target_has_buff_at_play", "mechanism_id": "conditions.target_has_buff_at_play", "params": [{"key": "buff_name", "name": "状态名", "kind": "str", "default": "中毒"}]},
+    {"name": "目标出牌前有负面状态", "type": "target_has_any_debuff_at_play", "mechanism_id": "conditions.target_has_any_debuff_at_play", "params": []},
+    {"name": "目标本回合直接失血", "type": "target_lost_direct_hp_this_turn", "mechanism_id": "conditions.target_lost_direct_hp_this_turn", "params": []},
+    {"name": "所选目标本回合已移动", "type": "target_moved_this_turn", "mechanism_id": "conditions.target_moved_this_turn", "params": []},
+    {"name": "与所选目标相邻", "type": "caster_target_adjacent", "mechanism_id": "conditions.caster_target_adjacent", "params": []},
+    {"name": "相邻敌人数不少于", "type": "adjacent_enemies_at_least", "mechanism_id": "conditions.adjacent_enemies_at_least", "params": [{"key": "count", "name": "数量", "kind": "int", "default": 2, "min": 1, "max": 12}]},
+    {"name": "目标生命不高于百分比", "type": "target_hp_at_most_pct", "mechanism_id": "conditions.target_hp_at_most_pct", "params": [{"key": "pct", "name": "百分比", "kind": "int", "default": 40, "min": 1, "max": 100}]},
+    {"name": "出牌前目标格挡不少于", "type": "target_block_at_play_at_least", "mechanism_id": "conditions.target_block_at_play_at_least", "params": [{"key": "threshold", "name": "格挡值", "kind": "int", "default": 2, "min": 0, "max": 999}]},
+    {"name": "出牌前目标格挡不高于", "type": "target_block_at_play_at_most", "mechanism_id": "conditions.target_block_at_play_at_most", "params": [{"key": "threshold", "name": "格挡值", "kind": "int", "default": 0, "min": 0, "max": 999}]},
+    {"name": "本行动已打出指定标签", "type": "played_card_tags_this_turn", "mechanism_id": "conditions.played_card_tags_this_turn", "params": [{"key": "tag", "name": "标签", "kind": "str", "default": "Dagger"}, {"key": "other_tag", "name": "第二标签", "kind": "str", "default": ""}, {"key": "card_type", "name": "类型(Attack/空)", "kind": "str", "default": "Attack"}, {"key": "distinct", "name": "分开打出(0/1)", "kind": "int", "default": 0, "min": 0, "max": 1}]},
+    {"name": "目标状态层数至少", "type": "target_buff_stacks_at_least", "mechanism_id": "conditions.target_buff_stacks_at_least", "params": [{"key": "buff", "name": "状态名", "kind": "str", "default": "中毒"}, {"key": "stacks", "name": "层数", "kind": "int", "default": 5, "min": 1, "max": 99}]},
+    {"name": "本牌结算前处于指定梦态", "type": "redesign_dream_state_at_play_is", "mechanism_id": "conditions.redesign_dream_state_at_play_is", "params": [{"key": "state", "name": "梦态(0沉/1幻)", "kind": "int", "default": 1, "min": 0, "max": 1}]}
   ]
 }

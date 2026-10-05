@@ -1,0 +1,59 @@
+{
+  "id": "A047",
+  "name": "无甲之敌",
+  "character": "艾莉丝",
+  "rarity": "Uncommon",
+  "category": "道途专属卡牌",
+  "path": "梦魇行者",
+  "card_type": "攻击",
+  "cost": 1,
+  "load": 1,
+  "target_type": "Enemy",
+  "hp_payment": 0,
+  "cost_rules": [],
+  "play_conditions": [],
+  "dream_mode": "three_dreams",
+  "min_range": 1,
+  "range": 1,
+  "target_spec": "敌1 / 距1",
+  "area": 0,
+  "keywords": [],
+  "tags": [
+    "Melee",
+    "Matchup"
+  ],
+  "description": "造成10伤害；若目标Armor=0，改为14伤害。",
+  "source_effect": "造成10伤害；若目标Armor=0，改为14伤害。",
+  "source_file": "艾莉丝_完整卡组_重制v1.0.md",
+  "source_line": 72,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [
+    {
+      "logic": "attack",
+      "value": 10,
+      "attack_range": 1,
+      "condition": {
+        "type": "target_block_at_play_at_most",
+        "threshold": 0,
+        "negate": true
+      }
+    },
+    {
+      "logic": "attack",
+      "value": 14,
+      "attack_range": 1,
+      "condition": {
+        "type": "target_block_at_play_at_most",
+        "threshold": 0
+      }
+    }
+  ],
+  "mechanism_ids": [
+    "effects.attack",
+    "conditions.target_block_at_play_at_most",
+    "play_rules.three_dreams"
+  ],
+  "implementation_status": "supported"
+}

@@ -1,0 +1,59 @@
+{
+  "id": "B045",
+  "name": "血热猛攻",
+  "character": "鲍德温",
+  "rarity": "Uncommon",
+  "category": "道途专属卡牌",
+  "path": "孢子卫士",
+  "card_type": "攻击",
+  "cost": 1,
+  "load": 2,
+  "target_type": "Enemy",
+  "hp_payment": 4,
+  "cost_rules": [],
+  "play_conditions": [],
+  "dream_mode": "",
+  "min_range": 1,
+  "range": 1,
+  "target_spec": "敌1 / 距1",
+  "area": 0,
+  "keywords": [],
+  "tags": [
+    "Bloodletting",
+    "Melee"
+  ],
+  "description": "放血4；造成19伤害；若打出前拥有疗愈，改为23伤害。",
+  "source_effect": "放血4；造成19伤害；若打出前拥有疗愈，改为23伤害。",
+  "source_file": "鲍德温_完整卡组_重制v1.0.md",
+  "source_line": 70,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [
+    {
+      "logic": "attack",
+      "value": 19,
+      "attack_range": 1,
+      "condition": {
+        "type": "has_buff",
+        "buff_name": "疗愈",
+        "negate": true
+      }
+    },
+    {
+      "logic": "attack",
+      "value": 23,
+      "attack_range": 1,
+      "condition": {
+        "type": "has_buff",
+        "buff_name": "疗愈"
+      }
+    }
+  ],
+  "mechanism_ids": [
+    "effects.attack",
+    "conditions.has_buff",
+    "play_rules.hp_payment"
+  ],
+  "implementation_status": "supported"
+}

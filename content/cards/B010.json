@@ -1,0 +1,49 @@
+{
+  "id": "B010",
+  "name": "喘口气",
+  "character": "鲍德温",
+  "rarity": "Basic",
+  "category": "道途专属卡牌",
+  "path": "孢子卫士",
+  "card_type": "行动",
+  "cost": 1,
+  "load": 1,
+  "target_type": "Self",
+  "hp_payment": 0,
+  "cost_rules": [],
+  "play_conditions": [],
+  "dream_mode": "",
+  "min_range": 0,
+  "range": 0,
+  "target_spec": "自身",
+  "area": 0,
+  "keywords": [],
+  "tags": [
+    "Healing",
+    "Defense"
+  ],
+  "description": "获得2层疗愈和4格挡。",
+  "source_effect": "获得2层疗愈和4格挡。",
+  "source_file": "鲍德温_完整卡组_重制v1.0.md",
+  "source_line": 27,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [
+    {
+      "logic": "buff",
+      "target": "self",
+      "buff_type": "疗愈",
+      "stacks": 2
+    },
+    {
+      "logic": "defense",
+      "value": 4
+    }
+  ],
+  "mechanism_ids": [
+    "effects.buff",
+    "effects.defense"
+  ],
+  "implementation_status": "supported"
+}

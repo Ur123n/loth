@@ -1,0 +1,48 @@
+{
+  "id": "D006",
+  "name": "掩身退火",
+  "character": "迪马斯",
+  "rarity": "Basic",
+  "category": "道途专属卡牌",
+  "path": "侠盗",
+  "card_type": "攻击",
+  "cost": 1,
+  "load": 1,
+  "target_type": "Enemy",
+  "hp_payment": 0,
+  "cost_rules": [],
+  "play_conditions": [],
+  "dream_mode": "",
+  "min_range": 2,
+  "range": 3,
+  "target_spec": "敌1 / 距2–3",
+  "area": 0,
+  "keywords": [],
+  "tags": [
+    "Pistol",
+    "Movement"
+  ],
+  "description": "造成4伤害；之后移动最多1格。",
+  "source_effect": "造成4伤害；之后移动最多1格。",
+  "source_file": "迪马斯_完整卡组_重制v1.0.md",
+  "source_line": 23,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [
+    {
+      "logic": "attack",
+      "value": 4,
+      "attack_range": 3
+    },
+    {
+      "logic": "move",
+      "distance": 1
+    }
+  ],
+  "mechanism_ids": [
+    "effects.attack",
+    "effects.move"
+  ],
+  "implementation_status": "supported"
+}

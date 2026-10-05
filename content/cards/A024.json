@@ -1,0 +1,53 @@
+{
+  "id": "A024",
+  "name": "错拿的未来",
+  "character": "艾莉丝",
+  "rarity": "Common",
+  "category": "道途专属卡牌",
+  "path": "梦魇行者",
+  "card_type": "行动",
+  "cost": 1,
+  "load": 2,
+  "target_type": "Self",
+  "hp_payment": 0,
+  "cost_rules": [],
+  "play_conditions": [],
+  "dream_mode": "three_dreams",
+  "min_range": 0,
+  "range": 0,
+  "target_spec": "自身",
+  "area": 0,
+  "keywords": [],
+  "tags": [
+    "X",
+    "Random",
+    "Deck"
+  ],
+  "description": "从弃牌堆随机将1张非Power牌置于牌堆顶；然后抽1张。",
+  "source_effect": "从弃牌堆随机将1张非Power牌置于牌堆顶；然后抽1张。",
+  "source_file": "艾莉丝_完整卡组_重制v1.0.md",
+  "source_line": 45,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [
+    {
+      "logic": "transfer_random_card",
+      "source": "discard",
+      "destination": "draw",
+      "exclude_card_type": "Power",
+      "position": "top",
+      "count": 1
+    },
+    {
+      "logic": "draw",
+      "value": 1
+    }
+  ],
+  "mechanism_ids": [
+    "effects.transfer_random_card",
+    "effects.draw",
+    "play_rules.three_dreams"
+  ],
+  "implementation_status": "supported"
+}

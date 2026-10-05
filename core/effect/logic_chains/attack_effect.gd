@@ -11,3 +11,4 @@ extends Resource
 @export var attack_range: int = 1
 @export var pierce: bool = false
 @export var alt_value: int = 0   # 本回合已移动时替换 value（0=无条件）
+@export var alt_condition: String = "moved_this_turn"

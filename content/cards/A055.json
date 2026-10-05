@@ -1,0 +1,38 @@
+{
+  "id": "A055",
+  "name": "梦里的岔路",
+  "character": "艾莉丝",
+  "rarity": "Uncommon",
+  "category": "道途专属卡牌",
+  "path": "梦魇行者",
+  "card_type": "行动",
+  "cost": 1,
+  "load": 2,
+  "target_type": "Self",
+  "hp_payment": 0,
+  "cost_rules": [],
+  "play_conditions": [],
+  "dream_mode": "three_dreams",
+  "min_range": 0,
+  "range": 0,
+  "target_spec": "自身",
+  "area": 0,
+  "keywords": [
+    "消耗"
+  ],
+  "tags": [
+    "X",
+    "Random",
+    "Draw"
+  ],
+  "description": "从牌库随机展示3张Skill；选择1张置于手牌，另外2张洗回牌库。",
+  "source_effect": "从牌库随机展示3张Skill；选择1张置于手牌，另外2张洗回牌库。",
+  "source_file": "艾莉丝_完整卡组_重制v1.0.md",
+  "source_line": 80,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [],
+  "mechanism_ids": [],
+  "implementation_status": "design_only"
+}

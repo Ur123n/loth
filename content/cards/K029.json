@@ -1,0 +1,57 @@
+{
+  "id": "K029",
+  "name": "趁毒落刃",
+  "character": "卡莎",
+  "rarity": "Common",
+  "category": "道途专属卡牌",
+  "path": "解剖学者",
+  "card_type": "攻击",
+  "cost": 2,
+  "load": 1,
+  "target_type": "Enemy",
+  "hp_payment": 0,
+  "cost_rules": [
+    {
+      "type": "target_buff_stacks_at_least",
+      "buff": "中毒",
+      "stacks": 5,
+      "amount": 1
+    }
+  ],
+  "play_conditions": [],
+  "dream_mode": "",
+  "min_range": 1,
+  "range": 1,
+  "target_spec": "敌1 / 距1",
+  "area": 0,
+  "keywords": [],
+  "tags": [
+    "Surgery",
+    "Precision"
+  ],
+  "description": "若目标毒≥5，本牌费用-1；造成11伤害并使目标直接失去3生命。",
+  "source_effect": "若目标毒≥5，本牌费用-1；造成11伤害并使目标直接失去3生命。",
+  "source_file": "卡莎_完整卡组_重制v1.0.md",
+  "source_line": 50,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [
+    {
+      "logic": "attack",
+      "value": 11,
+      "attack_range": 1
+    },
+    {
+      "logic": "lose_hp",
+      "target": "enemy",
+      "value": 3
+    }
+  ],
+  "mechanism_ids": [
+    "effects.attack",
+    "effects.lose_hp",
+    "conditions.target_buff_stacks_at_least"
+  ],
+  "implementation_status": "supported"
+}

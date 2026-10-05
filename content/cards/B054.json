@@ -1,0 +1,52 @@
+{
+  "id": "B054",
+  "name": "人墙",
+  "character": "鲍德温",
+  "rarity": "Uncommon",
+  "category": "道途专属卡牌",
+  "path": "孢子卫士",
+  "card_type": "行动",
+  "cost": 2,
+  "load": 1,
+  "target_type": "Self",
+  "hp_payment": 0,
+  "cost_rules": [],
+  "play_conditions": [],
+  "dream_mode": "",
+  "min_range": 0,
+  "range": 0,
+  "target_spec": "自身",
+  "area": 0,
+  "keywords": [],
+  "tags": [
+    "Defense"
+  ],
+  "description": "获得18格挡；若相邻敌人≥2，再获得5格挡。",
+  "source_effect": "获得18格挡；若相邻敌人≥2，再获得5格挡。",
+  "source_file": "鲍德温_完整卡组_重制v1.0.md",
+  "source_line": 79,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [
+    {
+      "logic": "defense",
+      "target": "self",
+      "value": 18
+    },
+    {
+      "logic": "defense",
+      "target": "self",
+      "value": 5,
+      "condition": {
+        "type": "adjacent_enemies_at_least",
+        "count": 2
+      }
+    }
+  ],
+  "mechanism_ids": [
+    "effects.defense",
+    "conditions.adjacent_enemies_at_least"
+  ],
+  "implementation_status": "supported"
+}

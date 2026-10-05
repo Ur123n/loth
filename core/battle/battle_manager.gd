@@ -13,16 +13,20 @@ extends RefCounted
 ## 格挡（block_value）：护盾与格挡统一为单一数值，轮次开始时清空（TurnSystem），先于生命抵消伤害。
 ## 生命变化发出 hp_changed（供 UI 刷新）；生命归零发出 unit_defeated（敌怪变尸骸等）。
 ## buff 实例：{"name","stacks","duration","value","data"}，数据来自 BuffDB。
-## 触发时机（trigger_timing）说明：
+## 触发时机（trigger_timing）说明（全部由 EffectSystem 统一结算）：
 ## - 下回合开始时    → 目标下一次行动开始时（预格挡）；
-## - 下回合抽牌时    → 玩家下一次抽牌阶段（预抽牌）；
+## - 下回合抽牌时    → 玩家下一次抽牌阶段（预抽牌 / 肾上腺素透支）；
 ## - 下回合获得费用时 → 玩家下一次获得费用阶段（费用预支）；
 ## - 下回合角色行动阶段 → 玩家行动阶段（疗愈，每次触发层数减一）；
-## - 结束回合时      → 行动结束结算（中毒）。
+## - 结束回合时      → 行动结束结算（中毒）；
+## - 受到攻击时 / 造成攻击伤害时 → 攻击类时机，作为伤害修正钩子在 EffectSystem
+##   的 take_damage / resolve_attack 中结算（易伤 +50%、虚弱 -25%），不消耗层数。
+## buff 触发行为按名称注册为函数（EffectSystem 的 buff 行为注册表），本管理器仅转发。
 
 signal round_started(round_number: int)
 signal turn_started(unit: BattleUnit)
 signal card_played(unit: BattleUnit, card: CardData)
+signal card_choice_requested(prompt: String, options: Array)
 signal unit_defeated(unit: BattleUnit)
 signal hp_changed(unit: BattleUnit)
 signal battle_log(message: String)
@@ -45,11 +49,13 @@ var _rng: RandomNumberGenerator
 var _card_lookup: Callable = Callable()
 var _battle_over: bool = false
 var _effect_system: EffectSystem
+var _pending_play: Dictionary = {}
 
 
 func setup(battle_units: Array[BattleUnit], rng: RandomNumberGenerator = null, card_lookup: Callable = Callable()) -> void:
 	units = battle_units
 	_battle_over = false
+	_pending_play.clear()
 	_rng = rng if rng != null else RandomNumberGenerator.new()
 	_card_lookup = card_lookup
 	if not _card_lookup.is_valid():
@@ -77,14 +83,22 @@ func current_unit() -> BattleUnit:
 ## 结束当前角色行动：先结算“结束回合时”触发的 buff（如中毒），
 ## 然后手牌入弃牌堆、费用清零，进入下一行动单位。
 func end_turn() -> void:
-	if _battle_over:
+	if _battle_over or _effect_system.has_pending_card_choice():
 		return
 	var unit := turn_system.current_unit()
 	if unit == null:
 		return
 	_effect_system.resolve_end_turn_buffs(unit)
 	_effect_system.resolve_passives_by_timing(unit, "结束回合")
+	if unit.redesign_dream_enabled and unit.redesign_dream_state == 0:
+		unit.block_value += 3
+		unit.refresh_block_display()
+		battle_log.emit("沉梦：%s 结束行动获得 3 格挡" % unit.get_display_name())
 	_effect_system.discard_hand(unit)
+	unit.tags_played_on_targets.clear()
+	unit.played_cards_this_turn.clear()
+	unit.direct_hp_loss_targets.clear()
+	unit.bled_this_turn = false
 	unit.energy = 0
 	unit.flank_trigger_damage = 0
 	unit.pending_knockback = 0
@@ -102,24 +116,76 @@ func end_enemy_turn(unit: BattleUnit) -> void:
 
 ## 打出卡牌：扣除费用 → 按 effects 顺序结算 → 入弃牌堆（能力牌自动消失）。
 func play_card(card: CardData, target = null) -> bool:
+	if _battle_over or _effect_system.has_pending_card_choice():
+		return false
 	var unit := turn_system.current_unit()
 	if unit == null or not unit.hand.has(card):
 		return false
-	if card.cost > unit.energy:
+	if card.target_type == CardData.TargetType.ENEMY or card.target_type == CardData.TargetType.ALLY:
+		if not target is BattleUnit or target.current_hp <= 0 or target.is_corpse or target.is_removed:
+			battle_log.emit("「%s」需要指定有效目标" % card.card_name)
+			return false
+		if (card.target_type == CardData.TargetType.ENEMY) != target.is_enemy:
+			battle_log.emit("「%s」的目标阵营不符" % card.card_name)
+			return false
+	for condition in card.play_conditions:
+		var met := _effect_system.evaluate_condition(unit, condition, target)
+		if bool(condition.get("negate", false)):
+			met = not met
+		if not met:
+			battle_log.emit("「%s」的出牌条件未满足" % card.card_name)
+			return false
+	var paid_cost := effective_card_cost(unit, card, target)
+	if paid_cost > unit.energy:
 		battle_log.emit("费用不足，无法打出「%s」" % card.card_name)
 		return false
-	if card.doom_dream and unit.dream_progress < 2:
+	if card.hp_payment > 0 and unit.current_hp <= card.hp_payment:
+		battle_log.emit("生命不足，无法支付「%s」的 %d 点生命" % [card.card_name, card.hp_payment])
+		return false
+	if card.dream_mode == "three_dreams" and card.doom_dream and unit.redesign_dream_state != 1:
+		battle_log.emit("「%s」只能在幻梦中打出" % card.card_name)
+		return false
+	if card.dream_mode != "three_dreams" and card.doom_dream and unit.dream_progress < 2:
 		battle_log.emit("「%s」未解锁：需本场战斗先打出过沉梦牌，再打出过幻梦牌" % card.card_name)
 		return false
-	unit.energy -= card.cost
+	unit.energy -= paid_cost
 	unit.hand.erase(card)
-	if card.dream and unit.dream_progress == 0:
+	if card.hp_payment > 0:
+		_effect_system.lose_hp(unit, card.hp_payment)
+		unit.bled_this_turn = true
+	if card.dream_mode == "three_dreams":
+		unit.redesign_dream_enabled = true
+		if card.phantom:
+			unit.redesign_dream_state = 1
+			battle_log.emit("%s 进入幻梦" % unit.get_display_name())
+	elif card.dream and unit.dream_progress == 0:
 		unit.dream_progress = 1
 		battle_log.emit("梦境觉醒（1/2）：已打出沉梦牌")
 	elif card.phantom and unit.dream_progress == 1:
 		unit.dream_progress = 2
 		battle_log.emit("梦境觉醒（2/2）：沉梦→幻梦顺序完成，灾梦已解锁！")
-	_effect_system.resolve_effects(unit, card, target)
+	var resolved := _effect_system.resolve_effects(unit, card, target)
+	if not resolved:
+		_pending_play = {"unit": unit, "card": card, "target": target}
+		card_choice_requested.emit(_effect_system.card_choice_prompt(), _effect_system.card_choice_options())
+		return true
+	_finalize_card_play(unit, card, target)
+	return true
+
+
+func _finalize_card_play(unit: BattleUnit, card: CardData, target) -> void:
+	unit.played_cards_this_turn.append(card)
+	unit.played_card_ids_in_battle[card.card_id] = true
+	if target is BattleUnit and not card.tags.is_empty():
+		var target_id: int = target.get_instance_id()
+		var played_tags: Array = unit.tags_played_on_targets.get(target_id, [])
+		for tag in card.tags:
+			if not played_tags.has(tag):
+				played_tags.append(tag)
+		unit.tags_played_on_targets[target_id] = played_tags
+	if card.dream_mode == "three_dreams" and card.doom_dream:
+		unit.redesign_dream_state = 0
+		battle_log.emit("%s 进入沉梦" % unit.get_display_name())
 	unit.last_played_card = card
 	if card.should_exhaust_on_play():
 		_exhaust_card(unit, card)
@@ -127,7 +193,55 @@ func play_card(card: CardData, target = null) -> bool:
 		unit.discard_pile.append(card)
 		battle_log.emit("「%s」进入弃牌堆" % card.card_name)
 	card_played.emit(unit, card)
+
+
+func has_pending_card_choice() -> bool:
+	return _effect_system != null and _effect_system.has_pending_card_choice()
+
+
+func card_choice_options() -> Array:
+	return _effect_system.card_choice_options() if _effect_system != null else []
+
+
+func card_choice_prompt() -> String:
+	return _effect_system.card_choice_prompt() if _effect_system != null else ""
+
+
+func choose_card_option(index: int) -> bool:
+	if _effect_system == null or not _effect_system.choose_card_option(index):
+		return false
+	if _effect_system.has_pending_card_choice():
+		card_choice_requested.emit(_effect_system.card_choice_prompt(), _effect_system.card_choice_options())
+	elif not _pending_play.is_empty():
+		var play := _pending_play.duplicate()
+		_pending_play.clear()
+		_finalize_card_play(play["unit"], play["card"], play["target"])
 	return true
+
+
+func effective_card_cost(unit: BattleUnit, card: CardData, target) -> int:
+	var reduction := 0
+	for rule in card.cost_rules:
+		var met := false
+		if str(rule.get("type", "")) == "caster_moved_this_turn":
+			met = unit.moved_this_turn
+		elif str(rule.get("type", "")) == "played_card_tags_this_turn":
+			met = _effect_system.evaluate_condition(unit, rule, target)
+		elif target is BattleUnit:
+			match str(rule.get("type", "")):
+				"target_has_buff":
+					met = _effect_system.has_buff(target, str(rule.get("buff", "")))
+				"target_buff_stacks_at_least":
+					var buff := _effect_system.find_buff(target, str(rule.get("buff", "")))
+					met = int(buff.get("stacks", 0)) >= int(rule.get("stacks", 1))
+				"used_tag_on_target_this_turn":
+					var played_tags: Array = unit.tags_played_on_targets.get(target.get_instance_id(), [])
+					met = played_tags.has(str(rule.get("tag", "")))
+				"target_lost_direct_hp_this_turn":
+					met = bool(unit.direct_hp_loss_targets.get(target.get_instance_id(), false))
+		if met:
+			reduction += maxi(int(rule.get("amount", 0)), 0)
+	return maxi(card.cost - reduction, 0)
 
 
 ## 整数伤害计算：面板 * 基数 / 100。
@@ -154,9 +268,9 @@ func _on_round_started(round_number: int) -> void:
 func _on_turn_started(unit: BattleUnit) -> void:
 	if _battle_over:
 		return
-	# 倒地单位无法行动（GDD 第 17 节）：直接跳过其回合
-	if unit.current_hp <= 0:
-		battle_log.emit("%s 已倒地，跳过行动" % unit.get_display_name())
+	# 尸骸/移除/倒地单位无法行动：直接跳过其回合。
+	if unit.is_corpse or unit.is_removed or unit.current_hp <= 0:
+		battle_log.emit("%s 已成为尸骸，跳过行动" % unit.get_display_name())
 		turn_system.end_current_turn()
 		return
 	_effect_system.resolve_turn_start_buffs(unit)    # 下回合开始时触发（预格挡），触发后消失
@@ -215,11 +329,20 @@ func _prepare_battle_decks() -> void:
 		unit.flank_trigger_damage = 0
 		unit.pending_knockback = 0
 		unit.dream_progress = 0
+		unit.redesign_dream_state = 0
+		unit.redesign_dream_enabled = false
 		unit.last_played_card = null
+		unit.tags_played_on_targets.clear()
+		unit.played_cards_this_turn.clear()
+		unit.played_card_ids_in_battle.clear()
+		unit.direct_hp_loss_targets.clear()
+		unit.bled_this_turn = false
 		unit.moved_this_turn = false
 		# 抽牌堆 = 角色卡组（启动时已保证含 5 打击 + 5 防御）
 		for card in unit.character_data.deck:
 			unit.draw_pile.append(card)
+			if card.dream_mode == "three_dreams":
+				unit.redesign_dream_enabled = true
 		# 兜底：牌组为空（直接运行战斗场景等）时补入基础牌
 		if unit.draw_pile.is_empty():
 			battle_log.emit("%s 牌组为空，补入基础牌" % unit.get_display_name())
@@ -245,7 +368,7 @@ func _check_battle_over() -> void:
 	for unit in units:
 		if unit.is_enemy and not unit.is_corpse and not unit.is_removed:
 			living_enemy = true
-		elif not unit.is_enemy and unit.current_hp > 0:
+		elif not unit.is_enemy and not unit.is_corpse and not unit.is_removed and unit.current_hp > 0:
 			living_player = true
 	if living_enemy and living_player:
 		return

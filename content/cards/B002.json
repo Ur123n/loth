@@ -1,0 +1,41 @@
+{
+  "id": "B002",
+  "name": "架住",
+  "character": "鲍德温",
+  "rarity": "Basic",
+  "category": "道途专属卡牌",
+  "path": "孢子卫士",
+  "card_type": "行动",
+  "cost": 1,
+  "load": 1,
+  "target_type": "Self",
+  "hp_payment": 0,
+  "cost_rules": [],
+  "play_conditions": [],
+  "dream_mode": "",
+  "min_range": 0,
+  "range": 0,
+  "target_spec": "自身",
+  "area": 0,
+  "keywords": [],
+  "tags": [
+    "Defense"
+  ],
+  "description": "获得6格挡。",
+  "source_effect": "获得6格挡。",
+  "source_file": "鲍德温_完整卡组_重制v1.0.md",
+  "source_line": 19,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [
+    {
+      "logic": "defense",
+      "value": 6
+    }
+  ],
+  "mechanism_ids": [
+    "effects.defense"
+  ],
+  "implementation_status": "supported"
+}

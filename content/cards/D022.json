@@ -1,0 +1,41 @@
+{
+  "id": "D022",
+  "name": "护腕格挡",
+  "character": "迪马斯",
+  "rarity": "Common",
+  "category": "道途专属卡牌",
+  "path": "侠盗",
+  "card_type": "行动",
+  "cost": 1,
+  "load": 1,
+  "target_type": "Self",
+  "hp_payment": 0,
+  "cost_rules": [],
+  "play_conditions": [],
+  "dream_mode": "",
+  "min_range": 0,
+  "range": 0,
+  "target_spec": "自身",
+  "area": 0,
+  "keywords": [],
+  "tags": [
+    "Defense"
+  ],
+  "description": "获得8格挡。",
+  "source_effect": "获得8格挡。",
+  "source_file": "迪马斯_完整卡组_重制v1.0.md",
+  "source_line": 43,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [
+    {
+      "logic": "defense",
+      "value": 8
+    }
+  ],
+  "mechanism_ids": [
+    "effects.defense"
+  ],
+  "implementation_status": "supported"
+}

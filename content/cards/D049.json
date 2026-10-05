@@ -1,0 +1,37 @@
+{
+  "id": "D049",
+  "name": "还击余势",
+  "character": "迪马斯",
+  "rarity": "Uncommon",
+  "category": "道途专属卡牌",
+  "path": "侠盗",
+  "card_type": "行动",
+  "cost": 0,
+  "load": 1,
+  "target_type": "Self",
+  "hp_payment": 0,
+  "cost_rules": [],
+  "play_conditions": [],
+  "dream_mode": "",
+  "min_range": 0,
+  "range": 0,
+  "target_spec": "自身",
+  "area": 0,
+  "keywords": [
+    "消耗"
+  ],
+  "tags": [
+    "Counter",
+    "Movement"
+  ],
+  "description": "仅可在自上个己方回合结束后触发过反击时打出；移动最多2格。",
+  "source_effect": "仅可在自上个己方回合结束后触发过反击时打出；移动最多2格。",
+  "source_file": "迪马斯_完整卡组_重制v1.0.md",
+  "source_line": 74,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [],
+  "mechanism_ids": [],
+  "implementation_status": "design_only"
+}

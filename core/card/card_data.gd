@@ -11,11 +11,20 @@ enum TargetType { SELF, ALLY, ENEMY, HEX, AREA, NONE }
 @export var category: CardCategory = CardCategory.GENERIC
 @export var path_name: String = ""       # 道途专属卡牌所属道途（空表示未指定）
 @export var card_name: String = ""
+@export var card_id: String = ""
+@export var character_name: String = ""
+@export var rarity: String = ""
+@export var tags: Array[String] = []
 @export var card_type: CardType = CardType.ATTACK
 @export var cost: int = 0
 @export var load: int = 1
+@export var hp_payment: int = 0
+@export var dream_mode: String = ""
+@export var cost_rules: Array[Dictionary] = []
+@export var play_conditions: Array[Dictionary] = []  # 出牌前必须满足，失败时不支付资源
 @export var target_type: TargetType = TargetType.NONE
 @export var range: int = 1
+@export var min_range: int = 1
 @export var area: int = 0
 @export var icon_path: String = ""     # 图标相对路径（相对 卡牌/ 目录，列表/槽位小图），未设置留空
 @export var art_path: String = ""      # 卡面图相对路径（相对 卡牌/ 目录），未设置留空
@@ -47,6 +56,13 @@ func is_consumed_on_play() -> bool:
 ## 打出后是否进入消耗堆（能力牌自动消耗，或配置了“消耗”关键词）。
 func should_exhaust_on_play() -> bool:
 	return is_consumed_on_play() or exhaust_on_play
+
+
+func minimum_cost() -> int:
+	var reduction := 0
+	for rule in cost_rules:
+		reduction += maxi(int(rule.get("amount", 0)), 0)
+	return maxi(cost - reduction, 0)
 
 
 ## 卡牌关键词中文标签（用于描述/手牌角标），顺序固定。

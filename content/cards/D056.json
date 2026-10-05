@@ -1,0 +1,68 @@
+{
+  "id": "D056",
+  "name": "灰烟掩护",
+  "character": "迪马斯",
+  "rarity": "Uncommon",
+  "category": "道途专属卡牌",
+  "path": "侠盗",
+  "card_type": "行动",
+  "cost": 1,
+  "load": 1,
+  "target_type": "Self",
+  "hp_payment": 0,
+  "cost_rules": [],
+  "play_conditions": [],
+  "dream_mode": "",
+  "min_range": 0,
+  "range": 0,
+  "target_spec": "自身",
+  "area": 0,
+  "keywords": [],
+  "tags": [
+    "Defense",
+    "Movement"
+  ],
+  "description": "若本回合打出过Pistol，移动1格并获得8格挡；否则获得6格挡。",
+  "source_effect": "若本回合打出过Pistol，移动1格并获得8格挡；否则获得6格挡。",
+  "source_file": "迪马斯_完整卡组_重制v1.0.md",
+  "source_line": 81,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [
+    {
+      "logic": "move",
+      "target": "self",
+      "distance": 1,
+      "condition": {
+        "type": "played_card_tags_this_turn",
+        "tag": "Pistol"
+      }
+    },
+    {
+      "logic": "defense",
+      "target": "self",
+      "value": 8,
+      "condition": {
+        "type": "played_card_tags_this_turn",
+        "tag": "Pistol"
+      }
+    },
+    {
+      "logic": "defense",
+      "target": "self",
+      "value": 6,
+      "condition": {
+        "type": "played_card_tags_this_turn",
+        "tag": "Pistol",
+        "negate": true
+      }
+    }
+  ],
+  "mechanism_ids": [
+    "effects.move",
+    "conditions.played_card_tags_this_turn",
+    "effects.defense"
+  ],
+  "implementation_status": "supported"
+}

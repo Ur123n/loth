@@ -1,0 +1,43 @@
+{
+  "id": "B021",
+  "name": "以伤换势",
+  "character": "鲍德温",
+  "rarity": "Common",
+  "category": "道途专属卡牌",
+  "path": "孢子卫士",
+  "card_type": "行动",
+  "cost": 1,
+  "load": 1,
+  "target_type": "Self",
+  "hp_payment": 4,
+  "cost_rules": [],
+  "play_conditions": [],
+  "dream_mode": "",
+  "min_range": 0,
+  "range": 0,
+  "target_spec": "自身",
+  "area": 0,
+  "keywords": [],
+  "tags": [
+    "Bloodletting",
+    "Defense"
+  ],
+  "description": "放血4；获得15格挡。",
+  "source_effect": "放血4；获得15格挡。",
+  "source_file": "鲍德温_完整卡组_重制v1.0.md",
+  "source_line": 42,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [
+    {
+      "logic": "defense",
+      "value": 15
+    }
+  ],
+  "mechanism_ids": [
+    "effects.defense",
+    "play_rules.hp_payment"
+  ],
+  "implementation_status": "supported"
+}

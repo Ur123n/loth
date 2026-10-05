@@ -1,0 +1,37 @@
+{
+  "id": "K064",
+  "name": "黑盏倾城",
+  "character": "卡莎",
+  "rarity": "Rare",
+  "category": "道途专属卡牌",
+  "path": "解剖学者",
+  "card_type": "行动",
+  "cost": 3,
+  "load": 4,
+  "target_type": "Area",
+  "hp_payment": 0,
+  "cost_rules": [],
+  "play_conditions": [],
+  "dream_mode": "",
+  "min_range": 4,
+  "range": 4,
+  "target_spec": "区域 / 距4 半径1",
+  "area": 1,
+  "keywords": [
+    "消耗"
+  ],
+  "tags": [
+    "Drug",
+    "AOE"
+  ],
+  "description": "中心敌人获得10层毒，其余敌人获得6层毒；所有目标再获得1层虚弱。",
+  "source_effect": "中心敌人获得10层毒，其余敌人获得6层毒；所有目标再获得1层虚弱。",
+  "source_file": "卡莎_完整卡组_重制v1.0.md",
+  "source_line": 93,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [],
+  "mechanism_ids": [],
+  "implementation_status": "design_only"
+}

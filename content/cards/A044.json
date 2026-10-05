@@ -1,0 +1,38 @@
+{
+  "id": "A044",
+  "name": "这都是梦！",
+  "character": "艾莉丝",
+  "rarity": "Uncommon",
+  "category": "道途专属卡牌",
+  "path": "梦魇行者",
+  "card_type": "行动",
+  "cost": 1,
+  "load": 2,
+  "target_type": "Self",
+  "hp_payment": 0,
+  "cost_rules": [],
+  "play_conditions": [],
+  "dream_mode": "three_dreams",
+  "min_range": 0,
+  "range": 0,
+  "target_spec": "自身",
+  "area": 0,
+  "keywords": [
+    "消耗"
+  ],
+  "tags": [
+    "X",
+    "Random",
+    "Deck"
+  ],
+  "description": "将抽牌堆顶5张替换为从当前战斗牌组中随机抽取的5张临时复制品；原顶5张洗回抽牌堆。临时复制品离开手牌后消失。",
+  "source_effect": "将抽牌堆顶5张替换为从当前战斗牌组中随机抽取的5张临时复制品；原顶5张洗回抽牌堆。临时复制品离开手牌后消失。",
+  "source_file": "艾莉丝_完整卡组_重制v1.0.md",
+  "source_line": 69,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [],
+  "mechanism_ids": [],
+  "implementation_status": "design_only"
+}

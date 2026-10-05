@@ -8,6 +8,7 @@
   "duration_per_stack": 1,
   "decay_per_turn": true,
   "decay_amount": 1,
+  "decay_after_trigger": true,
   "consumed_on_trigger": false,
   "trigger_timing": "结束回合时",
   "trigger_condition": "结束回合",
