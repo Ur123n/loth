@@ -331,16 +331,21 @@ func _parse_effect(data) -> Resource:
 			var choice := ChooseFromPileEffect.new()
 			choice.source = str(data.get("source", "draw"))
 			choice.sample_count = int(data.get("sample_count", 3))
+			choice.show_all = bool(data.get("show_all", false))
 			choice.destination = str(data.get("destination", "draw"))
 			choice.position = str(data.get("position", "top"))
 			choice.required_card_type = str(data.get("required_card_type", ""))
 			choice.exclude_card_type = str(data.get("exclude_card_type", ""))
+			choice.required_rarity = str(data.get("required_rarity", ""))
 			choice.base_cost = int(data.get("base_cost", -1))
 			for tag in data.get("required_tags", []):
 				choice.required_tags.append(str(tag))
 			choice.played_in_battle = bool(data.get("played_in_battle", false))
 			choice.not_played_this_turn = bool(data.get("not_played_this_turn", false))
 			choice.exhaust_selected_on_play = bool(data.get("exhaust_selected_on_play", false))
+			choice.selected_cost_override = int(data.get("selected_cost_override", -1))
+			choice.selected_cost_reduction = int(data.get("selected_cost_reduction", 0))
+			choice.grant_retain_selected = bool(data.get("grant_retain_selected", false))
 			return choice
 		"discard":
 			var discard := DiscardEffect.new()

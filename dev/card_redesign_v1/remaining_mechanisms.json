@@ -1,14 +1,13 @@
 {
   "schema_version": 1,
   "purpose": "design_only mechanism planning; family matches are candidates, not runtime support",
-  "total": 185,
+  "total": 182,
   "families": {
     "player_choice": {
       "name": "玩家选择与随机展示",
-      "count": 41,
+      "count": 38,
       "card_ids": [
         "A006",
-        "A019",
         "A023",
         "A029",
         "A033",
@@ -32,8 +31,6 @@
         "B039",
         "B059",
         "B070",
-        "B071",
-        "D034",
         "D044",
         "D055",
         "D060",
@@ -52,10 +49,9 @@
     },
     "pile_operations": {
       "name": "抽牌堆、弃牌堆、牌库与复制品",
-      "count": 26,
+      "count": 24,
       "card_ids": [
         "A006",
-        "A019",
         "A029",
         "A033",
         "A036",
@@ -71,7 +67,6 @@
         "A067",
         "A068",
         "A074",
-        "B071",
         "D055",
         "D075",
         "K025",
@@ -84,10 +79,9 @@
     },
     "hand_operations": {
       "name": "抽牌、主动弃牌、保留",
-      "count": 41,
+      "count": 38,
       "card_ids": [
         "A010",
-        "A019",
         "A023",
         "A029",
         "A033",
@@ -108,14 +102,12 @@
         "A065",
         "A068",
         "A075",
-        "B071",
         "D008",
         "D025",
         "D026",
         "D029",
         "D030",
         "D031",
-        "D034",
         "D039",
         "D053",
         "D054",
@@ -365,10 +357,8 @@
     },
     "cost_rules": {
       "name": "条件费用与费用返还",
-      "count": 18,
+      "count": 16,
       "card_ids": [
-        "A019",
-        "B071",
         "D032",
         "D033",
         "D050",
@@ -389,7 +379,7 @@
     },
     "damage_block_conditions": {
       "name": "伤害、格挡与 Armor 条件",
-      "count": 116,
+      "count": 115,
       "card_ids": [
         "A014",
         "A018",
@@ -465,7 +455,6 @@
         "D020",
         "D023",
         "D031",
-        "D034",
         "D035",
         "D036",
         "D037",
@@ -536,7 +525,7 @@
     },
     "hp_events": {
       "name": "生命支付、直接失血与生命阈值",
-      "count": 26,
+      "count": 25,
       "card_ids": [
         "A073",
         "B009",
@@ -554,7 +543,6 @@
         "B066",
         "B067",
         "B068",
-        "B071",
         "B075",
         "K021",
         "K043",
@@ -606,18 +594,6 @@
       "description": "目标获得4格挡，并移除至多2层一种DOT。",
       "source_file": "艾莉丝_完整卡组_重制v1.0.md",
       "source_line": 39
-    },
-    {
-      "id": "A019",
-      "families": [
-        "player_choice",
-        "pile_operations",
-        "hand_operations",
-        "cost_rules"
-      ],
-      "description": "从弃牌堆选择1张Basic牌置于手牌；其本回合费用变为0，打出后消耗。",
-      "source_file": "艾莉丝_完整卡组_重制v1.0.md",
-      "source_line": 40
     },
     {
       "id": "A020",
@@ -1542,19 +1518,6 @@
       "source_line": 99
     },
     {
-      "id": "B071",
-      "families": [
-        "player_choice",
-        "pile_operations",
-        "hand_operations",
-        "cost_rules",
-        "hp_events"
-      ],
-      "description": "放血7；将弃牌堆随机展示3张非Power牌，选择1张置于手牌，其本回合费用-1。",
-      "source_file": "鲍德温_完整卡组_重制v1.0.md",
-      "source_line": 100
-    },
-    {
       "id": "B072",
       "families": [
         "battlefield_movement",
@@ -1764,17 +1727,6 @@
       "description": "移动最多2格；若结束后与目标相邻，返还本牌实际支付的1费。",
       "source_file": "迪马斯_完整卡组_重制v1.0.md",
       "source_line": 54
-    },
-    {
-      "id": "D034",
-      "families": [
-        "player_choice",
-        "hand_operations",
-        "damage_block_conditions"
-      ],
-      "description": "选择1张其他手牌获得保留；获得5格挡。",
-      "source_file": "迪马斯_完整卡组_重制v1.0.md",
-      "source_line": 55
     },
     {
       "id": "D035",

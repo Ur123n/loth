@@ -24,11 +24,18 @@ func _process(_delta: float) -> bool:
 	var center := panel.get_child(1) as CenterContainer
 	var card_panel := center.get_child(0) as PanelContainer
 	var layout := card_panel.get_child(0) as VBoxContainer
-	var options := layout.get_child(1) as VBoxContainer
+	var options := (layout.get_child(1) as ScrollContainer).get_child(0) as VBoxContainer
 	var okay := panel.visible and panel.size.x > 0 and options.get_child_count() == 2
 	if okay:
 		(options.get_child(1) as Button).pressed.emit()
 		okay = picked[0] == 1
+	if okay:
+		var many: Array = []
+		for i in 12:
+			many.append(first)
+		panel.show_choices("全部可选牌", many)
+		var scroll := layout.get_child(1) as ScrollContainer
+		okay = options.get_child_count() == 12 and scroll.custom_minimum_size.y <= 464.0
 	host.free()
 	print("RESULT: panel_choice=%s failed=%d" % [str(okay), 0 if okay else 1])
 	quit(0 if okay else 1)

@@ -46,6 +46,10 @@ enum TargetType { SELF, ALLY, ENEMY, HEX, AREA, NONE }
 @export var derived: bool = false           # 衍生
 @export var lifesteal: bool = false         # 吸血：攻击造成伤害后恢复等量生命
 
+# 仅战斗实体使用；本行动结束时清除，不能改动数据库原型。
+@export_storage var temporary_cost_override: int = -1
+@export_storage var temporary_cost_reduction: int = 0
+
 
 ## 能力牌打出后自动消失，不进入弃牌堆（GDD 第 7 节）。
 ## 这是底层逻辑，编辑器不要求手动配置。
@@ -59,10 +63,12 @@ func should_exhaust_on_play() -> bool:
 
 
 func minimum_cost() -> int:
+	if temporary_cost_override >= 0:
+		return temporary_cost_override
 	var reduction := 0
 	for rule in cost_rules:
 		reduction += maxi(int(rule.get("amount", 0)), 0)
-	return maxi(cost - reduction, 0)
+	return maxi(cost - reduction - temporary_cost_reduction, 0)
 
 
 ## 卡牌关键词中文标签（用于描述/手牌角标），顺序固定。

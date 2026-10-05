@@ -91,13 +91,25 @@ def target_of(label: str) -> tuple[str, int, int, int]:
 def exact_effects(description: str, kind: str, maximum: int) -> list[dict]:
     # Complete templates only. A partial clause must never become a live card.
     def pile_choice_effect(source: str, destination: str = "draw", **filters: object) -> dict:
-        params = dict(source=source, sample_count=3, destination=destination, position="top",
-                      required_card_type="", exclude_card_type="Power" if filters.get("non_power") else "",
-                      base_cost=-1, required_tags=[], played_in_battle=False,
-                      not_played_this_turn=False, exhaust_selected_on_play=False)
+        params = dict(source=source, sample_count=3, show_all=False,
+                      destination=destination, position="top", required_card_type="",
+                      exclude_card_type="Power" if filters.get("non_power") else "",
+                      required_rarity="", base_cost=-1, required_tags=[], played_in_battle=False,
+                      not_played_this_turn=False, exhaust_selected_on_play=False,
+                      selected_cost_override=-1, selected_cost_reduction=0,
+                      grant_retain_selected=False)
         params.update({key: value for key, value in filters.items() if key != "non_power"})
         return effect_from_mechanic("choose_from_pile", **params)
     if kind == "Self":
+        if description == "选择1张其他手牌获得保留；获得5格挡。":
+            return [pile_choice_effect("hand", "hand", show_all=True, grant_retain_selected=True),
+                    effect_from_mechanic("defense", target="self", value=5)]
+        if description == "从弃牌堆选择1张Basic牌置于手牌；其本回合费用变为0，打出后消耗。":
+            return [pile_choice_effect("discard", "hand", show_all=True, required_rarity="Basic",
+                                       selected_cost_override=0, exhaust_selected_on_play=True)]
+        if description == "将弃牌堆随机展示3张非Power牌，选择1张置于手牌，其本回合费用-1。":
+            return [pile_choice_effect("discard", "hand", non_power=True,
+                                       selected_cost_reduction=1)]
         if description == "从弃牌堆随机展示3张本场战斗已打出过的Drug或Surgery；选择1张置于牌堆顶。":
             return [pile_choice_effect("discard", required_tags=["Drug", "Surgery"], played_in_battle=True)]
         if description == "从弃牌堆随机展示3张基础费用为1的Skill；选择1张加入手牌，该牌打出后消耗。":

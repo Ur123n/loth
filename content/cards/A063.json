@@ -37,15 +37,20 @@
       "logic": "choose_from_pile",
       "source": "discard",
       "sample_count": 3,
+      "show_all": false,
       "destination": "hand",
       "position": "top",
       "required_card_type": "",
       "exclude_card_type": "Power",
+      "required_rarity": "",
       "base_cost": -1,
       "required_tags": [],
       "played_in_battle": false,
       "not_played_this_turn": true,
-      "exhaust_selected_on_play": true
+      "exhaust_selected_on_play": true,
+      "selected_cost_override": -1,
+      "selected_cost_reduction": 0,
+      "grant_retain_selected": false
     }
   ],
   "mechanism_ids": [

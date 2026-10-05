@@ -4,6 +4,7 @@ extends Control
 signal option_selected(index: int)
 
 var _title: Label
+var _scroll: ScrollContainer
 var _options: VBoxContainer
 
 
@@ -31,8 +32,11 @@ func _ready() -> void:
 	_title.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	_title.add_theme_font_size_override("font_size", 20)
 	layout.add_child(_title)
+	_scroll = ScrollContainer.new()
+	_scroll.custom_minimum_size = Vector2(440, 116)
+	layout.add_child(_scroll)
 	_options = VBoxContainer.new()
-	layout.add_child(_options)
+	_scroll.add_child(_options)
 
 
 func _resize_to_viewport() -> void:
@@ -41,6 +45,8 @@ func _resize_to_viewport() -> void:
 
 func show_choices(prompt: String, cards: Array) -> void:
 	_title.text = prompt
+	_scroll.custom_minimum_size.y = minf(maxi(cards.size(), 2) * 58.0, 464.0)
+	_scroll.scroll_vertical = 0
 	for child in _options.get_children():
 		_options.remove_child(child)
 		child.queue_free()

@@ -105,7 +105,13 @@ func _test_innate() -> void:
 	var defend: CardData = _cards_by_name.get("防御")
 	var unit := _make_unit([jian_bi, strike, strike, strike, strike, strike, defend, defend])
 	var manager := _make_manager(unit)
-	_check(unit.hand.has(jian_bi), "固有牌：开局直接在手牌")
+	var innate_instance: CardData = null
+	for card in unit.hand:
+		if card.card_name == jian_bi.card_name:
+			innate_instance = card
+			break
+	_check(innate_instance != null and innate_instance != jian_bi and innate_instance.innate
+		and not unit.draw_pile.has(innate_instance), "固有牌实体：开局直接在手牌")
 	_check(manager != null, "管理器可用")
 
 

@@ -57,6 +57,8 @@ func setup(battle_units: Array[BattleUnit], rng: RandomNumberGenerator = null, c
 	_battle_over = false
 	_pending_play.clear()
 	_rng = rng if rng != null else RandomNumberGenerator.new()
+	if rng == null:
+		_rng.randomize()
 	_card_lookup = card_lookup
 	if not _card_lookup.is_valid():
 		_card_lookup = func(name: String) -> CardData:
@@ -95,6 +97,10 @@ func end_turn() -> void:
 		unit.refresh_block_display()
 		battle_log.emit("沉梦：%s 结束行动获得 3 格挡" % unit.get_display_name())
 	_effect_system.discard_hand(unit)
+	for pile in [unit.hand, unit.draw_pile, unit.discard_pile, unit.exhaust_pile]:
+		for card in pile:
+			card.temporary_cost_override = -1
+			card.temporary_cost_reduction = 0
 	unit.tags_played_on_targets.clear()
 	unit.played_cards_this_turn.clear()
 	unit.direct_hp_loss_targets.clear()
@@ -241,7 +247,9 @@ func effective_card_cost(unit: BattleUnit, card: CardData, target) -> int:
 					met = bool(unit.direct_hp_loss_targets.get(target.get_instance_id(), false))
 		if met:
 			reduction += maxi(int(rule.get("amount", 0)), 0)
-	return maxi(card.cost - reduction, 0)
+	if card.temporary_cost_override >= 0:
+		return card.temporary_cost_override
+	return maxi(card.cost - reduction - card.temporary_cost_reduction, 0)
 
 
 ## 整数伤害计算：面板 * 基数 / 100。
@@ -340,7 +348,7 @@ func _prepare_battle_decks() -> void:
 		unit.moved_this_turn = false
 		# 抽牌堆 = 角色卡组（启动时已保证含 5 打击 + 5 防御）
 		for card in unit.character_data.deck:
-			unit.draw_pile.append(card)
+			unit.draw_pile.append(card.duplicate(true) as CardData)
 			if card.dream_mode == "three_dreams":
 				unit.redesign_dream_enabled = true
 		# 兜底：牌组为空（直接运行战斗场景等）时补入基础牌
@@ -349,11 +357,11 @@ func _prepare_battle_decks() -> void:
 			for i in BASIC_STRIKE_COUNT:
 				var strike := _effect_system.get_card(BASIC_STRIKE_NAME)
 				if strike != null:
-					unit.draw_pile.append(strike)
+					unit.draw_pile.append(strike.duplicate(true) as CardData)
 			for i in BASIC_DEFEND_COUNT:
 				var defend := _effect_system.get_card(BASIC_DEFEND_NAME)
 				if defend != null:
-					unit.draw_pile.append(defend)
+					unit.draw_pile.append(defend.duplicate(true) as CardData)
 		_effect_system.shuffle(unit.draw_pile)
 		_effect_system.put_innate_cards_in_hand(unit)
 

@@ -41,6 +41,8 @@ func _process(_delta: float) -> bool:
 	_test_card_choice_batch()
 	_test_filtered_card_choice_batch()
 	_test_card_choice_continuation()
+	_test_hand_retain_choice()
+	_test_temporary_choice_costs()
 	print("RESULT: passed=%d failed=%d" % [_passed, _failed])
 	quit(0 if _failed == 0 else 1)
 	return true
@@ -258,6 +260,80 @@ func _test_card_choice_continuation() -> void:
 		and _caster.energy == 2 and played[0] == 2,
 		"空候选跳过选择并同步完成后续效果")
 	_manager.card_played.disconnect(callback)
+
+
+func _test_hand_retain_choice() -> void:
+	var retain_card := _card("D034")
+	_check(retain_card != null, "D034 已入库")
+	if retain_card == null:
+		return
+	var chosen := _card("A001")
+	var untouched := _card("A002")
+	_caster.hand = [retain_card, chosen, untouched]
+	_caster.block_value = 0
+	_caster.energy = 20
+	_check(_manager.play_card(retain_card) and _manager.has_pending_card_choice(),
+		"D034 当前牌离手后展示其他手牌")
+	var shown := _manager.card_choice_options()
+	_check(shown.size() == 2 and shown[0] == chosen and shown[1] == untouched,
+		"D034 按原手牌顺序展示可选实体")
+	_check(_caster.block_value == 0, "D034 选择前尚未结算后续格挡")
+	_check(_manager.choose_card_option(0) and _caster.block_value == 5,
+		"D034 提交选择后获得 5 格挡")
+	var retained: CardData = _caster.hand[0]
+	_check(retained != chosen and retained.retain and _caster.hand[1] == untouched,
+		"D034 只修改选中实体并保持手牌顺序")
+	_manager._effect_system.discard_hand(_caster)
+	_check(_caster.hand.has(retained) and not _caster.hand.has(untouched),
+		"被选牌跨行动保留，未选牌正常弃置")
+
+
+func _test_temporary_choice_costs() -> void:
+	var reclaim := _card("A019")
+	var blood := _card("B071")
+	_check(reclaim != null and blood != null, "A019 与 B071 已入库")
+	if reclaim == null or blood == null:
+		return
+	var basic_attack := _card("A001")
+	var basic_skill := _card("A002")
+	var common := _card("K011")
+	_caster.hand.clear()
+	_caster.draw_pile.clear()
+	_caster.discard_pile = [basic_attack, common, basic_skill]
+	_caster.energy = 20
+	_caster.hand.append(reclaim)
+	_check(_manager.play_card(reclaim), "A019 可打出")
+	var shown := _manager.card_choice_options()
+	_check(shown.size() == 2 and shown[0] == basic_attack and shown[1] == basic_skill,
+		"A019 按牌区原顺序展示全部 Basic，排除其他稀有度")
+	_check(_manager.choose_card_option(0) and _caster.hand.size() == 1,
+		"A019 选中 Basic 进入手牌")
+	var selected: CardData = _caster.hand[0]
+	_check(selected != basic_attack and selected.temporary_cost_override == 0
+		and _manager.effective_card_cost(_caster, selected, _enemy) == 0,
+		"A019 仅选中实体本行动费用变为零")
+	_check(_manager.play_card(selected, _enemy) and _caster.exhaust_pile.has(selected),
+		"A019 选中实体打出后消耗")
+	_caster.hand.clear()
+	_caster.discard_pile = [basic_skill, common]
+	_caster.current_hp = 100
+	_caster.energy = 20
+	_caster.hand.append(blood)
+	_check(_manager.play_card(blood) and _caster.current_hp == 93,
+		"B071 放血 7 后进入选择")
+	shown = _manager.card_choice_options()
+	_check(shown.size() == 2 and shown.has(basic_skill) and shown.has(common),
+		"B071 展示弃牌堆非 Power 候选")
+	var picked_index := shown.find(basic_skill)
+	_check(_manager.choose_card_option(picked_index) and _caster.hand.size() == 1,
+		"B071 选中牌进入手牌")
+	selected = _caster.hand[0]
+	_check(selected != basic_skill and _manager.effective_card_cost(_caster, selected, null) == 0
+		and basic_skill.temporary_cost_reduction == 0,
+		"B071 仅选中实体本行动费用减一")
+	_manager.end_turn()
+	_check(selected.temporary_cost_reduction == 0 and selected.temporary_cost_override == -1,
+		"行动结束清除临时费用")
 
 
 func _test_attack_then_move() -> void:

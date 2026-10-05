@@ -817,17 +817,21 @@ func transfer_random_cards(unit: BattleUnit, effect: TransferRandomCardEffect) -
 		"discard": destination = unit.discard_pile
 		"hand": destination = unit.hand
 		_: return
-	var candidates: Array[CardData] = []
-	for card in source:
-		if effect.exclude_card_type == "Power" and card.card_type == CardData.CardType.ABILITY:
+	var candidates: Array[int] = []
+	for source_index in source.size():
+		if effect.exclude_card_type == "Power" and source[source_index].card_type == CardData.CardType.ABILITY:
 			continue
-		candidates.append(card)
+		candidates.append(source_index)
 	var moved := 0
 	for i in mini(effect.count, candidates.size()):
 		var index := _rng.randi_range(0, candidates.size() - 1)
-		var card := candidates[index]
+		var source_index: int = candidates[index]
+		var card: CardData = source[source_index]
 		candidates.remove_at(index)
-		source.erase(card)
+		source.remove_at(source_index)
+		for candidate_index in candidates.size():
+			if candidates[candidate_index] > source_index:
+				candidates[candidate_index] -= 1
 		if effect.destination == "draw" and effect.position == "bottom":
 			destination.insert(0, card)
 		else:
@@ -841,16 +845,17 @@ func transfer_random_cards(unit: BattleUnit, effect: TransferRandomCardEffect) -
 
 
 func request_card_choice(unit: BattleUnit, effect: ChooseFromPileEffect) -> void:
-	if not _pending_card_choice.is_empty() or effect.sample_count <= 0:
+	if not _pending_card_choice.is_empty() or (not effect.show_all and effect.sample_count <= 0):
 		return
 	var source: Array[CardData]
 	match effect.source:
 		"draw": source = unit.draw_pile
 		"discard": source = unit.discard_pile
+		"hand": source = unit.hand
 		_: return
 	if effect.destination not in ["draw", "hand"] or effect.position != "top":
 		return
-	if effect.destination == "hand" and unit.hand.size() >= MAX_HAND_SIZE:
+	if effect.destination == "hand" and effect.source != "hand" and unit.hand.size() >= MAX_HAND_SIZE:
 		return
 	var remaining: Array[int] = []
 	for i in source.size():
@@ -858,18 +863,26 @@ func request_card_choice(unit: BattleUnit, effect: ChooseFromPileEffect) -> void
 			remaining.append(i)
 	var indices: Array[int] = []
 	var options: Array[CardData] = []
-	for i in mini(effect.sample_count, remaining.size()):
-		var picked := _rng.randi_range(0, remaining.size() - 1)
-		var source_index: int = remaining[picked]
-		remaining.remove_at(picked)
-		indices.append(source_index)
-		options.append(source[source_index])
+	if effect.show_all:
+		for source_index in remaining:
+			indices.append(source_index)
+			options.append(source[source_index])
+	else:
+		for i in mini(effect.sample_count, remaining.size()):
+			var picked := _rng.randi_range(0, remaining.size() - 1)
+			var source_index: int = remaining[picked]
+			remaining.remove_at(picked)
+			indices.append(source_index)
+			options.append(source[source_index])
 	if options.is_empty():
 		_log("%s 的%s没有可展示的牌" % [unit.get_display_name(), pile_label(effect.source)])
 		return
 	_pending_card_choice = {"unit": unit, "source": effect.source,
 		"destination": effect.destination,
 		"exhaust_selected_on_play": effect.exhaust_selected_on_play,
+		"selected_cost_override": effect.selected_cost_override,
+		"selected_cost_reduction": effect.selected_cost_reduction,
+		"grant_retain_selected": effect.grant_retain_selected,
 		"indices": indices, "options": options}
 
 
@@ -877,6 +890,8 @@ func _card_choice_candidate_matches(unit: BattleUnit, card: CardData, effect: Ch
 	if effect.required_card_type == "Skill" and card.card_type != CardData.CardType.ACTION:
 		return false
 	if effect.exclude_card_type == "Power" and card.card_type == CardData.CardType.ABILITY:
+		return false
+	if not effect.required_rarity.is_empty() and card.rarity != effect.required_rarity:
 		return false
 	if effect.base_cost >= 0 and card.cost != effect.base_cost:
 		return false
@@ -908,6 +923,8 @@ func card_choice_options() -> Array:
 func card_choice_prompt() -> String:
 	if _pending_card_choice.is_empty():
 		return ""
+	if _pending_card_choice["source"] == "hand" and _pending_card_choice["grant_retain_selected"]:
+		return "选择 1 张其他手牌获得保留"
 	var destination := "手牌" if _pending_card_choice["destination"] == "hand" else "抽牌堆顶"
 	return "从%s选择 1 张加入%s" % [pile_label(str(_pending_card_choice["source"])), destination]
 
@@ -919,16 +936,32 @@ func choose_card_option(index: int) -> bool:
 	if index < 0 or index >= options.size():
 		return false
 	var unit: BattleUnit = _pending_card_choice["unit"]
-	var source: Array[CardData] = unit.draw_pile if _pending_card_choice["source"] == "draw" else unit.discard_pile
+	var source: Array[CardData]
+	match _pending_card_choice["source"]:
+		"draw": source = unit.draw_pile
+		"discard": source = unit.discard_pile
+		"hand": source = unit.hand
+		_: return false
 	var source_index: int = _pending_card_choice["indices"][index]
 	var selected: CardData = source[source_index]
-	source.remove_at(source_index)
-	if _pending_card_choice["exhaust_selected_on_play"]:
+	var stays_in_hand: bool = _pending_card_choice["source"] == "hand" and _pending_card_choice["destination"] == "hand"
+	if not stays_in_hand:
+		source.remove_at(source_index)
+	if _pending_card_choice["exhaust_selected_on_play"] or int(_pending_card_choice["selected_cost_override"]) >= 0 or int(_pending_card_choice["selected_cost_reduction"]) > 0 or _pending_card_choice["grant_retain_selected"]:
 		selected = selected.duplicate(true) as CardData
+	if _pending_card_choice["exhaust_selected_on_play"]:
 		selected.exhaust_on_play = true
+	if int(_pending_card_choice["selected_cost_override"]) >= 0:
+		selected.temporary_cost_override = int(_pending_card_choice["selected_cost_override"])
+	if int(_pending_card_choice["selected_cost_reduction"]) > 0:
+		selected.temporary_cost_reduction += int(_pending_card_choice["selected_cost_reduction"])
+	if _pending_card_choice["grant_retain_selected"]:
+		selected.retain = true
 	var destination: String = _pending_card_choice["destination"]
 	var continuation: Dictionary = _pending_card_choice.get("continuation", {})
-	if destination == "hand":
+	if stays_in_hand:
+		unit.hand[source_index] = selected
+	elif destination == "hand":
 		unit.hand.append(selected)
 	else:
 		unit.draw_pile.append(selected)
@@ -1012,12 +1045,13 @@ func resolve_discard_effect(unit: BattleUnit, effect: DiscardEffect) -> void:
 ## 把指定卡牌的 value 张复制放入指定牌堆。
 ## pile: hand / draw / discard；draw 时 position = top（置于抽牌堆顶，后抽到）或 shuffle（洗入）。
 func add_cards_to_pile(unit: BattleUnit, pile: String, card_name: String, value: int, position: String = "shuffle") -> void:
-	var card := get_card(card_name)
-	if card == null:
+	var prototype := get_card(card_name)
+	if prototype == null:
 		_log("卡牌「%s」不存在，无法加入%s" % [card_name, pile_label(pile)])
 		return
 	var count := maxi(value, 0)
 	for i in count:
+		var card := prototype.duplicate(true) as CardData
 		if pile == "hand":
 			unit.hand.append(card)
 		elif pile == "draw":

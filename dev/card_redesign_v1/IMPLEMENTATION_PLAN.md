@@ -3,7 +3,7 @@
 ## 当前基线
 
 - 来源：根目录四份重制卡组文档，300 张设计牌。
-- 当前运行时已支持 115 张；185 张为 `design_only`（2026-10-05 筛选选择与选择后续行批次后）。最新逐牌剩余索引以 `remaining_mechanisms.json` 为准。
+- 当前运行时已支持 118 张；182 张为 `design_only`（2026-10-05 实体牌选择、临时费用、保留及实体抽牌审计后）。最新逐牌剩余索引以 `remaining_mechanisms.json` 为准。
 - 后续改为机制优先：先查 `REMAINING_MECHANISMS.md` 与 `remaining_mechanisms.json`，实现并验证公共机制，再让卡牌导入器调用。候选机制标签不等于可运行支持。
 - 每次从文档原文出发，只有费用、目标、效果和限制全部可执行时才改为 `supported`。
 
