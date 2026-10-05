@@ -1,0 +1,109 @@
+﻿{
+  "tileset_name": "dark48",
+  "display_name": "黑暗奇幻 48px 素材集（俯视 2D · 1 格 = 1 米）",
+  "tile_size": [48, 48],
+  "custom_data": [
+    {"name": "solid", "type": "bool"},
+    {"name": "tag", "type": "string"}
+  ],
+  "sources": [
+    {
+      "name": "terrain",
+      "tile_size": [48, 48],
+      "columns": 5,
+      "items": [
+        {"tag": "grass", "name": "草地（最暗，明度阶梯 1/5）", "solid": false, "file": "res://assets/dark48/地形/tile_grass.png"},
+        {"tag": "grass_dry", "name": "枯草（2/5）", "solid": false, "file": "res://assets/dark48/地形/tile_grass_dry.png"},
+        {"tag": "dirt", "name": "泥土（3/5）", "solid": false, "file": "res://assets/dark48/地形/tile_dirt.png"},
+        {"tag": "dirt_rocky", "name": "碎石泥地（4/5）", "solid": false, "file": "res://assets/dark48/地形/tile_dirt_rocky.png"},
+        {"tag": "road_stone", "name": "石砖路（最亮，唯一大块亮区）", "solid": false, "file": "res://assets/dark48/地形/tile_road_stone.png"}
+      ]
+    },
+    {
+      "name": "autotile_dirt_over_grass",
+      "tile_size": [48, 48],
+      "columns": 8,
+      "autotile": {
+        "pair": "dirt_over_grass",
+        "base_tag": "grass",
+        "patch_tag": "dirt",
+        "dir": "res://assets/dark48/自动拼接/泥土压草地",
+        "prefix": "auto_dirt_over_grass",
+        "variants": 2
+      },
+      "terrain": {"set": "泥土压草地", "base": "草地", "patch": "泥土"},
+      "extras": [
+        {"tag": "dirt", "name": "泥土（补丁填充）", "solid": false, "file": "res://assets/dark48/地形/tile_dirt.png", "terrain": "泥土", "note": "补丁格的平铺块"}
+      ]
+    },
+    {
+      "name": "autotile_dry_over_grass",
+      "tile_size": [48, 48],
+      "columns": 8,
+      "autotile": {
+        "pair": "dry_over_grass",
+        "base_tag": "grass",
+        "patch_tag": "grass_dry",
+        "dir": "res://assets/dark48/自动拼接/枯草压草地",
+        "prefix": "auto_dry_over_grass",
+        "variants": 2
+      },
+      "terrain": {"set": "枯草压草地", "base": "草地", "patch": "枯草"},
+      "extras": [
+        {"tag": "grass_dry", "name": "枯草（补丁填充）", "solid": false, "file": "res://assets/dark48/地形/tile_grass_dry.png", "terrain": "枯草", "note": "补丁格的平铺块"}
+      ]
+    },
+    {
+      "name": "autotile_road_over_dirt",
+      "tile_size": [48, 48],
+      "columns": 8,
+      "autotile": {
+        "pair": "road_over_dirt",
+        "base_tag": "dirt",
+        "patch_tag": "road_stone",
+        "dir": "res://assets/dark48/自动拼接/石砖路压泥土",
+        "prefix": "auto_road_over_dirt",
+        "variants": 2
+      },
+      "terrain": {"set": "石砖路压泥土", "base": "泥土", "patch": "石砖路"},
+      "extras": [
+        {"tag": "road_stone", "name": "石砖路（补丁填充）", "solid": false, "file": "res://assets/dark48/地形/tile_road_stone.png", "terrain": "石砖路", "note": "补丁格的平铺块"}
+      ]
+    },
+    {
+      "name": "autotile_rocky_over_dirt",
+      "tile_size": [48, 48],
+      "columns": 8,
+      "autotile": {
+        "pair": "rocky_over_dirt",
+        "base_tag": "dirt",
+        "patch_tag": "dirt_rocky",
+        "dir": "res://assets/dark48/自动拼接/碎石压泥土",
+        "prefix": "auto_rocky_over_dirt",
+        "variants": 2
+      },
+      "terrain": {"set": "碎石压泥土", "base": "泥土", "patch": "碎石"},
+      "extras": [
+        {"tag": "dirt_rocky", "name": "碎石泥地（补丁填充）", "solid": false, "file": "res://assets/dark48/地形/tile_dirt_rocky.png", "terrain": "碎石", "note": "补丁格的平铺块"}
+      ]
+    },
+    {
+      "name": "props48",
+      "tile_size": [48, 48],
+      "columns": 4,
+      "items": [
+        {"tag": "dead_tree", "name": "枯树（1 格，带接地阴影）", "solid": true, "file": "res://assets/dark48/道具/prop_tree.png"},
+        {"tag": "rock", "name": "岩石（1 格，可通行=否）", "solid": true, "file": "res://assets/dark48/道具/prop_rock.png"}
+      ]
+    },
+    {
+      "name": "props96",
+      "tile_size": [48, 48],
+      "columns": 4,
+      "items": [
+        {"tag": "big_tree", "name": "大树（2×2 格）", "solid": true, "size": [2, 2], "file": "res://assets/dark48/道具/prop_tree_big.png"},
+        {"tag": "boulder", "name": "立石（2×2 格）", "solid": true, "size": [2, 2], "file": "res://assets/dark48/道具/prop_boulder.png"}
+      ]
+    }
+  ]
+}

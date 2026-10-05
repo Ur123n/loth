@@ -1,0 +1,41 @@
+{
+	"captures": [
+		{
+			"map": "MONASTERY",
+			"name": "monastery_spawn",
+			"path": "res://dev/leyton_world_demo/qa/monastery_spawn.png"
+		},
+		{
+			"map": "MONASTERY",
+			"name": "monastery_overview",
+			"path": "res://dev/leyton_world_demo/qa/monastery_overview.png"
+		},
+		{
+			"map": "M05",
+			"name": "north_exterior_arrival",
+			"path": "res://dev/leyton_world_demo/qa/north_exterior_arrival.png"
+		},
+		{
+			"map": "M05",
+			"name": "world_route",
+			"path": "res://dev/leyton_world_demo/qa/world_route.png"
+		},
+		{
+			"map": "M05",
+			"name": "north_gate_closed",
+			"path": "res://dev/leyton_world_demo/qa/north_gate_closed.png"
+		},
+		{
+			"map": "M01",
+			"name": "leyton_center",
+			"path": "res://dev/leyton_world_demo/qa/leyton_center.png"
+		},
+		{
+			"map": "M08",
+			"name": "east_residential_arrival",
+			"path": "res://dev/leyton_world_demo/qa/east_residential_arrival.png"
+		}
+	],
+	"failed": 0,
+	"renderer": "NVIDIA GeForce RTX 4060 Ti"
+}

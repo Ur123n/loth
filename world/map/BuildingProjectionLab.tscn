@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3]
+
+; 高原修道院 3/4 投影嵌图实验：运行时切带，不修改生产地图与 Building Prefab。
+; WASD 移动角色探针；方向键平移镜头；鼠标滚轮缩放。
+
+[ext_resource type="Script" path="res://core/building/building_viewer.gd" id="1_lab"]
+
+[node name="BuildingProjectionLab" type="Node2D"]
+script = ExtResource("1_lab")
+map_scene_path = "res://maps/godot/scenes/iserra_monastery_highlands.tscn"
+projection_lab = true
+projection_band_height_cells = 6

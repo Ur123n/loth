@@ -1,0 +1,31 @@
+{
+  "id": "A043",
+  "name": "两手准备",
+  "character": "艾莉丝",
+  "rarity": "Uncommon",
+  "category": "道途专属卡牌",
+  "path": "梦魇行者",
+  "card_type": "行动",
+  "cost": 1,
+  "load": 2,
+  "target_type": "Self",
+  "min_range": 0,
+  "range": 0,
+  "target_spec": "自身",
+  "area": 0,
+  "keywords": [],
+  "tags": [
+    "Draw",
+    "Discard",
+    "Defense"
+  ],
+  "description": "抽2张，主动弃1张；若位于沉梦，获得3格挡。",
+  "source_effect": "抽2张，主动弃1张；若位于沉梦，获得3格挡。",
+  "source_file": "艾莉丝_完整卡组_v0.1.md",
+  "source_line": 92,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [],
+  "implementation_status": "pending"
+}

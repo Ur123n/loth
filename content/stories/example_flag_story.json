@@ -1,0 +1,30 @@
+{
+  "id": "example_flag_story",
+  "title": "钟楼的门开了（Flag 触发示例）",
+  "description": "当 quest:gate_open 变为 true 时触发（由 example_intro 结尾置位），演示 flag 触发器与剧情链。",
+  "instructions": [
+    {
+      "type": "message",
+      "text": "钟楼的门吱呀一声开了……",
+      "duration": 2.0,
+      "blocking": true
+    },
+    {
+      "type": "camera.shake",
+      "strength": 4,
+      "duration": 0.6,
+      "blocking": true
+    },
+    {
+      "type": "dialogue.line",
+      "speaker": "村长",
+      "text": "看来有谁去了钟楼。走吧，别耽搁。",
+      "color": "#5c7aa0"
+    },
+    {
+      "type": "flag.set",
+      "key": "story:gate_opened_seen",
+      "value": true
+    }
+  ]
+}

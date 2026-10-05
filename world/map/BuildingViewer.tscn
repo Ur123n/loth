@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3]
+
+; 大型建筑查验器：打开一张带建筑的地图，用鼠标逐格查"这一格到底是什么"。
+; 说明：docs/world/building_pipeline.md 第 5 节；脚本：core/building/building_viewer.gd
+; 运行：godot --path C:\游戏 res://world/map/BuildingViewer.tscn
+
+[ext_resource type="Script" path="res://core/building/building_viewer.gd" id="1_viewer"]
+
+[node name="BuildingViewer" type="Node2D"]
+script = ExtResource("1_viewer")
+map_scene_path = "res://maps/godot/scenes/monastery_grounds.tscn"

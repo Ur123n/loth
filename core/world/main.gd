@@ -5,12 +5,41 @@ extends Node2D
 ## B 键打开背包（非战斗地图）；背包打开时暂停移动与事件触发。
 ## 启动时读取存档并为角色卡组补足基础牌（5 打击 + 5 防御）；
 ## 面板数据变化（加入/移出牌组等）即时写入存档。
+## 剧情系统：剧情播放期间（GameState.story_active）切断玩家输入与事件触发；
+## 示例剧情触发点在 STORY_TRIGGER_POSITION（金色菱形标记），只触发一次。
+## 底图由 overworld_map_scene 指定；尺寸与 spawn/battle_trigger/story_trigger/skill_light
+## 位置统一读取 Godot 地图场景里的标记（core/world/map_scene.gd，见 docs/world/map_pipeline.md）。
 
 @export var party_characters: Array = []
-@export var battle_trigger_position: Vector2 = Vector2(1040, 500)
+## 大世界底图场景：默认使用 48px Godot 地图管线的高原修道院。
+## 尺寸、出生点与各触发点自动读取地图标记（见 core/world/map_scene.gd）。
+@export var overworld_map_scene: String = OVERWORLD_MAP_SCENE
+@export var battle_trigger_position: Vector2 = Vector2(976, 600)
 @export var battle_trigger_radius: float = 56.0
 @export var skill_light_radius: float = 56.0
 @export var skill_light_decline_cooldown: float = 2.0
+
+## 48px 高原修道院；地图实际尺寸与显示倍率在 MapScene 中声明。
+const OVERWORLD_MAP_SCENE := "res://maps/godot/scenes/iserra_monastery_highlands.tscn"
+const MAP_POSITION := Vector2.ZERO
+const MAP_SCALE := Vector2.ONE
+const _NpcSchedule := preload("res://core/world/npc_schedule.gd")
+const MAP_RECT := Rect2(Vector2.ZERO, Vector2(1280, 720))
+const DEFAULT_SPAWN_POSITION := Vector2(640, 360)
+const STORY_TRIGGER_POSITION := Vector2(640, 360)
+const STORY_TRIGGER_RADIUS := 60.0
+const WORLD_TIME_RATE := 10.0           # 每秒真实时间 = 10 游戏分钟（世界时钟/NPC 行动轨迹）
+const NPC_INTERACT_RADIUS := 42.0       # E 键与 NPC 交互半径（主场景坐标）
+const NPC_CHECK_INTERVAL := 0.5         # 任务自动推进检查间隔（秒）
+
+## 地图元数据：Godot 地图场景自带尺寸、显示倍率与标记；常量仅用于资源损坏时的防御性兜底。
+var _map_rect: Rect2 = MAP_RECT
+var _map_position: Vector2 = MAP_POSITION
+var _map_scale: Vector2 = MAP_SCALE
+var _spawn_position: Vector2 = DEFAULT_SPAWN_POSITION
+var _story_trigger_position: Vector2 = STORY_TRIGGER_POSITION
+var _world_map: Node2D
+var _world_sort_root: Node2D
 
 var _party: PartyManager
 var _character: Character
@@ -22,6 +51,78 @@ var _inventory_panel: InventoryPanel
 var _prompt_open: bool = false
 var _skill_light_cooldown_active: bool = false
 var _skill_light_cooldown_timer: Timer
+var _npc_markers: Dictionary = {}      # npc_name -> Node2D（行动轨迹标记）
+var _quest_check_timer: float = 0.0
+
+
+func _build_world_map() -> void:
+	var map_scene := load(overworld_map_scene) as PackedScene
+	if map_scene == null:
+		push_warning("大世界地图加载失败：%s" % overworld_map_scene)
+		return
+	var map := map_scene.instantiate()
+	map.name = "MonasteryMap"
+	_apply_map_metadata(map)      # 先算尺寸/缩放/关键点，再按结果摆位
+	map.position = _map_position
+	map.scale = _map_scale
+	add_child(map)
+	_world_map = map as Node2D
+	if map.has_method("get_building_root"):
+		_world_sort_root = map.call("get_building_root") as Node2D
+		if _world_sort_root != null:
+			_world_sort_root.y_sort_enabled = true
+
+
+func _world_actor_parent() -> Node:
+	return _world_sort_root if is_instance_valid(_world_sort_root) else self
+
+
+func _attach_world_actor(actor: Node2D, world_position: Vector2) -> void:
+	_world_actor_parent().add_child(actor)
+	actor.global_position = world_position
+
+
+func _actor_move_bounds() -> Rect2:
+	if not is_instance_valid(_world_sort_root):
+		return _map_rect
+	var local_start := _world_sort_root.to_local(_map_rect.position)
+	var local_end := _world_sort_root.to_local(_map_rect.end)
+	return Rect2(local_start, local_end - local_start)
+
+
+## 读地图自带的地图尺寸、显示倍率与关键点标记（core/world/map_scene.gd 提供），
+## 并按视口居中摆位；接口缺失时使用防御性常量兜底。
+func _apply_map_metadata(map: Node) -> void:
+	var local_rect := Rect2(Vector2.ZERO, MAP_RECT.size / MAP_SCALE)
+	var scale_value := MAP_SCALE.x
+	if map != null and map.has_method("get_map_rect"):
+		local_rect = map.call("get_map_rect")
+		var declared: Variant = map.get("display_scale")
+		if declared != null and float(declared) > 0.0:
+			scale_value = float(declared)
+	_map_scale = Vector2(scale_value, scale_value)
+	var viewport_size := Vector2(1280, 720)
+	if is_inside_tree():
+		viewport_size = get_viewport_rect().size
+	_map_position = ((viewport_size - local_rect.size * _map_scale) / 2.0).round()
+	_map_rect = Rect2(_map_position, local_rect.size * _map_scale)
+	_spawn_position = _marker_to_world(map, "spawn", DEFAULT_SPAWN_POSITION)
+	battle_trigger_position = _marker_to_world(map, "battle_trigger", battle_trigger_position)
+	_story_trigger_position = _marker_to_world(map, "story_trigger", STORY_TRIGGER_POSITION)
+
+
+## 地图标记（地图局部像素）→ 主场景坐标；标记缺失时沿用传入的兜底值。
+func _marker_to_world(map: Node, marker_id: String, fallback: Vector2) -> Vector2:
+	if map == null or not map.has_method("get_marker_position"):
+		return fallback
+	var local: Vector2 = map.call("get_marker_position", marker_id)
+	if local == Vector2.INF:
+		return fallback
+	return _map_position + local * _map_scale
+
+
+func _clamp_to_map(pos: Vector2) -> Vector2:
+	return pos.clamp(_map_rect.position, _map_rect.end)
 
 
 func _ready() -> void:
@@ -30,6 +131,7 @@ func _ready() -> void:
 	background.color = Color(0.10, 0.12, 0.16)
 	background.set_anchors_preset(Control.PRESET_FULL_RECT)
 	add_child(background)
+	_build_world_map()
 
 	GameState.setup_party(party_characters)
 	GameState.load_game()                 # 恢复上次操作结果
@@ -44,8 +146,17 @@ func _ready() -> void:
 	_character = Character.new()
 	_character.name = "PartyEntity"
 	_character.character_data = _party.get_current_character()
-	_character.position = GameState.overworld_position
-	add_child(_character)
+	if not _map_rect.has_point(GameState.overworld_position):
+		GameState.overworld_position = _spawn_position   # 旧档/越界位置重置到出生点
+	if not GameState.skill_light_consumed:
+		# 地图（Godot 管线）自带 skill_light 标记时以地图为准，否则沿用存档里的位置
+		var light := _marker_to_world(get_node_or_null("MonasteryMap"), "skill_light", Vector2.INF)
+		if light != Vector2.INF:
+			GameState.skill_light_position = light
+		GameState.skill_light_position = _clamp_to_map(GameState.skill_light_position)
+	_character.move_bounds = _actor_move_bounds()
+	_character.add_to_group("player")
+	_attach_world_actor(_character, GameState.overworld_position)
 
 	_panel = CharacterPanel.new()
 	add_child(_panel)
@@ -79,10 +190,13 @@ func _ready() -> void:
 
 	_build_battle_trigger()
 	_build_skill_light()
+	CameraCtrl.ensure_camera()          # 独立摄像机：默认视口中心，画面不变
+	_build_story_trigger()
+	_spawn_npcs()                       # 按行动轨迹放置并移动 NPC
 
 	var hint := Label.new()
 	hint.name = "ControlHint"
-	hint.text = "WASD 移动　|　↑/↓ 切换角色　|　Tab 角色面板　|　B 背包　|　靠近红色标记/光点触发事件"
+	hint.text = "WASD 移动　|　↑/↓ 切换角色　|　Tab 角色面板　|　B 背包　|　E 与 NPC 交谈　|　靠近红色标记/光点触发事件"
 	hint.position = Vector2(12, 12)
 	hint.add_theme_font_size_override("font_size", 14)
 	hint.add_theme_color_override("font_color", Color(0.62, 0.65, 0.72))
@@ -90,6 +204,8 @@ func _ready() -> void:
 
 
 func _input(event: InputEvent) -> void:
+	if GameState.story_active:
+		return
 	if _inventory_panel != null and _inventory_panel.visible:
 		if event.is_action_pressed("inventory") or event.is_action_pressed("ui_cancel"):
 			_close_inventory()
@@ -107,19 +223,33 @@ func _input(event: InputEvent) -> void:
 		_party.select_next()
 	elif event.is_action_pressed("inventory"):
 		_open_inventory()
+	elif event.is_action_pressed("interact"):
+		_try_interact_npc()
 
 
 func _physics_process(_delta: float) -> void:
+	if GameState.story_active:
+		return
 	if _inventory_panel != null and _inventory_panel.visible:
 		return
 	if _prompt_open:
 		return
+	# 世界时钟推进（NPC 行动轨迹/时间类任务依赖）
+	GameState.advance_world_time(_delta, WORLD_TIME_RATE)
+	_update_npc_markers()
+	# 任务自动推进检查（覆盖物品/时间等无信号条件）
+	_quest_check_timer -= _delta
+	if _quest_check_timer <= 0.0:
+		_quest_check_timer = NPC_CHECK_INTERVAL
+		var quest_system := get_node_or_null("/root/QuestSystem")
+		if quest_system != null:
+			quest_system.check_advance()
 	_check_battle_trigger()
 	_check_skill_light()
 
 
 func _check_battle_trigger() -> void:
-	var distance := _character.position.distance_to(battle_trigger_position)
+	var distance := _character.global_position.distance_to(battle_trigger_position)
 	if GameState.battle_trigger_consumed:
 		# 离开触发点一段距离后重新武装，避免返回时立即再次触发
 		if distance > battle_trigger_radius + 24.0:
@@ -127,7 +257,7 @@ func _check_battle_trigger() -> void:
 		return
 	if distance <= battle_trigger_radius:
 		GameState.battle_trigger_consumed = true
-		GameState.overworld_position = _character.position
+		GameState.overworld_position = _character.global_position
 		GameState.save_game()   # 进入战斗前持久化当前位置
 		get_tree().change_scene_to_file("res://world/encounters/BattleMap.tscn")
 
@@ -137,7 +267,7 @@ func _check_skill_light() -> void:
 		return
 	if _skill_light_cooldown_active:
 		return
-	var distance := _character.position.distance_to(GameState.skill_light_position)
+	var distance := _character.global_position.distance_to(GameState.skill_light_position)
 	if distance <= skill_light_radius:
 		_open_skill_prompt()
 
@@ -224,6 +354,29 @@ func _build_skill_light() -> void:
 	add_child(_skill_light)
 
 
+## 示例剧情触发点标记（金色菱形）；剧情播放过则不再显示。位置默认取常量，地图带 story_trigger 标记时以地图为准。
+func _build_story_trigger() -> void:
+	if GameState.is_story_played("example_intro"):
+		return
+	var marker := ColorRect.new()
+	marker.name = "StoryTrigger"
+	marker.color = Color(0.95, 0.78, 0.30)
+	marker.size = Vector2(36, 36)
+	marker.position = _story_trigger_position - Vector2(18, 18)
+	marker.rotation = PI / 4.0
+	add_child(marker)
+
+	var label := Label.new()
+	label.name = "StoryTriggerLabel"
+	label.text = "剧情"
+	label.position = _story_trigger_position + Vector2(-23, 26)
+	label.size = Vector2(46, 18)
+	label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	label.add_theme_font_size_override("font_size", 12)
+	label.add_theme_color_override("font_color", Color(1.0, 0.90, 0.55))
+	add_child(label)
+
+
 func _on_party_character_selected(index: int, character: CharacterData) -> void:
 	_character.apply_character_data(character)
 	_panel.setup(character)
@@ -301,3 +454,72 @@ func _remove_inventory_item(item_name: String) -> void:
 		if item != null and item.item_name == item_name:
 			GameState.inventory.items.remove_at(i)
 			return
+
+
+## 按 NPC 行动轨迹（时间轴）放置标记：色块 + 姓名，位置随世界时钟移动。
+func _spawn_npcs() -> void:
+	var npc_db := get_node_or_null("/root/NpcDB")
+	if npc_db == null:
+		return
+	for npc in npc_db.npcs:
+		if npc.schedule.is_empty():
+			continue
+		var marker := Node2D.new()
+		marker.name = "Npc_" + npc.npc_name
+		var box := ColorRect.new()
+		box.name = "Body"
+		box.color = npc.block_color
+		box.size = Vector2(26, 26)
+		box.position = Vector2(-13, -26)
+		marker.add_child(box)
+		var label := Label.new()
+		label.name = "Name"
+		label.text = npc.npc_name
+		label.position = Vector2(-24, 4)
+		label.size = Vector2(48, 18)
+		label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+		label.add_theme_font_size_override("font_size", 11)
+		label.add_theme_color_override("font_color", Color(0.96, 0.96, 1.0))
+		marker.add_child(label)
+		marker.z_index = 0 if is_instance_valid(_world_sort_root) else 5
+		_npc_markers[npc.npc_name] = marker
+		_attach_world_actor(marker, _map_position)
+	_update_npc_markers()
+
+
+## 按当前世界时钟更新全部 NPC 标记位置（相邻时间点线性插值，跨零点衔接）。
+func _update_npc_markers() -> void:
+	if _npc_markers.is_empty():
+		return
+	var npc_db := get_node_or_null("/root/NpcDB")
+	if npc_db == null:
+		return
+	for npc in npc_db.npcs:
+		var node: Node2D = _npc_markers.get(npc.npc_name)
+		if node == null or npc.schedule.is_empty():
+			continue
+		var pos := _NpcSchedule.compute_position(npc.schedule, GameState.world_time)
+		if pos != Vector2.INF:
+			node.global_position = _map_position + pos * _map_scale
+
+
+## E 键交互：与最近（半径内）的 NPC 交谈 → 触发剧情触发器 + 记录交谈（供任务条件 npc_talked）。
+func _try_interact_npc() -> void:
+	if _npc_markers.is_empty():
+		return
+	var nearest := ""
+	var best := NPC_INTERACT_RADIUS
+	for npc_name in _npc_markers:
+		var node: Node2D = _npc_markers[npc_name]
+		var d: float = _character.global_position.distance_to(node.global_position)
+		if d <= best:
+			best = d
+			nearest = npc_name
+	if nearest.is_empty():
+		return
+	var trigger := get_node_or_null("/root/StoryTrigger")
+	if trigger != null:
+		trigger.interact(nearest)
+	var quest_system := get_node_or_null("/root/QuestSystem")
+	if quest_system != null:
+		quest_system.notify_npc_talked(nearest)

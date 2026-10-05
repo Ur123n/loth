@@ -1,0 +1,32 @@
+{
+  "id": "A006",
+  "name": "整理呼吸",
+  "character": "艾莉丝",
+  "rarity": "Basic",
+  "category": "道途专属卡牌",
+  "path": "梦魇行者",
+  "card_type": "行动",
+  "cost": 1,
+  "load": 1,
+  "target_type": "Self",
+  "min_range": 0,
+  "range": 0,
+  "target_spec": "自身",
+  "area": 0,
+  "keywords": [
+    "幻梦"
+  ],
+  "tags": [
+    "幻梦",
+    "DeckControl"
+  ],
+  "description": "查看抽牌堆顶2张并任意排序。若本牌使你从沉梦进入幻梦，获得3格挡。",
+  "source_effect": "查看抽牌堆顶2张并任意排序。若本牌使你从沉梦进入幻梦，获得3格挡。",
+  "source_file": "艾莉丝_完整卡组_v0.1.md",
+  "source_line": 45,
+  "icon": "",
+  "art": "card_faces/A006.png",
+  "animation": "",
+  "effects": [],
+  "implementation_status": "pending"
+}

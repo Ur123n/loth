@@ -20,6 +20,9 @@
 | `core/battle/` | 战斗状态、回合、行动顺序、单位行动、胜负；敌怪数据类与数据库 |
 | `core/card/` | 卡牌数据结构、抽牌/弃牌/费用/荷载、卡组、卡牌执行入口（CardDB） |
 | `core/character/` | 角色属性、HP、成长、技能库、队伍管理 |
+| `core/camera/` | 独立摄像机控制器（CameraCtrl：移动/跟随/缩放/震屏/复位） |
+| `core/dialogue/` | 独立对话系统（Dialogue：会话/台词/选项/历史） |
+| `core/story/` | 剧情系统（StoryDB 数据 / StoryRunner 执行器 / StoryTrigger 触发器） |
 | `core/effect/` | 通用战斗效果（攻击/防御/移动/buff/抽牌…）与 buff 数据；logic_chains 为组件化效果资源 |
 | `core/grid/` | 六边形坐标、距离、邻居、路径搜索、移动、范围计算 |
 | `core/ai/` | 敌怪 AI（行为选择） |
@@ -30,10 +33,13 @@
 | `core/save/` | 全局状态与存档（GameState）：版本化载荷、按版本迁移、唯一持久化入口 |
 | `core/art/` | 统一美术资源加载器（ArtLoader） |
 | `content/` | 具体内容数据：characters / cards / equipment / items / npcs / paths / buffs / enemies / encounters |
+| `content/stories/` | 剧情与触发器数据（StoryDB / StoryTrigger 加载） |
 | `world/` | 世界场景（map / encounters 的 .tscn） |
 | `ui/` | 界面逻辑（battle / cards / character / inventory / common） |
+| `ui/dialogue/` | 对话 UI（文本框 / 头像 / 打字 / 选项 / 历史面板） |
 | `demo/` | 战斗测试 Demo（启动器、营地、DemoComposer） |
 | `tests/` | 无头自动化测试（battle / card / character） |
+| `tests/story/`、`tests/save/` | 剧情 / 存档无头测试 |
 | `docs/` | 各模块文档（README / rules / architecture） |
 | `assets/` | 美术资源 |
 
@@ -58,15 +64,20 @@ Card / Effect / Grid / AI
 ## 4. 模块接口约定
 
 - 数据库类（CardDB / EnemyDB / NpcDB / EquipDB / BuffDB / ItemDB / PathDB / CardDropDB / EnemyPackDB）为 Autoload 单例，负责把 `content/` 数据解析为 Resource 对象。
+- 剧情相关 Autoload：CameraCtrl（摄像机）、Dialogue（对话）、StoryDB（剧情数据）、
+  StoryRunner（剧情执行器）、StoryTrigger（剧情触发器）。
 - 数据类（CardData / CharacterData / EnemyData / …）只承载数据，不包含业务规则。
 - 跨模块状态尽量通过参数 / 返回值 / Signal 传递；全局状态集中在 GameState。
 
 ### 存档（Save）
 
 - `core/save/game_state.gd` 是唯一持久化入口：其他系统只调用 `GameState.save_game()` / `load_game()`，不自行写文件（Demo 换档也仅改 `save_path`）。
-- 存档为带 `version` 的字典载荷（当前 v4）：玩家位置、触发状态（战斗触发 / 技能光点）、钱币、背包、队伍（等级 / 经验 / 属性点 / 技能 / 卡组 / 装备），以及预留状态字段。
+- 存档为带 `version` 的字典载荷（当前 v5）：玩家位置、触发状态（战斗触发 / 技能光点）、
+  钱币、背包、队伍（等级 / 经验 / 属性点 / 技能 / 卡组 / 装备）、已播放剧情（story_played），
+  以及预留状态字段（flags / quest_state / world_state）。
 - `load_game()` 按版本迁移：旧档缺省字段自动补默认值（新字段缺省安全），未来版本升级在 `_migrate_save_data()` 扩展。
-- `flags`（剧情 Flag）、`quest_state`（任务状态）、`world_state`（世界状态）为 v4 预留的空实现；剧情 / 任务 / 世界系统上线后通过 GameState 读写，不新建持久化通道。
+- `flags`（剧情 Flag）、`quest_state`（任务状态）、`world_state`（世界状态）通过
+  GameState 读写，不新建持久化通道；剧情 Flag 变化发 `flag_changed` 信号供触发器判定。
 
 ## 5. 内容生产原则
 

@@ -1,0 +1,24 @@
+{
+  "id": "example_interact",
+  "title": "与村长交谈（交互触发示例）",
+  "description": "当世界脚本调用 StoryTrigger.interact(\"村长\") 时触发。当前触发器在 triggers.json 中 enabled=false，作为模板参考。",
+  "instructions": [
+    {
+      "type": "dialogue.line",
+      "speaker": "村长",
+      "text": "年轻人，最近村里不太平。",
+      "color": "#5c7aa0"
+    },
+    {
+      "type": "dialogue.line",
+      "speaker": "艾莉丝",
+      "text": "我们只是路过，想借宿一晚。",
+      "color": "#6b8fd6"
+    },
+    {
+      "type": "flag.set",
+      "key": "story:met_village_head",
+      "value": true
+    }
+  ]
+}

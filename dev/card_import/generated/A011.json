@@ -1,0 +1,29 @@
+{
+  "id": "A011",
+  "name": "压低身形",
+  "character": "艾莉丝",
+  "rarity": "Common",
+  "category": "道途专属卡牌",
+  "path": "梦魇行者",
+  "card_type": "行动",
+  "cost": 1,
+  "load": 1,
+  "target_type": "Self",
+  "min_range": 0,
+  "range": 0,
+  "target_spec": "自身",
+  "area": 0,
+  "keywords": [],
+  "tags": [
+    "Defense"
+  ],
+  "description": "获得7格挡；若位于沉梦，改为9格挡。",
+  "source_effect": "获得7格挡；若位于沉梦，改为9格挡。",
+  "source_file": "艾莉丝_完整卡组_v0.1.md",
+  "source_line": 55,
+  "icon": "",
+  "art": "card_faces/A011.png",
+  "animation": "",
+  "effects": [],
+  "implementation_status": "pending"
+}

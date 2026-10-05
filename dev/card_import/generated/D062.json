@@ -1,0 +1,33 @@
+{
+  "id": "D062",
+  "name": "贴身处决",
+  "character": "迪马斯",
+  "rarity": "Rare",
+  "category": "道途专属卡牌",
+  "path": "侠盗",
+  "card_type": "攻击",
+  "cost": 2,
+  "load": 2,
+  "target_type": "Enemy",
+  "min_range": 1,
+  "range": 1,
+  "target_spec": "1",
+  "area": 0,
+  "keywords": [],
+  "tags": [
+    "Ranged",
+    "Pistol",
+    "MarkPayoff",
+    "Control",
+    "Movement"
+  ],
+  "description": "条件：目标拥有标记。消耗1层标记；造成28伤害；随后目标后退1格，你也后退1格。",
+  "source_effect": "消耗1层标记；造成28伤害；随后目标后退1格，你也后退1格。",
+  "source_file": "迪马斯_完整卡组_v0.3.md",
+  "source_line": 185,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [],
+  "implementation_status": "pending"
+}

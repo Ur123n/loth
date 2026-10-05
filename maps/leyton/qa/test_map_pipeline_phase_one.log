@@ -1,0 +1,36 @@
+﻿Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+
+PASS  第一阶段实验场存在
+PASS  独立 Interior Scene 存在
+PASS  第一阶段实验场可加载
+PASS  实验场根节点实现 MapScene
+PASS  实验场结构自检通过
+PASS  出生点可通行
+PASS  实验场包含 TileMap 道路
+PASS  Pattern Library 收录 house_a
+PASS  house_a 数据可读取
+PASS  house_a 数据校验通过
+PASS  一次调用放置完整 House_A Pattern
+PASS  实验场包含完整小屋 Pattern
+PASS  小屋 Pattern 的碰撞与视觉分离
+PASS  实验场包含一座已放置的大型建筑
+PASS  大型建筑以 PackedScene 接入
+PASS  大型建筑 Anchor/放置格一致
+PASS  大型建筑视觉与碰撞分离
+PASS  大型建筑 Roof 可隐藏
+PASS  大型建筑 Roof 可恢复
+PASS  大型建筑 Ghost 显示完整 Prefab
+PASS  Ghost 初始位置通过统一放置校验
+PASS  Ghost 显示真实 Footprint
+PASS  Ghost 暴露 Entrance 标记
+PASS  Ghost 可一键实例化大型建筑（运行时、不写盘）
+PASS  实验场包含自由摆放 Prop
+PASS  自由 Prop 自带独立碰撞
+PASS  自由 Prop 不依赖 TileMap
+PASS  实验场包含可移动玩家
+PASS  玩家与大型建筑处于同一 YSort 域
+PASS  House Door 指向独立 Interior Scene
+PASS  Interior Scene 提供返回门
+PASS  Interior 返回门指回第一阶段实验场
+PASS  Navigation 语义独立预留，不与视觉/碰撞耦合
+RESULT: passed=33 failed=0

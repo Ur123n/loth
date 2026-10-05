@@ -1,0 +1,32 @@
+{
+  "id": "A063",
+  "name": "我曾见过这一幕",
+  "character": "艾莉丝",
+  "rarity": "Rare",
+  "category": "道途专属卡牌",
+  "path": "梦魇行者",
+  "card_type": "行动",
+  "cost": 1,
+  "load": 3,
+  "target_type": "Self",
+  "min_range": 0,
+  "range": 0,
+  "target_spec": "自身",
+  "area": 0,
+  "keywords": [
+    "幻梦"
+  ],
+  "tags": [
+    "幻梦",
+    "Recovery"
+  ],
+  "description": "条件：弃牌堆中存在本回合尚未打出过的合法牌。从弃牌堆拿回1张本回合尚未打出过的非Power、非灾梦牌；其下一次打出后消耗。",
+  "source_effect": "从弃牌堆拿回1张本回合尚未打出过的非Power、非灾梦牌；其下一次打出后消耗。",
+  "source_file": "艾莉丝_完整卡组_v0.1.md",
+  "source_line": 117,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [],
+  "implementation_status": "pending"
+}

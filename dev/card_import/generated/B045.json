@@ -1,0 +1,31 @@
+{
+  "id": "B045",
+  "name": "血热猛攻",
+  "character": "鲍德温",
+  "rarity": "Uncommon",
+  "category": "道途专属卡牌",
+  "path": "孢子卫士",
+  "card_type": "攻击",
+  "cost": 1,
+  "load": 1,
+  "target_type": "Enemy",
+  "min_range": 1,
+  "range": 1,
+  "target_spec": "敌1",
+  "area": 0,
+  "keywords": [],
+  "tags": [
+    "Melee",
+    "Bleed",
+    "HealingPayoff"
+  ],
+  "description": "条件：可支付放血4。放血4；造成18伤害；若打出前拥有疗愈，改为22伤害。",
+  "source_effect": "放血4；造成18伤害；若打出前拥有疗愈，改为22伤害。",
+  "source_file": "鲍德温_完整卡组_v0.1.md",
+  "source_line": 229,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [],
+  "implementation_status": "pending"
+}

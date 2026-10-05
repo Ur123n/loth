@@ -1,0 +1,16 @@
+[gd_scene load_steps=6 format=3]
+
+; 生产演示：高原修道院 + 语义遮挡带 + 玩家/NPC 统一 YSort。
+; 打开方式：godot --path C:\游戏 res://world/map/MainHighlandMap.tscn
+
+[ext_resource type="Script" path="res://core/world/main.gd" id="1"]
+[ext_resource type="Resource" path="res://content/characters/alice.tres" id="2"]
+[ext_resource type="Resource" path="res://content/characters/baldwin.tres" id="3"]
+[ext_resource type="Resource" path="res://content/characters/dismas.tres" id="4"]
+[ext_resource type="Resource" path="res://content/characters/kasha.tres" id="5"]
+
+[node name="MainHighlandMap" type="Node2D"]
+metadata/note = "高原修道院生产嵌图演示：完整建筑资产、语义切带、脚点 YSort"
+script = ExtResource("1")
+overworld_map_scene = "res://maps/godot/scenes/iserra_monastery_highlands.tscn"
+party_characters = [ExtResource("2"), ExtResource("3"), ExtResource("4"), ExtResource("5")]

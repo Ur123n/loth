@@ -1,0 +1,30 @@
+{
+  "id": "A053",
+  "name": "梦中连斩",
+  "character": "艾莉丝",
+  "rarity": "Uncommon",
+  "category": "道途专属卡牌",
+  "path": "梦魇行者",
+  "card_type": "攻击",
+  "cost": 1,
+  "load": 1,
+  "target_type": "Enemy",
+  "min_range": 1,
+  "range": 1,
+  "target_spec": "1",
+  "area": 0,
+  "keywords": [],
+  "tags": [
+    "ArmorSensitive",
+    "MultiHit"
+  ],
+  "description": "造成4伤害2次；若位于幻梦且本回合主动弃置过牌，改为造成4伤害3次。",
+  "source_effect": "造成4伤害2次；若位于幻梦且本回合主动弃置过牌，改为造成4伤害3次。",
+  "source_file": "艾莉丝_完整卡组_v0.1.md",
+  "source_line": 102,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [],
+  "implementation_status": "pending"
+}

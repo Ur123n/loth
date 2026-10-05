@@ -1,0 +1,131 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://core/building/building.gd" id="1_kugdk"]
+[ext_resource type="Texture2D" path="res://assets/buildings/workflow_hall/visual/ground.png" id="2_7534p"]
+[ext_resource type="Texture2D" path="res://assets/buildings/workflow_hall/visual/base.png" id="3_wdcx2"]
+[ext_resource type="Texture2D" path="res://assets/buildings/workflow_hall/visual/roof.png" id="4_s56pq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_spew4"]
+size = Vector2(240, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_roddr"]
+size = Vector2(240, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hmqeq"]
+size = Vector2(48, 432)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2lp0r"]
+size = Vector2(48, 432)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_inhpr"]
+size = Vector2(192, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wkw2e"]
+size = Vector2(192, 48)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lauh6"]
+radius = 36.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qx40r"]
+radius = 36.0
+
+[node name="WorkflowHall" type="Node2D" unique_id=64320786]
+y_sort_enabled = true
+script = ExtResource("1_kugdk")
+building_id = "workflow_hall"
+data_path = "res://assets/buildings/workflow_hall/metadata/building.json"
+
+[node name="Visual" type="Node2D" parent="." unique_id=1213072488]
+
+[node name="Ground" type="Sprite2D" parent="Visual" unique_id=413122324]
+z_index = -2
+position = Vector2(-336, -528)
+texture = ExtResource("2_7534p")
+centered = false
+
+[node name="Base" type="Sprite2D" parent="Visual" unique_id=145227164]
+position = Vector2(-336, -528)
+texture = ExtResource("3_wdcx2")
+centered = false
+
+[node name="Roof" type="Sprite2D" parent="Visual" unique_id=468302744]
+z_index = 10
+position = Vector2(-336, -528)
+texture = ExtResource("4_s56pq")
+centered = false
+
+[node name="Collision" type="StaticBody2D" parent="." unique_id=30724529]
+collision_layer = 2
+
+[node name="Shape000" type="CollisionShape2D" parent="Collision" unique_id=1751246674]
+position = Vector2(120, 24)
+shape = SubResource("RectangleShape2D_spew4")
+
+[node name="Shape001" type="CollisionShape2D" parent="Collision" unique_id=2019720631]
+position = Vector2(456, 24)
+shape = SubResource("RectangleShape2D_roddr")
+
+[node name="Shape002" type="CollisionShape2D" parent="Collision" unique_id=27680232]
+position = Vector2(24, 264)
+shape = SubResource("RectangleShape2D_hmqeq")
+
+[node name="Shape003" type="CollisionShape2D" parent="Collision" unique_id=965221591]
+position = Vector2(552, 264)
+shape = SubResource("RectangleShape2D_2lp0r")
+
+[node name="Shape004" type="CollisionShape2D" parent="Collision" unique_id=120869825]
+position = Vector2(144, 456)
+shape = SubResource("RectangleShape2D_inhpr")
+
+[node name="Shape005" type="CollisionShape2D" parent="Collision" unique_id=1986334668]
+position = Vector2(432, 456)
+shape = SubResource("RectangleShape2D_wkw2e")
+
+[node name="Occupancy" type="Node2D" parent="." unique_id=1418118922]
+metadata/count = 120
+metadata/mask = "res://assets/buildings/workflow_hall/masks/occupancy.png"
+
+[node name="WalkableArea" type="Node2D" parent="." unique_id=1840951130]
+metadata/count = 84
+metadata/mask = "res://assets/buildings/workflow_hall/masks/walkable.png"
+
+[node name="Doors" type="Node2D" parent="." unique_id=1457019514]
+
+[node name="door_0" type="Marker2D" parent="Doors" unique_id=87417265]
+position = Vector2(288, 456)
+metadata/outward_side = "s"
+metadata/label = ""
+metadata/target = "outside"
+
+[node name="door_1" type="Marker2D" parent="Doors" unique_id=1794346065]
+position = Vector2(288, 24)
+metadata/outward_side = "n"
+metadata/label = ""
+metadata/target = "outside"
+
+[node name="Interaction" type="Node2D" parent="." unique_id=1216001856]
+
+[node name="door_0" type="Area2D" parent="Interaction" unique_id=1296820192]
+position = Vector2(288, 456)
+collision_layer = 0
+metadata/door_id = "door_0"
+metadata/interact = "enter_building"
+
+[node name="@CollisionShape2D@17" type="CollisionShape2D" parent="Interaction/door_0" unique_id=2125616250]
+shape = SubResource("CircleShape2D_lauh6")
+
+[node name="door_1" type="Area2D" parent="Interaction" unique_id=350613139]
+position = Vector2(288, 24)
+collision_layer = 0
+metadata/door_id = "door_1"
+metadata/interact = "enter_building"
+
+[node name="@CollisionShape2D@18" type="CollisionShape2D" parent="Interaction/door_1" unique_id=1737067376]
+shape = SubResource("CircleShape2D_qx40r")
+
+[node name="TacticalData" type="Node" parent="." unique_id=1214894004]
+metadata/cover = 0.0
+metadata/cover_level = "none"
+metadata/height_level = 0
+metadata/blocks_los = false
+metadata/enterable = true

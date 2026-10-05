@@ -1,0 +1,65 @@
+{
+	"assets": [
+		{
+			"asset": "street_row",
+			"size": [
+				720,
+				576
+			],
+			"source_crop": [
+				38,
+				82,
+				1283,
+				971
+			],
+			"source_sha256": "4787dfe426f46e021809dbf271b890949420f515a31a36ca19ed902701aae1c1",
+			"sprite_sha256": "71674364477325ad044c9494c932efda285c7ea4301fb692a6bec076cd34477b"
+		},
+		{
+			"asset": "service_wing",
+			"size": [
+				288,
+				672
+			],
+			"source_crop": [
+				68,
+				46,
+				680,
+				1898
+			],
+			"source_sha256": "0ce0ca65796acbd8f89cd848c801e387345d7ddd662f59307c346549356a935f",
+			"sprite_sha256": "e9152232560f8b1b126f6145b85460682642a3cbe563361389cc4f09cfd48009"
+		},
+		{
+			"asset": "corner_residence",
+			"size": [
+				624,
+				624
+			],
+			"source_crop": [
+				79,
+				0,
+				1302,
+				1037
+			],
+			"source_sha256": "6162235f32db74fc7c3648191f0dfe62ce14b9495f5104b220ebb1eaaa0e31c5",
+			"sprite_sha256": "f650155125d26a92ef546849bc7ef8ddf28a248adbfb6e1b723ed69f4e119dd3"
+		},
+		{
+			"asset": "well",
+			"size": [
+				144,
+				192
+			],
+			"source_crop": [
+				144,
+				263,
+				803,
+				958
+			],
+			"source_sha256": "eb7001ac4145027e35ec15e9b0b985998e0aa014db274efa3b76a67788d2b545",
+			"sprite_sha256": "e609f0619fe4fa112c3088a9cedec208709408a978d92d2378ee23dc2f700067"
+		}
+	],
+	"processing": "alpha>=0.05 bounds, nearest resize, source alpha retained; collision independently authored"
+}

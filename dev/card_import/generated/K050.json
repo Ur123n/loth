@@ -1,0 +1,29 @@
+{
+  "id": "K050",
+  "name": "暖石露",
+  "character": "卡莎",
+  "rarity": "Uncommon",
+  "category": "道途专属卡牌",
+  "path": "解剖学者",
+  "card_type": "行动",
+  "cost": 1,
+  "load": 1,
+  "target_type": "Ally",
+  "min_range": 0,
+  "range": 0,
+  "target_spec": "自身或友军≤2",
+  "area": 0,
+  "keywords": [
+    "消耗"
+  ],
+  "tags": [],
+  "description": "生命≤40%时可用。回复6生命。",
+  "source_effect": "生命≤40%时可用。回复6生命。",
+  "source_file": "卡莎_完整卡组_v0.2.md",
+  "source_line": 180,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [],
+  "implementation_status": "pending"
+}

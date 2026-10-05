@@ -1,0 +1,33 @@
+{
+  "id": "D045",
+  "name": "趁隙连刺",
+  "character": "迪马斯",
+  "rarity": "Uncommon",
+  "category": "道途专属卡牌",
+  "path": "侠盗",
+  "card_type": "攻击",
+  "cost": 2,
+  "load": 1,
+  "target_type": "Enemy",
+  "min_range": 1,
+  "range": 1,
+  "target_spec": "1",
+  "area": 0,
+  "keywords": [],
+  "tags": [
+    "Melee",
+    "Dagger",
+    "MultiHit",
+    "MarkPayoff",
+    "ArmorSensitive"
+  ],
+  "description": "条件：目标拥有标记。消耗1层标记；造成7伤害3次。",
+  "source_effect": "消耗1层标记；造成7伤害3次。",
+  "source_file": "迪马斯_完整卡组_v0.3.md",
+  "source_line": 163,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [],
+  "implementation_status": "pending"
+}

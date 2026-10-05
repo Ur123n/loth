@@ -1,0 +1,33 @@
+{
+  "id": "A051",
+  "name": "深层幻行",
+  "character": "艾莉丝",
+  "rarity": "Uncommon",
+  "category": "道途专属卡牌",
+  "path": "梦魇行者",
+  "card_type": "行动",
+  "cost": 1,
+  "load": 2,
+  "target_type": "Self",
+  "min_range": 0,
+  "range": 0,
+  "target_spec": "自身",
+  "area": 0,
+  "keywords": [
+    "幻梦"
+  ],
+  "tags": [
+    "幻梦",
+    "Movement",
+    "DeckControl"
+  ],
+  "description": "移动最多1格；查看抽牌堆顶2张，可将其中1张置入弃牌堆。",
+  "source_effect": "移动最多1格；查看抽牌堆顶2张，可将其中1张置入弃牌堆。",
+  "source_file": "艾莉丝_完整卡组_v0.1.md",
+  "source_line": 100,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [],
+  "implementation_status": "pending"
+}

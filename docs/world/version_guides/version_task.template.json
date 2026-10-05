@@ -1,0 +1,29 @@
+{
+  "schema": "codex_map_revision_task/1",
+  "template_only": true,
+  "revision_id": null,
+  "task_kind": null,
+  "target_maps": [],
+  "objective": null,
+  "authorization": {
+    "iserra_existing_textures_may_be_replaced": true,
+    "evidence": "2026-10-05 user: 修道院的贴图可以更换",
+    "layout_or_gameplay_change": null,
+    "deployment_scope": null
+  },
+  "baseline": {"captured_at": null, "loaded_entrypoints": [], "source_paths": [], "file_hashes": {}, "logic_snapshot": null},
+  "allowed_changes": [],
+  "invariants": [],
+  "candidate": {"scene": null, "layout_document": null, "asset_directory": null, "shared_dependencies": []},
+  "before_backup": null,
+  "changed_files": [],
+  "checks": {"targeted": [], "regression": [], "gpu_report": null, "screenshots": [], "runtime_loaded_paths": []},
+  "status": "draft",
+  "source_revision": null,
+  "candidate_revision": null,
+  "active_revision": null,
+  "user_decisions": [],
+  "unresolved_questions": [],
+  "rollback": {"restore_files": [], "expected_hashes": {}, "validation": []},
+  "worklog": null
+}

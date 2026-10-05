@@ -1,0 +1,31 @@
+{
+  "id": "D029",
+  "name": "退让半步",
+  "character": "迪马斯",
+  "rarity": "Common",
+  "category": "道途专属卡牌",
+  "path": "侠盗",
+  "card_type": "行动",
+  "cost": 1,
+  "load": 2,
+  "target_type": "Self",
+  "min_range": 0,
+  "range": 0,
+  "target_spec": "自身",
+  "area": 0,
+  "keywords": [],
+  "tags": [
+    "Movement",
+    "Draw",
+    "Discard"
+  ],
+  "description": "移动最多2格；若移动结束后不与任何敌人相邻，抽2张，然后主动弃1张。",
+  "source_effect": "移动最多2格；若移动结束后不与任何敌人相邻，抽2张，然后主动弃1张。",
+  "source_file": "迪马斯_完整卡组_v0.3.md",
+  "source_line": 142,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [],
+  "implementation_status": "pending"
+}

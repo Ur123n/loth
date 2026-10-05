@@ -1,0 +1,30 @@
+{
+  "id": "D023",
+  "name": "架刀等候",
+  "character": "迪马斯",
+  "rarity": "Common",
+  "category": "道途专属卡牌",
+  "path": "侠盗",
+  "card_type": "行动",
+  "cost": 1,
+  "load": 1,
+  "target_type": "Self",
+  "min_range": 0,
+  "range": 0,
+  "target_spec": "自身",
+  "area": 0,
+  "keywords": [],
+  "tags": [
+    "Defense",
+    "Reaction"
+  ],
+  "description": "条件：与至少1名敌人相邻。获得5格挡；开启1次反击。",
+  "source_effect": "获得5格挡；开启1次反击。",
+  "source_file": "迪马斯_完整卡组_v0.3.md",
+  "source_line": 136,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [],
+  "implementation_status": "pending"
+}

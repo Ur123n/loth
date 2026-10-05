@@ -1,0 +1,1279 @@
+{
+	"directed_links": 14,
+	"failed": 0,
+	"maps": [
+		{
+			"facility_approaches": [
+				{
+					"cell": [
+						29,
+						20
+					],
+					"interior_implemented": false,
+					"label": "城政厅"
+				},
+				{
+					"cell": [
+						66,
+						20
+					],
+					"interior_implemented": false,
+					"label": "太阳神教礼堂"
+				},
+				{
+					"cell": [
+						25,
+						46
+					],
+					"interior_implemented": false,
+					"label": "城卫总值房"
+				},
+				{
+					"cell": [
+						71,
+						46
+					],
+					"interior_implemented": false,
+					"label": "公共水源"
+				},
+				{
+					"cell": [
+						43,
+						39
+					],
+					"interior_implemented": false,
+					"label": "太阳神像"
+				},
+				{
+					"cell": [
+						38,
+						10
+					],
+					"interior_implemented": false,
+					"label": "沿街住宅 1"
+				},
+				{
+					"cell": [
+						50,
+						10
+					],
+					"interior_implemented": false,
+					"label": "沿街住宅 2"
+				},
+				{
+					"cell": [
+						38,
+						19
+					],
+					"interior_implemented": false,
+					"label": "沿街住宅 3"
+				},
+				{
+					"cell": [
+						50,
+						19
+					],
+					"interior_implemented": false,
+					"label": "沿街住宅 4"
+				},
+				{
+					"cell": [
+						10,
+						29
+					],
+					"interior_implemented": false,
+					"label": "沿街住宅 5"
+				},
+				{
+					"cell": [
+						19,
+						29
+					],
+					"interior_implemented": false,
+					"label": "沿街住宅 6"
+				},
+				{
+					"cell": [
+						28,
+						29
+					],
+					"interior_implemented": false,
+					"label": "沿街住宅 7"
+				},
+				{
+					"cell": [
+						67,
+						29
+					],
+					"interior_implemented": false,
+					"label": "沿街住宅 8"
+				},
+				{
+					"cell": [
+						76,
+						29
+					],
+					"interior_implemented": false,
+					"label": "沿街住宅 9"
+				},
+				{
+					"cell": [
+						10,
+						76
+					],
+					"interior_implemented": false,
+					"label": "沿街住宅 10"
+				},
+				{
+					"cell": [
+						19,
+						76
+					],
+					"interior_implemented": false,
+					"label": "沿街住宅 11"
+				},
+				{
+					"cell": [
+						28,
+						72
+					],
+					"interior_implemented": false,
+					"label": "沿街住宅 12"
+				},
+				{
+					"cell": [
+						66,
+						72
+					],
+					"interior_implemented": false,
+					"label": "沿街住宅 13"
+				},
+				{
+					"cell": [
+						75,
+						76
+					],
+					"interior_implemented": false,
+					"label": "沿街住宅 14"
+				},
+				{
+					"cell": [
+						84,
+						76
+					],
+					"interior_implemented": false,
+					"label": "沿街住宅 15"
+				},
+				{
+					"cell": [
+						59,
+						8
+					],
+					"interior_implemented": false,
+					"label": "沿街住宅 16"
+				},
+				{
+					"cell": [
+						59,
+						15
+					],
+					"interior_implemented": false,
+					"label": "沿街住宅 17"
+				},
+				{
+					"cell": [
+						85,
+						27
+					],
+					"interior_implemented": false,
+					"label": "沿街住宅 18"
+				},
+				{
+					"cell": [
+						85,
+						34
+					],
+					"interior_implemented": false,
+					"label": "沿街住宅 19"
+				},
+				{
+					"cell": [
+						8,
+						36
+					],
+					"interior_implemented": false,
+					"label": "沿街住宅 20"
+				},
+				{
+					"cell": [
+						15,
+						36
+					],
+					"interior_implemented": false,
+					"label": "沿街住宅 21"
+				},
+				{
+					"cell": [
+						22,
+						36
+					],
+					"interior_implemented": false,
+					"label": "沿街住宅 22"
+				},
+				{
+					"cell": [
+						67,
+						36
+					],
+					"interior_implemented": false,
+					"label": "沿街住宅 23"
+				},
+				{
+					"cell": [
+						74,
+						36
+					],
+					"interior_implemented": false,
+					"label": "沿街住宅 24"
+				},
+				{
+					"cell": [
+						40,
+						57
+					],
+					"interior_implemented": false,
+					"label": "沿街住宅 25"
+				},
+				{
+					"cell": [
+						53,
+						57
+					],
+					"interior_implemented": false,
+					"label": "沿街住宅 26"
+				}
+			],
+			"map_id": "M01",
+			"walkable_connected_cart_centers": 2944,
+			"walkable_connected_player_cells": 4738
+		},
+		{
+			"facility_approaches": [
+				{
+					"cell": [
+						14,
+						1
+					],
+					"interior_implemented": false,
+					"label": "宅邸A"
+				},
+				{
+					"cell": [
+						27,
+						1
+					],
+					"interior_implemented": false,
+					"label": "宅邸B"
+				},
+				{
+					"cell": [
+						44,
+						13
+					],
+					"interior_implemented": false,
+					"label": "宅邸C"
+				},
+				{
+					"cell": [
+						56,
+						14
+					],
+					"interior_implemented": false,
+					"label": "军官会客所"
+				},
+				{
+					"cell": [
+						30,
+						22
+					],
+					"interior_implemented": false,
+					"label": "私家马厩"
+				},
+				{
+					"cell": [
+						71,
+						33
+					],
+					"interior_implemented": false,
+					"label": "保护水源"
+				},
+				{
+					"cell": [
+						40,
+						38
+					],
+					"interior_implemented": false,
+					"label": "贵族街坊 7"
+				},
+				{
+					"cell": [
+						14,
+						48
+					],
+					"interior_implemented": false,
+					"label": "贵族街坊 8"
+				},
+				{
+					"cell": [
+						62,
+						50
+					],
+					"interior_implemented": false,
+					"label": "贵族街坊 9"
+				},
+				{
+					"cell": [
+						27,
+						54
+					],
+					"interior_implemented": false,
+					"label": "贵族街坊 10"
+				},
+				{
+					"cell": [
+						14,
+						59
+					],
+					"interior_implemented": false,
+					"label": "贵族街坊 11"
+				},
+				{
+					"cell": [
+						40,
+						63
+					],
+					"interior_implemented": false,
+					"label": "贵族街坊 12"
+				},
+				{
+					"cell": [
+						27,
+						65
+					],
+					"interior_implemented": false,
+					"label": "贵族街坊 13"
+				},
+				{
+					"cell": [
+						38,
+						5
+					],
+					"interior_implemented": false,
+					"label": "贵族街坊 14"
+				},
+				{
+					"cell": [
+						71,
+						1
+					],
+					"interior_implemented": false,
+					"label": "贵族街坊 15"
+				},
+				{
+					"cell": [
+						74,
+						11
+					],
+					"interior_implemented": false,
+					"label": "贵族街坊 16"
+				},
+				{
+					"cell": [
+						12,
+						12
+					],
+					"interior_implemented": false,
+					"label": "贵族街坊 17"
+				},
+				{
+					"cell": [
+						12,
+						22
+					],
+					"interior_implemented": false,
+					"label": "贵族街坊 18"
+				},
+				{
+					"cell": [
+						44,
+						24
+					],
+					"interior_implemented": false,
+					"label": "贵族街坊 19"
+				},
+				{
+					"cell": [
+						12,
+						32
+					],
+					"interior_implemented": false,
+					"label": "贵族街坊 20"
+				},
+				{
+					"cell": [
+						62,
+						8
+					],
+					"interior_implemented": false,
+					"label": "贵族街坊 21"
+				},
+				{
+					"cell": [
+						75,
+						21
+					],
+					"interior_implemented": false,
+					"label": "贵族街坊 22"
+				},
+				{
+					"cell": [
+						42,
+						42
+					],
+					"interior_implemented": false,
+					"label": "贵族街坊 23"
+				},
+				{
+					"cell": [
+						76,
+						67
+					],
+					"interior_implemented": false,
+					"label": "贵族街坊 24"
+				},
+				{
+					"cell": [
+						49,
+						68
+					],
+					"interior_implemented": false,
+					"label": "贵族街坊 25"
+				},
+				{
+					"cell": [
+						47,
+						5
+					],
+					"interior_implemented": false,
+					"label": "贵族街坊 26"
+				},
+				{
+					"cell": [
+						54,
+						8
+					],
+					"interior_implemented": false,
+					"label": "贵族街坊 27"
+				},
+				{
+					"cell": [
+						56,
+						25
+					],
+					"interior_implemented": false,
+					"label": "贵族街坊 28"
+				},
+				{
+					"cell": [
+						78,
+						44
+					],
+					"interior_implemented": false,
+					"label": "贵族街坊 29"
+				},
+				{
+					"cell": [
+						78,
+						51
+					],
+					"interior_implemented": false,
+					"label": "贵族街坊 30"
+				},
+				{
+					"cell": [
+						77,
+						58
+					],
+					"interior_implemented": false,
+					"label": "贵族街坊 31"
+				},
+				{
+					"cell": [
+						56,
+						69
+					],
+					"interior_implemented": false,
+					"label": "贵族街坊 32"
+				},
+				{
+					"cell": [
+						63,
+						69
+					],
+					"interior_implemented": false,
+					"label": "贵族街坊 33"
+				},
+				{
+					"cell": [
+						8,
+						70
+					],
+					"interior_implemented": false,
+					"label": "贵族街坊 34"
+				}
+			],
+			"map_id": "M02",
+			"walkable_connected_cart_centers": 2655,
+			"walkable_connected_player_cells": 4178
+		},
+		{
+			"facility_approaches": [
+				{
+					"cell": [
+						23,
+						5
+					],
+					"interior_implemented": false,
+					"label": "施粥救济点"
+				},
+				{
+					"cell": [
+						40,
+						7
+					],
+					"interior_implemented": false,
+					"label": "廉价旅舍"
+				},
+				{
+					"cell": [
+						59,
+						63
+					],
+					"interior_implemented": false,
+					"label": "主焚尸场"
+				},
+				{
+					"cell": [
+						55,
+						48
+					],
+					"interior_implemented": false,
+					"label": "尸体登记棚"
+				},
+				{
+					"cell": [
+						73,
+						47
+					],
+					"interior_implemented": false,
+					"label": "灰烬收集点"
+				},
+				{
+					"cell": [
+						20,
+						32
+					],
+					"interior_implemented": false,
+					"label": "棚屋"
+				},
+				{
+					"cell": [
+						37,
+						34
+					],
+					"interior_implemented": false,
+					"label": "棚屋"
+				},
+				{
+					"cell": [
+						21,
+						65
+					],
+					"interior_implemented": false,
+					"label": "棚屋"
+				},
+				{
+					"cell": [
+						39,
+						63
+					],
+					"interior_implemented": false,
+					"label": "棚屋"
+				},
+				{
+					"cell": [
+						59,
+						7
+					],
+					"interior_implemented": false,
+					"label": "棚屋"
+				},
+				{
+					"cell": [
+						77,
+						17
+					],
+					"interior_implemented": false,
+					"label": "棚屋"
+				},
+				{
+					"cell": [
+						61,
+						24
+					],
+					"interior_implemented": false,
+					"label": "棚屋"
+				},
+				{
+					"cell": [
+						77,
+						24
+					],
+					"interior_implemented": false,
+					"label": "棚屋"
+				},
+				{
+					"cell": [
+						31,
+						45
+					],
+					"interior_implemented": false,
+					"label": "公共水井"
+				},
+				{
+					"cell": [
+						50,
+						6
+					],
+					"interior_implemented": false,
+					"label": "沿街住宅 1"
+				},
+				{
+					"cell": [
+						42,
+						20
+					],
+					"interior_implemented": false,
+					"label": "沿街住宅 2"
+				},
+				{
+					"cell": [
+						46,
+						32
+					],
+					"interior_implemented": false,
+					"label": "沿街住宅 3"
+				},
+				{
+					"cell": [
+						63,
+						39
+					],
+					"interior_implemented": false,
+					"label": "沿街住宅 4"
+				},
+				{
+					"cell": [
+						10,
+						41
+					],
+					"interior_implemented": false,
+					"label": "沿街住宅 5"
+				},
+				{
+					"cell": [
+						19,
+						41
+					],
+					"interior_implemented": false,
+					"label": "沿街住宅 6"
+				},
+				{
+					"cell": [
+						46,
+						41
+					],
+					"interior_implemented": false,
+					"label": "沿街住宅 7"
+				},
+				{
+					"cell": [
+						44,
+						50
+					],
+					"interior_implemented": false,
+					"label": "沿街住宅 8"
+				},
+				{
+					"cell": [
+						50,
+						58
+					],
+					"interior_implemented": false,
+					"label": "沿街住宅 9"
+				},
+				{
+					"cell": [
+						49,
+						67
+					],
+					"interior_implemented": false,
+					"label": "沿街住宅 10"
+				},
+				{
+					"cell": [
+						10,
+						76
+					],
+					"interior_implemented": false,
+					"label": "沿街住宅 11"
+				},
+				{
+					"cell": [
+						19,
+						76
+					],
+					"interior_implemented": false,
+					"label": "沿街住宅 12"
+				},
+				{
+					"cell": [
+						28,
+						76
+					],
+					"interior_implemented": false,
+					"label": "沿街住宅 13"
+				},
+				{
+					"cell": [
+						37,
+						76
+					],
+					"interior_implemented": false,
+					"label": "沿街住宅 14"
+				},
+				{
+					"cell": [
+						49,
+						76
+					],
+					"interior_implemented": false,
+					"label": "沿街住宅 15"
+				},
+				{
+					"cell": [
+						75,
+						4
+					],
+					"interior_implemented": false,
+					"label": "沿街住宅 16"
+				},
+				{
+					"cell": [
+						82,
+						1
+					],
+					"interior_implemented": false,
+					"label": "沿街住宅 17"
+				},
+				{
+					"cell": [
+						51,
+						15
+					],
+					"interior_implemented": false,
+					"label": "沿街住宅 18"
+				},
+				{
+					"cell": [
+						54,
+						22
+					],
+					"interior_implemented": false,
+					"label": "沿街住宅 19"
+				},
+				{
+					"cell": [
+						8,
+						25
+					],
+					"interior_implemented": false,
+					"label": "沿街住宅 20"
+				},
+				{
+					"cell": [
+						15,
+						25
+					],
+					"interior_implemented": false,
+					"label": "沿街住宅 21"
+				},
+				{
+					"cell": [
+						22,
+						25
+					],
+					"interior_implemented": false,
+					"label": "沿街住宅 22"
+				},
+				{
+					"cell": [
+						54,
+						29
+					],
+					"interior_implemented": false,
+					"label": "沿街住宅 23"
+				},
+				{
+					"cell": [
+						72,
+						39
+					],
+					"interior_implemented": false,
+					"label": "沿街住宅 24"
+				},
+				{
+					"cell": [
+						79,
+						39
+					],
+					"interior_implemented": false,
+					"label": "沿街住宅 25"
+				},
+				{
+					"cell": [
+						86,
+						39
+					],
+					"interior_implemented": false,
+					"label": "沿街住宅 26"
+				},
+				{
+					"cell": [
+						8,
+						58
+					],
+					"interior_implemented": false,
+					"label": "沿街住宅 27"
+				},
+				{
+					"cell": [
+						15,
+						58
+					],
+					"interior_implemented": false,
+					"label": "沿街住宅 28"
+				},
+				{
+					"cell": [
+						22,
+						58
+					],
+					"interior_implemented": false,
+					"label": "沿街住宅 29"
+				}
+			],
+			"map_id": "M03",
+			"walkable_connected_cart_centers": 2569,
+			"walkable_connected_player_cells": 4355
+		},
+		{
+			"facility_approaches": [
+				{
+					"cell": [
+						26,
+						26
+					],
+					"interior_implemented": false,
+					"label": "综合市场"
+				},
+				{
+					"cell": [
+						44,
+						23
+					],
+					"interior_implemented": false,
+					"label": "商会/秤量所"
+				},
+				{
+					"cell": [
+						55,
+						23
+					],
+					"interior_implemented": false,
+					"label": "煤炭总仓"
+				},
+				{
+					"cell": [
+						75,
+						23
+					],
+					"interior_implemented": false,
+					"label": "主粮仓"
+				},
+				{
+					"cell": [
+						19,
+						46
+					],
+					"interior_implemented": false,
+					"label": "铁匠铺"
+				},
+				{
+					"cell": [
+						36,
+						46
+					],
+					"interior_implemented": false,
+					"label": "药剂铺"
+				},
+				{
+					"cell": [
+						55,
+						46
+					],
+					"interior_implemented": false,
+					"label": "旅店"
+				},
+				{
+					"cell": [
+						75,
+						45
+					],
+					"interior_implemented": false,
+					"label": "车马栈"
+				},
+				{
+					"cell": [
+						43,
+						58
+					],
+					"interior_implemented": false,
+					"label": "货运石桥"
+				},
+				{
+					"cell": [
+						35,
+						32
+					],
+					"interior_implemented": false,
+					"label": "沿街住宅 1"
+				},
+				{
+					"cell": [
+						40,
+						32
+					],
+					"interior_implemented": false,
+					"label": "沿街住宅 2"
+				},
+				{
+					"cell": [
+						44,
+						32
+					],
+					"interior_implemented": false,
+					"label": "沿街住宅 3"
+				},
+				{
+					"cell": [
+						53,
+						32
+					],
+					"interior_implemented": false,
+					"label": "沿街住宅 4"
+				},
+				{
+					"cell": [
+						62,
+						32
+					],
+					"interior_implemented": false,
+					"label": "沿街住宅 5"
+				},
+				{
+					"cell": [
+						71,
+						32
+					],
+					"interior_implemented": false,
+					"label": "沿街住宅 6"
+				},
+				{
+					"cell": [
+						80,
+						32
+					],
+					"interior_implemented": false,
+					"label": "沿街住宅 7"
+				},
+				{
+					"cell": [
+						10,
+						35
+					],
+					"interior_implemented": false,
+					"label": "沿街住宅 8"
+				},
+				{
+					"cell": [
+						19,
+						35
+					],
+					"interior_implemented": false,
+					"label": "沿街住宅 9"
+				},
+				{
+					"cell": [
+						10,
+						67
+					],
+					"interior_implemented": false,
+					"label": "沿街住宅 10"
+				},
+				{
+					"cell": [
+						19,
+						67
+					],
+					"interior_implemented": false,
+					"label": "沿街住宅 11"
+				},
+				{
+					"cell": [
+						28,
+						67
+					],
+					"interior_implemented": false,
+					"label": "沿街住宅 12"
+				},
+				{
+					"cell": [
+						37,
+						69
+					],
+					"interior_implemented": false,
+					"label": "沿街住宅 13"
+				},
+				{
+					"cell": [
+						56,
+						69
+					],
+					"interior_implemented": false,
+					"label": "沿街住宅 14"
+				},
+				{
+					"cell": [
+						65,
+						67
+					],
+					"interior_implemented": false,
+					"label": "沿街住宅 15"
+				},
+				{
+					"cell": [
+						74,
+						67
+					],
+					"interior_implemented": false,
+					"label": "沿街住宅 16"
+				},
+				{
+					"cell": [
+						83,
+						67
+					],
+					"interior_implemented": false,
+					"label": "沿街住宅 17"
+				},
+				{
+					"cell": [
+						26,
+						33
+					],
+					"interior_implemented": false,
+					"label": "沿街住宅 18"
+				},
+				{
+					"cell": [
+						40,
+						43
+					],
+					"interior_implemented": false,
+					"label": "沿街住宅 19"
+				}
+			],
+			"map_id": "M04",
+			"walkable_connected_cart_centers": 2664,
+			"walkable_connected_player_cells": 4189
+		},
+		{
+			"facility_approaches": [
+				{
+					"cell": [
+						44,
+						60
+					],
+					"interior_implemented": false,
+					"label": "北门楼"
+				},
+				{
+					"cell": [
+						44,
+						59
+					],
+					"interior_implemented": false,
+					"label": "登记检查区"
+				},
+				{
+					"cell": [
+						20,
+						55
+					],
+					"interior_implemented": false,
+					"label": "庄园农房"
+				}
+			],
+			"map_id": "M05",
+			"walkable_connected_cart_centers": 5345,
+			"walkable_connected_player_cells": 5737
+		},
+		{
+			"facility_approaches": [
+				{
+					"cell": [
+						44,
+						11
+					],
+					"interior_implemented": false,
+					"label": "南门楼"
+				},
+				{
+					"cell": [
+						39,
+						20
+					],
+					"interior_implemented": false,
+					"label": "难民棚"
+				},
+				{
+					"cell": [
+						49,
+						20
+					],
+					"interior_implemented": false,
+					"label": "伤病隔离棚"
+				},
+				{
+					"cell": [
+						21,
+						19
+					],
+					"interior_implemented": false,
+					"label": "劳工集散"
+				}
+			],
+			"map_id": "M06",
+			"walkable_connected_cart_centers": 4965,
+			"walkable_connected_player_cells": 5444
+		},
+		{
+			"facility_approaches": [
+				{
+					"cell": [
+						84,
+						40
+					],
+					"interior_implemented": false,
+					"label": "西门楼"
+				},
+				{
+					"cell": [
+						87,
+						58
+					],
+					"interior_implemented": false,
+					"label": "水门"
+				},
+				{
+					"cell": [
+						80,
+						35
+					],
+					"interior_implemented": false,
+					"label": "煤车待检区"
+				},
+				{
+					"cell": [
+						80,
+						43
+					],
+					"interior_implemented": false,
+					"label": "商队停车场"
+				},
+				{
+					"cell": [
+						65,
+						65
+					],
+					"interior_implemented": false,
+					"label": "修车棚"
+				}
+			],
+			"map_id": "M07",
+			"walkable_connected_cart_centers": 5001,
+			"walkable_connected_player_cells": 5706
+		},
+		{
+			"facility_approaches": [
+				{
+					"cell": [
+						11,
+						36
+					],
+					"interior_implemented": false,
+					"label": "东门楼"
+				},
+				{
+					"cell": [
+						8,
+						50
+					],
+					"interior_implemented": false,
+					"label": "水门"
+				},
+				{
+					"cell": [
+						68,
+						41
+					],
+					"interior_implemented": false,
+					"label": "磨坊/风车候选"
+				},
+				{
+					"cell": [
+						18,
+						41
+					],
+					"interior_implemented": false,
+					"label": "旅客检查区"
+				}
+			],
+			"map_id": "M08",
+			"walkable_connected_cart_centers": 5403,
+			"walkable_connected_player_cells": 5973
+		}
+	],
+	"passed": 451
+}

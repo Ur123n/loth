@@ -5,3 +5,10 @@
 # Python cache
 __pycache__/
 *.pyc
+
+# transient tooling temp dirs
+.pillow_tmp/
+.pytools/
+.py_target/
+.tests_tmp/
+.model-inspect.tmp.js

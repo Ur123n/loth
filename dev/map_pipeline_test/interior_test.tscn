@@ -1,0 +1,73 @@
+[gd_scene load_steps=8 format=3]
+
+[ext_resource type="PackedScene" path="res://dev/map_pipeline_test/phase_one_player.tscn" id="1_player"]
+[ext_resource type="Script" path="res://core/world/scene_door.gd" id="2_door"]
+
+[sub_resource type="RectangleShape2D" id="ShapeDoor"]
+size = Vector2(72, 48)
+
+[sub_resource type="RectangleShape2D" id="ShapeWallH"]
+size = Vector2(1180, 32)
+
+[sub_resource type="RectangleShape2D" id="ShapeWallV"]
+size = Vector2(32, 620)
+
+[sub_resource type="StyleBoxFlat" id="Panel"]
+bg_color = Color(0.06, 0.05, 0.055, 0.92)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.42, 0.32, 0.22, 1)
+
+[node name="InteriorTest" type="Node2D"]
+metadata/purpose = "independent_interior_scene"
+
+[node name="Floor" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(40, 40, 1240, 40, 1240, 680, 40, 680)
+color = Color(0.18, 0.15, 0.13, 1)
+
+[node name="Rug" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(420, 250, 860, 250, 860, 470, 420, 470)
+color = Color(0.3, 0.12, 0.13, 1)
+
+[node name="Walls" type="StaticBody2D" parent="."]
+
+[node name="Top" type="CollisionShape2D" parent="Walls"]
+position = Vector2(640, 56)
+shape = SubResource("ShapeWallH")
+
+[node name="Left" type="CollisionShape2D" parent="Walls"]
+position = Vector2(56, 360)
+shape = SubResource("ShapeWallV")
+
+[node name="Right" type="CollisionShape2D" parent="Walls"]
+position = Vector2(1224, 360)
+shape = SubResource("ShapeWallV")
+
+[node name="Player" parent="." instance=ExtResource("1_player")]
+position = Vector2(640, 360)
+camera_zoom = Vector2(1, 1)
+
+[node name="spawn" type="Marker2D" parent="."]
+position = Vector2(640, 360)
+
+[node name="ReturnDoor" type="Area2D" parent="."]
+position = Vector2(640, 640)
+script = ExtResource("2_door")
+destination_scene = "res://dev/map_pipeline_test/map_pipeline_test.tscn"
+destination_marker = "spawn"
+
+[node name="Shape" type="CollisionShape2D" parent="ReturnDoor"]
+shape = SubResource("ShapeDoor")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Title" type="Label" parent="UI"]
+offset_left = 18.0
+offset_top = 18.0
+offset_right = 570.0
+offset_bottom = 82.0
+theme_override_styles/normal = SubResource("Panel")
+text = "独立 Interior Scene\nWASD 移动，走到南门按 E 返回测试地图"
+

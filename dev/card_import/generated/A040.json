@@ -1,0 +1,30 @@
+{
+  "id": "A040",
+  "name": "封存一手",
+  "character": "艾莉丝",
+  "rarity": "Uncommon",
+  "category": "道途专属卡牌",
+  "path": "梦魇行者",
+  "card_type": "行动",
+  "cost": 1,
+  "load": 2,
+  "target_type": "Self",
+  "min_range": 0,
+  "range": 0,
+  "target_spec": "自身",
+  "area": 0,
+  "keywords": [],
+  "tags": [
+    "Retain",
+    "Defense"
+  ],
+  "description": "获得5格挡；选择至多2张其他手牌保留；下回合少抽1张牌。",
+  "source_effect": "获得5格挡；选择至多2张其他手牌保留；下回合少抽1张牌。",
+  "source_file": "艾莉丝_完整卡组_v0.1.md",
+  "source_line": 89,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [],
+  "implementation_status": "pending"
+}

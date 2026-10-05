@@ -1,0 +1,40 @@
+{
+  "id": "A009",
+  "name": "后撤掩护",
+  "character": "艾莉丝",
+  "rarity": "Basic",
+  "category": "道途专属卡牌",
+  "path": "梦魇行者",
+  "card_type": "攻击",
+  "cost": 1,
+  "load": 1,
+  "target_type": "Enemy",
+  "min_range": 2,
+  "range": 3,
+  "target_spec": "2–3",
+  "area": 0,
+  "keywords": [],
+  "tags": [
+    "Ranged",
+    "Movement"
+  ],
+  "description": "造成4伤害；之后移动最多1格。",
+  "source_effect": "造成4伤害；之后移动最多1格。",
+  "source_file": "艾莉丝_完整卡组_v0.1.md",
+  "source_line": 48,
+  "icon": "",
+  "art": "card_faces/A009.png",
+  "animation": "",
+  "effects": [
+    {
+      "logic": "attack",
+      "value": 4,
+      "attack_range": 3
+    },
+    {
+      "logic": "move",
+      "distance": 1
+    }
+  ],
+  "implementation_status": "supported"
+}

@@ -1,0 +1,56 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://core/world/map_scene.gd" id="1_nuoqb"]
+[ext_resource type="TileSet" path="res://maps/godot/tilesets/dark48.tres" id="2_yqjk5"]
+
+[node name="dark48_map_template" type="Node2D" unique_id=1356645345]
+script = ExtResource("1_nuoqb")
+map_size_cells = Vector2i(26, 15)
+
+[node name="地形" type="TileMapLayer" parent="." unique_id=1186966762]
+tile_set = ExtResource("2_yqjk5")
+
+[node name="高差" type="TileMapLayer" parent="." unique_id=608947233]
+tile_set = ExtResource("2_yqjk5")
+
+[node name="建筑" type="TileMapLayer" parent="." unique_id=1689615954]
+tile_set = ExtResource("2_yqjk5")
+
+[node name="装饰" type="TileMapLayer" parent="." unique_id=887164639]
+tile_set = ExtResource("2_yqjk5")
+
+[node name="植被" type="TileMapLayer" parent="." unique_id=476814853]
+tile_set = ExtResource("2_yqjk5")
+
+[node name="碰撞" type="TileMapLayer" parent="." unique_id=1600375453]
+visible = false
+tile_set = ExtResource("2_yqjk5")
+
+[node name="标记" type="Node2D" parent="." unique_id=1235286997]
+
+[node name="spawn" type="Marker2D" parent="标记" unique_id=1554580767]
+position = Vector2(552, 648)
+
+[node name="gate" type="Marker2D" parent="标记" unique_id=843005114]
+position = Vector2(600, 168)
+
+[node name="church" type="Marker2D" parent="标记" unique_id=2068121233]
+position = Vector2(552, 72)
+
+[node name="bell_tower" type="Marker2D" parent="标记" unique_id=239064762]
+position = Vector2(696, 72)
+
+[node name="kitchen_garden" type="Marker2D" parent="标记" unique_id=1645994410]
+position = Vector2(456, 408)
+
+[node name="herb_garden" type="Marker2D" parent="标记" unique_id=972583049]
+position = Vector2(744, 312)
+
+[node name="battle_trigger" type="Marker2D" parent="标记" unique_id=948838016]
+position = Vector2(984, 648)
+
+[node name="skill_light" type="Marker2D" parent="标记" unique_id=213669362]
+position = Vector2(600, 216)
+
+[node name="story_trigger" type="Marker2D" parent="标记" unique_id=2139828450]
+position = Vector2(600, 456)

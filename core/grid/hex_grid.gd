@@ -5,18 +5,20 @@ extends RefCounted
 ## 后续寻路 / 范围计算统一使用这里提供的方法。
 
 const SQRT3 := 1.7320508075688772
+## 尖顶六边形的边长，也等于外接圆半径。战斗地图统一从这里取默认值。
+const DEFAULT_SIDE_LENGTH: float = 20.0
 
 
-static func hex_to_world(col: int, row: int, tile_size: float) -> Vector2:
-	var x := tile_size * SQRT3 * (col + 0.5 * (row & 1))
-	var y := tile_size * 1.5 * row
+static func hex_to_world(col: int, row: int, side_length: float = DEFAULT_SIDE_LENGTH) -> Vector2:
+	var x := side_length * SQRT3 * (col + 0.5 * (row & 1))
+	var y := side_length * 1.5 * row
 	return Vector2(x, y)
 
 
-static func world_to_hex(point: Vector2, tile_size: float, cols: int, rows: int) -> Vector2i:
+static func world_to_hex(point: Vector2, side_length: float, cols: int, rows: int) -> Vector2i:
 	# 像素 → 轴向坐标
-	var q: float = (SQRT3 / 3.0 * point.x - 1.0 / 3.0 * point.y) / tile_size
-	var r: float = (2.0 / 3.0 * point.y) / tile_size
+	var q: float = (SQRT3 / 3.0 * point.x - 1.0 / 3.0 * point.y) / side_length
+	var r: float = (2.0 / 3.0 * point.y) / side_length
 	# 立方坐标取整
 	var cube := _cube_round(q, -q - r, r)
 	var row := cube.z

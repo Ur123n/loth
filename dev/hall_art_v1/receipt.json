@@ -1,0 +1,61 @@
+{
+  "provider": "built-in imagegen",
+  "status": "candidate_runtime_surface",
+  "geometry_source": "res://assets/buildings/workflow_hall",
+  "logical_canvas": [
+    672,
+    576
+  ],
+  "layers": {
+    "base": {
+      "source": "C:\\美术素材制作\\working\\hall_art_v1_20261004\\base_draft_v2.png",
+      "sha256": "52c5bbc57d36c99c0cf2d4955f41dc5f5af6acbdcf411d0e125b43a2b646d48b",
+      "mode": "RGBA",
+      "size": [
+        1355,
+        1161
+      ],
+      "transparent_pixels": 1092259,
+      "visible_border_pixels": 0,
+      "direct_672x576_import": false,
+      "runtime_mapping": "normalized UV samples; original guide alpha controls silhouette"
+    },
+    "ground": {
+      "source": "C:\\Users\\njw\\.codex\\generated_images\\01a105e0-8be1-78a1-a6b8-507b78e3ecc8\\exec-07b32059-f997-4457-b998-4442356a6871.png",
+      "sha256": "b1246c5a988f770216b06723ce31fc339048e709fab146e779a13068ba1a6d33",
+      "mode": "RGBA",
+      "size": [
+        1355,
+        1160
+      ],
+      "transparent_pixels": 371953,
+      "visible_border_pixels": 0,
+      "direct_672x576_import": false,
+      "runtime_mapping": "normalized UV samples; original guide alpha controls silhouette"
+    },
+    "roof": {
+      "source": "C:\\Users\\njw\\.codex\\generated_images\\01a105e0-8be1-78a1-a6b8-507b78e3ecc8\\exec-6ba0524e-0a34-4cd6-b633-46f2e1041bc8.png",
+      "sha256": "d16872dfa8914c6d1cf2609056e2cdb5aac4725bfec7b17339bfa88b29f42394",
+      "mode": "RGBA",
+      "size": [
+        1355,
+        1161
+      ],
+      "transparent_pixels": 522923,
+      "visible_border_pixels": 0,
+      "direct_672x576_import": false,
+      "runtime_mapping": "normalized UV samples; original guide alpha controls silhouette"
+    }
+  },
+  "prompts": {
+    "base_fix_prompt.txt": "dee7fc684b9a059e60a0f2d55d98f8ac7ba48a76f9ce036922dfa0ed7f1d52a6",
+    "base_prompt.txt": "bd540f5b6e31543a60a0c05b8ac6bb428fe669fbee23c5b4ea61a42dd14deeba",
+    "ground_prompt.txt": "0dfc24999dbaee3e45bad300ad54c517576bbabb4459e5097af574579f865817",
+    "roof_prompt.txt": "b41603342bb8d6d9468b0a71525f8dd02a5e7790ca269534dd93f3f4327956f9"
+  },
+  "source_guide_sha256": {
+    "base": "60befea233f51b3298dcc3d3d4f67604ca8ab409f219d56f97d90146a5edeca8",
+    "ground": "10d5e0c386eb5b7639a81026104aa82549349e9e3b2fed1f73e7abb869075330",
+    "roof": "8ecef8d4ee3f5b4e507a33384ead54a07b61d5933e79bcf7b87ceeae82e1bf62"
+  }
+}

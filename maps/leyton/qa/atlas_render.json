@@ -1,0 +1,81 @@
+{
+	"captures": [
+		{
+			"error": 0,
+			"map_id": "M01",
+			"path": "res://maps/leyton/qa/atlas_m01_overview.png"
+		},
+		{
+			"error": 0,
+			"map_id": "M02",
+			"path": "res://maps/leyton/qa/atlas_m02_overview.png"
+		},
+		{
+			"error": 0,
+			"map_id": "M03",
+			"path": "res://maps/leyton/qa/atlas_m03_overview.png"
+		},
+		{
+			"error": 0,
+			"map_id": "M04",
+			"path": "res://maps/leyton/qa/atlas_m04_overview.png"
+		},
+		{
+			"error": 0,
+			"map_id": "M05",
+			"path": "res://maps/leyton/qa/atlas_m05_overview.png"
+		},
+		{
+			"error": 0,
+			"map_id": "M06",
+			"path": "res://maps/leyton/qa/atlas_m06_overview.png"
+		},
+		{
+			"error": 0,
+			"map_id": "M07",
+			"path": "res://maps/leyton/qa/atlas_m07_overview.png"
+		},
+		{
+			"error": 0,
+			"map_id": "M08",
+			"path": "res://maps/leyton/qa/atlas_m08_overview.png"
+		},
+		{
+			"error": 0,
+			"map_id": "M05",
+			"path": "res://maps/leyton/qa/atlas_m05_open_gate.png"
+		},
+		{
+			"error": 0,
+			"map_id": "M05",
+			"path": "res://maps/leyton/qa/atlas_m05_upper_sealed.png"
+		},
+		{
+			"error": 0,
+			"map_id": "M06",
+			"path": "res://maps/leyton/qa/atlas_m06_open_gate.png"
+		},
+		{
+			"error": 0,
+			"map_id": "M06",
+			"path": "res://maps/leyton/qa/atlas_m06_upper_sealed.png"
+		},
+		{
+			"error": 0,
+			"map_id": "M08",
+			"path": "res://maps/leyton/qa/atlas_m08_open_gate.png"
+		},
+		{
+			"error": 0,
+			"map_id": "M08",
+			"path": "res://maps/leyton/qa/atlas_m08_upper_sealed.png"
+		},
+		{
+			"error": 0,
+			"map_id": "M08",
+			"path": "res://maps/leyton/qa/atlas_residential_arrival.png"
+		}
+	],
+	"failed": 0,
+	"renderer": "NVIDIA GeForce RTX 4060 Ti"
+}

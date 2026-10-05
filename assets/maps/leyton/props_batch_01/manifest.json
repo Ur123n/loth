@@ -1,0 +1,214 @@
+{
+	"assets": [
+		{
+			"alpha_preserved_inside_crop": true,
+			"anchor": [
+				48,
+				84
+			],
+			"bright_ratio": 0.00158478605388273,
+			"canvas": [
+				96,
+				96
+			],
+			"collision_size_px": [
+				40,
+				28
+			],
+			"crop_alpha_threshold": 0.05,
+			"id": "crate",
+			"mean_luma": 62.7840698647283,
+			"name": "木箱",
+			"source": "source/crate.png",
+			"source_crop": [
+				323,
+				334,
+				608,
+				648
+			],
+			"source_sha256": "73d5f029e888a48fd88371d4cc055346f8bdbd7ee5e0f26b6bd72df3710f45c3",
+			"sprite": "sprites/prop_crate.png",
+			"status": "candidate",
+			"visible_size": [
+				44,
+				47
+			]
+		},
+		{
+			"alpha_preserved_inside_crop": true,
+			"anchor": [
+				48,
+				84
+			],
+			"bright_ratio": 0.0,
+			"canvas": [
+				96,
+				96
+			],
+			"collision_size_px": [
+				32,
+				24
+			],
+			"crop_alpha_threshold": 0.05,
+			"id": "barrel",
+			"mean_luma": 59.9377106326429,
+			"name": "木桶",
+			"source": "source/barrel.png",
+			"source_crop": [
+				375,
+				281,
+				505,
+				695
+			],
+			"source_sha256": "eda7720c6419ab96082fc282072a69b96cf4eca9f53f0e8300ad59c3c0d1814f",
+			"sprite": "sprites/prop_barrel.png",
+			"status": "candidate",
+			"visible_size": [
+				34,
+				47
+			]
+		},
+		{
+			"alpha_preserved_inside_crop": true,
+			"anchor": [
+				72,
+				84
+			],
+			"bright_ratio": 0.00338855421686747,
+			"canvas": [
+				144,
+				96
+			],
+			"collision_size_px": [
+				68,
+				40
+			],
+			"crop_alpha_threshold": 0.05,
+			"id": "grain_sacks",
+			"mean_luma": 80.4129237194388,
+			"name": "粮袋堆",
+			"source": "source/grain_sacks.png",
+			"source_crop": [
+				208,
+				357,
+				837,
+				661
+			],
+			"source_sha256": "b8ebb881620cd9bcdf45642ca153b95539b28f7d36827d5f19f270a2eb888289",
+			"sprite": "sprites/prop_grain_sacks.png",
+			"status": "candidate",
+			"visible_size": [
+				72,
+				57
+			]
+		},
+		{
+			"alpha_preserved_inside_crop": true,
+			"anchor": [
+				72,
+				84
+			],
+			"bright_ratio": 0.0,
+			"canvas": [
+				144,
+				96
+			],
+			"collision_size_px": [
+				58,
+				26
+			],
+			"crop_alpha_threshold": 0.05,
+			"id": "coal_basket",
+			"mean_luma": 38.4475592963556,
+			"name": "煤筐",
+			"source": "source/coal_basket.png",
+			"source_crop": [
+				188,
+				396,
+				880,
+				512
+			],
+			"source_sha256": "bc3f348393dbed6a998991cafbb5ca5ce83b284509ea5c368827213443fc8ad8",
+			"sprite": "sprites/prop_coal_basket.png",
+			"status": "candidate",
+			"visible_size": [
+				64,
+				37
+			]
+		},
+		{
+			"alpha_preserved_inside_crop": true,
+			"anchor": [
+				72,
+				132
+			],
+			"bright_ratio": 0.0,
+			"canvas": [
+				144,
+				144
+			],
+			"collision_size_px": [
+				64,
+				12
+			],
+			"crop_alpha_threshold": 0.05,
+			"id": "notice_board",
+			"mean_luma": 67.8920233282382,
+			"name": "公告栏",
+			"source": "source/notice_board.png",
+			"source_crop": [
+				239,
+				312,
+				787,
+				635
+			],
+			"source_sha256": "9af1d4e8dbab6992fe0e65efccb0bb41c320064f8295f96e1c61d7df8fb08721",
+			"sprite": "sprites/prop_notice_board.png",
+			"status": "candidate",
+			"visible_size": [
+				68,
+				55
+			]
+		},
+		{
+			"alpha_preserved_inside_crop": true,
+			"anchor": [
+				72,
+				180
+			],
+			"bright_ratio": 0.0,
+			"canvas": [
+				144,
+				192
+			],
+			"collision_size_px": [
+				54,
+				94
+			],
+			"crop_alpha_threshold": 0.05,
+			"id": "handcart",
+			"mean_luma": 57.4286147084815,
+			"name": "手推车",
+			"source": "source/handcart.png",
+			"source_crop": [
+				356,
+				156,
+				542,
+				951
+			],
+			"source_sha256": "03084c1aa9654291ff1e6faf78bc0c8bcfa2569087fd5e30f2b9e26ad94c399d",
+			"sprite": "sprites/prop_handcart.png",
+			"status": "candidate",
+			"visible_size": [
+				58,
+				102
+			]
+		}
+	],
+	"generation": "built-in image_gen",
+	"palette": "res://assets/dark48/色板/map_env.json",
+	"projection_id": "orthogonal_3q_48_v1",
+	"status": "candidate_for_visual_review",
+	"tile_size_px": 48,
+	"version": 1
+}

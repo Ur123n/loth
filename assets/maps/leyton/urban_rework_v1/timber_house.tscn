@@ -1,0 +1,32 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://core/world/map_pattern_instance.gd" id="1_0by4w"]
+[ext_resource type="Texture2D" path="res://assets/maps/leyton/urban_rework_v1/timber_house.png" id="2_lyqwg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_205ww"]
+size = Vector2(288, 288)
+
+[node name="TimberHouse" type="Node2D" unique_id=1160723616]
+texture_filter = 1
+script = ExtResource("1_0by4w")
+pattern_id = "timber_house"
+footprint_cells = Vector2i(6, 6)
+anchor_cell = Vector2i(3, 6)
+metadata/category = "building_pattern"
+metadata/projection_id = "orthogonal_3q_48_v1"
+
+[node name="Visual" type="Sprite2D" parent="." unique_id=270840897]
+position = Vector2(-144, -336)
+texture = ExtResource("2_lyqwg")
+centered = false
+
+[node name="Collision" type="StaticBody2D" parent="." unique_id=637290140]
+collision_layer = 2
+
+[node name="@CollisionShape2D@3" type="CollisionShape2D" parent="Collision" unique_id=1819609215]
+position = Vector2(0, -144)
+shape = SubResource("RectangleShape2D_205ww")
+
+[node name="Entrances" type="Node2D" parent="." unique_id=1323808941]
+
+[node name="door_main" type="Marker2D" parent="Entrances" unique_id=1891527699]

@@ -1,0 +1,32 @@
+{
+  "id": "D039",
+  "name": "反身一枪",
+  "character": "迪马斯",
+  "rarity": "Uncommon",
+  "category": "道途专属卡牌",
+  "path": "侠盗",
+  "card_type": "攻击",
+  "cost": 1,
+  "load": 2,
+  "target_type": "Enemy",
+  "min_range": 2,
+  "range": 3,
+  "target_spec": "2–3",
+  "area": 0,
+  "keywords": [],
+  "tags": [
+    "Ranged",
+    "Pistol",
+    "Draw",
+    "ReactionPayoff"
+  ],
+  "description": "条件：自上个己方回合结束后触发过至少1次反击。造成6伤害并抽1张；否则只造成6伤害。",
+  "source_effect": "造成6伤害并抽1张；否则只造成6伤害。",
+  "source_file": "迪马斯_完整卡组_v0.3.md",
+  "source_line": 157,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [],
+  "implementation_status": "pending"
+}

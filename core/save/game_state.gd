@@ -4,29 +4,36 @@ extends Node
 ## 保存：四人小队数据（技能库、牌组）、大世界位置、光点状态。
 ## 数据持久化：save_game() / load_game()，默认写入 user://savegame.json。
 ## 存档为带 version 的字典载荷；load_game() 按版本迁移（旧档缺省字段兼容）。
+## v5 新增 story_played（已播放剧情，防重复触发）；
 ## v4 预留 flags（剧情 Flag）/ quest_state（任务状态）/ world_state（世界状态），空实现缺省安全。
+## v6 新增 world_time（世界时钟，小时 0-24，NPC 行动轨迹/时间类任务读取）。
 ## 启动时为每名角色卡组补足 5 张打击 + 5 张防御（基础牌）。
 
 const SAVE_PATH := "user://savegame.json"
-const SAVE_VERSION := 4
+const SAVE_VERSION := 6
 const DECK_CAPACITY := 20
 const BASIC_STRIKE_NAME := "打击"
 const BASIC_DEFEND_NAME := "防御"
 const BASIC_STRIKE_COUNT := 5
 const BASIC_DEFEND_COUNT := 5
 
+signal flag_changed(key: String, value)
+
 var party_characters: Array = []
-var overworld_position: Vector2 = Vector2(640, 360)
+var overworld_position: Vector2 = Vector2(616, 480)
 var battle_trigger_consumed: bool = false
-var skill_light_position: Vector2 = Vector2(260, 180)
+var skill_light_position: Vector2 = Vector2(496, 408)
 var skill_light_consumed: bool = false
 var money: int = 0                    # 钱币（战斗结算获得）
 var inventory: Inventory = Inventory.new()   # 背包（跨场景共享，战斗结束/拾取时写入）
 var demo_mode: bool = false           # 战斗测试 Demo 模式
 var demo_battle_number: int = 0       # Demo 已通关战斗数（决定下一场难度/敌怪构成）
+var story_played: Array = []          # 已播放剧情 id（随存档持久化，防重复触发）
+var story_active: bool = false        # 剧情播放中（运行时状态，不入存档）
 var flags: Dictionary = {}            # 剧情 Flag（v4 预留，剧情系统写入）
-var quest_state: Dictionary = {}      # 任务状态（v4 预留，任务系统写入）
+var quest_state: Dictionary = {}      # 任务状态（v4 预留，任务系统写入：active/done/talked/battles_won）
 var world_state: Dictionary = {}      # 世界状态（v4 预留，世界系统写入）
+var world_time: float = 8.0           # 世界时钟（小时 0-24，v6；NPC 行动轨迹/时间任务读取）
 var save_path: String = SAVE_PATH
 
 var _loaded: bool = false
@@ -34,6 +41,33 @@ var _loaded: bool = false
 
 func setup_party(characters: Array) -> void:
 	party_characters = characters
+
+
+## 剧情是否已播放过（防重复触发；剧情开始播放时即记录）。
+func is_story_played(story_id: String) -> bool:
+	return story_played.has(story_id)
+
+
+## 记录剧情已播放并立即写档。
+func mark_story_played(story_id: String) -> void:
+	if story_id.is_empty() or is_story_played(story_id):
+		return
+	story_played.append(story_id)
+	save_game()
+
+
+## 通用剧情 Flag 读取。
+func get_flag(key: String, default = null):
+	return flags.get(key, default)
+
+
+## 通用剧情 Flag 写入：变化时发 flag_changed 信号（供触发器判定）并立即写档。
+func set_flag(key: String, value) -> void:
+	if flags.has(key) and flags[key] == value:
+		return
+	flags[key] = value
+	flag_changed.emit(key, value)
+	save_game()
 
 
 ## 每名角色卡组补齐：至少 5 打击 + 5 防御，随后用基础牌补齐到 20 张（GDD 第 11 节）。
@@ -122,6 +156,23 @@ func add_money(amount: int) -> void:
 	save_game()
 
 
+## 推进世界时钟：每秒 real_seconds × rate 游戏分钟；超过 24 小时回绕（0-24）。
+func advance_world_time(real_seconds: float, rate: float = 1.0) -> void:
+	world_time = fmod(world_time + real_seconds * rate / 60.0, 24.0)
+	if world_time < 0.0:
+		world_time += 24.0
+
+
+## 任务状态读写（统一经 GameState 持久化，不新建存档通道）。
+func set_quest_state(key: String, value) -> void:
+	quest_state[key] = value
+	save_game()
+
+
+func get_quest_state(key: String, default = null):
+	return quest_state.get(key, default)
+
+
 ## 获得经验（全队 4 名角色共享同一份战斗经验）。
 func grant_battle_exp(amount: int) -> int:
 	var total_levels := 0
@@ -134,6 +185,10 @@ func grant_battle_exp(amount: int) -> int:
 
 ## 写入存档：版本化载荷（大世界位置/触发状态/钱币/背包/队伍/预留状态字段）。
 func save_game() -> void:
+	# 兜底：父目录不存在时先创建（自定义存档路径/测试临时目录均可用）
+	var dir_path := save_path.get_base_dir()
+	if not dir_path.is_empty() and not DirAccess.dir_exists_absolute(dir_path):
+		DirAccess.make_dir_recursive_absolute(dir_path)
 	var data := {
 		"version": SAVE_VERSION,
 		"overworld_position": [overworld_position.x, overworld_position.y],
@@ -143,9 +198,11 @@ func save_game() -> void:
 		"money": money,
 		"inventory": inventory.serialize(),
 		"party": _serialize_party(),
+		"story_played": story_played,
 		"flags": flags,
 		"quest_state": quest_state,
 		"world_state": world_state,
+		"world_time": world_time,
 	}
 	var file := FileAccess.open(save_path, FileAccess.WRITE)
 	if file == null:
@@ -182,12 +239,18 @@ func load_game() -> void:
 	money = maxi(int(parsed.get("money", 0)), 0)
 	inventory.deserialize(parsed.get("inventory", []))
 	_apply_party(parsed.get("party", []))
+	var played = parsed.get("story_played", [])
+	story_played = []
+	if played is Array:
+		for story_id in played:
+			story_played.append(str(story_id))
 	flags = _as_dict(parsed.get("flags", {}))
 	quest_state = _as_dict(parsed.get("quest_state", {}))
 	world_state = _as_dict(parsed.get("world_state", {}))
+	world_time = float(parsed.get("world_time", 8.0))
 
 
-## 存档迁移：旧档（version < 4）缺省新增字段，保证可读；未来版本升级在此补字段。
+## 存档迁移：旧档缺省新增字段，保证可读；未来版本升级在此补字段。
 ## 规则：只补缺省值，不破坏已有字段；新字段缺省安全（空字典/默认值）。
 func _migrate_save_data(data: Dictionary, version: int) -> Dictionary:
 	var result: Dictionary = data.duplicate(true)
@@ -202,6 +265,12 @@ func _migrate_save_data(data: Dictionary, version: int) -> Dictionary:
 			result["quest_state"] = {}
 		if not result.has("world_state"):
 			result["world_state"] = {}
+	if version < 5:
+		if not result.has("story_played"):
+			result["story_played"] = []
+	if version < 6:
+		if not result.has("world_time"):
+			result["world_time"] = world_time
 	return result
 
 

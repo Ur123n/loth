@@ -1,0 +1,46 @@
+[
+  {
+    "name": "water_deep",
+    "raw_sha256": "22089b174bb6fdbe6995d786a9b1f8f070ce32d29eba04d58af786793761a161",
+    "output_sha256": "71c0f8cde0f5c60d6438217fb818960023ce7d39b7dc3fc1c6705ebb8c9d37ba",
+    "qa": {
+      "size": [
+        48,
+        48
+      ],
+      "opaque": true,
+      "edges_x": true,
+      "edges_y": true,
+      "palette_ok": true,
+      "colors": 5,
+      "mean_luma": 31.453791666666664,
+      "accent_ratio": 0.0
+    },
+    "generator": "built-in image_gen",
+    "family": "cold_water",
+    "pipeline": "C:\\美术素材制作\\tools\\pixelize.py",
+    "pipeline_sha256": "c92ca00a41eccd293a4cb5040c0f51530c4d773188582d375c147d77ded59633"
+  },
+  {
+    "name": "wall_top",
+    "raw_sha256": "bff228693c056981afd8183ef190e81f9d0c90eaf88003cf351463c82b72272c",
+    "output_sha256": "448f34b629c0a39e2cb32d32dc403f95c88b79c2fa72906d4d4a6faafec4c9e6",
+    "qa": {
+      "size": [
+        48,
+        48
+      ],
+      "opaque": true,
+      "edges_x": true,
+      "edges_y": true,
+      "palette_ok": true,
+      "colors": 7,
+      "mean_luma": 60.47643055555555,
+      "accent_ratio": 0.0
+    },
+    "generator": "built-in image_gen",
+    "family": "deep_teal_stone",
+    "pipeline": "C:\\美术素材制作\\tools\\pixelize.py",
+    "pipeline_sha256": "c92ca00a41eccd293a4cb5040c0f51530c4d773188582d375c147d77ded59633"
+  }
+]

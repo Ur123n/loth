@@ -32,16 +32,28 @@ const EXP_GROWTH := 50
 # portrait_path 立绘（角色面板/详情大图）
 # art_path     场景/战斗主体贴图
 # animation_path 动画或动画场景资源（AnimatedSprite2D、AnimationPlayer 等）
+# corpse_art_a_path / corpse_art_b_path 两种战斗尸骸主体贴图
 @export var block_color: Color = Color(0.42, 0.60, 0.90)
 @export var icon_path: String = ""
 @export var portrait_path: String = ""
 @export var art_path: String = ""
 @export var animation_path: String = ""
+@export var corpse_art_a_path: String = ""
+@export var corpse_art_b_path: String = ""
 
 # 技能库 / 装备 / 卡组（当前留空，预留接口）
 @export var skill_library: Array[SkillData] = []
 @export var equipment: Array[EquipmentData] = []
 @export var deck: Array[CardData] = []
+
+
+func get_corpse_art_paths() -> Array[String]:
+	var paths: Array[String] = []
+	if not corpse_art_a_path.is_empty():
+		paths.append(corpse_art_a_path)
+	if not corpse_art_b_path.is_empty():
+		paths.append(corpse_art_b_path)
+	return paths
 
 
 func get_max_hp() -> int:

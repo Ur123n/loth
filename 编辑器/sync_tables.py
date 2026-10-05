@@ -11,7 +11,7 @@
 - 道途创建.xlsx  -> content/paths/*.json（游戏 PathDB 读取）
 - 卡牌创建.xlsx  -> content/cards/*.json（游戏 CardDB 读取，效果用 JSON 数组列，可含 condition）
 
-所有数据类均含统一美术接口字段：美术图标（icon）、美术资源（art）、美术动画（animation）；角色另有 立绘（portrait）。留空则继续使用色块/文本占位。
+所有数据类均含统一美术接口字段：美术图标（icon）、美术资源（art）、美术动画（animation）；角色另有立绘（portrait），角色与敌怪另有尸骸美术 A/B。留空则继续使用对应占位。
 用法：修改表格后运行本脚本（或双击 同步表格.bat），再启动游戏即可生效。
 """
 
@@ -119,6 +119,8 @@ def _column_map(headers):
         "agility": ["敏捷"],
         "ai": ["AI"],
         "archetype": ["行为模板", "archetype"],
+        "ai_profile": ["AI参数", "ai_profile"],
+        "skills": ["技能集", "skills"],
         "coin_min": ["钱币下限"],
         "coin_max": ["钱币上限"],
         "exp": ["经验"],
@@ -136,6 +138,8 @@ def _column_map(headers):
         "art": ["美术资源"],
         "icon": ["美术图标", "图标"],
         "animation": ["美术动画", "动画资源", "动画"],
+        "corpse_art_a": ["尸骸美术A", "尸骸资源A", "尸骸A"],
+        "corpse_art_b": ["尸骸美术B", "尸骸资源B", "尸骸B"],
         "mods": ["修正", "mods"],
         "portrait": ["立绘", "头像"],
         "interaction": ["互动选项"],
@@ -182,6 +186,18 @@ def sync_characters():
         name = _cell(row, 0)
         if not name:
             continue
+        file_stem = CHARACTER_FILE_ALIASES.get(name, _sanitize(name))
+        character_path = CHARACTERS_DIR / ("%s.tres" % file_stem)
+        corpse_art_a = _cell(row, col["corpse_art_a"])
+        corpse_art_b = _cell(row, col["corpse_art_b"])
+        if character_path.exists():
+            existing_text = character_path.read_text(encoding="utf-8")
+            if col["corpse_art_a"] < 0:
+                match = re.search(r'^corpse_art_a_path = "([^"]*)"', existing_text, re.MULTILINE)
+                corpse_art_a = match.group(1) if match else ""
+            if col["corpse_art_b"] < 0:
+                match = re.search(r'^corpse_art_b_path = "([^"]*)"', existing_text, re.MULTILINE)
+                corpse_art_b = match.group(1) if match else ""
         r, g, b = _hex_to_color(_cell(row, 9))
         lines = [
             '[gd_resource type="Resource" script_class="CharacterData" load_steps=2 format=3]',
@@ -205,10 +221,11 @@ def sync_characters():
             'portrait_path = "%s"' % _cell(row, col["portrait"]),
             'art_path = "%s"' % _cell(row, col["art"]),
             'animation_path = "%s"' % _cell(row, col["animation"]),
+            'corpse_art_a_path = "%s"' % corpse_art_a,
+            'corpse_art_b_path = "%s"' % corpse_art_b,
         ]
         content = "\n".join(lines) + "\n"
         CHARACTERS_DIR.mkdir(parents=True, exist_ok=True)
-        file_stem = CHARACTER_FILE_ALIASES.get(name, _sanitize(name))
         (CHARACTERS_DIR / ("%s.tres" % file_stem)).write_text(content, encoding="utf-8")
         count += 1
     print("角色同步：%d 名" % count)
@@ -251,6 +268,15 @@ def sync_npcs():
             "interaction": interactions,
             "dialogue": dialogue,
         }
+        # 表格无“行动轨迹”列时，保留 JSON 中已有的 schedule（时间轴），避免同步覆盖丢失
+        existing = NPCS_DIR / ("%s.json" % _sanitize(name))
+        if existing.exists():
+            try:
+                old = json.loads(existing.read_text(encoding="utf-8"))
+                if isinstance(old, dict) and old.get("schedule"):
+                    data["schedule"] = old["schedule"]
+            except Exception:
+                pass
         NPCS_DIR.mkdir(parents=True, exist_ok=True)
         (NPCS_DIR / ("%s.json" % _sanitize(name))).write_text(
             json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
@@ -371,6 +397,18 @@ def sync_enemies():
             continue
         names.append(name)
         r, g, b = _hex_to_color(_cell(row, col["color"]), (0.6, 0.6, 0.6))
+        json_path = ENEMIES_DIR / ("%s.json" % _sanitize(name))
+        existing = {}
+        if json_path.exists():
+            try:
+                parsed = json.loads(json_path.read_text(encoding="utf-8"))
+                existing = parsed if isinstance(parsed, dict) else {}
+            except Exception:
+                existing = {}
+        corpse_art_a = (_cell(row, col["corpse_art_a"])
+                        if col["corpse_art_a"] >= 0 else str(existing.get("corpse_art_a", "")))
+        corpse_art_b = (_cell(row, col["corpse_art_b"])
+                        if col["corpse_art_b"] >= 0 else str(existing.get("corpse_art_b", "")))
         data = {
             "id": _sanitize(name),
             "name": name,
@@ -383,6 +421,8 @@ def sync_enemies():
             "agility": _int_cell(row, col["agility"], 5),
             "ai": _cell(row, col["ai"], "无"),
             "archetype": _cell(row, col["archetype"], ""),
+            "ai_profile": _cell(row, col["ai_profile"], ""),
+            "skills": _cell(row, col["skills"], ""),
             "coin_min": _int_cell(row, col["coin_min"], 0),
             "coin_max": _int_cell(row, col["coin_max"], 0),
             "exp": _int_cell(row, col["exp"], 0),
@@ -393,9 +433,11 @@ def sync_enemies():
             "icon": _cell(row, col["icon"]),
             "art": _cell(row, col["art"]),
             "animation": _cell(row, col["animation"]),
+            "corpse_art_a": corpse_art_a,
+            "corpse_art_b": corpse_art_b,
         }
         ENEMIES_DIR.mkdir(parents=True, exist_ok=True)
-        (ENEMIES_DIR / ("%s.json" % _sanitize(name))).write_text(
+        json_path.write_text(
             json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
     for f in ENEMIES_DIR.glob("*.json"):
         try:

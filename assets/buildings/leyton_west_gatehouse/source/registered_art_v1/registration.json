@@ -1,0 +1,89 @@
+{
+	"collision_changed": false,
+	"east_x": [
+		905,
+		992,
+		552,
+		576
+	],
+	"interpolation": "nearest",
+	"reconstruction_exact": true,
+	"roof_rects": [
+		[
+			48,
+			48,
+			312,
+			166
+		],
+		[
+			48,
+			576,
+			312,
+			168
+		]
+	],
+	"sha256": "df4dfc32cc8fa283247b731b0b2db2aaf6af894df3fd1a0d5000552ed4baff19",
+	"size_px": [
+		624,
+		864
+	],
+	"source": "res://assets/buildings/leyton_west_gatehouse/source/concept_v1.png",
+	"upper_source": [
+		[
+			640,
+			80,
+			62,
+			1318
+		],
+		[
+			702,
+			80,
+			148,
+			1318
+		],
+		[
+			850,
+			80,
+			55,
+			1318
+		]
+	],
+	"upper_target": [
+		[
+			360,
+			48,
+			24,
+			768
+		],
+		[
+			384,
+			48,
+			144,
+			768
+		],
+		[
+			528,
+			48,
+			24,
+			768
+		]
+	],
+	"wing_source_y": [
+		85,
+		560,
+		900,
+		1364
+	],
+	"wing_target_y": [
+		48,
+		288,
+		576,
+		816
+	],
+	"wing_x": [
+		77,
+		640,
+		48,
+		360
+	]
+}

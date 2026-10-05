@@ -1,0 +1,31 @@
+{
+  "id": "D064",
+  "name": "一线火光",
+  "character": "迪马斯",
+  "rarity": "Rare",
+  "category": "道途专属卡牌",
+  "path": "侠盗",
+  "card_type": "攻击",
+  "cost": 3,
+  "load": 3,
+  "target_type": "Enemy",
+  "min_range": 1,
+  "range": 4,
+  "target_spec": "直线4",
+  "area": 0,
+  "keywords": [],
+  "tags": [
+    "Ranged",
+    "Pistol",
+    "AOE"
+  ],
+  "description": "选择一条合法射击直线；线上至多3名敌人各受到14伤害。",
+  "source_effect": "选择一条合法射击直线；线上至多3名敌人各受到14伤害。",
+  "source_file": "迪马斯_完整卡组_v0.3.md",
+  "source_line": 187,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [],
+  "implementation_status": "pending"
+}

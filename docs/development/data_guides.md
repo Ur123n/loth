@@ -23,6 +23,14 @@ content/ 存放由 Excel 表格同步生成或编辑器创建的内容数据（J
 - `art` —— 主体贴图，res:// 路径
 - `animation` —— 动画/动画场景资源，res:// 路径
 
+角色与敌怪另外支持两种死亡资源：
+
+- `corpse_art_a` —— 尸骸 A 主体贴图，res:// 路径
+- `corpse_art_b` —— 尸骸 B 主体贴图，res:// 路径
+
+两项可留空；运行时会按单位名称与格坐标稳定选择可用版本。两项都不可用时改用独立尸骸占位形态，
+不会把存活主体染灰。角色表与敌怪表可使用“尸骸美术A / 尸骸美术B”列同步这些字段。
+
 修改表格后运行 `编辑器/同步表格.bat` 重新生成 JSON。
 
 ## 物品数据（content/items/）
@@ -62,3 +70,21 @@ DemoComposer 与 battle_map 使用）。来源表格：编辑器/敌怪小队创
 每名成员带小队角色（role：前排 / 近战 / 远程 / 护卫 / 侧翼 / 炮灰 / 首领，首领加 leader 标记），
 同一种敌怪可在不同小队担任不同角色。战斗 AI（EnemyAI + battle_map）按角色协同：
 全队集火最弱玩家、护卫保护首领、远程保持射程边缘、侧翼停在 2 格外包抄等。
+
+## 敌怪 AI 行为档案（AIProfile）
+
+每只敌怪的行为由 `core/ai/ai_profile.gd` 的 AiProfile 决定（《敌怪ai逻辑.txt》第 4 节），
+统一 7 个参数：Aggression（进攻性）/ Support（支援性）/ Caution（谨慎）/
+Mobility（机动性）/ Defensiveness（防守性）/ TargetPriority（目标优先级）/
+PreferredRange（理想距离）。参数只影响 Utility 评分，不直接规定“必须做什么”。
+
+来源优先级：
+
+1. `敌怪创建.xlsx`「行为模板」列的 archetype 模板（士兵/狂战士/猎人/护卫/刺客/鲁莽/支援/首领/木桩）；
+2. 小队角色推导（前排→士兵、近战→狂战士、远程→猎人、护卫→护卫、侧翼→刺客、炮灰→鲁莽、首领→首领）；
+3. 旧 `ai` 字段兜底（靠近→士兵、远离→猎人、无→木桩）；
+4. `敌怪创建.xlsx`「AI参数」列按敌怪覆盖（JSON 对象字符串，如
+   `{"aggression": 80, "target_priority": "lowest_hp"}`，只覆盖给出的参数）。
+
+「技能集」列（JSON 数组）为 ActionSet 预留：敌怪通过数据声明可用 Action，
+当前游戏内尚无技能实现，该列留空即可。

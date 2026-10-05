@@ -1,0 +1,407 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://core/building/building.gd" id="1_jv0bo"]
+[ext_resource type="Texture2D" path="res://assets/buildings/iserra_monastery/visual/base.png" id="2_522os"]
+[ext_resource type="Texture2D" path="res://assets/buildings/iserra_monastery/visual/roof.png" id="3_qjynx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rdph1"]
+size = Vector2(2448, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w1t5g"]
+size = Vector2(48, 384)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ii1iq"]
+size = Vector2(96, 240)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dqxwy"]
+size = Vector2(48, 192)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u81gi"]
+size = Vector2(288, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6lskd"]
+size = Vector2(48, 528)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ea00o"]
+size = Vector2(48, 192)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mieic"]
+size = Vector2(240, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iw1hh"]
+size = Vector2(48, 288)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i1ts2"]
+size = Vector2(288, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pdn36"]
+size = Vector2(48, 192)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4oir2"]
+size = Vector2(96, 96)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fjeb2"]
+size = Vector2(912, 96)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gwfkx"]
+size = Vector2(1008, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_le6je"]
+size = Vector2(240, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vilqi"]
+size = Vector2(624, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xhsr8"]
+size = Vector2(48, 1680)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xkvhs"]
+size = Vector2(96, 432)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yifmy"]
+size = Vector2(48, 1680)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5uad8"]
+size = Vector2(96, 96)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0xjrs"]
+size = Vector2(96, 624)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_evve3"]
+size = Vector2(912, 96)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mep5e"]
+size = Vector2(432, 96)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e31e7"]
+size = Vector2(384, 96)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_guc42"]
+size = Vector2(480, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q2uo8"]
+size = Vector2(1296, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wjyww"]
+size = Vector2(192, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mi837"]
+size = Vector2(144, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h6mmb"]
+size = Vector2(48, 336)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vdqrj"]
+size = Vector2(48, 336)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qxvas"]
+size = Vector2(288, 48)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1mjto"]
+radius = 36.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s1f2x"]
+radius = 36.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7fjdn"]
+radius = 36.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4qyqh"]
+radius = 36.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_38rah"]
+radius = 36.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4ayqh"]
+radius = 36.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bvdxs"]
+radius = 36.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_t4iv7"]
+radius = 36.0
+
+[node name="IserraMonastery" type="Node2D" unique_id=1084274477]
+y_sort_enabled = true
+script = ExtResource("1_jv0bo")
+building_id = "iserra_monastery"
+data_path = "res://assets/buildings/iserra_monastery/metadata/building.json"
+
+[node name="Visual" type="Node2D" parent="." unique_id=417594984]
+
+[node name="Base" type="Sprite2D" parent="Visual" unique_id=926517432]
+position = Vector2(-1416, -3216)
+texture = ExtResource("2_522os")
+centered = false
+
+[node name="Roof" type="Sprite2D" parent="Visual" unique_id=2096661543]
+z_index = 10
+position = Vector2(-1416, -3216)
+texture = ExtResource("3_qjynx")
+centered = false
+
+[node name="Collision" type="StaticBody2D" parent="." unique_id=2121893552]
+collision_layer = 2
+
+[node name="Shape000" type="CollisionShape2D" parent="Collision" unique_id=1434383208]
+position = Vector2(1224, 24)
+shape = SubResource("RectangleShape2D_rdph1")
+
+[node name="Shape001" type="CollisionShape2D" parent="Collision" unique_id=1785183945]
+position = Vector2(24, 240)
+shape = SubResource("RectangleShape2D_w1t5g")
+
+[node name="Shape002" type="CollisionShape2D" parent="Collision" unique_id=2021912819]
+position = Vector2(240, 168)
+shape = SubResource("RectangleShape2D_ii1iq")
+
+[node name="Shape003" type="CollisionShape2D" parent="Collision" unique_id=1303252189]
+position = Vector2(2424, 144)
+shape = SubResource("RectangleShape2D_dqxwy")
+
+[node name="Shape004" type="CollisionShape2D" parent="Collision" unique_id=699838888]
+position = Vector2(2592, 216)
+shape = SubResource("RectangleShape2D_u81gi")
+
+[node name="Shape005" type="CollisionShape2D" parent="Collision" unique_id=2087281943]
+position = Vector2(2712, 504)
+shape = SubResource("RectangleShape2D_6lskd")
+
+[node name="Shape006" type="CollisionShape2D" parent="Collision" unique_id=1769269323]
+position = Vector2(24, 624)
+shape = SubResource("RectangleShape2D_ea00o")
+
+[node name="Shape007" type="CollisionShape2D" parent="Collision" unique_id=1724603755]
+position = Vector2(168, 696)
+shape = SubResource("RectangleShape2D_mieic")
+
+[node name="Shape008" type="CollisionShape2D" parent="Collision" unique_id=987797819]
+position = Vector2(264, 864)
+shape = SubResource("RectangleShape2D_iw1hh")
+
+[node name="Shape009" type="CollisionShape2D" parent="Collision" unique_id=600822499]
+position = Vector2(2544, 744)
+shape = SubResource("RectangleShape2D_i1ts2")
+
+[node name="Shape010" type="CollisionShape2D" parent="Collision" unique_id=1051969361]
+position = Vector2(2424, 864)
+shape = SubResource("RectangleShape2D_pdn36")
+
+[node name="Shape011" type="CollisionShape2D" parent="Collision" unique_id=216652095]
+position = Vector2(336, 960)
+shape = SubResource("RectangleShape2D_4oir2")
+
+[node name="Shape012" type="CollisionShape2D" parent="Collision" unique_id=1082623363]
+position = Vector2(888, 960)
+shape = SubResource("RectangleShape2D_fjeb2")
+
+[node name="Shape013" type="CollisionShape2D" parent="Collision" unique_id=1931258275]
+position = Vector2(1896, 936)
+shape = SubResource("RectangleShape2D_gwfkx")
+
+[node name="Shape014" type="CollisionShape2D" parent="Collision" unique_id=1551328708]
+position = Vector2(120, 984)
+shape = SubResource("RectangleShape2D_le6je")
+
+[node name="Shape015" type="CollisionShape2D" parent="Collision" unique_id=1863790054]
+position = Vector2(1704, 984)
+shape = SubResource("RectangleShape2D_vilqi")
+
+[node name="Shape016" type="CollisionShape2D" parent="Collision" unique_id=1800972037]
+position = Vector2(24, 1848)
+shape = SubResource("RectangleShape2D_xhsr8")
+
+[node name="Shape017" type="CollisionShape2D" parent="Collision" unique_id=133080965]
+position = Vector2(1536, 1224)
+shape = SubResource("RectangleShape2D_xkvhs")
+
+[node name="Shape018" type="CollisionShape2D" parent="Collision" unique_id=1265092778]
+position = Vector2(1992, 1848)
+shape = SubResource("RectangleShape2D_yifmy")
+
+[node name="Shape019" type="CollisionShape2D" parent="Collision" unique_id=1846232108]
+position = Vector2(1536, 1536)
+shape = SubResource("RectangleShape2D_5uad8")
+
+[node name="Shape020" type="CollisionShape2D" parent="Collision" unique_id=339968931]
+position = Vector2(1536, 1944)
+shape = SubResource("RectangleShape2D_0xjrs")
+
+[node name="Shape021" type="CollisionShape2D" parent="Collision" unique_id=1192032859]
+position = Vector2(504, 2208)
+shape = SubResource("RectangleShape2D_evve3")
+
+[node name="Shape022" type="CollisionShape2D" parent="Collision" unique_id=38213070]
+position = Vector2(1224, 2208)
+shape = SubResource("RectangleShape2D_mep5e")
+
+[node name="Shape023" type="CollisionShape2D" parent="Collision" unique_id=1667444729]
+position = Vector2(1776, 2208)
+shape = SubResource("RectangleShape2D_e31e7")
+
+[node name="Shape024" type="CollisionShape2D" parent="Collision" unique_id=1232762361]
+position = Vector2(288, 2664)
+shape = SubResource("RectangleShape2D_guc42")
+
+[node name="Shape025" type="CollisionShape2D" parent="Collision" unique_id=1285344120]
+position = Vector2(1320, 2664)
+shape = SubResource("RectangleShape2D_q2uo8")
+
+[node name="Shape026" type="CollisionShape2D" parent="Collision" unique_id=1287251834]
+position = Vector2(480, 2808)
+shape = SubResource("RectangleShape2D_wjyww")
+
+[node name="Shape027" type="CollisionShape2D" parent="Collision" unique_id=71976644]
+position = Vector2(696, 2808)
+shape = SubResource("RectangleShape2D_mi837")
+
+[node name="Shape028" type="CollisionShape2D" parent="Collision" unique_id=1864423495]
+position = Vector2(408, 3000)
+shape = SubResource("RectangleShape2D_h6mmb")
+
+[node name="Shape029" type="CollisionShape2D" parent="Collision" unique_id=1638094901]
+position = Vector2(744, 3000)
+shape = SubResource("RectangleShape2D_vdqrj")
+
+[node name="Shape030" type="CollisionShape2D" parent="Collision" unique_id=2146242185]
+position = Vector2(576, 3144)
+shape = SubResource("RectangleShape2D_qxvas")
+
+[node name="Occupancy" type="Node2D" parent="." unique_id=206565032]
+metadata/count = 2649
+metadata/mask = "res://assets/buildings/iserra_monastery/masks/occupancy.png"
+
+[node name="WalkableArea" type="Node2D" parent="." unique_id=587393450]
+metadata/count = 2199
+metadata/mask = "res://assets/buildings/iserra_monastery/masks/walkable.png"
+
+[node name="Doors" type="Node2D" parent="." unique_id=684208635]
+
+[node name="door_west_church" type="Marker2D" parent="Doors" unique_id=88924357]
+position = Vector2(24, 480)
+metadata/outward_side = "w"
+metadata/label = "教堂西门（信众面朝日出而入）"
+metadata/target = "west_porch"
+
+[node name="door_aisle_s_to_cloister" type="Marker2D" parent="Doors" unique_id=1949413273]
+position = Vector2(1368, 936)
+metadata/outward_side = "n"
+metadata/label = "南侧廊↔回廊北廊"
+metadata/target = "cloister"
+
+[node name="door_aisle_s_to_cloister_east" type="Marker2D" parent="Doors" unique_id=310725543]
+position = Vector2(408, 936)
+metadata/outward_side = "n"
+metadata/label = "西翼↔回廊北廊"
+metadata/target = "cloister"
+
+[node name="door_cloister_to_east_range" type="Marker2D" parent="Doors" unique_id=43682092]
+position = Vector2(1512, 1608)
+metadata/outward_side = "e"
+metadata/label = "回廊东廊↔东翼"
+metadata/target = "east_range"
+
+[node name="door_cloister_to_south_range_w" type="Marker2D" parent="Doors" unique_id=221350953]
+position = Vector2(984, 2184)
+metadata/outward_side = "s"
+metadata/label = "回廊南廊↔南翼"
+metadata/target = "south_range"
+
+[node name="door_cloister_to_south_range_e" type="Marker2D" parent="Doors" unique_id=331358565]
+position = Vector2(1464, 2184)
+metadata/outward_side = "s"
+metadata/label = "回廊南廊↔南翼（第二道）"
+metadata/target = "south_range"
+
+[node name="door_infirmary_north" type="Marker2D" parent="Doors" unique_id=1753464336]
+position = Vector2(600, 2808)
+metadata/outward_side = "n"
+metadata/label = "南翼↔医务所方向"
+metadata/target = "infirmary"
+
+[node name="door_cloister_to_east_range_2" type="Marker2D" parent="Doors" unique_id=1072624120]
+position = Vector2(1512, 1464)
+metadata/outward_side = "w"
+metadata/label = "东翼↔回廊东廊（第二道）"
+metadata/target = "east_range"
+
+[node name="Interaction" type="Node2D" parent="." unique_id=361591316]
+
+[node name="door_west_church" type="Area2D" parent="Interaction" unique_id=1596513539]
+position = Vector2(24, 480)
+collision_layer = 0
+metadata/door_id = "door_west_church"
+metadata/interact = "enter_building"
+
+[node name="@CollisionShape2D@17" type="CollisionShape2D" parent="Interaction/door_west_church" unique_id=1173844762]
+shape = SubResource("CircleShape2D_1mjto")
+
+[node name="door_aisle_s_to_cloister" type="Area2D" parent="Interaction" unique_id=1209213953]
+position = Vector2(1368, 936)
+collision_layer = 0
+metadata/door_id = "door_aisle_s_to_cloister"
+metadata/interact = "enter_building"
+
+[node name="@CollisionShape2D@18" type="CollisionShape2D" parent="Interaction/door_aisle_s_to_cloister" unique_id=403736567]
+shape = SubResource("CircleShape2D_s1f2x")
+
+[node name="door_aisle_s_to_cloister_east" type="Area2D" parent="Interaction" unique_id=892149600]
+position = Vector2(408, 936)
+collision_layer = 0
+metadata/door_id = "door_aisle_s_to_cloister_east"
+metadata/interact = "enter_building"
+
+[node name="@CollisionShape2D@19" type="CollisionShape2D" parent="Interaction/door_aisle_s_to_cloister_east" unique_id=1595860231]
+shape = SubResource("CircleShape2D_7fjdn")
+
+[node name="door_cloister_to_east_range" type="Area2D" parent="Interaction" unique_id=538283610]
+position = Vector2(1512, 1608)
+collision_layer = 0
+metadata/door_id = "door_cloister_to_east_range"
+metadata/interact = "enter_building"
+
+[node name="@CollisionShape2D@20" type="CollisionShape2D" parent="Interaction/door_cloister_to_east_range" unique_id=167528511]
+shape = SubResource("CircleShape2D_4qyqh")
+
+[node name="door_cloister_to_south_range_w" type="Area2D" parent="Interaction" unique_id=1467458400]
+position = Vector2(984, 2184)
+collision_layer = 0
+metadata/door_id = "door_cloister_to_south_range_w"
+metadata/interact = "enter_building"
+
+[node name="@CollisionShape2D@21" type="CollisionShape2D" parent="Interaction/door_cloister_to_south_range_w" unique_id=1307619904]
+shape = SubResource("CircleShape2D_38rah")
+
+[node name="door_cloister_to_south_range_e" type="Area2D" parent="Interaction" unique_id=1831425384]
+position = Vector2(1464, 2184)
+collision_layer = 0
+metadata/door_id = "door_cloister_to_south_range_e"
+metadata/interact = "enter_building"
+
+[node name="@CollisionShape2D@22" type="CollisionShape2D" parent="Interaction/door_cloister_to_south_range_e" unique_id=171067433]
+shape = SubResource("CircleShape2D_4ayqh")
+
+[node name="door_infirmary_north" type="Area2D" parent="Interaction" unique_id=1492307387]
+position = Vector2(600, 2808)
+collision_layer = 0
+metadata/door_id = "door_infirmary_north"
+metadata/interact = "enter_building"
+
+[node name="@CollisionShape2D@23" type="CollisionShape2D" parent="Interaction/door_infirmary_north" unique_id=11834339]
+shape = SubResource("CircleShape2D_bvdxs")
+
+[node name="door_cloister_to_east_range_2" type="Area2D" parent="Interaction" unique_id=435292073]
+position = Vector2(1512, 1464)
+collision_layer = 0
+metadata/door_id = "door_cloister_to_east_range_2"
+metadata/interact = "enter_building"
+
+[node name="@CollisionShape2D@24" type="CollisionShape2D" parent="Interaction/door_cloister_to_east_range_2" unique_id=252735462]
+shape = SubResource("CircleShape2D_t4iv7")
+
+[node name="TacticalData" type="Node" parent="." unique_id=27127000]
+metadata/cover = 0.85
+metadata/cover_level = "high"
+metadata/height_level = 2.0
+metadata/blocks_los = true
+metadata/enterable = true

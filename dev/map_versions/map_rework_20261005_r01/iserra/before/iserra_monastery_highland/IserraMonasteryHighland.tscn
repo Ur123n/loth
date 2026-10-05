@@ -1,0 +1,106 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://core/building/building.gd" id="1_b5kk5"]
+[ext_resource type="Texture2D" path="res://assets/buildings/iserra_monastery_highland/visual/shadow.png" id="2_e3gty"]
+[ext_resource type="Texture2D" path="res://assets/buildings/iserra_monastery_highland/visual/base.png" id="3_0jrmm"]
+[ext_resource type="Texture2D" path="res://assets/buildings/iserra_monastery_highland/visual/warm_light.png" id="4_kr7s1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xruvp"]
+size = Vector2(2304, 1536)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yv0xp"]
+size = Vector2(672, 1248)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_llpmh"]
+size = Vector2(576, 1248)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5klhr"]
+size = Vector2(432, 432)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s2sl3"]
+size = Vector2(528, 432)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4k2a5"]
+radius = 36.0
+
+[node name="IserraMonasteryHighland" type="Node2D" unique_id=1804592105]
+y_sort_enabled = true
+script = ExtResource("1_b5kk5")
+building_id = "iserra_monastery_highland"
+data_path = "res://assets/buildings/iserra_monastery_highland/metadata/building.json"
+
+[node name="Visual" type="Node2D" parent="." unique_id=916073063]
+
+[node name="Shadow" type="Sprite2D" parent="Visual" unique_id=947327610]
+z_index = -1
+position = Vector2(-1200, -2832)
+texture = ExtResource("2_e3gty")
+centered = false
+
+[node name="Base" type="Sprite2D" parent="Visual" unique_id=616898063]
+position = Vector2(-1200, -2832)
+texture = ExtResource("3_0jrmm")
+centered = false
+
+[node name="WarmLight" type="Sprite2D" parent="Visual" unique_id=1890204310]
+z_index = 12
+position = Vector2(-1200, -2832)
+texture = ExtResource("4_kr7s1")
+centered = false
+
+[node name="Collision" type="StaticBody2D" parent="." unique_id=2091964244]
+collision_layer = 2
+
+[node name="Shape000" type="CollisionShape2D" parent="Collision" unique_id=178767336]
+position = Vector2(1152, 768)
+shape = SubResource("RectangleShape2D_xruvp")
+
+[node name="Shape001" type="CollisionShape2D" parent="Collision" unique_id=530057181]
+position = Vector2(336, 2160)
+shape = SubResource("RectangleShape2D_yv0xp")
+
+[node name="Shape002" type="CollisionShape2D" parent="Collision" unique_id=219609682]
+position = Vector2(2016, 2160)
+shape = SubResource("RectangleShape2D_llpmh")
+
+[node name="Shape003" type="CollisionShape2D" parent="Collision" unique_id=759449852]
+position = Vector2(888, 2568)
+shape = SubResource("RectangleShape2D_5klhr")
+
+[node name="Shape004" type="CollisionShape2D" parent="Collision" unique_id=1156183464]
+position = Vector2(1464, 2568)
+shape = SubResource("RectangleShape2D_s2sl3")
+
+[node name="Occupancy" type="Node2D" parent="." unique_id=1247455118]
+metadata/count = 2784
+metadata/mask = "res://assets/buildings/iserra_monastery_highland/masks/occupancy.png"
+
+[node name="WalkableArea" type="Node2D" parent="." unique_id=1194912365]
+metadata/count = 392
+metadata/mask = "res://assets/buildings/iserra_monastery_highland/masks/walkable.png"
+
+[node name="Doors" type="Node2D" parent="." unique_id=1988547986]
+
+[node name="south_gate" type="Marker2D" parent="Doors" unique_id=968896818]
+position = Vector2(1152, 2760)
+metadata/outward_side = "s"
+metadata/label = "高原驿路正门"
+metadata/target = "central_garth"
+
+[node name="Interaction" type="Node2D" parent="." unique_id=1303928657]
+
+[node name="south_gate" type="Area2D" parent="Interaction" unique_id=2146020697]
+position = Vector2(1152, 2760)
+collision_layer = 0
+metadata/door_id = "south_gate"
+metadata/interact = "enter_monastery"
+
+[node name="@CollisionShape2D@17" type="CollisionShape2D" parent="Interaction/south_gate" unique_id=233939735]
+shape = SubResource("CircleShape2D_4k2a5")
+
+[node name="TacticalData" type="Node" parent="." unique_id=1312687646]
+metadata/cover = 0.9
+metadata/cover_level = "high"
+metadata/height_level = 3.0
+metadata/blocks_los = true
+metadata/enterable = false

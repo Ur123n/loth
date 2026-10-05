@@ -1,0 +1,30 @@
+{
+  "id": "B057",
+  "name": "举剑号令",
+  "character": "鲍德温",
+  "rarity": "Uncommon",
+  "category": "道途专属卡牌",
+  "path": "孢子卫士",
+  "card_type": "行动",
+  "cost": 2,
+  "load": 2,
+  "target_type": "Ally",
+  "min_range": 1,
+  "range": 3,
+  "target_spec": "其他友军3",
+  "area": 0,
+  "keywords": [],
+  "tags": [
+    "Support",
+    "Inspire"
+  ],
+  "description": "至多2名其他友军各获得1层鼓舞，并在本回合移动距离+1。",
+  "source_effect": "至多2名其他友军各获得1层鼓舞，并在本回合移动距离+1。",
+  "source_file": "鲍德温_完整卡组_v0.1.md",
+  "source_line": 240,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [],
+  "implementation_status": "pending"
+}

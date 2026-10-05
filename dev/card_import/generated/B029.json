@@ -1,0 +1,31 @@
+{
+  "id": "B029",
+  "name": "血雾横扫",
+  "character": "鲍德温",
+  "rarity": "Common",
+  "category": "道途专属卡牌",
+  "path": "孢子卫士",
+  "card_type": "攻击",
+  "cost": 2,
+  "load": 1,
+  "target_type": "Enemy",
+  "min_range": 0,
+  "range": 0,
+  "target_spec": "自身周围1",
+  "area": 0,
+  "keywords": [],
+  "tags": [
+    "Melee",
+    "AOE",
+    "Bleed"
+  ],
+  "description": "条件：可支付放血4。放血4；所有相邻敌人受到17伤害。",
+  "source_effect": "放血4；所有相邻敌人受到17伤害。",
+  "source_file": "鲍德温_完整卡组_v0.1.md",
+  "source_line": 205,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [],
+  "implementation_status": "pending"
+}

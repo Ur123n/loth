@@ -1,0 +1,32 @@
+{
+  "id": "D021",
+  "name": "警戒步",
+  "character": "迪马斯",
+  "rarity": "Common",
+  "category": "道途专属卡牌",
+  "path": "侠盗",
+  "card_type": "行动",
+  "cost": 0,
+  "load": 1,
+  "target_type": "Self",
+  "min_range": 0,
+  "range": 0,
+  "target_spec": "自身",
+  "area": 0,
+  "keywords": [
+    "消耗"
+  ],
+  "tags": [
+    "Movement",
+    "Reaction"
+  ],
+  "description": "移动最多1格；开启1次反击。",
+  "source_effect": "移动最多1格；开启1次反击。",
+  "source_file": "迪马斯_完整卡组_v0.3.md",
+  "source_line": 134,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [],
+  "implementation_status": "pending"
+}

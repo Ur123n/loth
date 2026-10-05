@@ -7,6 +7,7 @@ extends Node2D
 @export var character_data: CharacterData
 @export var move_speed: float = 180.0
 @export var input_enabled: bool = true
+@export var move_bounds: Rect2 = Rect2()   # 若设置，移动限制在该矩形（地图范围）内；为空则回退到视口限制
 
 const MOVE_ACTIONS: Array[StringName] = [&"move_up", &"move_down", &"move_left", &"move_right"]
 const MOVE_DIRECTIONS: Array[Vector2] = [Vector2.UP, Vector2.DOWN, Vector2.LEFT, Vector2.RIGHT]
@@ -71,13 +72,16 @@ func _physics_process(delta: float) -> void:
 		return
 	position += direction * move_speed * delta
 
-	# 简单限制在窗口内，防止角色走出画面
-	var viewport_rect := get_viewport_rect()
-	var margin := 24.0
-	position = position.clamp(
-		viewport_rect.position + Vector2(margin, margin),
-		viewport_rect.end - Vector2(margin, margin)
-	)
+	# 移动限制：优先地图范围（move_bounds），否则限制在视口内
+	if move_bounds.size != Vector2.ZERO:
+		position = position.clamp(move_bounds.position, move_bounds.end)
+	else:
+		var viewport_rect := get_viewport_rect()
+		var margin := 24.0
+		position = position.clamp(
+			viewport_rect.position + Vector2(margin, margin),
+			viewport_rect.end - Vector2(margin, margin)
+		)
 
 
 func _current_direction() -> Vector2:

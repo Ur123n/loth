@@ -1,0 +1,31 @@
+{
+  "id": "D040",
+  "name": "近身拆架",
+  "character": "迪马斯",
+  "rarity": "Uncommon",
+  "category": "道途专属卡牌",
+  "path": "侠盗",
+  "card_type": "攻击",
+  "cost": 1,
+  "load": 2,
+  "target_type": "Enemy",
+  "min_range": 1,
+  "range": 1,
+  "target_spec": "1",
+  "area": 0,
+  "keywords": [],
+  "tags": [
+    "Melee",
+    "Dagger",
+    "ArmorBreak"
+  ],
+  "description": "条件：目标护甲>0。造成7伤害；目标获得【拆架】：其下一次受到Attack时，仅该次Attack结算期间护甲-1，随后移除【拆架】。",
+  "source_effect": "造成7伤害；目标获得【拆架】：其下一次受到Attack时，仅该次Attack结算期间护甲-1，随后移除【拆架】。",
+  "source_file": "迪马斯_完整卡组_v0.3.md",
+  "source_line": 158,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [],
+  "implementation_status": "pending"
+}

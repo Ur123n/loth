@@ -1,0 +1,48 @@
+{
+  "version": "0.1",
+  "status": "orthographic_topology_draft",
+  "tile_size_px": 48,
+  "diagram_scale_px_per_tile": 4,
+  "projection": "strict_orthographic_top_down",
+  "perspective": false,
+  "maps": [
+    {"id": "M01", "name": "中心广场", "grid_size": [96, 80], "diagram_rect": [1040, 720, 384, 320]},
+    {"id": "M02", "name": "城北贵族住宅区", "grid_size": [88, 80], "diagram_rect": [1056, 360, 352, 320]},
+    {"id": "M03", "name": "城南贫民窟", "grid_size": [96, 88], "diagram_rect": [1040, 1072, 384, 352]},
+    {"id": "M04", "name": "城西商业区", "grid_size": [96, 80], "diagram_rect": [624, 720, 384, 320]},
+    {"id": "M05", "name": "北门与城外", "grid_size": [88, 72], "diagram_rect": [1056, 40, 352, 288]},
+    {"id": "M06", "name": "南门与城外", "grid_size": [88, 72], "diagram_rect": [1056, 1456, 352, 288]},
+    {"id": "M07", "name": "西门与城外", "grid_size": [96, 80], "diagram_rect": [208, 720, 384, 320]},
+    {"id": "M08", "name": "东门与城外", "grid_size": [96, 72], "diagram_rect": [1664, 720, 384, 288]}
+  ],
+  "connections": [
+    {"from": "M05:south_gate", "to": "M02:north"},
+    {"from": "M02:south", "to": "M01:north"},
+    {"from": "M01:south", "to": "M03:north"},
+    {"from": "M03:south", "to": "M06:north_gate"},
+    {"from": "M07:east_gate", "to": "M04:west"},
+    {"from": "M04:east", "to": "M01:west"},
+    {"from": "M01:east", "to": "M08:west_gate", "mode": "abstract_residential_travel"}
+  ],
+  "outer_world_exits": [
+    "M05:north",
+    "M06:south",
+    "M07:west",
+    "M08:east"
+  ],
+  "fixed_constraints": {
+    "m01_river_route": "south",
+    "m01_west_river_port_y": 64,
+    "main_road_width_tiles": [5, 7],
+    "secondary_road_width_tiles": [3, 4],
+    "slum_lane_width_tiles": [1, 2],
+    "wall_thickness_tiles": [3, 5],
+    "gatehouse_width_tiles": [12, 16],
+    "gate_clear_width_tiles": [4, 6],
+    "wall_walk_width_tiles": [2, 3],
+    "transition_band_depth_tiles": 2
+  },
+  "open_decisions": [
+    "各图 grid_size 为首版工作尺寸，完成玩家与马车通行测试后方可冻结"
+  ]
+}

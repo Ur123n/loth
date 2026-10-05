@@ -1,0 +1,1350 @@
+{
+ "anchor": {
+  "mode": "bottom_center",
+  "note": "节点原点落在 footprint 的底部中心，Y 轴排序才会按「脚下」前后遮挡",
+  "origin_cell": [
+   24.0,
+   58.0
+  ]
+ },
+ "asset_path": "res://assets/buildings/iserra_monastery_highland",
+ "blocked_cells": {
+  "count": 2392,
+  "runs": [
+   [
+    0,
+    0,
+    48
+   ],
+   [
+    1,
+    0,
+    48
+   ],
+   [
+    2,
+    0,
+    48
+   ],
+   [
+    3,
+    0,
+    48
+   ],
+   [
+    4,
+    0,
+    48
+   ],
+   [
+    5,
+    0,
+    48
+   ],
+   [
+    6,
+    0,
+    48
+   ],
+   [
+    7,
+    0,
+    48
+   ],
+   [
+    8,
+    0,
+    48
+   ],
+   [
+    9,
+    0,
+    48
+   ],
+   [
+    10,
+    0,
+    48
+   ],
+   [
+    11,
+    0,
+    48
+   ],
+   [
+    12,
+    0,
+    48
+   ],
+   [
+    13,
+    0,
+    48
+   ],
+   [
+    14,
+    0,
+    48
+   ],
+   [
+    15,
+    0,
+    48
+   ],
+   [
+    16,
+    0,
+    48
+   ],
+   [
+    17,
+    0,
+    48
+   ],
+   [
+    18,
+    0,
+    48
+   ],
+   [
+    19,
+    0,
+    48
+   ],
+   [
+    20,
+    0,
+    48
+   ],
+   [
+    21,
+    0,
+    48
+   ],
+   [
+    22,
+    0,
+    48
+   ],
+   [
+    23,
+    0,
+    48
+   ],
+   [
+    24,
+    0,
+    48
+   ],
+   [
+    25,
+    0,
+    48
+   ],
+   [
+    26,
+    0,
+    48
+   ],
+   [
+    27,
+    0,
+    48
+   ],
+   [
+    28,
+    0,
+    48
+   ],
+   [
+    29,
+    0,
+    48
+   ],
+   [
+    30,
+    0,
+    48
+   ],
+   [
+    31,
+    0,
+    48
+   ],
+   [
+    32,
+    0,
+    14
+   ],
+   [
+    32,
+    36,
+    12
+   ],
+   [
+    33,
+    0,
+    14
+   ],
+   [
+    33,
+    36,
+    12
+   ],
+   [
+    34,
+    0,
+    14
+   ],
+   [
+    34,
+    36,
+    12
+   ],
+   [
+    35,
+    0,
+    14
+   ],
+   [
+    35,
+    36,
+    12
+   ],
+   [
+    36,
+    0,
+    14
+   ],
+   [
+    36,
+    36,
+    12
+   ],
+   [
+    37,
+    0,
+    14
+   ],
+   [
+    37,
+    36,
+    12
+   ],
+   [
+    38,
+    0,
+    14
+   ],
+   [
+    38,
+    36,
+    12
+   ],
+   [
+    39,
+    0,
+    14
+   ],
+   [
+    39,
+    36,
+    12
+   ],
+   [
+    40,
+    0,
+    14
+   ],
+   [
+    40,
+    36,
+    12
+   ],
+   [
+    41,
+    0,
+    14
+   ],
+   [
+    41,
+    36,
+    12
+   ],
+   [
+    42,
+    0,
+    14
+   ],
+   [
+    42,
+    36,
+    12
+   ],
+   [
+    43,
+    0,
+    14
+   ],
+   [
+    43,
+    36,
+    12
+   ],
+   [
+    44,
+    0,
+    14
+   ],
+   [
+    44,
+    36,
+    12
+   ],
+   [
+    45,
+    0,
+    14
+   ],
+   [
+    45,
+    36,
+    12
+   ],
+   [
+    46,
+    0,
+    14
+   ],
+   [
+    46,
+    36,
+    12
+   ],
+   [
+    47,
+    0,
+    14
+   ],
+   [
+    47,
+    36,
+    12
+   ],
+   [
+    48,
+    0,
+    14
+   ],
+   [
+    48,
+    36,
+    12
+   ],
+   [
+    49,
+    0,
+    23
+   ],
+   [
+    49,
+    25,
+    23
+   ],
+   [
+    50,
+    0,
+    23
+   ],
+   [
+    50,
+    25,
+    23
+   ],
+   [
+    51,
+    0,
+    23
+   ],
+   [
+    51,
+    25,
+    23
+   ],
+   [
+    52,
+    0,
+    23
+   ],
+   [
+    52,
+    25,
+    23
+   ],
+   [
+    53,
+    0,
+    23
+   ],
+   [
+    53,
+    25,
+    23
+   ],
+   [
+    54,
+    0,
+    23
+   ],
+   [
+    54,
+    25,
+    23
+   ],
+   [
+    55,
+    0,
+    23
+   ],
+   [
+    55,
+    25,
+    23
+   ],
+   [
+    56,
+    0,
+    23
+   ],
+   [
+    56,
+    25,
+    23
+   ],
+   [
+    57,
+    0,
+    23
+   ],
+   [
+    57,
+    25,
+    23
+   ]
+  ]
+ },
+ "building_id": "iserra_monastery_highland",
+ "collision": {
+  "layer": 2,
+  "mask": 1,
+  "note": "由 masks/collision.png 贪心分解而来，面积等于 blocked_cells.count",
+  "rect_count": 5,
+  "rects": [
+   [
+    0,
+    0,
+    48,
+    32
+   ],
+   [
+    0,
+    32,
+    14,
+    26
+   ],
+   [
+    36,
+    32,
+    12,
+    26
+   ],
+   [
+    14,
+    49,
+    9,
+    9
+   ],
+   [
+    25,
+    49,
+    11,
+    9
+   ]
+  ]
+ },
+ "display_name": "伊瑟拉修道院·高原边境",
+ "display_name_en": "Iserra Monastery, Highland Frontier",
+ "doors": [
+  {
+   "cell": [
+    23,
+    57
+   ],
+   "id": "south_gate",
+   "interact": "enter_monastery",
+   "label": "高原驿路正门",
+   "local_px": [
+    1104,
+    2736
+   ],
+   "outward_side": "s",
+   "target": "central_garth",
+   "thickness_tiles": 1,
+   "width_tiles": 2
+  }
+ ],
+ "footprint": {
+  "note": "逻辑地基。左上角为 (0,0)，与视觉图的 (0,0) 像素对齐",
+  "origin_cell": [
+   0,
+   0
+  ],
+  "size_cells": [
+   48,
+   58
+  ],
+  "size_px": [
+   2304,
+   2784
+  ]
+ },
+ "kind": "large_building",
+ "masks": {
+  "collision": "res://assets/buildings/iserra_monastery_highland/masks/collision.png",
+  "doors": "res://assets/buildings/iserra_monastery_highland/masks/doors.png",
+  "legend": "res://assets/buildings/iserra_monastery_highland/masks/legend.json",
+  "occlusion": "res://assets/buildings/iserra_monastery_highland/masks/occlusion.png",
+  "occupancy": "res://assets/buildings/iserra_monastery_highland/masks/occupancy.png",
+  "walkable": "res://assets/buildings/iserra_monastery_highland/masks/walkable.png"
+ },
+ "occlusion_cells": {
+  "count": 110,
+  "runs": [
+   [
+    37,
+    30,
+    6
+   ],
+   [
+    38,
+    30,
+    6
+   ],
+   [
+    39,
+    30,
+    6
+   ],
+   [
+    40,
+    30,
+    6
+   ],
+   [
+    41,
+    30,
+    6
+   ],
+   [
+    42,
+    30,
+    6
+   ],
+   [
+    43,
+    30,
+    6
+   ],
+   [
+    44,
+    30,
+    6
+   ],
+   [
+    45,
+    30,
+    6
+   ],
+   [
+    46,
+    30,
+    6
+   ],
+   [
+    47,
+    19,
+    10
+   ],
+   [
+    47,
+    30,
+    6
+   ],
+   [
+    48,
+    19,
+    10
+   ],
+   [
+    48,
+    30,
+    6
+   ],
+   [
+    49,
+    23,
+    2
+   ],
+   [
+    50,
+    23,
+    2
+   ],
+   [
+    51,
+    23,
+    2
+   ],
+   [
+    52,
+    23,
+    2
+   ],
+   [
+    53,
+    23,
+    2
+   ],
+   [
+    54,
+    23,
+    2
+   ],
+   [
+    55,
+    23,
+    2
+   ],
+   [
+    56,
+    23,
+    2
+   ],
+   [
+    57,
+    23,
+    2
+   ]
+  ]
+ },
+ "occupied_cells": {
+  "count": 2784,
+  "note": "游程编码 [[y, x起, 长度], …]；完整格集合 = 掩码 masks/occupancy.png",
+  "runs": [
+   [
+    0,
+    0,
+    48
+   ],
+   [
+    1,
+    0,
+    48
+   ],
+   [
+    2,
+    0,
+    48
+   ],
+   [
+    3,
+    0,
+    48
+   ],
+   [
+    4,
+    0,
+    48
+   ],
+   [
+    5,
+    0,
+    48
+   ],
+   [
+    6,
+    0,
+    48
+   ],
+   [
+    7,
+    0,
+    48
+   ],
+   [
+    8,
+    0,
+    48
+   ],
+   [
+    9,
+    0,
+    48
+   ],
+   [
+    10,
+    0,
+    48
+   ],
+   [
+    11,
+    0,
+    48
+   ],
+   [
+    12,
+    0,
+    48
+   ],
+   [
+    13,
+    0,
+    48
+   ],
+   [
+    14,
+    0,
+    48
+   ],
+   [
+    15,
+    0,
+    48
+   ],
+   [
+    16,
+    0,
+    48
+   ],
+   [
+    17,
+    0,
+    48
+   ],
+   [
+    18,
+    0,
+    48
+   ],
+   [
+    19,
+    0,
+    48
+   ],
+   [
+    20,
+    0,
+    48
+   ],
+   [
+    21,
+    0,
+    48
+   ],
+   [
+    22,
+    0,
+    48
+   ],
+   [
+    23,
+    0,
+    48
+   ],
+   [
+    24,
+    0,
+    48
+   ],
+   [
+    25,
+    0,
+    48
+   ],
+   [
+    26,
+    0,
+    48
+   ],
+   [
+    27,
+    0,
+    48
+   ],
+   [
+    28,
+    0,
+    48
+   ],
+   [
+    29,
+    0,
+    48
+   ],
+   [
+    30,
+    0,
+    48
+   ],
+   [
+    31,
+    0,
+    48
+   ],
+   [
+    32,
+    0,
+    48
+   ],
+   [
+    33,
+    0,
+    48
+   ],
+   [
+    34,
+    0,
+    48
+   ],
+   [
+    35,
+    0,
+    48
+   ],
+   [
+    36,
+    0,
+    48
+   ],
+   [
+    37,
+    0,
+    48
+   ],
+   [
+    38,
+    0,
+    48
+   ],
+   [
+    39,
+    0,
+    48
+   ],
+   [
+    40,
+    0,
+    48
+   ],
+   [
+    41,
+    0,
+    48
+   ],
+   [
+    42,
+    0,
+    48
+   ],
+   [
+    43,
+    0,
+    48
+   ],
+   [
+    44,
+    0,
+    48
+   ],
+   [
+    45,
+    0,
+    48
+   ],
+   [
+    46,
+    0,
+    48
+   ],
+   [
+    47,
+    0,
+    48
+   ],
+   [
+    48,
+    0,
+    48
+   ],
+   [
+    49,
+    0,
+    48
+   ],
+   [
+    50,
+    0,
+    48
+   ],
+   [
+    51,
+    0,
+    48
+   ],
+   [
+    52,
+    0,
+    48
+   ],
+   [
+    53,
+    0,
+    48
+   ],
+   [
+    54,
+    0,
+    48
+   ],
+   [
+    55,
+    0,
+    48
+   ],
+   [
+    56,
+    0,
+    48
+   ],
+   [
+    57,
+    0,
+    48
+   ]
+  ]
+ },
+ "prefab_path": "res://assets/buildings/iserra_monastery_highland/IserraMonasteryHighland.tscn",
+ "projection_id": "orthogonal_3q_48_v1",
+ "rooms": [
+  {
+   "id": "north_range",
+   "label": "北侧长翼与回廊",
+   "rect": [
+    6,
+    0,
+    36,
+    12
+   ],
+   "roofed": true,
+   "solid": true
+  },
+  {
+   "id": "west_range",
+   "label": "西翼与钟塔",
+   "rect": [
+    0,
+    0,
+    13,
+    49
+   ],
+   "roofed": true,
+   "solid": true
+  },
+  {
+   "id": "east_range",
+   "label": "东翼、医舍与焚化炉烟道",
+   "rect": [
+    37,
+    0,
+    11,
+    49
+   ],
+   "roofed": true,
+   "solid": true
+  },
+  {
+   "id": "church",
+   "label": "守焰教堂中殿",
+   "rect": [
+    13,
+    12,
+    24,
+    20
+   ],
+   "roofed": true,
+   "solid": true
+  },
+  {
+   "id": "central_garth",
+   "label": "露天回廊中庭与水井",
+   "rect": [
+    13,
+    31,
+    24,
+    19
+   ],
+   "roofed": false,
+   "solid": false
+  },
+  {
+   "id": "south_service",
+   "label": "厨房、收容所与司务房",
+   "rect": [
+    30,
+    37,
+    7,
+    13
+   ],
+   "roofed": true,
+   "solid": true
+  },
+  {
+   "id": "south_wall",
+   "label": "南侧防护墙",
+   "rect": [
+    0,
+    49,
+    48,
+    9
+   ],
+   "roofed": false,
+   "solid": true
+  },
+  {
+   "id": "south_gatehouse",
+   "label": "南门楼",
+   "rect": [
+    19,
+    47,
+    10,
+    11
+   ],
+   "roofed": true,
+   "solid": true
+  }
+ ],
+ "schema": "building/1",
+ "sorting": {
+  "bands": [
+   {
+    "id": "north_range",
+    "source_rect_tiles": [
+     0.0,
+     0.0,
+     50.0,
+     13.0
+    ]
+   },
+   {
+    "id": "church",
+    "source_rect_tiles": [
+     0.0,
+     13.0,
+     50.0,
+     20.0
+    ]
+   },
+   {
+    "id": "cloister_north",
+    "source_rect_tiles": [
+     0.0,
+     33.0,
+     50.0,
+     6.0
+    ]
+   },
+   {
+    "id": "courtyard_and_wings",
+    "source_rect_tiles": [
+     0.0,
+     39.0,
+     50.0,
+     9.0
+    ]
+   },
+   {
+    "id": "south_gatehouse",
+    "source_rect_tiles": [
+     0.0,
+     48.0,
+     50.0,
+     12.0
+    ]
+   }
+  ],
+  "mode": "y_sort",
+  "occluder": true,
+  "roof_layer_z": 12.0,
+  "y_sort_origin": "bottom_center",
+  "z_index": 0.0
+ },
+ "source": {
+  "generated_by": "maps/godot/tools/build_building.gd",
+  "generated_for": "godot --headless --path C:\\游戏 --script maps/godot/tools/build_building.gd",
+  "plan": "",
+  "spec": "res://assets/buildings/iserra_monastery_highland/building.spec.json"
+ },
+ "tactical": {
+  "blocks_los": true,
+  "cover": 0.9,
+  "cover_level": "high",
+  "cover_source": "collision",
+  "enterable": false,
+  "height_level": 3.0,
+  "tactical_flags": {
+   "chokepoints": [
+    "south_gate"
+   ],
+   "cremation_service": true,
+   "defensible": true,
+   "frontier_shelter": true,
+   "open_courtyard": [
+    "central_garth"
+   ]
+  }
+ },
+ "tile_size": [
+  48,
+  48
+ ],
+ "visual": {
+  "anchor_offset_px": [
+   -1200.0,
+   -2832.0
+  ],
+  "clip_to_logic": false,
+  "layers": [
+   {
+    "name": "Shadow",
+    "origin_tile": [
+     -1,
+     -1
+    ],
+    "path": "res://assets/buildings/iserra_monastery_highland/visual/shadow.png",
+    "role": "shadow",
+    "size_px": [
+     2400,
+     2880
+    ],
+    "size_tiles": [
+     50,
+     60
+    ],
+    "source": "res://assets/buildings/iserra_monastery_highland/visual/source_shadow.png",
+    "visible": true,
+    "z_index": -1
+   },
+   {
+    "name": "Base",
+    "origin_tile": [
+     -1,
+     -1
+    ],
+    "path": "res://assets/buildings/iserra_monastery_highland/visual/base.png",
+    "role": "base",
+    "size_px": [
+     2400,
+     2880
+    ],
+    "size_tiles": [
+     50,
+     60
+    ],
+    "source": "res://assets/buildings/iserra_monastery_highland/visual/source_structure.png",
+    "visible": true,
+    "z_index": 0
+   },
+   {
+    "name": "WarmLight",
+    "origin_tile": [
+     -1,
+     -1
+    ],
+    "path": "res://assets/buildings/iserra_monastery_highland/visual/warm_light.png",
+    "role": "detail",
+    "size_px": [
+     2400,
+     2880
+    ],
+    "size_tiles": [
+     50,
+     60
+    ],
+    "source": "res://assets/buildings/iserra_monastery_highland/visual/source_warm_light.png",
+    "visible": true,
+    "z_index": 12
+   }
+  ],
+  "note": "视觉尺寸与逻辑 footprint 故意不绑定（本建筑视觉 2400×2880 像素，逻辑 48×58 格）；anchor_offset_px = 贴图相对节点原点的偏移",
+  "origin_px_in_source": [
+   0,
+   0
+  ],
+  "origin_tile": [
+   -1,
+   -1
+  ],
+  "padding_tiles": 1,
+  "size_px": [
+   2400,
+   2880
+  ],
+  "size_tiles": [
+   50,
+   60
+  ],
+  "source_origin_tile": [
+   1,
+   1
+  ],
+  "tile_size": [
+   48,
+   48
+  ]
+ },
+ "walkable_cells": {
+  "count": 392,
+  "runs": [
+   [
+    32,
+    14,
+    22
+   ],
+   [
+    33,
+    14,
+    22
+   ],
+   [
+    34,
+    14,
+    22
+   ],
+   [
+    35,
+    14,
+    22
+   ],
+   [
+    36,
+    14,
+    22
+   ],
+   [
+    37,
+    14,
+    22
+   ],
+   [
+    38,
+    14,
+    22
+   ],
+   [
+    39,
+    14,
+    22
+   ],
+   [
+    40,
+    14,
+    22
+   ],
+   [
+    41,
+    14,
+    22
+   ],
+   [
+    42,
+    14,
+    22
+   ],
+   [
+    43,
+    14,
+    22
+   ],
+   [
+    44,
+    14,
+    22
+   ],
+   [
+    45,
+    14,
+    22
+   ],
+   [
+    46,
+    14,
+    22
+   ],
+   [
+    47,
+    14,
+    22
+   ],
+   [
+    48,
+    14,
+    22
+   ],
+   [
+    49,
+    23,
+    2
+   ],
+   [
+    50,
+    23,
+    2
+   ],
+   [
+    51,
+    23,
+    2
+   ],
+   [
+    52,
+    23,
+    2
+   ],
+   [
+    53,
+    23,
+    2
+   ],
+   [
+    54,
+    23,
+    2
+   ],
+   [
+    55,
+    23,
+    2
+   ],
+   [
+    56,
+    23,
+    2
+   ],
+   [
+    57,
+    23,
+    2
+   ]
+  ]
+ }
+}

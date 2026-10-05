@@ -1,0 +1,88 @@
+﻿Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+
+PASS  地图矩形原点在地图左上角
+PASS  48px 地图矩形 (1248.0, 720.0) px
+PASS  像素 → 格换算正确
+PASS  格 → 像素（格中心）换算正确
+PASS  不存在的标记返回 Vector2.INF
+PASS  main.gd 可加载
+PASS  48px 地图：1:1 居中矩形 = [P: (16.0, 0.0), S: (1248.0, 720.0)]
+PASS  48px 地图：显示倍率 1.0（像素 1:1）
+PASS  48px 地图：出生点取自地图标记
+PASS  48px 图块 spec 存在
+PASS  48px 图块清单 md 已生成
+PASS  48px 空白模板场景已生成
+PASS  48px 示例地图场景已生成
+PASS  48px TileSet 可加载：res://maps/godot/tilesets/dark48.tres
+PASS  48px 图块尺寸 48x48（1 格 = 1 米）
+PASS  48px 图块来源 7 个（地面 / 4 组自动拼接 / 单格道具 / 双格道具），实为 7
+PASS  图块来源贴图在管线图集目录（第 0 个）
+PASS  图块来源贴图在管线图集目录（第 1 个）
+PASS  图块来源贴图在管线图集目录（第 2 个）
+PASS  图块来源贴图在管线图集目录（第 3 个）
+PASS  图块来源贴图在管线图集目录（第 4 个）
+PASS  图块来源贴图在管线图集目录（第 5 个）
+PASS  图块来源贴图在管线图集目录（第 6 个）
+PASS  48px 图块总数 141（5 地面 + 128 自动拼接 + 4 补丁填充 + 2 单格道具 + 2 双格道具 = 141）
+PASS  双格道具来源按 48×48 网格切块
+PASS  大树/立石占 2×2 格（(0, 0)，2×2 格）
+PASS  地形集 4 个（4 组材质对），实为 4
+PASS  地形集模式 = 四边匹配（对应 16 配置）
+PASS  地形集 0 有 2 个地形（底材 + 补丁）
+PASS  地形集 0 = 草地/泥土（泥土压草地）
+PASS  地形集命名与材质对一致（草地(草地/泥土), 草地(草地/枯草), 泥土(泥土/石砖路), 泥土(泥土/碎石)）
+PASS  TileSet 带 pipeline 元数据（材料/自动拼接映射）
+PASS  元数据含材料/道具「grass」
+PASS  元数据含材料/道具「grass_dry」
+PASS  元数据含材料/道具「dirt」
+PASS  元数据含材料/道具「dirt_rocky」
+PASS  元数据含材料/道具「road_stone」
+PASS  元数据含材料/道具「dead_tree」
+PASS  元数据含材料/道具「rock」
+PASS  元数据含材料/道具「big_tree」
+PASS  元数据含材料/道具「boulder」
+PASS  元数据含 4 组自动拼接集
+PASS  自动拼接集 0 = 泥土压草地
+PASS  自动拼接集 0 覆盖 16 种四邻配置
+PASS  每种配置 2 个变体
+PASS  48px 清单含自动拼接条目与 tag
+PASS  48px 模板场景可实例化
+PASS  48px 模板尺寸 (26, 15)（一屏 26×15 = 1248×720）
+PASS  48px 模板像素矩形 (1248.0, 720.0)
+PASS  48px 模板显示倍率 1.0（1:1）
+PASS  48px 模板结构自检通过
+PASS  48px 示例地图可实例化
+PASS  48px 示例地图结构自检通过
+PASS  48px 示例地图出生点可通行
+PASS  48px 地形层铺满 390 格
+PASS  48px spawn 标记 = 格 (11, 13)
+PASS  48px 出生点格可通行
+PASS  石砖路可通行
+PASS  石砖小广场可通行（skill_light 所在）
+PASS  植被层画了道具（枯树/大树）
+PASS  枯树所在格不可通行（solid）
+PASS  2×2 大树的两格都不可通行
+PASS  地图外不可通行
+PASS  材质配比 grass = 59.2%（目标 60%，容差 8%）
+PASS  材质配比 grass_dry = 14.1%（目标 15%，容差 8%）
+PASS  材质配比 dirt = 12.6%（目标 12%，容差 8%）
+PASS  材质配比 dirt_rocky = 5.6%（目标 6%，容差 8%）
+PASS  材质配比 road_stone = 8.5%（目标 7%，容差 8%）
+PASS  元数据里有 road_over_dirt 材质对
+PASS  边界格 (10,8) 的材质是泥土
+PASS  边界格 (10,8) 用了路边块（tag=edge_road_over_dirt_e_v1）
+PASS  边界块有 TileData
+PASS  地形集 2 里有「石砖路」地形
+PASS  东侧 peering bit = 补丁地形（石砖路）→ 掩码方向正确
+PASS  西侧 peering bit = 底材地形（泥土）
+PASS  南北两侧 peering bit = 底材（这两侧没有路）
+PASS  内部格 (2,8) 材质是草地
+PASS  内部草地格用平铺块（tag=grass）
+PASS  自动拼接幂等（重跑改动 0 格）
+PASS  示例地图无材质冲突
+PASS  48px 示例地图预览图已生成
+PASS  48px 预览图尺寸 (2496, 1440)
+PASS  画面级深色占比 74.6%（规范 75%，容差内 65–88%）
+PASS  画面级亮色占比 0.4%（规范 5%，亮色必须稀有）
+PASS  画面级浅色占比 25.0%（铺装可辨认）
+RESULT: passed=85 failed=0

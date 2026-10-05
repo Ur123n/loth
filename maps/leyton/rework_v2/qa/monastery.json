@@ -1,0 +1,20 @@
+{
+	"large_buildings": 1,
+	"markers": [
+		"spawn",
+		"gate",
+		"story_trigger",
+		"skill_light",
+		"battle_trigger",
+		"church",
+		"cloister",
+		"bell_tower",
+		"hospice",
+		"crematory",
+		"herb_garden",
+		"highland_pass"
+	],
+	"patterns": 2,
+	"props": 38,
+	"validation_errors": 0
+}

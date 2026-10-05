@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3]
+[ext_resource type="Script" path="res://core/world/map_pattern_instance.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/maps/leyton/street_sample_v3/service_wing.png" id="2"]
+[sub_resource type="RectangleShape2D" id="Shape"]
+size = Vector2(240, 528)
+[node name="service_wing" type="Node2D"]
+texture_filter = 1
+script = ExtResource("1")
+pattern_id = "service_wing"
+footprint_cells = Vector2i(5, 11)
+anchor_cell = Vector2i(0, 11)
+metadata/category = "building_pattern"
+[node name="Visual" type="Sprite2D" parent="."]
+position = Vector2(-24, -672)
+texture = ExtResource("2")
+centered = false
+[node name="Collision" type="StaticBody2D" parent="."]
+collision_layer = 2
+[node name="Shape" type="CollisionShape2D" parent="Collision"]
+position = Vector2(120, -264)
+shape = SubResource("Shape")

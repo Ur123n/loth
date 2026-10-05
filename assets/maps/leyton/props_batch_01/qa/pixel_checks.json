@@ -1,0 +1,48 @@
+{
+	"assets": [
+		{
+			"border_clear": true,
+			"id": "crate",
+			"opaque_and_partial_pixels": 1988,
+			"outside_palette_pixels": 0,
+			"sprite_sha256": "c5ae466906b7fe0387270c2ac0986355a07abd79e2abb325edd614c52c1895dd"
+		},
+		{
+			"border_clear": true,
+			"id": "barrel",
+			"opaque_and_partial_pixels": 1360,
+			"outside_palette_pixels": 0,
+			"sprite_sha256": "dc072e285fb7fa7e934ebde7c5acb8b886cfe06311b5d844d22391223f1befce"
+		},
+		{
+			"border_clear": true,
+			"id": "grain_sacks",
+			"opaque_and_partial_pixels": 2728,
+			"outside_palette_pixels": 0,
+			"sprite_sha256": "0550c9cbfded65b1b38f7c1063dd72c26c12184010beb17a1946d64f8a9dc0b0"
+		},
+		{
+			"border_clear": true,
+			"id": "coal_basket",
+			"opaque_and_partial_pixels": 2105,
+			"outside_palette_pixels": 0,
+			"sprite_sha256": "f940821faedbac6b5875310d2d9178b9439ae8d6abe869030a5b766beb3f222b"
+		},
+		{
+			"border_clear": true,
+			"id": "notice_board",
+			"opaque_and_partial_pixels": 2439,
+			"outside_palette_pixels": 0,
+			"sprite_sha256": "a0536295c9d99f6b8bd18fb2b78ae46ad99101a989443bf7dd018952face9800"
+		},
+		{
+			"border_clear": true,
+			"id": "handcart",
+			"opaque_and_partial_pixels": 3708,
+			"outside_palette_pixels": 0,
+			"sprite_sha256": "ecb59b1e44c4e9103a7a5a853aba27d042d2d9a2c53452ac289a4b076aae9508"
+		}
+	],
+	"failed": 0,
+	"passed": 66
+}

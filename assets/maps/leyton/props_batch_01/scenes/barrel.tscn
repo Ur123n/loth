@@ -1,0 +1,26 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://core/world/free_prop.gd" id="1_ca81v"]
+[ext_resource type="Texture2D" path="res://assets/maps/leyton/props_batch_01/sprites/prop_barrel.png" id="2_62vci"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ug1r"]
+size = Vector2(32, 24)
+
+[node name="Barrel" type="Node2D" unique_id=204368413]
+texture_filter = 1
+script = ExtResource("1_ca81v")
+prop_id = "leyton_barrel"
+metadata/projection_id = "orthogonal_3q_48_v1"
+metadata/review_status = "candidate"
+
+[node name="Visual" type="Sprite2D" parent="." unique_id=1713588396]
+position = Vector2(-48, -84)
+texture = ExtResource("2_62vci")
+centered = false
+
+[node name="Collision" type="StaticBody2D" parent="." unique_id=1815891058]
+collision_layer = 2
+
+[node name="@CollisionShape2D@3" type="CollisionShape2D" parent="Collision" unique_id=1611232367]
+position = Vector2(0, -12)
+shape = SubResource("RectangleShape2D_8ug1r")

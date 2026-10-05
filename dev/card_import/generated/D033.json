@@ -1,0 +1,30 @@
+{
+  "id": "D033",
+  "name": "逼近",
+  "character": "迪马斯",
+  "rarity": "Common",
+  "category": "道途专属卡牌",
+  "path": "侠盗",
+  "card_type": "行动",
+  "cost": 1,
+  "load": 1,
+  "target_type": "Self",
+  "min_range": 0,
+  "range": 0,
+  "target_spec": "自身",
+  "area": 0,
+  "keywords": [],
+  "tags": [
+    "Movement",
+    "Cost"
+  ],
+  "description": "条件：开始移动时与1名敌人距离为2–3。移动最多2格；若结束后与该敌人相邻，返还1费。",
+  "source_effect": "移动最多2格；若结束后与该敌人相邻，返还1费。",
+  "source_file": "迪马斯_完整卡组_v0.3.md",
+  "source_line": 146,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [],
+  "implementation_status": "pending"
+}

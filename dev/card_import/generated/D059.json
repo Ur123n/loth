@@ -1,0 +1,30 @@
+{
+  "id": "D059",
+  "name": "猎人的耐心",
+  "character": "迪马斯",
+  "rarity": "Uncommon",
+  "category": "道途专属卡牌",
+  "path": "侠盗",
+  "card_type": "能力",
+  "cost": 1,
+  "load": 3,
+  "target_type": "Self",
+  "min_range": 0,
+  "range": 0,
+  "target_spec": "自身",
+  "area": 0,
+  "keywords": [],
+  "tags": [
+    "Reaction",
+    "Defense"
+  ],
+  "description": "每回合第一次通过卡牌获得【反击】时，获得4格挡。",
+  "source_effect": "每回合第一次通过卡牌获得【反击】时，获得4格挡。",
+  "source_file": "迪马斯_完整卡组_v0.3.md",
+  "source_line": 177,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [],
+  "implementation_status": "pending"
+}

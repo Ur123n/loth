@@ -1,0 +1,31 @@
+{
+  "id": "D066",
+  "name": "枪刃交错",
+  "character": "迪马斯",
+  "rarity": "Rare",
+  "category": "道途专属卡牌",
+  "path": "侠盗",
+  "card_type": "攻击",
+  "cost": 2,
+  "load": 3,
+  "target_type": "Enemy",
+  "min_range": 0,
+  "range": 0,
+  "target_spec": "模式选择",
+  "area": 0,
+  "keywords": [],
+  "tags": [
+    "Dagger",
+    "Pistol",
+    "Flexible"
+  ],
+  "description": "二选一：①短刀：距离1，造成18伤害，之后移动最多1格；②手枪：距离2–3，造成16伤害，开启1次反击。",
+  "source_effect": "二选一：①短刀：距离1，造成18伤害，之后移动最多1格；②手枪：距离2–3，造成16伤害，开启1次反击。",
+  "source_file": "迪马斯_完整卡组_v0.3.md",
+  "source_line": 189,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [],
+  "implementation_status": "pending"
+}

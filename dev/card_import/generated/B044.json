@@ -1,0 +1,30 @@
+{
+  "id": "B044",
+  "name": "菌丝凝壳",
+  "character": "鲍德温",
+  "rarity": "Uncommon",
+  "category": "道途专属卡牌",
+  "path": "孢子卫士",
+  "card_type": "行动",
+  "cost": 1,
+  "load": 2,
+  "target_type": "Self",
+  "min_range": 0,
+  "range": 0,
+  "target_spec": "自身",
+  "area": 0,
+  "keywords": [],
+  "tags": [
+    "Healing",
+    "Defense"
+  ],
+  "description": "条件：至少1层疗愈。可消耗至多3层疗愈；每消耗1层，获得5格挡。",
+  "source_effect": "可消耗至多3层疗愈；每消耗1层，获得5格挡。",
+  "source_file": "鲍德温_完整卡组_v0.1.md",
+  "source_line": 228,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [],
+  "implementation_status": "pending"
+}

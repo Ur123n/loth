@@ -1,0 +1,410 @@
+{
+ "anchor": {
+  "mode": "bottom_center",
+  "note": "节点原点落在 footprint 的底部中心，Y 轴排序才会按「脚下」前后遮挡",
+  "origin_cell": [
+   5.5,
+   16.0
+  ]
+ },
+ "asset_path": "res://assets/buildings/leyton_west_gatehouse",
+ "blocked_cells": {
+  "count": 110,
+  "runs": [
+   [
+    0,
+    0,
+    11
+   ],
+   [
+    1,
+    0,
+    11
+   ],
+   [
+    2,
+    0,
+    11
+   ],
+   [
+    3,
+    0,
+    11
+   ],
+   [
+    4,
+    0,
+    11
+   ],
+   [
+    11,
+    0,
+    11
+   ],
+   [
+    12,
+    0,
+    11
+   ],
+   [
+    13,
+    0,
+    11
+   ],
+   [
+    14,
+    0,
+    11
+   ],
+   [
+    15,
+    0,
+    11
+   ]
+  ]
+ },
+ "building_id": "leyton_west_gatehouse",
+ "collision": {
+  "layer": 2,
+  "mask": 1,
+  "note": "由 masks/collision.png 贪心分解而来，面积等于 blocked_cells.count",
+  "rect_count": 2,
+  "rects": [
+   [
+    0,
+    0,
+    11,
+    5
+   ],
+   [
+    0,
+    11,
+    11,
+    5
+   ]
+  ]
+ },
+ "display_name": "莱顿西门楼（结构灰盒）",
+ "display_name_en": "",
+ "doors": [
+  {
+   "cell": [
+    0,
+    5
+   ],
+   "id": "west",
+   "interact": "",
+   "label": "",
+   "local_px": [
+    0,
+    240
+   ],
+   "outward_side": "w",
+   "target": "outside",
+   "thickness_tiles": 1,
+   "width_tiles": 6
+  },
+  {
+   "cell": [
+    10,
+    5
+   ],
+   "id": "east",
+   "interact": "",
+   "label": "",
+   "local_px": [
+    480,
+    240
+   ],
+   "outward_side": "e",
+   "target": "outside",
+   "thickness_tiles": 1,
+   "width_tiles": 6
+  }
+ ],
+ "footprint": {
+  "note": "逻辑地基。左上角为 (0,0)，与视觉图的 (0,0) 像素对齐",
+  "origin_cell": [
+   0,
+   0
+  ],
+  "size_cells": [
+   11,
+   16
+  ],
+  "size_px": [
+   528,
+   768
+  ]
+ },
+ "kind": "structure",
+ "masks": {
+  "collision": "res://assets/buildings/leyton_west_gatehouse/masks/collision.png",
+  "doors": "res://assets/buildings/leyton_west_gatehouse/masks/doors.png",
+  "legend": "res://assets/buildings/leyton_west_gatehouse/masks/legend.json",
+  "occlusion": "res://assets/buildings/leyton_west_gatehouse/masks/occlusion.png",
+  "occupancy": "res://assets/buildings/leyton_west_gatehouse/masks/occupancy.png",
+  "walkable": "res://assets/buildings/leyton_west_gatehouse/masks/walkable.png"
+ },
+ "occlusion_cells": {
+  "count": 0,
+  "runs": []
+ },
+ "occupied_cells": {
+  "count": 176,
+  "note": "游程编码 [[y, x起, 长度], …]；完整格集合 = 掩码 masks/occupancy.png",
+  "runs": [
+   [
+    0,
+    0,
+    11
+   ],
+   [
+    1,
+    0,
+    11
+   ],
+   [
+    2,
+    0,
+    11
+   ],
+   [
+    3,
+    0,
+    11
+   ],
+   [
+    4,
+    0,
+    11
+   ],
+   [
+    5,
+    0,
+    11
+   ],
+   [
+    6,
+    0,
+    11
+   ],
+   [
+    7,
+    0,
+    11
+   ],
+   [
+    8,
+    0,
+    11
+   ],
+   [
+    9,
+    0,
+    11
+   ],
+   [
+    10,
+    0,
+    11
+   ],
+   [
+    11,
+    0,
+    11
+   ],
+   [
+    12,
+    0,
+    11
+   ],
+   [
+    13,
+    0,
+    11
+   ],
+   [
+    14,
+    0,
+    11
+   ],
+   [
+    15,
+    0,
+    11
+   ]
+  ]
+ },
+ "prefab_path": "res://assets/buildings/leyton_west_gatehouse/LeytonWestGatehouse.tscn",
+ "projection_id": "orthogonal_3q_48_v1",
+ "rooms": [
+  {
+   "id": "gatehouse",
+   "label": "地面实体与门洞",
+   "rect": [
+    0,
+    0,
+    11,
+    16
+   ],
+   "roofed": false,
+   "solid": true
+  }
+ ],
+ "schema": "building/1",
+ "sorting": {
+  "mode": "y_sort",
+  "occluder": false,
+  "roof_layer_z": 12.0,
+  "y_sort_origin": "bottom_center",
+  "z_index": 0.0
+ },
+ "source": {
+  "generated_by": "maps/godot/tools/build_building.gd",
+  "generated_for": "godot --headless --path C:\\游戏 --script maps/godot/tools/build_building.gd",
+  "plan": "",
+  "spec": "res://assets/buildings/leyton_west_gatehouse/building.spec.json"
+ },
+ "tactical": {
+  "blocks_los": true,
+  "cover": 2.0,
+  "cover_level": "high",
+  "enterable": true,
+  "height_level": 0.0
+ },
+ "tile_size": [
+  48,
+  48
+ ],
+ "visual": {
+  "anchor_offset_px": [
+   -312.0,
+   -816.0
+  ],
+  "clip_to_logic": false,
+  "layers": [
+   {
+    "name": "Base",
+    "origin_tile": [
+     -1.0,
+     -1.0
+    ],
+    "path": "res://assets/buildings/leyton_west_gatehouse/visual/base.png",
+    "role": "base",
+    "size_px": [
+     624.0,
+     864.0
+    ],
+    "size_tiles": [
+     13.0,
+     18.0
+    ],
+    "source": "res://assets/buildings/leyton_west_gatehouse/source/graybox_base.png",
+    "visible": true,
+    "z_index": 0.0
+   },
+   {
+    "name": "Floor",
+    "origin_tile": [
+     -1.0,
+     -1.0
+    ],
+    "path": "res://assets/buildings/leyton_west_gatehouse/visual/floor.png",
+    "role": "floor",
+    "size_px": [
+     624.0,
+     864.0
+    ],
+    "size_tiles": [
+     13.0,
+     18.0
+    ],
+    "source": "res://assets/buildings/leyton_west_gatehouse/source/graybox_floor.png",
+    "visible": true,
+    "z_index": -1.0
+   },
+   {
+    "name": "WallWalk",
+    "origin_tile": [
+     -1.0,
+     -1.0
+    ],
+    "path": "res://assets/buildings/leyton_west_gatehouse/visual/upper.png",
+    "role": "foreground",
+    "size_px": [
+     624.0,
+     864.0
+    ],
+    "size_tiles": [
+     13.0,
+     18.0
+    ],
+    "source": "res://assets/buildings/leyton_west_gatehouse/source/graybox_upper.png",
+    "visible": true,
+    "z_index": 4.0
+   }
+  ],
+  "note": "视觉尺寸与逻辑 footprint 故意不绑定（本建筑视觉 624×864 像素，逻辑 11×16 格）；anchor_offset_px = 贴图相对节点原点的偏移",
+  "origin_px_in_source": [
+   0,
+   0
+  ],
+  "origin_tile": [
+   -1,
+   -1
+  ],
+  "padding_tiles": 1,
+  "size_px": [
+   624,
+   864
+  ],
+  "size_tiles": [
+   13,
+   18
+  ],
+  "source_origin_tile": [
+   1,
+   1
+  ],
+  "tile_size": [
+   48,
+   48
+  ]
+ },
+ "walkable_cells": {
+  "count": 66,
+  "runs": [
+   [
+    5,
+    0,
+    11
+   ],
+   [
+    6,
+    0,
+    11
+   ],
+   [
+    7,
+    0,
+    11
+   ],
+   [
+    8,
+    0,
+    11
+   ],
+   [
+    9,
+    0,
+    11
+   ],
+   [
+    10,
+    0,
+    11
+   ]
+  ]
+ }
+}

@@ -1,0 +1,568 @@
+{
+ "building_id": "iserra_monastery",
+ "display_name": "伊瑟拉修道院",
+ "display_name_en": "Iserra Monastery",
+ "kind": "large_building",
+ "projection_id": "orthogonal_3q_48_v1",
+ "anchor_mode": "bottom_center",
+ "plan_source": "交付素材\\12_修道院\\02_整座修道院\\monastery_plan.json（美术线手写设计）",
+ "note": [
+  "本文件是 Godot 侧建筑管线的唯一输入（maps/godot/tools/build_building.gd）。",
+  "plan.rooms / plan.doors 是美术线原样搬过来的几何；openings 是游戏侧补的柱廊开口；",
+  "房间矩形向内缩 1 格得到可通行地板，剩下的一圈就是墙 —— 这套规则是确定性的，",
+  "改 rooms 就能改逻辑，完全不用碰那张大图。"
+ ],
+ "visual": {
+  "tile_size": 48,
+  "padding_tiles": 1,
+  "source_origin_tile": [
+   3,
+   5
+  ],
+  "note": "视觉与逻辑分开：换视觉图不用动 rooms/doors；换 rooms 也不用重画图",
+  "layers": [
+   {
+    "name": "Base",
+    "role": "base",
+    "source": "res://assets/buildings/iserra_monastery/visual/source_base.png",
+    "output": "base.png",
+    "z_index": 0,
+    "visible": true
+   },
+   {
+    "name": "Roof",
+    "role": "roof",
+    "source": "res://assets/buildings/iserra_monastery/visual/source_roof.png",
+    "output": "roof.png",
+    "z_index": 10,
+    "visible": true
+   }
+  ]
+ },
+ "collision": {
+  "layer": 2,
+  "mask": 1,
+  "note": "物理层；逻辑通行另外由掩码决定"
+ },
+ "sorting": {
+  "mode": "y_sort",
+  "y_sort_origin": "bottom_center",
+  "z_index": 0,
+  "occluder": true,
+  "note": "节点原点在 footprint 底部中心 → 角色走到建筑下缘以南就画在建筑前面",
+  "roof_layer_z": 10
+ },
+ "tactical": {
+  "cover": 0.85,
+  "cover_level": "high",
+  "height_level": 2,
+  "blocks_los": true,
+  "enterable": true,
+  "cover_source": "collision",
+  "note": "石墙给高掩体；屋顶层遮挡视线（进屋后由 occlusion 掩码收起屋顶）；具体每格掩体值取 collision 掩码，需要时可再按房间细分",
+  "tactical_flags": {
+   "defensible": true,
+   "chokepoints": [
+    "door_west_church",
+    "door_aisle_s_to_cloister"
+   ],
+   "elevated_rooms": [
+    "west_tower"
+   ],
+   "open_courtyard": [
+    "cloister"
+   ]
+  }
+ },
+ "plan": {
+  "scale": {
+   "px_per_meter": 48,
+   "tile_px": 48,
+   "tile_means": "1 tile = 1 m²"
+  },
+  "origin_m": [
+   0,
+   0
+  ],
+  "footprint_m": [
+   69,
+   73
+  ],
+  "note": "房间/门坐标已统一到 footprint 局部格坐标系（左上角 (0,0)）；与美术画布的偏移记在 visual.source_origin_tile",
+  "rooms": [
+   {
+    "id": "nave",
+    "label": "中殿 46×12 m（东西向）",
+    "x_m": 5,
+    "y_m": 4,
+    "w_m": 46,
+    "h_m": 12,
+    "w_px": 2208,
+    "h_px": 576,
+    "floor": "floor_church_stone",
+    "roof": "roof_slate"
+   },
+   {
+    "id": "aisle_n",
+    "label": "北侧廊 46×4 m",
+    "x_m": 5,
+    "y_m": 0,
+    "w_m": 46,
+    "h_m": 4,
+    "w_px": 2208,
+    "h_px": 192,
+    "floor": "floor_church_stone",
+    "roof": "roof_slate"
+   },
+   {
+    "id": "aisle_s",
+    "label": "南侧廊 46×4 m",
+    "x_m": 5,
+    "y_m": 16,
+    "w_m": 46,
+    "h_m": 4,
+    "w_px": 2208,
+    "h_px": 192,
+    "floor": "floor_church_stone",
+    "roof": "roof_slate"
+   },
+   {
+    "id": "apse",
+    "label": "后殿 6×12 m（朝东）",
+    "x_m": 51,
+    "y_m": 4,
+    "w_m": 6,
+    "h_m": 12,
+    "w_px": 288,
+    "h_px": 576,
+    "floor": "floor_church_stone",
+    "roof": "roof_slate"
+   },
+   {
+    "id": "west_tower",
+    "label": "西front钟楼 5×5 m",
+    "x_m": 0,
+    "y_m": 0,
+    "w_m": 5,
+    "h_m": 5,
+    "w_px": 240,
+    "h_px": 240,
+    "floor": "floor_church_stone",
+    "roof": null
+   },
+   {
+    "id": "west_porch",
+    "label": "西门廊 5×10 m",
+    "x_m": 0,
+    "y_m": 5,
+    "w_m": 5,
+    "h_m": 10,
+    "w_px": 240,
+    "h_px": 480,
+    "floor": "floor_church_stone",
+    "roof": "roof_slate"
+   },
+   {
+    "id": "cloister",
+    "label": "回廊院 26×26 m（走道宽 3 m）",
+    "x_m": 6,
+    "y_m": 20,
+    "w_m": 26,
+    "h_m": 26,
+    "w_px": 1248,
+    "h_px": 1248,
+    "floor": "floor_cloister",
+    "roof": null
+   },
+   {
+    "id": "east_range",
+    "label": "东翼 10×26 m（议事厅+宿舍）",
+    "x_m": 32,
+    "y_m": 20,
+    "w_m": 10,
+    "h_m": 26,
+    "w_px": 480,
+    "h_px": 1248,
+    "floor": "floor_wood",
+    "roof": "roof_slate"
+   },
+   {
+    "id": "west_range",
+    "label": "西翼 6×26 m（仓储/司务）",
+    "x_m": 0,
+    "y_m": 20,
+    "w_m": 6,
+    "h_m": 26,
+    "w_px": 288,
+    "h_px": 1248,
+    "floor": "floor_wood",
+    "roof": "roof_slate"
+   },
+   {
+    "id": "south_range",
+    "label": "南翼 42×10 m（食堂+厨房）",
+    "x_m": 0,
+    "y_m": 46,
+    "w_m": 42,
+    "h_m": 10,
+    "w_px": 2016,
+    "h_px": 480,
+    "floor": "floor_wood",
+    "roof": "roof_slate"
+   },
+   {
+    "id": "infirmary",
+    "label": "医务所 8×8 m",
+    "x_m": 8,
+    "y_m": 58,
+    "w_m": 8,
+    "h_m": 8,
+    "w_px": 384,
+    "h_px": 384,
+    "floor": "floor_wood",
+    "roof": "roof_slate"
+   },
+   {
+    "id": "infirmary_path",
+    "label": "南翼→医务所小径 3×2 m（spec 追加：把两段连起来）",
+    "x_m": 11,
+    "y_m": 56,
+    "w_m": 3,
+    "h_m": 2,
+    "floor": null,
+    "roof": null,
+    "note": "美术平面图在南翼与医务所之间留了 2 m 空档，逻辑上加一条小径，否则占用区断裂"
+   }
+  ],
+  "doors": [
+   {
+    "id": "door_west_church",
+    "x_m": 2,
+    "y_m": 9,
+    "w_m": 2,
+    "side": "w",
+    "note": "教堂西门（信众面朝日出而入）",
+    "target": "west_porch",
+    "interact": "enter_building"
+   },
+   {
+    "id": "door_aisle_s_to_cloister",
+    "x_m": 28,
+    "y_m": 20,
+    "w_m": 1,
+    "side": "n",
+    "note": "南侧廊↔回廊北廊",
+    "target": "cloister",
+    "interact": "enter_building"
+   },
+   {
+    "id": "door_aisle_s_to_cloister_east",
+    "x_m": 8,
+    "y_m": 20,
+    "w_m": 1,
+    "side": "n",
+    "note": "西翼↔回廊北廊",
+    "target": "cloister",
+    "interact": "enter_building"
+   },
+   {
+    "id": "door_cloister_to_east_range",
+    "x_m": 32,
+    "y_m": 33,
+    "w_m": 1,
+    "side": "e",
+    "note": "回廊东廊↔东翼",
+    "target": "east_range",
+    "interact": "enter_building"
+   },
+   {
+    "id": "door_cloister_to_south_range_w",
+    "x_m": 20,
+    "y_m": 46,
+    "w_m": 1,
+    "side": "s",
+    "note": "回廊南廊↔南翼",
+    "target": "south_range",
+    "interact": "enter_building"
+   },
+   {
+    "id": "door_cloister_to_south_range_e",
+    "x_m": 30,
+    "y_m": 46,
+    "w_m": 1,
+    "side": "s",
+    "note": "回廊南廊↔南翼（第二道）",
+    "target": "south_range",
+    "interact": "enter_building"
+   },
+   {
+    "id": "door_infirmary_north",
+    "x_m": 12,
+    "y_m": 56,
+    "w_m": 1,
+    "side": "n",
+    "note": "南翼↔医务所方向",
+    "target": "infirmary",
+    "interact": "enter_building"
+   },
+   {
+    "id": "door_cloister_to_east_range_2",
+    "x_m": 32,
+    "y_m": 30,
+    "w_m": 1,
+    "side": "w",
+    "note": "东翼↔回廊东廊（第二道）",
+    "target": "east_range",
+    "interact": "enter_building"
+   }
+  ],
+  "openings": [
+   {
+    "x_m": 6,
+    "y_m": 3,
+    "w_m": 44,
+    "h_m": 2,
+    "note": "中殿 ↔ 北侧廊：柱廊（画上是柱列，可以穿行）"
+   },
+   {
+    "x_m": 6,
+    "y_m": 15,
+    "w_m": 44,
+    "h_m": 2,
+    "note": "中殿 ↔ 南侧廊：柱廊"
+   },
+   {
+    "x_m": 50,
+    "y_m": 5,
+    "w_m": 2,
+    "h_m": 10,
+    "note": "中殿 ↔ 后殿：凯旋门开口"
+   },
+   {
+    "x_m": 4,
+    "y_m": 6,
+    "w_m": 2,
+    "h_m": 8,
+    "note": "西门廊 ↔ 中殿"
+   },
+   {
+    "x_m": 1,
+    "y_m": 4,
+    "w_m": 3,
+    "h_m": 2,
+    "note": "西门廊 ↔ 西front钟楼"
+   },
+   {
+    "x_m": 5,
+    "y_m": 21,
+    "w_m": 2,
+    "h_m": 24,
+    "note": "西翼 ↔ 回廊西廊：敞廊"
+   },
+   {
+    "x_m": 11,
+    "y_m": 55,
+    "w_m": 3,
+    "h_m": 1,
+    "note": "南翼南墙开口 → 医务所小径"
+   }
+  ],
+  "windows": [
+   {
+    "x_m": 10,
+    "y_m": 0,
+    "side": "n",
+    "w_px": 38.400000000000006,
+    "note": "窗洞 0.8 m = 38 px"
+   },
+   {
+    "x_m": 16,
+    "y_m": 0,
+    "side": "n",
+    "w_px": 38.400000000000006,
+    "note": "窗洞 0.8 m = 38 px"
+   },
+   {
+    "x_m": 22,
+    "y_m": 0,
+    "side": "n",
+    "w_px": 38.400000000000006,
+    "note": "窗洞 0.8 m = 38 px"
+   },
+   {
+    "x_m": 28,
+    "y_m": 0,
+    "side": "n",
+    "w_px": 38.400000000000006,
+    "note": "窗洞 0.8 m = 38 px"
+   },
+   {
+    "x_m": 34,
+    "y_m": 0,
+    "side": "n",
+    "w_px": 38.400000000000006,
+    "note": "窗洞 0.8 m = 38 px"
+   },
+   {
+    "x_m": 40,
+    "y_m": 0,
+    "side": "n",
+    "w_px": 38.400000000000006,
+    "note": "窗洞 0.8 m = 38 px"
+   },
+   {
+    "x_m": 46,
+    "y_m": 0,
+    "side": "n",
+    "w_px": 38.400000000000006,
+    "note": "窗洞 0.8 m = 38 px"
+   },
+   {
+    "x_m": 54,
+    "y_m": 4,
+    "side": "n",
+    "w_px": 38.400000000000006,
+    "note": "窗洞 0.8 m = 38 px"
+   },
+   {
+    "x_m": 54,
+    "y_m": 15,
+    "side": "s",
+    "w_px": 38.400000000000006,
+    "note": "窗洞 0.8 m = 38 px"
+   },
+   {
+    "x_m": 51,
+    "y_m": 6,
+    "side": "e",
+    "w_px": 38.400000000000006,
+    "note": "窗洞 0.8 m = 38 px"
+   },
+   {
+    "x_m": 51,
+    "y_m": 9,
+    "side": "e",
+    "w_px": 38.400000000000006,
+    "note": "窗洞 0.8 m = 38 px"
+   },
+   {
+    "x_m": 51,
+    "y_m": 13,
+    "side": "e",
+    "w_px": 38.400000000000006,
+    "note": "窗洞 0.8 m = 38 px"
+   },
+   {
+    "x_m": 5,
+    "y_m": 2,
+    "side": "w",
+    "w_px": 38.400000000000006,
+    "note": "窗洞 0.8 m = 38 px"
+   },
+   {
+    "x_m": 5,
+    "y_m": 6,
+    "side": "w",
+    "w_px": 38.400000000000006,
+    "note": "窗洞 0.8 m = 38 px"
+   },
+   {
+    "x_m": 10,
+    "y_m": 20,
+    "side": "n",
+    "w_px": 38.400000000000006,
+    "note": "窗洞 0.8 m = 38 px"
+   },
+   {
+    "x_m": 16,
+    "y_m": 20,
+    "side": "n",
+    "w_px": 38.400000000000006,
+    "note": "窗洞 0.8 m = 38 px"
+   },
+   {
+    "x_m": 22,
+    "y_m": 20,
+    "side": "n",
+    "w_px": 38.400000000000006,
+    "note": "窗洞 0.8 m = 38 px"
+   },
+   {
+    "x_m": 42,
+    "y_m": 20,
+    "side": "n",
+    "w_px": 38.400000000000006,
+    "note": "窗洞 0.8 m = 38 px"
+   },
+   {
+    "x_m": 42,
+    "y_m": 24,
+    "side": "n",
+    "w_px": 38.400000000000006,
+    "note": "窗洞 0.8 m = 38 px"
+   },
+   {
+    "x_m": 42,
+    "y_m": 28,
+    "side": "n",
+    "w_px": 38.400000000000006,
+    "note": "窗洞 0.8 m = 38 px"
+   },
+   {
+    "x_m": 42,
+    "y_m": 32,
+    "side": "n",
+    "w_px": 38.400000000000006,
+    "note": "窗洞 0.8 m = 38 px"
+   },
+   {
+    "x_m": 10,
+    "y_m": 46,
+    "side": "s",
+    "w_px": 38.400000000000006,
+    "note": "窗洞 0.8 m = 38 px"
+   },
+   {
+    "x_m": 16,
+    "y_m": 46,
+    "side": "s",
+    "w_px": 38.400000000000006,
+    "note": "窗洞 0.8 m = 38 px"
+   },
+   {
+    "x_m": 24,
+    "y_m": 46,
+    "side": "s",
+    "w_px": 38.400000000000006,
+    "note": "窗洞 0.8 m = 38 px"
+   },
+   {
+    "x_m": 36,
+    "y_m": 46,
+    "side": "s",
+    "w_px": 38.400000000000006,
+    "note": "窗洞 0.8 m = 38 px"
+   },
+   {
+    "x_m": 40,
+    "y_m": 46,
+    "side": "s",
+    "w_px": 38.400000000000006,
+    "note": "窗洞 0.8 m = 38 px"
+   }
+  ],
+  "columns": {
+   "spacing_m": 2.5,
+   "count_per_side": 9,
+   "dia_m": 0.6,
+   "dia_px": 28
+  },
+  "art_notes": [
+   "外墙 1.0 m = 1 格 = 48 px；内隔墙 0.5 m = 24 px（本图统一按 1 格画外墙）。",
+   "门洞 1.25 m = 60 px（本图主入口取 2 格做双开门）。",
+   "窗洞 0.8 m = 38 px，深窗洞（罗马式墙厚所以开窗很深）。",
+   "回廊每 2.5 m 一根柱 = 120 px 间距，内庭 20 m 边共 9 根。",
+   "层高 4.0 m = 192 px（本图是俯视角，层高只体现在墙立面的 24 px 上）。"
+  ]
+ }
+}

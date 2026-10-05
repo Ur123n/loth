@@ -1,0 +1,29 @@
+{
+  "id": "A052",
+  "name": "无甲之敌",
+  "character": "艾莉丝",
+  "rarity": "Uncommon",
+  "category": "道途专属卡牌",
+  "path": "梦魇行者",
+  "card_type": "攻击",
+  "cost": 1,
+  "load": 1,
+  "target_type": "Enemy",
+  "min_range": 1,
+  "range": 2,
+  "target_spec": "1–2",
+  "area": 0,
+  "keywords": [],
+  "tags": [
+    "ArmorSensitive"
+  ],
+  "description": "造成8伤害；若位于幻梦且目标护甲>0，额外造成4伤害。",
+  "source_effect": "造成8伤害；若位于幻梦且目标护甲>0，额外造成4伤害。",
+  "source_file": "艾莉丝_完整卡组_v0.1.md",
+  "source_line": 101,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [],
+  "implementation_status": "pending"
+}

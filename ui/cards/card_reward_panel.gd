@@ -62,13 +62,16 @@ func _refresh_card(index: int, card: CardData) -> void:
 	var container: PanelContainer = _offer_cards[index]
 	var vbox := container.get_node("VBox") as VBoxContainer
 	var name_label := vbox.get_node("Name") as Label
+	var art_view := vbox.get_node("Art") as TextureRect
 	var desc_label := vbox.get_node("Desc") as Label
 	var learned := _skill_has(_current_character, card.card_name)
 	name_label.text = "%s　费用 %d%s" % [
 		card.card_name, card.cost, "　（已掌握）" if learned else ""]
 	name_label.add_theme_color_override("font_color",
 		Color(0.85, 0.92, 1.0) if not learned else Color(0.60, 0.66, 0.58))
-	desc_label.text = CardDB.describe_card(card)
+	art_view.texture = ArtLoader.load_texture("res://content/cards/" + card.art_path) if not card.art_path.is_empty() else null
+	art_view.visible = art_view.texture != null
+	desc_label.text = CardDatabase.describe_card(card)
 
 
 func _on_offer_pressed(index: int) -> void:
@@ -78,7 +81,7 @@ func _on_offer_pressed(index: int) -> void:
 	if not _skill_has(_current_character, card.card_name):
 		var skill := SkillData.new()
 		skill.skill_name = card.card_name
-		skill.description = CardDB.describe_card(card)
+		skill.description = CardDatabase.describe_card(card)
 		_current_character.skill_library.append(skill)
 	GameState.save_game()
 	_status_label.text = "已将「%s」加入技能库" % card.card_name
@@ -191,7 +194,7 @@ func _build_ui() -> void:
 
 func _make_offer_card(index: int) -> PanelContainer:
 	var container := PanelContainer.new()
-	container.custom_minimum_size = Vector2(270, 190)
+	container.custom_minimum_size = Vector2(270, 250)
 	var style := StyleBoxFlat.new()
 	style.bg_color = Color(0.13, 0.16, 0.21, 0.95)
 	style.border_color = Color(0.42, 0.50, 0.62)
@@ -214,6 +217,13 @@ func _make_offer_card(index: int) -> PanelContainer:
 	name_label.add_theme_font_size_override("font_size", 16)
 	name_label.add_theme_color_override("font_color", Color(0.85, 0.92, 1.0))
 	vbox.add_child(name_label)
+	var art_view := TextureRect.new()
+	art_view.name = "Art"
+	art_view.custom_minimum_size = Vector2(240, 100)
+	art_view.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	art_view.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_COVERED
+	art_view.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	vbox.add_child(art_view)
 
 	var desc_label := Label.new()
 	desc_label.name = "Desc"

@@ -1,0 +1,32 @@
+{
+  "id": "A055",
+  "name": "虚景护阵",
+  "character": "艾莉丝",
+  "rarity": "Uncommon",
+  "category": "道途专属卡牌",
+  "path": "梦魇行者",
+  "card_type": "能力",
+  "cost": 1,
+  "load": 2,
+  "target_type": "Self",
+  "min_range": 0,
+  "range": 0,
+  "target_spec": "自身",
+  "area": 0,
+  "keywords": [
+    "幻梦"
+  ],
+  "tags": [
+    "幻梦",
+    "Support"
+  ],
+  "description": "每回合第一次进入幻梦时，选择距离2以内1名友军获得4格挡。",
+  "source_effect": "每回合第一次进入幻梦时，选择距离2以内1名友军获得4格挡。",
+  "source_file": "艾莉丝_完整卡组_v0.1.md",
+  "source_line": 104,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [],
+  "implementation_status": "pending"
+}

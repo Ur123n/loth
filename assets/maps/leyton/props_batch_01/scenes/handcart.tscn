@@ -1,0 +1,27 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://core/world/free_prop.gd" id="1_1qd44"]
+[ext_resource type="Texture2D" path="res://assets/maps/leyton/props_batch_01/sprites/prop_handcart.png" id="2_dbvke"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ddygi"]
+size = Vector2(54, 94)
+
+[node name="Handcart" type="Node2D" unique_id=681921924]
+texture_filter = 1
+script = ExtResource("1_1qd44")
+prop_id = "leyton_handcart"
+footprint_cells = Vector2i(2, 2)
+metadata/projection_id = "orthogonal_3q_48_v1"
+metadata/review_status = "candidate"
+
+[node name="Visual" type="Sprite2D" parent="." unique_id=1892769967]
+position = Vector2(-72, -180)
+texture = ExtResource("2_dbvke")
+centered = false
+
+[node name="Collision" type="StaticBody2D" parent="." unique_id=1330609625]
+collision_layer = 2
+
+[node name="@CollisionShape2D@7" type="CollisionShape2D" parent="Collision" unique_id=1624162580]
+position = Vector2(0, -47)
+shape = SubResource("RectangleShape2D_ddygi")

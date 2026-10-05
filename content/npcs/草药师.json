@@ -1,0 +1,66 @@
+{
+  "id": "草药师",
+  "name": "草药师",
+  "description": "修道院的草药师，总在菜园和回廊花园之间走动，兜里装满晒干的叶片。",
+  "color": "#3f7d4e",
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "ai": "巡逻",
+  "interaction": [
+    "讨教草药",
+    "买草药"
+  ],
+  "schedule": [
+    {
+      "hour": 6,
+      "position": [
+        176,
+        256
+      ],
+      "state": "garden"
+    },
+    {
+      "hour": 12,
+      "position": [
+        320,
+        304
+      ],
+      "state": "gate"
+    },
+    {
+      "hour": 18,
+      "position": [
+        96,
+        192
+      ],
+      "state": "rest"
+    }
+  ],
+  "dialogue": [
+    {
+      "id": "start",
+      "text": "要草药的？雪线草药白天长得最好，黄昏后就蔫了。",
+      "options": [
+        {
+          "text": "哪里能找到雪线草药？",
+          "next": "clue"
+        },
+        {
+          "text": "再见。",
+          "next": ""
+        }
+      ]
+    },
+    {
+      "id": "clue",
+      "text": "钟楼下面石阶缝里就有，朝北那面。日落前摘，药效最足。",
+      "options": [
+        {
+          "text": "多谢指点",
+          "next": ""
+        }
+      ]
+    }
+  ]
+}

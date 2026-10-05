@@ -1,0 +1,381 @@
+{
+  "maps": [
+    {
+      "map_id": "M02",
+      "id": "M02",
+      "name": "城北连续街坊 · 32米样段",
+      "size": [
+        32,
+        32
+      ],
+      "spawn": [
+        3,
+        19
+      ],
+      "urban_ground": true,
+      "gate": [],
+      "wall_walk": [],
+      "stairs_ground": [],
+      "stairs_wall": [],
+      "exits": [],
+      "exit_depth": 2,
+      "bridges": [],
+      "water": [],
+      "walls": [],
+      "npc_spawns": [],
+      "event_anchors": [],
+      "patrol_routes": [],
+      "zones": [
+        {
+          "kind": "plaza",
+          "rect": [
+            14,
+            16,
+            6,
+            5
+          ]
+        },
+        {
+          "kind": "estate_yard",
+          "rect": [
+            5,
+            5,
+            6,
+            7
+          ]
+        }
+      ],
+      "roads": [
+        {
+          "kind": "main",
+          "width": 5,
+          "points": [
+            [
+              0,
+              19
+            ],
+            [
+              11,
+              19
+            ],
+            [
+              18,
+              23
+            ],
+            [
+              32,
+              23
+            ]
+          ]
+        },
+        {
+          "kind": "lane",
+          "width": 3,
+          "points": [
+            [
+              16.5,
+              0
+            ],
+            [
+              16.5,
+              17
+            ]
+          ]
+        },
+        {
+          "kind": "lane",
+          "width": 3,
+          "points": [
+            [
+              17,
+              9.5
+            ],
+            [
+              32,
+              9.5
+            ]
+          ]
+        },
+        {
+          "kind": "lane",
+          "width": 3,
+          "points": [
+            [
+              7,
+              9.5
+            ],
+            [
+              17,
+              9.5
+            ]
+          ]
+        },
+        {
+          "kind": "lane",
+          "width": 3,
+          "points": [
+            [
+              13.5,
+              23
+            ],
+            [
+              13.5,
+              32
+            ]
+          ]
+        }
+      ],
+      "structures": [
+        {
+          "id": "estate_north",
+          "label": "宅院北楼",
+          "rect": [
+            0,
+            0,
+            15,
+            5
+          ],
+          "height": 3,
+          "kind": "street_block",
+          "pattern": "sample_graybox"
+        },
+        {
+          "id": "estate_west",
+          "label": "西侧附属翼",
+          "rect": [
+            0,
+            5,
+            5,
+            11
+          ],
+          "height": 2,
+          "kind": "street_block",
+          "pattern": "sample_graybox"
+        },
+        {
+          "id": "estate_south",
+          "label": "临街门房",
+          "rect": [
+            5,
+            12,
+            10,
+            4
+          ],
+          "height": 2,
+          "kind": "street_block",
+          "pattern": "sample_graybox"
+        },
+        {
+          "id": "estate_east_n",
+          "label": "东侧翼楼",
+          "rect": [
+            11,
+            5,
+            4,
+            3
+          ],
+          "height": 2,
+          "kind": "street_block",
+          "pattern": "sample_graybox"
+        },
+        {
+          "id": "estate_east_s",
+          "label": "门侧墙垛",
+          "rect": [
+            11,
+            11,
+            4,
+            1
+          ],
+          "height": 1,
+          "kind": "street_block",
+          "pattern": "sample_graybox"
+        },
+        {
+          "id": "north_row",
+          "label": "北侧共墙街屋",
+          "rect": [
+            18,
+            0,
+            14,
+            8
+          ],
+          "height": 3,
+          "kind": "street_block",
+          "pattern": "sample_graybox"
+        },
+        {
+          "id": "corner_row",
+          "label": "转角街屋",
+          "rect": [
+            20,
+            11,
+            12,
+            9
+          ],
+          "height": 3,
+          "kind": "street_block",
+          "pattern": "sample_graybox"
+        },
+        {
+          "id": "west_row",
+          "label": "南侧窄面宽街屋",
+          "rect": [
+            0,
+            22,
+            12,
+            10
+          ],
+          "height": 2,
+          "kind": "street_block",
+          "pattern": "sample_graybox"
+        },
+        {
+          "id": "south_row",
+          "label": "东南临街屋组",
+          "rect": [
+            16,
+            26,
+            16,
+            6
+          ],
+          "height": 2,
+          "kind": "street_block",
+          "pattern": "sample_graybox"
+        }
+      ],
+      "props": [
+        {
+          "scene": "res://assets/maps/leyton/props_batch_01/scenes/barrel.tscn",
+          "cell": [
+            6,
+            11
+          ],
+          "block_rect": [
+            6,
+            10,
+            1,
+            2
+          ]
+        },
+        {
+          "scene": "res://assets/maps/leyton/props_batch_01/scenes/crate.tscn",
+          "cell": [
+            7,
+            11
+          ],
+          "block_rect": [
+            7,
+            10,
+            1,
+            2
+          ]
+        },
+        {
+          "scene": "res://assets/maps/leyton/props_batch_01/scenes/notice_board.tscn",
+          "cell": [
+            14,
+            16
+          ],
+          "block_rect": [
+            14,
+            15,
+            1,
+            2
+          ]
+        },
+        {
+          "scene": "res://assets/maps/leyton/props_batch_01/scenes/grain_sacks.tscn",
+          "cell": [
+            29,
+            20
+          ],
+          "block_rect": [
+            29,
+            19,
+            1,
+            2
+          ]
+        },
+        {
+          "scene": "res://assets/maps/leyton/props_batch_01/scenes/barrel.tscn",
+          "cell": [
+            30,
+            20
+          ],
+          "block_rect": [
+            30,
+            19,
+            1,
+            2
+          ]
+        },
+        {
+          "scene": "res://assets/maps/leyton/props_batch_01/scenes/handcart.tscn",
+          "cell": [
+            3,
+            16
+          ],
+          "block_rect": [
+            3,
+            15,
+            1,
+            2
+          ]
+        }
+      ],
+      "review": {
+        "vehicle_path": [
+          [
+            2,
+            19
+          ],
+          [
+            11,
+            19
+          ],
+          [
+            18,
+            23
+          ],
+          [
+            30,
+            23
+          ]
+        ],
+        "walk_points": [
+          [
+            16.5,
+            2
+          ],
+          [
+            16.5,
+            9.5
+          ],
+          [
+            8,
+            9.5
+          ],
+          [
+            30,
+            9.5
+          ],
+          [
+            13.5,
+            29
+          ],
+          [
+            19.5,
+            18.5
+          ]
+        ],
+        "courtyard": [
+          5,
+          5,
+          6,
+          7
+        ]
+      }
+    }
+  ]
+}

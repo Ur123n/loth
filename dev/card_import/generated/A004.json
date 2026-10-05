@@ -1,0 +1,30 @@
+{
+  "id": "A004",
+  "name": "护住侧翼",
+  "character": "艾莉丝",
+  "rarity": "Basic",
+  "category": "道途专属卡牌",
+  "path": "梦魇行者",
+  "card_type": "行动",
+  "cost": 1,
+  "load": 1,
+  "target_type": "Ally",
+  "min_range": 1,
+  "range": 1,
+  "target_spec": "友军1",
+  "area": 0,
+  "keywords": [],
+  "tags": [
+    "Defense",
+    "Support"
+  ],
+  "description": "目标友军获得5格挡；若结算后仍与你相邻，你获得2格挡。",
+  "source_effect": "目标友军获得5格挡；若结算后仍与你相邻，你获得2格挡。",
+  "source_file": "艾莉丝_完整卡组_v0.1.md",
+  "source_line": 43,
+  "icon": "",
+  "art": "card_faces/A004.png",
+  "animation": "",
+  "effects": [],
+  "implementation_status": "pending"
+}

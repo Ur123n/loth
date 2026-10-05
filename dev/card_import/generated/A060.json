@@ -1,0 +1,33 @@
+{
+  "id": "A060",
+  "name": "灾梦：倒影",
+  "character": "艾莉丝",
+  "rarity": "Uncommon",
+  "category": "道途专属卡牌",
+  "path": "梦魇行者",
+  "card_type": "行动",
+  "cost": 1,
+  "load": 3,
+  "target_type": "Self",
+  "min_range": 0,
+  "range": 0,
+  "target_spec": "继承原牌",
+  "area": 0,
+  "keywords": [
+    "灾梦",
+    "消耗"
+  ],
+  "tags": [
+    "灾梦",
+    "Copy"
+  ],
+  "description": "条件：本回合已经抽牌、主动弃牌、且从弃牌堆拿回过牌。重复本回合最近一张基础费用≤1的非灾梦Attack的伤害与状态效果；可重新选择合法目标；不复制移动、抽牌、产费、回收与AOE范围变化。结算后进入沉梦。",
+  "source_effect": "重复本回合最近一张基础费用≤1的非灾梦Attack的伤害与状态效果；可重新选择合法目标；不复制移动、抽牌、产费、回收与AOE范围变化。结算后进入沉梦。",
+  "source_file": "艾莉丝_完整卡组_v0.1.md",
+  "source_line": 109,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [],
+  "implementation_status": "pending"
+}

@@ -1,0 +1,29 @@
+{
+  "id": "D072",
+  "name": "以牙还牙",
+  "character": "迪马斯",
+  "rarity": "Rare",
+  "category": "道途专属卡牌",
+  "path": "侠盗",
+  "card_type": "能力",
+  "cost": 1,
+  "load": 4,
+  "target_type": "Self",
+  "min_range": 0,
+  "range": 0,
+  "target_spec": "自身",
+  "area": 0,
+  "keywords": [],
+  "tags": [
+    "Reaction"
+  ],
+  "description": "本场战斗中，反击伤害变为1.5×CounterDamage(Level)。",
+  "source_effect": "本场战斗中，反击伤害变为1.5×CounterDamage(Level)。",
+  "source_file": "迪马斯_完整卡组_v0.3.md",
+  "source_line": 195,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [],
+  "implementation_status": "pending"
+}

@@ -1,0 +1,41 @@
+{
+  "id": "B010",
+  "name": "腐肉不死",
+  "character": "鲍德温",
+  "rarity": "Basic",
+  "category": "道途专属卡牌",
+  "path": "孢子卫士",
+  "card_type": "行动",
+  "cost": 2,
+  "load": 1,
+  "target_type": "Self",
+  "min_range": 0,
+  "range": 0,
+  "target_spec": "自身",
+  "area": 0,
+  "keywords": [],
+  "tags": [
+    "Defense",
+    "Healing"
+  ],
+  "description": "获得11格挡和2层疗愈。",
+  "source_effect": "获得11格挡和2层疗愈。",
+  "source_file": "鲍德温_完整卡组_v0.1.md",
+  "source_line": 179,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [
+    {
+      "logic": "defense",
+      "value": 11
+    },
+    {
+      "logic": "buff",
+      "target": "self",
+      "buff_type": "疗愈",
+      "stacks": 2
+    }
+  ],
+  "implementation_status": "supported"
+}

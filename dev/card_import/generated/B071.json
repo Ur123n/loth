@@ -1,0 +1,32 @@
+{
+  "id": "B071",
+  "name": "无人可挡",
+  "character": "鲍德温",
+  "rarity": "Rare",
+  "category": "道途专属卡牌",
+  "path": "孢子卫士",
+  "card_type": "攻击",
+  "cost": 3,
+  "load": 3,
+  "target_type": "Enemy",
+  "min_range": 0,
+  "range": 0,
+  "target_spec": "自身→敌1",
+  "area": 0,
+  "keywords": [],
+  "tags": [
+    "Melee",
+    "Movement",
+    "Bleed",
+    "Debuff"
+  ],
+  "description": "条件：可支付放血7。放血7；先移动最多2格，再造成38伤害并施加1层破绽。",
+  "source_effect": "放血7；先移动最多2格，再造成38伤害并施加1层破绽。",
+  "source_file": "鲍德温_完整卡组_v0.1.md",
+  "source_line": 261,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [],
+  "implementation_status": "pending"
+}

@@ -1,0 +1,87 @@
+[gd_scene load_steps=7 format=3]
+
+[ext_resource type="Script" path="res://core/world/map_pattern_instance.gd" id="1_pattern"]
+
+[sub_resource type="RectangleShape2D" id="ShapeLeft"]
+size = Vector2(12, 240)
+
+[sub_resource type="RectangleShape2D" id="ShapeTop"]
+size = Vector2(276, 12)
+
+[sub_resource type="RectangleShape2D" id="ShapeBottom"]
+size = Vector2(120, 12)
+
+[sub_resource type="RectangleShape2D" id="ShapeOcclusion"]
+size = Vector2(252, 204)
+
+[sub_resource type="RectangleShape2D" id="ShapeDoor"]
+size = Vector2(44, 32)
+
+[node name="HouseA" type="Node2D"]
+script = ExtResource("1_pattern")
+pattern_id = "house_a"
+footprint_cells = Vector2i(6, 5)
+anchor_cell = Vector2i(3, 5)
+interior_scene = "res://dev/map_pipeline_test/interior_test.tscn"
+metadata/category = "building_pattern"
+
+[node name="Visual" type="Node2D" parent="."]
+
+[node name="Base" type="Polygon2D" parent="Visual"]
+polygon = PackedVector2Array(-144, -240, 144, -240, 144, 0, -144, 0)
+color = Color(0.22, 0.18, 0.15, 1)
+
+[node name="Body" type="Polygon2D" parent="Visual"]
+polygon = PackedVector2Array(-132, -216, 132, -216, 132, -18, -132, -18)
+color = Color(0.34, 0.28, 0.22, 1)
+
+[node name="Roof" type="Polygon2D" parent="Visual"]
+z_index = 4
+polygon = PackedVector2Array(-156, -228, 0, -276, 156, -228, 132, -96, -132, -96)
+color = Color(0.16, 0.13, 0.14, 0.96)
+
+[node name="Foreground" type="Polygon2D" parent="Visual"]
+z_index = 6
+polygon = PackedVector2Array(-144, -42, -24, -42, -24, 0, -144, 0, 24, -42, 144, -42, 144, 0, 24, 0)
+color = Color(0.26, 0.2, 0.17, 1)
+
+[node name="Collision" type="StaticBody2D" parent="."]
+
+[node name="LeftWall" type="CollisionShape2D" parent="Collision"]
+position = Vector2(-138, -120)
+shape = SubResource("ShapeLeft")
+
+[node name="RightWall" type="CollisionShape2D" parent="Collision"]
+position = Vector2(138, -120)
+shape = SubResource("ShapeLeft")
+
+[node name="TopWall" type="CollisionShape2D" parent="Collision"]
+position = Vector2(0, -234)
+shape = SubResource("ShapeTop")
+
+[node name="BottomWallLeft" type="CollisionShape2D" parent="Collision"]
+position = Vector2(-84, -6)
+shape = SubResource("ShapeBottom")
+
+[node name="BottomWallRight" type="CollisionShape2D" parent="Collision"]
+position = Vector2(84, -6)
+shape = SubResource("ShapeBottom")
+
+[node name="Entrances" type="Node2D" parent="."]
+
+[node name="door_main" type="Marker2D" parent="Entrances"]
+position = Vector2(0, -6)
+metadata/target = "res://dev/map_pipeline_test/interior_test.tscn"
+
+[node name="OcclusionAreas" type="Area2D" parent="."]
+
+[node name="Interior" type="CollisionShape2D" parent="OcclusionAreas"]
+position = Vector2(0, -120)
+shape = SubResource("ShapeOcclusion")
+
+[node name="DoorTrigger" type="Area2D" parent="."]
+position = Vector2(0, -6)
+
+[node name="Shape" type="CollisionShape2D" parent="DoorTrigger"]
+shape = SubResource("ShapeDoor")
+

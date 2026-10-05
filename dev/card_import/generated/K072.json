@@ -1,0 +1,29 @@
+{
+  "id": "K072",
+  "name": "三处皆开",
+  "character": "卡莎",
+  "rarity": "Rare",
+  "category": "道途专属卡牌",
+  "path": "解剖学者",
+  "card_type": "攻击",
+  "cost": 1,
+  "load": 3,
+  "target_type": "Enemy",
+  "min_range": 1,
+  "range": 1,
+  "target_spec": "敌人1",
+  "area": 0,
+  "keywords": [
+    "消耗"
+  ],
+  "tags": [],
+  "description": "本回合已对目标使用至少2张不同外科牌后才能使用。造成10伤；放血8。",
+  "source_effect": "本回合已对目标使用至少2张不同外科牌后才能使用。造成10伤；放血8。",
+  "source_file": "卡莎_完整卡组_v0.2.md",
+  "source_line": 209,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [],
+  "implementation_status": "pending"
+}

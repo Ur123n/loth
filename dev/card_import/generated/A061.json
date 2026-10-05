@@ -1,0 +1,29 @@
+{
+  "id": "A061",
+  "name": "梦的目录",
+  "character": "艾莉丝",
+  "rarity": "Rare",
+  "category": "道途专属卡牌",
+  "path": "梦魇行者",
+  "card_type": "能力",
+  "cost": 1,
+  "load": 3,
+  "target_type": "Self",
+  "min_range": 0,
+  "range": 0,
+  "target_spec": "自身",
+  "area": 0,
+  "keywords": [],
+  "tags": [
+    "DeckControl"
+  ],
+  "description": "每回合开始时查看抽牌堆顶4张并任意排序；可将其中1张放至牌堆底。",
+  "source_effect": "每回合开始时查看抽牌堆顶4张并任意排序；可将其中1张放至牌堆底。",
+  "source_file": "艾莉丝_完整卡组_v0.1.md",
+  "source_line": 115,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [],
+  "implementation_status": "pending"
+}

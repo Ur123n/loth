@@ -1,0 +1,49 @@
+{
+	"generator": "built-in image_gen",
+	"materials": [
+		{
+			"edge_mean_rgb_delta": 25.3888895459628,
+			"mean_luma": 56.7588959591548,
+			"name": "roof",
+			"processing": "nearest resize; map_env palette; source retained; no edge repaint",
+			"size": [
+				48,
+				48
+			],
+			"source_sha256": "fa51aa8c82cbde83a5394cac0eb0c66a3cebecf65b6cf75e1ec2aae1b1aadee2"
+		},
+		{
+			"edge_mean_rgb_delta": 6.38194488206257,
+			"mean_luma": 47.7164588962759,
+			"name": "field",
+			"processing": "nearest resize; map_env palette; source retained; no edge repaint",
+			"size": [
+				48,
+				48
+			],
+			"source_sha256": "2e833b4ddc012bb0144589a8556aa8540d36d86511677b20296ddfcc46f64159"
+		},
+		{
+			"edge_mean_rgb_delta": 8.66666690213606,
+			"mean_luma": 62.2207326105513,
+			"name": "wood",
+			"processing": "nearest resize; map_env palette; source retained; no edge repaint",
+			"size": [
+				48,
+				48
+			],
+			"source_sha256": "685641895ee762fd00ab17e5046557a839e3d0ed4516f106b8921f71f2d83e40"
+		},
+		{
+			"edge_mean_rgb_delta": 9.54861145233735,
+			"mean_luma": 74.0547631984119,
+			"name": "soil",
+			"processing": "nearest resize; map_env palette; source retained; no edge repaint",
+			"size": [
+				48,
+				48
+			],
+			"source_sha256": "9b90557165d4f913858f50b97f8ed6ab1e8c442425916f90f9330168f764dc47"
+		}
+	]
+}

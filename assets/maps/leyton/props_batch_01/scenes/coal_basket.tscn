@@ -1,0 +1,27 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://core/world/free_prop.gd" id="1_05cjb"]
+[ext_resource type="Texture2D" path="res://assets/maps/leyton/props_batch_01/sprites/prop_coal_basket.png" id="2_sceoq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ntscx"]
+size = Vector2(58, 26)
+
+[node name="CoalBasket" type="Node2D" unique_id=448121443]
+texture_filter = 1
+script = ExtResource("1_05cjb")
+prop_id = "leyton_coal_basket"
+footprint_cells = Vector2i(2, 1)
+metadata/projection_id = "orthogonal_3q_48_v1"
+metadata/review_status = "candidate"
+
+[node name="Visual" type="Sprite2D" parent="." unique_id=1433660243]
+position = Vector2(-72, -84)
+texture = ExtResource("2_sceoq")
+centered = false
+
+[node name="Collision" type="StaticBody2D" parent="." unique_id=864290351]
+collision_layer = 2
+
+[node name="@CollisionShape2D@5" type="CollisionShape2D" parent="Collision" unique_id=1300090594]
+position = Vector2(0, -13)
+shape = SubResource("RectangleShape2D_ntscx")

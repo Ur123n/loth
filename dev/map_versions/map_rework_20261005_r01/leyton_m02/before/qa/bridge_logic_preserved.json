@@ -1,0 +1,35 @@
+﻿{
+    "plan_unchanged":  true,
+    "logic_assets":  [
+                         {
+                             "path":  "masks\\occupancy.png",
+                             "unchanged":  true,
+                             "sha256":  "310AB41342BF541C8F3F454880593685E14A682E6C550A858A8F49A2FC0235D8"
+                         },
+                         {
+                             "path":  "masks\\walkable.png",
+                             "unchanged":  true,
+                             "sha256":  "4948AB8ACF86C03F1507AE9FD6E1BFC79B266486F940F48D95E4621A6A92F471"
+                         },
+                         {
+                             "path":  "masks\\collision.png",
+                             "unchanged":  true,
+                             "sha256":  "A0A686B342ECAB2E9EAAD266AD29FBBF425682578CED1B178730F2A23AE1B1CA"
+                         },
+                         {
+                             "path":  "masks\\occlusion.png",
+                             "unchanged":  true,
+                             "sha256":  "A19D58E19468F13554D72F29EEF0DA2886633429E03437E1418CF0483225C167"
+                         },
+                         {
+                             "path":  "masks\\doors.png",
+                             "unchanged":  true,
+                             "sha256":  "FEA0B57CD9ED7E60E6F9C373FB4CB5F3972AC4256FB8C342C98BC7E19BF53931"
+                         },
+                         {
+                             "path":  "collision\\collision_rects.json",
+                             "unchanged":  true,
+                             "sha256":  "217A34FF939792BB1A11E2B9B95D3FF2A398E0C5461E73AE13037BCBFB531E30"
+                         }
+                     ]
+}

@@ -1,0 +1,32 @@
+{
+  "id": "D075",
+  "name": "枪刃华尔兹",
+  "character": "迪马斯",
+  "rarity": "Rare",
+  "category": "道途专属卡牌",
+  "path": "侠盗",
+  "card_type": "能力",
+  "cost": 2,
+  "load": 4,
+  "target_type": "Self",
+  "min_range": 0,
+  "range": 0,
+  "target_spec": "自身",
+  "area": 0,
+  "keywords": [],
+  "tags": [
+    "Combo",
+    "Reaction",
+    "Draw",
+    "Cost"
+  ],
+  "description": "每轮第一次同时满足：自上个己方回合结束后触发过反击，且本回合已分别打出Dagger Attack与Pistol Attack时，获得1层【华尔兹】。下一回合开始先结算常规反击清空，再消耗【华尔兹】：抽1张并获得1费。",
+  "source_effect": "每轮第一次同时满足：自上个己方回合结束后触发过反击，且本回合已分别打出Dagger Attack与Pistol Attack时，获得1层【华尔兹】。下一回合开始先结算常规反击清空，再消耗【华尔兹】：抽1张并获得1费。",
+  "source_file": "迪马斯_完整卡组_v0.3.md",
+  "source_line": 198,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [],
+  "implementation_status": "pending"
+}

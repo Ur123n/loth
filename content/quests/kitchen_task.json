@@ -1,0 +1,24 @@
+{
+  "id": "kitchen_task",
+  "name": "护送补给",
+  "description": "分支任务（默认路径）。菜园的干粮要送到东南哨塔，路上常有骷髅出没——打赢一场遭遇战即可证明你可靠。线索：东南角树林里总有战斗声。",
+  "complete": {
+    "type": "battle_won",
+    "count": 1
+  },
+  "rewards": [
+    {
+      "type": "text",
+      "text": "伙夫长把一袋干粮塞给你：『能打就是本事，拿着。』"
+    },
+    {
+      "type": "item",
+      "item": "干粮",
+      "count": 2
+    },
+    {
+      "type": "xp",
+      "amount": 20
+    }
+  ]
+}

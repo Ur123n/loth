@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://core/world/free_prop.gd" id="1_prop"]
+[ext_resource type="Texture2D" path="res://assets/dark48/道具/prop_rock.png" id="2_texture"]
+
+[sub_resource type="RectangleShape2D" id="ShapeCollision"]
+size = Vector2(30, 18)
+
+[node name="RoadsideRock" type="Node2D"]
+script = ExtResource("1_prop")
+prop_id = "roadside_rock"
+metadata/category = "free_prop"
+
+[node name="Visual" type="Sprite2D" parent="."]
+position = Vector2(0, -24)
+texture = ExtResource("2_texture")
+
+[node name="Collision" type="StaticBody2D" parent="."]
+
+[node name="Shape" type="CollisionShape2D" parent="Collision"]
+position = Vector2(0, -9)
+shape = SubResource("ShapeCollision")
+

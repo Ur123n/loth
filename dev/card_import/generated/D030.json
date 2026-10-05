@@ -1,0 +1,30 @@
+{
+  "id": "D030",
+  "name": "观察破绽",
+  "character": "迪马斯",
+  "rarity": "Common",
+  "category": "道途专属卡牌",
+  "path": "侠盗",
+  "card_type": "行动",
+  "cost": 1,
+  "load": 2,
+  "target_type": "Enemy",
+  "min_range": 1,
+  "range": 3,
+  "target_spec": "敌人3",
+  "area": 0,
+  "keywords": [],
+  "tags": [
+    "Mark",
+    "Draw"
+  ],
+  "description": "施加1层标记；抽1张。",
+  "source_effect": "施加1层标记；抽1张。",
+  "source_file": "迪马斯_完整卡组_v0.3.md",
+  "source_line": 143,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [],
+  "implementation_status": "pending"
+}

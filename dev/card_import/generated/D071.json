@@ -1,0 +1,30 @@
+{
+  "id": "D071",
+  "name": "不退反进",
+  "character": "迪马斯",
+  "rarity": "Rare",
+  "category": "道途专属卡牌",
+  "path": "侠盗",
+  "card_type": "能力",
+  "cost": 1,
+  "load": 3,
+  "target_type": "Self",
+  "min_range": 0,
+  "range": 0,
+  "target_spec": "自身",
+  "area": 0,
+  "keywords": [],
+  "tags": [
+    "Reaction",
+    "Cost"
+  ],
+  "description": "每轮第一次触发【反击】后，你下一己方回合打出的第一张基础费用≤1的Movement Skill费用变为0。",
+  "source_effect": "每轮第一次触发【反击】后，你下一己方回合打出的第一张基础费用≤1的Movement Skill费用变为0。",
+  "source_file": "迪马斯_完整卡组_v0.3.md",
+  "source_line": 194,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [],
+  "implementation_status": "pending"
+}

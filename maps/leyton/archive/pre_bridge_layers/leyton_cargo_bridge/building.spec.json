@@ -1,0 +1,116 @@
+{
+  "building_id": "leyton_cargo_bridge",
+  "display_name": "莱顿城货运石桥",
+  "kind": "structure",
+  "projection_id": "orthogonal_3q_48_v1",
+  "anchor_mode": "bottom_center",
+  "visual": {
+    "tile_size": 48,
+    "padding_tiles": 1,
+    "source_origin_tile": [
+      1,
+      1
+    ],
+    "clip_to_logic": false,
+    "layers": [
+      {
+        "name": "Base",
+        "role": "base",
+        "source": "res://assets/buildings/leyton_cargo_bridge/visual/source_graybox.png",
+        "output": "base.png",
+        "z_index": 0,
+        "visible": true
+      }
+    ]
+  },
+  "collision": {
+    "layer": 2,
+    "mask": 1
+  },
+  "sorting": {
+    "mode": "y_sort",
+    "y_sort_origin": "bottom_center",
+    "z_index": 0,
+    "occluder": false,
+    "roof_layer_z": 12
+  },
+  "tactical": {
+    "cover": 0,
+    "cover_level": "low",
+    "height_level": 0,
+    "blocks_los": false,
+    "enterable": false
+  },
+  "plan": {
+    "scale": {
+      "px_per_meter": 48,
+      "tile_px": 48
+    },
+    "origin_m": [
+      0,
+      0
+    ],
+    "footprint_m": [
+      12,
+      11
+    ],
+    "rooms": [
+      {
+        "id": "deck",
+        "label": "露天桥面",
+        "x_m": 0,
+        "y_m": 0,
+        "w_m": 12,
+        "h_m": 11,
+        "solid": false,
+        "roof": null
+      }
+    ],
+    "openings": [
+      {
+        "x_m": 0,
+        "y_m": 0,
+        "w_m": 1,
+        "h_m": 1
+      },
+      {
+        "x_m": 0,
+        "y_m": 10,
+        "w_m": 1,
+        "h_m": 1
+      },
+      {
+        "x_m": 11,
+        "y_m": 0,
+        "w_m": 1,
+        "h_m": 1
+      },
+      {
+        "x_m": 11,
+        "y_m": 10,
+        "w_m": 1,
+        "h_m": 1
+      }
+    ],
+    "doors": [
+      {
+        "id": "north",
+        "x_m": 1,
+        "y_m": 0,
+        "w_m": 10,
+        "side": "n",
+        "interact": "",
+        "target": "outside"
+      },
+      {
+        "id": "south",
+        "x_m": 1,
+        "y_m": 10,
+        "w_m": 10,
+        "side": "s",
+        "interact": "",
+        "target": "outside"
+      }
+    ]
+  }
+}

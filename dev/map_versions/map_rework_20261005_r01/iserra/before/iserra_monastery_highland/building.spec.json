@@ -1,0 +1,103 @@
+{
+  "building_id": "iserra_monastery_highland",
+  "display_name": "伊瑟拉修道院·高原边境",
+  "display_name_en": "Iserra Monastery, Highland Frontier",
+  "kind": "large_building",
+  "projection_id": "orthogonal_3q_48_v1",
+  "anchor_mode": "bottom_center",
+  "design_source": "C:\\美术素材制作\\build\\image26_iserra_monastery_orthographic",
+  "concept": "西南埃尔纳高原深山中的守焰修道院：既是朝圣修院，也是收殓焚尸、收容孤儿、照料病患与边境旅人的庇护节点。",
+  "visual": {
+    "tile_size": 48,
+    "padding_tiles": 1,
+    "source_origin_tile": [1, 1],
+    "clip_to_logic": false,
+    "note": "50×60 格只是视觉画布；逻辑占地为 48×58 格。主视觉采用无消失点、无近大远小的正交斜投影；挑檐、塔尖和阴影允许越出碰撞，完整建筑从不切成 tile。",
+    "layers": [
+      {
+        "name": "Shadow",
+        "role": "shadow",
+        "source": "res://assets/buildings/iserra_monastery_highland/visual/source_shadow.png",
+        "output": "shadow.png",
+        "z_index": -1,
+        "visible": true
+      },
+      {
+        "name": "Base",
+        "role": "base",
+        "source": "res://assets/buildings/iserra_monastery_highland/visual/source_structure.png",
+        "output": "base.png",
+        "z_index": 0,
+        "visible": true
+      },
+      {
+        "name": "WarmLight",
+        "role": "detail",
+        "source": "res://assets/buildings/iserra_monastery_highland/visual/source_warm_light.png",
+        "output": "warm_light.png",
+        "z_index": 12,
+        "visible": true
+      }
+    ]
+  },
+  "collision": {
+    "layer": 2,
+    "mask": 1,
+    "note": "碰撞按下列 solid 结构体块独立生成，不从 image2.5 像素轮廓猜测。南门两格宽通道单独开洞。"
+  },
+  "sorting": {
+    "mode": "y_sort",
+    "y_sort_origin": "bottom_center",
+    "z_index": 0,
+    "occluder": true,
+    "roof_layer_z": 12,
+    "bands": [
+      {"id": "north_range", "source_rect_tiles": [0, 0, 50, 13]},
+      {"id": "church", "source_rect_tiles": [0, 13, 50, 20]},
+      {"id": "cloister_north", "source_rect_tiles": [0, 33, 50, 6]},
+      {"id": "courtyard_and_wings", "source_rect_tiles": [0, 39, 50, 9]},
+      {"id": "south_gatehouse", "source_rect_tiles": [0, 48, 50, 12]}
+    ]
+  },
+  "tactical": {
+    "cover": 0.9,
+    "cover_level": "high",
+    "height_level": 3,
+    "blocks_los": true,
+    "enterable": false,
+    "cover_source": "collision",
+    "tactical_flags": {
+      "defensible": true,
+      "frontier_shelter": true,
+      "cremation_service": true,
+      "open_courtyard": ["central_garth"],
+      "chokepoints": ["south_gate"]
+    }
+  },
+  "plan": {
+    "scale": {
+      "px_per_meter": 48,
+      "tile_px": 48,
+      "tile_means": "1 tile = 1 m²"
+    },
+    "origin_m": [0, 0],
+    "footprint_m": [48, 58],
+    "note": "矩形是独立碰撞近似，不是绘图拼片；透明完整贴图始终只有一座修道院。",
+    "rooms": [
+      {"id": "north_range", "label": "北侧长翼与回廊", "x_m": 6, "y_m": 0, "w_m": 36, "h_m": 12, "solid": true, "roof": "slate"},
+      {"id": "west_range", "label": "西翼与钟塔", "x_m": 0, "y_m": 0, "w_m": 13, "h_m": 49, "solid": true, "roof": "slate"},
+      {"id": "east_range", "label": "东翼、医舍与焚化炉烟道", "x_m": 37, "y_m": 0, "w_m": 11, "h_m": 49, "solid": true, "roof": "slate"},
+      {"id": "church", "label": "守焰教堂中殿", "x_m": 13, "y_m": 12, "w_m": 24, "h_m": 20, "solid": true, "roof": "slate"},
+      {"id": "central_garth", "label": "露天回廊中庭与水井", "x_m": 13, "y_m": 31, "w_m": 24, "h_m": 19, "solid": false, "roof": null},
+      {"id": "south_service", "label": "厨房、收容所与司务房", "x_m": 30, "y_m": 37, "w_m": 7, "h_m": 13, "solid": true, "roof": "slate"},
+      {"id": "south_wall", "label": "南侧防护墙", "x_m": 0, "y_m": 49, "w_m": 48, "h_m": 9, "solid": true, "roof": null},
+      {"id": "south_gatehouse", "label": "南门楼", "x_m": 19, "y_m": 47, "w_m": 10, "h_m": 11, "solid": true, "roof": "slate"}
+    ],
+    "openings": [
+      {"x_m": 23, "y_m": 47, "w_m": 2, "h_m": 10, "note": "贯穿门楼至南墙内侧的双格主通道；最后一行由 doors 正式开口"}
+    ],
+    "doors": [
+      {"id": "south_gate", "x_m": 23, "y_m": 57, "w_m": 2, "side": "s", "target": "central_garth", "interact": "enter_monastery", "note": "高原驿路正门"}
+    ]
+  }
+}

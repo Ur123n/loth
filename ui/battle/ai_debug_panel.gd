@@ -2,7 +2,7 @@ class_name AiDebugPanel
 extends PanelContainer
 
 ## AI 决策调试面板（开发工具）。
-## 展示敌怪最近一次 AI 决策：目标、候选行动评分、最终选择与原因。
+## 展示敌怪最近一次 AI 决策：Goal、目标、候选行动评分（含 Utility 分项）、最终选择与原因。
 ## 打开方式：F4 切换；点击场上任意敌怪查看其决策（需该敌怪已行动过）。
 
 var _title: Label
@@ -57,6 +57,7 @@ func show_decision(unit: BattleUnit, decision: Dictionary) -> void:
 	_title.text = "AI 决策调试 —— %s（模板：%s）" % [
 		unit.get_display_name(), str(decision.get("archetype", ""))]
 	var lines: Array[String] = []
+	lines.append("当前 Goal：%s" % str(decision.get("goal", "")))
 	lines.append("当前目标：%s　威胁估值 %d" % [target_text, target_threat])
 	lines.append("最终选择：[color=#7fe07f]%s[/color]　评分 %d" % [
 		str(decision.get("action", "等待")), int(decision.get("score", 0))])
@@ -66,8 +67,16 @@ func show_decision(unit: BattleUnit, decision: Dictionary) -> void:
 	for c in decision.get("candidates", []):
 		var action := str(c.get("action", ""))
 		var mark := "▶" if action == str(decision.get("action", "")) else " "
-		lines.append("%s %s　%4d 分　%s" % [
-			mark, action, int(c.get("score", 0)), str(c.get("reason", ""))])
+		var component_text := ""
+		var comps: Dictionary = c.get("components", {})
+		if not comps.is_empty():
+			component_text = "　(基础%d 目标%d 位置%d 场景%d 性格%d 紧急%d 随机%d)" % [
+				int(comps.get("base", 0)), int(comps.get("target", 0)),
+				int(comps.get("position", 0)), int(comps.get("context", 0)),
+				int(comps.get("personality", 0)), int(comps.get("urgency", 0)),
+				int(comps.get("random", 0))]
+		lines.append("%s %s　%4d 分%s　%s" % [
+			mark, action, int(c.get("score", 0)), component_text, str(c.get("reason", ""))])
 	lines.append("")
 	lines.append("移动目标：%s　路径步数：%d" % [
 		str(decision.get("move_cell", Vector2i(-1, -1))),

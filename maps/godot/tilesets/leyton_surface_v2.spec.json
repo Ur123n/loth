@@ -1,0 +1,634 @@
+{
+  "tileset_name": "leyton_surface_v2",
+  "display_name": "莱顿城低重复地表与水岸",
+  "tile_size": [
+    48,
+    48
+  ],
+  "custom_data": [
+    {
+      "name": "solid",
+      "type": "bool"
+    },
+    {
+      "name": "tag",
+      "type": "string"
+    }
+  ],
+  "sources": [
+    {
+      "name": "materials",
+      "columns": 8,
+      "tile_size": [
+        48,
+        48
+      ],
+      "items": [
+        {
+          "tag": "grass",
+          "name": "grass",
+          "solid": false,
+          "file": "res://assets/maps/leyton/surface_v2/tiles/grass.png"
+        },
+        {
+          "tag": "grass_variant_1",
+          "name": "grass_variant_1",
+          "solid": false,
+          "file": "res://assets/maps/leyton/surface_v2/tiles/grass_variant_1.png"
+        },
+        {
+          "tag": "grass_variant_2",
+          "name": "grass_variant_2",
+          "solid": false,
+          "file": "res://assets/maps/leyton/surface_v2/tiles/grass_variant_2.png"
+        },
+        {
+          "tag": "grass_variant_3",
+          "name": "grass_variant_3",
+          "solid": false,
+          "file": "res://assets/maps/leyton/surface_v2/tiles/grass_variant_3.png"
+        },
+        {
+          "tag": "dirt",
+          "name": "dirt",
+          "solid": false,
+          "file": "res://assets/maps/leyton/surface_v2/tiles/dirt.png"
+        },
+        {
+          "tag": "road_stone",
+          "name": "road_stone",
+          "solid": false,
+          "file": "res://assets/maps/leyton/surface_v2/tiles/road_stone.png"
+        },
+        {
+          "tag": "road_stone_variant_1",
+          "name": "road_stone_variant_1",
+          "solid": false,
+          "file": "res://assets/maps/leyton/surface_v2/tiles/road_stone_variant_1.png"
+        },
+        {
+          "tag": "road_stone_variant_2",
+          "name": "road_stone_variant_2",
+          "solid": false,
+          "file": "res://assets/maps/leyton/surface_v2/tiles/road_stone_variant_2.png"
+        },
+        {
+          "tag": "road_stone_variant_3",
+          "name": "road_stone_variant_3",
+          "solid": false,
+          "file": "res://assets/maps/leyton/surface_v2/tiles/road_stone_variant_3.png"
+        },
+        {
+          "tag": "water_deep",
+          "name": "water_deep",
+          "solid": true,
+          "file": "res://assets/maps/leyton/surface_v1/tiles/water_deep.png"
+        },
+        {
+          "tag": "wall_top",
+          "name": "wall_top",
+          "solid": true,
+          "file": "res://assets/maps/leyton/surface_v1/tiles/wall_top.png"
+        }
+      ]
+    },
+    {
+      "name": "auto_dirt_over_grass",
+      "columns": 8,
+      "tile_size": [
+        48,
+        48
+      ],
+      "autotile": {
+        "pair": "dirt_over_grass",
+        "base_tag": "grass",
+        "patch_tag": "dirt",
+        "dir": "res://assets/maps/leyton/surface_v2/autotile/dirt_over_grass",
+        "prefix": "auto_dirt_over_grass",
+        "variants": 2
+      },
+      "terrain": {
+        "set": "dirt_over_grass",
+        "base": "草地",
+        "patch": "泥土"
+      }
+    },
+    {
+      "name": "auto_road_over_dirt",
+      "columns": 8,
+      "tile_size": [
+        48,
+        48
+      ],
+      "autotile": {
+        "pair": "road_over_dirt",
+        "base_tag": "dirt",
+        "patch_tag": "road_stone",
+        "dir": "res://assets/maps/leyton/surface_v2/autotile/road_over_dirt",
+        "prefix": "auto_road_over_dirt",
+        "variants": 2
+      },
+      "terrain": {
+        "set": "road_over_dirt",
+        "base": "泥土",
+        "patch": "石砖路"
+      }
+    },
+    {
+      "name": "shore",
+      "columns": 9,
+      "tile_size": [
+        48,
+        48
+      ],
+      "items": [
+        {
+          "tag": "shore_0",
+          "name": "三材质水岸 0",
+          "solid": true,
+          "file": "res://assets/maps/leyton/surface_v2/shore/shore_0.png"
+        },
+        {
+          "tag": "shore_1",
+          "name": "三材质水岸 1",
+          "solid": true,
+          "file": "res://assets/maps/leyton/surface_v2/shore/shore_1.png"
+        },
+        {
+          "tag": "shore_2",
+          "name": "三材质水岸 2",
+          "solid": true,
+          "file": "res://assets/maps/leyton/surface_v2/shore/shore_2.png"
+        },
+        {
+          "tag": "shore_3",
+          "name": "三材质水岸 3",
+          "solid": true,
+          "file": "res://assets/maps/leyton/surface_v2/shore/shore_3.png"
+        },
+        {
+          "tag": "shore_4",
+          "name": "三材质水岸 4",
+          "solid": true,
+          "file": "res://assets/maps/leyton/surface_v2/shore/shore_4.png"
+        },
+        {
+          "tag": "shore_5",
+          "name": "三材质水岸 5",
+          "solid": true,
+          "file": "res://assets/maps/leyton/surface_v2/shore/shore_5.png"
+        },
+        {
+          "tag": "shore_6",
+          "name": "三材质水岸 6",
+          "solid": true,
+          "file": "res://assets/maps/leyton/surface_v2/shore/shore_6.png"
+        },
+        {
+          "tag": "shore_7",
+          "name": "三材质水岸 7",
+          "solid": true,
+          "file": "res://assets/maps/leyton/surface_v2/shore/shore_7.png"
+        },
+        {
+          "tag": "shore_8",
+          "name": "三材质水岸 8",
+          "solid": true,
+          "file": "res://assets/maps/leyton/surface_v2/shore/shore_8.png"
+        },
+        {
+          "tag": "shore_9",
+          "name": "三材质水岸 9",
+          "solid": true,
+          "file": "res://assets/maps/leyton/surface_v2/shore/shore_9.png"
+        },
+        {
+          "tag": "shore_10",
+          "name": "三材质水岸 10",
+          "solid": true,
+          "file": "res://assets/maps/leyton/surface_v2/shore/shore_10.png"
+        },
+        {
+          "tag": "shore_11",
+          "name": "三材质水岸 11",
+          "solid": true,
+          "file": "res://assets/maps/leyton/surface_v2/shore/shore_11.png"
+        },
+        {
+          "tag": "shore_12",
+          "name": "三材质水岸 12",
+          "solid": true,
+          "file": "res://assets/maps/leyton/surface_v2/shore/shore_12.png"
+        },
+        {
+          "tag": "shore_13",
+          "name": "三材质水岸 13",
+          "solid": true,
+          "file": "res://assets/maps/leyton/surface_v2/shore/shore_13.png"
+        },
+        {
+          "tag": "shore_14",
+          "name": "三材质水岸 14",
+          "solid": true,
+          "file": "res://assets/maps/leyton/surface_v2/shore/shore_14.png"
+        },
+        {
+          "tag": "shore_15",
+          "name": "三材质水岸 15",
+          "solid": true,
+          "file": "res://assets/maps/leyton/surface_v2/shore/shore_15.png"
+        },
+        {
+          "tag": "shore_16",
+          "name": "三材质水岸 16",
+          "solid": true,
+          "file": "res://assets/maps/leyton/surface_v2/shore/shore_16.png"
+        },
+        {
+          "tag": "shore_17",
+          "name": "三材质水岸 17",
+          "solid": true,
+          "file": "res://assets/maps/leyton/surface_v2/shore/shore_17.png"
+        },
+        {
+          "tag": "shore_18",
+          "name": "三材质水岸 18",
+          "solid": true,
+          "file": "res://assets/maps/leyton/surface_v2/shore/shore_18.png"
+        },
+        {
+          "tag": "shore_19",
+          "name": "三材质水岸 19",
+          "solid": true,
+          "file": "res://assets/maps/leyton/surface_v2/shore/shore_19.png"
+        },
+        {
+          "tag": "shore_20",
+          "name": "三材质水岸 20",
+          "solid": true,
+          "file": "res://assets/maps/leyton/surface_v2/shore/shore_20.png"
+        },
+        {
+          "tag": "shore_21",
+          "name": "三材质水岸 21",
+          "solid": true,
+          "file": "res://assets/maps/leyton/surface_v2/shore/shore_21.png"
+        },
+        {
+          "tag": "shore_22",
+          "name": "三材质水岸 22",
+          "solid": true,
+          "file": "res://assets/maps/leyton/surface_v2/shore/shore_22.png"
+        },
+        {
+          "tag": "shore_23",
+          "name": "三材质水岸 23",
+          "solid": true,
+          "file": "res://assets/maps/leyton/surface_v2/shore/shore_23.png"
+        },
+        {
+          "tag": "shore_24",
+          "name": "三材质水岸 24",
+          "solid": true,
+          "file": "res://assets/maps/leyton/surface_v2/shore/shore_24.png"
+        },
+        {
+          "tag": "shore_25",
+          "name": "三材质水岸 25",
+          "solid": true,
+          "file": "res://assets/maps/leyton/surface_v2/shore/shore_25.png"
+        },
+        {
+          "tag": "shore_26",
+          "name": "三材质水岸 26",
+          "solid": true,
+          "file": "res://assets/maps/leyton/surface_v2/shore/shore_26.png"
+        },
+        {
+          "tag": "shore_27",
+          "name": "三材质水岸 27",
+          "solid": true,
+          "file": "res://assets/maps/leyton/surface_v2/shore/shore_27.png"
+        },
+        {
+          "tag": "shore_28",
+          "name": "三材质水岸 28",
+          "solid": true,
+          "file": "res://assets/maps/leyton/surface_v2/shore/shore_28.png"
+        },
+        {
+          "tag": "shore_29",
+          "name": "三材质水岸 29",
+          "solid": true,
+          "file": "res://assets/maps/leyton/surface_v2/shore/shore_29.png"
+        },
+        {
+          "tag": "shore_30",
+          "name": "三材质水岸 30",
+          "solid": true,
+          "file": "res://assets/maps/leyton/surface_v2/shore/shore_30.png"
+        },
+        {
+          "tag": "shore_31",
+          "name": "三材质水岸 31",
+          "solid": true,
+          "file": "res://assets/maps/leyton/surface_v2/shore/shore_31.png"
+        },
+        {
+          "tag": "shore_32",
+          "name": "三材质水岸 32",
+          "solid": true,
+          "file": "res://assets/maps/leyton/surface_v2/shore/shore_32.png"
+        },
+        {
+          "tag": "shore_33",
+          "name": "三材质水岸 33",
+          "solid": true,
+          "file": "res://assets/maps/leyton/surface_v2/shore/shore_33.png"
+        },
+        {
+          "tag": "shore_34",
+          "name": "三材质水岸 34",
+          "solid": true,
+          "file": "res://assets/maps/leyton/surface_v2/shore/shore_34.png"
+        },
+        {
+          "tag": "shore_35",
+          "name": "三材质水岸 35",
+          "solid": true,
+          "file": "res://assets/maps/leyton/surface_v2/shore/shore_35.png"
+        },
+        {
+          "tag": "shore_36",
+          "name": "三材质水岸 36",
+          "solid": true,
+          "file": "res://assets/maps/leyton/surface_v2/shore/shore_36.png"
+        },
+        {
+          "tag": "shore_37",
+          "name": "三材质水岸 37",
+          "solid": true,
+          "file": "res://assets/maps/leyton/surface_v2/shore/shore_37.png"
+        },
+        {
+          "tag": "shore_38",
+          "name": "三材质水岸 38",
+          "solid": true,
+          "file": "res://assets/maps/leyton/surface_v2/shore/shore_38.png"
+        },
+        {
+          "tag": "shore_39",
+          "name": "三材质水岸 39",
+          "solid": true,
+          "file": "res://assets/maps/leyton/surface_v2/shore/shore_39.png"
+        },
+        {
+          "tag": "shore_40",
+          "name": "三材质水岸 40",
+          "solid": true,
+          "file": "res://assets/maps/leyton/surface_v2/shore/shore_40.png"
+        },
+        {
+          "tag": "shore_41",
+          "name": "三材质水岸 41",
+          "solid": true,
+          "file": "res://assets/maps/leyton/surface_v2/shore/shore_41.png"
+        },
+        {
+          "tag": "shore_42",
+          "name": "三材质水岸 42",
+          "solid": true,
+          "file": "res://assets/maps/leyton/surface_v2/shore/shore_42.png"
+        },
+        {
+          "tag": "shore_43",
+          "name": "三材质水岸 43",
+          "solid": true,
+          "file": "res://assets/maps/leyton/surface_v2/shore/shore_43.png"
+        },
+        {
+          "tag": "shore_44",
+          "name": "三材质水岸 44",
+          "solid": true,
+          "file": "res://assets/maps/leyton/surface_v2/shore/shore_44.png"
+        },
+        {
+          "tag": "shore_45",
+          "name": "三材质水岸 45",
+          "solid": true,
+          "file": "res://assets/maps/leyton/surface_v2/shore/shore_45.png"
+        },
+        {
+          "tag": "shore_46",
+          "name": "三材质水岸 46",
+          "solid": true,
+          "file": "res://assets/maps/leyton/surface_v2/shore/shore_46.png"
+        },
+        {
+          "tag": "shore_47",
+          "name": "三材质水岸 47",
+          "solid": true,
+          "file": "res://assets/maps/leyton/surface_v2/shore/shore_47.png"
+        },
+        {
+          "tag": "shore_48",
+          "name": "三材质水岸 48",
+          "solid": true,
+          "file": "res://assets/maps/leyton/surface_v2/shore/shore_48.png"
+        },
+        {
+          "tag": "shore_49",
+          "name": "三材质水岸 49",
+          "solid": true,
+          "file": "res://assets/maps/leyton/surface_v2/shore/shore_49.png"
+        },
+        {
+          "tag": "shore_50",
+          "name": "三材质水岸 50",
+          "solid": true,
+          "file": "res://assets/maps/leyton/surface_v2/shore/shore_50.png"
+        },
+        {
+          "tag": "shore_51",
+          "name": "三材质水岸 51",
+          "solid": true,
+          "file": "res://assets/maps/leyton/surface_v2/shore/shore_51.png"
+        },
+        {
+          "tag": "shore_52",
+          "name": "三材质水岸 52",
+          "solid": true,
+          "file": "res://assets/maps/leyton/surface_v2/shore/shore_52.png"
+        },
+        {
+          "tag": "shore_53",
+          "name": "三材质水岸 53",
+          "solid": true,
+          "file": "res://assets/maps/leyton/surface_v2/shore/shore_53.png"
+        },
+        {
+          "tag": "shore_54",
+          "name": "三材质水岸 54",
+          "solid": true,
+          "file": "res://assets/maps/leyton/surface_v2/shore/shore_54.png"
+        },
+        {
+          "tag": "shore_55",
+          "name": "三材质水岸 55",
+          "solid": true,
+          "file": "res://assets/maps/leyton/surface_v2/shore/shore_55.png"
+        },
+        {
+          "tag": "shore_56",
+          "name": "三材质水岸 56",
+          "solid": true,
+          "file": "res://assets/maps/leyton/surface_v2/shore/shore_56.png"
+        },
+        {
+          "tag": "shore_57",
+          "name": "三材质水岸 57",
+          "solid": true,
+          "file": "res://assets/maps/leyton/surface_v2/shore/shore_57.png"
+        },
+        {
+          "tag": "shore_58",
+          "name": "三材质水岸 58",
+          "solid": true,
+          "file": "res://assets/maps/leyton/surface_v2/shore/shore_58.png"
+        },
+        {
+          "tag": "shore_59",
+          "name": "三材质水岸 59",
+          "solid": true,
+          "file": "res://assets/maps/leyton/surface_v2/shore/shore_59.png"
+        },
+        {
+          "tag": "shore_60",
+          "name": "三材质水岸 60",
+          "solid": true,
+          "file": "res://assets/maps/leyton/surface_v2/shore/shore_60.png"
+        },
+        {
+          "tag": "shore_61",
+          "name": "三材质水岸 61",
+          "solid": true,
+          "file": "res://assets/maps/leyton/surface_v2/shore/shore_61.png"
+        },
+        {
+          "tag": "shore_62",
+          "name": "三材质水岸 62",
+          "solid": true,
+          "file": "res://assets/maps/leyton/surface_v2/shore/shore_62.png"
+        },
+        {
+          "tag": "shore_63",
+          "name": "三材质水岸 63",
+          "solid": true,
+          "file": "res://assets/maps/leyton/surface_v2/shore/shore_63.png"
+        },
+        {
+          "tag": "shore_64",
+          "name": "三材质水岸 64",
+          "solid": true,
+          "file": "res://assets/maps/leyton/surface_v2/shore/shore_64.png"
+        },
+        {
+          "tag": "shore_65",
+          "name": "三材质水岸 65",
+          "solid": true,
+          "file": "res://assets/maps/leyton/surface_v2/shore/shore_65.png"
+        },
+        {
+          "tag": "shore_66",
+          "name": "三材质水岸 66",
+          "solid": true,
+          "file": "res://assets/maps/leyton/surface_v2/shore/shore_66.png"
+        },
+        {
+          "tag": "shore_67",
+          "name": "三材质水岸 67",
+          "solid": true,
+          "file": "res://assets/maps/leyton/surface_v2/shore/shore_67.png"
+        },
+        {
+          "tag": "shore_68",
+          "name": "三材质水岸 68",
+          "solid": true,
+          "file": "res://assets/maps/leyton/surface_v2/shore/shore_68.png"
+        },
+        {
+          "tag": "shore_69",
+          "name": "三材质水岸 69",
+          "solid": true,
+          "file": "res://assets/maps/leyton/surface_v2/shore/shore_69.png"
+        },
+        {
+          "tag": "shore_70",
+          "name": "三材质水岸 70",
+          "solid": true,
+          "file": "res://assets/maps/leyton/surface_v2/shore/shore_70.png"
+        },
+        {
+          "tag": "shore_71",
+          "name": "三材质水岸 71",
+          "solid": true,
+          "file": "res://assets/maps/leyton/surface_v2/shore/shore_71.png"
+        },
+        {
+          "tag": "shore_72",
+          "name": "三材质水岸 72",
+          "solid": true,
+          "file": "res://assets/maps/leyton/surface_v2/shore/shore_72.png"
+        },
+        {
+          "tag": "shore_73",
+          "name": "三材质水岸 73",
+          "solid": true,
+          "file": "res://assets/maps/leyton/surface_v2/shore/shore_73.png"
+        },
+        {
+          "tag": "shore_74",
+          "name": "三材质水岸 74",
+          "solid": true,
+          "file": "res://assets/maps/leyton/surface_v2/shore/shore_74.png"
+        },
+        {
+          "tag": "shore_75",
+          "name": "三材质水岸 75",
+          "solid": true,
+          "file": "res://assets/maps/leyton/surface_v2/shore/shore_75.png"
+        },
+        {
+          "tag": "shore_76",
+          "name": "三材质水岸 76",
+          "solid": true,
+          "file": "res://assets/maps/leyton/surface_v2/shore/shore_76.png"
+        },
+        {
+          "tag": "shore_77",
+          "name": "三材质水岸 77",
+          "solid": true,
+          "file": "res://assets/maps/leyton/surface_v2/shore/shore_77.png"
+        },
+        {
+          "tag": "shore_78",
+          "name": "三材质水岸 78",
+          "solid": true,
+          "file": "res://assets/maps/leyton/surface_v2/shore/shore_78.png"
+        },
+        {
+          "tag": "shore_79",
+          "name": "三材质水岸 79",
+          "solid": true,
+          "file": "res://assets/maps/leyton/surface_v2/shore/shore_79.png"
+        },
+        {
+          "tag": "shore_80",
+          "name": "三材质水岸 80",
+          "solid": true,
+          "file": "res://assets/maps/leyton/surface_v2/shore/shore_80.png"
+        }
+      ]
+    }
+  ]
+}

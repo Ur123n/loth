@@ -1,0 +1,30 @@
+{
+  "id": "A046",
+  "name": "护送穿行",
+  "character": "艾莉丝",
+  "rarity": "Uncommon",
+  "category": "道途专属卡牌",
+  "path": "梦魇行者",
+  "card_type": "行动",
+  "cost": 1,
+  "load": 2,
+  "target_type": "Ally",
+  "min_range": 1,
+  "range": 2,
+  "target_spec": "友军2",
+  "area": 0,
+  "keywords": [],
+  "tags": [
+    "Support",
+    "Movement"
+  ],
+  "description": "目标友军可移动最多1格；你可移动最多1格；若最终相邻，双方各获得3格挡。",
+  "source_effect": "目标友军可移动最多1格；你可移动最多1格；若最终相邻，双方各获得3格挡。",
+  "source_file": "艾莉丝_完整卡组_v0.1.md",
+  "source_line": 95,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [],
+  "implementation_status": "pending"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "A067",
+  "name": "清点余牌",
+  "character": "艾莉丝",
+  "rarity": "Rare",
+  "category": "道途专属卡牌",
+  "path": "梦魇行者",
+  "card_type": "行动",
+  "cost": 1,
+  "load": 2,
+  "target_type": "Self",
+  "min_range": 0,
+  "range": 0,
+  "target_spec": "自身",
+  "area": 0,
+  "keywords": [
+    "消耗"
+  ],
+  "tags": [
+    "DeckControl"
+  ],
+  "description": "条件：抽牌堆≤5。查看抽牌堆内全部牌并任意排序，然后抽1张。",
+  "source_effect": "查看抽牌堆内全部牌并任意排序，然后抽1张。",
+  "source_file": "艾莉丝_完整卡组_v0.1.md",
+  "source_line": 121,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [],
+  "implementation_status": "pending"
+}

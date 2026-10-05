@@ -1,0 +1,31 @@
+{
+  "id": "A008",
+  "name": "不祥预感",
+  "character": "艾莉丝",
+  "rarity": "Basic",
+  "category": "道途专属卡牌",
+  "path": "梦魇行者",
+  "card_type": "攻击",
+  "cost": 2,
+  "load": 1,
+  "target_type": "Enemy",
+  "min_range": 1,
+  "range": 2,
+  "target_spec": "1–2",
+  "area": 0,
+  "keywords": [
+    "灾梦"
+  ],
+  "tags": [
+    "灾梦"
+  ],
+  "description": "条件：主动弃置1张其他手牌。造成22伤害并施加1层虚弱。结算后进入沉梦。",
+  "source_effect": "造成22伤害并施加1层虚弱。结算后进入沉梦。",
+  "source_file": "艾莉丝_完整卡组_v0.1.md",
+  "source_line": 47,
+  "icon": "",
+  "art": "card_faces/A008.png",
+  "animation": "",
+  "effects": [],
+  "implementation_status": "pending"
+}

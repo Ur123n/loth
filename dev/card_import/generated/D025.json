@@ -1,0 +1,30 @@
+{
+  "id": "D025",
+  "name": "边走边想",
+  "character": "迪马斯",
+  "rarity": "Common",
+  "category": "道途专属卡牌",
+  "path": "侠盗",
+  "card_type": "行动",
+  "cost": 1,
+  "load": 2,
+  "target_type": "Self",
+  "min_range": 0,
+  "range": 0,
+  "target_spec": "自身",
+  "area": 0,
+  "keywords": [],
+  "tags": [
+    "Movement",
+    "Draw"
+  ],
+  "description": "移动最多2格；抽1张。",
+  "source_effect": "移动最多2格；抽1张。",
+  "source_file": "迪马斯_完整卡组_v0.3.md",
+  "source_line": 138,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [],
+  "implementation_status": "pending"
+}

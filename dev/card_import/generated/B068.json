@@ -1,0 +1,31 @@
+{
+  "id": "B068",
+  "name": "城主亲征",
+  "character": "鲍德温",
+  "rarity": "Rare",
+  "category": "道途专属卡牌",
+  "path": "孢子卫士",
+  "card_type": "能力",
+  "cost": 2,
+  "load": 3,
+  "target_type": "Self",
+  "min_range": 0,
+  "range": 0,
+  "target_spec": "自身",
+  "area": 0,
+  "keywords": [],
+  "tags": [
+    "Support",
+    "Inspire",
+    "Movement"
+  ],
+  "description": "其他友军获得鼓舞时，其移动距离+1，持续到其消耗1层鼓舞或其下一回合结束。",
+  "source_effect": "其他友军获得鼓舞时，其移动距离+1，持续到其消耗1层鼓舞或其下一回合结束。",
+  "source_file": "鲍德温_完整卡组_v0.1.md",
+  "source_line": 258,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [],
+  "implementation_status": "pending"
+}

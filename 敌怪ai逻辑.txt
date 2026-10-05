@@ -1,0 +1,181 @@
+Enemy AI System
+
+1. 系统目标
+
+Enemy AI 负责控制战斗中的敌方单位。AI 的职责不是直接执行攻击、增益、减益、移动等具体行为，而是：读取当前战斗状态；获取该敌怪拥有的可用 Action；判断 Action 是否满足使用条件；为可用 Action 生成候选目标和候选位置；对候选行动进行 Utility 评分；选择当前最合适的行动；将行动提交给 ActionSystem 执行；根据行动结果继续执行本回合剩余行动或结束回合。核心关系：EnemyAI → ActionCandidate → ActionSystem → EffectSystem → BattleState。
+
+2. 核心设计原则
+
+2.1 AI 不直接执行游戏效果
+
+AI 不允许直接修改 HP、Buff、Debuff、Position、Energy、Status、Death、Equipment 等游戏状态。AI 只负责选择行动。例如错误做法：enemy.hp -= 20；正确流程：AI → AttackAction → ActionSystem → DamageEffect → BattleState。
+
+2.2 Action 是统一行为接口
+
+所有敌怪能够执行的行为都应该被抽象为 Action，例如 MoveAction、AttackAction、AbilityAction、DefendAction、HealAction、BuffAction、DebuffAction、SummonAction、DispelAction、RetreatAction、WaitAction。Action 本身负责描述行为，实际效果通过 EffectSystem 结算。例如 PoisonCloud = DamageEffect + PoisonEffect，WarCry = BuffEffect，BloodRitual = SelfDamageEffect + AttackBuffEffect。
+
+3. EnemyData
+
+敌怪主要通过数据资源定义，而不是通过大量独立 AI 脚本定义。推荐结构：EnemyData → Identity / Stats / Traits / ActionSet / AIProfile / Triggers / Rewards。Identity 定义名称、ID、描述、图标、模型；Stats 定义 HP、Strength、Agility、Endurance 等属性；Traits 定义 Undead、Humanoid、Elite、Flying、Boss、Support 等标签；ActionSet 定义敌怪能够使用的 Action；AIProfile 定义行为倾向；Triggers 定义特殊事件触发行为。
+
+4. AI Profile
+
+AIProfile 用于定义敌怪的行为倾向，不应该为每种敌怪创建独立 AI 代码。推荐参数：Aggression、Support、Caution、Mobility、Defensiveness、TargetPriority、PreferredRange。这些参数影响 Utility 评分，而不是直接规定敌怪必须采取某种行为。例如狂战士：Aggression 90、Support 0、Caution 10、Mobility 70、Defensiveness 10、PreferredRange 1；祭司：Aggression 30、Support 100、Caution 80、Mobility 30、Defensiveness 80、PreferredRange 3；刺客：Aggression 90、Support 0、Caution 50、Mobility 100、Defensiveness 20、PreferredRange 1。
+
+5. Action Candidate
+
+AI 不应该直接从 Action 列表中选择，因为同一个 Action 可能拥有多个目标和多个位置。因此需要生成 ActionCandidate。例如 Attack → Attack Knight / Attack Archer / Attack Mage 实际上是三个不同候选行动；Move → Hex A / Hex B / Hex C 也是多个候选行动。AI 的实际决策单位是：Action + Target + Position + Parameters。
+
+6. AI 决策流程
+
+标准流程：开始行动 → 读取 BattleState → 读取 EnemyData → 获取 ActionSet → 检查 Action Conditions → 生成 Action Candidates → 生成合法目标 → 生成合法位置 → Utility 评分 → 过滤无效行动 → 选择最高评分行动 → 提交 ActionSystem → 等待行动结算 → 重新评估战场 → 继续行动或结束回合。AI 每次执行行动后都应该重新评估战场，而不是在回合开始时一次性决定整个回合。
+
+7. Conditions
+
+Condition 用于判断 Action 当前是否可以使用，回答“这个行动能不能做”，而不是“这个行动值不值得做”。例如 HealAlly → AllyHP < 70%；BloodRitual → SelfHP > 30% 且 SelfBuff(Berserk) == false；PoisonCloud → EnemyCountInArea >= 2；Summon → CurrentSummons < MaxSummons。如果没有任何目标满足 Condition，则不生成该 Action 的候选项。
+
+8. Utility
+
+Utility 用于判断多个合法行动中当前最值得执行哪个。推荐结构：Utility = BaseScore + TargetScore + PositionScore + ContextScore + PersonalityScore + UrgencyScore + RandomVariation。并非所有 Action 都必须使用全部评分项。Utility 必须具有可解释性，方便调试。
+
+9. Base Score
+
+每个 Action 可以拥有基础评分，表示该敌怪通常有多愿意使用这个行为。例如 Attack = 30、Heal = 20、Buff = 15、Move = 5。具体数值不固定，应通过实际战斗测试调整。
+
+10. Target Score
+
+TargetScore 用于评价目标，可考虑：Threat、KillPotential、TargetVulnerability、Distance、RolePriority、是否孤立、是否处于异常状态、是否正在执行重要行为等。目标选择不能简单固定为“最近的人”。
+
+11. Threat
+
+玩家单位可以拥有动态 Threat。Threat 可以受到伤害能力、治疗能力、控制能力、Buff 能力、装备、当前状态、历史伤害等因素影响。Threat 不应该简单等于攻击力。例如高伤害角色、强力治疗角色、控制角色都可能具有高 Threat。不同敌怪可以拥有不同的 TargetPriority。
+
+12. Kill Potential
+
+如果某个行动可以直接击杀目标，应给予较高评分。例如目标 HP 为 10，而预计伤害为 30，则 KillPotential 应明显提高，使敌怪不会因为另一个目标 Threat 更高而放弃眼前可以直接完成的击杀。
+
+13. Position Evaluation
+
+六边形战斗中，位置是 AI 的重要组成部分。AI 不仅需要考虑“攻击谁”，还需要考虑“应该站在哪里”。Position Evaluation 可以考虑：与目标距离、是否进入攻击范围、是否暴露、是否受到多个敌人攻击、是否保护重要单位、是否阻挡敌人、是否处于技能范围、是否靠近目标区域、是否符合 PreferredRange。
+
+14. Preferred Range
+
+每个敌怪可以定义理想距离。例如近战单位 PreferredRange = 1，短程单位 = 2，远程单位 = 34。PreferredRange 只是 Utility 的影响因素，不应该机械地强制敌怪始终保持固定距离。
+
+15. Support
+
+Support 用于处理治疗、Buff、护盾、解毒、驱散、保护、召唤等行为。例如祭司 Support = 100，则 Heal、Buff、Dispel、Protect 等 Action 的 Utility 更高。Support 行为应根据当前战场判断，而不是无条件使用。
+
+16. Buff
+
+Buff 是普通 Action，例如 WarCry → Target: Allies → Effect: AttackBuff。AI 需要判断当前是否存在值得 Buff 的目标。Buff Utility 可以考虑目标数量、目标强度、目标当前状态、Buff 持续时间、目标即将执行的行动等。如果周围存在多个高价值敌人，群体 Buff Utility 提高；如果只剩一个濒死单位，Utility 降低。
+
+17. Debuff
+
+Debuff 同样作为普通 Action，例如 Curse → Target: Enemy → Effects: AttackDebuff + HealingReduction。Utility 可以考虑目标威胁、目标生命、目标当前 Buff、Debuff 强度、Debuff 持续时间以及目标是否即将执行高价值行动。
+
+18. 治疗
+
+治疗 AI 不应只判断“HP < 50%”。推荐考虑：HealUtility = MissingHP + TargetImportance + DeathRisk + FutureValue。例如普通士兵 30% HP 的治疗价值较低，而即将死亡的祭司、Boss 或关键单位的治疗价值很高。
+
+19. 召唤
+
+召唤应该考虑 CurrentSummons、MaxSummons、AvailableSpace、EnemyThreat、BattlePhase 等因素。当场上已经有足够召唤物时，SummonUtility 应降低；当敌方数量明显不足或进入特定战斗阶段时，SummonUtility 应提高。
+
+20. 移动
+
+移动也是 Action。AI 应生成多个合法移动位置，例如 Move → Hex A / Hex B / Hex C，然后对位置进行评分。评分可以考虑攻击机会、防御、距离、保护目标、技能范围、地形、PreferredRange 等因素，最后选择评分最高的位置。
+
+21. Target Preference
+
+不同敌怪应该拥有不同 TargetPreference，例如 Nearest、LowestHP、HighestThreat、Isolated、Support、Backline、Random 等。这些规则可以组合。例如刺客优先 Backline + Isolated，猎人优先 LowestHP，护卫优先靠近保护目标的敌人。
+
+22. Goal
+
+复杂敌怪可以拥有当前 Goal，例如 AttackPlayer、ProtectAlly、ProtectLocation、Escape、ReachLocation、KillTarget、Survive。Goal 决定 Utility 的大方向，而不是直接规定唯一行动。例如 Goal = ProtectPriest 时，靠近祭司、拦截敌人、攻击接近祭司的目标都会获得更高评分。
+
+23. Triggers
+部分行为不是主动 Action，而是事件触发。支持的 Trigger 可以包括 OnDamaged、OnDeath、OnAllyDeath、OnTurnStart、OnTurnEnd、OnStatusApplied、OnHPThreshold 等。例如 OnDamaged + HP < 30% → EmergencyShield，或者 OnAllyDeath → Berserk。Trigger 与 AI 主动决策分离：Trigger 是“发生事件后立即检查”，AI 是“轮到我行动时决定做什么”。
+24. Passive
+被动机制应该通过 Passive、Trigger、Status 和 Effect 系统实现，而不是塞进 EnemyAI。例如 Undead → ImmuneToPoison；Retaliation → OnDamaged + CounterAttack；Regeneration → TurnStart + Heal。被动机制不应该直接修改 EnemyAI。
+25. Boss AI
+Boss 可以拥有独立的 BossPhase、BossPattern、BossTrigger 和 BossActionSet，但仍然必须通过 ActionSystem 和 EffectSystem 执行。Boss 可以根据血量或事件进入不同阶段，例如 Phase 1 使用普通攻击和 Buff；HP < 60% 进入 Phase 2，增加范围攻击和召唤；HP < 30% 进入 Phase 3，获得 Enrage 和特殊攻击。Boss 可以拥有专用规则，但不得绕过核心战斗系统直接修改 BattleState。
+26. AI 不追求完美
+AI 的目标不是寻找理论最优解，而是产生合理、可理解、具有挑战性的行为。可以加入少量 RandomVariation：FinalScore = UtilityScore + RandomVariation。随机只能用于在多个合理选择之间制造变化，不能导致 AI 无视必杀机会、放弃明显合理行动或做出完全无法理解的行为。
+27. AI 难度
+难度不应该单纯通过提高敌怪属性实现。可以通过提高 AI 决策能力实现。Easy：只考虑最近目标和当前攻击机会；Normal：考虑威胁、生命、位置和基础技能；Hard：增加集火、保护、Buff、Debuff、目标优先级和战场位置；Elite/Boss：允许多阶段行为、特殊 Goal、特殊 Trigger 和复杂 Action Utility。
+28. AI 可解释性
+开发模式下必须能够查看 AI 为什么选择某个行动。建议显示：Enemy、Current Goal、Action Candidates、Target、Position、Condition、Utility、最终选择。例如：Enemy: Orc Shaman / Goal: Protect Leader / Heal Warrior: 82 / Poison Cloud: 74 / Attack Mage: 61 / Move A: 42 / Selected: Heal Warrior。如果 AI 行为异常，应优先通过 Debug 信息定位问题。
+29. AI Debug Mode
+开发版本应允许查看：当前 Goal、当前目标、可用 Action、Action Conditions、Action Utility、候选位置、候选目标、最终选择、行动失败原因。必要时可以在六边形地图上可视化 AI 考虑过的候选位置及其评分。
+30. 性能原则
+AI 不需要每帧运行。AI 只在敌怪准备行动、行动结算完成、战场状态发生重大变化时重新计算。禁止在 _process() 中持续进行完整 AI 决策。候选位置和目标应尽量只在需要时生成。
+31. AI 与战斗系统接口
+推荐接口：EnemyAI.get_action_candidates(battle_state) → ActionCandidate[] → evaluate(candidate, battle_state) → best_candidate → ActionSystem.execute(candidate)。AI 不直接调用 damage()、heal()、move()、apply_buff() 等效果函数。所有行为必须通过 ActionSystem 执行。
+32. 模块依赖
+推荐依赖关系：EnemyData → EnemyAI → ActionSystem → EffectSystem → BattleState。EnemyAI 可以读取 BattleState、EnemyData、CharacterData、ActionData，但不应该直接依赖 UI、WorldSystem、QuestSystem、DialogueSystem、StorySystem。
+33. 推荐目录结构
+Plain text
+core/
+├── ai/
+│   ├── enemy_ai.gd
+│   ├── ai_profile.gd
+│   ├── goal.gd
+│   ├── action_candidate.gd
+│   ├── utility_evaluator.gd
+│   ├── target_selector.gd
+│   ├── position_evaluator.gd
+│   └── condition_evaluator.gd
+├── action/
+│   ├── action.gd
+│   ├── action_system.gd
+│   ├── move_action.gd
+│   ├── attack_action.gd
+│   └── ability_action.gd
+└── effect/
+    ├── effect.gd
+    ├── damage_effect.gd
+    ├── heal_effect.gd
+    ├── buff_effect.gd
+    ├── debuff_effect.gd
+    └── summon_effect.gd
+具体敌怪数据：
+Plain text
+content/
+└── enemies/
+    ├── goblin/
+    │   ├── goblin.tres
+    │   └── actions/
+    ├── orc_shaman/
+    │   ├── orc_shaman.tres
+    │   └── actions/
+    └── undead_knight/
+        ├── undead_knight.tres
+        └── actions/
+34. 开发准则
+新增敌怪时，优先使用现有 Action、Effect、Condition、TargetSelector 和 PositionEvaluator，通过 AIProfile 调整行为。只有现有系统无法表达需求时，才新增代码。禁止为每个敌怪创建独立 AI；禁止在 EnemyData 中硬编码复杂游戏逻辑；禁止在 AI 中直接修改战斗数据；禁止在 Action 中写敌怪专属判断；禁止为单个特殊技能复制整个 ActionSystem；禁止让 AI 直接操作 UI、世界、任务和剧情。
+35. 核心架构总结
+Enemy AI 的核心不是 if enemy then attack else move，而是：
+Plain text
+EnemyData
+    ↓
+ActionSet
+    ↓
+Conditions
+    ↓
+ActionCandidates
+    ↓
+Target Selection
+    ↓
+Position Selection
+    ↓
+Utility Evaluation
+    ↓
+Best Action
+    ↓
+ActionSystem
+    ↓
+EffectSystem
+    ↓
+BattleState
+最终原则：AI 决定“做什么”；Action 决定“怎么做”；Condition 决定“什么时候可以做”；Effect 决定“做完发生什么”；Trigger 决定“什么事件会触发行为”；BattleState 决定“当前世界是什么状态”。

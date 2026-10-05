@@ -26,9 +26,9 @@
 ## 中期
 
 - [ ] 世界系统扩展：地图/地点/城镇/地下城（world/ 预留目录）
-- [ ] DialogueSystem（docs/story/）与 NPC 交互
+- [x] 剧情 / 过场系统：时间轴+指令、DialogueSystem、CameraCtrl、触发器（docs/story/editor_guide.md）；NPC 交互接入待做
 - [ ] QuestSystem（docs/quest/）与首个任务垂直切片
-- [ ] 剧情 Flag 与存档扩展
+- [x] 剧情 Flag 与存档扩展（GameState v5：story_played + set_flag/get_flag/flag_changed）
 
 ## 长期
 

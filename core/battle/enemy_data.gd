@@ -13,6 +13,11 @@ extends Resource
 @export var agility: int = 5
 @export var ai_mode: String = "无"     # 无 / 靠近 / 远离
 @export var archetype: String = ""     # 行为模板：士兵/狂战士/猎人/护卫/刺客/鲁莽/首领/支援/木桩（空=按小队角色推导）
+## AIProfile 覆盖参数（content/enemies/*.json 的 ai_profile 列，JSON 对象字符串）。
+## 空字典 = 完全按行为模板 / 小队角色推导；非空时只覆盖给出的参数。
+@export var ai_profile: Dictionary = {}
+## 技能集（ActionSet 预留，第 3/25 节）：敌怪通过数据定义可用 Action，而非独立 AI 脚本。
+@export var skills: Array = []
 @export var tier: String = "普通"      # 难度：普通 / 精英 / Boss
 @export var coin_min: int = 0          # 战利品：钱币掉落下限
 @export var coin_max: int = 0          # 战利品：钱币掉落上限
@@ -24,6 +29,17 @@ extends Resource
 @export var icon_path: String = ""          # 图标（敌怪列表/图鉴小图），res:// 路径
 @export var art_path: String = ""           # 主体贴图（战斗表现），res:// 路径，留空则用色块
 @export var animation_path: String = ""     # 动画/动画场景资源（res://）
+@export var corpse_art_a_path: String = ""  # 尸骸 A 主体贴图（res://）
+@export var corpse_art_b_path: String = ""  # 尸骸 B 主体贴图（res://）
+
+
+func get_corpse_art_paths() -> Array[String]:
+	var paths: Array[String] = []
+	if not corpse_art_a_path.is_empty():
+		paths.append(corpse_art_a_path)
+	if not corpse_art_b_path.is_empty():
+		paths.append(corpse_art_b_path)
+	return paths
 
 
 func get_random_hp() -> int:

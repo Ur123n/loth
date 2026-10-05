@@ -1,0 +1,11 @@
+{
+  "schema": "building_transfer_receipt/1",
+  "inputs": {
+    "greybox\\buildings\\workflow_hall_v1\\transfer.json": "a6f6a039308c0d108ad11bc58f2b454acb2212cd7824195b990df8c1de16cacf",
+    "greybox\\buildings\\workflow_hall_v1\\plan.json": "2c6d1e8cf6f8ae2bcd1a158ade9665ba624a54ffe47630e7115210f570cd5965",
+    "greybox\\buildings\\workflow_hall_v1\\ground.png": "4f64657651bb8517e3495892824011dabbc6691e91f60e75e21b9151581a2a98",
+    "greybox\\buildings\\workflow_hall_v1\\base.png": "311a5ce02fa897efed4fb526d6e84da654b8ac83ee41a13b955806752697d317",
+    "greybox\\buildings\\workflow_hall_v1\\roof.png": "7c0ac69fe93d815b8482d0d01a645321697edf385e3a6ac8d805a52993d6a2ce"
+  },
+  "building_id": "workflow_hall"
+}

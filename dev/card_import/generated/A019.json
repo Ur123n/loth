@@ -1,0 +1,29 @@
+{
+  "id": "A019",
+  "name": "理牌",
+  "character": "艾莉丝",
+  "rarity": "Common",
+  "category": "道途专属卡牌",
+  "path": "梦魇行者",
+  "card_type": "行动",
+  "cost": 0,
+  "load": 1,
+  "target_type": "Self",
+  "min_range": 0,
+  "range": 0,
+  "target_spec": "自身",
+  "area": 0,
+  "keywords": [],
+  "tags": [
+    "DeckControl"
+  ],
+  "description": "查看抽牌堆顶3张并任意排序；若位于幻梦，可将其中1张放至牌堆底。",
+  "source_effect": "查看抽牌堆顶3张并任意排序；若位于幻梦，可将其中1张放至牌堆底。",
+  "source_file": "艾莉丝_完整卡组_v0.1.md",
+  "source_line": 63,
+  "icon": "",
+  "art": "card_faces/A019.png",
+  "animation": "",
+  "effects": [],
+  "implementation_status": "pending"
+}

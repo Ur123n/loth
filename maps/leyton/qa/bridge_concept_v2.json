@@ -1,0 +1,32 @@
+﻿{
+    "source":  "assets/buildings/leyton_cargo_bridge/source/concept_v2.png",
+    "sha256":  "FD0AF4F222FED30AA31AEBCEA08189E994C4EC067100ED6E8B456637B027578B",
+    "size_px":  [
+                    1301,
+                    1209
+                ],
+    "required_canvas_px":  [
+                               672,
+                               624
+                           ],
+    "native_canvas_matches":  false,
+    "alpha":  {
+                  "transparent":  434311,
+                  "partial":  1137510,
+                  "opaque":  1088
+              },
+    "alpha_128_bounds_inclusive":  [
+                                       91,
+                                       95,
+                                       1210,
+                                       1110
+                                   ],
+    "runtime_eligible":  false,
+    "status":  "concept_only_pending_registration_and_layers",
+    "limitations":  [
+                        "Alpha bounds describe pixels only; they do not define collision.",
+                        "Native canvas mismatch requires registered export and visual inspection.",
+                        "North apron improved visually; exact parapet endpoints are not certified.",
+                        "Deck/rail layer separation and actor occlusion are not yet verified."
+                    ]
+}

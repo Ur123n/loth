@@ -1,0 +1,32 @@
+{
+  "id": "A057",
+  "name": "灾梦：失足",
+  "character": "艾莉丝",
+  "rarity": "Uncommon",
+  "category": "道途专属卡牌",
+  "path": "梦魇行者",
+  "card_type": "攻击",
+  "cost": 1,
+  "load": 2,
+  "target_type": "Enemy",
+  "min_range": 1,
+  "range": 1,
+  "target_spec": "1",
+  "area": 0,
+  "keywords": [
+    "灾梦"
+  ],
+  "tags": [
+    "灾梦",
+    "Control"
+  ],
+  "description": "条件：当前格挡=0，且本回合尚未获得过格挡。造成18伤害并推动目标1格。结算后进入沉梦。",
+  "source_effect": "造成18伤害并推动目标1格。结算后进入沉梦。",
+  "source_file": "艾莉丝_完整卡组_v0.1.md",
+  "source_line": 106,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [],
+  "implementation_status": "pending"
+}

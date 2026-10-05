@@ -1,0 +1,30 @@
+{
+  "id": "K008",
+  "name": "浅切",
+  "character": "卡莎",
+  "rarity": "Basic",
+  "category": "道途专属卡牌",
+  "path": "解剖学者",
+  "card_type": "攻击",
+  "cost": 1,
+  "load": 1,
+  "target_type": "Enemy",
+  "min_range": 1,
+  "range": 1,
+  "target_spec": "敌人1",
+  "area": 0,
+  "keywords": [],
+  "tags": [
+    "Melee",
+    "外科"
+  ],
+  "description": "造成4伤害；放血2。",
+  "source_effect": "造成4伤害；放血2。",
+  "source_file": "卡莎_完整卡组_v0.2.md",
+  "source_line": 124,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [],
+  "implementation_status": "pending"
+}

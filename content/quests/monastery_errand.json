@@ -1,0 +1,40 @@
+{
+  "id": "monastery_errand",
+  "name": "修道院的委托",
+  "description": "赫伯特主教提到，钟楼下石阶旁的雪线草药最近被灵教的人偷采了不少。若你能带一株回来，他会告诉你一个关于钟楼顶层密室的消息。",
+  "start": {
+    "type": "npc_talked",
+    "npc": "赫伯特主教"
+  },
+  "complete": {
+    "type": "item_count",
+    "item": "草药",
+    "count": 1
+  },
+  "rewards": [
+    {
+      "type": "text",
+      "text": "赫伯特主教接过草药：『这是雪线草药……钟楼顶层密室的门在黄昏后会自己打开。』"
+    },
+    {
+      "type": "coin",
+      "amount": 30
+    }
+  ],
+  "branches": [
+    {
+      "when": {
+        "type": "flag",
+        "key": "garden_first",
+        "value": true
+      },
+      "next": "garden_task"
+    },
+    {
+      "when": {
+        "type": "always"
+      },
+      "next": "kitchen_task"
+    }
+  ]
+}

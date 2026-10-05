@@ -1,0 +1,34 @@
+{
+  "id": "A056",
+  "name": "灾梦：溺没",
+  "character": "艾莉丝",
+  "rarity": "Uncommon",
+  "category": "道途专属卡牌",
+  "path": "梦魇行者",
+  "card_type": "攻击",
+  "cost": 2,
+  "load": 2,
+  "target_type": "Area",
+  "min_range": 1,
+  "range": 3,
+  "target_spec": "地面3/半径1",
+  "area": 0,
+  "keywords": [
+    "灾梦",
+    "消耗"
+  ],
+  "tags": [
+    "灾梦",
+    "AOE",
+    "Debuff"
+  ],
+  "description": "条件：弃牌堆≥6且抽牌堆≤6。区域内所有敌人受到11伤害并获得1层迟缓。结算后进入沉梦。",
+  "source_effect": "区域内所有敌人受到11伤害并获得1层迟缓。结算后进入沉梦。",
+  "source_file": "艾莉丝_完整卡组_v0.1.md",
+  "source_line": 105,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [],
+  "implementation_status": "pending"
+}

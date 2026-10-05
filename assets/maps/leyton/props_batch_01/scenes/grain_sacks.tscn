@@ -1,0 +1,27 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://core/world/free_prop.gd" id="1_y6war"]
+[ext_resource type="Texture2D" path="res://assets/maps/leyton/props_batch_01/sprites/prop_grain_sacks.png" id="2_qnjji"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7qbo4"]
+size = Vector2(68, 40)
+
+[node name="GrainSacks" type="Node2D" unique_id=606535538]
+texture_filter = 1
+script = ExtResource("1_y6war")
+prop_id = "leyton_grain_sacks"
+footprint_cells = Vector2i(2, 1)
+metadata/projection_id = "orthogonal_3q_48_v1"
+metadata/review_status = "candidate"
+
+[node name="Visual" type="Sprite2D" parent="." unique_id=1542791264]
+position = Vector2(-72, -84)
+texture = ExtResource("2_qnjji")
+centered = false
+
+[node name="Collision" type="StaticBody2D" parent="." unique_id=1249007614]
+collision_layer = 2
+
+[node name="@CollisionShape2D@4" type="CollisionShape2D" parent="Collision" unique_id=1312987933]
+position = Vector2(0, -20)
+shape = SubResource("RectangleShape2D_7qbo4")

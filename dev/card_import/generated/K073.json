@@ -1,0 +1,29 @@
+{
+  "id": "K073",
+  "name": "尽开旧口",
+  "character": "卡莎",
+  "rarity": "Rare",
+  "category": "道途专属卡牌",
+  "path": "解剖学者",
+  "card_type": "行动",
+  "cost": 1,
+  "load": 3,
+  "target_type": "Enemy",
+  "min_range": 1,
+  "range": 1,
+  "target_spec": "敌人1",
+  "area": 0,
+  "keywords": [
+    "消耗"
+  ],
+  "tags": [],
+  "description": "目标本回合已受到至少2次放血时可用。再次失去等于本回合已经因放血失去生命一半的生命，向下取整，最多8。",
+  "source_effect": "目标本回合已受到至少2次放血时可用。再次失去等于本回合已经因放血失去生命一半的生命，向下取整，最多8。",
+  "source_file": "卡莎_完整卡组_v0.2.md",
+  "source_line": 210,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [],
+  "implementation_status": "pending"
+}

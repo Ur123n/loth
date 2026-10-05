@@ -1,0 +1,96 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://core/building/building.gd" id="1_f42gh"]
+[ext_resource type="Texture2D" path="res://assets/buildings/leyton_cargo_bridge/visual/base.png" id="2_tywx0"]
+[ext_resource type="Texture2D" path="res://assets/buildings/leyton_cargo_bridge/visual/deck.png" id="3_pdtp7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vvhv5"]
+size = Vector2(48, 432)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e7yfj"]
+size = Vector2(48, 432)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ymjvx"]
+radius = 36.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bx682"]
+radius = 36.0
+
+[node name="LeytonCargoBridge" type="Node2D" unique_id=406576408]
+y_sort_enabled = true
+script = ExtResource("1_f42gh")
+building_id = "leyton_cargo_bridge"
+data_path = "res://assets/buildings/leyton_cargo_bridge/metadata/building.json"
+
+[node name="Visual" type="Node2D" parent="." unique_id=1716679712]
+
+[node name="Base" type="Sprite2D" parent="Visual" unique_id=1665247036]
+position = Vector2(-336, -576)
+texture = ExtResource("2_tywx0")
+centered = false
+
+[node name="Deck" type="Sprite2D" parent="Visual" unique_id=577198905]
+z_index = -1
+position = Vector2(-336, -576)
+texture = ExtResource("3_pdtp7")
+centered = false
+
+[node name="Collision" type="StaticBody2D" parent="." unique_id=1380068031]
+collision_layer = 2
+
+[node name="Shape000" type="CollisionShape2D" parent="Collision" unique_id=1876951405]
+position = Vector2(24, 264)
+shape = SubResource("RectangleShape2D_vvhv5")
+
+[node name="Shape001" type="CollisionShape2D" parent="Collision" unique_id=1855771785]
+position = Vector2(552, 264)
+shape = SubResource("RectangleShape2D_e7yfj")
+
+[node name="Occupancy" type="Node2D" parent="." unique_id=1054847959]
+metadata/count = 132
+metadata/mask = "res://assets/buildings/leyton_cargo_bridge/masks/occupancy.png"
+
+[node name="WalkableArea" type="Node2D" parent="." unique_id=407159131]
+metadata/count = 114
+metadata/mask = "res://assets/buildings/leyton_cargo_bridge/masks/walkable.png"
+
+[node name="Doors" type="Node2D" parent="." unique_id=1801103288]
+
+[node name="north" type="Marker2D" parent="Doors" unique_id=1839021686]
+position = Vector2(288, 24)
+metadata/outward_side = "n"
+metadata/label = ""
+metadata/target = "outside"
+
+[node name="south" type="Marker2D" parent="Doors" unique_id=2011695755]
+position = Vector2(288, 504)
+metadata/outward_side = "s"
+metadata/label = ""
+metadata/target = "outside"
+
+[node name="Interaction" type="Node2D" parent="." unique_id=5961923]
+
+[node name="north" type="Area2D" parent="Interaction" unique_id=109796343]
+position = Vector2(288, 24)
+collision_layer = 0
+metadata/door_id = "north"
+metadata/interact = ""
+
+[node name="@CollisionShape2D@17" type="CollisionShape2D" parent="Interaction/north" unique_id=297752201]
+shape = SubResource("CircleShape2D_ymjvx")
+
+[node name="south" type="Area2D" parent="Interaction" unique_id=1443693952]
+position = Vector2(288, 504)
+collision_layer = 0
+metadata/door_id = "south"
+metadata/interact = ""
+
+[node name="@CollisionShape2D@18" type="CollisionShape2D" parent="Interaction/south" unique_id=1901690699]
+shape = SubResource("CircleShape2D_bx682")
+
+[node name="TacticalData" type="Node" parent="." unique_id=1125513034]
+metadata/cover = 0.0
+metadata/cover_level = "low"
+metadata/height_level = 0.0
+metadata/blocks_los = false
+metadata/enterable = false

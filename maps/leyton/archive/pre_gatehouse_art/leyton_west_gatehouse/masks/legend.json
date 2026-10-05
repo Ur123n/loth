@@ -1,0 +1,36 @@
+{
+ "anchor_note": "掩码的 (0,0) 格 = metadata.footprint 的左上角格；占用区包围盒即 footprint",
+ "channel": "只认 alpha：alpha > 0.5 表示「该格属于这张掩码」（doors.png 例外，用颜色表示朝向）",
+ "coordinates": "左上角为 (0,0)，x 向东、y 向南，单位是格",
+ "door_colors": {
+  "e": [
+   120,
+   220,
+   120
+  ],
+  "n": [
+   90,
+   160,
+   255
+  ],
+  "s": [
+   255,
+   140,
+   60
+  ],
+  "w": [
+   220,
+   120,
+   255
+  ]
+ },
+ "format": "1 像素 = 1 格；宽高 = metadata.footprint.size_cells",
+ "masks": {
+  "collision.png": "占用区里哪些格是实体（墙、柱、水面），与 walkable 互斥",
+  "doors.png": "门/入口所在格；颜色 = 门朝外的方向",
+  "occlusion.png": "哪些格会被建筑遮挡（屋顶挑檐压住的可通行格），用于角色进屋时收屋顶",
+  "occupancy.png": "建筑占用哪些格（含墙、含院内）。其它掩码都必须是它的子集",
+  "walkable.png": "占用区里哪些格可以走（室内地板 / 院子）"
+ },
+ "regenerate": "掩码是生成物（改 building.spec.json 后重跑本工具）；也支持手改掩码后用 --from-masks 回灌 metadata"
+}

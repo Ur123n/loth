@@ -1,0 +1,30 @@
+{
+  "id": "D070",
+  "name": "机会主义",
+  "character": "迪马斯",
+  "rarity": "Rare",
+  "category": "道途专属卡牌",
+  "path": "侠盗",
+  "card_type": "能力",
+  "cost": 1,
+  "load": 4,
+  "target_type": "Self",
+  "min_range": 0,
+  "range": 0,
+  "target_spec": "自身",
+  "area": 0,
+  "keywords": [],
+  "tags": [
+    "Movement",
+    "Draw"
+  ],
+  "description": "每回合第一次通过主动移动，使你与任意敌人的距离从1变为≥2，或从≥2变为1时，抽1张。",
+  "source_effect": "每回合第一次通过主动移动，使你与任意敌人的距离从1变为≥2，或从≥2变为1时，抽1张。",
+  "source_file": "迪马斯_完整卡组_v0.3.md",
+  "source_line": 193,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [],
+  "implementation_status": "pending"
+}

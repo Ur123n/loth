@@ -1,0 +1,33 @@
+{
+  "id": "A070",
+  "name": "灾梦：万人空巷",
+  "character": "艾莉丝",
+  "rarity": "Rare",
+  "category": "道途专属卡牌",
+  "path": "梦魇行者",
+  "card_type": "攻击",
+  "cost": 2,
+  "load": 3,
+  "target_type": "Enemy",
+  "min_range": 1,
+  "range": 4,
+  "target_spec": "1–4",
+  "area": 0,
+  "keywords": [
+    "灾梦",
+    "消耗"
+  ],
+  "tags": [
+    "灾梦",
+    "AOE"
+  ],
+  "description": "条件：你与每名友军距离均≥3，且自身格挡=0。目标受到30伤害；其所有邻接敌人受到10伤害。结算后进入沉梦。",
+  "source_effect": "目标受到30伤害；其所有邻接敌人受到10伤害。结算后进入沉梦。",
+  "source_file": "艾莉丝_完整卡组_v0.1.md",
+  "source_line": 124,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [],
+  "implementation_status": "pending"
+}

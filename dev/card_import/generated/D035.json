@@ -1,0 +1,34 @@
+{
+  "id": "D035",
+  "name": "大跨步",
+  "character": "迪马斯",
+  "rarity": "Common",
+  "category": "道途专属卡牌",
+  "path": "侠盗",
+  "card_type": "行动",
+  "cost": 1,
+  "load": 1,
+  "target_type": "Self",
+  "min_range": 0,
+  "range": 0,
+  "target_spec": "自身",
+  "area": 0,
+  "keywords": [],
+  "tags": [
+    "Movement"
+  ],
+  "description": "移动最多3格。",
+  "source_effect": "移动最多3格。",
+  "source_file": "迪马斯_完整卡组_v0.3.md",
+  "source_line": 148,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [
+    {
+      "logic": "move",
+      "distance": 3
+    }
+  ],
+  "implementation_status": "supported"
+}

@@ -1,0 +1,34 @@
+{
+  "id": "K003",
+  "name": "轻步换位",
+  "character": "卡莎",
+  "rarity": "Basic",
+  "category": "道途专属卡牌",
+  "path": "解剖学者",
+  "card_type": "行动",
+  "cost": 0,
+  "load": 1,
+  "target_type": "Self",
+  "min_range": 0,
+  "range": 0,
+  "target_spec": "自身",
+  "area": 0,
+  "keywords": [],
+  "tags": [
+    "Movement"
+  ],
+  "description": "移动最多1格。",
+  "source_effect": "移动最多1格。",
+  "source_file": "卡莎_完整卡组_v0.2.md",
+  "source_line": 119,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [
+    {
+      "logic": "move",
+      "distance": 1
+    }
+  ],
+  "implementation_status": "supported"
+}

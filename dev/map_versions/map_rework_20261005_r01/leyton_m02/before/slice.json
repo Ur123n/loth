@@ -1,0 +1,3971 @@
+{
+  "cart_footprint_cells": [
+    2,
+    3
+  ],
+  "maps": [
+    {
+      "bridges": [
+        [
+          45,
+          66,
+          6,
+          8
+        ]
+      ],
+      "event_anchors": [
+        {
+          "cell": [
+            40,
+            40
+          ],
+          "id": "district_entry",
+          "implemented": false
+        }
+      ],
+      "exit_depth": 2,
+      "exits": [
+        {
+          "edge": "north",
+          "enabled": true,
+          "offset": 45,
+          "to": "M02:south",
+          "width": 6
+        },
+        {
+          "edge": "south",
+          "enabled": true,
+          "offset": 45,
+          "to": "M03:north",
+          "width": 6
+        },
+        {
+          "edge": "west",
+          "enabled": true,
+          "offset": 37,
+          "to": "M04:east",
+          "width": 6
+        },
+        {
+          "edge": "east",
+          "enabled": true,
+          "mode": "abstract_residential",
+          "offset": 37,
+          "to": "M08:west",
+          "width": 6
+        }
+      ],
+      "gate": [],
+      "id": "M01S",
+      "map_id": "M01",
+      "name": "中心广场·河流南绕",
+      "npc_spawns": [
+        {
+          "cell": [
+            40,
+            40
+          ],
+          "id": "district_greeter",
+          "role": "reserved"
+        }
+      ],
+      "patrol_routes": [],
+      "roads": [
+        {
+          "kind": "main",
+          "rect": [
+            45,
+            0,
+            6,
+            80
+          ],
+          "shape": "rect"
+        },
+        {
+          "kind": "main",
+          "rect": [
+            0,
+            37,
+            96,
+            6
+          ],
+          "shape": "rect"
+        }
+      ],
+      "size": [
+        96,
+        80
+      ],
+      "spawn": [
+        40,
+        40
+      ],
+      "stairs_ground": [],
+      "stairs_wall": [],
+      "status": "playable_graybox_candidate",
+      "structures": [
+        {
+          "kind": "civic",
+          "label": "城政厅",
+          "rect": [
+            5,
+            6,
+            24,
+            14
+          ]
+        },
+        {
+          "kind": "religious",
+          "label": "太阳神教礼堂",
+          "rect": [
+            67,
+            5,
+            24,
+            15
+          ]
+        },
+        {
+          "kind": "military",
+          "label": "城卫总值房",
+          "rect": [
+            5,
+            47,
+            20,
+            12
+          ]
+        },
+        {
+          "kind": "utility",
+          "label": "公共水源",
+          "rect": [
+            72,
+            47,
+            18,
+            10
+          ]
+        },
+        {
+          "kind": "landmark",
+          "label": "太阳神像",
+          "rect": [
+            44,
+            31,
+            8,
+            8
+          ]
+        },
+        {
+          "kind": "rowhouse",
+          "label": "沿街住宅 1",
+          "rect": [
+            30,
+            2,
+            8,
+            8
+          ],
+          "pattern": "stone_house"
+        },
+        {
+          "kind": "rowhouse",
+          "label": "沿街住宅 2",
+          "rect": [
+            51,
+            2,
+            8,
+            8
+          ],
+          "pattern": "stone_house"
+        },
+        {
+          "kind": "rowhouse",
+          "label": "沿街住宅 3",
+          "rect": [
+            30,
+            11,
+            8,
+            8
+          ],
+          "pattern": "stone_house"
+        },
+        {
+          "kind": "rowhouse",
+          "label": "沿街住宅 4",
+          "rect": [
+            51,
+            11,
+            8,
+            8
+          ],
+          "pattern": "stone_house"
+        },
+        {
+          "kind": "rowhouse",
+          "label": "沿街住宅 5",
+          "rect": [
+            2,
+            21,
+            8,
+            8
+          ],
+          "pattern": "stone_house"
+        },
+        {
+          "kind": "rowhouse",
+          "label": "沿街住宅 6",
+          "rect": [
+            11,
+            21,
+            8,
+            8
+          ],
+          "pattern": "stone_house"
+        },
+        {
+          "kind": "rowhouse",
+          "label": "沿街住宅 7",
+          "rect": [
+            20,
+            21,
+            8,
+            8
+          ],
+          "pattern": "stone_house"
+        },
+        {
+          "kind": "rowhouse",
+          "label": "沿街住宅 8",
+          "rect": [
+            68,
+            21,
+            8,
+            8
+          ],
+          "pattern": "stone_house"
+        },
+        {
+          "kind": "rowhouse",
+          "label": "沿街住宅 9",
+          "rect": [
+            77,
+            21,
+            8,
+            8
+          ],
+          "pattern": "stone_house"
+        },
+        {
+          "kind": "rowhouse",
+          "label": "沿街住宅 10",
+          "rect": [
+            2,
+            68,
+            8,
+            8
+          ],
+          "pattern": "stone_house"
+        },
+        {
+          "kind": "rowhouse",
+          "label": "沿街住宅 11",
+          "rect": [
+            11,
+            68,
+            8,
+            8
+          ],
+          "pattern": "stone_house"
+        },
+        {
+          "kind": "rowhouse",
+          "label": "沿街住宅 12",
+          "rect": [
+            20,
+            68,
+            8,
+            8
+          ],
+          "pattern": "stone_house"
+        },
+        {
+          "kind": "rowhouse",
+          "label": "沿街住宅 13",
+          "rect": [
+            67,
+            68,
+            8,
+            8
+          ],
+          "pattern": "stone_house"
+        },
+        {
+          "kind": "rowhouse",
+          "label": "沿街住宅 14",
+          "rect": [
+            76,
+            68,
+            8,
+            8
+          ],
+          "pattern": "stone_house"
+        },
+        {
+          "kind": "rowhouse",
+          "label": "沿街住宅 15",
+          "rect": [
+            85,
+            68,
+            8,
+            8
+          ],
+          "pattern": "stone_house"
+        },
+        {
+          "kind": "rowhouse",
+          "label": "沿街住宅 16",
+          "rect": [
+            60,
+            2,
+            6,
+            6
+          ],
+          "pattern": "stone_house"
+        },
+        {
+          "kind": "rowhouse",
+          "label": "沿街住宅 17",
+          "rect": [
+            60,
+            9,
+            6,
+            6
+          ],
+          "pattern": "stone_house"
+        },
+        {
+          "kind": "rowhouse",
+          "label": "沿街住宅 18",
+          "rect": [
+            86,
+            21,
+            6,
+            6
+          ],
+          "pattern": "stone_house"
+        },
+        {
+          "kind": "rowhouse",
+          "label": "沿街住宅 19",
+          "rect": [
+            86,
+            28,
+            6,
+            6
+          ],
+          "pattern": "stone_house"
+        },
+        {
+          "kind": "rowhouse",
+          "label": "沿街住宅 20",
+          "rect": [
+            2,
+            30,
+            6,
+            6
+          ],
+          "pattern": "stone_house"
+        },
+        {
+          "kind": "rowhouse",
+          "label": "沿街住宅 21",
+          "rect": [
+            9,
+            30,
+            6,
+            6
+          ],
+          "pattern": "stone_house"
+        },
+        {
+          "kind": "rowhouse",
+          "label": "沿街住宅 22",
+          "rect": [
+            16,
+            30,
+            6,
+            6
+          ],
+          "pattern": "stone_house"
+        },
+        {
+          "kind": "rowhouse",
+          "label": "沿街住宅 23",
+          "rect": [
+            68,
+            30,
+            6,
+            6
+          ],
+          "pattern": "stone_house"
+        },
+        {
+          "kind": "rowhouse",
+          "label": "沿街住宅 24",
+          "rect": [
+            75,
+            30,
+            6,
+            6
+          ],
+          "pattern": "stone_house"
+        },
+        {
+          "kind": "rowhouse",
+          "label": "沿街住宅 25",
+          "rect": [
+            35,
+            58,
+            6,
+            6
+          ],
+          "pattern": "stone_house"
+        },
+        {
+          "kind": "rowhouse",
+          "label": "沿街住宅 26",
+          "rect": [
+            54,
+            58,
+            6,
+            6
+          ],
+          "pattern": "stone_house"
+        }
+      ],
+      "wall_walk": [],
+      "water": [
+        {
+          "kind": "river_candidate",
+          "label": "南绕河道",
+          "navigable": false,
+          "points": [
+            [
+              0,
+              64
+            ],
+            [
+              30,
+              64
+            ],
+            [
+              36,
+              70
+            ],
+            [
+              60,
+              70
+            ],
+            [
+              66,
+              64
+            ],
+            [
+              96,
+              64
+            ]
+          ],
+          "width": 4
+        }
+      ],
+      "zones": [
+        {
+          "kind": "plaza",
+          "label": "中央石铺广场",
+          "rect": [
+            30,
+            20,
+            36,
+            36
+          ],
+          "shape": "rect"
+        }
+      ],
+      "urban_ground": true,
+      "props": [
+        {
+          "scene": "res://assets/maps/leyton/props_batch_01/scenes/crate.tscn",
+          "cell": [
+            4,
+            19
+          ],
+          "block_rect": [
+            4,
+            18,
+            1,
+            2
+          ]
+        },
+        {
+          "scene": "res://assets/maps/leyton/props_batch_01/scenes/barrel.tscn",
+          "cell": [
+            66,
+            19
+          ],
+          "block_rect": [
+            66,
+            18,
+            1,
+            2
+          ]
+        },
+        {
+          "scene": "res://assets/maps/leyton/props_batch_01/scenes/grain_sacks.tscn",
+          "cell": [
+            4,
+            58
+          ],
+          "block_rect": [
+            4,
+            57,
+            1,
+            2
+          ]
+        },
+        {
+          "scene": "res://assets/maps/leyton/props_batch_01/scenes/notice_board.tscn",
+          "cell": [
+            71,
+            56
+          ],
+          "block_rect": [
+            71,
+            55,
+            1,
+            2
+          ]
+        },
+        {
+          "scene": "res://assets/maps/leyton/props_batch_01/scenes/coal_basket.tscn",
+          "cell": [
+            39,
+            3
+          ],
+          "block_rect": [
+            39,
+            2,
+            1,
+            2
+          ]
+        },
+        {
+          "scene": "res://assets/maps/leyton/props_batch_01/scenes/barrel.tscn",
+          "cell": [
+            39,
+            12
+          ],
+          "block_rect": [
+            39,
+            11,
+            1,
+            2
+          ]
+        },
+        {
+          "scene": "res://assets/maps/leyton/props_batch_01/scenes/coal_basket.tscn",
+          "cell": [
+            29,
+            22
+          ],
+          "block_rect": [
+            29,
+            21,
+            1,
+            2
+          ]
+        },
+        {
+          "scene": "res://assets/maps/leyton/props_batch_01/scenes/crate.tscn",
+          "cell": [
+            67,
+            28
+          ],
+          "block_rect": [
+            67,
+            27,
+            1,
+            2
+          ]
+        },
+        {
+          "scene": "res://assets/maps/leyton/props_batch_01/scenes/coal_basket.tscn",
+          "cell": [
+            66,
+            75
+          ],
+          "block_rect": [
+            66,
+            74,
+            1,
+            2
+          ]
+        },
+        {
+          "scene": "res://assets/maps/leyton/props_batch_01/scenes/grain_sacks.tscn",
+          "cell": [
+            67,
+            3
+          ],
+          "block_rect": [
+            67,
+            2,
+            1,
+            2
+          ]
+        },
+        {
+          "scene": "res://assets/maps/leyton/props_batch_01/scenes/handcart.tscn",
+          "cell": [
+            93,
+            22
+          ],
+          "block_rect": [
+            93,
+            21,
+            1,
+            2
+          ]
+        },
+        {
+          "scene": "res://assets/maps/leyton/props_batch_01/scenes/coal_basket.tscn",
+          "cell": [
+            85,
+            33
+          ],
+          "block_rect": [
+            85,
+            32,
+            1,
+            2
+          ]
+        },
+        {
+          "scene": "res://assets/maps/leyton/props_batch_01/scenes/grain_sacks.tscn",
+          "cell": [
+            23,
+            31
+          ],
+          "block_rect": [
+            23,
+            30,
+            1,
+            2
+          ]
+        },
+        {
+          "scene": "res://assets/maps/leyton/props_batch_01/scenes/notice_board.tscn",
+          "cell": [
+            67,
+            35
+          ],
+          "block_rect": [
+            67,
+            34,
+            1,
+            2
+          ]
+        },
+        {
+          "scene": "res://assets/maps/leyton/props_batch_01/scenes/handcart.tscn",
+          "cell": [
+            82,
+            31
+          ],
+          "block_rect": [
+            82,
+            30,
+            1,
+            2
+          ]
+        },
+        {
+          "scene": "res://assets/maps/leyton/props_batch_01/scenes/coal_basket.tscn",
+          "cell": [
+            42,
+            59
+          ],
+          "block_rect": [
+            42,
+            58,
+            1,
+            2
+          ]
+        },
+        {
+          "scene": "res://assets/maps/leyton/props_batch_01/scenes/crate.tscn",
+          "cell": [
+            53,
+            63
+          ],
+          "block_rect": [
+            53,
+            62,
+            1,
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "bridges": [],
+      "event_anchors": [
+        {
+          "cell": [
+            44,
+            5
+          ],
+          "id": "district_entry",
+          "implemented": false
+        }
+      ],
+      "exit_depth": 2,
+      "exits": [
+        {
+          "edge": "north",
+          "enabled": true,
+          "offset": 41,
+          "to": "M05:south",
+          "width": 6
+        },
+        {
+          "edge": "south",
+          "enabled": true,
+          "offset": 41,
+          "to": "M01:north",
+          "width": 6
+        }
+      ],
+      "gate": [],
+      "id": "M02",
+      "map_id": "M02",
+      "name": "城北贵族住宅区",
+      "npc_spawns": [
+        {
+          "cell": [
+            44,
+            5
+          ],
+          "id": "district_greeter",
+          "role": "reserved"
+        }
+      ],
+      "patrol_routes": [
+        {
+          "id": "noble_patrol",
+          "points": [
+            [
+              44,
+              0
+            ],
+            [
+              44,
+              10
+            ],
+            [
+              34,
+              20
+            ],
+            [
+              34,
+              32
+            ],
+            [
+              53,
+              41
+            ],
+            [
+              58,
+              53
+            ],
+            [
+              45,
+              66
+            ],
+            [
+              44,
+              80
+            ]
+          ]
+        }
+      ],
+      "roads": [
+        {
+          "kind": "main",
+          "shape": "polyline",
+          "points": [
+            [
+              44,
+              0
+            ],
+            [
+              44,
+              10
+            ],
+            [
+              34,
+              20
+            ],
+            [
+              34,
+              32
+            ],
+            [
+              53,
+              41
+            ],
+            [
+              58,
+              53
+            ],
+            [
+              45,
+              66
+            ],
+            [
+              44,
+              80
+            ]
+          ],
+          "width": 6
+        },
+        {
+          "kind": "secondary",
+          "shape": "polyline",
+          "points": [
+            [
+              34,
+              20
+            ],
+            [
+              15,
+              20
+            ],
+            [
+              15,
+              47
+            ],
+            [
+              34,
+              56
+            ],
+            [
+              45,
+              66
+            ]
+          ],
+          "width": 4
+        },
+        {
+          "kind": "secondary",
+          "shape": "polyline",
+          "points": [
+            [
+              44,
+              10
+            ],
+            [
+              72,
+              13
+            ],
+            [
+              74,
+              31
+            ],
+            [
+              53,
+              41
+            ],
+            [
+              77,
+              50
+            ],
+            [
+              75,
+              68
+            ],
+            [
+              45,
+              66
+            ]
+          ],
+          "width": 4
+        },
+        {
+          "kind": "lane",
+          "shape": "polyline",
+          "points": [
+            [
+              15,
+              47
+            ],
+            [
+              34,
+              32
+            ]
+          ],
+          "width": 3
+        },
+        {
+          "kind": "lane",
+          "shape": "polyline",
+          "points": [
+            [
+              34,
+              56
+            ],
+            [
+              58,
+              53
+            ]
+          ],
+          "width": 3
+        }
+      ],
+      "size": [
+        88,
+        80
+      ],
+      "spawn": [
+        44,
+        5
+      ],
+      "stairs_ground": [],
+      "stairs_wall": [],
+      "status": "playable_graybox_candidate",
+      "structures": [
+        {
+          "kind": "noble_rowhouse",
+          "label": "宅邸A",
+          "rect": [
+            2,
+            2,
+            12,
+            10
+          ],
+          "pattern": "stone_house"
+        },
+        {
+          "kind": "noble_rowhouse",
+          "label": "宅邸B",
+          "rect": [
+            15,
+            2,
+            12,
+            10
+          ],
+          "pattern": "stone_house"
+        },
+        {
+          "kind": "noble_rowhouse",
+          "label": "宅邸C",
+          "rect": [
+            44,
+            14,
+            12,
+            10
+          ],
+          "pattern": "stone_house"
+        },
+        {
+          "kind": "noble_rowhouse",
+          "label": "军官会客所",
+          "rect": [
+            57,
+            15,
+            12,
+            10
+          ],
+          "pattern": "stone_house"
+        },
+        {
+          "kind": "noble_rowhouse",
+          "label": "私家马厩",
+          "rect": [
+            18,
+            23,
+            12,
+            10
+          ],
+          "pattern": "stone_house"
+        },
+        {
+          "kind": "noble_rowhouse",
+          "label": "保护水源",
+          "rect": [
+            72,
+            34,
+            12,
+            10
+          ],
+          "pattern": "stone_house"
+        },
+        {
+          "kind": "noble_rowhouse",
+          "label": "贵族街坊 7",
+          "rect": [
+            28,
+            39,
+            12,
+            10
+          ],
+          "pattern": "stone_house"
+        },
+        {
+          "kind": "noble_rowhouse",
+          "label": "贵族街坊 8",
+          "rect": [
+            2,
+            49,
+            12,
+            10
+          ],
+          "pattern": "stone_house"
+        },
+        {
+          "kind": "noble_rowhouse",
+          "label": "贵族街坊 9",
+          "rect": [
+            61,
+            51,
+            12,
+            10
+          ],
+          "pattern": "stone_house"
+        },
+        {
+          "kind": "noble_rowhouse",
+          "label": "贵族街坊 10",
+          "rect": [
+            15,
+            55,
+            12,
+            10
+          ],
+          "pattern": "stone_house"
+        },
+        {
+          "kind": "noble_rowhouse",
+          "label": "贵族街坊 11",
+          "rect": [
+            2,
+            60,
+            12,
+            10
+          ],
+          "pattern": "stone_house"
+        },
+        {
+          "kind": "noble_rowhouse",
+          "label": "贵族街坊 12",
+          "rect": [
+            28,
+            64,
+            12,
+            10
+          ],
+          "pattern": "stone_house"
+        },
+        {
+          "kind": "noble_rowhouse",
+          "label": "贵族街坊 13",
+          "rect": [
+            15,
+            66,
+            12,
+            10
+          ],
+          "pattern": "stone_house"
+        },
+        {
+          "kind": "noble_rowhouse",
+          "label": "贵族街坊 14",
+          "rect": [
+            28,
+            2,
+            10,
+            9
+          ],
+          "pattern": "stone_house"
+        },
+        {
+          "kind": "noble_rowhouse",
+          "label": "贵族街坊 15",
+          "rect": [
+            72,
+            2,
+            10,
+            9
+          ],
+          "pattern": "stone_house"
+        },
+        {
+          "kind": "noble_rowhouse",
+          "label": "贵族街坊 16",
+          "rect": [
+            75,
+            12,
+            10,
+            9
+          ],
+          "pattern": "stone_house"
+        },
+        {
+          "kind": "noble_rowhouse",
+          "label": "贵族街坊 17",
+          "rect": [
+            2,
+            13,
+            10,
+            9
+          ],
+          "pattern": "stone_house"
+        },
+        {
+          "kind": "noble_rowhouse",
+          "label": "贵族街坊 18",
+          "rect": [
+            2,
+            23,
+            10,
+            9
+          ],
+          "pattern": "stone_house"
+        },
+        {
+          "kind": "noble_rowhouse",
+          "label": "贵族街坊 19",
+          "rect": [
+            45,
+            25,
+            10,
+            9
+          ],
+          "pattern": "stone_house"
+        },
+        {
+          "kind": "noble_rowhouse",
+          "label": "贵族街坊 20",
+          "rect": [
+            2,
+            33,
+            10,
+            9
+          ],
+          "pattern": "stone_house"
+        },
+        {
+          "kind": "noble_rowhouse",
+          "label": "贵族街坊 21",
+          "rect": [
+            63,
+            2,
+            8,
+            8
+          ],
+          "pattern": "stone_house"
+        },
+        {
+          "kind": "noble_rowhouse",
+          "label": "贵族街坊 22",
+          "rect": [
+            76,
+            22,
+            8,
+            8
+          ],
+          "pattern": "stone_house"
+        },
+        {
+          "kind": "noble_rowhouse",
+          "label": "贵族街坊 23",
+          "rect": [
+            41,
+            43,
+            8,
+            8
+          ],
+          "pattern": "stone_house"
+        },
+        {
+          "kind": "noble_rowhouse",
+          "label": "贵族街坊 24",
+          "rect": [
+            77,
+            68,
+            8,
+            8
+          ],
+          "pattern": "stone_house"
+        },
+        {
+          "kind": "noble_rowhouse",
+          "label": "贵族街坊 25",
+          "rect": [
+            48,
+            69,
+            8,
+            8
+          ],
+          "pattern": "stone_house"
+        },
+        {
+          "kind": "noble_rowhouse",
+          "label": "贵族街坊 26",
+          "rect": [
+            48,
+            2,
+            6,
+            6
+          ],
+          "pattern": "stone_house"
+        },
+        {
+          "kind": "noble_rowhouse",
+          "label": "贵族街坊 27",
+          "rect": [
+            55,
+            2,
+            6,
+            6
+          ],
+          "pattern": "stone_house"
+        },
+        {
+          "kind": "noble_rowhouse",
+          "label": "贵族街坊 28",
+          "rect": [
+            56,
+            26,
+            6,
+            6
+          ],
+          "pattern": "stone_house"
+        },
+        {
+          "kind": "noble_rowhouse",
+          "label": "贵族街坊 29",
+          "rect": [
+            79,
+            45,
+            6,
+            6
+          ],
+          "pattern": "stone_house"
+        },
+        {
+          "kind": "noble_rowhouse",
+          "label": "贵族街坊 30",
+          "rect": [
+            79,
+            52,
+            6,
+            6
+          ],
+          "pattern": "stone_house"
+        },
+        {
+          "kind": "noble_rowhouse",
+          "label": "贵族街坊 31",
+          "rect": [
+            78,
+            59,
+            6,
+            6
+          ],
+          "pattern": "stone_house"
+        },
+        {
+          "kind": "noble_rowhouse",
+          "label": "贵族街坊 32",
+          "rect": [
+            57,
+            70,
+            6,
+            6
+          ],
+          "pattern": "stone_house"
+        },
+        {
+          "kind": "noble_rowhouse",
+          "label": "贵族街坊 33",
+          "rect": [
+            64,
+            70,
+            6,
+            6
+          ],
+          "pattern": "stone_house"
+        },
+        {
+          "kind": "noble_rowhouse",
+          "label": "贵族街坊 34",
+          "rect": [
+            2,
+            71,
+            6,
+            6
+          ],
+          "pattern": "stone_house"
+        }
+      ],
+      "wall_walk": [],
+      "walls": [],
+      "water": [],
+      "zones": [],
+      "urban_ground": true,
+      "props": [
+        {
+          "scene": "res://assets/maps/leyton/props_batch_01/scenes/grain_sacks.tscn",
+          "cell": [
+            43,
+            23
+          ],
+          "block_rect": [
+            43,
+            22,
+            1,
+            2
+          ]
+        },
+        {
+          "scene": "res://assets/maps/leyton/props_batch_01/scenes/coal_basket.tscn",
+          "cell": [
+            71,
+            43
+          ],
+          "block_rect": [
+            71,
+            42,
+            1,
+            2
+          ]
+        },
+        {
+          "scene": "res://assets/maps/leyton/props_batch_01/scenes/crate.tscn",
+          "cell": [
+            27,
+            48
+          ],
+          "block_rect": [
+            27,
+            47,
+            1,
+            2
+          ]
+        },
+        {
+          "scene": "res://assets/maps/leyton/props_batch_01/scenes/grain_sacks.tscn",
+          "cell": [
+            60,
+            60
+          ],
+          "block_rect": [
+            60,
+            59,
+            1,
+            2
+          ]
+        },
+        {
+          "scene": "res://assets/maps/leyton/props_batch_01/scenes/crate.tscn",
+          "cell": [
+            14,
+            75
+          ],
+          "block_rect": [
+            14,
+            74,
+            1,
+            2
+          ]
+        },
+        {
+          "scene": "res://assets/maps/leyton/props_batch_01/scenes/barrel.tscn",
+          "cell": [
+            39,
+            3
+          ],
+          "block_rect": [
+            39,
+            2,
+            1,
+            2
+          ]
+        },
+        {
+          "scene": "res://assets/maps/leyton/props_batch_01/scenes/grain_sacks.tscn",
+          "cell": [
+            83,
+            3
+          ],
+          "block_rect": [
+            83,
+            2,
+            1,
+            2
+          ]
+        },
+        {
+          "scene": "res://assets/maps/leyton/props_batch_01/scenes/handcart.tscn",
+          "cell": [
+            13,
+            14
+          ],
+          "block_rect": [
+            13,
+            13,
+            1,
+            2
+          ]
+        },
+        {
+          "scene": "res://assets/maps/leyton/props_batch_01/scenes/notice_board.tscn",
+          "cell": [
+            85,
+            23
+          ],
+          "block_rect": [
+            85,
+            22,
+            1,
+            2
+          ]
+        },
+        {
+          "scene": "res://assets/maps/leyton/props_batch_01/scenes/coal_basket.tscn",
+          "cell": [
+            76,
+            75
+          ],
+          "block_rect": [
+            76,
+            74,
+            1,
+            2
+          ]
+        },
+        {
+          "scene": "res://assets/maps/leyton/props_batch_01/scenes/grain_sacks.tscn",
+          "cell": [
+            62,
+            3
+          ],
+          "block_rect": [
+            62,
+            2,
+            1,
+            2
+          ]
+        },
+        {
+          "scene": "res://assets/maps/leyton/props_batch_01/scenes/notice_board.tscn",
+          "cell": [
+            63,
+            27
+          ],
+          "block_rect": [
+            63,
+            26,
+            1,
+            2
+          ]
+        },
+        {
+          "scene": "res://assets/maps/leyton/props_batch_01/scenes/crate.tscn",
+          "cell": [
+            85,
+            60
+          ],
+          "block_rect": [
+            85,
+            59,
+            1,
+            2
+          ]
+        },
+        {
+          "scene": "res://assets/maps/leyton/props_batch_01/scenes/notice_board.tscn",
+          "cell": [
+            9,
+            72
+          ],
+          "block_rect": [
+            9,
+            71,
+            1,
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "bridges": [],
+      "event_anchors": [
+        {
+          "cell": [
+            48,
+            4
+          ],
+          "id": "district_entry",
+          "implemented": false
+        }
+      ],
+      "exit_depth": 2,
+      "exits": [
+        {
+          "edge": "north",
+          "enabled": true,
+          "offset": 45,
+          "to": "M01:south",
+          "width": 6
+        },
+        {
+          "edge": "south",
+          "enabled": true,
+          "offset": 44,
+          "to": "M06:north",
+          "width": 6
+        }
+      ],
+      "gate": [],
+      "id": "M03",
+      "map_id": "M03",
+      "name": "城南贫民窟",
+      "npc_spawns": [
+        {
+          "cell": [
+            48,
+            4
+          ],
+          "id": "district_greeter",
+          "role": "reserved"
+        }
+      ],
+      "patrol_routes": [],
+      "roads": [
+        {
+          "kind": "main",
+          "points": [
+            [
+              48,
+              0
+            ],
+            [
+              48,
+              19
+            ],
+            [
+              52,
+              29
+            ],
+            [
+              52,
+              49
+            ],
+            [
+              47,
+              61
+            ],
+            [
+              47,
+              88
+            ]
+          ],
+          "shape": "polyline",
+          "width": 5
+        },
+        {
+          "kind": "lane",
+          "points": [
+            [
+              5,
+              24
+            ],
+            [
+              24,
+              24
+            ],
+            [
+              35,
+              31
+            ],
+            [
+              48,
+              31
+            ]
+          ],
+          "shape": "polyline",
+          "width": 2
+        },
+        {
+          "kind": "lane",
+          "points": [
+            [
+              52,
+              43
+            ],
+            [
+              67,
+              38
+            ],
+            [
+              92,
+              38
+            ]
+          ],
+          "shape": "polyline",
+          "width": 2
+        },
+        {
+          "kind": "lane",
+          "points": [
+            [
+              5,
+              57
+            ],
+            [
+              28,
+              57
+            ],
+            [
+              47,
+              64
+            ]
+          ],
+          "shape": "polyline",
+          "width": 2
+        },
+        {
+          "kind": "main",
+          "rect": [
+            44,
+            79,
+            6,
+            9
+          ],
+          "shape": "rect"
+        }
+      ],
+      "size": [
+        96,
+        88
+      ],
+      "spawn": [
+        48,
+        4
+      ],
+      "stairs_ground": [],
+      "stairs_wall": [],
+      "status": "playable_graybox_candidate",
+      "structures": [
+        {
+          "kind": "religious",
+          "label": "施粥救济点",
+          "rect": [
+            5,
+            6,
+            18,
+            12
+          ]
+        },
+        {
+          "kind": "lodging",
+          "label": "廉价旅舍",
+          "rect": [
+            27,
+            8,
+            13,
+            12
+          ]
+        },
+        {
+          "kind": "crematorium",
+          "label": "主焚尸场",
+          "rect": [
+            60,
+            64,
+            31,
+            17
+          ]
+        },
+        {
+          "kind": "utility",
+          "label": "尸体登记棚",
+          "rect": [
+            56,
+            49,
+            13,
+            9
+          ]
+        },
+        {
+          "kind": "utility",
+          "label": "灰烬收集点",
+          "rect": [
+            74,
+            48,
+            13,
+            9
+          ]
+        },
+        {
+          "kind": "shack",
+          "label": "棚屋",
+          "rect": [
+            8,
+            33,
+            12,
+            8
+          ]
+        },
+        {
+          "kind": "shack",
+          "label": "棚屋",
+          "rect": [
+            23,
+            35,
+            14,
+            9
+          ]
+        },
+        {
+          "kind": "shack",
+          "label": "棚屋",
+          "rect": [
+            7,
+            66,
+            14,
+            10
+          ]
+        },
+        {
+          "kind": "shack",
+          "label": "棚屋",
+          "rect": [
+            24,
+            64,
+            15,
+            12
+          ]
+        },
+        {
+          "kind": "shack",
+          "label": "棚屋",
+          "rect": [
+            60,
+            8,
+            15,
+            10
+          ]
+        },
+        {
+          "kind": "shack",
+          "label": "棚屋",
+          "rect": [
+            78,
+            10,
+            12,
+            10
+          ]
+        },
+        {
+          "kind": "shack",
+          "label": "棚屋",
+          "rect": [
+            62,
+            25,
+            13,
+            9
+          ]
+        },
+        {
+          "kind": "shack",
+          "label": "棚屋",
+          "rect": [
+            78,
+            25,
+            12,
+            10
+          ]
+        },
+        {
+          "kind": "utility",
+          "label": "公共水井",
+          "rect": [
+            26,
+            46,
+            5,
+            5
+          ]
+        },
+        {
+          "kind": "rowhouse",
+          "label": "沿街住宅 1",
+          "rect": [
+            51,
+            7,
+            8,
+            8
+          ],
+          "pattern": "timber_house"
+        },
+        {
+          "kind": "rowhouse",
+          "label": "沿街住宅 2",
+          "rect": [
+            34,
+            21,
+            8,
+            8
+          ],
+          "pattern": "timber_house"
+        },
+        {
+          "kind": "rowhouse",
+          "label": "沿街住宅 3",
+          "rect": [
+            38,
+            33,
+            8,
+            8
+          ],
+          "pattern": "timber_house"
+        },
+        {
+          "kind": "rowhouse",
+          "label": "沿街住宅 4",
+          "rect": [
+            64,
+            40,
+            8,
+            8
+          ],
+          "pattern": "timber_house"
+        },
+        {
+          "kind": "rowhouse",
+          "label": "沿街住宅 5",
+          "rect": [
+            2,
+            42,
+            8,
+            8
+          ],
+          "pattern": "timber_house"
+        },
+        {
+          "kind": "rowhouse",
+          "label": "沿街住宅 6",
+          "rect": [
+            11,
+            42,
+            8,
+            8
+          ],
+          "pattern": "timber_house"
+        },
+        {
+          "kind": "rowhouse",
+          "label": "沿街住宅 7",
+          "rect": [
+            38,
+            42,
+            8,
+            8
+          ],
+          "pattern": "timber_house"
+        },
+        {
+          "kind": "rowhouse",
+          "label": "沿街住宅 8",
+          "rect": [
+            36,
+            51,
+            8,
+            8
+          ],
+          "pattern": "timber_house"
+        },
+        {
+          "kind": "rowhouse",
+          "label": "沿街住宅 9",
+          "rect": [
+            51,
+            59,
+            8,
+            8
+          ],
+          "pattern": "timber_house"
+        },
+        {
+          "kind": "rowhouse",
+          "label": "沿街住宅 10",
+          "rect": [
+            50,
+            68,
+            8,
+            8
+          ],
+          "pattern": "timber_house"
+        },
+        {
+          "kind": "rowhouse",
+          "label": "沿街住宅 11",
+          "rect": [
+            2,
+            77,
+            8,
+            8
+          ],
+          "pattern": "timber_house"
+        },
+        {
+          "kind": "rowhouse",
+          "label": "沿街住宅 12",
+          "rect": [
+            11,
+            77,
+            8,
+            8
+          ],
+          "pattern": "timber_house"
+        },
+        {
+          "kind": "rowhouse",
+          "label": "沿街住宅 13",
+          "rect": [
+            20,
+            77,
+            8,
+            8
+          ],
+          "pattern": "timber_house"
+        },
+        {
+          "kind": "rowhouse",
+          "label": "沿街住宅 14",
+          "rect": [
+            29,
+            77,
+            8,
+            8
+          ],
+          "pattern": "timber_house"
+        },
+        {
+          "kind": "rowhouse",
+          "label": "沿街住宅 15",
+          "rect": [
+            50,
+            77,
+            8,
+            8
+          ],
+          "pattern": "timber_house"
+        },
+        {
+          "kind": "rowhouse",
+          "label": "沿街住宅 16",
+          "rect": [
+            76,
+            2,
+            6,
+            6
+          ],
+          "pattern": "timber_house"
+        },
+        {
+          "kind": "rowhouse",
+          "label": "沿街住宅 17",
+          "rect": [
+            83,
+            2,
+            6,
+            6
+          ],
+          "pattern": "timber_house"
+        },
+        {
+          "kind": "rowhouse",
+          "label": "沿街住宅 18",
+          "rect": [
+            52,
+            16,
+            6,
+            6
+          ],
+          "pattern": "timber_house"
+        },
+        {
+          "kind": "rowhouse",
+          "label": "沿街住宅 19",
+          "rect": [
+            55,
+            23,
+            6,
+            6
+          ],
+          "pattern": "timber_house"
+        },
+        {
+          "kind": "rowhouse",
+          "label": "沿街住宅 20",
+          "rect": [
+            2,
+            26,
+            6,
+            6
+          ],
+          "pattern": "timber_house"
+        },
+        {
+          "kind": "rowhouse",
+          "label": "沿街住宅 21",
+          "rect": [
+            9,
+            26,
+            6,
+            6
+          ],
+          "pattern": "timber_house"
+        },
+        {
+          "kind": "rowhouse",
+          "label": "沿街住宅 22",
+          "rect": [
+            16,
+            26,
+            6,
+            6
+          ],
+          "pattern": "timber_house"
+        },
+        {
+          "kind": "rowhouse",
+          "label": "沿街住宅 23",
+          "rect": [
+            55,
+            30,
+            6,
+            6
+          ],
+          "pattern": "timber_house"
+        },
+        {
+          "kind": "rowhouse",
+          "label": "沿街住宅 24",
+          "rect": [
+            73,
+            40,
+            6,
+            6
+          ],
+          "pattern": "timber_house"
+        },
+        {
+          "kind": "rowhouse",
+          "label": "沿街住宅 25",
+          "rect": [
+            80,
+            40,
+            6,
+            6
+          ],
+          "pattern": "timber_house"
+        },
+        {
+          "kind": "rowhouse",
+          "label": "沿街住宅 26",
+          "rect": [
+            87,
+            40,
+            6,
+            6
+          ],
+          "pattern": "timber_house"
+        },
+        {
+          "kind": "rowhouse",
+          "label": "沿街住宅 27",
+          "rect": [
+            2,
+            59,
+            6,
+            6
+          ],
+          "pattern": "timber_house"
+        },
+        {
+          "kind": "rowhouse",
+          "label": "沿街住宅 28",
+          "rect": [
+            9,
+            59,
+            6,
+            6
+          ],
+          "pattern": "timber_house"
+        },
+        {
+          "kind": "rowhouse",
+          "label": "沿街住宅 29",
+          "rect": [
+            16,
+            59,
+            6,
+            6
+          ],
+          "pattern": "timber_house"
+        }
+      ],
+      "wall_walk": [],
+      "walls": [
+        {
+          "kind": "city_wall",
+          "rect": [
+            0,
+            83,
+            44,
+            5
+          ]
+        },
+        {
+          "kind": "city_wall",
+          "rect": [
+            50,
+            83,
+            46,
+            5
+          ]
+        }
+      ],
+      "water": [],
+      "zones": [
+        {
+          "kind": "slum",
+          "label": "高密棚屋西片",
+          "rect": [
+            2,
+            4,
+            40,
+            77
+          ],
+          "shape": "rect"
+        },
+        {
+          "kind": "slum",
+          "label": "高密棚屋东片",
+          "rect": [
+            54,
+            4,
+            40,
+            77
+          ],
+          "shape": "rect"
+        },
+        {
+          "kind": "hazard",
+          "label": "焚尸场防火区",
+          "rect": [
+            60,
+            61,
+            34,
+            22
+          ],
+          "shape": "rect"
+        }
+      ],
+      "urban_ground": true,
+      "props": [
+        {
+          "scene": "res://assets/maps/leyton/props_batch_01/scenes/crate.tscn",
+          "cell": [
+            4,
+            17
+          ],
+          "block_rect": [
+            4,
+            16,
+            1,
+            2
+          ]
+        },
+        {
+          "scene": "res://assets/maps/leyton/props_batch_01/scenes/barrel.tscn",
+          "cell": [
+            26,
+            19
+          ],
+          "block_rect": [
+            26,
+            18,
+            1,
+            2
+          ]
+        },
+        {
+          "scene": "res://assets/maps/leyton/props_batch_01/scenes/grain_sacks.tscn",
+          "cell": [
+            59,
+            80
+          ],
+          "block_rect": [
+            59,
+            79,
+            1,
+            2
+          ]
+        },
+        {
+          "scene": "res://assets/maps/leyton/props_batch_01/scenes/notice_board.tscn",
+          "cell": [
+            55,
+            57
+          ],
+          "block_rect": [
+            55,
+            56,
+            1,
+            2
+          ]
+        },
+        {
+          "scene": "res://assets/maps/leyton/props_batch_01/scenes/handcart.tscn",
+          "cell": [
+            73,
+            56
+          ],
+          "block_rect": [
+            73,
+            55,
+            1,
+            2
+          ]
+        },
+        {
+          "scene": "res://assets/maps/leyton/props_batch_01/scenes/coal_basket.tscn",
+          "cell": [
+            7,
+            40
+          ],
+          "block_rect": [
+            7,
+            39,
+            1,
+            2
+          ]
+        },
+        {
+          "scene": "res://assets/maps/leyton/props_batch_01/scenes/crate.tscn",
+          "cell": [
+            22,
+            43
+          ],
+          "block_rect": [
+            22,
+            42,
+            1,
+            2
+          ]
+        },
+        {
+          "scene": "res://assets/maps/leyton/props_batch_01/scenes/barrel.tscn",
+          "cell": [
+            6,
+            75
+          ],
+          "block_rect": [
+            6,
+            74,
+            1,
+            2
+          ]
+        },
+        {
+          "scene": "res://assets/maps/leyton/props_batch_01/scenes/grain_sacks.tscn",
+          "cell": [
+            23,
+            75
+          ],
+          "block_rect": [
+            23,
+            74,
+            1,
+            2
+          ]
+        },
+        {
+          "scene": "res://assets/maps/leyton/props_batch_01/scenes/notice_board.tscn",
+          "cell": [
+            59,
+            17
+          ],
+          "block_rect": [
+            59,
+            16,
+            1,
+            2
+          ]
+        },
+        {
+          "scene": "res://assets/maps/leyton/props_batch_01/scenes/handcart.tscn",
+          "cell": [
+            77,
+            19
+          ],
+          "block_rect": [
+            77,
+            18,
+            1,
+            2
+          ]
+        },
+        {
+          "scene": "res://assets/maps/leyton/props_batch_01/scenes/coal_basket.tscn",
+          "cell": [
+            76,
+            26
+          ],
+          "block_rect": [
+            76,
+            25,
+            1,
+            2
+          ]
+        },
+        {
+          "scene": "res://assets/maps/leyton/props_batch_01/scenes/crate.tscn",
+          "cell": [
+            77,
+            34
+          ],
+          "block_rect": [
+            77,
+            33,
+            1,
+            2
+          ]
+        },
+        {
+          "scene": "res://assets/maps/leyton/props_batch_01/scenes/barrel.tscn",
+          "cell": [
+            25,
+            50
+          ],
+          "block_rect": [
+            25,
+            49,
+            1,
+            2
+          ]
+        },
+        {
+          "scene": "res://assets/maps/leyton/props_batch_01/scenes/notice_board.tscn",
+          "cell": [
+            43,
+            22
+          ],
+          "block_rect": [
+            43,
+            21,
+            1,
+            2
+          ]
+        },
+        {
+          "scene": "res://assets/maps/leyton/props_batch_01/scenes/coal_basket.tscn",
+          "cell": [
+            63,
+            47
+          ],
+          "block_rect": [
+            63,
+            46,
+            1,
+            2
+          ]
+        },
+        {
+          "scene": "res://assets/maps/leyton/props_batch_01/scenes/barrel.tscn",
+          "cell": [
+            20,
+            43
+          ],
+          "block_rect": [
+            20,
+            42,
+            1,
+            2
+          ]
+        },
+        {
+          "scene": "res://assets/maps/leyton/props_batch_01/scenes/grain_sacks.tscn",
+          "cell": [
+            37,
+            49
+          ],
+          "block_rect": [
+            37,
+            48,
+            1,
+            2
+          ]
+        },
+        {
+          "scene": "res://assets/maps/leyton/props_batch_01/scenes/notice_board.tscn",
+          "cell": [
+            45,
+            52
+          ],
+          "block_rect": [
+            45,
+            51,
+            1,
+            2
+          ]
+        },
+        {
+          "scene": "res://assets/maps/leyton/props_batch_01/scenes/handcart.tscn",
+          "cell": [
+            60,
+            60
+          ],
+          "block_rect": [
+            60,
+            59,
+            1,
+            2
+          ]
+        },
+        {
+          "scene": "res://assets/maps/leyton/props_batch_01/scenes/coal_basket.tscn",
+          "cell": [
+            59,
+            69
+          ],
+          "block_rect": [
+            59,
+            68,
+            1,
+            2
+          ]
+        },
+        {
+          "scene": "res://assets/maps/leyton/props_batch_01/scenes/notice_board.tscn",
+          "cell": [
+            38,
+            78
+          ],
+          "block_rect": [
+            38,
+            77,
+            1,
+            2
+          ]
+        },
+        {
+          "scene": "res://assets/maps/leyton/props_batch_01/scenes/handcart.tscn",
+          "cell": [
+            59,
+            78
+          ],
+          "block_rect": [
+            59,
+            77,
+            1,
+            2
+          ]
+        },
+        {
+          "scene": "res://assets/maps/leyton/props_batch_01/scenes/coal_basket.tscn",
+          "cell": [
+            75,
+            7
+          ],
+          "block_rect": [
+            75,
+            6,
+            1,
+            2
+          ]
+        },
+        {
+          "scene": "res://assets/maps/leyton/props_batch_01/scenes/crate.tscn",
+          "cell": [
+            90,
+            3
+          ],
+          "block_rect": [
+            90,
+            2,
+            1,
+            2
+          ]
+        },
+        {
+          "scene": "res://assets/maps/leyton/props_batch_01/scenes/barrel.tscn",
+          "cell": [
+            59,
+            17
+          ],
+          "block_rect": [
+            59,
+            16,
+            1,
+            2
+          ]
+        },
+        {
+          "scene": "res://assets/maps/leyton/props_batch_01/scenes/grain_sacks.tscn",
+          "cell": [
+            62,
+            24
+          ],
+          "block_rect": [
+            62,
+            23,
+            1,
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "bridges": [
+        [
+          42,
+          59,
+          12,
+          11
+        ]
+      ],
+      "event_anchors": [
+        {
+          "cell": [
+            40,
+            40
+          ],
+          "id": "district_entry",
+          "implemented": false
+        }
+      ],
+      "exit_depth": 2,
+      "exits": [
+        {
+          "edge": "west",
+          "enabled": true,
+          "offset": 37,
+          "to": "M07:east",
+          "width": 6
+        },
+        {
+          "edge": "east",
+          "enabled": true,
+          "offset": 37,
+          "to": "M01:west",
+          "width": 6
+        }
+      ],
+      "gate": [],
+      "id": "M04",
+      "map_id": "M04",
+      "name": "城西商业区",
+      "npc_spawns": [
+        {
+          "cell": [
+            40,
+            40
+          ],
+          "id": "district_greeter",
+          "role": "reserved"
+        }
+      ],
+      "patrol_routes": [],
+      "roads": [
+        {
+          "kind": "main",
+          "rect": [
+            0,
+            37,
+            96,
+            6
+          ],
+          "shape": "rect"
+        },
+        {
+          "kind": "bridge_road",
+          "rect": [
+            45,
+            43,
+            6,
+            29
+          ],
+          "shape": "rect"
+        }
+      ],
+      "size": [
+        96,
+        80
+      ],
+      "spawn": [
+        40,
+        40
+      ],
+      "stairs_ground": [],
+      "stairs_wall": [],
+      "status": "playable_graybox_candidate",
+      "structures": [
+        {
+          "kind": "market",
+          "label": "综合市场",
+          "rect": [
+            5,
+            7,
+            21,
+            19
+          ]
+        },
+        {
+          "kind": "civic",
+          "label": "商会/秤量所",
+          "rect": [
+            32,
+            6,
+            18,
+            17
+          ]
+        },
+        {
+          "kind": "warehouse",
+          "label": "煤炭总仓",
+          "rect": [
+            56,
+            5,
+            16,
+            18
+          ]
+        },
+        {
+          "kind": "warehouse",
+          "label": "主粮仓",
+          "rect": [
+            76,
+            5,
+            16,
+            18
+          ]
+        },
+        {
+          "kind": "workshop",
+          "label": "铁匠铺",
+          "rect": [
+            5,
+            47,
+            14,
+            11
+          ]
+        },
+        {
+          "kind": "workshop",
+          "label": "药剂铺",
+          "rect": [
+            23,
+            47,
+            13,
+            11
+          ]
+        },
+        {
+          "kind": "lodging",
+          "label": "旅店",
+          "rect": [
+            56,
+            47,
+            17,
+            11
+          ]
+        },
+        {
+          "kind": "stable",
+          "label": "车马栈",
+          "rect": [
+            76,
+            46,
+            16,
+            12
+          ]
+        },
+        {
+          "kind": "bridge",
+          "label": "货运石桥",
+          "prefab": "res://assets/buildings/leyton_cargo_bridge/LeytonCargoBridge.tscn",
+          "rect": [
+            42,
+            59,
+            12,
+            11
+          ]
+        },
+        {
+          "kind": "rowhouse",
+          "label": "沿街住宅 1",
+          "rect": [
+            27,
+            24,
+            8,
+            8
+          ],
+          "pattern": "stone_house"
+        },
+        {
+          "kind": "rowhouse",
+          "label": "沿街住宅 2",
+          "rect": [
+            36,
+            24,
+            8,
+            8
+          ],
+          "pattern": "stone_house"
+        },
+        {
+          "kind": "rowhouse",
+          "label": "沿街住宅 3",
+          "rect": [
+            45,
+            24,
+            8,
+            8
+          ],
+          "pattern": "stone_house"
+        },
+        {
+          "kind": "rowhouse",
+          "label": "沿街住宅 4",
+          "rect": [
+            54,
+            24,
+            8,
+            8
+          ],
+          "pattern": "stone_house"
+        },
+        {
+          "kind": "rowhouse",
+          "label": "沿街住宅 5",
+          "rect": [
+            63,
+            24,
+            8,
+            8
+          ],
+          "pattern": "stone_house"
+        },
+        {
+          "kind": "rowhouse",
+          "label": "沿街住宅 6",
+          "rect": [
+            72,
+            24,
+            8,
+            8
+          ],
+          "pattern": "stone_house"
+        },
+        {
+          "kind": "rowhouse",
+          "label": "沿街住宅 7",
+          "rect": [
+            81,
+            24,
+            8,
+            8
+          ],
+          "pattern": "stone_house"
+        },
+        {
+          "kind": "rowhouse",
+          "label": "沿街住宅 8",
+          "rect": [
+            2,
+            27,
+            8,
+            8
+          ],
+          "pattern": "stone_house"
+        },
+        {
+          "kind": "rowhouse",
+          "label": "沿街住宅 9",
+          "rect": [
+            11,
+            27,
+            8,
+            8
+          ],
+          "pattern": "stone_house"
+        },
+        {
+          "kind": "rowhouse",
+          "label": "沿街住宅 10",
+          "rect": [
+            2,
+            68,
+            8,
+            8
+          ],
+          "pattern": "stone_house"
+        },
+        {
+          "kind": "rowhouse",
+          "label": "沿街住宅 11",
+          "rect": [
+            11,
+            68,
+            8,
+            8
+          ],
+          "pattern": "stone_house"
+        },
+        {
+          "kind": "rowhouse",
+          "label": "沿街住宅 12",
+          "rect": [
+            20,
+            68,
+            8,
+            8
+          ],
+          "pattern": "stone_house"
+        },
+        {
+          "kind": "rowhouse",
+          "label": "沿街住宅 13",
+          "rect": [
+            29,
+            68,
+            8,
+            8
+          ],
+          "pattern": "stone_house"
+        },
+        {
+          "kind": "rowhouse",
+          "label": "沿街住宅 14",
+          "rect": [
+            57,
+            68,
+            8,
+            8
+          ],
+          "pattern": "stone_house"
+        },
+        {
+          "kind": "rowhouse",
+          "label": "沿街住宅 15",
+          "rect": [
+            66,
+            68,
+            8,
+            8
+          ],
+          "pattern": "stone_house"
+        },
+        {
+          "kind": "rowhouse",
+          "label": "沿街住宅 16",
+          "rect": [
+            75,
+            68,
+            8,
+            8
+          ],
+          "pattern": "stone_house"
+        },
+        {
+          "kind": "rowhouse",
+          "label": "沿街住宅 17",
+          "rect": [
+            84,
+            68,
+            8,
+            8
+          ],
+          "pattern": "stone_house"
+        },
+        {
+          "kind": "rowhouse",
+          "label": "沿街住宅 18",
+          "rect": [
+            20,
+            27,
+            6,
+            6
+          ],
+          "pattern": "stone_house"
+        },
+        {
+          "kind": "rowhouse",
+          "label": "沿街住宅 19",
+          "rect": [
+            37,
+            44,
+            6,
+            6
+          ],
+          "pattern": "stone_house"
+        }
+      ],
+      "wall_walk": [],
+      "water": [
+        {
+          "kind": "river",
+          "label": "不可通航灌溉河道",
+          "navigable": false,
+          "points": [
+            [
+              0,
+              64
+            ],
+            [
+              96,
+              64
+            ]
+          ],
+          "width": 4
+        }
+      ],
+      "zones": [
+        {
+          "kind": "market",
+          "label": "综合市场",
+          "rect": [
+            3,
+            4,
+            25,
+            27
+          ],
+          "shape": "rect"
+        },
+        {
+          "kind": "workshops",
+          "label": "仓库与作坊带",
+          "rect": [
+            3,
+            46,
+            90,
+            30
+          ],
+          "shape": "rect"
+        }
+      ],
+      "urban_ground": true,
+      "props": [
+        {
+          "scene": "res://assets/maps/leyton/props_batch_01/scenes/crate.tscn",
+          "cell": [
+            4,
+            25
+          ],
+          "block_rect": [
+            4,
+            24,
+            1,
+            2
+          ]
+        },
+        {
+          "scene": "res://assets/maps/leyton/props_batch_01/scenes/barrel.tscn",
+          "cell": [
+            31,
+            22
+          ],
+          "block_rect": [
+            31,
+            21,
+            1,
+            2
+          ]
+        },
+        {
+          "scene": "res://assets/maps/leyton/props_batch_01/scenes/grain_sacks.tscn",
+          "cell": [
+            55,
+            22
+          ],
+          "block_rect": [
+            55,
+            21,
+            1,
+            2
+          ]
+        },
+        {
+          "scene": "res://assets/maps/leyton/props_batch_01/scenes/notice_board.tscn",
+          "cell": [
+            75,
+            22
+          ],
+          "block_rect": [
+            75,
+            21,
+            1,
+            2
+          ]
+        },
+        {
+          "scene": "res://assets/maps/leyton/props_batch_01/scenes/handcart.tscn",
+          "cell": [
+            4,
+            57
+          ],
+          "block_rect": [
+            4,
+            56,
+            1,
+            2
+          ]
+        },
+        {
+          "scene": "res://assets/maps/leyton/props_batch_01/scenes/coal_basket.tscn",
+          "cell": [
+            22,
+            57
+          ],
+          "block_rect": [
+            22,
+            56,
+            1,
+            2
+          ]
+        },
+        {
+          "scene": "res://assets/maps/leyton/props_batch_01/scenes/crate.tscn",
+          "cell": [
+            55,
+            57
+          ],
+          "block_rect": [
+            55,
+            56,
+            1,
+            2
+          ]
+        },
+        {
+          "scene": "res://assets/maps/leyton/props_batch_01/scenes/barrel.tscn",
+          "cell": [
+            75,
+            57
+          ],
+          "block_rect": [
+            75,
+            56,
+            1,
+            2
+          ]
+        },
+        {
+          "scene": "res://assets/maps/leyton/props_batch_01/scenes/notice_board.tscn",
+          "cell": [
+            90,
+            25
+          ],
+          "block_rect": [
+            90,
+            24,
+            1,
+            2
+          ]
+        },
+        {
+          "scene": "res://assets/maps/leyton/props_batch_01/scenes/handcart.tscn",
+          "cell": [
+            56,
+            75
+          ],
+          "block_rect": [
+            56,
+            74,
+            1,
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "bridges": [],
+      "event_anchors": [
+        {
+          "cell": [
+            44,
+            55
+          ],
+          "id": "district_entry",
+          "implemented": false
+        }
+      ],
+      "exit_depth": 2,
+      "exits": [
+        {
+          "edge": "north",
+          "enabled": false,
+          "offset": 41,
+          "to": "world:north",
+          "width": 6
+        },
+        {
+          "edge": "south",
+          "enabled": true,
+          "offset": 41,
+          "to": "M02:north",
+          "width": 6
+        }
+      ],
+      "gate": [
+        41,
+        61,
+        6,
+        11
+      ],
+      "id": "M05",
+      "map_id": "M05",
+      "name": "北门与城外",
+      "npc_spawns": [
+        {
+          "cell": [
+            44,
+            55
+          ],
+          "id": "district_greeter",
+          "role": "reserved"
+        }
+      ],
+      "patrol_routes": [
+        {
+          "id": "wall_patrol",
+          "implemented": false,
+          "level": "wall",
+          "points": [
+            [
+              3,
+              69
+            ],
+            [
+              84,
+              69
+            ]
+          ]
+        }
+      ],
+      "roads": [
+        {
+          "kind": "main",
+          "rect": [
+            41,
+            0,
+            6,
+            72
+          ],
+          "shape": "rect"
+        }
+      ],
+      "size": [
+        88,
+        72
+      ],
+      "spawn": [
+        44,
+        55
+      ],
+      "stairs_ground": [
+        54,
+        59
+      ],
+      "stairs_wall": [
+        54,
+        69
+      ],
+      "status": "playable_graybox_candidate",
+      "structures": [
+        {
+          "kind": "gatehouse",
+          "label": "北门楼",
+          "rect": [
+            36,
+            61,
+            16,
+            11
+          ]
+        },
+        {
+          "kind": "checkpoint",
+          "label": "登记检查区",
+          "rect": [
+            34,
+            51,
+            20,
+            8
+          ]
+        },
+        {
+          "kind": "farm",
+          "label": "庄园农房",
+          "rect": [
+            7,
+            53,
+            13,
+            9
+          ]
+        }
+      ],
+      "wall_walk": [
+        0,
+        68,
+        88,
+        3
+      ],
+      "walls": [
+        {
+          "kind": "city_wall",
+          "rect": [
+            0,
+            67,
+            88,
+            5
+          ]
+        }
+      ],
+      "water": [],
+      "zones": [
+        {
+          "kind": "field",
+          "label": "规整大田",
+          "rect": [
+            4,
+            5,
+            31,
+            20
+          ],
+          "shape": "rect"
+        },
+        {
+          "kind": "orchard",
+          "label": "果园",
+          "rect": [
+            53,
+            5,
+            31,
+            20
+          ],
+          "shape": "rect"
+        },
+        {
+          "kind": "field",
+          "label": "税粮田",
+          "rect": [
+            5,
+            30,
+            30,
+            19
+          ],
+          "shape": "rect"
+        },
+        {
+          "kind": "pasture",
+          "label": "牧草地",
+          "rect": [
+            53,
+            30,
+            30,
+            19
+          ],
+          "shape": "rect"
+        }
+      ],
+      "urban_ground": false
+    },
+    {
+      "bridges": [],
+      "event_anchors": [
+        {
+          "cell": [
+            44,
+            26
+          ],
+          "id": "district_entry",
+          "implemented": false
+        }
+      ],
+      "exit_depth": 2,
+      "exits": [
+        {
+          "edge": "north",
+          "enabled": true,
+          "offset": 41,
+          "to": "M03:south",
+          "width": 6
+        },
+        {
+          "edge": "south",
+          "enabled": false,
+          "offset": 41,
+          "to": "world:south",
+          "width": 6
+        }
+      ],
+      "gate": [
+        41,
+        0,
+        6,
+        11
+      ],
+      "id": "M06",
+      "map_id": "M06",
+      "name": "南门与城外",
+      "npc_spawns": [
+        {
+          "cell": [
+            44,
+            26
+          ],
+          "id": "district_greeter",
+          "role": "reserved"
+        }
+      ],
+      "patrol_routes": [
+        {
+          "id": "wall_patrol",
+          "implemented": false,
+          "level": "wall",
+          "points": [
+            [
+              3,
+              2
+            ],
+            [
+              84,
+              2
+            ]
+          ]
+        }
+      ],
+      "roads": [
+        {
+          "kind": "main",
+          "rect": [
+            41,
+            0,
+            6,
+            72
+          ],
+          "shape": "rect"
+        }
+      ],
+      "size": [
+        88,
+        72
+      ],
+      "spawn": [
+        44,
+        26
+      ],
+      "stairs_ground": [
+        54,
+        10
+      ],
+      "stairs_wall": [
+        54,
+        2
+      ],
+      "status": "playable_graybox_candidate",
+      "structures": [
+        {
+          "kind": "gatehouse",
+          "label": "南门楼",
+          "rect": [
+            36,
+            0,
+            16,
+            11
+          ]
+        },
+        {
+          "kind": "refugee",
+          "label": "难民棚",
+          "rect": [
+            22,
+            12,
+            17,
+            8
+          ]
+        },
+        {
+          "kind": "isolation",
+          "label": "伤病隔离棚",
+          "rect": [
+            50,
+            12,
+            19,
+            8
+          ]
+        },
+        {
+          "kind": "labor",
+          "label": "劳工集散",
+          "rect": [
+            7,
+            11,
+            17,
+            8
+          ]
+        }
+      ],
+      "wall_walk": [
+        0,
+        1,
+        88,
+        3
+      ],
+      "walls": [
+        {
+          "kind": "city_wall",
+          "rect": [
+            0,
+            0,
+            88,
+            5
+          ]
+        }
+      ],
+      "water": [],
+      "zones": [
+        {
+          "kind": "smallholding",
+          "label": "小块佃田",
+          "rect": [
+            4,
+            19,
+            31,
+            19
+          ],
+          "shape": "rect"
+        },
+        {
+          "kind": "vegetable",
+          "label": "菜圃",
+          "rect": [
+            53,
+            19,
+            31,
+            19
+          ],
+          "shape": "rect"
+        },
+        {
+          "kind": "smallholding",
+          "label": "佃田与排水沟",
+          "rect": [
+            5,
+            45,
+            30,
+            21
+          ],
+          "shape": "rect"
+        },
+        {
+          "kind": "livestock",
+          "label": "牲畜栏",
+          "rect": [
+            53,
+            45,
+            30,
+            21
+          ],
+          "shape": "rect"
+        }
+      ],
+      "urban_ground": false
+    },
+    {
+      "bridges": [
+        [
+          40,
+          35,
+          16,
+          10
+        ]
+      ],
+      "event_anchors": [
+        {
+          "cell": [
+            80,
+            40
+          ],
+          "id": "district_entry",
+          "implemented": false
+        }
+      ],
+      "exit_depth": 2,
+      "exits": [
+        {
+          "edge": "west",
+          "enabled": false,
+          "offset": 37,
+          "to": "world:west",
+          "width": 6
+        },
+        {
+          "edge": "east",
+          "enabled": true,
+          "offset": 37,
+          "to": "M04:west",
+          "width": 6
+        }
+      ],
+      "gate": [
+        85,
+        37,
+        11,
+        6
+      ],
+      "id": "M07",
+      "map_id": "M07",
+      "name": "西门与城外",
+      "npc_spawns": [
+        {
+          "cell": [
+            80,
+            40
+          ],
+          "id": "district_greeter",
+          "role": "reserved"
+        }
+      ],
+      "patrol_routes": [
+        {
+          "id": "wall_patrol",
+          "implemented": false,
+          "level": "wall",
+          "points": [
+            [
+              93,
+              3
+            ],
+            [
+              93,
+              76
+            ]
+          ]
+        }
+      ],
+      "roads": [
+        {
+          "kind": "main",
+          "rect": [
+            0,
+            37,
+            96,
+            6
+          ],
+          "shape": "rect"
+        }
+      ],
+      "size": [
+        96,
+        80
+      ],
+      "spawn": [
+        80,
+        40
+      ],
+      "stairs_ground": [
+        87,
+        49
+      ],
+      "stairs_wall": [
+        93,
+        49
+      ],
+      "status": "playable_graybox_candidate",
+      "structures": [
+        {
+          "kind": "gatehouse",
+          "label": "西门楼",
+          "prefab": "res://assets/buildings/leyton_west_gatehouse/LeytonWestGatehouse.tscn",
+          "rect": [
+            85,
+            32,
+            11,
+            16
+          ],
+          "wall_walk_texture": "res://assets/buildings/leyton_west_gatehouse/source/registered_art_v1/wall_walk_strip.png"
+        },
+        {
+          "kind": "water_gate",
+          "label": "水门",
+          "rect": [
+            88,
+            59,
+            8,
+            9
+          ]
+        },
+        {
+          "kind": "checkpoint",
+          "label": "煤车待检区",
+          "rect": [
+            68,
+            26,
+            16,
+            9
+          ]
+        },
+        {
+          "kind": "caravan",
+          "label": "商队停车场",
+          "rect": [
+            65,
+            44,
+            17,
+            6
+          ]
+        },
+        {
+          "kind": "workshop",
+          "label": "修车棚",
+          "rect": [
+            66,
+            66,
+            15,
+            9
+          ]
+        }
+      ],
+      "wall_walk": [
+        92,
+        0,
+        3,
+        80
+      ],
+      "walls": [
+        {
+          "kind": "city_wall",
+          "rect": [
+            91,
+            0,
+            5,
+            80
+          ]
+        }
+      ],
+      "water": [
+        {
+          "kind": "river",
+          "label": "河流汇入湖区",
+          "navigable": false,
+          "points": [
+            [
+              31,
+              30
+            ],
+            [
+              55,
+              45
+            ],
+            [
+              75,
+              64
+            ],
+            [
+              96,
+              64
+            ]
+          ],
+          "width": 4
+        }
+      ],
+      "zones": [
+        {
+          "kind": "lake",
+          "label": "大型灌溉湖",
+          "rect": [
+            4,
+            4,
+            52,
+            29
+          ],
+          "shape": "ellipse"
+        },
+        {
+          "kind": "field",
+          "label": "湖畔麦田",
+          "rect": [
+            5,
+            57,
+            28,
+            18
+          ],
+          "shape": "rect"
+        },
+        {
+          "kind": "field",
+          "label": "灌渠农田",
+          "rect": [
+            38,
+            61,
+            27,
+            14
+          ],
+          "shape": "rect"
+        }
+      ],
+      "urban_ground": false
+    },
+    {
+      "bridges": [
+        [
+          52,
+          52,
+          6,
+          8
+        ]
+      ],
+      "event_anchors": [
+        {
+          "cell": [
+            18,
+            36
+          ],
+          "id": "district_entry",
+          "implemented": false
+        }
+      ],
+      "exit_depth": 2,
+      "exits": [
+        {
+          "edge": "west",
+          "enabled": true,
+          "mode": "abstract_residential",
+          "offset": 33,
+          "to": "M01:east",
+          "width": 6
+        },
+        {
+          "edge": "east",
+          "enabled": false,
+          "offset": 33,
+          "to": "world:east",
+          "width": 6
+        }
+      ],
+      "gate": [
+        0,
+        33,
+        11,
+        6
+      ],
+      "id": "M08",
+      "map_id": "M08",
+      "name": "东门与城外",
+      "npc_spawns": [
+        {
+          "cell": [
+            18,
+            36
+          ],
+          "id": "district_greeter",
+          "role": "reserved"
+        }
+      ],
+      "patrol_routes": [
+        {
+          "id": "wall_patrol",
+          "implemented": false,
+          "level": "wall",
+          "points": [
+            [
+              2,
+              3
+            ],
+            [
+              2,
+              68
+            ]
+          ]
+        }
+      ],
+      "roads": [
+        {
+          "kind": "main",
+          "rect": [
+            0,
+            33,
+            96,
+            6
+          ],
+          "shape": "rect"
+        },
+        {
+          "kind": "bridge_road",
+          "rect": [
+            52,
+            39,
+            6,
+            30
+          ],
+          "shape": "rect"
+        }
+      ],
+      "size": [
+        96,
+        72
+      ],
+      "spawn": [
+        18,
+        36
+      ],
+      "stairs_ground": [
+        12,
+        46
+      ],
+      "stairs_wall": [
+        2,
+        46
+      ],
+      "status": "playable_graybox_candidate",
+      "structures": [
+        {
+          "kind": "gatehouse",
+          "label": "东门楼",
+          "rect": [
+            0,
+            28,
+            11,
+            16
+          ]
+        },
+        {
+          "kind": "water_gate",
+          "label": "水门",
+          "rect": [
+            0,
+            51,
+            8,
+            11
+          ]
+        },
+        {
+          "kind": "mill",
+          "label": "磨坊/风车候选",
+          "rect": [
+            69,
+            42,
+            16,
+            11
+          ]
+        },
+        {
+          "kind": "checkpoint",
+          "label": "旅客检查区",
+          "rect": [
+            12,
+            42,
+            18,
+            8
+          ]
+        }
+      ],
+      "wall_walk": [
+        1,
+        0,
+        3,
+        72
+      ],
+      "walls": [
+        {
+          "kind": "city_wall",
+          "rect": [
+            0,
+            0,
+            5,
+            72
+          ]
+        }
+      ],
+      "water": [
+        {
+          "kind": "river",
+          "label": "东部入城河道",
+          "navigable": false,
+          "points": [
+            [
+              96,
+              56
+            ],
+            [
+              62,
+              56
+            ],
+            [
+              32,
+              56
+            ],
+            [
+              0,
+              56
+            ]
+          ],
+          "width": 4
+        }
+      ],
+      "zones": [
+        {
+          "kind": "field",
+          "label": "谷物田",
+          "rect": [
+            15,
+            6,
+            28,
+            20
+          ],
+          "shape": "rect"
+        },
+        {
+          "kind": "beans",
+          "label": "豆田",
+          "rect": [
+            51,
+            5,
+            33,
+            21
+          ],
+          "shape": "rect"
+        },
+        {
+          "kind": "field",
+          "label": "轮作田",
+          "rect": [
+            16,
+            59,
+            28,
+            10
+          ],
+          "shape": "rect"
+        }
+      ],
+      "urban_ground": false
+    }
+  ],
+  "projection": "strict_orthographic_top_down",
+  "tile_size_px": 48,
+  "version": "0.3-eight-map-graybox"
+}

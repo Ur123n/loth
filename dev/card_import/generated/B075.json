@@ -1,0 +1,32 @@
+{
+  "id": "B075",
+  "name": "鲍德温仍在此",
+  "character": "鲍德温",
+  "rarity": "Rare",
+  "category": "道途专属卡牌",
+  "path": "孢子卫士",
+  "card_type": "能力",
+  "cost": 3,
+  "load": 4,
+  "target_type": "Self",
+  "min_range": 0,
+  "range": 0,
+  "target_spec": "自身",
+  "area": 0,
+  "keywords": [],
+  "tags": [
+    "Bleed",
+    "Healing",
+    "Inspire",
+    "Combo"
+  ],
+  "description": "每回合第一次执行放血4或7后，三选一：获得2层疗愈；选择距离3内1名其他友军获得1层鼓舞；或令本回合下一张Melee Attack额外造成6伤害。",
+  "source_effect": "每回合第一次执行放血4或7后，三选一：获得2层疗愈；选择距离3内1名其他友军获得1层鼓舞；或令本回合下一张Melee Attack额外造成6伤害。",
+  "source_file": "鲍德温_完整卡组_v0.1.md",
+  "source_line": 265,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [],
+  "implementation_status": "pending"
+}

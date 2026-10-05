@@ -1,0 +1,40 @@
+{
+  "id": "K016",
+  "name": "灰盐粉",
+  "character": "卡莎",
+  "rarity": "Common",
+  "category": "道途专属卡牌",
+  "path": "解剖学者",
+  "card_type": "行动",
+  "cost": 1,
+  "load": 1,
+  "target_type": "Enemy",
+  "min_range": 1,
+  "range": 4,
+  "target_spec": "敌人≤4",
+  "area": 0,
+  "keywords": [],
+  "tags": [],
+  "description": "施加2毒和1虚弱。",
+  "source_effect": "施加2毒和1虚弱。",
+  "source_file": "卡莎_完整卡组_v0.2.md",
+  "source_line": 139,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [
+    {
+      "logic": "buff",
+      "target": "enemy",
+      "buff_type": "中毒",
+      "stacks": 2
+    },
+    {
+      "logic": "buff",
+      "target": "enemy",
+      "buff_type": "虚弱",
+      "stacks": 1
+    }
+  ],
+  "implementation_status": "supported"
+}

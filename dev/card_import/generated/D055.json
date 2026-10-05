@@ -1,0 +1,32 @@
+{
+  "id": "D055",
+  "name": "枪刃衔接",
+  "character": "迪马斯",
+  "rarity": "Uncommon",
+  "category": "道途专属卡牌",
+  "path": "侠盗",
+  "card_type": "行动",
+  "cost": 0,
+  "load": 2,
+  "target_type": "Self",
+  "min_range": 0,
+  "range": 0,
+  "target_spec": "自身",
+  "area": 0,
+  "keywords": [
+    "消耗"
+  ],
+  "tags": [
+    "Draw",
+    "Combo"
+  ],
+  "description": "条件：本回合已分别打出至少1张Dagger Attack与1张Pistol Attack。抽1张。",
+  "source_effect": "抽1张。",
+  "source_file": "迪马斯_完整卡组_v0.3.md",
+  "source_line": 173,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [],
+  "implementation_status": "pending"
+}

@@ -1,0 +1,27 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://core/world/free_prop.gd" id="1_wbkcp"]
+[ext_resource type="Texture2D" path="res://assets/maps/leyton/props_batch_01/sprites/prop_notice_board.png" id="2_4qujw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_deg4t"]
+size = Vector2(64, 12)
+
+[node name="NoticeBoard" type="Node2D" unique_id=999141583]
+texture_filter = 1
+script = ExtResource("1_wbkcp")
+prop_id = "leyton_notice_board"
+footprint_cells = Vector2i(2, 1)
+metadata/projection_id = "orthogonal_3q_48_v1"
+metadata/review_status = "candidate"
+
+[node name="Visual" type="Sprite2D" parent="." unique_id=833953639]
+position = Vector2(-72, -132)
+texture = ExtResource("2_4qujw")
+centered = false
+
+[node name="Collision" type="StaticBody2D" parent="." unique_id=2145460816]
+collision_layer = 2
+
+[node name="@CollisionShape2D@6" type="CollisionShape2D" parent="Collision" unique_id=2004557549]
+position = Vector2(0, -6)
+shape = SubResource("RectangleShape2D_deg4t")

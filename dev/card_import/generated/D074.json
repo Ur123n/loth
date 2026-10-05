@@ -1,0 +1,31 @@
+{
+  "id": "D074",
+  "name": "一瞬三步",
+  "character": "迪马斯",
+  "rarity": "Rare",
+  "category": "道途专属卡牌",
+  "path": "侠盗",
+  "card_type": "行动",
+  "cost": 0,
+  "load": 3,
+  "target_type": "Self",
+  "min_range": 0,
+  "range": 0,
+  "target_spec": "自身",
+  "area": 0,
+  "keywords": [
+    "消耗"
+  ],
+  "tags": [
+    "Movement"
+  ],
+  "description": "条件：本回合尚未打出其他牌。移动最多3格。",
+  "source_effect": "移动最多3格。",
+  "source_file": "迪马斯_完整卡组_v0.3.md",
+  "source_line": 197,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [],
+  "implementation_status": "pending"
+}

@@ -1,0 +1,36 @@
+{
+  "id": "D011",
+  "name": "斜切",
+  "character": "迪马斯",
+  "rarity": "Common",
+  "category": "道途专属卡牌",
+  "path": "侠盗",
+  "card_type": "攻击",
+  "cost": 1,
+  "load": 1,
+  "target_type": "Enemy",
+  "min_range": 1,
+  "range": 1,
+  "target_spec": "1",
+  "area": 0,
+  "keywords": [],
+  "tags": [
+    "Melee",
+    "Dagger"
+  ],
+  "description": "造成8伤害。",
+  "source_effect": "造成8伤害。",
+  "source_file": "迪马斯_完整卡组_v0.3.md",
+  "source_line": 124,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [
+    {
+      "logic": "attack",
+      "value": 8,
+      "attack_range": 1
+    }
+  ],
+  "implementation_status": "supported"
+}

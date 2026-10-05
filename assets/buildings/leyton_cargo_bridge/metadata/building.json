@@ -1,0 +1,477 @@
+{
+ "anchor": {
+  "mode": "bottom_center",
+  "note": "节点原点落在 footprint 的底部中心，Y 轴排序才会按「脚下」前后遮挡",
+  "origin_cell": [
+   6.0,
+   11.0
+  ]
+ },
+ "asset_path": "res://assets/buildings/leyton_cargo_bridge",
+ "blocked_cells": {
+  "count": 18,
+  "runs": [
+   [
+    1,
+    0,
+    1
+   ],
+   [
+    1,
+    11,
+    1
+   ],
+   [
+    2,
+    0,
+    1
+   ],
+   [
+    2,
+    11,
+    1
+   ],
+   [
+    3,
+    0,
+    1
+   ],
+   [
+    3,
+    11,
+    1
+   ],
+   [
+    4,
+    0,
+    1
+   ],
+   [
+    4,
+    11,
+    1
+   ],
+   [
+    5,
+    0,
+    1
+   ],
+   [
+    5,
+    11,
+    1
+   ],
+   [
+    6,
+    0,
+    1
+   ],
+   [
+    6,
+    11,
+    1
+   ],
+   [
+    7,
+    0,
+    1
+   ],
+   [
+    7,
+    11,
+    1
+   ],
+   [
+    8,
+    0,
+    1
+   ],
+   [
+    8,
+    11,
+    1
+   ],
+   [
+    9,
+    0,
+    1
+   ],
+   [
+    9,
+    11,
+    1
+   ]
+  ]
+ },
+ "building_id": "leyton_cargo_bridge",
+ "collision": {
+  "layer": 2,
+  "mask": 1,
+  "note": "由 masks/collision.png 贪心分解而来，面积等于 blocked_cells.count",
+  "rect_count": 2,
+  "rects": [
+   [
+    0,
+    1,
+    1,
+    9
+   ],
+   [
+    11,
+    1,
+    1,
+    9
+   ]
+  ]
+ },
+ "display_name": "莱顿城货运石桥",
+ "display_name_en": "",
+ "doors": [
+  {
+   "cell": [
+    1,
+    0
+   ],
+   "id": "north",
+   "interact": "",
+   "label": "",
+   "local_px": [
+    48,
+    0
+   ],
+   "outward_side": "n",
+   "target": "outside",
+   "thickness_tiles": 1,
+   "width_tiles": 10
+  },
+  {
+   "cell": [
+    1,
+    10
+   ],
+   "id": "south",
+   "interact": "",
+   "label": "",
+   "local_px": [
+    48,
+    480
+   ],
+   "outward_side": "s",
+   "target": "outside",
+   "thickness_tiles": 1,
+   "width_tiles": 10
+  }
+ ],
+ "footprint": {
+  "note": "逻辑地基。左上角为 (0,0)，与视觉图的 (0,0) 像素对齐",
+  "origin_cell": [
+   0,
+   0
+  ],
+  "size_cells": [
+   12,
+   11
+  ],
+  "size_px": [
+   576,
+   528
+  ]
+ },
+ "kind": "structure",
+ "masks": {
+  "collision": "res://assets/buildings/leyton_cargo_bridge/masks/collision.png",
+  "doors": "res://assets/buildings/leyton_cargo_bridge/masks/doors.png",
+  "legend": "res://assets/buildings/leyton_cargo_bridge/masks/legend.json",
+  "occlusion": "res://assets/buildings/leyton_cargo_bridge/masks/occlusion.png",
+  "occupancy": "res://assets/buildings/leyton_cargo_bridge/masks/occupancy.png",
+  "walkable": "res://assets/buildings/leyton_cargo_bridge/masks/walkable.png"
+ },
+ "occlusion_cells": {
+  "count": 0,
+  "runs": []
+ },
+ "occupied_cells": {
+  "count": 132,
+  "note": "游程编码 [[y, x起, 长度], …]；完整格集合 = 掩码 masks/occupancy.png",
+  "runs": [
+   [
+    0,
+    0,
+    12
+   ],
+   [
+    1,
+    0,
+    12
+   ],
+   [
+    2,
+    0,
+    12
+   ],
+   [
+    3,
+    0,
+    12
+   ],
+   [
+    4,
+    0,
+    12
+   ],
+   [
+    5,
+    0,
+    12
+   ],
+   [
+    6,
+    0,
+    12
+   ],
+   [
+    7,
+    0,
+    12
+   ],
+   [
+    8,
+    0,
+    12
+   ],
+   [
+    9,
+    0,
+    12
+   ],
+   [
+    10,
+    0,
+    12
+   ]
+  ]
+ },
+ "prefab_path": "res://assets/buildings/leyton_cargo_bridge/LeytonCargoBridge.tscn",
+ "projection_id": "orthogonal_3q_48_v1",
+ "rooms": [
+  {
+   "id": "deck",
+   "label": "露天桥面",
+   "rect": [
+    0,
+    0,
+    12,
+    11
+   ],
+   "roofed": false,
+   "solid": false
+  }
+ ],
+ "schema": "building/1",
+ "sorting": {
+  "bands": [
+   {
+    "id": "north_clear",
+    "source_rect_tiles": [
+     0.0,
+     0.0,
+     14.0,
+     2.0
+    ]
+   },
+   {
+    "id": "west_parapet",
+    "source_rect_tiles": [
+     0.0,
+     2.0,
+     2.0,
+     9.0
+    ]
+   },
+   {
+    "id": "deck_clear",
+    "source_rect_tiles": [
+     2.0,
+     2.0,
+     10.0,
+     9.0
+    ]
+   },
+   {
+    "id": "east_parapet",
+    "source_rect_tiles": [
+     12.0,
+     2.0,
+     2.0,
+     9.0
+    ]
+   },
+   {
+    "id": "south_clear",
+    "source_rect_tiles": [
+     0.0,
+     11.0,
+     14.0,
+     2.0
+    ]
+   }
+  ],
+  "mode": "y_sort",
+  "occluder": false,
+  "roof_layer_z": 12.0,
+  "y_sort_origin": "bottom_center",
+  "z_index": 0.0
+ },
+ "source": {
+  "generated_by": "maps/godot/tools/build_building.gd",
+  "generated_for": "godot --headless --path C:\\游戏 --script maps/godot/tools/build_building.gd",
+  "plan": "",
+  "spec": "res://assets/buildings/leyton_cargo_bridge/building.spec.json"
+ },
+ "tactical": {
+  "blocks_los": false,
+  "cover": 0.0,
+  "cover_level": "low",
+  "enterable": false,
+  "height_level": 0.0
+ },
+ "tile_size": [
+  48,
+  48
+ ],
+ "visual": {
+  "anchor_offset_px": [
+   -336.0,
+   -576.0
+  ],
+  "clip_to_logic": false,
+  "layers": [
+   {
+    "name": "Base",
+    "origin_tile": [
+     -1.0,
+     -1.0
+    ],
+    "path": "res://assets/buildings/leyton_cargo_bridge/visual/base.png",
+    "role": "base",
+    "size_px": [
+     672.0,
+     624.0
+    ],
+    "size_tiles": [
+     14.0,
+     13.0
+    ],
+    "source": "res://assets/buildings/leyton_cargo_bridge/source/registered_v2/rails.png",
+    "visible": true,
+    "z_index": 0.0
+   },
+   {
+    "name": "Deck",
+    "origin_tile": [
+     -1.0,
+     -1.0
+    ],
+    "path": "res://assets/buildings/leyton_cargo_bridge/visual/deck.png",
+    "role": "floor",
+    "size_px": [
+     672.0,
+     624.0
+    ],
+    "size_tiles": [
+     14.0,
+     13.0
+    ],
+    "source": "res://assets/buildings/leyton_cargo_bridge/source/registered_v2/deck.png",
+    "visible": true,
+    "z_index": -1.0
+   }
+  ],
+  "note": "视觉尺寸与逻辑 footprint 故意不绑定（本建筑视觉 672×624 像素，逻辑 12×11 格）；anchor_offset_px = 贴图相对节点原点的偏移",
+  "origin_px_in_source": [
+   0,
+   0
+  ],
+  "origin_tile": [
+   -1,
+   -1
+  ],
+  "padding_tiles": 1,
+  "size_px": [
+   672,
+   624
+  ],
+  "size_tiles": [
+   14,
+   13
+  ],
+  "source_origin_tile": [
+   1,
+   1
+  ],
+  "tile_size": [
+   48,
+   48
+  ]
+ },
+ "walkable_cells": {
+  "count": 114,
+  "runs": [
+   [
+    0,
+    0,
+    12
+   ],
+   [
+    1,
+    1,
+    10
+   ],
+   [
+    2,
+    1,
+    10
+   ],
+   [
+    3,
+    1,
+    10
+   ],
+   [
+    4,
+    1,
+    10
+   ],
+   [
+    5,
+    1,
+    10
+   ],
+   [
+    6,
+    1,
+    10
+   ],
+   [
+    7,
+    1,
+    10
+   ],
+   [
+    8,
+    1,
+    10
+   ],
+   [
+    9,
+    1,
+    10
+   ],
+   [
+    10,
+    0,
+    12
+   ]
+  ]
+ }
+}

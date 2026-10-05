@@ -1,0 +1,31 @@
+{
+  "id": "B052",
+  "name": "踏血逼近",
+  "character": "鲍德温",
+  "rarity": "Uncommon",
+  "category": "道途专属卡牌",
+  "path": "孢子卫士",
+  "card_type": "攻击",
+  "cost": 1,
+  "load": 2,
+  "target_type": "Enemy",
+  "min_range": 0,
+  "range": 0,
+  "target_spec": "自身→敌1",
+  "area": 0,
+  "keywords": [],
+  "tags": [
+    "Melee",
+    "Movement",
+    "Combo"
+  ],
+  "description": "条件：本回合执行过放血4或7。先移动最多1格，再造成14伤害。",
+  "source_effect": "先移动最多1格，再造成14伤害。",
+  "source_file": "鲍德温_完整卡组_v0.1.md",
+  "source_line": 236,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [],
+  "implementation_status": "pending"
+}

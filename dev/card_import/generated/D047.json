@@ -1,0 +1,30 @@
+{
+  "id": "D047",
+  "name": "不动的诱饵",
+  "character": "迪马斯",
+  "rarity": "Uncommon",
+  "category": "道途专属卡牌",
+  "path": "侠盗",
+  "card_type": "行动",
+  "cost": 1,
+  "load": 2,
+  "target_type": "Self",
+  "min_range": 0,
+  "range": 0,
+  "target_spec": "自身",
+  "area": 0,
+  "keywords": [],
+  "tags": [
+    "Defense",
+    "Reaction"
+  ],
+  "description": "条件：本回合尚未主动移动。获得3格挡；开启2次反击。",
+  "source_effect": "获得3格挡；开启2次反击。",
+  "source_file": "迪马斯_完整卡组_v0.3.md",
+  "source_line": 165,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [],
+  "implementation_status": "pending"
+}

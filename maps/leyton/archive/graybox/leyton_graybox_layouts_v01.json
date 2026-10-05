@@ -1,0 +1,289 @@
+{
+  "version": "0.1",
+  "tile_size_px": 48,
+  "preview_scale": "1:8",
+  "preview_px_per_tile": 6,
+  "projection": "strict_orthographic_top_down",
+  "layouts": [
+    {
+      "id": "M01S",
+      "map_id": "M01",
+      "name": "中心广场·河流南绕",
+      "status": "selected",
+      "size": [96, 80],
+      "zones": [
+        {"shape": "rect", "rect": [30, 20, 36, 36], "kind": "plaza", "label": "中央石铺广场"}
+      ],
+      "roads": [
+        {"shape": "rect", "rect": [45, 0, 6, 80], "kind": "main"},
+        {"shape": "rect", "rect": [0, 37, 96, 6], "kind": "main"}
+      ],
+      "water": [
+        {"points": [[0, 64], [30, 64], [36, 70], [60, 70], [66, 64], [96, 64]], "width": 4, "kind": "river_candidate", "label": "南绕候选河道"}
+      ],
+      "structures": [
+        {"rect": [5, 6, 24, 14], "kind": "civic", "label": "城政厅"},
+        {"rect": [67, 5, 24, 15], "kind": "religious", "label": "太阳神教礼堂"},
+        {"rect": [5, 58, 20, 12], "kind": "military", "label": "城卫总值房"},
+        {"rect": [72, 57, 18, 10], "kind": "utility", "label": "公共水源"},
+        {"rect": [44, 31, 8, 8], "kind": "landmark", "label": "太阳神像"}
+      ],
+      "exits": [
+        {"edge": "north", "offset": 45, "width": 6, "to": "M02:south"},
+        {"edge": "south", "offset": 45, "width": 6, "to": "M03:north"},
+        {"edge": "west", "offset": 37, "width": 6, "to": "M04:east"},
+        {"edge": "east", "offset": 37, "width": 6, "to": "M08:west", "mode": "abstract_residential"}
+      ]
+    },
+    {
+      "id": "M01N",
+      "map_id": "M01",
+      "name": "中心广场·河流北绕",
+      "status": "archived_alternative",
+      "size": [96, 80],
+      "zones": [
+        {"shape": "rect", "rect": [30, 20, 36, 36], "kind": "plaza", "label": "中央石铺广场"}
+      ],
+      "roads": [
+        {"shape": "rect", "rect": [45, 0, 6, 80], "kind": "main"},
+        {"shape": "rect", "rect": [0, 37, 96, 6], "kind": "main"}
+      ],
+      "water": [
+        {"points": [[0, 64], [12, 64], [18, 14], [30, 14], [36, 8], [60, 8], [66, 14], [78, 14], [84, 64], [96, 64]], "width": 4, "kind": "river_candidate", "label": "北绕候选河道"}
+      ],
+      "structures": [
+        {"rect": [5, 18, 24, 14], "kind": "civic", "label": "城政厅"},
+        {"rect": [67, 18, 24, 15], "kind": "religious", "label": "太阳神教礼堂"},
+        {"rect": [5, 58, 20, 12], "kind": "military", "label": "城卫总值房"},
+        {"rect": [72, 58, 18, 10], "kind": "utility", "label": "公共水源"},
+        {"rect": [44, 31, 8, 8], "kind": "landmark", "label": "太阳神像"}
+      ],
+      "exits": [
+        {"edge": "north", "offset": 45, "width": 6, "to": "M02:south"},
+        {"edge": "south", "offset": 45, "width": 6, "to": "M03:north"},
+        {"edge": "west", "offset": 37, "width": 6, "to": "M04:east"},
+        {"edge": "east", "offset": 37, "width": 6, "to": "M08:west", "mode": "abstract_residential"}
+      ]
+    },
+    {
+      "id": "M02",
+      "map_id": "M02",
+      "name": "城北贵族住宅区",
+      "status": "draft",
+      "size": [88, 80],
+      "zones": [
+        {"shape": "rect", "rect": [3, 4, 34, 31], "kind": "estate_yard", "label": "西北宅邸庭院"},
+        {"shape": "rect", "rect": [51, 4, 34, 31], "kind": "estate_yard", "label": "东北宅邸庭院"},
+        {"shape": "rect", "rect": [3, 46, 36, 31], "kind": "estate_yard", "label": "西南宅邸庭院"}
+      ],
+      "roads": [
+        {"shape": "rect", "rect": [41, 0, 6, 80], "kind": "main"},
+        {"shape": "rect", "rect": [0, 38, 88, 5], "kind": "secondary"}
+      ],
+      "structures": [
+        {"rect": [8, 9, 24, 18], "kind": "noble", "label": "宅邸A"},
+        {"rect": [56, 8, 24, 20], "kind": "noble", "label": "宅邸B"},
+        {"rect": [8, 51, 26, 20], "kind": "noble", "label": "宅邸C"},
+        {"rect": [55, 51, 20, 14], "kind": "civic", "label": "军官会客所"},
+        {"rect": [76, 57, 8, 10], "kind": "utility", "label": "保护水源"}
+      ],
+      "exits": [
+        {"edge": "north", "offset": 41, "width": 6, "to": "M05:south_gate"},
+        {"edge": "south", "offset": 41, "width": 6, "to": "M01:north"}
+      ]
+    },
+    {
+      "id": "M03",
+      "map_id": "M03",
+      "name": "城南贫民窟",
+      "status": "draft",
+      "size": [96, 88],
+      "zones": [
+        {"shape": "rect", "rect": [2, 4, 40, 77], "kind": "slum", "label": "高密棚屋西片"},
+        {"shape": "rect", "rect": [54, 4, 40, 77], "kind": "slum", "label": "高密棚屋东片"},
+        {"shape": "rect", "rect": [60, 61, 34, 22], "kind": "hazard", "label": "焚尸场防火区"}
+      ],
+      "roads": [
+        {"shape": "polyline", "points": [[48, 0], [48, 19], [52, 29], [52, 49], [47, 61], [47, 88]], "width": 5, "kind": "main"},
+        {"shape": "polyline", "points": [[5, 24], [24, 24], [35, 31], [48, 31]], "width": 2, "kind": "lane"},
+        {"shape": "polyline", "points": [[52, 43], [67, 38], [92, 38]], "width": 2, "kind": "lane"},
+        {"shape": "polyline", "points": [[5, 57], [28, 57], [47, 64]], "width": 2, "kind": "lane"}
+      ],
+      "walls": [
+        {"rect": [0, 83, 96, 5], "kind": "city_wall"}
+      ],
+      "structures": [
+        {"rect": [5, 6, 18, 12], "kind": "religious", "label": "施粥救济点"},
+        {"rect": [27, 8, 13, 12], "kind": "lodging", "label": "廉价旅舍"},
+        {"rect": [60, 64, 31, 17], "kind": "crematorium", "label": "主焚尸场"},
+        {"rect": [56, 49, 13, 9], "kind": "utility", "label": "尸体登记棚"},
+        {"rect": [74, 48, 13, 9], "kind": "utility", "label": "灰烬收集点"},
+        {"rect": [8, 33, 12, 8], "kind": "shack", "label": "棚屋"},
+        {"rect": [23, 35, 14, 9], "kind": "shack", "label": "棚屋"},
+        {"rect": [7, 66, 14, 10], "kind": "shack", "label": "棚屋"},
+        {"rect": [24, 64, 15, 12], "kind": "shack", "label": "棚屋"},
+        {"rect": [60, 8, 15, 10], "kind": "shack", "label": "棚屋"},
+        {"rect": [78, 10, 12, 10], "kind": "shack", "label": "棚屋"},
+        {"rect": [62, 25, 13, 9], "kind": "shack", "label": "棚屋"},
+        {"rect": [78, 25, 12, 10], "kind": "shack", "label": "棚屋"}
+      ],
+      "exits": [
+        {"edge": "north", "offset": 45, "width": 6, "to": "M01:south"},
+        {"edge": "south", "offset": 44, "width": 6, "to": "M06:north_gate"}
+      ]
+    },
+    {
+      "id": "M04",
+      "map_id": "M04",
+      "name": "城西商业区",
+      "status": "draft",
+      "size": [96, 80],
+      "zones": [
+        {"shape": "rect", "rect": [3, 4, 25, 27], "kind": "market", "label": "综合市场"},
+        {"shape": "rect", "rect": [3, 46, 90, 30], "kind": "workshops", "label": "仓库与作坊带"}
+      ],
+      "roads": [
+        {"shape": "rect", "rect": [0, 37, 96, 6], "kind": "main"},
+        {"shape": "rect", "rect": [45, 43, 6, 29], "kind": "bridge_road"}
+      ],
+      "water": [
+        {"points": [[0, 64], [96, 64]], "width": 4, "kind": "river", "label": "货运河道"}
+      ],
+      "structures": [
+        {"rect": [5, 7, 21, 19], "kind": "market", "label": "综合市场"},
+        {"rect": [32, 6, 18, 17], "kind": "civic", "label": "商会/秤量所"},
+        {"rect": [56, 5, 16, 18], "kind": "warehouse", "label": "煤炭总仓"},
+        {"rect": [76, 5, 16, 18], "kind": "warehouse", "label": "主粮仓"},
+        {"rect": [5, 47, 14, 11], "kind": "workshop", "label": "铁匠铺"},
+        {"rect": [23, 47, 13, 11], "kind": "workshop", "label": "药剂铺"},
+        {"rect": [56, 47, 17, 11], "kind": "lodging", "label": "旅店"},
+        {"rect": [76, 46, 16, 12], "kind": "stable", "label": "车马栈"},
+        {"rect": [42, 59, 12, 11], "kind": "bridge", "label": "货运石桥"}
+      ],
+      "exits": [
+        {"edge": "west", "offset": 37, "width": 6, "to": "M07:east_gate"},
+        {"edge": "east", "offset": 37, "width": 6, "to": "M01:west"}
+      ]
+    },
+    {
+      "id": "M05",
+      "map_id": "M05",
+      "name": "北门与城外",
+      "status": "draft",
+      "size": [88, 72],
+      "zones": [
+        {"shape": "rect", "rect": [4, 5, 31, 20], "kind": "field", "label": "规整大田"},
+        {"shape": "rect", "rect": [53, 5, 31, 20], "kind": "orchard", "label": "果园"},
+        {"shape": "rect", "rect": [5, 30, 30, 19], "kind": "field", "label": "税粮田"},
+        {"shape": "rect", "rect": [53, 30, 30, 19], "kind": "pasture", "label": "牧草地"}
+      ],
+      "roads": [
+        {"shape": "rect", "rect": [41, 0, 6, 72], "kind": "main"}
+      ],
+      "walls": [
+        {"rect": [0, 67, 88, 5], "kind": "city_wall"}
+      ],
+      "structures": [
+        {"rect": [36, 61, 16, 11], "kind": "gatehouse", "label": "北门楼"},
+        {"rect": [34, 51, 20, 8], "kind": "checkpoint", "label": "登记检查区"},
+        {"rect": [7, 53, 13, 9], "kind": "farm", "label": "庄园农房"}
+      ],
+      "exits": [
+        {"edge": "north", "offset": 41, "width": 6, "to": "world:north"},
+        {"edge": "south", "offset": 41, "width": 6, "to": "M02:north"}
+      ]
+    },
+    {
+      "id": "M06",
+      "map_id": "M06",
+      "name": "南门与城外",
+      "status": "draft",
+      "size": [88, 72],
+      "zones": [
+        {"shape": "rect", "rect": [4, 19, 31, 19], "kind": "smallholding", "label": "小块佃田"},
+        {"shape": "rect", "rect": [53, 19, 31, 19], "kind": "vegetable", "label": "菜圃"},
+        {"shape": "rect", "rect": [5, 45, 30, 21], "kind": "smallholding", "label": "佃田与排水沟"},
+        {"shape": "rect", "rect": [53, 45, 30, 21], "kind": "livestock", "label": "牲畜栏"}
+      ],
+      "roads": [
+        {"shape": "rect", "rect": [41, 0, 6, 72], "kind": "main"}
+      ],
+      "walls": [
+        {"rect": [0, 0, 88, 5], "kind": "city_wall"}
+      ],
+      "structures": [
+        {"rect": [36, 0, 16, 11], "kind": "gatehouse", "label": "南门楼"},
+        {"rect": [30, 12, 17, 8], "kind": "refugee", "label": "难民棚"},
+        {"rect": [50, 12, 19, 8], "kind": "isolation", "label": "伤病隔离棚"},
+        {"rect": [7, 11, 17, 8], "kind": "labor", "label": "劳工集散"}
+      ],
+      "exits": [
+        {"edge": "north", "offset": 41, "width": 6, "to": "M03:south"},
+        {"edge": "south", "offset": 41, "width": 6, "to": "world:south"}
+      ]
+    },
+    {
+      "id": "M07",
+      "map_id": "M07",
+      "name": "西门与城外",
+      "status": "draft",
+      "size": [96, 80],
+      "zones": [
+        {"shape": "ellipse", "rect": [4, 6, 52, 35], "kind": "lake", "label": "大型灌溉湖"},
+        {"shape": "rect", "rect": [5, 57, 28, 18], "kind": "field", "label": "湖畔麦田"},
+        {"shape": "rect", "rect": [38, 61, 27, 14], "kind": "field", "label": "灌渠农田"}
+      ],
+      "roads": [
+        {"shape": "rect", "rect": [0, 37, 96, 6], "kind": "main"}
+      ],
+      "water": [
+        {"points": [[31, 30], [55, 45], [75, 64], [96, 64]], "width": 4, "kind": "river", "label": "河流汇入湖区"}
+      ],
+      "walls": [
+        {"rect": [91, 0, 5, 80], "kind": "city_wall"}
+      ],
+      "structures": [
+        {"rect": [85, 32, 11, 16], "kind": "gatehouse", "label": "西门楼"},
+        {"rect": [88, 55, 8, 11], "kind": "water_gate", "label": "水门"},
+        {"rect": [68, 30, 16, 9], "kind": "checkpoint", "label": "煤车待检区"},
+        {"rect": [63, 45, 17, 9], "kind": "caravan", "label": "商队停车场"},
+        {"rect": [66, 66, 15, 9], "kind": "workshop", "label": "修车棚"}
+      ],
+      "exits": [
+        {"edge": "west", "offset": 37, "width": 6, "to": "world:west"},
+        {"edge": "east", "offset": 37, "width": 6, "to": "M04:west"}
+      ]
+    },
+    {
+      "id": "M08",
+      "map_id": "M08",
+      "name": "东门与城外",
+      "status": "draft",
+      "size": [96, 72],
+      "zones": [
+        {"shape": "rect", "rect": [15, 6, 28, 20], "kind": "field", "label": "谷物田"},
+        {"shape": "rect", "rect": [51, 5, 33, 21], "kind": "beans", "label": "豆田"},
+        {"shape": "rect", "rect": [16, 59, 28, 10], "kind": "field", "label": "轮作田"}
+      ],
+      "roads": [
+        {"shape": "rect", "rect": [0, 33, 96, 6], "kind": "main"}
+      ],
+      "water": [
+        {"points": [[96, 56], [62, 56], [32, 56], [0, 56]], "width": 4, "kind": "river", "label": "东部入城河道"}
+      ],
+      "walls": [
+        {"rect": [0, 0, 5, 72], "kind": "city_wall"}
+      ],
+      "structures": [
+        {"rect": [0, 28, 11, 16], "kind": "gatehouse", "label": "东门楼"},
+        {"rect": [0, 51, 8, 11], "kind": "water_gate", "label": "水门"},
+        {"rect": [69, 45, 16, 16], "kind": "mill", "label": "磨坊/风车候选"},
+        {"rect": [12, 42, 18, 8], "kind": "checkpoint", "label": "旅客检查区"}
+      ],
+      "exits": [
+        {"edge": "west", "offset": 33, "width": 6, "to": "M01:east", "mode": "abstract_residential"},
+        {"edge": "east", "offset": 33, "width": 6, "to": "world:east"}
+      ]
+    }
+  ]
+}

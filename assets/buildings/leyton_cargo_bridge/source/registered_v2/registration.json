@@ -1,0 +1,50 @@
+{
+	"alpha_preserved": true,
+	"canvas": [
+		672,
+		624
+	],
+	"collision_changed": false,
+	"interpolation": "nearest",
+	"layer_reconstruction_exact": true,
+	"rail_rects": [
+		[
+			48,
+			96,
+			48,
+			432
+		],
+		[
+			576,
+			96,
+			48,
+			432
+		]
+	],
+	"sha256": "fd0af4f222fed30aa31aebcea08189e994c4ec067100ed6e8b456637b027578b",
+	"source": "res://assets/buildings/leyton_cargo_bridge/source/concept_v2.png",
+	"source_x": [
+		91,
+		202,
+		1104,
+		1211
+	],
+	"source_y": [
+		95,
+		176,
+		1026,
+		1111
+	],
+	"target_x": [
+		48,
+		96,
+		576,
+		624
+	],
+	"target_y": [
+		48,
+		96,
+		528,
+		576
+	]
+}

@@ -1,0 +1,209 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2160" height="1800" viewBox="0 0 2160 1800">
+  <defs>
+    <pattern id="tileGrid" width="4" height="4" patternUnits="userSpaceOnUse">
+      <path d="M 4 0 L 0 0 0 4" fill="none" stroke="#d8e0dd" stroke-width="0.25" opacity="0.12"/>
+    </pattern>
+    <pattern id="majorGrid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <rect width="32" height="32" fill="url(#tileGrid)"/>
+      <path d="M 32 0 L 0 0 0 32" fill="none" stroke="#d8e0dd" stroke-width="0.8" opacity="0.18"/>
+    </pattern>
+    <style>
+      .title{font:700 30px 'Microsoft YaHei',sans-serif;fill:#eef3ef}
+      .subtitle{font:15px 'Microsoft YaHei',sans-serif;fill:#aab8b5}
+      .map-title{font:700 20px 'Microsoft YaHei',sans-serif;fill:#f5f0df}
+      .map-size{font:14px Consolas,'Microsoft YaHei',sans-serif;fill:#d0d9d5}
+      .label{font:14px 'Microsoft YaHei',sans-serif;fill:#dce6e2}
+      .small{font:12px 'Microsoft YaHei',sans-serif;fill:#c0cbc7}
+      .map{stroke:#dbe5e1;stroke-width:2}
+      .road{fill:#a88b62;stroke:#d1b98f;stroke-width:1}
+      .wall{fill:#173f45;stroke:#4b7a7f;stroke-width:2}
+      .water{fill:none;stroke:#3e748c;stroke-width:18}
+      .water-candidate{fill:none;stroke:#5d91a8;stroke-width:12;stroke-dasharray:16 10;opacity:.8}
+      .connect{fill:none;stroke:#d6c7a4;stroke-width:6}
+      .abstract{fill:none;stroke:#c29f68;stroke-width:6;stroke-dasharray:12 9}
+      .world{fill:none;stroke:#8ea096;stroke-width:5;stroke-dasharray:10 8}
+      .building{fill:#493f3b;stroke:#8c7a69;stroke-width:2}
+      .field{fill:#676a3e;stroke:#96935b;stroke-width:1}
+      .lake{fill:#345f70;stroke:#6d98a5;stroke-width:2}
+      .gate{fill:#b7a472;stroke:#f0dfae;stroke-width:2}
+      .node{fill:#d9c587;stroke:#fff0bc;stroke-width:2}
+    </style>
+  </defs>
+
+  <rect width="2160" height="1800" fill="#10171a"/>
+  <text x="56" y="52" class="title">莱顿城八区总拓扑 v0.1</text>
+  <text x="56" y="82" class="subtitle">严格正交俯视 · 无透视/无近大远小 · 1 游戏瓦片 = 4 图像像素 · 地图矩形按格数等比绘制</text>
+
+  <!-- 外部世界道路与地图连接，全部为正交线 -->
+  <path class="world" d="M1232 0V40 M1232 328V360 M1232 680V720 M1232 1040V1072 M1232 1424V1456 M1232 1744V1790"/>
+  <path class="connect" d="M592 880H624 M1008 880H1040"/>
+  <path class="abstract" d="M1424 880H1664"/>
+  <path class="world" d="M64 880H208 M2048 864H2120"/>
+  <path class="water-candidate" d="M592 934H608V950H624 M1008 950H1024V986H1040 M1424 986H1544V944H1664"/>
+
+  <!-- M05 -->
+  <g transform="translate(1056 40)">
+    <rect class="map" width="352" height="288" rx="2" fill="#465049"/>
+    <rect width="352" height="288" fill="url(#majorGrid)"/>
+    <rect class="field" x="24" y="42" width="116" height="72"/>
+    <rect class="field" x="212" y="38" width="112" height="78"/>
+    <rect class="field" x="36" y="142" width="104" height="78"/>
+    <rect class="field" x="214" y="144" width="106" height="72"/>
+    <rect class="road" x="164" y="0" width="24" height="288"/>
+    <rect class="wall" x="0" y="268" width="352" height="20"/>
+    <rect class="gate" x="146" y="246" width="60" height="42"/>
+    <rect fill="#10171a" x="166" y="264" width="20" height="24"/>
+    <text x="12" y="25" class="map-title">M05 北门与城外</text>
+    <text x="12" y="47" class="map-size">88×72格 · 城墙位于南边缘</text>
+    <text x="232" y="255" class="small">深青石墙</text>
+  </g>
+
+  <!-- M02 -->
+  <g transform="translate(1056 360)">
+    <rect class="map" width="352" height="320" rx="2" fill="#4d574d"/>
+    <rect width="352" height="320" fill="url(#majorGrid)"/>
+    <rect class="road" x="164" y="0" width="24" height="320"/>
+    <rect class="road" x="0" y="150" width="352" height="20"/>
+    <rect class="building" x="28" y="54" width="102" height="70"/>
+    <rect class="building" x="222" y="44" width="98" height="86"/>
+    <rect class="building" x="32" y="204" width="110" height="76"/>
+    <rect class="building" x="222" y="208" width="92" height="62"/>
+    <text x="12" y="25" class="map-title">M02 城北贵族住宅区</text>
+    <text x="12" y="47" class="map-size">88×80格 · 宽路/宅邸/内院</text>
+  </g>
+
+  <!-- M07 -->
+  <g transform="translate(208 720)">
+    <rect class="map" width="384" height="320" rx="2" fill="#48514a"/>
+    <rect width="384" height="320" fill="url(#majorGrid)"/>
+    <path class="lake" d="M18 50 C85 16 174 33 212 92 C230 127 202 181 126 198 C74 210 31 183 18 146 Z"/>
+    <path class="water" d="M84 136 C160 145 224 184 276 214 H384"/>
+    <rect class="road" x="0" y="148" width="384" height="24"/>
+    <rect class="field" x="42" y="230" width="110" height="64"/>
+    <rect class="field" x="174" y="240" width="104" height="56"/>
+    <rect class="wall" x="364" y="0" width="20" height="320"/>
+    <rect class="gate" x="344" y="130" width="40" height="60"/>
+    <rect fill="#10171a" x="360" y="150" width="24" height="20"/>
+    <rect class="gate" x="350" y="218" width="34" height="48"/>
+    <text x="12" y="25" class="map-title">M07 西门与城外</text>
+    <text x="12" y="47" class="map-size">96×80格 · 城墙位于东边缘</text>
+    <text x="50" y="118" class="label">大型灌溉湖</text>
+    <text x="292" y="244" class="small">独立水门</text>
+  </g>
+
+  <!-- M04 -->
+  <g transform="translate(624 720)">
+    <rect class="map" width="384" height="320" rx="2" fill="#5c513f"/>
+    <rect width="384" height="320" fill="url(#majorGrid)"/>
+    <rect class="road" x="0" y="148" width="384" height="24"/>
+    <path class="water" d="M0 230 H384"/>
+    <rect class="gate" x="174" y="212" width="36" height="36"/>
+    <rect class="building" x="28" y="52" width="90" height="62"/>
+    <rect class="building" x="142" y="42" width="88" height="72"/>
+    <rect class="building" x="256" y="50" width="94" height="64"/>
+    <rect class="building" x="24" y="258" width="96" height="42"/>
+    <rect class="building" x="250" y="258" width="106" height="42"/>
+    <text x="12" y="25" class="map-title">M04 城西商业区</text>
+    <text x="12" y="47" class="map-size">96×80格 · 主街/市场/煤粮物流</text>
+    <text x="216" y="222" class="small">货运石桥</text>
+  </g>
+
+  <!-- M01 -->
+  <g transform="translate(1040 720)">
+    <rect class="map" width="384" height="320" rx="2" fill="#505962"/>
+    <rect width="384" height="320" fill="url(#majorGrid)"/>
+    <rect class="road" x="180" y="0" width="24" height="320"/>
+    <rect class="road" x="0" y="148" width="384" height="24"/>
+    <rect fill="#7f7868" stroke="#b7aa90" stroke-width="2" x="120" y="92" width="144" height="136"/>
+    <circle class="node" cx="192" cy="160" r="20"/>
+    <path class="water-candidate" d="M0 266 H86 Q106 266 106 286 H278 Q278 266 298 266 H384"/>
+    <rect class="building" x="30" y="38" width="94" height="50"/>
+    <rect class="building" x="266" y="36" width="88" height="54"/>
+    <rect class="building" x="30" y="238" width="68" height="44"/>
+    <text x="12" y="25" class="map-title">M01 中心广场</text>
+    <text x="12" y="47" class="map-size">96×80格 · 十字主路</text>
+    <text x="142" y="194" class="label">太阳神像</text>
+    <text x="116" y="304" class="small">河道南绕线（已冻结）</text>
+  </g>
+
+  <!-- M08 -->
+  <g transform="translate(1664 720)">
+    <rect class="map" width="384" height="288" rx="2" fill="#4b5548"/>
+    <rect width="384" height="288" fill="url(#majorGrid)"/>
+    <rect class="road" x="0" y="148" width="384" height="24"/>
+    <path class="water" d="M384 224 H0"/>
+    <rect class="field" x="62" y="42" width="110" height="72"/>
+    <rect class="field" x="206" y="38" width="126" height="78"/>
+    <rect class="field" x="66" y="238" width="108" height="34"/>
+    <rect class="wall" x="0" y="0" width="20" height="288"/>
+    <rect class="gate" x="0" y="130" width="40" height="60"/>
+    <rect fill="#10171a" x="0" y="150" width="24" height="20"/>
+    <rect class="gate" x="0" y="204" width="34" height="48"/>
+    <circle class="building" cx="290" cy="210" r="30"/>
+    <text x="48" y="25" class="map-title">M08 东门与城外</text>
+    <text x="48" y="47" class="map-size">96×72格 · 城墙位于西边缘</text>
+    <text x="258" y="215" class="small">磨坊候选</text>
+  </g>
+
+  <!-- M03 -->
+  <g transform="translate(1040 1072)">
+    <rect class="map" width="384" height="352" rx="2" fill="#5a443f"/>
+    <rect width="384" height="352" fill="url(#majorGrid)"/>
+    <path class="road" d="M180 0 H204 V82 L224 118 V202 L194 246 V352 H174 V238 L194 196 V126 L180 88 Z"/>
+    <g fill="#433532" stroke="#84665d" stroke-width="1">
+      <rect x="20" y="46" width="62" height="42"/><rect x="88" y="36" width="70" height="54"/>
+      <rect x="228" y="38" width="58" height="48"/><rect x="294" y="48" width="68" height="42"/>
+      <rect x="26" y="108" width="76" height="44"/><rect x="112" y="106" width="50" height="54"/>
+      <rect x="238" y="112" width="74" height="42"/><rect x="318" y="104" width="46" height="60"/>
+      <rect x="18" y="178" width="56" height="58"/><rect x="82" y="170" width="80" height="52"/>
+      <rect x="232" y="174" width="54" height="48"/><rect x="296" y="170" width="72" height="58"/>
+      <rect x="26" y="258" width="60" height="54"/><rect x="96" y="246" width="66" height="70"/>
+    </g>
+    <rect class="building" x="244" y="246" width="118" height="82"/>
+    <rect class="wall" x="0" y="332" width="384" height="20" opacity=".75"/>
+    <text x="12" y="25" class="map-title">M03 城南贫民窟</text>
+    <text x="12" y="47" class="map-size">96×88格 · 高压迫棚屋密度</text>
+    <text x="258" y="286" class="label">主焚尸场</text>
+  </g>
+
+  <!-- M06 -->
+  <g transform="translate(1056 1456)">
+    <rect class="map" width="352" height="288" rx="2" fill="#4d5043"/>
+    <rect width="352" height="288" fill="url(#majorGrid)"/>
+    <rect class="wall" x="0" y="0" width="352" height="20"/>
+    <rect class="gate" x="146" y="0" width="60" height="42"/>
+    <rect fill="#10171a" x="166" y="0" width="20" height="24"/>
+    <rect class="road" x="164" y="0" width="24" height="288"/>
+    <rect class="field" x="24" y="72" width="118" height="76"/>
+    <rect class="field" x="212" y="68" width="116" height="80"/>
+    <rect class="field" x="26" y="176" width="116" height="82"/>
+    <rect class="field" x="212" y="180" width="116" height="78"/>
+    <rect class="building" x="116" y="44" width="42" height="36"/>
+    <rect class="building" x="204" y="42" width="46" height="38"/>
+    <text x="12" y="58" class="map-title">M06 南门与城外</text>
+    <text x="12" y="80" class="map-size">88×72格 · 城墙位于北边缘</text>
+  </g>
+
+  <!-- 连接和图例标注 -->
+  <text x="1470" y="850" class="label">抽象普通住宅区路程</text>
+  <text x="76" y="862" class="small">西部煤铁产区/商路</text>
+  <text x="1940" y="850" class="small">东部驿道</text>
+  <text x="1248" y="22" class="small">北方世界道路</text>
+  <text x="1248" y="1780" class="small">南方世界道路</text>
+
+  <g transform="translate(56 116)">
+    <rect width="560" height="188" rx="6" fill="#172126" stroke="#39484c"/>
+    <text x="18" y="28" class="label">图例与比例校验</text>
+    <rect x="18" y="44" width="48" height="48" fill="url(#majorGrid)" stroke="#dbe5e1"/>
+    <text x="82" y="66" class="small">12×12 游戏格示例</text>
+    <text x="82" y="86" class="small">每格固定 4×4 图像像素</text>
+    <rect class="road" x="18" y="110" width="54" height="14"/><text x="82" y="123" class="small">道路</text>
+    <rect class="wall" x="160" y="110" width="54" height="14"/><text x="224" y="123" class="small">深青石城墙</text>
+    <path class="water" d="M358 117H412"/><text x="426" y="123" class="small">水系</text>
+    <path class="abstract" d="M18 154H72"/><text x="82" y="159" class="small">抽象路程</text>
+    <path class="world" d="M160 154H214"/><text x="224" y="159" class="small">世界道路</text>
+    <path class="water-candidate" d="M358 154H412"/><text x="426" y="159" class="small">已冻结南绕河线</text>
+  </g>
+
+  <text x="56" y="1768" class="subtitle">注意：本图是固定比例拓扑，不是美术效果图。地图内部建筑只表示功能占位；最终坐标须由 1:1 可玩灰盒冻结。</text>
+</svg>

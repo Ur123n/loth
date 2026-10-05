@@ -1,0 +1,29 @@
+{
+  "id": "A018",
+  "name": "急救包扎",
+  "character": "艾莉丝",
+  "rarity": "Common",
+  "category": "道途专属卡牌",
+  "path": "梦魇行者",
+  "card_type": "行动",
+  "cost": 1,
+  "load": 1,
+  "target_type": "Ally",
+  "min_range": 1,
+  "range": 1,
+  "target_spec": "友军1",
+  "area": 0,
+  "keywords": [],
+  "tags": [
+    "Support"
+  ],
+  "description": "目标获得4格挡，并移除至多2层一种DOT。",
+  "source_effect": "目标获得4格挡，并移除至多2层一种DOT。",
+  "source_file": "艾莉丝_完整卡组_v0.1.md",
+  "source_line": 62,
+  "icon": "",
+  "art": "card_faces/A018.png",
+  "animation": "",
+  "effects": [],
+  "implementation_status": "pending"
+}

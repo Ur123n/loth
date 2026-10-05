@@ -1,0 +1,32 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://core/world/map_pattern_instance.gd" id="1_jdw1d"]
+[ext_resource type="Texture2D" path="res://assets/maps/leyton/urban_rework_v1/stone_house.png" id="2_1imfu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3pgi7"]
+size = Vector2(384, 384)
+
+[node name="StoneHouse" type="Node2D" unique_id=2037908850]
+texture_filter = 1
+script = ExtResource("1_jdw1d")
+pattern_id = "stone_house"
+footprint_cells = Vector2i(8, 8)
+anchor_cell = Vector2i(4, 8)
+metadata/category = "building_pattern"
+metadata/projection_id = "orthogonal_3q_48_v1"
+
+[node name="Visual" type="Sprite2D" parent="." unique_id=176768617]
+position = Vector2(-192, -480)
+texture = ExtResource("2_1imfu")
+centered = false
+
+[node name="Collision" type="StaticBody2D" parent="." unique_id=516779650]
+collision_layer = 2
+
+[node name="@CollisionShape2D@2" type="CollisionShape2D" parent="Collision" unique_id=1930383357]
+position = Vector2(0, -192)
+shape = SubResource("RectangleShape2D_3pgi7")
+
+[node name="Entrances" type="Node2D" parent="." unique_id=1164485923]
+
+[node name="door_main" type="Marker2D" parent="Entrances" unique_id=571852571]

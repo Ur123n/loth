@@ -1,0 +1,31 @@
+{
+  "id": "D038",
+  "name": "回敬一刀",
+  "character": "迪马斯",
+  "rarity": "Uncommon",
+  "category": "道途专属卡牌",
+  "path": "侠盗",
+  "card_type": "攻击",
+  "cost": 1,
+  "load": 2,
+  "target_type": "Enemy",
+  "min_range": 1,
+  "range": 1,
+  "target_spec": "1",
+  "area": 0,
+  "keywords": [],
+  "tags": [
+    "Melee",
+    "Dagger",
+    "ReactionPayoff"
+  ],
+  "description": "条件：自上个己方回合结束后触发过至少1次反击。造成11伤害；否则造成7伤害。",
+  "source_effect": "造成11伤害；否则造成7伤害。",
+  "source_file": "迪马斯_完整卡组_v0.3.md",
+  "source_line": 156,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [],
+  "implementation_status": "pending"
+}

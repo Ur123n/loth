@@ -1,0 +1,27 @@
+[
+  {
+    "id": "trig_example_intro_area",
+    "story": "example_intro",
+    "type": "area",
+    "area": {"position": [520, 470], "radius": 60},
+    "once": true,
+    "enabled": true
+  },
+  {
+    "id": "trig_example_flag",
+    "story": "example_flag_story",
+    "type": "flag",
+    "key": "quest:gate_open",
+    "value": true,
+    "once": true,
+    "enabled": true
+  },
+  {
+    "id": "trig_example_interact",
+    "story": "example_interact",
+    "type": "interact",
+    "target": "村长",
+    "once": true,
+    "enabled": false
+  }
+]

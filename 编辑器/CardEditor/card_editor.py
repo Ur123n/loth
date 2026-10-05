@@ -127,6 +127,34 @@ def condition_text(condition: dict) -> str:
         text = "本回合未移动"
     elif ctype == "hp_below_pct":
         text = "生命低于 %d%%" % int(condition.get("pct", 50))
+    elif ctype == "hp_at_most_pct":
+        text = "生命不高于 %d%%" % int(condition.get("pct", 50))
+    elif ctype == "target_hp_at_most_pct":
+        text = "目标生命不高于 %d%%" % int(condition.get("pct", 50))
+    elif ctype == "target_buff_stacks_at_least":
+        text = "目标「%s」不少于 %d 层" % (str(condition.get("buff", "")), int(condition.get("stacks", 1)))
+    elif ctype == "played_card_tags_this_turn":
+        text = "本行动已打出「%s」" % str(condition.get("tag", ""))
+        if condition.get("other_tag"):
+            text += "和「%s」" % str(condition.get("other_tag"))
+        if condition.get("card_type") == "Attack":
+            text += "攻击牌"
+    elif ctype == "redesign_dream_state_is":
+        text = "处于沉梦" if int(condition.get("state", 0)) == 0 else "处于幻梦"
+    elif ctype == "redesign_dream_state_at_play_is":
+        text = "本牌结算前处于沉梦" if int(condition.get("state", 0)) == 0 else "本牌结算前处于幻梦"
+    elif ctype == "target_has_buff_at_play":
+        text = "目标出牌前持有「%s」" % str(condition.get("buff_name", ""))
+    elif ctype == "target_has_any_debuff_at_play":
+        text = "目标出牌前有负面状态"
+    elif ctype == "target_lost_direct_hp_this_turn":
+        text = "目标本回合曾直接失去生命"
+    elif ctype == "target_moved_this_turn":
+        text = "目标本回合已移动"
+    elif ctype == "caster_target_adjacent":
+        text = "与所选目标相邻"
+    elif ctype == "adjacent_enemies_at_least":
+        text = "相邻敌人不少于 %d 名" % int(condition.get("count", 2))
     elif ctype == "hand_size_at_least":
         text = "手牌不少于 %d 张" % int(condition.get("count", 1))
     elif ctype == "energy_at_least":

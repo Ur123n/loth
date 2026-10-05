@@ -1,0 +1,85 @@
+{
+	"assets": [
+		{
+			"id": "crate",
+			"sorting": {
+				"behind": {
+					"passed": true,
+					"visible": false
+				},
+				"front": {
+					"passed": true,
+					"visible": true
+				}
+			}
+		},
+		{
+			"id": "barrel",
+			"sorting": {
+				"behind": {
+					"passed": true,
+					"visible": false
+				},
+				"front": {
+					"passed": true,
+					"visible": true
+				}
+			}
+		},
+		{
+			"id": "grain_sacks",
+			"sorting": {
+				"behind": {
+					"passed": true,
+					"visible": false
+				},
+				"front": {
+					"passed": true,
+					"visible": true
+				}
+			}
+		},
+		{
+			"id": "coal_basket",
+			"sorting": {
+				"behind": {
+					"passed": true,
+					"visible": false
+				},
+				"front": {
+					"passed": true,
+					"visible": true
+				}
+			}
+		},
+		{
+			"id": "notice_board",
+			"sorting": {
+				"behind": {
+					"passed": true,
+					"visible": false
+				},
+				"front": {
+					"passed": true,
+					"visible": true
+				}
+			}
+		},
+		{
+			"id": "handcart",
+			"sorting": {
+				"behind": {
+					"passed": true,
+					"visible": false
+				},
+				"front": {
+					"passed": true,
+					"visible": true
+				}
+			}
+		}
+	],
+	"checks": 32,
+	"failed": 0,
+	"renderer": "NVIDIA GeForce RTX 4060 Ti"
+}

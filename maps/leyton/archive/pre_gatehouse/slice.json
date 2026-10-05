@@ -1,0 +1,585 @@
+{
+  "version": "0.2-graybox",
+  "tile_size_px": 48,
+  "projection": "strict_orthographic_top_down",
+  "cart_footprint_cells": [
+    2,
+    3
+  ],
+  "maps": [
+    {
+      "id": "M01S",
+      "map_id": "M01",
+      "name": "中心广场·河流南绕",
+      "status": "playable_graybox_candidate",
+      "size": [
+        96,
+        80
+      ],
+      "zones": [
+        {
+          "shape": "rect",
+          "rect": [
+            30,
+            20,
+            36,
+            36
+          ],
+          "kind": "plaza",
+          "label": "中央石铺广场"
+        }
+      ],
+      "roads": [
+        {
+          "shape": "rect",
+          "rect": [
+            45,
+            0,
+            6,
+            80
+          ],
+          "kind": "main"
+        },
+        {
+          "shape": "rect",
+          "rect": [
+            0,
+            37,
+            96,
+            6
+          ],
+          "kind": "main"
+        }
+      ],
+      "water": [
+        {
+          "points": [
+            [
+              0,
+              64
+            ],
+            [
+              30,
+              64
+            ],
+            [
+              36,
+              70
+            ],
+            [
+              60,
+              70
+            ],
+            [
+              66,
+              64
+            ],
+            [
+              96,
+              64
+            ]
+          ],
+          "width": 4,
+          "kind": "river_candidate",
+          "label": "南绕河道",
+          "navigable": false
+        }
+      ],
+      "structures": [
+        {
+          "rect": [
+            5,
+            6,
+            24,
+            14
+          ],
+          "kind": "civic",
+          "label": "城政厅"
+        },
+        {
+          "rect": [
+            67,
+            5,
+            24,
+            15
+          ],
+          "kind": "religious",
+          "label": "太阳神教礼堂"
+        },
+        {
+          "rect": [
+            5,
+            47,
+            20,
+            12
+          ],
+          "kind": "military",
+          "label": "城卫总值房"
+        },
+        {
+          "rect": [
+            72,
+            47,
+            18,
+            10
+          ],
+          "kind": "utility",
+          "label": "公共水源"
+        },
+        {
+          "rect": [
+            44,
+            31,
+            8,
+            8
+          ],
+          "kind": "landmark",
+          "label": "太阳神像"
+        }
+      ],
+      "exits": [
+        {
+          "edge": "north",
+          "offset": 45,
+          "width": 6,
+          "to": "M02:south",
+          "enabled": false
+        },
+        {
+          "edge": "south",
+          "offset": 45,
+          "width": 6,
+          "to": "M03:north",
+          "enabled": false
+        },
+        {
+          "edge": "west",
+          "offset": 37,
+          "width": 6,
+          "to": "M04:east",
+          "enabled": true
+        },
+        {
+          "edge": "east",
+          "offset": 37,
+          "width": 6,
+          "to": "M08:west",
+          "mode": "abstract_residential",
+          "enabled": false
+        }
+      ],
+      "spawn": [
+        40,
+        40
+      ],
+      "bridges": [
+        [
+          45,
+          66,
+          6,
+          8
+        ]
+      ],
+      "gate": [],
+      "wall_walk": [],
+      "stairs_ground": [],
+      "stairs_wall": [],
+      "exit_depth": 2
+    },
+    {
+      "id": "M04",
+      "map_id": "M04",
+      "name": "城西商业区",
+      "status": "playable_graybox_candidate",
+      "size": [
+        96,
+        80
+      ],
+      "zones": [
+        {
+          "shape": "rect",
+          "rect": [
+            3,
+            4,
+            25,
+            27
+          ],
+          "kind": "market",
+          "label": "综合市场"
+        },
+        {
+          "shape": "rect",
+          "rect": [
+            3,
+            46,
+            90,
+            30
+          ],
+          "kind": "workshops",
+          "label": "仓库与作坊带"
+        }
+      ],
+      "roads": [
+        {
+          "shape": "rect",
+          "rect": [
+            0,
+            37,
+            96,
+            6
+          ],
+          "kind": "main"
+        },
+        {
+          "shape": "rect",
+          "rect": [
+            45,
+            43,
+            6,
+            29
+          ],
+          "kind": "bridge_road"
+        }
+      ],
+      "water": [
+        {
+          "points": [
+            [
+              0,
+              64
+            ],
+            [
+              96,
+              64
+            ]
+          ],
+          "width": 4,
+          "kind": "river",
+          "label": "不可通航灌溉河道",
+          "navigable": false
+        }
+      ],
+      "structures": [
+        {
+          "rect": [
+            5,
+            7,
+            21,
+            19
+          ],
+          "kind": "market",
+          "label": "综合市场"
+        },
+        {
+          "rect": [
+            32,
+            6,
+            18,
+            17
+          ],
+          "kind": "civic",
+          "label": "商会/秤量所"
+        },
+        {
+          "rect": [
+            56,
+            5,
+            16,
+            18
+          ],
+          "kind": "warehouse",
+          "label": "煤炭总仓"
+        },
+        {
+          "rect": [
+            76,
+            5,
+            16,
+            18
+          ],
+          "kind": "warehouse",
+          "label": "主粮仓"
+        },
+        {
+          "rect": [
+            5,
+            47,
+            14,
+            11
+          ],
+          "kind": "workshop",
+          "label": "铁匠铺"
+        },
+        {
+          "rect": [
+            23,
+            47,
+            13,
+            11
+          ],
+          "kind": "workshop",
+          "label": "药剂铺"
+        },
+        {
+          "rect": [
+            56,
+            47,
+            17,
+            11
+          ],
+          "kind": "lodging",
+          "label": "旅店"
+        },
+        {
+          "rect": [
+            76,
+            46,
+            16,
+            12
+          ],
+          "kind": "stable",
+          "label": "车马栈"
+        },
+        {
+          "rect": [
+            42,
+            59,
+            12,
+            11
+          ],
+          "kind": "bridge",
+          "label": "货运石桥",
+          "prefab": "res://assets/buildings/leyton_cargo_bridge/LeytonCargoBridge.tscn"
+        }
+      ],
+      "exits": [
+        {
+          "edge": "west",
+          "offset": 37,
+          "width": 6,
+          "to": "M07:east",
+          "enabled": true
+        },
+        {
+          "edge": "east",
+          "offset": 37,
+          "width": 6,
+          "to": "M01:west",
+          "enabled": true
+        }
+      ],
+      "spawn": [
+        40,
+        40
+      ],
+      "bridges": [
+        [
+          42,
+          59,
+          12,
+          11
+        ]
+      ],
+      "gate": [],
+      "wall_walk": [],
+      "stairs_ground": [],
+      "stairs_wall": [],
+      "exit_depth": 2
+    },
+    {
+      "id": "M07",
+      "map_id": "M07",
+      "name": "西门与城外",
+      "status": "playable_graybox_candidate",
+      "size": [
+        96,
+        80
+      ],
+      "zones": [
+        {
+          "shape": "ellipse",
+          "rect": [
+            4,
+            4,
+            52,
+            29
+          ],
+          "kind": "lake",
+          "label": "大型灌溉湖"
+        },
+        {
+          "shape": "rect",
+          "rect": [
+            5,
+            57,
+            28,
+            18
+          ],
+          "kind": "field",
+          "label": "湖畔麦田"
+        },
+        {
+          "shape": "rect",
+          "rect": [
+            38,
+            61,
+            27,
+            14
+          ],
+          "kind": "field",
+          "label": "灌渠农田"
+        }
+      ],
+      "roads": [
+        {
+          "shape": "rect",
+          "rect": [
+            0,
+            37,
+            96,
+            6
+          ],
+          "kind": "main"
+        }
+      ],
+      "water": [
+        {
+          "points": [
+            [
+              31,
+              30
+            ],
+            [
+              55,
+              45
+            ],
+            [
+              75,
+              64
+            ],
+            [
+              96,
+              64
+            ]
+          ],
+          "width": 4,
+          "kind": "river",
+          "label": "河流汇入湖区",
+          "navigable": false
+        }
+      ],
+      "walls": [
+        {
+          "rect": [
+            91,
+            0,
+            5,
+            80
+          ],
+          "kind": "city_wall"
+        }
+      ],
+      "structures": [
+        {
+          "rect": [
+            85,
+            32,
+            11,
+            16
+          ],
+          "kind": "gatehouse",
+          "label": "西门楼"
+        },
+        {
+          "rect": [
+            88,
+            59,
+            8,
+            9
+          ],
+          "kind": "water_gate",
+          "label": "水门"
+        },
+        {
+          "rect": [
+            68,
+            26,
+            16,
+            9
+          ],
+          "kind": "checkpoint",
+          "label": "煤车待检区"
+        },
+        {
+          "rect": [
+            65,
+            44,
+            17,
+            6
+          ],
+          "kind": "caravan",
+          "label": "商队停车场"
+        },
+        {
+          "rect": [
+            66,
+            66,
+            15,
+            9
+          ],
+          "kind": "workshop",
+          "label": "修车棚"
+        }
+      ],
+      "exits": [
+        {
+          "edge": "west",
+          "offset": 37,
+          "width": 6,
+          "to": "world:west",
+          "enabled": false
+        },
+        {
+          "edge": "east",
+          "offset": 37,
+          "width": 6,
+          "to": "M04:west",
+          "enabled": true
+        }
+      ],
+      "spawn": [
+        80,
+        40
+      ],
+      "bridges": [
+        [
+          40,
+          35,
+          16,
+          10
+        ]
+      ],
+      "gate": [
+        85,
+        37,
+        11,
+        6
+      ],
+      "wall_walk": [
+        92,
+        0,
+        3,
+        80
+      ],
+      "stairs_ground": [
+        87,
+        49
+      ],
+      "stairs_wall": [
+        93,
+        49
+      ],
+      "exit_depth": 2
+    }
+  ]
+}

@@ -1,0 +1,122 @@
+{
+	"anchor_mode": "bottom_center",
+	"building_id": "leyton_west_gatehouse",
+	"collision": {
+		"layer": 2.0,
+		"mask": 1.0
+	},
+	"display_name": "莱顿西门楼",
+	"kind": "structure",
+	"plan": {
+		"doors": [
+			{
+				"id": "west",
+				"interact": "",
+				"side": "w",
+				"target": "outside",
+				"w_m": 6.0,
+				"x_m": 0.0,
+				"y_m": 5.0
+			},
+			{
+				"id": "east",
+				"interact": "",
+				"side": "e",
+				"target": "outside",
+				"w_m": 6.0,
+				"x_m": 10.0,
+				"y_m": 5.0
+			}
+		],
+		"footprint_m": [
+			11.0,
+			16.0
+		],
+		"openings": [
+			{
+				"h_m": 6.0,
+				"w_m": 9.0,
+				"x_m": 1.0,
+				"y_m": 5.0
+			}
+		],
+		"origin_m": [
+			0.0,
+			0.0
+		],
+		"rooms": [
+			{
+				"h_m": 16.0,
+				"id": "gatehouse",
+				"label": "地面实体与门洞",
+				"roof": null,
+				"solid": true,
+				"w_m": 11.0,
+				"x_m": 0.0,
+				"y_m": 0.0
+			}
+		],
+		"scale": {
+			"px_per_meter": 48.0,
+			"tile_px": 48.0
+		}
+	},
+	"projection_id": "orthogonal_3q_48_v1",
+	"sorting": {
+		"mode": "y_sort",
+		"occluder": false,
+		"roof_layer_z": 12.0,
+		"y_sort_origin": "bottom_center",
+		"z_index": 0.0
+	},
+	"tactical": {
+		"blocks_los": true,
+		"cover": 2.0,
+		"cover_level": "high",
+		"enterable": true,
+		"height_level": 0.0
+	},
+	"visual": {
+		"clip_to_logic": false,
+		"layers": [
+			{
+				"name": "Base",
+				"output": "base.png",
+				"role": "base",
+				"source": "res://assets/buildings/leyton_west_gatehouse/source/registered_art_v1/base.png",
+				"visible": true,
+				"z_index": 0
+			},
+			{
+				"name": "Floor",
+				"output": "floor.png",
+				"role": "floor",
+				"source": "res://assets/buildings/leyton_west_gatehouse/source/registered_art_v1/floor.png",
+				"visible": true,
+				"z_index": -1
+			},
+			{
+				"name": "Roof",
+				"output": "roof.png",
+				"role": "roof",
+				"source": "res://assets/buildings/leyton_west_gatehouse/source/registered_art_v1/roof.png",
+				"visible": true,
+				"z_index": 2
+			},
+			{
+				"name": "WallWalk",
+				"output": "upper.png",
+				"role": "foreground",
+				"source": "res://assets/buildings/leyton_west_gatehouse/source/registered_art_v1/upper.png",
+				"visible": true,
+				"z_index": 4
+			}
+		],
+		"padding_tiles": 1.0,
+		"source_origin_tile": [
+			1.0,
+			1.0
+		],
+		"tile_size": 48.0
+	}
+}

@@ -1,0 +1,30 @@
+{
+  "id": "B046",
+  "name": "断头斩",
+  "character": "鲍德温",
+  "rarity": "Uncommon",
+  "category": "道途专属卡牌",
+  "path": "孢子卫士",
+  "card_type": "攻击",
+  "cost": 2,
+  "load": 1,
+  "target_type": "Enemy",
+  "min_range": 1,
+  "range": 1,
+  "target_spec": "敌1",
+  "area": 0,
+  "keywords": [],
+  "tags": [
+    "Melee",
+    "Bleed"
+  ],
+  "description": "条件：可支付放血7。放血7；造成34伤害。",
+  "source_effect": "放血7；造成34伤害。",
+  "source_file": "鲍德温_完整卡组_v0.1.md",
+  "source_line": 230,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [],
+  "implementation_status": "pending"
+}

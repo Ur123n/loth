@@ -1,0 +1,17 @@
+[gd_scene load_steps=6 format=3]
+
+; 演示入口：大世界底图换成 Godot 地图管线做的地图（当前规格 48px 黑暗奇幻，1:1 一屏）。
+; 打开方式：godot --path C:\游戏 res://world/map/MainGodotMap.tscn
+; 说明：docs/world/map_pipeline.md；地图：maps/godot/scenes/abbey_outskirts.tscn
+
+[ext_resource type="Script" path="res://core/world/main.gd" id="1"]
+[ext_resource type="Resource" path="res://content/characters/alice.tres" id="2"]
+[ext_resource type="Resource" path="res://content/characters/baldwin.tres" id="3"]
+[ext_resource type="Resource" path="res://content/characters/dismas.tres" id="4"]
+[ext_resource type="Resource" path="res://content/characters/kasha.tres" id="5"]
+
+[node name="MainGodotMap" type="Node2D"]
+metadata/note = "演示：大世界底图来自 Godot 地图编辑器管线（maps/godot/，48px 黑暗奇幻）"
+script = ExtResource("1")
+overworld_map_scene = "res://maps/godot/scenes/abbey_outskirts.tscn"
+party_characters = [ExtResource("2"), ExtResource("3"), ExtResource("4"), ExtResource("5")]

@@ -1,0 +1,20 @@
+{
+	"map": "M07",
+	"states": [
+		{
+			"ground": "c78571732defe4aa1c654e0fd55c4a8ebcf2832c8aedc716f5793b80e4bf3d4f",
+			"state": 0,
+			"wall": "9a77c6bc4efe8ecbd06b90265a3738671b2744dd28b2851900ef29207cd9804f"
+		},
+		{
+			"ground": "41a91211d6c205a8dc97c6c728006e059752de5ebed118442afbfc4525e8b7df",
+			"state": 1,
+			"wall": "9a77c6bc4efe8ecbd06b90265a3738671b2744dd28b2851900ef29207cd9804f"
+		},
+		{
+			"ground": "41a91211d6c205a8dc97c6c728006e059752de5ebed118442afbfc4525e8b7df",
+			"state": 2,
+			"wall": "9a77c6bc4efe8ecbd06b90265a3738671b2744dd28b2851900ef29207cd9804f"
+		}
+	]
+}

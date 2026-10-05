@@ -1,0 +1,32 @@
+{
+  "id": "A031",
+  "name": "梦间指路",
+  "character": "艾莉丝",
+  "rarity": "Common",
+  "category": "道途专属卡牌",
+  "path": "梦魇行者",
+  "card_type": "行动",
+  "cost": 1,
+  "load": 2,
+  "target_type": "Self",
+  "min_range": 0,
+  "range": 0,
+  "target_spec": "自身",
+  "area": 0,
+  "keywords": [
+    "幻梦"
+  ],
+  "tags": [
+    "幻梦",
+    "DeckControl"
+  ],
+  "description": "查看抽牌堆顶3张；选择1张加入手牌，其余按任意顺序放回顶部。",
+  "source_effect": "查看抽牌堆顶3张；选择1张加入手牌，其余按任意顺序放回顶部。",
+  "source_file": "艾莉丝_完整卡组_v0.1.md",
+  "source_line": 75,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [],
+  "implementation_status": "pending"
+}

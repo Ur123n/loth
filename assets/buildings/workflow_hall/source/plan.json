@@ -1,0 +1,36 @@
+{
+  "scale": {
+    "tile_px": 48,
+    "px_per_m": 48
+  },
+  "footprint_m": [
+    12,
+    10
+  ],
+  "rooms": [
+    {
+      "id": "hall",
+      "label": "Graybox hall",
+      "x_m": 0,
+      "y_m": 0,
+      "w_m": 12,
+      "h_m": 10,
+      "floor": "stone",
+      "roof": "slate"
+    }
+  ],
+  "doors": [
+    {
+      "x_m": 5,
+      "y_m": 9,
+      "w_m": 2,
+      "side": "s"
+    },
+    {
+      "x_m": 5,
+      "y_m": 0,
+      "w_m": 2,
+      "side": "n"
+    }
+  ]
+}

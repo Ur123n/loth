@@ -1,0 +1,33 @@
+{
+  "id": "A074",
+  "name": "灾梦：终焉的回声",
+  "character": "艾莉丝",
+  "rarity": "Rare",
+  "category": "道途专属卡牌",
+  "path": "梦魇行者",
+  "card_type": "攻击",
+  "cost": 2,
+  "load": 4,
+  "target_type": "Enemy",
+  "min_range": 1,
+  "range": 2,
+  "target_spec": "1–2",
+  "area": 0,
+  "keywords": [
+    "灾梦",
+    "消耗"
+  ],
+  "tags": [
+    "灾梦",
+    "Finisher"
+  ],
+  "description": "条件：本场战斗已经打出至少2种不同灾梦。造成18 + 8×本场战斗已打出的不同灾梦种类数的伤害，最高42。结算后进入沉梦。",
+  "source_effect": "造成18 + 8×本场战斗已打出的不同灾梦种类数的伤害，最高42。结算后进入沉梦。",
+  "source_file": "艾莉丝_完整卡组_v0.1.md",
+  "source_line": 128,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [],
+  "implementation_status": "pending"
+}

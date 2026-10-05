@@ -1,0 +1,179 @@
+{
+  "date": "2026-09-27",
+  "reviewer": "当前会话多模态模型，经view_image直接读图",
+  "external_model_invoked": false,
+  "runtime_rerun": false,
+  "scope": "11张归档渲染图；已完成地表、石桥、静态门楼、六件物件候选及八区灰盒构图",
+  "verdict": "有条件通过；3项P1先修，2项P2优化，1项P2用途待确认",
+  "images": [
+    {
+      "id": "overview",
+      "source": "maps/leyton/qa/atlas_contact_sheet.png",
+      "width": 1280,
+      "height": 1440,
+      "file": "evidence/overview.png"
+    },
+    {
+      "id": "bridge",
+      "source": "maps/leyton/qa/bridge_art_player.png",
+      "width": 1280,
+      "height": 720,
+      "file": "evidence/bridge.png"
+    },
+    {
+      "id": "gate",
+      "source": "maps/leyton/qa/gatehouse_art_open_ground.png",
+      "width": 1280,
+      "height": 720,
+      "file": "evidence/gate.png"
+    },
+    {
+      "id": "bridge_side",
+      "source": "maps/leyton/qa/bridge_art_side_behind.png",
+      "width": 1280,
+      "height": 720,
+      "file": "evidence/bridge_side.png"
+    },
+    {
+      "id": "gate_closed",
+      "source": "maps/leyton/qa/gatehouse_art_wall_over_closed_gate.png",
+      "width": 1280,
+      "height": 720,
+      "file": "evidence/gate_closed.png"
+    },
+    {
+      "id": "water_gate",
+      "source": "maps/leyton/qa/gatehouse_art_wall_over_water_gate.png",
+      "width": 1280,
+      "height": 720,
+      "file": "evidence/water_gate.png"
+    },
+    {
+      "id": "props",
+      "source": "assets/maps/leyton/props_batch_01/qa/review_sheet.png",
+      "width": 1280,
+      "height": 960,
+      "file": "evidence/props.png"
+    },
+    {
+      "id": "surface",
+      "source": "maps/leyton/qa/surface_v2_m01_detail.png",
+      "width": 1280,
+      "height": 720,
+      "file": "evidence/surface.png"
+    },
+    {
+      "id": "ground_probe",
+      "source": "maps/leyton/qa/gatehouse_art_probe_ground.png",
+      "width": 1280,
+      "height": 720,
+      "file": "evidence/ground_probe.png"
+    },
+    {
+      "id": "upper_probe",
+      "source": "maps/leyton/qa/gatehouse_art_probe_upper.png",
+      "width": 1280,
+      "height": 720,
+      "file": "evidence/upper_probe.png"
+    },
+    {
+      "id": "bridge_cart",
+      "source": "maps/leyton/qa/bridge_art_cart.png",
+      "width": 1280,
+      "height": 720,
+      "file": "evidence/bridge_cart.png"
+    }
+  ],
+  "findings": [
+    {
+      "id": "R01",
+      "priority": "P1",
+      "title": "地表高频纹理抢占注意力",
+      "image": "surface",
+      "box": [
+        40,
+        163,
+        710,
+        466
+      ],
+      "observation": "草、土和碎石路同时铺满细碎斑点，近景缺少安静区域；道路仍能辨认，但小物件轮廓容易融入地面。",
+      "action": "先降低草地与路肩的高频对比，保留材质大块变化；在相同镜头、相同物件位置做前后对照。",
+      "acceptance": "原尺寸下煤筐与木桶轮廓清楚，主路仍明显亮于草地，大片铺设不呈均匀噪点。"
+    },
+    {
+      "id": "R02",
+      "priority": "P1",
+      "title": "门洞下层角色完全被墙顶遮住",
+      "image": "ground_probe",
+      "box": [
+        581,
+        303,
+        117,
+        91
+      ],
+      "observation": "相同位置的地面图中角色完全不可见，上层对照图中可见。层级遮挡符合既有技术设计，但经过覆盖区时缺少角色位置反馈。",
+      "action": "给当前受控角色添加受遮挡轮廓，或仅在穿越门洞时局部淡化上方通道；保留墙顶独立导航。",
+      "acceptance": "连续穿过门洞时始终能追踪受控角色，同时上层玩家与护栏前后关系正确。"
+    },
+    {
+      "id": "R03",
+      "priority": "P1",
+      "title": "煤筐、木桶在暗草地上对比不足",
+      "image": "props",
+      "box": [
+        17,
+        819,
+        129,
+        114
+      ],
+      "observation": "煤筐黑色煤块与深草地接近，桶的暗侧也被细碎背景吞没；泥地和石路对照明显更清楚。",
+      "action": "先规定清理过的摆放底面；若需要草地摆放，减少背后纹理或强化局部轮廓，不整件提亮。",
+      "acceptance": "以原尺寸在目标地图查看，无需依赖放大图就能辨认轮廓与拾取/阻挡位置。"
+    },
+    {
+      "id": "R04",
+      "priority": "P2",
+      "title": "石桥的桥跨感偏弱",
+      "image": "bridge",
+      "box": [
+        430,
+        185,
+        416,
+        380
+      ],
+      "observation": "宽桥面、长南北引桥段和直角外框使其更接近铺石平台；桥台、承托及水面下方层次较弱。这不证明既定12×11占地错误。",
+      "action": "保持已通过的占地和护栏，增强桥台或朝南窄立面、局部水面遮蔽与入口过渡，先做低成本方案对比。",
+      "acceptance": "隐藏HUD后仍容易看出这是跨河桥，入口与地面过渡自然，不缩窄已验收车道。"
+    },
+    {
+      "id": "R05",
+      "priority": "P2",
+      "title": "门楼上下层仅靠护栏区分",
+      "image": "gate",
+      "box": [
+        488,
+        251,
+        344,
+        212
+      ],
+      "observation": "地面门洞和上层巡逻道使用近似石铺明度与尺度，交叉位置的高差和穿越关系不够直观；当前可见护栏帮助区分，但仍依赖操作提示。",
+      "action": "用窄立面、局部落影和桥洞边缘增强高差线索；避免把整条巡逻道压暗到角色难辨。",
+      "acceptance": "关闭文字提示后，观察者仍能区分东西地面通道与南北上层巡逻道。"
+    },
+    {
+      "id": "R06",
+      "priority": "P2 / 待确认",
+      "title": "公告栏的阅读高度需要设计确认",
+      "image": "props",
+      "box": [
+        498,
+        636,
+        142,
+        131
+      ],
+      "observation": "与1.8米测量线稿并置时，公告栏呈较低矮的外观。俯视投影高度不等于真实身高，因此这只是用途适配疑问，不能据图判定尺寸错误。",
+      "action": "确认它是低式登记告示还是站立阅读的街头公告栏；后者先做更长立柱的比例草稿。",
+      "acceptance": "在正式角色旁确认阅读面和交互位置；比例通过后才调整PNG、接地点与碰撞。"
+    }
+  ]
+}

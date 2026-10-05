@@ -10,7 +10,25 @@
   "interaction": [
     "请教教义",
     "忏悔",
-    "打听灵教"
+    "打听灵教",
+    "打听草药"
+  ],
+  "schedule": [
+    {
+      "hour": 6,
+      "position": [264, 128],
+      "state": "pray"
+    },
+    {
+      "hour": 12,
+      "position": [288, 240],
+      "state": "walk"
+    },
+    {
+      "hour": 18,
+      "position": [264, 128],
+      "state": "pray"
+    }
   ],
   "dialogue": [
     {
@@ -28,6 +46,10 @@
         {
           "text": "打听灵教",
           "next": "cult"
+        },
+        {
+          "text": "打听草药",
+          "next": "herb_clue"
         }
       ]
     },
@@ -57,6 +79,16 @@
       "options": [
         {
           "text": "明白了",
+          "next": ""
+        }
+      ]
+    },
+    {
+      "id": "herb_clue",
+      "text": "钟楼下的石阶旁长着雪线草药，灵教的人偷采了不少。你若能带一株回来，我告诉你钟楼顶层密室的事。",
+      "options": [
+        {
+          "text": "我去找找",
           "next": ""
         }
       ]

@@ -1,0 +1,33 @@
+{
+  "id": "A054",
+  "name": "月下误导",
+  "character": "艾莉丝",
+  "rarity": "Uncommon",
+  "category": "道途专属卡牌",
+  "path": "梦魇行者",
+  "card_type": "行动",
+  "cost": 1,
+  "load": 2,
+  "target_type": "Enemy",
+  "min_range": 1,
+  "range": 3,
+  "target_spec": "敌人3",
+  "area": 0,
+  "keywords": [
+    "幻梦"
+  ],
+  "tags": [
+    "幻梦",
+    "Debuff",
+    "Mark"
+  ],
+  "description": "施加1层标记和1层虚弱；若本牌使你从沉梦进入幻梦，你可移动最多1格。",
+  "source_effect": "施加1层标记和1层虚弱；若本牌使你从沉梦进入幻梦，你可移动最多1格。",
+  "source_file": "艾莉丝_完整卡组_v0.1.md",
+  "source_line": 103,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [],
+  "implementation_status": "pending"
+}

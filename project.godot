@@ -11,13 +11,18 @@ config_version=5
 [application]
 
 config/name="战斗系统"
-run/main_scene="res://world/map/Main.tscn"
+run/main_scene="res://world/map/MainHighlandMap.tscn"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
 GameState="*res://core/save/game_state.gd"
+CameraCtrl="*res://core/camera/camera_controller.gd"
+Dialogue="*res://core/dialogue/dialogue_system.gd"
+StoryDB="*res://core/story/story_database.gd"
+StoryRunner="*res://core/story/story_runner.gd"
+StoryTrigger="*res://core/story/trigger_manager.gd"
 CardDB="*res://core/card/card_database.gd"
 EnemyDB="*res://core/battle/enemy_database.gd"
 NpcDB="*res://core/world/npc_database.gd"
@@ -27,6 +32,9 @@ ItemDB="*res://core/items/item_database.gd"
 PathDB="*res://core/progression/path_database.gd"
 CardDropDB="*res://core/card/card_drop_database.gd"
 EnemyPackDB="*res://core/battle/enemy_pack_database.gd"
+QuestDB="*res://core/quest/quest_database.gd"
+QuestSystem="*res://core/quest/quest_system.gd"
+MCPGameBridge="res://addons/godot_mcp/game_bridge/mcp_game_bridge.gd"
 
 [display]
 
@@ -34,6 +42,17 @@ window/size/viewport_width=1280
 window/size/viewport_height=720
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/godot_mcp/plugin.cfg")
+
+[godot_mcp]
+
+bind_mode=0
+custom_bind_ip=""
+port_override_enabled=false
+port_override=6550
 
 [input]
 
@@ -77,6 +96,16 @@ inventory={
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":66,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
 ]
 }
+dialogue_history={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":72,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+]
+}
+interact={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":69,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+]
+}
 
 [physics]
 
@@ -84,6 +113,7 @@ inventory={
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"

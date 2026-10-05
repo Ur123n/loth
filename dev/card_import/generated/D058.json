@@ -1,0 +1,30 @@
+{
+  "id": "D058",
+  "name": "烟幕误导",
+  "character": "迪马斯",
+  "rarity": "Uncommon",
+  "category": "道途专属卡牌",
+  "path": "侠盗",
+  "card_type": "行动",
+  "cost": 1,
+  "load": 2,
+  "target_type": "Enemy",
+  "min_range": 1,
+  "range": 3,
+  "target_spec": "敌人3",
+  "area": 0,
+  "keywords": [],
+  "tags": [
+    "Debuff",
+    "Movement"
+  ],
+  "description": "对目标施加1层虚弱；随后移动最多1格。",
+  "source_effect": "对目标施加1层虚弱；随后移动最多1格。",
+  "source_file": "迪马斯_完整卡组_v0.3.md",
+  "source_line": 176,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [],
+  "implementation_status": "pending"
+}

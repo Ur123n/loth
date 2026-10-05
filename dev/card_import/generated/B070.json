@@ -1,0 +1,33 @@
+{
+  "id": "B070",
+  "name": "血肉断头台",
+  "character": "鲍德温",
+  "rarity": "Rare",
+  "category": "道途专属卡牌",
+  "path": "孢子卫士",
+  "card_type": "攻击",
+  "cost": 2,
+  "load": 2,
+  "target_type": "Enemy",
+  "min_range": 1,
+  "range": 1,
+  "target_spec": "敌1",
+  "area": 0,
+  "keywords": [
+    "消耗"
+  ],
+  "tags": [
+    "Melee",
+    "Bleed",
+    "Finisher"
+  ],
+  "description": "条件：可支付放血7。放血7；造成34伤害；若目标拥有至少2层破绽，改为44伤害，并在结算后清除其全部破绽。",
+  "source_effect": "放血7；造成34伤害；若目标拥有至少2层破绽，改为44伤害，并在结算后清除其全部破绽。",
+  "source_file": "鲍德温_完整卡组_v0.1.md",
+  "source_line": 260,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [],
+  "implementation_status": "pending"
+}

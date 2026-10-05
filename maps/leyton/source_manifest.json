@@ -1,0 +1,102 @@
+[
+  {
+    "source": "C:\\Users\\njw\\codex-remote-workspace\\游戏\\美术素材制作\\规划\\莱顿城八区地图制作计划_v0.1.md",
+    "archive": "archive\\planning\\莱顿城八区地图制作计划_v0.1.md",
+    "sha256": "2a536b18f8c0f74b992ce37a2c3508f9834210eb4fbc1522f068b10844e6366f"
+  },
+  {
+    "source": "C:\\Users\\njw\\codex-remote-workspace\\游戏\\美术素材制作\\规划\\莱顿城八区地图规划_v0.1.md",
+    "archive": "archive\\planning\\莱顿城八区地图规划_v0.1.md",
+    "sha256": "af4479833f30647ef3cf0501f5649442e474e05caa8673cde682cf8b045a2ac5"
+  },
+  {
+    "source": "C:\\Users\\njw\\codex-remote-workspace\\游戏\\美术素材制作\\topology\\leyton_master_topology_v01.json",
+    "archive": "archive\\topology\\leyton_master_topology_v01.json",
+    "sha256": "bb370f13b811e14573bc033dde0dc42f6c97ead2c424f7fc17cc562fdde1ed82"
+  },
+  {
+    "source": "C:\\Users\\njw\\codex-remote-workspace\\游戏\\美术素材制作\\topology\\leyton_master_topology_v01.png",
+    "archive": "archive\\topology\\leyton_master_topology_v01.png",
+    "sha256": "85c12686811a29386aea391be9ee975cc1fec97933d8bafc077a6474766ac06f"
+  },
+  {
+    "source": "C:\\Users\\njw\\codex-remote-workspace\\游戏\\美术素材制作\\topology\\leyton_master_topology_v01.svg",
+    "archive": "archive\\topology\\leyton_master_topology_v01.svg",
+    "sha256": "7880e44b56ba9e45886123da40172cdca8fa987776cc28bc12d2aac8f523c798"
+  },
+  {
+    "source": "C:\\Users\\njw\\codex-remote-workspace\\游戏\\美术素材制作\\topology\\README.md",
+    "archive": "archive\\topology\\README.md",
+    "sha256": "b530216d826f69577668f829900d6f96539eba854f72eb87ed34a0fed33e3475"
+  },
+  {
+    "source": "C:\\Users\\njw\\codex-remote-workspace\\游戏\\美术素材制作\\topology\\render_topology.ps1",
+    "archive": "archive\\topology\\render_topology.ps1",
+    "sha256": "626147460a8ef7f75ebb4514051b7c5b3bee9af8c2f8fe17034b6013c6687c1d"
+  },
+  {
+    "source": "C:\\Users\\njw\\codex-remote-workspace\\游戏\\美术素材制作\\graybox\\leyton_graybox_contact_sheet_v01.png",
+    "archive": "archive\\graybox\\leyton_graybox_contact_sheet_v01.png",
+    "sha256": "90883c2d3a240ad02696813176562a543c5996b53e1a96ce265c255daf4b0565"
+  },
+  {
+    "source": "C:\\Users\\njw\\codex-remote-workspace\\游戏\\美术素材制作\\graybox\\leyton_graybox_layouts_v01.json",
+    "archive": "archive\\graybox\\leyton_graybox_layouts_v01.json",
+    "sha256": "741a87b01d1c7245a72ed6731f1358331e3484a804829414e0e69ff0394dd07d"
+  },
+  {
+    "source": "C:\\Users\\njw\\codex-remote-workspace\\游戏\\美术素材制作\\graybox\\M01_central_square_river_north_graybox_v01.png",
+    "archive": "archive\\graybox\\M01_central_square_river_north_graybox_v01.png",
+    "sha256": "5c29a9dc9b9879df31740f3504cd1a35c9e5533a654024e21b30b5f894ad0d6c"
+  },
+  {
+    "source": "C:\\Users\\njw\\codex-remote-workspace\\游戏\\美术素材制作\\graybox\\M01_central_square_river_south_graybox_v01.png",
+    "archive": "archive\\graybox\\M01_central_square_river_south_graybox_v01.png",
+    "sha256": "071d40ce274a8ad486de2574c0e4158ac1867c0131d1c58e697d6f93dcf85ee8"
+  },
+  {
+    "source": "C:\\Users\\njw\\codex-remote-workspace\\游戏\\美术素材制作\\graybox\\M02_north_noble_graybox_v01.png",
+    "archive": "archive\\graybox\\M02_north_noble_graybox_v01.png",
+    "sha256": "d49ce8b36180dd68813564d372eead84dd754af2e17d2bf6c87321afc0fe1868"
+  },
+  {
+    "source": "C:\\Users\\njw\\codex-remote-workspace\\游戏\\美术素材制作\\graybox\\M03_south_slums_graybox_v01.png",
+    "archive": "archive\\graybox\\M03_south_slums_graybox_v01.png",
+    "sha256": "447e7f8bd9470fbecd0820195a787a8714122d66192aa114a6fc321f3ac21e0e"
+  },
+  {
+    "source": "C:\\Users\\njw\\codex-remote-workspace\\游戏\\美术素材制作\\graybox\\M04_west_market_graybox_v01.png",
+    "archive": "archive\\graybox\\M04_west_market_graybox_v01.png",
+    "sha256": "541f76506d552e3b7b3177a8ff6400a5314482d3aafc89b5b6b01e2cb5a2b363"
+  },
+  {
+    "source": "C:\\Users\\njw\\codex-remote-workspace\\游戏\\美术素材制作\\graybox\\M05_north_gate_graybox_v01.png",
+    "archive": "archive\\graybox\\M05_north_gate_graybox_v01.png",
+    "sha256": "e73040e03752ebc2c70064f35793e52afd3a3d4cad291e20cddc0456cc714733"
+  },
+  {
+    "source": "C:\\Users\\njw\\codex-remote-workspace\\游戏\\美术素材制作\\graybox\\M06_south_gate_graybox_v01.png",
+    "archive": "archive\\graybox\\M06_south_gate_graybox_v01.png",
+    "sha256": "14ee1b965001ab4f94e5671197c31e0d9faa1a42bffacbb57559c8d1d6ef8be6"
+  },
+  {
+    "source": "C:\\Users\\njw\\codex-remote-workspace\\游戏\\美术素材制作\\graybox\\M07_west_gate_graybox_v01.png",
+    "archive": "archive\\graybox\\M07_west_gate_graybox_v01.png",
+    "sha256": "2d9db2b7db878698108a2d71656ae15b37f2009b759dd1903851186c2b45b465"
+  },
+  {
+    "source": "C:\\Users\\njw\\codex-remote-workspace\\游戏\\美术素材制作\\graybox\\M08_east_gate_graybox_v01.png",
+    "archive": "archive\\graybox\\M08_east_gate_graybox_v01.png",
+    "sha256": "040d115047308764d5772b083970c390680c47568a7d7857712b1f9711a577d5"
+  },
+  {
+    "source": "C:\\Users\\njw\\codex-remote-workspace\\游戏\\美术素材制作\\graybox\\README.md",
+    "archive": "archive\\graybox\\README.md",
+    "sha256": "84c31c094806c16b9ff1b1208aa6bf02ce098efc7e12ae5bbfcd859d0186e7c2"
+  },
+  {
+    "source": "C:\\Users\\njw\\codex-remote-workspace\\游戏\\美术素材制作\\graybox\\render_grayboxes.ps1",
+    "archive": "archive\\graybox\\render_grayboxes.ps1",
+    "sha256": "1671fbaa7665acb63bc3ea7baf4d5a71d05f81a180ae5b07122684aeb24281b1"
+  }
+]

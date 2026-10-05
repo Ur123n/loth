@@ -1,0 +1,1658 @@
+[
+ {
+  "分类": "01_道具图标",
+  "文件": "icon_sword.png",
+  "来源": "assets\\pixel\\icon_sword.png",
+  "说明": "64×64"
+ },
+ {
+  "分类": "01_道具图标",
+  "文件": "icon_shield.png",
+  "来源": "assets\\pixel\\icon_shield.png",
+  "说明": "64×64"
+ },
+ {
+  "分类": "01_道具图标",
+  "文件": "icon_flask.png",
+  "来源": "assets\\pixel\\icon_flask.png",
+  "说明": "64×64"
+ },
+ {
+  "分类": "01_道具图标",
+  "文件": "icon_ring.png",
+  "来源": "assets\\pixel\\icon_ring.png",
+  "说明": "64×64"
+ },
+ {
+  "分类": "01_道具图标",
+  "文件": "icon_key.png",
+  "来源": "assets\\pixel\\icon_key.png",
+  "说明": "64×64"
+ },
+ {
+  "分类": "01_道具图标",
+  "文件": "icon_skull.png",
+  "来源": "assets\\pixel\\icon_skull.png",
+  "说明": "64×64"
+ },
+ {
+  "分类": "01_道具图标",
+  "文件": "icon_lantern.png",
+  "来源": "assets\\pixel\\icon_lantern.png",
+  "说明": "64×64"
+ },
+ {
+  "分类": "01_道具图标",
+  "文件": "icon_tome.png",
+  "来源": "assets\\pixel\\icon_tome.png",
+  "说明": "64×64"
+ },
+ {
+  "分类": "01_道具图标",
+  "文件": "icon_ember.png",
+  "来源": "assets\\pixel\\icon_ember.png",
+  "说明": "64×64"
+ },
+ {
+  "分类": "02_UI元素",
+  "文件": "ui_sigil.png",
+  "来源": "assets\\pixel\\ui_sigil.png",
+  "说明": "见说明"
+ },
+ {
+  "分类": "02_UI元素",
+  "文件": "ui_button.png",
+  "来源": "assets\\pixel\\ui_button.png",
+  "说明": "见说明"
+ },
+ {
+  "分类": "02_UI元素",
+  "文件": "ui_corner.png",
+  "来源": "assets\\pixel\\ui_corner.png",
+  "说明": "见说明"
+ },
+ {
+  "分类": "02_UI元素",
+  "文件": "ui_panel.png",
+  "来源": "assets\\pixel\\ui_panel.png",
+  "说明": "见说明"
+ },
+ {
+  "分类": "03_场景概念图",
+  "文件": "scene_bonfire.png",
+  "来源": "assets\\pixel\\scene_bonfire.png",
+  "说明": "384×216"
+ },
+ {
+  "分类": "04_角色/艾莉丝",
+  "文件": "elise_sprite.png",
+  "来源": "assets\\pixel\\elise_sprite.png",
+  "说明": "俯视角精灵_48x96"
+ },
+ {
+  "分类": "04_角色/艾莉丝",
+  "文件": "elise_portrait.png",
+  "来源": "assets\\pixel\\elise_portrait.png",
+  "说明": "对话立绘_96x128"
+ },
+ {
+  "分类": "04_角色/艾莉丝",
+  "文件": "elise_avatar.png",
+  "来源": "assets\\pixel\\elise_avatar.png",
+  "说明": "头像_48x48"
+ },
+ {
+  "分类": "04_角色/艾莉丝",
+  "文件": "elise_card.png",
+  "来源": "assets\\pixel\\elise_card.png",
+  "说明": "展示卡_144x216"
+ },
+ {
+  "分类": "04_角色/鲍德温",
+  "文件": "baldwin_sprite.png",
+  "来源": "assets\\pixel\\baldwin_sprite.png",
+  "说明": "俯视角精灵_48x96"
+ },
+ {
+  "分类": "04_角色/鲍德温",
+  "文件": "baldwin_portrait.png",
+  "来源": "assets\\pixel\\baldwin_portrait.png",
+  "说明": "对话立绘_96x128"
+ },
+ {
+  "分类": "04_角色/鲍德温",
+  "文件": "baldwin_avatar.png",
+  "来源": "assets\\pixel\\baldwin_avatar.png",
+  "说明": "头像_48x48"
+ },
+ {
+  "分类": "04_角色/鲍德温",
+  "文件": "baldwin_card.png",
+  "来源": "assets\\pixel\\baldwin_card.png",
+  "说明": "展示卡_144x216"
+ },
+ {
+  "分类": "04_角色/_早期骑士",
+  "文件": "char_knight.png",
+  "来源": "assets\\pixel\\char_knight.png",
+  "说明": "早期试验稿"
+ },
+ {
+  "分类": "04_角色/_早期骑士",
+  "文件": "char_knight_hd.png",
+  "来源": "assets\\pixel\\char_knight_hd.png",
+  "说明": "早期试验稿"
+ },
+ {
+  "分类": "05_角色动画/艾莉丝/正向_面向镜头",
+  "文件": "elise_walk_s_0.png",
+  "来源": "assets\\pixel\\elise_walk_s_0.png",
+  "说明": "第 0 帧"
+ },
+ {
+  "分类": "05_角色动画/艾莉丝/正向_面向镜头",
+  "文件": "elise_walk_s_1.png",
+  "来源": "assets\\pixel\\elise_walk_s_1.png",
+  "说明": "第 1 帧"
+ },
+ {
+  "分类": "05_角色动画/艾莉丝/正向_面向镜头",
+  "文件": "elise_walk_s_2.png",
+  "来源": "assets\\pixel\\elise_walk_s_2.png",
+  "说明": "第 2 帧"
+ },
+ {
+  "分类": "05_角色动画/艾莉丝/正向_面向镜头",
+  "文件": "elise_walk_s_3.png",
+  "来源": "assets\\pixel\\elise_walk_s_3.png",
+  "说明": "第 3 帧"
+ },
+ {
+  "分类": "05_角色动画/艾莉丝/背向",
+  "文件": "elise_walk_n_0.png",
+  "来源": "assets\\pixel\\elise_walk_n_0.png",
+  "说明": "第 0 帧"
+ },
+ {
+  "分类": "05_角色动画/艾莉丝/背向",
+  "文件": "elise_walk_n_1.png",
+  "来源": "assets\\pixel\\elise_walk_n_1.png",
+  "说明": "第 1 帧"
+ },
+ {
+  "分类": "05_角色动画/艾莉丝/背向",
+  "文件": "elise_walk_n_2.png",
+  "来源": "assets\\pixel\\elise_walk_n_2.png",
+  "说明": "第 2 帧"
+ },
+ {
+  "分类": "05_角色动画/艾莉丝/背向",
+  "文件": "elise_walk_n_3.png",
+  "来源": "assets\\pixel\\elise_walk_n_3.png",
+  "说明": "第 3 帧"
+ },
+ {
+  "分类": "05_角色动画/艾莉丝/侧向左",
+  "文件": "elise_walk_w_0.png",
+  "来源": "assets\\pixel\\elise_walk_w_0.png",
+  "说明": "第 0 帧"
+ },
+ {
+  "分类": "05_角色动画/艾莉丝/侧向左",
+  "文件": "elise_walk_w_1.png",
+  "来源": "assets\\pixel\\elise_walk_w_1.png",
+  "说明": "第 1 帧"
+ },
+ {
+  "分类": "05_角色动画/艾莉丝/侧向左",
+  "文件": "elise_walk_w_2.png",
+  "来源": "assets\\pixel\\elise_walk_w_2.png",
+  "说明": "第 2 帧"
+ },
+ {
+  "分类": "05_角色动画/艾莉丝/侧向左",
+  "文件": "elise_walk_w_3.png",
+  "来源": "assets\\pixel\\elise_walk_w_3.png",
+  "说明": "第 3 帧"
+ },
+ {
+  "分类": "05_角色动画/艾莉丝/侧向右",
+  "文件": "elise_walk_e_0.png",
+  "来源": "assets\\pixel\\elise_walk_e_0.png",
+  "说明": "第 0 帧"
+ },
+ {
+  "分类": "05_角色动画/艾莉丝/侧向右",
+  "文件": "elise_walk_e_1.png",
+  "来源": "assets\\pixel\\elise_walk_e_1.png",
+  "说明": "第 1 帧"
+ },
+ {
+  "分类": "05_角色动画/艾莉丝/侧向右",
+  "文件": "elise_walk_e_2.png",
+  "来源": "assets\\pixel\\elise_walk_e_2.png",
+  "说明": "第 2 帧"
+ },
+ {
+  "分类": "05_角色动画/艾莉丝/侧向右",
+  "文件": "elise_walk_e_3.png",
+  "来源": "assets\\pixel\\elise_walk_e_3.png",
+  "说明": "第 3 帧"
+ },
+ {
+  "分类": "05_角色动画/鲍德温/正向_面向镜头",
+  "文件": "baldwin_walk_s_0.png",
+  "来源": "assets\\pixel\\baldwin_walk_s_0.png",
+  "说明": "第 0 帧"
+ },
+ {
+  "分类": "05_角色动画/鲍德温/正向_面向镜头",
+  "文件": "baldwin_walk_s_1.png",
+  "来源": "assets\\pixel\\baldwin_walk_s_1.png",
+  "说明": "第 1 帧"
+ },
+ {
+  "分类": "05_角色动画/鲍德温/正向_面向镜头",
+  "文件": "baldwin_walk_s_2.png",
+  "来源": "assets\\pixel\\baldwin_walk_s_2.png",
+  "说明": "第 2 帧"
+ },
+ {
+  "分类": "05_角色动画/鲍德温/正向_面向镜头",
+  "文件": "baldwin_walk_s_3.png",
+  "来源": "assets\\pixel\\baldwin_walk_s_3.png",
+  "说明": "第 3 帧"
+ },
+ {
+  "分类": "05_角色动画/鲍德温/背向",
+  "文件": "baldwin_walk_n_0.png",
+  "来源": "assets\\pixel\\baldwin_walk_n_0.png",
+  "说明": "第 0 帧"
+ },
+ {
+  "分类": "05_角色动画/鲍德温/背向",
+  "文件": "baldwin_walk_n_1.png",
+  "来源": "assets\\pixel\\baldwin_walk_n_1.png",
+  "说明": "第 1 帧"
+ },
+ {
+  "分类": "05_角色动画/鲍德温/背向",
+  "文件": "baldwin_walk_n_2.png",
+  "来源": "assets\\pixel\\baldwin_walk_n_2.png",
+  "说明": "第 2 帧"
+ },
+ {
+  "分类": "05_角色动画/鲍德温/背向",
+  "文件": "baldwin_walk_n_3.png",
+  "来源": "assets\\pixel\\baldwin_walk_n_3.png",
+  "说明": "第 3 帧"
+ },
+ {
+  "分类": "05_角色动画/鲍德温/侧向左",
+  "文件": "baldwin_walk_w_0.png",
+  "来源": "assets\\pixel\\baldwin_walk_w_0.png",
+  "说明": "第 0 帧"
+ },
+ {
+  "分类": "05_角色动画/鲍德温/侧向左",
+  "文件": "baldwin_walk_w_1.png",
+  "来源": "assets\\pixel\\baldwin_walk_w_1.png",
+  "说明": "第 1 帧"
+ },
+ {
+  "分类": "05_角色动画/鲍德温/侧向左",
+  "文件": "baldwin_walk_w_2.png",
+  "来源": "assets\\pixel\\baldwin_walk_w_2.png",
+  "说明": "第 2 帧"
+ },
+ {
+  "分类": "05_角色动画/鲍德温/侧向左",
+  "文件": "baldwin_walk_w_3.png",
+  "来源": "assets\\pixel\\baldwin_walk_w_3.png",
+  "说明": "第 3 帧"
+ },
+ {
+  "分类": "05_角色动画/鲍德温/侧向右",
+  "文件": "baldwin_walk_e_0.png",
+  "来源": "assets\\pixel\\baldwin_walk_e_0.png",
+  "说明": "第 0 帧"
+ },
+ {
+  "分类": "05_角色动画/鲍德温/侧向右",
+  "文件": "baldwin_walk_e_1.png",
+  "来源": "assets\\pixel\\baldwin_walk_e_1.png",
+  "说明": "第 1 帧"
+ },
+ {
+  "分类": "05_角色动画/鲍德温/侧向右",
+  "文件": "baldwin_walk_e_2.png",
+  "来源": "assets\\pixel\\baldwin_walk_e_2.png",
+  "说明": "第 2 帧"
+ },
+ {
+  "分类": "05_角色动画/鲍德温/侧向右",
+  "文件": "baldwin_walk_e_3.png",
+  "来源": "assets\\pixel\\baldwin_walk_e_3.png",
+  "说明": "第 3 帧"
+ },
+ {
+  "分类": "06_地图地形",
+  "文件": "tile_grass.png",
+  "来源": "assets\\pixel\\tile_grass.png",
+  "说明": "48×48 无缝"
+ },
+ {
+  "分类": "06_地图地形",
+  "文件": "tile_grass_dry.png",
+  "来源": "assets\\pixel\\tile_grass_dry.png",
+  "说明": "48×48 无缝"
+ },
+ {
+  "分类": "06_地图地形",
+  "文件": "tile_dirt.png",
+  "来源": "assets\\pixel\\tile_dirt.png",
+  "说明": "48×48 无缝"
+ },
+ {
+  "分类": "06_地图地形",
+  "文件": "tile_dirt_rocky.png",
+  "来源": "assets\\pixel\\tile_dirt_rocky.png",
+  "说明": "48×48 无缝"
+ },
+ {
+  "分类": "06_地图地形",
+  "文件": "tile_road_stone.png",
+  "来源": "assets\\pixel\\tile_road_stone.png",
+  "说明": "48×48 无缝"
+ },
+ {
+  "分类": "07_地图道具",
+  "文件": "prop_tree.png",
+  "来源": "assets\\pixel\\prop_tree.png",
+  "说明": "带接地阴影"
+ },
+ {
+  "分类": "07_地图道具",
+  "文件": "prop_rock.png",
+  "来源": "assets\\pixel\\prop_rock.png",
+  "说明": "带接地阴影"
+ },
+ {
+  "分类": "07_地图道具",
+  "文件": "prop_tree_big.png",
+  "来源": "assets\\pixel\\prop_tree_big.png",
+  "说明": "带接地阴影"
+ },
+ {
+  "分类": "07_地图道具",
+  "文件": "prop_boulder.png",
+  "来源": "assets\\pixel\\prop_boulder.png",
+  "说明": "带接地阴影"
+ },
+ {
+  "分类": "08_地形过渡/泥土压草地",
+  "文件": "edge3_dirt_over_grass_v1.png",
+  "来源": "assets\\pixel\\edge3_dirt_over_grass_v1.png",
+  "说明": ""
+ },
+ {
+  "分类": "08_地形过渡/泥土压草地",
+  "文件": "edge3_dirt_over_grass_v1_e.png",
+  "来源": "assets\\pixel\\edge3_dirt_over_grass_v1_e.png",
+  "说明": ""
+ },
+ {
+  "分类": "08_地形过渡/泥土压草地",
+  "文件": "edge3_dirt_over_grass_v1_n.png",
+  "来源": "assets\\pixel\\edge3_dirt_over_grass_v1_n.png",
+  "说明": ""
+ },
+ {
+  "分类": "08_地形过渡/泥土压草地",
+  "文件": "edge3_dirt_over_grass_v1_s.png",
+  "来源": "assets\\pixel\\edge3_dirt_over_grass_v1_s.png",
+  "说明": ""
+ },
+ {
+  "分类": "08_地形过渡/泥土压草地",
+  "文件": "edge3_dirt_over_grass_v1_w.png",
+  "来源": "assets\\pixel\\edge3_dirt_over_grass_v1_w.png",
+  "说明": ""
+ },
+ {
+  "分类": "08_地形过渡/泥土压草地",
+  "文件": "edge3_dirt_over_grass_v2.png",
+  "来源": "assets\\pixel\\edge3_dirt_over_grass_v2.png",
+  "说明": ""
+ },
+ {
+  "分类": "08_地形过渡/泥土压草地",
+  "文件": "edge3_dirt_over_grass_v2_e.png",
+  "来源": "assets\\pixel\\edge3_dirt_over_grass_v2_e.png",
+  "说明": ""
+ },
+ {
+  "分类": "08_地形过渡/泥土压草地",
+  "文件": "edge3_dirt_over_grass_v2_n.png",
+  "来源": "assets\\pixel\\edge3_dirt_over_grass_v2_n.png",
+  "说明": ""
+ },
+ {
+  "分类": "08_地形过渡/泥土压草地",
+  "文件": "edge3_dirt_over_grass_v2_s.png",
+  "来源": "assets\\pixel\\edge3_dirt_over_grass_v2_s.png",
+  "说明": ""
+ },
+ {
+  "分类": "08_地形过渡/泥土压草地",
+  "文件": "edge3_dirt_over_grass_v2_w.png",
+  "来源": "assets\\pixel\\edge3_dirt_over_grass_v2_w.png",
+  "说明": ""
+ },
+ {
+  "分类": "08_地形过渡/泥土压草地",
+  "文件": "edge3_dirt_over_grass_v3.png",
+  "来源": "assets\\pixel\\edge3_dirt_over_grass_v3.png",
+  "说明": ""
+ },
+ {
+  "分类": "08_地形过渡/泥土压草地",
+  "文件": "edge3_dirt_over_grass_v3_e.png",
+  "来源": "assets\\pixel\\edge3_dirt_over_grass_v3_e.png",
+  "说明": ""
+ },
+ {
+  "分类": "08_地形过渡/泥土压草地",
+  "文件": "edge3_dirt_over_grass_v3_n.png",
+  "来源": "assets\\pixel\\edge3_dirt_over_grass_v3_n.png",
+  "说明": ""
+ },
+ {
+  "分类": "08_地形过渡/泥土压草地",
+  "文件": "edge3_dirt_over_grass_v3_s.png",
+  "来源": "assets\\pixel\\edge3_dirt_over_grass_v3_s.png",
+  "说明": ""
+ },
+ {
+  "分类": "08_地形过渡/泥土压草地",
+  "文件": "edge3_dirt_over_grass_v3_w.png",
+  "来源": "assets\\pixel\\edge3_dirt_over_grass_v3_w.png",
+  "说明": ""
+ },
+ {
+  "分类": "08_地形过渡/石砖路压泥土",
+  "文件": "edge3_road_over_dirt_v1.png",
+  "来源": "assets\\pixel\\edge3_road_over_dirt_v1.png",
+  "说明": ""
+ },
+ {
+  "分类": "08_地形过渡/石砖路压泥土",
+  "文件": "edge3_road_over_dirt_v1_e.png",
+  "来源": "assets\\pixel\\edge3_road_over_dirt_v1_e.png",
+  "说明": ""
+ },
+ {
+  "分类": "08_地形过渡/石砖路压泥土",
+  "文件": "edge3_road_over_dirt_v1_n.png",
+  "来源": "assets\\pixel\\edge3_road_over_dirt_v1_n.png",
+  "说明": ""
+ },
+ {
+  "分类": "08_地形过渡/石砖路压泥土",
+  "文件": "edge3_road_over_dirt_v1_s.png",
+  "来源": "assets\\pixel\\edge3_road_over_dirt_v1_s.png",
+  "说明": ""
+ },
+ {
+  "分类": "08_地形过渡/石砖路压泥土",
+  "文件": "edge3_road_over_dirt_v1_w.png",
+  "来源": "assets\\pixel\\edge3_road_over_dirt_v1_w.png",
+  "说明": ""
+ },
+ {
+  "分类": "08_地形过渡/石砖路压泥土",
+  "文件": "edge3_road_over_dirt_v2.png",
+  "来源": "assets\\pixel\\edge3_road_over_dirt_v2.png",
+  "说明": ""
+ },
+ {
+  "分类": "08_地形过渡/石砖路压泥土",
+  "文件": "edge3_road_over_dirt_v2_e.png",
+  "来源": "assets\\pixel\\edge3_road_over_dirt_v2_e.png",
+  "说明": ""
+ },
+ {
+  "分类": "08_地形过渡/石砖路压泥土",
+  "文件": "edge3_road_over_dirt_v2_n.png",
+  "来源": "assets\\pixel\\edge3_road_over_dirt_v2_n.png",
+  "说明": ""
+ },
+ {
+  "分类": "08_地形过渡/石砖路压泥土",
+  "文件": "edge3_road_over_dirt_v2_s.png",
+  "来源": "assets\\pixel\\edge3_road_over_dirt_v2_s.png",
+  "说明": ""
+ },
+ {
+  "分类": "08_地形过渡/石砖路压泥土",
+  "文件": "edge3_road_over_dirt_v2_w.png",
+  "来源": "assets\\pixel\\edge3_road_over_dirt_v2_w.png",
+  "说明": ""
+ },
+ {
+  "分类": "08_地形过渡/石砖路压泥土",
+  "文件": "edge3_road_over_dirt_v3.png",
+  "来源": "assets\\pixel\\edge3_road_over_dirt_v3.png",
+  "说明": ""
+ },
+ {
+  "分类": "08_地形过渡/石砖路压泥土",
+  "文件": "edge3_road_over_dirt_v3_e.png",
+  "来源": "assets\\pixel\\edge3_road_over_dirt_v3_e.png",
+  "说明": ""
+ },
+ {
+  "分类": "08_地形过渡/石砖路压泥土",
+  "文件": "edge3_road_over_dirt_v3_n.png",
+  "来源": "assets\\pixel\\edge3_road_over_dirt_v3_n.png",
+  "说明": ""
+ },
+ {
+  "分类": "08_地形过渡/石砖路压泥土",
+  "文件": "edge3_road_over_dirt_v3_s.png",
+  "来源": "assets\\pixel\\edge3_road_over_dirt_v3_s.png",
+  "说明": ""
+ },
+ {
+  "分类": "08_地形过渡/石砖路压泥土",
+  "文件": "edge3_road_over_dirt_v3_w.png",
+  "来源": "assets\\pixel\\edge3_road_over_dirt_v3_w.png",
+  "说明": ""
+ },
+ {
+  "分类": "08_地形过渡/枯草压草地",
+  "文件": "edge3_dry_over_grass_v1.png",
+  "来源": "assets\\pixel\\edge3_dry_over_grass_v1.png",
+  "说明": ""
+ },
+ {
+  "分类": "08_地形过渡/枯草压草地",
+  "文件": "edge3_dry_over_grass_v1_e.png",
+  "来源": "assets\\pixel\\edge3_dry_over_grass_v1_e.png",
+  "说明": ""
+ },
+ {
+  "分类": "08_地形过渡/枯草压草地",
+  "文件": "edge3_dry_over_grass_v1_n.png",
+  "来源": "assets\\pixel\\edge3_dry_over_grass_v1_n.png",
+  "说明": ""
+ },
+ {
+  "分类": "08_地形过渡/枯草压草地",
+  "文件": "edge3_dry_over_grass_v1_s.png",
+  "来源": "assets\\pixel\\edge3_dry_over_grass_v1_s.png",
+  "说明": ""
+ },
+ {
+  "分类": "08_地形过渡/枯草压草地",
+  "文件": "edge3_dry_over_grass_v1_w.png",
+  "来源": "assets\\pixel\\edge3_dry_over_grass_v1_w.png",
+  "说明": ""
+ },
+ {
+  "分类": "08_地形过渡/枯草压草地",
+  "文件": "edge3_dry_over_grass_v2.png",
+  "来源": "assets\\pixel\\edge3_dry_over_grass_v2.png",
+  "说明": ""
+ },
+ {
+  "分类": "08_地形过渡/枯草压草地",
+  "文件": "edge3_dry_over_grass_v2_e.png",
+  "来源": "assets\\pixel\\edge3_dry_over_grass_v2_e.png",
+  "说明": ""
+ },
+ {
+  "分类": "08_地形过渡/枯草压草地",
+  "文件": "edge3_dry_over_grass_v2_n.png",
+  "来源": "assets\\pixel\\edge3_dry_over_grass_v2_n.png",
+  "说明": ""
+ },
+ {
+  "分类": "08_地形过渡/枯草压草地",
+  "文件": "edge3_dry_over_grass_v2_s.png",
+  "来源": "assets\\pixel\\edge3_dry_over_grass_v2_s.png",
+  "说明": ""
+ },
+ {
+  "分类": "08_地形过渡/枯草压草地",
+  "文件": "edge3_dry_over_grass_v2_w.png",
+  "来源": "assets\\pixel\\edge3_dry_over_grass_v2_w.png",
+  "说明": ""
+ },
+ {
+  "分类": "08_地形过渡/枯草压草地",
+  "文件": "edge3_dry_over_grass_v3.png",
+  "来源": "assets\\pixel\\edge3_dry_over_grass_v3.png",
+  "说明": ""
+ },
+ {
+  "分类": "08_地形过渡/枯草压草地",
+  "文件": "edge3_dry_over_grass_v3_e.png",
+  "来源": "assets\\pixel\\edge3_dry_over_grass_v3_e.png",
+  "说明": ""
+ },
+ {
+  "分类": "08_地形过渡/枯草压草地",
+  "文件": "edge3_dry_over_grass_v3_n.png",
+  "来源": "assets\\pixel\\edge3_dry_over_grass_v3_n.png",
+  "说明": ""
+ },
+ {
+  "分类": "08_地形过渡/枯草压草地",
+  "文件": "edge3_dry_over_grass_v3_s.png",
+  "来源": "assets\\pixel\\edge3_dry_over_grass_v3_s.png",
+  "说明": ""
+ },
+ {
+  "分类": "08_地形过渡/枯草压草地",
+  "文件": "edge3_dry_over_grass_v3_w.png",
+  "来源": "assets\\pixel\\edge3_dry_over_grass_v3_w.png",
+  "说明": ""
+ },
+ {
+  "分类": "08_地形过渡/碎石压泥土",
+  "文件": "edge3_rocky_over_dirt_v1.png",
+  "来源": "assets\\pixel\\edge3_rocky_over_dirt_v1.png",
+  "说明": ""
+ },
+ {
+  "分类": "08_地形过渡/碎石压泥土",
+  "文件": "edge3_rocky_over_dirt_v1_e.png",
+  "来源": "assets\\pixel\\edge3_rocky_over_dirt_v1_e.png",
+  "说明": ""
+ },
+ {
+  "分类": "08_地形过渡/碎石压泥土",
+  "文件": "edge3_rocky_over_dirt_v1_n.png",
+  "来源": "assets\\pixel\\edge3_rocky_over_dirt_v1_n.png",
+  "说明": ""
+ },
+ {
+  "分类": "08_地形过渡/碎石压泥土",
+  "文件": "edge3_rocky_over_dirt_v1_s.png",
+  "来源": "assets\\pixel\\edge3_rocky_over_dirt_v1_s.png",
+  "说明": ""
+ },
+ {
+  "分类": "08_地形过渡/碎石压泥土",
+  "文件": "edge3_rocky_over_dirt_v1_w.png",
+  "来源": "assets\\pixel\\edge3_rocky_over_dirt_v1_w.png",
+  "说明": ""
+ },
+ {
+  "分类": "08_地形过渡/碎石压泥土",
+  "文件": "edge3_rocky_over_dirt_v2.png",
+  "来源": "assets\\pixel\\edge3_rocky_over_dirt_v2.png",
+  "说明": ""
+ },
+ {
+  "分类": "08_地形过渡/碎石压泥土",
+  "文件": "edge3_rocky_over_dirt_v2_e.png",
+  "来源": "assets\\pixel\\edge3_rocky_over_dirt_v2_e.png",
+  "说明": ""
+ },
+ {
+  "分类": "08_地形过渡/碎石压泥土",
+  "文件": "edge3_rocky_over_dirt_v2_n.png",
+  "来源": "assets\\pixel\\edge3_rocky_over_dirt_v2_n.png",
+  "说明": ""
+ },
+ {
+  "分类": "08_地形过渡/碎石压泥土",
+  "文件": "edge3_rocky_over_dirt_v2_s.png",
+  "来源": "assets\\pixel\\edge3_rocky_over_dirt_v2_s.png",
+  "说明": ""
+ },
+ {
+  "分类": "08_地形过渡/碎石压泥土",
+  "文件": "edge3_rocky_over_dirt_v2_w.png",
+  "来源": "assets\\pixel\\edge3_rocky_over_dirt_v2_w.png",
+  "说明": ""
+ },
+ {
+  "分类": "08_地形过渡/碎石压泥土",
+  "文件": "edge3_rocky_over_dirt_v3.png",
+  "来源": "assets\\pixel\\edge3_rocky_over_dirt_v3.png",
+  "说明": ""
+ },
+ {
+  "分类": "08_地形过渡/碎石压泥土",
+  "文件": "edge3_rocky_over_dirt_v3_e.png",
+  "来源": "assets\\pixel\\edge3_rocky_over_dirt_v3_e.png",
+  "说明": ""
+ },
+ {
+  "分类": "08_地形过渡/碎石压泥土",
+  "文件": "edge3_rocky_over_dirt_v3_n.png",
+  "来源": "assets\\pixel\\edge3_rocky_over_dirt_v3_n.png",
+  "说明": ""
+ },
+ {
+  "分类": "08_地形过渡/碎石压泥土",
+  "文件": "edge3_rocky_over_dirt_v3_s.png",
+  "来源": "assets\\pixel\\edge3_rocky_over_dirt_v3_s.png",
+  "说明": ""
+ },
+ {
+  "分类": "08_地形过渡/碎石压泥土",
+  "文件": "edge3_rocky_over_dirt_v3_w.png",
+  "来源": "assets\\pixel\\edge3_rocky_over_dirt_v3_w.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/泥土压草地",
+  "文件": "auto_dirt_over_grass_e_v1.png",
+  "来源": "assets\\pixel\\autotile\\auto_dirt_over_grass_e_v1.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/泥土压草地",
+  "文件": "auto_dirt_over_grass_e_v2.png",
+  "来源": "assets\\pixel\\autotile\\auto_dirt_over_grass_e_v2.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/泥土压草地",
+  "文件": "auto_dirt_over_grass_es_v1.png",
+  "来源": "assets\\pixel\\autotile\\auto_dirt_over_grass_es_v1.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/泥土压草地",
+  "文件": "auto_dirt_over_grass_es_v2.png",
+  "来源": "assets\\pixel\\autotile\\auto_dirt_over_grass_es_v2.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/泥土压草地",
+  "文件": "auto_dirt_over_grass_esw_v1.png",
+  "来源": "assets\\pixel\\autotile\\auto_dirt_over_grass_esw_v1.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/泥土压草地",
+  "文件": "auto_dirt_over_grass_esw_v2.png",
+  "来源": "assets\\pixel\\autotile\\auto_dirt_over_grass_esw_v2.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/泥土压草地",
+  "文件": "auto_dirt_over_grass_ew_v1.png",
+  "来源": "assets\\pixel\\autotile\\auto_dirt_over_grass_ew_v1.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/泥土压草地",
+  "文件": "auto_dirt_over_grass_ew_v2.png",
+  "来源": "assets\\pixel\\autotile\\auto_dirt_over_grass_ew_v2.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/泥土压草地",
+  "文件": "auto_dirt_over_grass_n_v1.png",
+  "来源": "assets\\pixel\\autotile\\auto_dirt_over_grass_n_v1.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/泥土压草地",
+  "文件": "auto_dirt_over_grass_n_v2.png",
+  "来源": "assets\\pixel\\autotile\\auto_dirt_over_grass_n_v2.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/泥土压草地",
+  "文件": "auto_dirt_over_grass_ne_v1.png",
+  "来源": "assets\\pixel\\autotile\\auto_dirt_over_grass_ne_v1.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/泥土压草地",
+  "文件": "auto_dirt_over_grass_ne_v2.png",
+  "来源": "assets\\pixel\\autotile\\auto_dirt_over_grass_ne_v2.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/泥土压草地",
+  "文件": "auto_dirt_over_grass_nes_v1.png",
+  "来源": "assets\\pixel\\autotile\\auto_dirt_over_grass_nes_v1.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/泥土压草地",
+  "文件": "auto_dirt_over_grass_nes_v2.png",
+  "来源": "assets\\pixel\\autotile\\auto_dirt_over_grass_nes_v2.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/泥土压草地",
+  "文件": "auto_dirt_over_grass_nesw_v1.png",
+  "来源": "assets\\pixel\\autotile\\auto_dirt_over_grass_nesw_v1.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/泥土压草地",
+  "文件": "auto_dirt_over_grass_nesw_v2.png",
+  "来源": "assets\\pixel\\autotile\\auto_dirt_over_grass_nesw_v2.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/泥土压草地",
+  "文件": "auto_dirt_over_grass_new_v1.png",
+  "来源": "assets\\pixel\\autotile\\auto_dirt_over_grass_new_v1.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/泥土压草地",
+  "文件": "auto_dirt_over_grass_new_v2.png",
+  "来源": "assets\\pixel\\autotile\\auto_dirt_over_grass_new_v2.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/泥土压草地",
+  "文件": "auto_dirt_over_grass_none_v1.png",
+  "来源": "assets\\pixel\\autotile\\auto_dirt_over_grass_none_v1.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/泥土压草地",
+  "文件": "auto_dirt_over_grass_none_v2.png",
+  "来源": "assets\\pixel\\autotile\\auto_dirt_over_grass_none_v2.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/泥土压草地",
+  "文件": "auto_dirt_over_grass_ns_v1.png",
+  "来源": "assets\\pixel\\autotile\\auto_dirt_over_grass_ns_v1.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/泥土压草地",
+  "文件": "auto_dirt_over_grass_ns_v2.png",
+  "来源": "assets\\pixel\\autotile\\auto_dirt_over_grass_ns_v2.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/泥土压草地",
+  "文件": "auto_dirt_over_grass_nsw_v1.png",
+  "来源": "assets\\pixel\\autotile\\auto_dirt_over_grass_nsw_v1.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/泥土压草地",
+  "文件": "auto_dirt_over_grass_nsw_v2.png",
+  "来源": "assets\\pixel\\autotile\\auto_dirt_over_grass_nsw_v2.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/泥土压草地",
+  "文件": "auto_dirt_over_grass_nw_v1.png",
+  "来源": "assets\\pixel\\autotile\\auto_dirt_over_grass_nw_v1.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/泥土压草地",
+  "文件": "auto_dirt_over_grass_nw_v2.png",
+  "来源": "assets\\pixel\\autotile\\auto_dirt_over_grass_nw_v2.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/泥土压草地",
+  "文件": "auto_dirt_over_grass_s_v1.png",
+  "来源": "assets\\pixel\\autotile\\auto_dirt_over_grass_s_v1.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/泥土压草地",
+  "文件": "auto_dirt_over_grass_s_v2.png",
+  "来源": "assets\\pixel\\autotile\\auto_dirt_over_grass_s_v2.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/泥土压草地",
+  "文件": "auto_dirt_over_grass_sw_v1.png",
+  "来源": "assets\\pixel\\autotile\\auto_dirt_over_grass_sw_v1.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/泥土压草地",
+  "文件": "auto_dirt_over_grass_sw_v2.png",
+  "来源": "assets\\pixel\\autotile\\auto_dirt_over_grass_sw_v2.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/泥土压草地",
+  "文件": "auto_dirt_over_grass_w_v1.png",
+  "来源": "assets\\pixel\\autotile\\auto_dirt_over_grass_w_v1.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/泥土压草地",
+  "文件": "auto_dirt_over_grass_w_v2.png",
+  "来源": "assets\\pixel\\autotile\\auto_dirt_over_grass_w_v2.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/石砖路压泥土",
+  "文件": "auto_road_over_dirt_e_v1.png",
+  "来源": "assets\\pixel\\autotile\\auto_road_over_dirt_e_v1.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/石砖路压泥土",
+  "文件": "auto_road_over_dirt_e_v2.png",
+  "来源": "assets\\pixel\\autotile\\auto_road_over_dirt_e_v2.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/石砖路压泥土",
+  "文件": "auto_road_over_dirt_es_v1.png",
+  "来源": "assets\\pixel\\autotile\\auto_road_over_dirt_es_v1.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/石砖路压泥土",
+  "文件": "auto_road_over_dirt_es_v2.png",
+  "来源": "assets\\pixel\\autotile\\auto_road_over_dirt_es_v2.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/石砖路压泥土",
+  "文件": "auto_road_over_dirt_esw_v1.png",
+  "来源": "assets\\pixel\\autotile\\auto_road_over_dirt_esw_v1.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/石砖路压泥土",
+  "文件": "auto_road_over_dirt_esw_v2.png",
+  "来源": "assets\\pixel\\autotile\\auto_road_over_dirt_esw_v2.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/石砖路压泥土",
+  "文件": "auto_road_over_dirt_ew_v1.png",
+  "来源": "assets\\pixel\\autotile\\auto_road_over_dirt_ew_v1.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/石砖路压泥土",
+  "文件": "auto_road_over_dirt_ew_v2.png",
+  "来源": "assets\\pixel\\autotile\\auto_road_over_dirt_ew_v2.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/石砖路压泥土",
+  "文件": "auto_road_over_dirt_n_v1.png",
+  "来源": "assets\\pixel\\autotile\\auto_road_over_dirt_n_v1.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/石砖路压泥土",
+  "文件": "auto_road_over_dirt_n_v2.png",
+  "来源": "assets\\pixel\\autotile\\auto_road_over_dirt_n_v2.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/石砖路压泥土",
+  "文件": "auto_road_over_dirt_ne_v1.png",
+  "来源": "assets\\pixel\\autotile\\auto_road_over_dirt_ne_v1.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/石砖路压泥土",
+  "文件": "auto_road_over_dirt_ne_v2.png",
+  "来源": "assets\\pixel\\autotile\\auto_road_over_dirt_ne_v2.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/石砖路压泥土",
+  "文件": "auto_road_over_dirt_nes_v1.png",
+  "来源": "assets\\pixel\\autotile\\auto_road_over_dirt_nes_v1.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/石砖路压泥土",
+  "文件": "auto_road_over_dirt_nes_v2.png",
+  "来源": "assets\\pixel\\autotile\\auto_road_over_dirt_nes_v2.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/石砖路压泥土",
+  "文件": "auto_road_over_dirt_nesw_v1.png",
+  "来源": "assets\\pixel\\autotile\\auto_road_over_dirt_nesw_v1.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/石砖路压泥土",
+  "文件": "auto_road_over_dirt_nesw_v2.png",
+  "来源": "assets\\pixel\\autotile\\auto_road_over_dirt_nesw_v2.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/石砖路压泥土",
+  "文件": "auto_road_over_dirt_new_v1.png",
+  "来源": "assets\\pixel\\autotile\\auto_road_over_dirt_new_v1.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/石砖路压泥土",
+  "文件": "auto_road_over_dirt_new_v2.png",
+  "来源": "assets\\pixel\\autotile\\auto_road_over_dirt_new_v2.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/石砖路压泥土",
+  "文件": "auto_road_over_dirt_none_v1.png",
+  "来源": "assets\\pixel\\autotile\\auto_road_over_dirt_none_v1.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/石砖路压泥土",
+  "文件": "auto_road_over_dirt_none_v2.png",
+  "来源": "assets\\pixel\\autotile\\auto_road_over_dirt_none_v2.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/石砖路压泥土",
+  "文件": "auto_road_over_dirt_ns_v1.png",
+  "来源": "assets\\pixel\\autotile\\auto_road_over_dirt_ns_v1.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/石砖路压泥土",
+  "文件": "auto_road_over_dirt_ns_v2.png",
+  "来源": "assets\\pixel\\autotile\\auto_road_over_dirt_ns_v2.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/石砖路压泥土",
+  "文件": "auto_road_over_dirt_nsw_v1.png",
+  "来源": "assets\\pixel\\autotile\\auto_road_over_dirt_nsw_v1.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/石砖路压泥土",
+  "文件": "auto_road_over_dirt_nsw_v2.png",
+  "来源": "assets\\pixel\\autotile\\auto_road_over_dirt_nsw_v2.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/石砖路压泥土",
+  "文件": "auto_road_over_dirt_nw_v1.png",
+  "来源": "assets\\pixel\\autotile\\auto_road_over_dirt_nw_v1.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/石砖路压泥土",
+  "文件": "auto_road_over_dirt_nw_v2.png",
+  "来源": "assets\\pixel\\autotile\\auto_road_over_dirt_nw_v2.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/石砖路压泥土",
+  "文件": "auto_road_over_dirt_s_v1.png",
+  "来源": "assets\\pixel\\autotile\\auto_road_over_dirt_s_v1.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/石砖路压泥土",
+  "文件": "auto_road_over_dirt_s_v2.png",
+  "来源": "assets\\pixel\\autotile\\auto_road_over_dirt_s_v2.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/石砖路压泥土",
+  "文件": "auto_road_over_dirt_sw_v1.png",
+  "来源": "assets\\pixel\\autotile\\auto_road_over_dirt_sw_v1.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/石砖路压泥土",
+  "文件": "auto_road_over_dirt_sw_v2.png",
+  "来源": "assets\\pixel\\autotile\\auto_road_over_dirt_sw_v2.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/石砖路压泥土",
+  "文件": "auto_road_over_dirt_w_v1.png",
+  "来源": "assets\\pixel\\autotile\\auto_road_over_dirt_w_v1.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/石砖路压泥土",
+  "文件": "auto_road_over_dirt_w_v2.png",
+  "来源": "assets\\pixel\\autotile\\auto_road_over_dirt_w_v2.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/枯草压草地",
+  "文件": "auto_dry_over_grass_e_v1.png",
+  "来源": "assets\\pixel\\autotile\\auto_dry_over_grass_e_v1.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/枯草压草地",
+  "文件": "auto_dry_over_grass_e_v2.png",
+  "来源": "assets\\pixel\\autotile\\auto_dry_over_grass_e_v2.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/枯草压草地",
+  "文件": "auto_dry_over_grass_es_v1.png",
+  "来源": "assets\\pixel\\autotile\\auto_dry_over_grass_es_v1.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/枯草压草地",
+  "文件": "auto_dry_over_grass_es_v2.png",
+  "来源": "assets\\pixel\\autotile\\auto_dry_over_grass_es_v2.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/枯草压草地",
+  "文件": "auto_dry_over_grass_esw_v1.png",
+  "来源": "assets\\pixel\\autotile\\auto_dry_over_grass_esw_v1.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/枯草压草地",
+  "文件": "auto_dry_over_grass_esw_v2.png",
+  "来源": "assets\\pixel\\autotile\\auto_dry_over_grass_esw_v2.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/枯草压草地",
+  "文件": "auto_dry_over_grass_ew_v1.png",
+  "来源": "assets\\pixel\\autotile\\auto_dry_over_grass_ew_v1.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/枯草压草地",
+  "文件": "auto_dry_over_grass_ew_v2.png",
+  "来源": "assets\\pixel\\autotile\\auto_dry_over_grass_ew_v2.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/枯草压草地",
+  "文件": "auto_dry_over_grass_n_v1.png",
+  "来源": "assets\\pixel\\autotile\\auto_dry_over_grass_n_v1.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/枯草压草地",
+  "文件": "auto_dry_over_grass_n_v2.png",
+  "来源": "assets\\pixel\\autotile\\auto_dry_over_grass_n_v2.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/枯草压草地",
+  "文件": "auto_dry_over_grass_ne_v1.png",
+  "来源": "assets\\pixel\\autotile\\auto_dry_over_grass_ne_v1.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/枯草压草地",
+  "文件": "auto_dry_over_grass_ne_v2.png",
+  "来源": "assets\\pixel\\autotile\\auto_dry_over_grass_ne_v2.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/枯草压草地",
+  "文件": "auto_dry_over_grass_nes_v1.png",
+  "来源": "assets\\pixel\\autotile\\auto_dry_over_grass_nes_v1.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/枯草压草地",
+  "文件": "auto_dry_over_grass_nes_v2.png",
+  "来源": "assets\\pixel\\autotile\\auto_dry_over_grass_nes_v2.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/枯草压草地",
+  "文件": "auto_dry_over_grass_nesw_v1.png",
+  "来源": "assets\\pixel\\autotile\\auto_dry_over_grass_nesw_v1.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/枯草压草地",
+  "文件": "auto_dry_over_grass_nesw_v2.png",
+  "来源": "assets\\pixel\\autotile\\auto_dry_over_grass_nesw_v2.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/枯草压草地",
+  "文件": "auto_dry_over_grass_new_v1.png",
+  "来源": "assets\\pixel\\autotile\\auto_dry_over_grass_new_v1.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/枯草压草地",
+  "文件": "auto_dry_over_grass_new_v2.png",
+  "来源": "assets\\pixel\\autotile\\auto_dry_over_grass_new_v2.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/枯草压草地",
+  "文件": "auto_dry_over_grass_none_v1.png",
+  "来源": "assets\\pixel\\autotile\\auto_dry_over_grass_none_v1.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/枯草压草地",
+  "文件": "auto_dry_over_grass_none_v2.png",
+  "来源": "assets\\pixel\\autotile\\auto_dry_over_grass_none_v2.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/枯草压草地",
+  "文件": "auto_dry_over_grass_ns_v1.png",
+  "来源": "assets\\pixel\\autotile\\auto_dry_over_grass_ns_v1.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/枯草压草地",
+  "文件": "auto_dry_over_grass_ns_v2.png",
+  "来源": "assets\\pixel\\autotile\\auto_dry_over_grass_ns_v2.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/枯草压草地",
+  "文件": "auto_dry_over_grass_nsw_v1.png",
+  "来源": "assets\\pixel\\autotile\\auto_dry_over_grass_nsw_v1.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/枯草压草地",
+  "文件": "auto_dry_over_grass_nsw_v2.png",
+  "来源": "assets\\pixel\\autotile\\auto_dry_over_grass_nsw_v2.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/枯草压草地",
+  "文件": "auto_dry_over_grass_nw_v1.png",
+  "来源": "assets\\pixel\\autotile\\auto_dry_over_grass_nw_v1.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/枯草压草地",
+  "文件": "auto_dry_over_grass_nw_v2.png",
+  "来源": "assets\\pixel\\autotile\\auto_dry_over_grass_nw_v2.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/枯草压草地",
+  "文件": "auto_dry_over_grass_s_v1.png",
+  "来源": "assets\\pixel\\autotile\\auto_dry_over_grass_s_v1.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/枯草压草地",
+  "文件": "auto_dry_over_grass_s_v2.png",
+  "来源": "assets\\pixel\\autotile\\auto_dry_over_grass_s_v2.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/枯草压草地",
+  "文件": "auto_dry_over_grass_sw_v1.png",
+  "来源": "assets\\pixel\\autotile\\auto_dry_over_grass_sw_v1.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/枯草压草地",
+  "文件": "auto_dry_over_grass_sw_v2.png",
+  "来源": "assets\\pixel\\autotile\\auto_dry_over_grass_sw_v2.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/枯草压草地",
+  "文件": "auto_dry_over_grass_w_v1.png",
+  "来源": "assets\\pixel\\autotile\\auto_dry_over_grass_w_v1.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/枯草压草地",
+  "文件": "auto_dry_over_grass_w_v2.png",
+  "来源": "assets\\pixel\\autotile\\auto_dry_over_grass_w_v2.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/碎石压泥土",
+  "文件": "auto_rocky_over_dirt_e_v1.png",
+  "来源": "assets\\pixel\\autotile\\auto_rocky_over_dirt_e_v1.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/碎石压泥土",
+  "文件": "auto_rocky_over_dirt_e_v2.png",
+  "来源": "assets\\pixel\\autotile\\auto_rocky_over_dirt_e_v2.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/碎石压泥土",
+  "文件": "auto_rocky_over_dirt_es_v1.png",
+  "来源": "assets\\pixel\\autotile\\auto_rocky_over_dirt_es_v1.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/碎石压泥土",
+  "文件": "auto_rocky_over_dirt_es_v2.png",
+  "来源": "assets\\pixel\\autotile\\auto_rocky_over_dirt_es_v2.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/碎石压泥土",
+  "文件": "auto_rocky_over_dirt_esw_v1.png",
+  "来源": "assets\\pixel\\autotile\\auto_rocky_over_dirt_esw_v1.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/碎石压泥土",
+  "文件": "auto_rocky_over_dirt_esw_v2.png",
+  "来源": "assets\\pixel\\autotile\\auto_rocky_over_dirt_esw_v2.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/碎石压泥土",
+  "文件": "auto_rocky_over_dirt_ew_v1.png",
+  "来源": "assets\\pixel\\autotile\\auto_rocky_over_dirt_ew_v1.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/碎石压泥土",
+  "文件": "auto_rocky_over_dirt_ew_v2.png",
+  "来源": "assets\\pixel\\autotile\\auto_rocky_over_dirt_ew_v2.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/碎石压泥土",
+  "文件": "auto_rocky_over_dirt_n_v1.png",
+  "来源": "assets\\pixel\\autotile\\auto_rocky_over_dirt_n_v1.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/碎石压泥土",
+  "文件": "auto_rocky_over_dirt_n_v2.png",
+  "来源": "assets\\pixel\\autotile\\auto_rocky_over_dirt_n_v2.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/碎石压泥土",
+  "文件": "auto_rocky_over_dirt_ne_v1.png",
+  "来源": "assets\\pixel\\autotile\\auto_rocky_over_dirt_ne_v1.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/碎石压泥土",
+  "文件": "auto_rocky_over_dirt_ne_v2.png",
+  "来源": "assets\\pixel\\autotile\\auto_rocky_over_dirt_ne_v2.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/碎石压泥土",
+  "文件": "auto_rocky_over_dirt_nes_v1.png",
+  "来源": "assets\\pixel\\autotile\\auto_rocky_over_dirt_nes_v1.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/碎石压泥土",
+  "文件": "auto_rocky_over_dirt_nes_v2.png",
+  "来源": "assets\\pixel\\autotile\\auto_rocky_over_dirt_nes_v2.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/碎石压泥土",
+  "文件": "auto_rocky_over_dirt_nesw_v1.png",
+  "来源": "assets\\pixel\\autotile\\auto_rocky_over_dirt_nesw_v1.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/碎石压泥土",
+  "文件": "auto_rocky_over_dirt_nesw_v2.png",
+  "来源": "assets\\pixel\\autotile\\auto_rocky_over_dirt_nesw_v2.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/碎石压泥土",
+  "文件": "auto_rocky_over_dirt_new_v1.png",
+  "来源": "assets\\pixel\\autotile\\auto_rocky_over_dirt_new_v1.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/碎石压泥土",
+  "文件": "auto_rocky_over_dirt_new_v2.png",
+  "来源": "assets\\pixel\\autotile\\auto_rocky_over_dirt_new_v2.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/碎石压泥土",
+  "文件": "auto_rocky_over_dirt_none_v1.png",
+  "来源": "assets\\pixel\\autotile\\auto_rocky_over_dirt_none_v1.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/碎石压泥土",
+  "文件": "auto_rocky_over_dirt_none_v2.png",
+  "来源": "assets\\pixel\\autotile\\auto_rocky_over_dirt_none_v2.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/碎石压泥土",
+  "文件": "auto_rocky_over_dirt_ns_v1.png",
+  "来源": "assets\\pixel\\autotile\\auto_rocky_over_dirt_ns_v1.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/碎石压泥土",
+  "文件": "auto_rocky_over_dirt_ns_v2.png",
+  "来源": "assets\\pixel\\autotile\\auto_rocky_over_dirt_ns_v2.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/碎石压泥土",
+  "文件": "auto_rocky_over_dirt_nsw_v1.png",
+  "来源": "assets\\pixel\\autotile\\auto_rocky_over_dirt_nsw_v1.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/碎石压泥土",
+  "文件": "auto_rocky_over_dirt_nsw_v2.png",
+  "来源": "assets\\pixel\\autotile\\auto_rocky_over_dirt_nsw_v2.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/碎石压泥土",
+  "文件": "auto_rocky_over_dirt_nw_v1.png",
+  "来源": "assets\\pixel\\autotile\\auto_rocky_over_dirt_nw_v1.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/碎石压泥土",
+  "文件": "auto_rocky_over_dirt_nw_v2.png",
+  "来源": "assets\\pixel\\autotile\\auto_rocky_over_dirt_nw_v2.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/碎石压泥土",
+  "文件": "auto_rocky_over_dirt_s_v1.png",
+  "来源": "assets\\pixel\\autotile\\auto_rocky_over_dirt_s_v1.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/碎石压泥土",
+  "文件": "auto_rocky_over_dirt_s_v2.png",
+  "来源": "assets\\pixel\\autotile\\auto_rocky_over_dirt_s_v2.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/碎石压泥土",
+  "文件": "auto_rocky_over_dirt_sw_v1.png",
+  "来源": "assets\\pixel\\autotile\\auto_rocky_over_dirt_sw_v1.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/碎石压泥土",
+  "文件": "auto_rocky_over_dirt_sw_v2.png",
+  "来源": "assets\\pixel\\autotile\\auto_rocky_over_dirt_sw_v2.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/碎石压泥土",
+  "文件": "auto_rocky_over_dirt_w_v1.png",
+  "来源": "assets\\pixel\\autotile\\auto_rocky_over_dirt_w_v1.png",
+  "说明": ""
+ },
+ {
+  "分类": "09_自动拼接集/碎石压泥土",
+  "文件": "auto_rocky_over_dirt_w_v2.png",
+  "来源": "assets\\pixel\\autotile\\auto_rocky_over_dirt_w_v2.png",
+  "说明": ""
+ },
+ {
+  "分类": "10_色板",
+  "文件": "map_env.json",
+  "来源": "assets\\palettes\\map_env.json",
+  "说明": ""
+ },
+ {
+  "分类": "10_色板",
+  "文件": "char.json",
+  "来源": "assets\\palettes\\char.json",
+  "说明": ""
+ },
+ {
+  "分类": "10_色板",
+  "文件": "souls.json",
+  "来源": "assets\\palettes\\souls.json",
+  "说明": ""
+ },
+ {
+  "分类": "10_色板",
+  "文件": "souls_swatch.png",
+  "来源": "assets\\palettes\\souls_swatch.png",
+  "说明": ""
+ },
+ {
+  "分类": "11_对照图",
+  "文件": "batch_all_15.png",
+  "来源": "assets\\sheets\\batch_all_15.png",
+  "说明": "总览_图标UI场景.png"
+ },
+ {
+  "分类": "11_对照图",
+  "文件": "map_terrain_sheet.png",
+  "来源": "assets\\sheets\\map_terrain_sheet.png",
+  "说明": "总览_地图地形.png"
+ },
+ {
+  "分类": "11_对照图",
+  "文件": "char_avatars_sheet.png",
+  "来源": "assets\\sheets\\char_avatars_sheet.png",
+  "说明": "总览_角色头像.png"
+ },
+ {
+  "分类": "11_对照图",
+  "文件": "char_compare_v2.png",
+  "来源": "assets\\sheets\\char_compare_v2.png",
+  "说明": "总览_角色对比.png"
+ },
+ {
+  "分类": "11_对照图",
+  "文件": "map_mock.png",
+  "来源": "assets\\sheets\\map_mock.png",
+  "说明": "地图_模拟地图.png"
+ },
+ {
+  "分类": "11_对照图",
+  "文件": "autotile_configs.png",
+  "来源": "assets\\sheets\\autotile_configs.png",
+  "说明": "地图_自动拼接配置总览.png"
+ },
+ {
+  "分类": "11_对照图",
+  "文件": "map_autotile_dirt.png",
+  "来源": "assets\\sheets\\map_autotile_dirt.png",
+  "说明": "地图_自动拼接演示_泥土.png"
+ },
+ {
+  "分类": "11_对照图",
+  "文件": "map_autotile_road.png",
+  "来源": "assets\\sheets\\map_autotile_road.png",
+  "说明": "地图_自动拼接演示_石砖路.png"
+ },
+ {
+  "分类": "11_对照图",
+  "文件": "map_autotile_dry.png",
+  "来源": "assets\\sheets\\map_autotile_dry.png",
+  "说明": "地图_自动拼接演示_枯草.png"
+ },
+ {
+  "分类": "11_对照图",
+  "文件": "map_autotile_rocky.png",
+  "来源": "assets\\sheets\\map_autotile_rocky.png",
+  "说明": "地图_自动拼接演示_碎石.png"
+ },
+ {
+  "分类": "11_对照图",
+  "文件": "walk_elise_s_sheet.png",
+  "来源": "assets\\sheets\\walk_elise_s_sheet.png",
+  "说明": "动画_elise_s_四帧.png"
+ },
+ {
+  "分类": "11_对照图",
+  "文件": "walk_elise_n_sheet.png",
+  "来源": "assets\\sheets\\walk_elise_n_sheet.png",
+  "说明": "动画_elise_n_四帧.png"
+ },
+ {
+  "分类": "11_对照图",
+  "文件": "walk_elise_w_sheet.png",
+  "来源": "assets\\sheets\\walk_elise_w_sheet.png",
+  "说明": "动画_elise_w_四帧.png"
+ },
+ {
+  "分类": "11_对照图",
+  "文件": "walk_elise_e_sheet.png",
+  "来源": "assets\\sheets\\walk_elise_e_sheet.png",
+  "说明": "动画_elise_e_四帧.png"
+ },
+ {
+  "分类": "11_对照图",
+  "文件": "walk_baldwin_s_sheet.png",
+  "来源": "assets\\sheets\\walk_baldwin_s_sheet.png",
+  "说明": "动画_baldwin_s_四帧.png"
+ },
+ {
+  "分类": "11_对照图",
+  "文件": "walk_baldwin_n_sheet.png",
+  "来源": "assets\\sheets\\walk_baldwin_n_sheet.png",
+  "说明": "动画_baldwin_n_四帧.png"
+ },
+ {
+  "分类": "11_对照图",
+  "文件": "walk_baldwin_w_sheet.png",
+  "来源": "assets\\sheets\\walk_baldwin_w_sheet.png",
+  "说明": "动画_baldwin_w_四帧.png"
+ },
+ {
+  "分类": "11_对照图",
+  "文件": "walk_baldwin_e_sheet.png",
+  "来源": "assets\\sheets\\walk_baldwin_e_sheet.png",
+  "说明": "动画_baldwin_e_四帧.png"
+ },
+ {
+  "分类": "11_对照图",
+  "文件": "ab_prompt_format.png",
+  "来源": "assets\\sheets\\ab_prompt_format.png",
+  "说明": "提示词格式AB对照.png"
+ }
+]

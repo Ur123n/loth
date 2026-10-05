@@ -1,0 +1,42 @@
+{
+  "kind": "engine",
+  "status": "passed",
+  "run_sha256": "7e5a9a4f68206d5351c584198548ca03e1baf016af42cfff724e2e73923a9bdb",
+  "artifact_hashes": {
+    "workflow_hall_000": "549fc597e2d20ca559a3dcf2ca287bc4c4cb1bff4d38df3f415eaa9a8133aff7",
+    "workflow_hall_002": "3caf93df9cad7927e4989523ae9c670f3ce3b8e1b2cd0c189dd03a1a3b3797cd",
+    "workflow_hall_004": "da48552738068df21eae8a1c0f8bf765785931febb89756d0c52c60beb4f9a6e",
+    "workflow_hall_006": "e2d31c7f1878812af222112b7a7880b0482cccdd96bd52db04bcf6ea3a74a8fd",
+    "workflow_hall_008": "264756d33e5bc3c893f3d929c0d3ba8f165ff329af60b5ea7843340a3fe5d138",
+    "workflow_hall_009": "93ad8468cbf4c1bc5d2b1ce3158969b1ad4b11b22e44800e41de8a268338438c",
+    "workflow_hall_011": "dfab49851efb65f292c16a92ace72949925941153eb9662db82c52e910a00ecc",
+    "workflow_hall_013": "93ad8468cbf4c1bc5d2b1ce3158969b1ad4b11b22e44800e41de8a268338438c",
+    "workflow_hall_016": "763faefa74d9e4aab10c60bf236f339755a72505cfc3bd12aa2da37002c37c2e",
+    "workflow_hall_018": "50b4a20acba6010f37a78124e0e1a57647d0c67e4d5ea8032797b008e518abbd",
+    "workflow_hall_020": "40f06a7c43b6b2b80d21d851d9fc0654494271a54be23578d6ebcd29d78df05e",
+    "workflow_hall_023": "2c6d1e8cf6f8ae2bcd1a158ade9665ba624a54ffe47630e7115210f570cd5965",
+    "workflow_hall_024": "d76e2677b24c7a0d2bb0ded5579e0ebd423c1107942aad506decf3d01e4aee77",
+    "workflow_hall_025": "a6f6a039308c0d108ad11bc58f2b454acb2212cd7824195b990df8c1de16cacf",
+    "workflow_hall_027": "60befea233f51b3298dcc3d3d4f67604ca8ab409f219d56f97d90146a5edeca8",
+    "workflow_hall_029": "10d5e0c386eb5b7639a81026104aa82549349e9e3b2fed1f73e7abb869075330",
+    "workflow_hall_031": "8ecef8d4ee3f5b4e507a33384ead54a07b61d5933e79bcf7b87ceeae82e1bf62",
+    "workflow_hall_033": "311a5ce02fa897efed4fb526d6e84da654b8ac83ee41a13b955806752697d317",
+    "workflow_hall_035": "4f64657651bb8517e3495892824011dabbc6691e91f60e75e21b9151581a2a98",
+    "workflow_hall_037": "7c0ac69fe93d815b8482d0d01a645321697edf385e3a6ac8d805a52993d6a2ce",
+    "workflow_hall_039": "21dbae42496422be97b58675a46b5cc4fe7d0ba7d7ac6a8f6065afd7788fde2b"
+  },
+  "checks": {
+    "test_map_workflow": true,
+    "test_godot_map_pipeline": true,
+    "test_building_pipeline": true,
+    "test_map_pipeline_phase_one": true,
+    "runtime_package_matches_captured_hashes": true,
+    "opengl_three_states_captured": true
+  },
+  "notes": "Automated physics/roof/placement checks and three actual OpenGL captures. Graybox only; no final-art visual approval.",
+  "captures": {
+    "outside": "1e90fcba97b1a44c1f7d4973e253d3fc70ce2b4810e4d3c5a08c54717c5c25ca",
+    "inside": "b461b4826852a5520d8bf2f44ec77c983b1defeff2cd514460d452807dfbf1fa",
+    "north": "59ad19119af213d17b4e0ffef35500ec8e23cfba1d0b1bc9352e7fb04b9597b5"
+  }
+}

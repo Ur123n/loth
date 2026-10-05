@@ -1,0 +1,31 @@
+{
+  "id": "D010",
+  "name": "警戒枪口",
+  "character": "迪马斯",
+  "rarity": "Basic",
+  "category": "道途专属卡牌",
+  "path": "侠盗",
+  "card_type": "攻击",
+  "cost": 1,
+  "load": 1,
+  "target_type": "Enemy",
+  "min_range": 2,
+  "range": 3,
+  "target_spec": "2–3",
+  "area": 0,
+  "keywords": [],
+  "tags": [
+    "Ranged",
+    "Pistol",
+    "Reaction"
+  ],
+  "description": "造成3伤害；开启1次反击。",
+  "source_effect": "造成3伤害；开启1次反击。",
+  "source_file": "迪马斯_完整卡组_v0.3.md",
+  "source_line": 118,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [],
+  "implementation_status": "pending"
+}

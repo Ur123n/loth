@@ -1,0 +1,33 @@
+{
+  "id": "A029",
+  "name": "薄梦护幕",
+  "character": "艾莉丝",
+  "rarity": "Common",
+  "category": "道途专属卡牌",
+  "path": "梦魇行者",
+  "card_type": "行动",
+  "cost": 1,
+  "load": 1,
+  "target_type": "Ally",
+  "min_range": 1,
+  "range": 2,
+  "target_spec": "友军2",
+  "area": 0,
+  "keywords": [
+    "幻梦"
+  ],
+  "tags": [
+    "幻梦",
+    "Defense",
+    "Support"
+  ],
+  "description": "你获得5格挡；目标友军获得3格挡。",
+  "source_effect": "你获得5格挡；目标友军获得3格挡。",
+  "source_file": "艾莉丝_完整卡组_v0.1.md",
+  "source_line": 73,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [],
+  "implementation_status": "pending"
+}

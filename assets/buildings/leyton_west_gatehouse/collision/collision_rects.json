@@ -1,0 +1,23 @@
+{
+ "blocked_cells": 110,
+ "note": "collision.png 的贪心矩形分解（不重不漏，面积 = 实体格数）；Prefab 的 CollisionShape2D 就按它生成",
+ "rect_count": 2,
+ "rects": [
+  [
+   0,
+   0,
+   11,
+   5
+  ],
+  [
+   0,
+   11,
+   11,
+   5
+  ]
+ ],
+ "tile_size": [
+  48,
+  48
+ ]
+}

@@ -12,3 +12,4 @@ extends Resource
 @export var ai_mode: String = ""              # AI 行为（待机/巡逻 等，占位）
 @export var interaction_options: Array[String] = []   # 互动选项列表
 @export var dialogue: Array = []              # 对话树（节点列表，JSON 解析）
+@export var schedule: Array = []              # 行动轨迹（时间轴）：[{hour, position:[x,y], state}]，位置为地图内像素坐标

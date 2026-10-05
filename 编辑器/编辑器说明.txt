@@ -48,6 +48,17 @@ buff创建.xlsx 字段说明：
 
 卡牌通过卡牌编辑器创建（C:\游戏\编辑器\CardEditor，根目录 启动卡牌编辑器.bat 运行）。
 
+补充（2026-08-22）：
+- 任务编辑器：python 编辑器/quest_editor.py（人类命令行 / AI 均可直接调用或直写
+  content/quests/*.json 后运行 validate）。任务没有 UI，状态记录在角色/存档
+  （GameState.quest_state），完成条件满足自动推进；支持分支（branches 按前置条件
+  进入不同后续任务）。格式说明：python 编辑器/quest_editor.py help，或 docs/quest/editor_guide.md。
+- NPC 编辑器：python 编辑器/npc_editor.py（含行动轨迹编辑）。NPC 的 schedule 字段是
+  时间轴（hour + 地图内像素坐标 + 行为 state），由世界时钟 GameState.world_time 驱动
+  移动；用法：npc_editor.py schedule <名字> add <hour> <x> <y> [state]。
+- 世界时钟：GameState.world_time（小时 0-24，存档 v6），主场景每秒真实时间 = 10 游戏分钟。
+- 注意：Excel 同步 NPC 时会保留 JSON 中已有的 schedule（表格无对应列时以 JSON 为准）。
+
 注意：
 - 四名固定队员同步到 alice/baldwin/dismas/kasha.tres；新增角色用中文名作文件名。
 - 角色数据的“力量伤害补正”列对应 GDD：攻击伤害 = 攻击卡面板 * (1 + 补正 * (力量 - 10))。

@@ -4,13 +4,14 @@ extends Node2D
 ## 回合制战斗：行动次序 → buff 结算（预格挡/预抽牌/费用预支）→ 抽牌/获得费用 → 移动/出牌 → 结束回合。
 ## 底部手牌界面：拖拽卡牌向上打出；点击高亮格移动。
 ## 敌怪：骷髅（近战靠近）+ 骷髅弓箭手（远程远离），数据来自敌怪库。
-## 敌怪死亡原地变尸骸（占格、无 AI、原名、血量=原上限/3 向下取整），尸骸血量清零后消失。
+## 任意单位死亡原地变尸骸（占格、无行动、原名、血量=原上限/3 向下取整），尸骸血量清零后消失。
 ## 右上角队伍血量面板 + 单位头顶 HP 标签实时显示角色血量。Esc 返回大世界。
 ## 出生点：从锚点 BFS 向外扩展，保证每名角色占据不同图格。
 
 @export var cols: int = 10
 @export var rows: int = 10
-@export var tile_size: float = 44.0
+## 兼容旧场景保留 tile_size 名称；实际语义是六边形边长/外接圆半径。
+@export var tile_size: float = HexGrid.DEFAULT_SIDE_LENGTH
 @export var fixed_seed: int = -1
 
 var _map_data: BattleMapData
@@ -35,12 +36,14 @@ var _pending_card_rewards: Array = []
 var _ai_debug_panel: AiDebugPanel
 var _last_ai_decisions: Dictionary = {}   # BattleUnit -> Dictionary（最近一次 AI 决策，调试用）
 var _demo_rng: RandomNumberGenerator = RandomNumberGenerator.new()
+var _ai_rng: RandomNumberGenerator = RandomNumberGenerator.new()
 
 
 func _ready() -> void:
 	if GameState.demo_mode:
 		# Demo：每场战斗随机地图
 		fixed_seed = _demo_rng.randi_range(1, 999999)
+	_ai_rng.randomize()
 	_map_data = BattleMapData.new()
 	_map_data.cols = cols
 	_map_data.rows = rows
@@ -337,6 +340,11 @@ func _on_battle_finished(coins: int, exp: int, loot: Array, defeated: bool = fal
 		if character is CharacterData:
 			character.gain_exp(exp)
 	GameState.save_game()
+	# 战斗胜利 → 通知任务系统（battle_won 类完成条件自动推进）
+	if not defeated:
+		var quest_system := get_node_or_null("/root/QuestSystem")
+		if quest_system != null:
+			quest_system.notify_battle_won()
 	if GameState.demo_mode and not defeated:
 		_pending_card_rewards = _build_card_rewards()
 
@@ -420,7 +428,7 @@ func _roll_card_offers(character: CharacterData) -> Array:
 	return shuffled.slice(0, mini(3, shuffled.size()))
 
 
-## 单位生命归零：敌怪变尸骸，尸骸血量清零则消散。
+## 单位生命归零：敌我统一变尸骸，尸骸血量清零则消散。
 func _on_unit_defeated(unit: BattleUnit) -> void:
 	if unit.is_removed:
 		return
@@ -429,12 +437,10 @@ func _on_unit_defeated(unit: BattleUnit) -> void:
 		unit.remove_corpse()
 		if _log_label != null:
 			_log_label.text = "尸骸 %s 消散" % unit.get_display_name()
-	elif unit.is_enemy:
+	else:
 		unit.become_corpse()
 		if _log_label != null:
 			_log_label.text = "%s 倒下，化为尸骸（生命 %d）" % [unit.get_display_name(), unit.corpse_max_hp]
-	elif _log_label != null:
-		_log_label.text = "%s 倒地" % unit.get_display_name()
 
 
 ## 敌怪 AI（《敌人 AI 重构方案》）：行为模板 + 目标选择 + 行动评分 + 位置评价。
@@ -442,7 +448,7 @@ func _on_unit_defeated(unit: BattleUnit) -> void:
 func _run_enemy_turn(unit: BattleUnit) -> void:
 	if unit.is_corpse or unit.is_removed:
 		return
-	var decision := EnemyAI.decide(unit, _living_players(), _enemy_units, _map_data, _occupied)
+	var decision := EnemyAI.decide(unit, _living_players(), _enemy_units, _map_data, _occupied, _ai_rng)
 	_last_ai_decisions[unit] = decision
 	_execute_ai_decision(unit, decision)
 
@@ -476,7 +482,7 @@ func _execute_ai_decision(unit: BattleUnit, decision: Dictionary) -> void:
 func _living_players() -> Array[BattleUnit]:
 	var result: Array[BattleUnit] = []
 	for unit in _units:
-		if not unit.is_enemy and unit.current_hp > 0:
+		if not unit.is_enemy and not unit.is_corpse and not unit.is_removed and unit.current_hp > 0:
 			result.append(unit)
 	return result
 
@@ -593,9 +599,9 @@ func _on_card_play_requested(card: CardData, screen_position: Vector2) -> void:
 		var cell := HexGrid.world_to_hex(local, _map_data.tile_size, _map_data.cols, _map_data.rows)
 		if _occupied.has(cell):
 			var occupant: BattleUnit = _occupied[cell]
-			var valid := occupant.current_hp > 0 and not occupant.is_removed
+			var valid := occupant.current_hp > 0 and not occupant.is_corpse and not occupant.is_removed
 			if card.target_type == CardData.TargetType.ENEMY:
-				valid = valid and occupant.is_enemy and not occupant.is_corpse
+				valid = valid and occupant.is_enemy
 			else:
 				valid = valid and not occupant.is_enemy
 			if valid and _target_in_range(_battle_manager.current_unit(), occupant, card):
@@ -621,7 +627,8 @@ func _target_in_range(unit: BattleUnit, target: BattleUnit, card: CardData) -> b
 	effective_range = maxi(effective_range + unit.get_attack_range_bonus(), 1)
 	if effective_range <= 0:
 		return true
-	return HexGrid.hex_distance(unit.hex_coords, target.hex_coords) <= effective_range
+	var distance := HexGrid.hex_distance(unit.hex_coords, target.hex_coords)
+	return distance >= maxi(card.min_range, 1) and distance <= effective_range
 
 
 func _refresh_current_label() -> void:

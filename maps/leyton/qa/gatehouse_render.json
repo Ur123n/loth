@@ -1,0 +1,24 @@
+{
+	"elevation": {
+		"ground": {
+			"actor_visible": false,
+			"passed": true,
+			"sample": [
+				0.470588237047195,
+				0.580392181873322,
+				0.556862771511078
+			]
+		},
+		"upper": {
+			"actor_visible": true,
+			"passed": true,
+			"sample": [
+				0.749019622802734,
+				0.839215695858002,
+				0.949019610881805
+			]
+		}
+	},
+	"failed": 0,
+	"renderer": "NVIDIA GeForce RTX 4060 Ti"
+}

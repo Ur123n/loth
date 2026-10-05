@@ -1,0 +1,30 @@
+{
+  "id": "D057",
+  "name": "交换距离",
+  "character": "迪马斯",
+  "rarity": "Uncommon",
+  "category": "道途专属卡牌",
+  "path": "侠盗",
+  "card_type": "行动",
+  "cost": 1,
+  "load": 2,
+  "target_type": "Enemy",
+  "min_range": 1,
+  "range": 1,
+  "target_spec": "距离1敌人",
+  "area": 0,
+  "keywords": [],
+  "tags": [
+    "Movement",
+    "Control"
+  ],
+  "description": "推动目标1格；然后你移动最多2格。",
+  "source_effect": "推动目标1格；然后你移动最多2格。",
+  "source_file": "迪马斯_完整卡组_v0.3.md",
+  "source_line": 175,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [],
+  "implementation_status": "pending"
+}

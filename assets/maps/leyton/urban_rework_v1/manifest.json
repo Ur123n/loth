@@ -1,0 +1,50 @@
+{
+	"assets": [
+		{
+			"crop": [
+				221,
+				147,
+				781,
+				966
+			],
+			"id": "stone_house",
+			"size": [
+				384,
+				480
+			],
+			"source_alpha": 2,
+			"source_sha256": "006afe603e55594f781e362283939c1048f0e8d8aa2ebdb65419d92ea33f8fb4"
+		},
+		{
+			"crop": [
+				191,
+				197,
+				872,
+				887
+			],
+			"id": "timber_house",
+			"size": [
+				288,
+				336
+			],
+			"source_alpha": 2,
+			"source_sha256": "162a7b01c079aaad4fd7a89901f62e8a7119c3e8117763b15bd76c6dc7300755"
+		},
+		{
+			"crop": [
+				0,
+				0,
+				1254,
+				1254
+			],
+			"id": "urban_pavers",
+			"size": [
+				48,
+				48
+			],
+			"source_alpha": 0,
+			"source_sha256": "b482e22545f6d310eb274943fcef3f506f46ef15f111abaae3a461ec92153432"
+		}
+	],
+	"generator": "built-in image_gen"
+}

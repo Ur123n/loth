@@ -1,0 +1,32 @@
+{
+  "id": "A030",
+  "name": "幻梦照面",
+  "character": "艾莉丝",
+  "rarity": "Common",
+  "category": "道途专属卡牌",
+  "path": "梦魇行者",
+  "card_type": "行动",
+  "cost": 0,
+  "load": 1,
+  "target_type": "Self",
+  "min_range": 0,
+  "range": 0,
+  "target_spec": "自身",
+  "area": 0,
+  "keywords": [
+    "幻梦",
+    "消耗"
+  ],
+  "tags": [
+    "幻梦"
+  ],
+  "description": "条件：本回合已经主动弃置过至少1张牌。无其他效果；若当前为沉梦，则进入幻梦。",
+  "source_effect": "无其他效果；若当前为沉梦，则进入幻梦。",
+  "source_file": "艾莉丝_完整卡组_v0.1.md",
+  "source_line": 74,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [],
+  "implementation_status": "pending"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "B027",
+  "name": "战吼",
+  "character": "鲍德温",
+  "rarity": "Common",
+  "category": "道途专属卡牌",
+  "path": "孢子卫士",
+  "card_type": "行动",
+  "cost": 1,
+  "load": 2,
+  "target_type": "Ally",
+  "min_range": 1,
+  "range": 3,
+  "target_spec": "其他友军3",
+  "area": 0,
+  "keywords": [],
+  "tags": [
+    "Support",
+    "Inspire",
+    "Bleed"
+  ],
+  "description": "条件：可支付放血1。放血1；距离3内至多2名其他友军各获得1层鼓舞。",
+  "source_effect": "放血1；距离3内至多2名其他友军各获得1层鼓舞。",
+  "source_file": "鲍德温_完整卡组_v0.1.md",
+  "source_line": 203,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [],
+  "implementation_status": "pending"
+}

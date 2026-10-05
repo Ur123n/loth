@@ -1,0 +1,107 @@
+{
+    "reviewer":  "Current conversation multimodal model via view_image",
+    "external_model_invoked":  false,
+    "runtime_rerun":  false,
+    "reviewed_image_count":  11,
+    "evidence":  [
+                     {
+                         "id":  "overview",
+                         "source":  "C:\\游戏\\maps\\leyton\\qa\\atlas_contact_sheet.png",
+                         "copy":  "evidence/overview.png",
+                         "sha256":  "75B8238C0EA45411AE04F6F5F65954F40DC9FB8DB3B247E28573E677E765D365",
+                         "source_modified_utc":  "2026-09-27T14:22:46.6108951Z",
+                         "width":  1280,
+                         "height":  1440
+                     },
+                     {
+                         "id":  "bridge",
+                         "source":  "C:\\游戏\\maps\\leyton\\qa\\bridge_art_player.png",
+                         "copy":  "evidence/bridge.png",
+                         "sha256":  "D17A4C6FA2CCA9EA80048549E9B55878BB0E8AC6651BB26A42BCEAE42C8A54DC",
+                         "source_modified_utc":  "2026-09-27T12:58:21.9002680Z",
+                         "width":  1280,
+                         "height":  720
+                     },
+                     {
+                         "id":  "gate",
+                         "source":  "C:\\游戏\\maps\\leyton\\qa\\gatehouse_art_open_ground.png",
+                         "copy":  "evidence/gate.png",
+                         "sha256":  "16B7FCF4DB4EBB04C6F67CD55EDC54E1CC21698C5DF7DC5043B049158B38B6C7",
+                         "source_modified_utc":  "2026-09-27T13:54:40.0767334Z",
+                         "width":  1280,
+                         "height":  720
+                     },
+                     {
+                         "id":  "bridge_side",
+                         "source":  "C:\\游戏\\maps\\leyton\\qa\\bridge_art_side_behind.png",
+                         "copy":  "evidence/bridge_side.png",
+                         "sha256":  "E03B2CF3D55863317CD0443CBF1C7CD773F5B98B6DCA876599B17F0C55CD3382",
+                         "source_modified_utc":  "2026-09-27T12:58:22.2433111Z",
+                         "width":  1280,
+                         "height":  720
+                     },
+                     {
+                         "id":  "gate_closed",
+                         "source":  "C:\\游戏\\maps\\leyton\\qa\\gatehouse_art_wall_over_closed_gate.png",
+                         "copy":  "evidence/gate_closed.png",
+                         "sha256":  "2BC03B802B617B8AD92512C30C5F824D7C102017B1BA96E5DAC451EBBAA01028",
+                         "source_modified_utc":  "2026-09-27T13:54:40.4455805Z",
+                         "width":  1280,
+                         "height":  720
+                     },
+                     {
+                         "id":  "water_gate",
+                         "source":  "C:\\游戏\\maps\\leyton\\qa\\gatehouse_art_wall_over_water_gate.png",
+                         "copy":  "evidence/water_gate.png",
+                         "sha256":  "FDF90150BCEC1E423416CF21C5BF96ADEF11C6575E17914CE90059A27C0B8000",
+                         "source_modified_utc":  "2026-09-27T13:54:40.5185488Z",
+                         "width":  1280,
+                         "height":  720
+                     },
+                     {
+                         "id":  "props",
+                         "source":  "C:\\游戏\\assets\\maps\\leyton\\props_batch_01\\qa\\review_sheet.png",
+                         "copy":  "evidence/props.png",
+                         "sha256":  "58A3295D3309D5A210312A4A6EADBA3BD6AE26062C99BC11A205B71E50963190",
+                         "source_modified_utc":  "2026-09-27T14:46:48.1302135Z",
+                         "width":  1280,
+                         "height":  960
+                     },
+                     {
+                         "id":  "surface",
+                         "source":  "C:\\游戏\\maps\\leyton\\qa\\surface_v2_m01_detail.png",
+                         "copy":  "evidence/surface.png",
+                         "sha256":  "6E1F66FF2ABFCC944083393E7C2EB10FA66CF99160533480F12CA06AC867396A",
+                         "source_modified_utc":  "2026-09-27T08:25:37.8842619Z",
+                         "width":  1280,
+                         "height":  720
+                     },
+                     {
+                         "id":  "ground_probe",
+                         "source":  "C:\\游戏\\maps\\leyton\\qa\\gatehouse_art_probe_ground.png",
+                         "copy":  "evidence/ground_probe.png",
+                         "sha256":  "DD0DFE99E5133F2CB0C36C64439D602C9D896241966C67DC23AAE3955E9ADFCF",
+                         "source_modified_utc":  "2026-09-27T13:54:40.6036754Z",
+                         "width":  1280,
+                         "height":  720
+                     },
+                     {
+                         "id":  "upper_probe",
+                         "source":  "C:\\游戏\\maps\\leyton\\qa\\gatehouse_art_probe_upper.png",
+                         "copy":  "evidence/upper_probe.png",
+                         "sha256":  "11A80DFEE4826A70EC1E710F798E861D745E2FC2864D26CE3E25772EDCAE48C5",
+                         "source_modified_utc":  "2026-09-27T13:54:40.6824637Z",
+                         "width":  1280,
+                         "height":  720
+                     },
+                     {
+                         "id":  "bridge_cart",
+                         "source":  "C:\\游戏\\maps\\leyton\\qa\\bridge_art_cart.png",
+                         "copy":  "evidence/bridge_cart.png",
+                         "sha256":  "0C6CDF3C1878669D5A94B3F19947C0795F77F287D10506BD4B2531703841FFFF",
+                         "source_modified_utc":  "2026-09-27T12:58:22.0097584Z",
+                         "width":  1280,
+                         "height":  720
+                     }
+                 ]
+}

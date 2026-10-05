@@ -1,0 +1,32 @@
+{
+  "id": "D041",
+  "name": "枪焰逼退",
+  "character": "迪马斯",
+  "rarity": "Uncommon",
+  "category": "道途专属卡牌",
+  "path": "侠盗",
+  "card_type": "攻击",
+  "cost": 1,
+  "load": 2,
+  "target_type": "Enemy",
+  "min_range": 2,
+  "range": 3,
+  "target_spec": "2–3",
+  "area": 0,
+  "keywords": [],
+  "tags": [
+    "Ranged",
+    "Pistol",
+    "Control",
+    "Movement"
+  ],
+  "description": "造成5伤害并推动目标1格；若推动成功，你可移动最多1格。",
+  "source_effect": "造成5伤害并推动目标1格；若推动成功，你可移动最多1格。",
+  "source_file": "迪马斯_完整卡组_v0.3.md",
+  "source_line": 159,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [],
+  "implementation_status": "pending"
+}

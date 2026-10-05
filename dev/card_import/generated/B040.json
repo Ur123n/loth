@@ -1,0 +1,33 @@
+{
+  "id": "B040",
+  "name": "剧痛清醒",
+  "character": "鲍德温",
+  "rarity": "Uncommon",
+  "category": "道途专属卡牌",
+  "path": "孢子卫士",
+  "card_type": "行动",
+  "cost": 0,
+  "load": 1,
+  "target_type": "Self",
+  "min_range": 0,
+  "range": 0,
+  "target_spec": "自身",
+  "area": 0,
+  "keywords": [
+    "消耗"
+  ],
+  "tags": [
+    "Bleed",
+    "Draw",
+    "Exhaust"
+  ],
+  "description": "条件：可支付放血4。放血4；抽1张。",
+  "source_effect": "放血4；抽1张。",
+  "source_file": "鲍德温_完整卡组_v0.1.md",
+  "source_line": 224,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [],
+  "implementation_status": "pending"
+}

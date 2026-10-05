@@ -1,0 +1,30 @@
+{
+  "id": "B036",
+  "name": "血债未偿",
+  "character": "鲍德温",
+  "rarity": "Uncommon",
+  "category": "道途专属卡牌",
+  "path": "孢子卫士",
+  "card_type": "能力",
+  "cost": 1,
+  "load": 2,
+  "target_type": "Self",
+  "min_range": 0,
+  "range": 0,
+  "target_spec": "自身",
+  "area": 0,
+  "keywords": [],
+  "tags": [
+    "Bleed",
+    "Healing"
+  ],
+  "description": "每回合第一次执行放血4或7后，获得1层疗愈。",
+  "source_effect": "每回合第一次执行放血4或7后，获得1层疗愈。",
+  "source_file": "鲍德温_完整卡组_v0.1.md",
+  "source_line": 220,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [],
+  "implementation_status": "pending"
+}

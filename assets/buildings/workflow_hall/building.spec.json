@@ -1,0 +1,157 @@
+{
+  "building_id": "workflow_hall",
+  "display_name": "流程灰盒大厅",
+  "display_name_en": "",
+  "kind": "large_building",
+  "projection_id": "orthogonal_3q_48_v1",
+  "anchor_mode": "bottom_center",
+  "plan_source": "greybox\\buildings\\workflow_hall_v1\\plan.json（美术线手写设计）",
+  "note": [
+    "本文件是 Godot 侧建筑管线的唯一输入（maps/godot/tools/build_building.gd）。",
+    "plan.rooms / plan.doors 是美术线原样搬过来的几何；openings 是游戏侧补的柱廊开口；",
+    "房间矩形向内缩 1 格得到可通行地板，剩下的一圈就是墙 —— 这套规则是确定性的，",
+    "改 rooms 就能改逻辑，完全不用碰那张大图。"
+  ],
+  "visual": {
+    "tile_size": 48,
+    "padding_tiles": 1,
+    "source_origin_tile": [
+      1,
+      1
+    ],
+    "note": "视觉与逻辑分开：换视觉图不用动 rooms/doors；换 rooms 也不用重画图",
+    "layers": [
+      {
+        "name": "Ground",
+        "role": "ground",
+        "source": "res://assets/buildings/workflow_hall/visual/source_ground.png",
+        "output": "ground.png",
+        "z_index": -2,
+        "visible": true
+      },
+      {
+        "name": "Base",
+        "role": "base",
+        "source": "res://assets/buildings/workflow_hall/visual/source_base.png",
+        "output": "base.png",
+        "z_index": 0,
+        "visible": true
+      },
+      {
+        "name": "Roof",
+        "role": "roof",
+        "source": "res://assets/buildings/workflow_hall/visual/source_roof.png",
+        "output": "roof.png",
+        "z_index": 10,
+        "visible": true
+      }
+    ]
+  },
+  "collision": {
+    "layer": 2,
+    "mask": 1,
+    "note": "物理层；逻辑通行另外由掩码决定"
+  },
+  "sorting": {
+    "mode": "y_sort",
+    "y_sort_origin": "bottom_center",
+    "z_index": 0,
+    "occluder": true,
+    "note": "节点原点在 footprint 底部中心 → 角色走到建筑下缘以南就画在建筑前面",
+    "roof_layer_z": 10,
+    "bands": [
+      {
+        "id": "north",
+        "source_rect_tiles": [
+          0,
+          0,
+          14,
+          2
+        ]
+      },
+      {
+        "id": "sides",
+        "source_rect_tiles": [
+          0,
+          2,
+          14,
+          8
+        ]
+      },
+      {
+        "id": "south",
+        "source_rect_tiles": [
+          0,
+          10,
+          14,
+          1
+        ]
+      },
+      {
+        "id": "padding",
+        "source_rect_tiles": [
+          0,
+          11,
+          14,
+          1
+        ]
+      }
+    ]
+  },
+  "tactical": {
+    "enterable": true
+  },
+  "plan": {
+    "scale": {
+      "tile_px": 48,
+      "px_per_m": 48
+    },
+    "origin_m": [
+      0,
+      0
+    ],
+    "footprint_m": [
+      12,
+      10
+    ],
+    "note": "房间/门坐标已统一到 footprint 局部格坐标系（左上角 (0,0)）；与美术画布的偏移记在 visual.source_origin_tile",
+    "rooms": [
+      {
+        "id": "hall",
+        "label": "Graybox hall",
+        "x_m": 0,
+        "y_m": 0,
+        "w_m": 12,
+        "h_m": 10,
+        "floor": "stone",
+        "roof": "slate"
+      }
+    ],
+    "doors": [
+      {
+        "id": "door_0",
+        "x_m": 5,
+        "y_m": 9,
+        "w_m": 2,
+        "side": "s",
+        "note": "",
+        "target": "outside",
+        "interact": "enter_building"
+      },
+      {
+        "id": "door_1",
+        "x_m": 5,
+        "y_m": 0,
+        "w_m": 2,
+        "side": "n",
+        "note": "",
+        "target": "outside",
+        "interact": "enter_building"
+      }
+    ],
+    "openings": [],
+    "windows": [],
+    "columns": {},
+    "art_notes": []
+  }
+}

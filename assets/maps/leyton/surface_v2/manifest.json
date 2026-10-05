@@ -1,0 +1,37 @@
+{
+  "materials": [
+    {
+      "name": "grass",
+      "raw_sha256": "088831878aded46574bc8967a8630fe968f43bd85c9d6ea312edb7ab352665d0",
+      "output_sha256": "32590995bba9ebc5c3ad909418b3a8416022ad72c179da3e4c928d8111c78898",
+      "mean_luma": 46.47204166666666,
+      "std_luma": 12.328725009620713,
+      "previous_std_luma": 21.564874946899053,
+      "colors": 3
+    },
+    {
+      "name": "dirt",
+      "raw_sha256": "d2beb53ce029adc50fed57f850d2a3600b69a7c296e6308e7d326ca147af8ebe",
+      "output_sha256": "c60fb511497040d9a13fb13f014ff20b8fbba300e8906f05210826e7021f57e6",
+      "mean_luma": 77.22971875,
+      "std_luma": 17.63363930945335,
+      "previous_std_luma": 29.868313426153193,
+      "colors": 2
+    },
+    {
+      "name": "road_stone",
+      "raw_sha256": "2dce6aefdd427e88770585395377f28866ae42d5e0394ce6e9cb66539395d0a5",
+      "output_sha256": "aacb951d7a962e1b50faf819eb20b8220fd54100f3288ab61390e932e8f45c15",
+      "mean_luma": 98.49755468749998,
+      "std_luma": 17.5081939435133,
+      "previous_std_luma": 43.63882213275339,
+      "colors": 3
+    }
+  ],
+  "shared_variant_border_px": 3,
+  "edge_checks": 580,
+  "shore_combinations": 81,
+  "transition_tiles": 64,
+  "generator": "built-in image_gen",
+  "pixelize_sha256": "c92ca00a41eccd293a4cb5040c0f51530c4d773188582d375c147d77ded59633"
+}

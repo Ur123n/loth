@@ -1,0 +1,31 @@
+{
+  "id": "B056",
+  "name": "斩将立威",
+  "character": "鲍德温",
+  "rarity": "Uncommon",
+  "category": "道途专属卡牌",
+  "path": "孢子卫士",
+  "card_type": "攻击",
+  "cost": 2,
+  "load": 2,
+  "target_type": "Enemy",
+  "min_range": 1,
+  "range": 1,
+  "target_spec": "敌1",
+  "area": 0,
+  "keywords": [],
+  "tags": [
+    "Melee",
+    "Support",
+    "Inspire"
+  ],
+  "description": "造成26伤害；若击败目标，距离3内所有其他友军获得1层鼓舞。",
+  "source_effect": "造成26伤害；若击败目标，距离3内所有其他友军获得1层鼓舞。",
+  "source_file": "鲍德温_完整卡组_v0.1.md",
+  "source_line": 239,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [],
+  "implementation_status": "pending"
+}

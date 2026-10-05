@@ -1,0 +1,12 @@
+{
+  "schema": "map_pattern/1",
+  "pattern_id": "house_a",
+  "display_name": "测试小屋 A",
+  "category": "buildings",
+  "scene": "res://world/patterns/house_a.tscn",
+  "footprint_cells": [6, 5],
+  "anchor_cell": [3, 5],
+  "tags": ["small_building", "repeatable", "phase_one"],
+  "interior_scene": "res://dev/map_pipeline_test/interior_test.tscn"
+}
+

@@ -15,7 +15,8 @@ const TERRAIN_WEIGHTS := {
 
 @export var cols: int = 10
 @export var rows: int = 10
-@export var tile_size: float = 44.0
+## 兼容旧场景保留 tile_size 名称；实际语义是六边形边长/外接圆半径。
+@export var tile_size: float = HexGrid.DEFAULT_SIDE_LENGTH
 
 var cells: Array[TerrainData] = []
 var _rng: RandomNumberGenerator

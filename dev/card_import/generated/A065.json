@@ -1,0 +1,33 @@
+{
+  "id": "A065",
+  "name": "不眠的旁观者",
+  "character": "艾莉丝",
+  "rarity": "Rare",
+  "category": "道途专属卡牌",
+  "path": "梦魇行者",
+  "card_type": "能力",
+  "cost": 2,
+  "load": 3,
+  "target_type": "Self",
+  "min_range": 0,
+  "range": 0,
+  "target_spec": "自身",
+  "area": 0,
+  "keywords": [
+    "沉梦"
+  ],
+  "tags": [
+    "沉梦",
+    "Defense",
+    "Retain"
+  ],
+  "description": "结束回合时若仍处于沉梦，沉梦基础格挡由3提高至6；每次从沉梦进入幻梦时，可令1张其他手牌获得保留。",
+  "source_effect": "结束回合时若仍处于沉梦，沉梦基础格挡由3提高至6；每次从沉梦进入幻梦时，可令1张其他手牌获得保留。",
+  "source_file": "艾莉丝_完整卡组_v0.1.md",
+  "source_line": 119,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [],
+  "implementation_status": "pending"
+}

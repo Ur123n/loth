@@ -1,0 +1,30 @@
+{
+  "id": "A048",
+  "name": "切断退路",
+  "character": "艾莉丝",
+  "rarity": "Uncommon",
+  "category": "道途专属卡牌",
+  "path": "梦魇行者",
+  "card_type": "攻击",
+  "cost": 1,
+  "load": 2,
+  "target_type": "Enemy",
+  "min_range": 1,
+  "range": 1,
+  "target_spec": "1",
+  "area": 0,
+  "keywords": [],
+  "tags": [
+    "Melee",
+    "Control"
+  ],
+  "description": "造成6伤害并施加1层迟缓；若目标已有标记，再推动1格。",
+  "source_effect": "造成6伤害并施加1层迟缓；若目标已有标记，再推动1格。",
+  "source_file": "艾莉丝_完整卡组_v0.1.md",
+  "source_line": 97,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [],
+  "implementation_status": "pending"
+}

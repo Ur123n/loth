@@ -1,0 +1,30 @@
+{
+  "id": "B049",
+  "name": "碾碎甲胄",
+  "character": "鲍德温",
+  "rarity": "Uncommon",
+  "category": "道途专属卡牌",
+  "path": "孢子卫士",
+  "card_type": "攻击",
+  "cost": 2,
+  "load": 2,
+  "target_type": "Enemy",
+  "min_range": 1,
+  "range": 1,
+  "target_spec": "敌1",
+  "area": 0,
+  "keywords": [],
+  "tags": [
+    "Melee",
+    "ArmorBreak"
+  ],
+  "description": "造成22伤害；目标本轮Armor-1。",
+  "source_effect": "造成22伤害；目标本轮Armor-1。",
+  "source_file": "鲍德温_完整卡组_v0.1.md",
+  "source_line": 233,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [],
+  "implementation_status": "pending"
+}

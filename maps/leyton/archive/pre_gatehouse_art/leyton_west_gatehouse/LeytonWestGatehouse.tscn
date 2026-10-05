@@ -1,0 +1,103 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://core/building/building.gd" id="1_h13qo"]
+[ext_resource type="Texture2D" path="res://assets/buildings/leyton_west_gatehouse/visual/base.png" id="2_3qiny"]
+[ext_resource type="Texture2D" path="res://assets/buildings/leyton_west_gatehouse/visual/floor.png" id="3_36v84"]
+[ext_resource type="Texture2D" path="res://assets/buildings/leyton_west_gatehouse/visual/upper.png" id="4_n5pe8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_boq3o"]
+size = Vector2(528, 240)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iubcn"]
+size = Vector2(528, 240)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lr0js"]
+radius = 36.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pcsld"]
+radius = 36.0
+
+[node name="LeytonWestGatehouse" type="Node2D" unique_id=1467245016]
+y_sort_enabled = true
+script = ExtResource("1_h13qo")
+building_id = "leyton_west_gatehouse"
+data_path = "res://assets/buildings/leyton_west_gatehouse/metadata/building.json"
+
+[node name="Visual" type="Node2D" parent="." unique_id=1497195912]
+
+[node name="Base" type="Sprite2D" parent="Visual" unique_id=1172930638]
+position = Vector2(-312, -816)
+texture = ExtResource("2_3qiny")
+centered = false
+
+[node name="Floor" type="Sprite2D" parent="Visual" unique_id=1192401554]
+z_index = -1
+position = Vector2(-312, -816)
+texture = ExtResource("3_36v84")
+centered = false
+
+[node name="WallWalk" type="Sprite2D" parent="Visual" unique_id=2033702057]
+z_index = 4
+position = Vector2(-312, -816)
+texture = ExtResource("4_n5pe8")
+centered = false
+
+[node name="Collision" type="StaticBody2D" parent="." unique_id=484136562]
+collision_layer = 2
+
+[node name="Shape000" type="CollisionShape2D" parent="Collision" unique_id=803852481]
+position = Vector2(264, 120)
+shape = SubResource("RectangleShape2D_boq3o")
+
+[node name="Shape001" type="CollisionShape2D" parent="Collision" unique_id=1312398158]
+position = Vector2(264, 648)
+shape = SubResource("RectangleShape2D_iubcn")
+
+[node name="Occupancy" type="Node2D" parent="." unique_id=1891973996]
+metadata/count = 176
+metadata/mask = "res://assets/buildings/leyton_west_gatehouse/masks/occupancy.png"
+
+[node name="WalkableArea" type="Node2D" parent="." unique_id=908437316]
+metadata/count = 66
+metadata/mask = "res://assets/buildings/leyton_west_gatehouse/masks/walkable.png"
+
+[node name="Doors" type="Node2D" parent="." unique_id=918400376]
+
+[node name="west" type="Marker2D" parent="Doors" unique_id=317702686]
+position = Vector2(24, 384)
+metadata/outward_side = "w"
+metadata/label = ""
+metadata/target = "outside"
+
+[node name="east" type="Marker2D" parent="Doors" unique_id=1899402381]
+position = Vector2(504, 384)
+metadata/outward_side = "e"
+metadata/label = ""
+metadata/target = "outside"
+
+[node name="Interaction" type="Node2D" parent="." unique_id=551268104]
+
+[node name="west" type="Area2D" parent="Interaction" unique_id=1070427434]
+position = Vector2(24, 384)
+collision_layer = 0
+metadata/door_id = "west"
+metadata/interact = ""
+
+[node name="@CollisionShape2D@17" type="CollisionShape2D" parent="Interaction/west" unique_id=21659149]
+shape = SubResource("CircleShape2D_lr0js")
+
+[node name="east" type="Area2D" parent="Interaction" unique_id=511372272]
+position = Vector2(504, 384)
+collision_layer = 0
+metadata/door_id = "east"
+metadata/interact = ""
+
+[node name="@CollisionShape2D@18" type="CollisionShape2D" parent="Interaction/east" unique_id=546729946]
+shape = SubResource("CircleShape2D_pcsld")
+
+[node name="TacticalData" type="Node" parent="." unique_id=1605366352]
+metadata/cover = 2.0
+metadata/cover_level = "high"
+metadata/height_level = 0.0
+metadata/blocks_los = true
+metadata/enterable = true

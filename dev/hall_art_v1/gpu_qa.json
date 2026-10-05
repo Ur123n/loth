@@ -1,0 +1,23 @@
+{
+  "layers": {
+    "Base": {
+      "alpha_mismatch_pixels": 0,
+      "off_palette_colors_tolerance_1": 0,
+      "passed": true,
+      "unique_colors": 29
+    },
+    "Ground": {
+      "alpha_mismatch_pixels": 0,
+      "off_palette_colors_tolerance_1": 0,
+      "passed": true,
+      "unique_colors": 25
+    },
+    "Roof": {
+      "alpha_mismatch_pixels": 0,
+      "off_palette_colors_tolerance_1": 0,
+      "passed": true,
+      "unique_colors": 32
+    }
+  },
+  "passed": true
+}

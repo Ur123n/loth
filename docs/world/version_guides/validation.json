@@ -1,0 +1,9 @@
+{
+  "files_written": 10,
+  "new_links_checked": 12,
+  "command_paths_checked": 11,
+  "runtime_source_hashes_unchanged": 43,
+  "art_source_pairs_equal": true,
+  "verification": "file-level verification only; no map revision deployed",
+  "errors": []
+}

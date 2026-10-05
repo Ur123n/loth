@@ -1,0 +1,31 @@
+{
+  "id": "A047",
+  "name": "牵制交火",
+  "character": "艾莉丝",
+  "rarity": "Uncommon",
+  "category": "道途专属卡牌",
+  "path": "梦魇行者",
+  "card_type": "攻击",
+  "cost": 1,
+  "load": 2,
+  "target_type": "Enemy",
+  "min_range": 2,
+  "range": 4,
+  "target_spec": "2–4",
+  "area": 0,
+  "keywords": [],
+  "tags": [
+    "Ranged",
+    "Debuff",
+    "Mark"
+  ],
+  "description": "造成5伤害并施加1层虚弱；若目标邻接任意友军，再施加1层标记。",
+  "source_effect": "造成5伤害并施加1层虚弱；若目标邻接任意友军，再施加1层标记。",
+  "source_file": "艾莉丝_完整卡组_v0.1.md",
+  "source_line": 96,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [],
+  "implementation_status": "pending"
+}

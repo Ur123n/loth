@@ -56,4 +56,7 @@ func _parse_npc(data: Dictionary) -> NpcData:
 	var dialogue = data.get("dialogue", [])
 	if dialogue is Array:
 		npc.dialogue = dialogue
+	var schedule = data.get("schedule", [])
+	if schedule is Array:
+		npc.schedule = schedule
 	return npc

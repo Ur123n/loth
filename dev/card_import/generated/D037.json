@@ -1,0 +1,32 @@
+{
+  "id": "D037",
+  "name": "抵近射击",
+  "character": "迪马斯",
+  "rarity": "Uncommon",
+  "category": "道途专属卡牌",
+  "path": "侠盗",
+  "card_type": "攻击",
+  "cost": 2,
+  "load": 2,
+  "target_type": "Enemy",
+  "min_range": 1,
+  "range": 1,
+  "target_spec": "1",
+  "area": 0,
+  "keywords": [],
+  "tags": [
+    "Ranged",
+    "Pistol",
+    "Control",
+    "Movement"
+  ],
+  "description": "条件：必须与目标距离1。造成22伤害；随后目标后退1格，你也后退1格。任一方受阻不影响另一方后退。",
+  "source_effect": "造成22伤害；随后目标后退1格，你也后退1格。任一方受阻不影响另一方后退。",
+  "source_file": "迪马斯_完整卡组_v0.3.md",
+  "source_line": 155,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [],
+  "implementation_status": "pending"
+}

@@ -1,0 +1,30 @@
+{
+  "id": "D056",
+  "name": "灰烟掩护",
+  "character": "迪马斯",
+  "rarity": "Uncommon",
+  "category": "道途专属卡牌",
+  "path": "侠盗",
+  "card_type": "行动",
+  "cost": 1,
+  "load": 2,
+  "target_type": "Self",
+  "min_range": 0,
+  "range": 0,
+  "target_spec": "自身",
+  "area": 0,
+  "keywords": [],
+  "tags": [
+    "Defense",
+    "Movement"
+  ],
+  "description": "条件：本回合已打出过Pistol Attack。移动最多1格并获得7格挡；否则只获得5格挡。",
+  "source_effect": "移动最多1格并获得7格挡；否则只获得5格挡。",
+  "source_file": "迪马斯_完整卡组_v0.3.md",
+  "source_line": 174,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [],
+  "implementation_status": "pending"
+}

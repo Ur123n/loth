@@ -1,0 +1,31 @@
+{
+  "id": "A032",
+  "name": "恶兆一闪",
+  "character": "艾莉丝",
+  "rarity": "Common",
+  "category": "道途专属卡牌",
+  "path": "梦魇行者",
+  "card_type": "攻击",
+  "cost": 1,
+  "load": 1,
+  "target_type": "Enemy",
+  "min_range": 1,
+  "range": 2,
+  "target_spec": "1–2",
+  "area": 0,
+  "keywords": [
+    "灾梦"
+  ],
+  "tags": [
+    "灾梦"
+  ],
+  "description": "条件：本回合主动弃过牌，且当前手牌≤3。造成14伤害。结算后进入沉梦。",
+  "source_effect": "造成14伤害。结算后进入沉梦。",
+  "source_file": "艾莉丝_完整卡组_v0.1.md",
+  "source_line": 76,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [],
+  "implementation_status": "pending"
+}

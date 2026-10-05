@@ -1,0 +1,30 @@
+{
+  "id": "A075",
+  "name": "三梦轮转",
+  "character": "艾莉丝",
+  "rarity": "Rare",
+  "category": "道途专属卡牌",
+  "path": "梦魇行者",
+  "card_type": "能力",
+  "cost": 2,
+  "load": 4,
+  "target_type": "Self",
+  "min_range": 0,
+  "range": 0,
+  "target_spec": "自身",
+  "area": 0,
+  "keywords": [],
+  "tags": [
+    "DreamCycle",
+    "Support"
+  ],
+  "description": "每回合第一次完成完整的“沉梦→幻梦→灾梦→沉梦”循环时三选一：抽1张；获得6格挡；或令距离3以内1名友军获得5格挡并移动最多1格。",
+  "source_effect": "每回合第一次完成完整的“沉梦→幻梦→灾梦→沉梦”循环时三选一：抽1张；获得6格挡；或令距离3以内1名友军获得5格挡并移动最多1格。",
+  "source_file": "艾莉丝_完整卡组_v0.1.md",
+  "source_line": 129,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [],
+  "implementation_status": "pending"
+}

@@ -1,0 +1,30 @@
+{
+  "id": "A050",
+  "name": "冷静指挥",
+  "character": "艾莉丝",
+  "rarity": "Uncommon",
+  "category": "道途专属卡牌",
+  "path": "梦魇行者",
+  "card_type": "行动",
+  "cost": 2,
+  "load": 2,
+  "target_type": "Ally",
+  "min_range": 1,
+  "range": 2,
+  "target_spec": "半径2友军",
+  "area": 0,
+  "keywords": [],
+  "tags": [
+    "Defense",
+    "Support"
+  ],
+  "description": "距离2以内所有友军获得5格挡；选择其中1名友军移动最多1格。",
+  "source_effect": "距离2以内所有友军获得5格挡；选择其中1名友军移动最多1格。",
+  "source_file": "艾莉丝_完整卡组_v0.1.md",
+  "source_line": 99,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [],
+  "implementation_status": "pending"
+}

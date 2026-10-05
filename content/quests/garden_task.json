@@ -1,0 +1,24 @@
+{
+  "id": "garden_task",
+  "name": "照料花园",
+  "description": "分支任务（前置：garden_first）。莫温请你傍晚前把回廊花园的苗圃浇完——他会在花园等到入夜。线索：日落后他回教堂做晚祷。",
+  "complete": {
+    "type": "world_time",
+    "gte": 18.0
+  },
+  "rewards": [
+    {
+      "type": "text",
+      "text": "莫温点点头：『活干完了。这袋种子你拿着。』"
+    },
+    {
+      "type": "coin",
+      "amount": 20
+    },
+    {
+      "type": "item",
+      "item": "草药",
+      "count": 1
+    }
+  ]
+}

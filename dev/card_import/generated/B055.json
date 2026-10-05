@@ -1,0 +1,33 @@
+{
+  "id": "B055",
+  "name": "血泊再生",
+  "character": "鲍德温",
+  "rarity": "Uncommon",
+  "category": "道途专属卡牌",
+  "path": "孢子卫士",
+  "card_type": "行动",
+  "cost": 1,
+  "load": 1,
+  "target_type": "Self",
+  "min_range": 0,
+  "range": 0,
+  "target_spec": "自身",
+  "area": 0,
+  "keywords": [
+    "消耗"
+  ],
+  "tags": [
+    "Bleed",
+    "Healing",
+    "Exhaust"
+  ],
+  "description": "条件：可支付放血1。放血1；获得3层疗愈。",
+  "source_effect": "放血1；获得3层疗愈。",
+  "source_file": "鲍德温_完整卡组_v0.1.md",
+  "source_line": 238,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [],
+  "implementation_status": "pending"
+}

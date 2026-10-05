@@ -1,0 +1,76 @@
+{
+  "schema": "building_transfer/1",
+  "building_id": "workflow_hall",
+  "display_name": "流程灰盒大厅",
+  "projection_id": "orthogonal_3q_48_v1",
+  "source_origin_tile": [
+    1,
+    1
+  ],
+  "padding_tiles": 1,
+  "plan": "plan.json",
+  "production_status": "graybox_not_final_art",
+  "visual_layers": [
+    {
+      "name": "Ground",
+      "role": "ground",
+      "src": "ground.png",
+      "z_index": -2
+    },
+    {
+      "name": "Base",
+      "role": "base",
+      "src": "base.png",
+      "z_index": 0
+    },
+    {
+      "name": "Roof",
+      "role": "roof",
+      "src": "roof.png",
+      "z_index": 10
+    }
+  ],
+  "sorting": {
+    "bands": [
+      {
+        "id": "north",
+        "source_rect_tiles": [
+          0,
+          0,
+          14,
+          2
+        ]
+      },
+      {
+        "id": "sides",
+        "source_rect_tiles": [
+          0,
+          2,
+          14,
+          8
+        ]
+      },
+      {
+        "id": "south",
+        "source_rect_tiles": [
+          0,
+          10,
+          14,
+          1
+        ]
+      },
+      {
+        "id": "padding",
+        "source_rect_tiles": [
+          0,
+          11,
+          14,
+          1
+        ]
+      }
+    ]
+  },
+  "tactical": {
+    "enterable": true
+  }
+}

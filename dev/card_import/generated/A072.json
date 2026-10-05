@@ -1,0 +1,34 @@
+{
+  "id": "A072",
+  "name": "灾梦：月蚀",
+  "character": "艾莉丝",
+  "rarity": "Rare",
+  "category": "道途专属卡牌",
+  "path": "梦魇行者",
+  "card_type": "行动",
+  "cost": 3,
+  "load": 4,
+  "target_type": "Self",
+  "min_range": 0,
+  "range": 0,
+  "target_spec": "全场",
+  "area": 0,
+  "keywords": [
+    "灾梦",
+    "消耗"
+  ],
+  "tags": [
+    "灾梦",
+    "TeamBuff",
+    "AOE"
+  ],
+  "description": "条件：抽牌堆≤4、弃牌堆≥8、手牌≤2。所有敌人受到8伤害；本轮每名友军下一张Attack造成的伤害无视护甲。结算后进入沉梦。",
+  "source_effect": "所有敌人受到8伤害；本轮每名友军下一张Attack造成的伤害无视护甲。结算后进入沉梦。",
+  "source_file": "艾莉丝_完整卡组_v0.1.md",
+  "source_line": 126,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [],
+  "implementation_status": "pending"
+}

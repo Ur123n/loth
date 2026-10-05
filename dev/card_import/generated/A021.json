@@ -1,0 +1,30 @@
+{
+  "id": "A021",
+  "name": "回看一眼",
+  "character": "艾莉丝",
+  "rarity": "Common",
+  "category": "道途专属卡牌",
+  "path": "梦魇行者",
+  "card_type": "行动",
+  "cost": 1,
+  "load": 2,
+  "target_type": "Self",
+  "min_range": 0,
+  "range": 0,
+  "target_spec": "自身",
+  "area": 0,
+  "keywords": [],
+  "tags": [
+    "DeckControl",
+    "Recovery"
+  ],
+  "description": "条件：弃牌堆中存在非灾梦牌。选择弃牌堆中1张非灾梦牌置于抽牌堆顶，然后抽1张。",
+  "source_effect": "选择弃牌堆中1张非灾梦牌置于抽牌堆顶，然后抽1张。",
+  "source_file": "艾莉丝_完整卡组_v0.1.md",
+  "source_line": 65,
+  "icon": "",
+  "art": "card_faces/A021.png",
+  "animation": "",
+  "effects": [],
+  "implementation_status": "pending"
+}

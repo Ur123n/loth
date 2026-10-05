@@ -1,0 +1,42 @@
+{
+  "status": "candidate_runtime_verified",
+  "formal_publish": false,
+  "tests_passed": {
+    "hall_art": 17,
+    "map_pipeline": 85,
+    "building_pipeline": 296
+  },
+  "gpu_qa": {
+    "layers": {
+      "Base": {
+        "alpha_mismatch_pixels": 0,
+        "off_palette_colors_tolerance_1": 0,
+        "passed": true,
+        "unique_colors": 29
+      },
+      "Ground": {
+        "alpha_mismatch_pixels": 0,
+        "off_palette_colors_tolerance_1": 0,
+        "passed": true,
+        "unique_colors": 25
+      },
+      "Roof": {
+        "alpha_mismatch_pixels": 0,
+        "off_palette_colors_tolerance_1": 0,
+        "passed": true,
+        "unique_colors": 32
+      }
+    },
+    "passed": true
+  },
+  "sha256": {
+    "surface.gdshader": "43d0b057849a19ce3aaa4745665983c440ff35bbd6817da71a3f87b8f2a41709",
+    "hall_art_v1.gd": "7c05c9aff1e2b763b0c60370c19cafd85c47ed941191f42eff5cdc712c938500",
+    "hall_art_v1.tscn": "80da527d82c2a5d1fb9beb499890c75f8723e0564b32a3951bf88c845bb380ec",
+    "capture_review.gd": "b06c2599902457f2e0ec6f46fed4e97fba8c4f5a47685cfd2578e5ac7441dbb6",
+    "review_outside.png": "d01e573a5f9ced2915633da1ac6206460368e6c9e62da7678a4d7aa9c3b4b9f5",
+    "review_inside.png": "4a039f4352e0916e67d4b82bb632fbe897941779aa794ff198d990d149f35ff7",
+    "review_north.png": "efa9b720ca56e5bc9e726e30aefa1ebda6b11ea8ecf92c52f7d6d094fbc08451",
+    "gpu_qa.json": "3372e9e5608e2ce808135acdab278457e306c2081dc942182de6a62dbf28a72d"
+  }
+}

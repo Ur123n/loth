@@ -1,0 +1,30 @@
+{
+  "id": "A014",
+  "name": "守势切入",
+  "character": "艾莉丝",
+  "rarity": "Common",
+  "category": "道途专属卡牌",
+  "path": "梦魇行者",
+  "card_type": "行动",
+  "cost": 1,
+  "load": 1,
+  "target_type": "Self",
+  "min_range": 0,
+  "range": 0,
+  "target_spec": "自身",
+  "area": 0,
+  "keywords": [],
+  "tags": [
+    "Movement",
+    "Defense"
+  ],
+  "description": "移动最多1格，随后获得5格挡。",
+  "source_effect": "移动最多1格，随后获得5格挡。",
+  "source_file": "艾莉丝_完整卡组_v0.1.md",
+  "source_line": 58,
+  "icon": "",
+  "art": "card_faces/A014.png",
+  "animation": "",
+  "effects": [],
+  "implementation_status": "pending"
+}

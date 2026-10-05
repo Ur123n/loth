@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3]
+[ext_resource type="Script" path="res://core/world/free_prop.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/maps/leyton/street_sample_v3/well.png" id="2"]
+[sub_resource type="RectangleShape2D" id="Shape"]
+size = Vector2(96, 96)
+[node name="well" type="Node2D"]
+texture_filter = 1
+script = ExtResource("1")
+prop_id = "well"
+footprint_cells = Vector2i(2, 2)
+
+metadata/category = "free_prop"
+[node name="Visual" type="Sprite2D" parent="."]
+position = Vector2(-72, -192)
+texture = ExtResource("2")
+centered = false
+[node name="Collision" type="StaticBody2D" parent="."]
+collision_layer = 2
+[node name="Shape" type="CollisionShape2D" parent="Collision"]
+position = Vector2(0, -48)
+shape = SubResource("Shape")

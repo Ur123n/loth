@@ -1,0 +1,11 @@
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+OpenGL API 3.3.0 NVIDIA 610.88 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce RTX 4060 Ti
+
+WORLD_CAPTURE monastery_spawn
+WORLD_CAPTURE monastery_overview
+WORLD_CAPTURE north_exterior_arrival
+WORLD_CAPTURE world_route
+WORLD_CAPTURE north_gate_closed
+WORLD_CAPTURE leyton_center
+WORLD_CAPTURE east_residential_arrival
+WORLD_RENDER failed=0

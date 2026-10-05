@@ -1,0 +1,32 @@
+{
+  "id": "A025",
+  "name": "梦中拔剑",
+  "character": "艾莉丝",
+  "rarity": "Common",
+  "category": "道途专属卡牌",
+  "path": "梦魇行者",
+  "card_type": "攻击",
+  "cost": 1,
+  "load": 1,
+  "target_type": "Enemy",
+  "min_range": 1,
+  "range": 1,
+  "target_spec": "1",
+  "area": 0,
+  "keywords": [
+    "幻梦"
+  ],
+  "tags": [
+    "幻梦",
+    "Melee"
+  ],
+  "description": "造成6伤害；若目标有标记，额外造成3伤害。",
+  "source_effect": "造成6伤害；若目标有标记，额外造成3伤害。",
+  "source_file": "艾莉丝_完整卡组_v0.1.md",
+  "source_line": 69,
+  "icon": "",
+  "art": "card_faces/A025.png",
+  "animation": "",
+  "effects": [],
+  "implementation_status": "pending"
+}

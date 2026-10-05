@@ -1,0 +1,104 @@
+{
+  "id": "example_intro",
+  "title": "修道院来客（剧情系统示例）",
+  "description": "示例剧情：镜头、对话、选项、Flag、并行指令。玩家走出南门后触发一次；播放过不再触发。结尾置 quest:gate_open 演示 Flag 触发链。",
+  "instructions": [
+    {
+      "id": "cam_meet",
+      "type": "camera.move_to",
+      "target": [520, 470],
+      "zoom": 1.35,
+      "duration": 1.4,
+      "transition": "sine",
+      "ease": "in_out",
+      "blocking": true
+    },
+    {
+      "id": "line1",
+      "type": "dialogue.line",
+      "speaker": "村长",
+      "text": "哦？一位旅人……这年头还敢走夜路的，都是有些来历的人。",
+      "color": "#5c7aa0",
+      "speed": 0.04
+    },
+    {
+      "id": "simul",
+      "type": "parallel",
+      "instructions": [
+        {
+          "type": "dialogue.line",
+          "speaker": "艾莉丝",
+          "text": "我们只是路过，想借宿一晚。",
+          "color": "#6b8fd6",
+          "speed": 0.03
+        },
+        {
+          "type": "camera.shake",
+          "strength": 5,
+          "duration": 0.35
+        }
+      ]
+    },
+    {
+      "id": "choice1",
+      "type": "dialogue.choice",
+      "var": "reaction",
+      "options": [
+        {
+          "text": "我们受了伤，需要落脚的地方。",
+          "flag": "story:reaction",
+          "flag_value": "refuge"
+        },
+        {
+          "text": "修道院还收留陌生人吗？",
+          "flag": "story:reaction",
+          "flag_value": "welcome"
+        }
+      ]
+    },
+    {
+      "id": "branch",
+      "type": "if",
+      "condition": {"var": "reaction", "equals": 0},
+      "then": [
+        {
+          "type": "dialogue.line",
+          "speaker": "村长",
+          "text": "伤者先进来。药在后院，自己取。",
+          "color": "#5c7aa0"
+        }
+      ],
+      "else": [
+        {
+          "type": "dialogue.line",
+          "speaker": "村长",
+          "text": "收留。只要守规矩，不点钟楼的灯。",
+          "color": "#5c7aa0"
+        }
+      ]
+    },
+    {
+      "id": "cam_back",
+      "type": "camera.move_to",
+      "target": [640, 360],
+      "zoom": 1.0,
+      "duration": 0.9,
+      "blocking": true
+    },
+    {
+      "id": "toast",
+      "type": "message",
+      "text": "【已记录：与村长初次交谈】",
+      "duration": 2.0,
+      "blocking": false
+    },
+    {
+      "type": "camera.reset"
+    },
+    {
+      "type": "flag.set",
+      "key": "quest:gate_open",
+      "value": true
+    }
+  ]
+}

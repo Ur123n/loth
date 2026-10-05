@@ -1,0 +1,121 @@
+[gd_scene load_steps=12 format=3]
+
+[ext_resource type="Script" path="res://dev/map_pipeline_test/map_pipeline_test.gd" id="1_map"]
+[ext_resource type="TileSet" path="res://maps/godot/tilesets/dark48.tres" id="2_tiles"]
+[ext_resource type="PackedScene" path="res://assets/buildings/iserra_monastery/IserraMonastery.tscn" id="3_building"]
+[ext_resource type="PackedScene" path="res://world/patterns/house_a.tscn" id="4_house"]
+[ext_resource type="PackedScene" path="res://world/props/roadside_rock.tscn" id="5_prop"]
+[ext_resource type="PackedScene" path="res://dev/map_pipeline_test/phase_one_player.tscn" id="6_player"]
+[ext_resource type="Script" path="res://core/world/scene_door.gd" id="7_door"]
+[ext_resource type="Script" path="res://core/building/building_ghost.gd" id="8_ghost"]
+
+[sub_resource type="RectangleShape2D" id="ShapeDoor"]
+size = Vector2(52, 40)
+
+[sub_resource type="StyleBoxFlat" id="HelpPanel"]
+bg_color = Color(0.035, 0.045, 0.06, 0.88)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.34, 0.45, 0.58, 0.9)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[node name="MapPipelinePhaseOne" type="Node2D"]
+script = ExtResource("1_map")
+map_size_cells = Vector2i(140, 80)
+metadata/purpose = "map_architecture_phase_one"
+metadata/categories = ["terrain", "pattern", "large_building", "prop", "gameplay", "navigation"]
+
+[node name="地形" type="TileMapLayer" parent="."]
+tile_set = ExtResource("2_tiles")
+z_index = -20
+
+[node name="高差" type="TileMapLayer" parent="."]
+tile_set = ExtResource("2_tiles")
+z_index = -10
+
+[node name="建筑" type="TileMapLayer" parent="."]
+tile_set = ExtResource("2_tiles")
+
+[node name="装饰" type="TileMapLayer" parent="."]
+tile_set = ExtResource("2_tiles")
+
+[node name="植被" type="TileMapLayer" parent="."]
+tile_set = ExtResource("2_tiles")
+
+[node name="碰撞" type="TileMapLayer" parent="."]
+visible = false
+tile_set = ExtResource("2_tiles")
+
+[node name="标记" type="Node2D" parent="."]
+
+[node name="spawn" type="Marker2D" parent="标记"]
+position = Vector2(3120, 3480)
+
+[node name="battle_trigger" type="Marker2D" parent="标记"]
+position = Vector2(648, 3480)
+
+[node name="story_trigger" type="Marker2D" parent="标记"]
+position = Vector2(840, 3480)
+
+[node name="skill_light" type="Marker2D" parent="标记"]
+position = Vector2(1032, 3480)
+
+[node name="house_a" type="Marker2D" parent="标记"]
+position = Vector2(3264, 3456)
+
+[node name="large_building_anchor" type="Marker2D" parent="标记"]
+position = Vector2(4968, 3408)
+
+[node name="建筑对象" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="IserraMonastery" parent="建筑对象" instance=ExtResource("3_building")]
+position = Vector2(4968, 3408)
+metadata/building_id = "iserra_monastery"
+metadata/top_left_cell = Vector2i(75, 5)
+
+[node name="HouseA" parent="建筑对象" instance=ExtResource("4_house")]
+position = Vector2(3264, 3456)
+
+[node name="RoadsideRock" parent="建筑对象" instance=ExtResource("5_prop")]
+position = Vector2(3504, 3480)
+
+[node name="Player" parent="建筑对象" instance=ExtResource("6_player")]
+position = Vector2(3120, 3480)
+camera_zoom = Vector2(0.45, 0.45)
+
+[node name="Gameplay" type="Node2D" parent="."]
+
+[node name="HouseDoor" type="Area2D" parent="Gameplay"]
+position = Vector2(3264, 3450)
+script = ExtResource("7_door")
+destination_scene = "res://dev/map_pipeline_test/interior_test.tscn"
+destination_marker = "spawn"
+
+[node name="Shape" type="CollisionShape2D" parent="Gameplay/HouseDoor"]
+shape = SubResource("ShapeDoor")
+
+[node name="Navigation" type="Node2D" parent="."]
+metadata/status = "phase_one_reserved"
+metadata/note = "Navigation stays independent from visuals/collision; runtime baking is a later phase."
+
+[node name="BuildingGhost" type="Node2D" parent="."]
+script = ExtResource("8_ghost")
+building_id = "iserra_monastery"
+top_left_cell = Vector2i(5, 5)
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Help" type="Label" parent="UI"]
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 720.0
+offset_bottom = 98.0
+theme_override_styles/normal = SubResource("HelpPanel")
+text = "正在加载第一阶段地图管线…"
+

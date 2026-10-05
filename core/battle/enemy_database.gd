@@ -49,6 +49,9 @@ func _parse_enemy(data: Dictionary) -> EnemyData:
 	enemy.agility = int(data.get("agility", 5))
 	enemy.ai_mode = str(data.get("ai", "无"))
 	enemy.archetype = str(data.get("archetype", ""))
+	enemy.ai_profile = _parse_dict(data.get("ai_profile", ""))
+	var raw_skills = data.get("skills", [])
+	enemy.skills = raw_skills if raw_skills is Array else []
 	enemy.tier = str(data.get("tier", "普通"))
 	enemy.coin_min = int(data.get("coin_min", 0))
 	enemy.coin_max = int(data.get("coin_max", 0))
@@ -56,11 +59,24 @@ func _parse_enemy(data: Dictionary) -> EnemyData:
 	var raw_loot = data.get("loot_table", [])
 	enemy.loot_table = raw_loot if raw_loot is Array else []
 	enemy.description = str(data.get("description", ""))
-	# 美术接口：icon/art/animation 均为 res:// 路径，留空则用色块/文本占位
+	# 美术接口：路径留空时使用对应占位表现。
 	enemy.icon_path = str(data.get("icon", ""))
 	enemy.art_path = str(data.get("art", ""))
 	enemy.animation_path = str(data.get("animation", ""))
+	enemy.corpse_art_a_path = str(data.get("corpse_art_a", ""))
+	enemy.corpse_art_b_path = str(data.get("corpse_art_b", ""))
 	var color_str := str(data.get("color", ""))
 	if not color_str.is_empty():
 		enemy.block_color = Color(color_str)
 	return enemy
+
+
+## 解析 ai_profile 列：接受 JSON 对象字符串或直接字典（缺省/空返回 {}）。
+func _parse_dict(value) -> Dictionary:
+	if value is Dictionary:
+		return value
+	if value is String and not (value as String).is_empty():
+		var parsed = JSON.parse_string(value)
+		if parsed is Dictionary:
+			return parsed
+	return {}

@@ -1,0 +1,300 @@
+﻿Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+
+PASS  建筑 spec（building.spec.json）存在
+PASS  机器可读 metadata 存在
+PASS  主视觉 base.png 存在
+PASS  屋顶层 roof.png 存在
+PASS  掩码 occupancy.png 存在
+PASS  掩码 walkable.png 存在
+PASS  掩码 collision.png 存在
+PASS  掩码 occlusion.png 存在
+PASS  掩码 doors.png 存在
+PASS  掩码规范 legend.json 存在
+PASS  碰撞矩形清单存在
+PASS  预览图存在
+PASS  掩码叠查图存在
+PASS  美术线平面图留档存在
+PASS  Building Prefab 存在
+PASS  legend.json 可解析
+PASS  legend 里 5 张掩码都有含义说明
+PASS  legend 里门的 4 个朝向颜色都有定义
+PASS  metadata 可解析
+PASS  metadata 含字段「schema」
+PASS  metadata 含字段「projection_id」
+PASS  metadata 含字段「building_id」
+PASS  metadata 含字段「display_name」
+PASS  metadata 含字段「asset_path」
+PASS  metadata 含 visual.size_px
+PASS  metadata 含字段「anchor」
+PASS  metadata 含字段「footprint」
+PASS  metadata 含字段「occupied_cells」
+PASS  metadata 含字段「walkable_cells」
+PASS  metadata 含字段「doors」
+PASS  metadata 含字段「collision」
+PASS  metadata 含字段「tactical」
+PASS  metadata 含字段「sorting」
+PASS  building_id 一致（实际 iserra_monastery，期望 iserra_monastery）
+PASS  建筑声明统一 3/4 投影契约（实际 orthogonal_3q_48_v1，期望 orthogonal_3q_48_v1）
+PASS  schema 版本一致（实际 building/1，期望 building/1）
+PASS  prefab_path 指向真实 Prefab（实际 res://assets/buildings/iserra_monastery/IserraMonastery.tscn，期望 res://assets/buildings/iserra_monastery/IserraMonastery.tscn）
+PASS  BuildingData 能从 metadata 建出来
+PASS  tile_size = 48×48（实际 (48, 48)，期望 (48, 48)）
+PASS  footprint 为正整数
+PASS  锚点是 footprint 底部中心（Y 轴排序用）（实际 (1368.0, 3168.0)，期望 (1368.0, 3168.0)）
+PASS  占用格数 > 0
+PASS  可通行格数 > 0
+PASS  实体格数 > 0
+PASS  metadata.masks.occupancy 指向存在的文件
+PASS  metadata.masks.walkable 指向存在的文件
+PASS  metadata.masks.collision 指向存在的文件
+PASS  metadata.masks.occlusion 指向存在的文件
+PASS  metadata.masks.doors 指向存在的文件
+PASS  metadata.masks.legend 指向存在的文件
+PASS  掩码 occupancy.png 可读
+PASS  掩码 occupancy.png 尺寸 = footprint（1 像素 = 1 格）（实际 (57, 66)，期望 (57, 66)）
+PASS  掩码 walkable.png 可读
+PASS  掩码 walkable.png 尺寸 = footprint（1 像素 = 1 格）（实际 (57, 66)，期望 (57, 66)）
+PASS  掩码 collision.png 可读
+PASS  掩码 collision.png 尺寸 = footprint（1 像素 = 1 格）（实际 (57, 66)，期望 (57, 66)）
+PASS  掩码 occlusion.png 可读
+PASS  掩码 occlusion.png 尺寸 = footprint（1 像素 = 1 格）（实际 (57, 66)，期望 (57, 66)）
+PASS  掩码 doors.png 可读
+PASS  掩码 doors.png 尺寸 = footprint（1 像素 = 1 格）（实际 (57, 66)，期望 (57, 66)）
+PASS  occupancy.png 格数 = metadata.occupied_cells.count（实际 2649，期望 2649）
+PASS  walkable.png 格数 = metadata.walkable_cells.count（实际 2199，期望 2199）
+PASS  collision.png 格数 = metadata.blocked_cells.count（实际 450，期望 450）
+PASS  occupancy 的游程编码可复现（掩码 PNG 与 metadata 是同一份事实）（实际 [[0, 0, 51], [1, 0, 51], [2, 0, 51], [3, 0, 51], [4, 0, 57], [5, 0, 57], [6, 0, 57], [7, 0, 57], [8, 0, 57], [9, 0, 57], [10, 0, 57], [11, 0, 57], [12, 0, 57], [13, 0, 57], [14, 0, 57], [15, 5, 52], [16, 5, 46], [17, 5, 46], [18, 5, 46], [19, 5, 46], [20, 0, 42], [21, 0, 42], [22, 0, 42], [23, 0, 42], [24, 0, 42], [25, 0, 42], [26, 0, 42], [27, 0, 42], [28, 0, 42], [29, 0, 42], [30, 0, 42], [31, 0, 42], [32, 0, 42], [33, 0, 42], [34, 0, 42], [35, 0, 42], [36, 0, 42], [37, 0, 42], [38, 0, 42], [39, 0, 42], [40, 0, 42], [41, 0, 42], [42, 0, 42], [43, 0, 42], [44, 0, 42], [45, 0, 42], [46, 0, 42], [47, 0, 42], [48, 0, 42], [49, 0, 42], [50, 0, 42], [51, 0, 42], [52, 0, 42], [53, 0, 42], [54, 0, 42], [55, 0, 42], [56, 11, 3], [57, 11, 3], [58, 8, 8], [59, 8, 8], [60, 8, 8], [61, 8, 8], [62, 8, 8], [63, 8, 8], [64, 8, 8], [65, 8, 8]]，期望 [[0, 0, 51], [1, 0, 51], [2, 0, 51], [3, 0, 51], [4, 0, 57], [5, 0, 57], [6, 0, 57], [7, 0, 57], [8, 0, 57], [9, 0, 57], [10, 0, 57], [11, 0, 57], [12, 0, 57], [13, 0, 57], [14, 0, 57], [15, 5, 52], [16, 5, 46], [17, 5, 46], [18, 5, 46], [19, 5, 46], [20, 0, 42], [21, 0, 42], [22, 0, 42], [23, 0, 42], [24, 0, 42], [25, 0, 42], [26, 0, 42], [27, 0, 42], [28, 0, 42], [29, 0, 42], [30, 0, 42], [31, 0, 42], [32, 0, 42], [33, 0, 42], [34, 0, 42], [35, 0, 42], [36, 0, 42], [37, 0, 42], [38, 0, 42], [39, 0, 42], [40, 0, 42], [41, 0, 42], [42, 0, 42], [43, 0, 42], [44, 0, 42], [45, 0, 42], [46, 0, 42], [47, 0, 42], [48, 0, 42], [49, 0, 42], [50, 0, 42], [51, 0, 42], [52, 0, 42], [53, 0, 42], [54, 0, 42], [55, 0, 42], [56, 11, 3], [57, 11, 3], [58, 8, 8], [59, 8, 8], [60, 8, 8], [61, 8, 8], [62, 8, 8], [63, 8, 8], [64, 8, 8], [65, 8, 8]]）
+PASS  walkable ⊆ occupancy
+PASS  collision ⊆ occupancy
+PASS  occlusion ⊆ occupancy
+PASS  doors ⊆ walkable
+PASS  walkable 与 collision 不相交
+PASS  walkable ∪ collision ⊆ occupancy
+PASS  可通行区连通（没有封死的房间）
+PASS  占用区连通
+PASS  doors.png 的每个像素颜色都是合法朝向色
+PASS  门至少覆盖 2 个不同朝向（本例有西门与内门）
+PASS  主视觉可读
+PASS  visual/base.png 实际尺寸 = metadata.visual.size_px（实际 (2832, 3264)，期望 (2832, 3264)）
+PASS  视觉尺寸 ≠ 逻辑 footprint 像素尺寸（视觉 2832×3264 px / 逻辑 (57, 66) 格）
+PASS  视觉 = footprint + 出血（padding=1 格）（实际 (59, 68)，期望 (59, 68)）
+PASS  地基内存在「离占用区超过出血」的格（可用来验透明）
+PASS  占用区之外的格（局部 (52, 0)）在视觉图上是透明的，地图地形能透出来
+PASS  建筑本体格在视觉图上是不透明的
+PASS  门至少 8 道（实际 8）
+PASS  门有 id：door_west_church
+PASS  门 door_west_church 在地基内
+PASS  门 door_west_church 落在占用区内
+PASS  门 door_west_church 可通行（没被墙堵死）
+PASS  门 door_west_church 在 doors 掩码里
+PASS  门 door_west_church 朝向合法：w
+PASS  门 door_west_church 朝外的格不是实体
+PASS  门 door_west_church 的 target「west_porch」能对上房间
+PASS  门有 id：door_aisle_s_to_cloister
+PASS  门 door_aisle_s_to_cloister 在地基内
+PASS  门 door_aisle_s_to_cloister 落在占用区内
+PASS  门 door_aisle_s_to_cloister 可通行（没被墙堵死）
+PASS  门 door_aisle_s_to_cloister 在 doors 掩码里
+PASS  门 door_aisle_s_to_cloister 朝向合法：n
+PASS  门 door_aisle_s_to_cloister 朝外的格不是实体
+PASS  门 door_aisle_s_to_cloister 的 target「cloister」能对上房间
+PASS  门有 id：door_aisle_s_to_cloister_east
+PASS  门 door_aisle_s_to_cloister_east 在地基内
+PASS  门 door_aisle_s_to_cloister_east 落在占用区内
+PASS  门 door_aisle_s_to_cloister_east 可通行（没被墙堵死）
+PASS  门 door_aisle_s_to_cloister_east 在 doors 掩码里
+PASS  门 door_aisle_s_to_cloister_east 朝向合法：n
+PASS  门 door_aisle_s_to_cloister_east 朝外的格不是实体
+PASS  门 door_aisle_s_to_cloister_east 的 target「cloister」能对上房间
+PASS  门有 id：door_cloister_to_east_range
+PASS  门 door_cloister_to_east_range 在地基内
+PASS  门 door_cloister_to_east_range 落在占用区内
+PASS  门 door_cloister_to_east_range 可通行（没被墙堵死）
+PASS  门 door_cloister_to_east_range 在 doors 掩码里
+PASS  门 door_cloister_to_east_range 朝向合法：e
+PASS  门 door_cloister_to_east_range 朝外的格不是实体
+PASS  门 door_cloister_to_east_range 的 target「east_range」能对上房间
+PASS  门有 id：door_cloister_to_south_range_w
+PASS  门 door_cloister_to_south_range_w 在地基内
+PASS  门 door_cloister_to_south_range_w 落在占用区内
+PASS  门 door_cloister_to_south_range_w 可通行（没被墙堵死）
+PASS  门 door_cloister_to_south_range_w 在 doors 掩码里
+PASS  门 door_cloister_to_south_range_w 朝向合法：s
+PASS  门 door_cloister_to_south_range_w 朝外的格不是实体
+PASS  门 door_cloister_to_south_range_w 的 target「south_range」能对上房间
+PASS  门有 id：door_cloister_to_south_range_e
+PASS  门 door_cloister_to_south_range_e 在地基内
+PASS  门 door_cloister_to_south_range_e 落在占用区内
+PASS  门 door_cloister_to_south_range_e 可通行（没被墙堵死）
+PASS  门 door_cloister_to_south_range_e 在 doors 掩码里
+PASS  门 door_cloister_to_south_range_e 朝向合法：s
+PASS  门 door_cloister_to_south_range_e 朝外的格不是实体
+PASS  门 door_cloister_to_south_range_e 的 target「south_range」能对上房间
+PASS  门有 id：door_infirmary_north
+PASS  门 door_infirmary_north 在地基内
+PASS  门 door_infirmary_north 落在占用区内
+PASS  门 door_infirmary_north 可通行（没被墙堵死）
+PASS  门 door_infirmary_north 在 doors 掩码里
+PASS  门 door_infirmary_north 朝向合法：n
+PASS  门 door_infirmary_north 朝外的格不是实体
+PASS  门 door_infirmary_north 的 target「infirmary」能对上房间
+PASS  门有 id：door_cloister_to_east_range_2
+PASS  门 door_cloister_to_east_range_2 在地基内
+PASS  门 door_cloister_to_east_range_2 落在占用区内
+PASS  门 door_cloister_to_east_range_2 可通行（没被墙堵死）
+PASS  门 door_cloister_to_east_range_2 在 doors 掩码里
+PASS  门 door_cloister_to_east_range_2 朝向合法：w
+PASS  门 door_cloister_to_east_range_2 朝外的格不是实体
+PASS  门 door_cloister_to_east_range_2 的 target「east_range」能对上房间
+PASS  至少有一道门通向建筑之外（真正的入口）
+PASS  门 door_west_church 有宽度与穿墙厚度
+PASS  门 door_west_church 打通了
+PASS  门 door_aisle_s_to_cloister 有宽度与穿墙厚度
+PASS  门 door_aisle_s_to_cloister 打通了
+PASS  门 door_aisle_s_to_cloister_east 有宽度与穿墙厚度
+PASS  门 door_aisle_s_to_cloister_east 打通了
+PASS  门 door_cloister_to_east_range 有宽度与穿墙厚度
+PASS  门 door_cloister_to_east_range 打通了
+PASS  门 door_cloister_to_south_range_w 有宽度与穿墙厚度
+PASS  门 door_cloister_to_south_range_w 打通了
+PASS  门 door_cloister_to_south_range_e 有宽度与穿墙厚度
+PASS  门 door_cloister_to_south_range_e 打通了
+PASS  门 door_infirmary_north 有宽度与穿墙厚度
+PASS  门 door_infirmary_north 打通了
+PASS  门 door_cloister_to_east_range_2 有宽度与穿墙厚度
+PASS  门 door_cloister_to_east_range_2 打通了
+PASS  碰撞矩形清单可解析
+PASS  碰撞矩形不为空（31 个）
+PASS  清单与 metadata 的矩形数一致（实际 31，期望 31）
+PASS  每个碰撞矩形都为正且落在地基内
+PASS  碰撞矩形总面积 = 实体格数（不重不漏）（实际 450，期望 450）
+PASS  矩形分解可复现（实际 31，期望 31）
+PASS  Prefab 能加载
+PASS  Prefab 能实例化
+PASS  Prefab 根节点挂了 core/building/building.gd
+PASS  Prefab 实例化后读得到 metadata
+PASS  Prefab 的 building_id 与资产包一致（实际 iserra_monastery，期望 iserra_monastery）
+PASS  Prefab 有子节点「Visual」
+PASS  Prefab 有子节点「Collision」
+PASS  Prefab 有子节点「Occupancy」
+PASS  Prefab 有子节点「WalkableArea」
+PASS  Prefab 有子节点「Doors」
+PASS  Prefab 有子节点「Interaction」
+PASS  Prefab 有子节点「TacticalData」
+PASS  Visual/Base 是 Sprite2D
+PASS  Visual/Base 有贴图
+PASS  Visual/Base 不居中（左上角对齐地基）
+PASS  Visual/Roof 有贴图（屋顶层）
+PASS  屋顶层的 z_index 高于底层
+PASS  碰撞形状数 = metadata 的碰撞矩形数（实际 31，期望 31）
+PASS  门节点数 = metadata 的 doors 数（实际 8，期望 8）
+PASS  Interaction 下每个门都有一个 Area2D
+PASS  TacticalData 带掩体与遮挡视线数据
+PASS  视觉层偏移 = metadata.visual.anchor_offset_px（实际 (-1416.0, -3216.0)，期望 (-1416.0, -3216.0)）
+PASS  中殿内部可通行
+PASS  中殿↔北侧廊的柱廊开口可通行（openings 生效）
+PASS  北侧廊外墙是实体
+PASS  北侧廊外墙仍在占用区内
+PASS  回廊院内可通行
+PASS  教堂西门可通行
+PASS  教堂西门被登记为门
+PASS  建筑本体之外的格不属于建筑
+PASS  能判断出格子落在地基之外
+PASS  中殿有屋顶 → 属于遮挡区（进屋要收屋顶）
+PASS  回廊院露天 → 不属于遮挡区
+PASS  tactical 带 cover_level
+PASS  sorting 带 mode
+PASS  能按 id 取到房间 cloister
+PASS  能按格取到门
+PASS  summarize 含字段「building_id」
+PASS  summarize 含字段「footprint_cells」
+PASS  summarize 含字段「visual_size_px」
+PASS  summarize 含字段「occupied」
+PASS  summarize 含字段「walkable」
+PASS  summarize 含字段「blocked」
+PASS  summarize 含字段「doors」
+PASS  summarize 含字段「prefab_path」
+PASS  坏数据能报出错误码「metadata.no_visual_layer」
+PASS  坏数据能报出错误码「geometry.walkable_outside_occupancy」
+PASS  坏数据能报出错误码「doors.cell_out_of_footprint」
+PASS  坏数据能报出错误码「doors.duplicate_id」
+PASS  坏数据能报出错误码「doors.bad_side」
+PASS  坏数据能报出错误码「collision.empty_rect」
+PASS  坏数据能报出错误码「collision.area_mismatch」
+PASS  校验结果结构含 ok/errors/issues
+PASS  坏数据的 ok = false
+PASS  每条问题都含 code/severity/path/message/detail（Agent 可直接分支）
+PASS  真实建筑资产包 0 错误（问题：[]）
+PASS  真实建筑 Prefab 0 错误
+PASS  list_buildings() 至少列出一座建筑
+PASS  list_buildings() 能找到 iserra_monastery
+PASS  inspect_building() 成功
+PASS  inspect 返回门清单
+PASS  inspect 返回房间清单
+PASS  inspect 返回文件清单
+PASS  validate_building() 通过
+PASS  validate_building() 错误数为 0（实际 0，期望 0）
+PASS  inspect 不存在的建筑 → ok=false
+PASS  缺建筑时报 building.not_found 错误码（实际 building.not_found，期望 building.not_found）
+PASS  示例地图存在
+PASS  示例地图根节点挂了 map_scene.gd
+PASS  示例地图里有 1 座建筑（实际 1，期望 1）
+PASS  地图里的建筑就是 iserra_monastery（实际 iserra_monastery，期望 iserra_monastery）
+PASS  建筑在地图上的地基尺寸 = metadata footprint（实际 (57, 66)，期望 (57, 66)）
+PASS  地图认定中殿内部可通行
+PASS  地图认定柱廊开口可通行
+PASS  地图认定外墙格不可通行
+PASS  地图认定教堂西门格可通行
+PASS  get_building_at 能定位到建筑
+PASS  get_door_at 能取到门
+PASS  建筑之外的格不属于任何建筑（不表态，交回图块规则）
+PASS  建筑占用的格（含实体墙）归属该建筑
+PASS  建筑之外的地形（示例地图铺了草地）照旧可通行
+PASS  get_map_size_cells() 覆盖到整座建筑
+PASS  地图建筑自检 0 问题（实际 0，期望 0）
+PASS  示例地图结构自检通过
+PASS  示例地图出生点可通行
+PASS  示例地图预览图可读
+PASS  预览采样点足够多（实际 62 个）
+PASS  预览图里的建筑像素与 metadata 声明的位置逐点一致（62/62）
+PASS  建筑视觉透明处显示的是地图地形（不透明，不是空洞）
+PASS  放在地图外时报 placement.out_of_bounds
+PASS  示例地图场景存在
+PASS  示例地图预览图存在
+PASS  地图 meta 里登记了建筑（剧情/任务可引用）
+PASS  地图 meta 的 building_id 正确（实际 iserra_monastery，期望 iserra_monastery）
+PASS  地图 meta 的 footprint 与 metadata 一致（实际 [57, 66]，期望 [57, 66]）
+PASS  大型建筑 3/4 投影实验场存在
+PASS  高原修道院 metadata 声明统一投影契约（实际 orthogonal_3q_48_v1，期望 orthogonal_3q_48_v1）
+PASS  高原修道院声明 5 个语义遮挡带（实际 5，期望 5）
+PASS  语义遮挡带按建筑空间命名（实际 ["north_range", "church", "cloister_north", "courtyard_and_wings", "south_gatehouse"]，期望 ["north_range", "church", "cloister_north", "courtyard_and_wings", "south_gatehouse"]）
+PASS  高原修道院地图可加载
+PASS  高原地图与建筑使用同一 projection_id（实际 orthogonal_3q_48_v1，期望 orthogonal_3q_48_v1）
+PASS  投影修正不缩放正交地图（实际 (1.0, 1.0)，期望 (1.0, 1.0)）
+PASS  投影修正不旋转正交地图
+PASS  高原修道院生产验收场景可加载
+PASS  生产地图启用建筑 YSort 域
+PASS  生产玩家根节点与建筑进入同一 YSort 域
+PASS  生产 NPC 根节点与建筑进入同一 YSort 域
+PASS  生产角色视觉以根节点脚点为底边
+PASS  投影实验场可加载
+PASS  实验场启用统一 YSort 容器
+PASS  角色探针与建筑切带处于同一排序域
+PASS  角色探针接入 player 组以驱动屋顶遮挡
+PASS  完整 Base 在运行时生成 5 个正式语义绘制带（实际 5，期望 5）
+PASS  绘制带连续覆盖源纹理，不留缝也不重叠
+PASS  每个切带用底边锚节点 + 向上偏移 Region，并保持 z_index=0
+PASS  运行时切带逐一复用 metadata 语义 id（实际 ["north_range", "church", "cloister_north", "courtyard_and_wings", "south_gatehouse"]，期望 ["north_range", "church", "cloister_north", "courtyard_and_wings", "south_gatehouse"]）
+PASS  生产语义带生成后隐藏原 Base 绘制，不改完整源资产
+PASS  独立 Roof 按 occlusion 掩码在进屋/离屋时收起并恢复
+PASS  临时地图副本写出成功（实际 0，期望 0）
+PASS  临时地图初始 validate-map 通过
+PASS  临时地图里 1 座建筑（实际 1，期望 1）
+WROTE res://.tests_tmp/building_place_test.tscn
+PASS  move_building 成功
+PASS  搬走后重新读回的放置格是 (1,1)（实际 (1, 1)，期望 (1, 1)）
+PASS  搬走不会复制出第二座建筑
+PASS  remove_building 成功
+PASS  拆掉之后地图里没有建筑了（实际 0，期望 0）
+PASS  拆掉之后 validate-map 仍通过
+RESULT: passed=296 failed=0

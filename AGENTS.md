@@ -1,4 +1,4 @@
-﻿# AGENTS.md — Codex 执行规范
+# AGENTS.md — Codex 执行规范
 
 本文件面向 Codex 与任何 AI 开发助手：README 回答“项目是什么”，本文件回答“该怎么改代码、哪些事情不能做”。两者不要重复。
 
@@ -8,11 +8,25 @@
 
 判断任务属于哪个模块：
 
-battle / card / character / effect / grid / ai / equipment / items / progression / world / quest / dialogue / ui / save / content
+battle / card / character / effect / grid / ai / equipment / items / progression / world / quest / dialogue / ui / save / content / **building（大型建筑）**
+
+凡是地图美术任务，必须先在下列三类中选定一种，不能先画图再倒推用途：
+
+| 资产类别 | 判定 | 进入哪条管线 |
+| --- | --- | --- |
+| **Tile（图块）** | 地面、道路、水岸、墙段等需要重复铺设或自动拼接的规则单元 | `docs/world/map_pipeline.md` |
+| **小物件（Prop）** | 树、岩石、箱子、路牌等可独立摆放的小型对象；通常占 1×1 或 2×2 格 | `docs/world/map_pipeline.md`，作为单张透明贴图接入 TileSet |
+| **大型结构（Building / Structure）** | 城堡、修道院、要塞、庄园、巨型遗迹等具有完整轮廓、房间、入口和独立碰撞的整体 | `docs/world/building_pipeline.md`，生成完整建筑资产包与独立 Godot 场景 |
+
+**城堡等大型结构禁止为了迁就 TileSet 而随意切成几十块 Tile。**必须先完成整座建筑的需求分析与概念设计，再制作完整视觉；只有真正需要重复铺设的通用构件才可另立图块需求。
 
 ### 第二步：读取局部文档
 
 优先读取 `docs/<模块>/` 下的 README.md → rules.md → architecture.md，而不是扫描整个项目。新建内容优先看 `content/` 目录与 `docs/development/data_guides.md`。
+
+大型建筑（不做成图块、整张图 + 独立逻辑）看 `docs/world/building_pipeline.md`；地块地形/道具看 `docs/world/map_pipeline.md`。
+
+涉及生图的大型建筑任务统一按[新版制作手册](docs/world/map_production_workflow.md)：**需求/概念 → 平面与灰盒、独立碰撞/入口 → 结构试玩 → 内置imagegen分层材质 → Godot灰盒alpha/逻辑像素/色板约束 → 实际画面与玩法验收 → 版本化交付**。非技术的美术风格、世界观、比例和内容需求继续保留。参考已确认的dev/hall_art_v1；不得从生成图推导碰撞，也不得把旧安装/采样/切图方案作为现行路线。
 
 ### 第三步：检查依赖
 
@@ -41,6 +55,13 @@ C:\1\Godot_v4.7.1-stable_win64_console.exe --headless --path C:\游戏 --script 
 
 修改核心系统后还需验证：主场景/战斗场景无头加载无脚本错误、已有卡牌/角色正常、已有存档可读取。
 
+改地图/建筑管线时至少跑：
+
+```
+… --script tests\map\test_godot_map_pipeline.gd     （48px 地图管线）
+… --script tests\map\test_building_pipeline.gd      （大型建筑管线）
+```
+
 ### 第六步：更新文档
 
 如果修改改变了系统行为，同步更新对应 `docs/<模块>/rules.md` 或 `architecture.md`，并追加 `docs/development/changelog.md`。
@@ -62,6 +83,7 @@ C:\1\Godot_v4.7.1-stable_win64_console.exe --headless --path C:\游戏 --script 
 | 目录 | 内容 |
 | --- | --- |
 | core/ | 规则与通用系统（脚本） |
+| core/building/ | **大型建筑**：Building / BuildingData / BuildingLibrary / BuildingPlacer / BuildingValidator / BuildingMask |
 | content/ | 具体内容数据（JSON / .tres） |
 | world/ | 世界场景 |
 | ui/ | 界面逻辑 |
@@ -69,4 +91,19 @@ C:\1\Godot_v4.7.1-stable_win64_console.exe --headless --path C:\游戏 --script 
 | tests/ | 无头测试 |
 | docs/ | 模块文档 |
 | assets/ | 美术资源 |
+| assets/buildings/ | **大型建筑资产包**（visual + masks + metadata + Prefab；规范见 docs/world/building_pipeline.md） |
+| maps/ | 48px Godot TileMap/TileSet 地图管线：见 docs/world/map_pipeline.md，缺素材见 docs/art/asset_request.md |
+| docs/art/ | **美术规格**（style_guide.md：48px 俯视黑暗奇幻）+ 素材需求单 |
+| docs/world/building_pipeline.md | **大型建筑管线**（标准资产包 / 掩码规范 / 高层 API / 校验） |
 | 编辑器/ | Excel 数据源与内容工具 |
+
+## 网格口径（别搞混）
+
+**除战斗地图外，游戏地图一律正方形网格**（48 px = 1 米，1 格 = 1 米）。
+
+| 地图 | 网格 | 代码 |
+| --- | --- | --- |
+| 大世界 / 地点地图 | 正方形 | `core/world/map_scene.gd` + `TileMapLayer` |
+| 战斗地图 | 六边形（尖顶朝上，odd-r） | `core/grid/hex_grid.gd` + `core/battle/battle_map.gd` |
+
+大型建筑只放在正方形网格的地图上；战斗侧只读建筑的 `tactical` / `collision` 数据，不读它的几何。

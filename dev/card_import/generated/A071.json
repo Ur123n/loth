@@ -1,0 +1,33 @@
+{
+  "id": "A071",
+  "name": "灾梦：被遗忘者",
+  "character": "艾莉丝",
+  "rarity": "Rare",
+  "category": "道途专属卡牌",
+  "path": "梦魇行者",
+  "card_type": "攻击",
+  "cost": 2,
+  "load": 3,
+  "target_type": "Enemy",
+  "min_range": 1,
+  "range": 3,
+  "target_spec": "1–3",
+  "area": 0,
+  "keywords": [
+    "灾梦",
+    "消耗"
+  ],
+  "tags": [
+    "灾梦",
+    "DebuffPayoff"
+  ],
+  "description": "条件：目标同时拥有标记与虚弱。造成26伤害；随后可消耗目标至多3层标记/虚弱，每消耗1层再造成4伤害；之后清除目标剩余的标记与虚弱。结算后进入沉梦。",
+  "source_effect": "造成26伤害；随后可消耗目标至多3层标记/虚弱，每消耗1层再造成4伤害；之后清除目标剩余的标记与虚弱。结算后进入沉梦。",
+  "source_file": "艾莉丝_完整卡组_v0.1.md",
+  "source_line": 125,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [],
+  "implementation_status": "pending"
+}

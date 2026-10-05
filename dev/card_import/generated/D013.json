@@ -1,0 +1,31 @@
+{
+  "id": "D013",
+  "name": "枪柄震击",
+  "character": "迪马斯",
+  "rarity": "Common",
+  "category": "道途专属卡牌",
+  "path": "侠盗",
+  "card_type": "攻击",
+  "cost": 1,
+  "load": 1,
+  "target_type": "Enemy",
+  "min_range": 1,
+  "range": 1,
+  "target_spec": "1",
+  "area": 0,
+  "keywords": [],
+  "tags": [
+    "Melee",
+    "Pistol",
+    "Control"
+  ],
+  "description": "造成6伤害并推动目标1格。",
+  "source_effect": "造成6伤害并推动目标1格。",
+  "source_file": "迪马斯_完整卡组_v0.3.md",
+  "source_line": 126,
+  "icon": "",
+  "art": "",
+  "animation": "",
+  "effects": [],
+  "implementation_status": "pending"
+}

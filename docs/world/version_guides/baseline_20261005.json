@@ -1,0 +1,694 @@
+{
+  "snapshot_date": "2026-10-05",
+  "scope": "file-level source evidence; no fresh runtime acceptance",
+  "monastery": {
+    "anchor": {
+      "mode": "bottom_center",
+      "note": "节点原点落在 footprint 的底部中心，Y 轴排序才会按「脚下」前后遮挡",
+      "origin_cell": [
+        24.0,
+        58.0
+      ]
+    },
+    "asset_path": "res://assets/buildings/iserra_monastery_highland",
+    "building_id": "iserra_monastery_highland",
+    "collision": {
+      "layer": 2,
+      "mask": 1,
+      "note": "由 masks/collision.png 贪心分解而来，面积等于 blocked_cells.count",
+      "rect_count": 5,
+      "rects": [
+        [
+          0,
+          0,
+          48,
+          32
+        ],
+        [
+          0,
+          32,
+          14,
+          26
+        ],
+        [
+          36,
+          32,
+          12,
+          26
+        ],
+        [
+          14,
+          49,
+          9,
+          9
+        ],
+        [
+          25,
+          49,
+          11,
+          9
+        ]
+      ]
+    },
+    "display_name": "伊瑟拉修道院·高原边境",
+    "display_name_en": "Iserra Monastery, Highland Frontier",
+    "footprint": {
+      "note": "逻辑地基。左上角为 (0,0)，与视觉图的 (0,0) 像素对齐",
+      "origin_cell": [
+        0,
+        0
+      ],
+      "size_cells": [
+        48,
+        58
+      ],
+      "size_px": [
+        2304,
+        2784
+      ]
+    },
+    "kind": "large_building",
+    "prefab_path": "res://assets/buildings/iserra_monastery_highland/IserraMonasteryHighland.tscn",
+    "projection_id": "orthogonal_3q_48_v1",
+    "schema": "building/1",
+    "sorting": {
+      "bands": [
+        {
+          "id": "north_range",
+          "source_rect_tiles": [
+            0.0,
+            0.0,
+            50.0,
+            13.0
+          ]
+        },
+        {
+          "id": "church",
+          "source_rect_tiles": [
+            0.0,
+            13.0,
+            50.0,
+            20.0
+          ]
+        },
+        {
+          "id": "cloister_north",
+          "source_rect_tiles": [
+            0.0,
+            33.0,
+            50.0,
+            6.0
+          ]
+        },
+        {
+          "id": "courtyard_and_wings",
+          "source_rect_tiles": [
+            0.0,
+            39.0,
+            50.0,
+            9.0
+          ]
+        },
+        {
+          "id": "south_gatehouse",
+          "source_rect_tiles": [
+            0.0,
+            48.0,
+            50.0,
+            12.0
+          ]
+        }
+      ],
+      "mode": "y_sort",
+      "occluder": true,
+      "roof_layer_z": 12.0,
+      "y_sort_origin": "bottom_center",
+      "z_index": 0.0
+    },
+    "source": {
+      "generated_by": "maps/godot/tools/build_building.gd",
+      "generated_for": "godot --headless --path C:\\游戏 --script maps/godot/tools/build_building.gd",
+      "plan": "",
+      "spec": "res://assets/buildings/iserra_monastery_highland/building.spec.json"
+    },
+    "tactical": {
+      "blocks_los": true,
+      "cover": 0.9,
+      "cover_level": "high",
+      "cover_source": "collision",
+      "enterable": false,
+      "height_level": 3.0,
+      "tactical_flags": {
+        "chokepoints": [
+          "south_gate"
+        ],
+        "cremation_service": true,
+        "defensible": true,
+        "frontier_shelter": true,
+        "open_courtyard": [
+          "central_garth"
+        ]
+      }
+    },
+    "tile_size": [
+      48,
+      48
+    ],
+    "visual": {
+      "anchor_offset_px": [
+        -1200.0,
+        -2832.0
+      ],
+      "clip_to_logic": false,
+      "layers": [
+        {
+          "name": "Shadow",
+          "origin_tile": [
+            -1,
+            -1
+          ],
+          "path": "res://assets/buildings/iserra_monastery_highland/visual/shadow.png",
+          "role": "shadow",
+          "size_px": [
+            2400,
+            2880
+          ],
+          "size_tiles": [
+            50,
+            60
+          ],
+          "source": "res://assets/buildings/iserra_monastery_highland/visual/source_shadow.png",
+          "visible": true,
+          "z_index": -1
+        },
+        {
+          "name": "Base",
+          "origin_tile": [
+            -1,
+            -1
+          ],
+          "path": "res://assets/buildings/iserra_monastery_highland/visual/base.png",
+          "role": "base",
+          "size_px": [
+            2400,
+            2880
+          ],
+          "size_tiles": [
+            50,
+            60
+          ],
+          "source": "res://assets/buildings/iserra_monastery_highland/visual/source_structure.png",
+          "visible": true,
+          "z_index": 0
+        },
+        {
+          "name": "WarmLight",
+          "origin_tile": [
+            -1,
+            -1
+          ],
+          "path": "res://assets/buildings/iserra_monastery_highland/visual/warm_light.png",
+          "role": "detail",
+          "size_px": [
+            2400,
+            2880
+          ],
+          "size_tiles": [
+            50,
+            60
+          ],
+          "source": "res://assets/buildings/iserra_monastery_highland/visual/source_warm_light.png",
+          "visible": true,
+          "z_index": 12
+        }
+      ],
+      "note": "视觉尺寸与逻辑 footprint 故意不绑定（本建筑视觉 2400×2880 像素，逻辑 48×58 格）；anchor_offset_px = 贴图相对节点原点的偏移",
+      "origin_px_in_source": [
+        0,
+        0
+      ],
+      "origin_tile": [
+        -1,
+        -1
+      ],
+      "padding_tiles": 1,
+      "size_px": [
+        2400,
+        2880
+      ],
+      "size_tiles": [
+        50,
+        60
+      ],
+      "source_origin_tile": [
+        1,
+        1
+      ],
+      "tile_size": [
+        48,
+        48
+      ]
+    },
+    "rooms": {
+      "type": "list",
+      "count": 8
+    },
+    "doors": {
+      "type": "list",
+      "count": 1
+    },
+    "interactions": {
+      "type": "NoneType",
+      "count": null
+    },
+    "masks": {
+      "type": "dict",
+      "count": null
+    },
+    "blocked_cells": {
+      "type": "dict",
+      "count": 2392
+    },
+    "walkable_cells": {
+      "type": "dict",
+      "count": 392
+    },
+    "occupied_cells": {
+      "type": "dict",
+      "count": 2784
+    },
+    "occlusion_cells": {
+      "type": "dict",
+      "count": 110
+    }
+  },
+  "monastery_markers": [
+    "spawn",
+    "gate",
+    "story_trigger",
+    "skill_light",
+    "battle_trigger",
+    "church",
+    "cloister",
+    "bell_tower",
+    "hospice",
+    "crematory",
+    "herb_garden",
+    "highland_pass"
+  ],
+  "leyton": [
+    {
+      "id": "M01",
+      "name": "中心广场·河流南绕",
+      "size": [
+        96,
+        80
+      ],
+      "spawn": [
+        40,
+        40
+      ],
+      "structures": 31,
+      "props": 17,
+      "prefabs": [],
+      "pattern_count": 26,
+      "exits": [
+        {
+          "edge": "north",
+          "enabled": true,
+          "offset": 45,
+          "to": "M02:south",
+          "width": 6
+        },
+        {
+          "edge": "south",
+          "enabled": true,
+          "offset": 45,
+          "to": "M03:north",
+          "width": 6
+        },
+        {
+          "edge": "west",
+          "enabled": true,
+          "offset": 37,
+          "to": "M04:east",
+          "width": 6
+        },
+        {
+          "edge": "east",
+          "enabled": true,
+          "mode": "abstract_residential",
+          "offset": 37,
+          "to": "M08:west",
+          "width": 6
+        }
+      ],
+      "gate": []
+    },
+    {
+      "id": "M02",
+      "name": "城北贵族住宅区",
+      "size": [
+        88,
+        80
+      ],
+      "spawn": [
+        44,
+        5
+      ],
+      "structures": 34,
+      "props": 14,
+      "prefabs": [],
+      "pattern_count": 34,
+      "exits": [
+        {
+          "edge": "north",
+          "enabled": true,
+          "offset": 41,
+          "to": "M05:south",
+          "width": 6
+        },
+        {
+          "edge": "south",
+          "enabled": true,
+          "offset": 41,
+          "to": "M01:north",
+          "width": 6
+        }
+      ],
+      "gate": []
+    },
+    {
+      "id": "M03",
+      "name": "城南贫民窟",
+      "size": [
+        96,
+        88
+      ],
+      "spawn": [
+        48,
+        4
+      ],
+      "structures": 43,
+      "props": 27,
+      "prefabs": [],
+      "pattern_count": 29,
+      "exits": [
+        {
+          "edge": "north",
+          "enabled": true,
+          "offset": 45,
+          "to": "M01:south",
+          "width": 6
+        },
+        {
+          "edge": "south",
+          "enabled": true,
+          "offset": 44,
+          "to": "M06:north",
+          "width": 6
+        }
+      ],
+      "gate": []
+    },
+    {
+      "id": "M04",
+      "name": "城西商业区",
+      "size": [
+        96,
+        80
+      ],
+      "spawn": [
+        40,
+        40
+      ],
+      "structures": 28,
+      "props": 10,
+      "prefabs": [
+        {
+          "kind": "bridge",
+          "label": "货运石桥",
+          "prefab": "res://assets/buildings/leyton_cargo_bridge/LeytonCargoBridge.tscn",
+          "rect": [
+            42,
+            59,
+            12,
+            11
+          ]
+        }
+      ],
+      "pattern_count": 19,
+      "exits": [
+        {
+          "edge": "west",
+          "enabled": true,
+          "offset": 37,
+          "to": "M07:east",
+          "width": 6
+        },
+        {
+          "edge": "east",
+          "enabled": true,
+          "offset": 37,
+          "to": "M01:west",
+          "width": 6
+        }
+      ],
+      "gate": []
+    },
+    {
+      "id": "M05",
+      "name": "北门与城外",
+      "size": [
+        88,
+        72
+      ],
+      "spawn": [
+        44,
+        55
+      ],
+      "structures": 3,
+      "props": 0,
+      "prefabs": [],
+      "pattern_count": 0,
+      "exits": [
+        {
+          "edge": "north",
+          "enabled": false,
+          "offset": 41,
+          "to": "world:north",
+          "width": 6
+        },
+        {
+          "edge": "south",
+          "enabled": true,
+          "offset": 41,
+          "to": "M02:north",
+          "width": 6
+        }
+      ],
+      "gate": [
+        41,
+        61,
+        6,
+        11
+      ]
+    },
+    {
+      "id": "M06",
+      "name": "南门与城外",
+      "size": [
+        88,
+        72
+      ],
+      "spawn": [
+        44,
+        26
+      ],
+      "structures": 4,
+      "props": 0,
+      "prefabs": [],
+      "pattern_count": 0,
+      "exits": [
+        {
+          "edge": "north",
+          "enabled": true,
+          "offset": 41,
+          "to": "M03:south",
+          "width": 6
+        },
+        {
+          "edge": "south",
+          "enabled": false,
+          "offset": 41,
+          "to": "world:south",
+          "width": 6
+        }
+      ],
+      "gate": [
+        41,
+        0,
+        6,
+        11
+      ]
+    },
+    {
+      "id": "M07",
+      "name": "西门与城外",
+      "size": [
+        96,
+        80
+      ],
+      "spawn": [
+        80,
+        40
+      ],
+      "structures": 5,
+      "props": 0,
+      "prefabs": [
+        {
+          "kind": "gatehouse",
+          "label": "西门楼",
+          "prefab": "res://assets/buildings/leyton_west_gatehouse/LeytonWestGatehouse.tscn",
+          "rect": [
+            85,
+            32,
+            11,
+            16
+          ],
+          "wall_walk_texture": "res://assets/buildings/leyton_west_gatehouse/source/registered_art_v1/wall_walk_strip.png"
+        }
+      ],
+      "pattern_count": 0,
+      "exits": [
+        {
+          "edge": "west",
+          "enabled": false,
+          "offset": 37,
+          "to": "world:west",
+          "width": 6
+        },
+        {
+          "edge": "east",
+          "enabled": true,
+          "offset": 37,
+          "to": "M04:west",
+          "width": 6
+        }
+      ],
+      "gate": [
+        85,
+        37,
+        11,
+        6
+      ]
+    },
+    {
+      "id": "M08",
+      "name": "东门与城外",
+      "size": [
+        96,
+        72
+      ],
+      "spawn": [
+        18,
+        36
+      ],
+      "structures": 4,
+      "props": 0,
+      "prefabs": [],
+      "pattern_count": 0,
+      "exits": [
+        {
+          "edge": "west",
+          "enabled": true,
+          "mode": "abstract_residential",
+          "offset": 33,
+          "to": "M01:east",
+          "width": 6
+        },
+        {
+          "edge": "east",
+          "enabled": false,
+          "offset": 33,
+          "to": "world:east",
+          "width": 6
+        }
+      ],
+      "gate": [
+        0,
+        33,
+        11,
+        6
+      ]
+    }
+  ],
+  "source_sha256": {
+    "assets/buildings/iserra_monastery_highland/IserraMonasteryHighland.tscn": "1aebb574a6911bb06c8ff12a480f6b97bca51bdf8ddbb6868568fa51ac457e09",
+    "assets/buildings/iserra_monastery_highland/building.spec.json": "31a8c1acd75bd2851f001f4c967ba00c2639b8d10551e6761a4974663e01c07a",
+    "assets/buildings/iserra_monastery_highland/collision/collision_rects.json": "72343703f6d713406c15c7dc332923d86488d5354d8ba897ff92b41e2e6eb0a2",
+    "assets/buildings/iserra_monastery_highland/masks/collision.png": "eecd030b97b818427b02739af956547bcb68e48b582fe36367bc83cfb5beb91c",
+    "assets/buildings/iserra_monastery_highland/masks/doors.png": "09e91ec83a32c22ee485156301c3e379c06818cac08f508fe71ab1a0e5d13439",
+    "assets/buildings/iserra_monastery_highland/masks/legend.json": "264756d33e5bc3c893f3d929c0d3ba8f165ff329af60b5ea7843340a3fe5d138",
+    "assets/buildings/iserra_monastery_highland/masks/occlusion.png": "91c141c072a06f3f91ad7c0252295e04f6c2d2dd1132bd75a87aba769ac8390c",
+    "assets/buildings/iserra_monastery_highland/masks/occupancy.png": "6ebec123f9e8b22c0a76f110377f10cd1058393fdd2ba5f73df50407f0ad9fbc",
+    "assets/buildings/iserra_monastery_highland/masks/walkable.png": "f685216fd36030a33c4e4b8e2b41f62dc36e3cc07c91b54cb59cf2626a899811",
+    "assets/buildings/iserra_monastery_highland/metadata/building.json": "b3e708867cf0acba4f30cefe54edd84b3d3bc5a9b68d9f6ecf9cf087c32c10d3",
+    "assets/buildings/iserra_monastery_highland/preview/debug_overlay.png": "a88da1c5186ff079e12e46a9e1aa3edc5069a703d5cf32a1e314accb3bf9a77d",
+    "assets/buildings/iserra_monastery_highland/preview/preview.png": "e72864371d3055c5351400e1db67ab965d751866ed1c1be3b1388dabe9f1ad7d",
+    "assets/buildings/iserra_monastery_highland/visual/base.png": "400f581acaf2c4d24aaafab6288f65b0b6abcb0720b37551de885d00c39e95d1",
+    "assets/buildings/iserra_monastery_highland/visual/shadow.png": "43adf692c2aa615984799bff2bb9435273cb30bff772acb852a8de4d952fecbb",
+    "assets/buildings/iserra_monastery_highland/visual/source_shadow.png": "b2aa9665adcb3cfff93be35fc297cb74d699c9b27fc0ea4499b6b794624c232d",
+    "assets/buildings/iserra_monastery_highland/visual/source_structure.png": "b0704514d134bfd4c7fcff27aaccc21a36a47a3e3043ebcfb94a6e898069b725",
+    "assets/buildings/iserra_monastery_highland/visual/source_warm_light.png": "d29482ced944fa31fc85cfbdfd74c0c66e0a787e560367716d5208551b0aeb2d",
+    "assets/buildings/iserra_monastery_highland/visual/warm_light.png": "b82d577819126b488c9bb7a7ff601e945c04698257b58f3f3765f57c786ed8f8",
+    "core/world/main.gd": "613229156b5ac8ed429d06282a68e6f17e08484cc15b1e4fd386c90f2edc6b15",
+    "dev/hall_art_v1/surface.gdshader": "43d0b057849a19ce3aaa4745665983c440ff35bbd6817da71a3f87b8f2a41709",
+    "dev/leyton_world_demo/monastery.gd": "1d7780376fbaa805d31ce702b8db6f0e0d4a9ab8dcc58a353e1fb545fa89f91b",
+    "dev/leyton_world_demo/monastery.tscn": "01a54ede0b88d43a128dcbb9d17f7eda528ab1524d393ec4030ea6426c3bdabe",
+    "dev/leyton_world_demo/tools/run_capture.ps1": "24efbe0ea0c70fc3407f40e05797ab34d9e33591afc9c4f2774676ce5be0dfd5",
+    "dev/leyton_world_demo/world.json": "a5c8470751687232c5495b46ab7ad56f12f71dceb846a087a3a31d34f0e3cfab",
+    "dev/leyton_world_demo/world_demo.gd": "1d2062be294f04a66d3c0ab9b450bf5b84d122c985cdeeac4aa85ea95d076083",
+    "maps/godot/scenes/iserra_monastery_highlands.tscn": "95ae8a9d8fbfe2925f728839e7bc8f50cbd7835d368ca27f792490a151c281f9",
+    "maps/godot/tilesets/urban_rework_v1.tres": "82c168ba5dbff3deebc75bc911f9347b1ff5665dcb3b4a6471c1c2a6610fa4c6",
+    "maps/godot/tools/make_iserra_monastery_map.gd": "f3c992a07644d6b5e35251d85bd953a030855ff128f619a1090f43f7c608be98",
+    "maps/godot/tools/map_object_placer.gd": "6b99670292925c52f53b557315b22771fb4df378b23e2eb5c27dfd3b50eb9318",
+    "maps/godot/tools/refactor_iserra_map.gd": "89eb31261e34f51b21ae93bd8d43f6e66e534cbdb1d651624d5f99a0cd8e7588",
+    "maps/leyton/graybox_map.gd": "c6cc44c1b94094328b88594e3eb2fbb70acae8fc573a16aa8150219041e48ebf",
+    "maps/leyton/slice.json": "e26a1b4993e387416e647abb653313168854313f21f374dde781e65aff448665",
+    "maps/leyton/street_sample_v3/capture.ps1": "94a895b8e0513517fa63579626074a5e833e2d34f4342278e9e70b520096e1e4",
+    "maps/leyton/street_sample_v3/layout.json": "3a82a2c2de1b3ddebf505e1398d917ac0d84d1f3e050cff2bf31be6eccb8a3a9",
+    "maps/leyton/street_sample_v3/map.gd": "8d32fa03bc04a29fdfe26eba8179dfd520c3605deebdb7b0947c6000068b1d98",
+    "maps/leyton/street_sample_v3/viewer.gd": "bddf500790a82279e5d3112c49b052f35a7e30635862990705fd2e7349780427",
+    "maps/leyton/tools/prepare_atlas.gd": "9d58e8888786f7b9b08b6d4d218faa8a0fd8357e11d018adb5e9ea85e6f0bf0b",
+    "maps/leyton/tools/run_atlas_capture.ps1": "c36a5b6bb8b4c82838030d24b9e3a461ace96b98333a2d8cd5035be68922a844",
+    "maps/leyton/tools/validate.ps1": "3e9e8b0bbbb631e79a60635a2cd4867d8fe112ec55fb7d9344f220c4961fcc6e",
+    "maps/leyton/viewer.gd": "88dd0a2884fc10cda5dbfcb992237a23d0705f6d87993eced519e6ff2ac7fe2f",
+    "project.godot": "91ebf53d601a59396cbb5ae3835740aeaba5d5e3c688d318bef7510ae27f942b",
+    "tests/map/test_leyton_world_demo.gd": "87652e01e6c523c04983ce82a4e1c4497790a5e132083399359b70ebf4623126",
+    "world/map/MainHighlandMap.tscn": "9959ed62f9a7e95110a70d70b882ba9dc13cd8f19e6990a8529eb6db9f8764ad"
+  },
+  "art_source_pairs": {
+    "structure": {
+      "source": "C:\\美术素材制作\\build\\image26_iserra_monastery_orthographic\\structure.png",
+      "runtime_source": "C:\\游戏\\assets\\buildings\\iserra_monastery_highland\\visual\\source_structure.png",
+      "source_sha256": "b0704514d134bfd4c7fcff27aaccc21a36a47a3e3043ebcfb94a6e898069b725",
+      "runtime_source_sha256": "b0704514d134bfd4c7fcff27aaccc21a36a47a3e3043ebcfb94a6e898069b725",
+      "equal": true
+    },
+    "shadow": {
+      "source": "C:\\美术素材制作\\build\\image26_iserra_monastery_orthographic\\shadow.png",
+      "runtime_source": "C:\\游戏\\assets\\buildings\\iserra_monastery_highland\\visual\\source_shadow.png",
+      "source_sha256": "b2aa9665adcb3cfff93be35fc297cb74d699c9b27fc0ea4499b6b794624c232d",
+      "runtime_source_sha256": "b2aa9665adcb3cfff93be35fc297cb74d699c9b27fc0ea4499b6b794624c232d",
+      "equal": true
+    },
+    "warm_light": {
+      "source": "C:\\美术素材制作\\build\\image26_iserra_monastery_orthographic\\warm_light.png",
+      "runtime_source": "C:\\游戏\\assets\\buildings\\iserra_monastery_highland\\visual\\source_warm_light.png",
+      "source_sha256": "d29482ced944fa31fc85cfbdfd74c0c66e0a787e560367716d5208551b0aeb2d",
+      "runtime_source_sha256": "d29482ced944fa31fc85cfbdfd74c0c66e0a787e560367716d5208551b0aeb2d",
+      "equal": true
+    }
+  }
+}

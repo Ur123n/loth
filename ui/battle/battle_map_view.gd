@@ -3,7 +3,8 @@ extends Node2D
 
 ## 战斗地图表现层：把图格数据绘制为彩色六边形（美术占位）。
 
-var tile_size: float = 44.0
+## 兼容旧接口保留 tile_size 名称；实际语义是六边形边长/外接圆半径。
+var tile_size: float = HexGrid.DEFAULT_SIDE_LENGTH
 var _reachable_overlays: Array[Polygon2D] = []
 
 
