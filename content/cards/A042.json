@@ -28,7 +28,19 @@
   "icon": "",
   "art": "",
   "animation": "",
-  "effects": [],
-  "mechanism_ids": [],
-  "implementation_status": "design_only"
+  "effects": [
+    {
+      "logic": "inspect_top_cards",
+      "count": 5,
+      "pick_to_hand": false,
+      "pick_to_discard": 0,
+      "discard_up_to": 2,
+      "reorder_remaining": true
+    }
+  ],
+  "mechanism_ids": [
+    "effects.inspect_top_cards",
+    "play_rules.three_dreams"
+  ],
+  "implementation_status": "supported"
 }

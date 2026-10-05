@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
   "purpose": "design_only mechanism planning; family matches are candidates, not runtime support",
-  "total": 178,
+  "total": 177,
   "families": {
     "player_choice": {
       "name": "玩家选择与随机展示",
-      "count": 34,
+      "count": 33,
       "card_ids": [
         "A023",
         "A033",
@@ -13,7 +13,6 @@
         "A037",
         "A038",
         "A040",
-        "A042",
         "A050",
         "A051",
         "A055",
@@ -45,13 +44,12 @@
     },
     "pile_operations": {
       "name": "抽牌堆、弃牌堆、牌库与复制品",
-      "count": 20,
+      "count": 19,
       "card_ids": [
         "A033",
         "A037",
         "A038",
         "A041",
-        "A042",
         "A044",
         "A051",
         "A055",
@@ -704,16 +702,6 @@
       "description": "从弃牌堆拿回1张非Power牌；该牌下一次打出后消耗。",
       "source_file": "艾莉丝_完整卡组_重制v1.0.md",
       "source_line": 66
-    },
-    {
-      "id": "A042",
-      "families": [
-        "player_choice",
-        "pile_operations"
-      ],
-      "description": "查看抽牌堆顶5张；可将其中至多2张置入弃牌堆，其余任意排序。",
-      "source_file": "艾莉丝_完整卡组_重制v1.0.md",
-      "source_line": 67
     },
     {
       "id": "A043",

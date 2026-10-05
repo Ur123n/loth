@@ -5,4 +5,5 @@ extends Resource
 @export var count: int = 0
 @export var pick_to_hand: bool = false
 @export var pick_to_discard: int = 0
+@export var discard_up_to: int = 0
 @export var reorder_remaining: bool = true

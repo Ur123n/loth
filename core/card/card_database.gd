@@ -354,6 +354,7 @@ func _parse_effect(data) -> Resource:
 			inspect.count = int(data.get("count", 0))
 			inspect.pick_to_hand = bool(data.get("pick_to_hand", false))
 			inspect.pick_to_discard = int(data.get("pick_to_discard", 0))
+			inspect.discard_up_to = int(data.get("discard_up_to", 0))
 			inspect.reorder_remaining = bool(data.get("reorder_remaining", true))
 			return inspect
 		"discard":

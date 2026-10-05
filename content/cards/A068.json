@@ -40,6 +40,7 @@
       "count": 3,
       "pick_to_hand": true,
       "pick_to_discard": 0,
+      "discard_up_to": 0,
       "reorder_remaining": true
     }
   ],

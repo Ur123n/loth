@@ -723,14 +723,14 @@ func _build_ui() -> void:
 
 
 func _on_card_choice_requested(prompt: String, options: Array) -> void:
-	_card_choice_panel.show_choices(prompt, options)
+	_card_choice_panel.show_choices(prompt, options, _battle_manager.card_choice_can_skip())
 
 
 func _on_card_choice_selected(index: int) -> void:
 	_card_choice_panel.hide()
 	if not _battle_manager.choose_card_option(index):
 		_card_choice_panel.show_choices(_battle_manager.card_choice_prompt(),
-			_battle_manager.card_choice_options())
+			_battle_manager.card_choice_options(), _battle_manager.card_choice_can_skip())
 		return
 	_hand_ui.refresh()
 	_refresh_current_label()

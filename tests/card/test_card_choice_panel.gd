@@ -36,6 +36,12 @@ func _process(_delta: float) -> bool:
 		panel.show_choices("全部可选牌", many)
 		var scroll := layout.get_child(1) as ScrollContainer
 		okay = options.get_child_count() == 12 and scroll.custom_minimum_size.y <= 464.0
+	if okay:
+		panel.show_choices("可选弃牌", [first, second], true)
+		okay = options.get_child_count() == 3
+		if okay:
+			(options.get_child(2) as Button).pressed.emit()
+			okay = picked[0] == -2
 	host.free()
 	print("RESULT: panel_choice=%s failed=%d" % [str(okay), 0 if okay else 1])
 	quit(0 if okay else 1)

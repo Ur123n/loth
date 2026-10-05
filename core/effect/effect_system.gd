@@ -901,9 +901,10 @@ func request_top_inspection(unit: BattleUnit, effect: InspectTopCardsEffect) -> 
 	for i in mini(effect.count, unit.draw_pile.size()):
 		options.append(unit.draw_pile.pop_back())
 	var phase := "hand" if effect.pick_to_hand else (
-		"discard" if effect.pick_to_discard > 0 else "order")
+		"discard" if effect.pick_to_discard > 0 or effect.discard_up_to > 0 else "order")
 	_pending_card_choice = {"kind": "inspect_top", "unit": unit, "options": options,
 		"phase": phase, "discard_left": effect.pick_to_discard,
+		"discard_optional_left": effect.discard_up_to,
 		"reorder": effect.reorder_remaining, "ordered": []}
 	if phase == "order" and (not effect.reorder_remaining or options.size() <= 1):
 		_finish_top_inspection()
@@ -943,13 +944,22 @@ func card_choice_options() -> Array:
 	return _pending_card_choice.get("options", []).duplicate()
 
 
+func card_choice_can_skip() -> bool:
+	return _pending_card_choice.get("kind", "") == "inspect_top" \
+		and _pending_card_choice.get("phase", "") == "discard" \
+		and int(_pending_card_choice.get("discard_left", 0)) == 0 \
+		and int(_pending_card_choice.get("discard_optional_left", 0)) > 0
+
+
 func card_choice_prompt() -> String:
 	if _pending_card_choice.is_empty():
 		return ""
 	if _pending_card_choice.get("kind", "pile") == "inspect_top":
 		match _pending_card_choice["phase"]:
 			"hand": return "从查看的顶牌中选择 1 张加入手牌"
-			"discard": return "从查看的顶牌中选择 1 张加入弃牌堆"
+			"discard":
+				return "可选择 1 张弃置，或结束弃牌" if card_choice_can_skip() \
+					else "从查看的顶牌中选择 1 张加入弃牌堆"
 			"order": return "选择下一张置于最上方（按牌顶到牌底排序）"
 	if _pending_card_choice["source"] == "hand" and _pending_card_choice["grant_retain_selected"]:
 		return "选择 1 张其他手牌获得保留"
@@ -960,6 +970,8 @@ func card_choice_prompt() -> String:
 func choose_card_option(index: int) -> bool:
 	if _pending_card_choice.is_empty():
 		return false
+	if index == -2:
+		return skip_card_choice()
 	var options: Array = _pending_card_choice["options"]
 	if index < 0 or index >= options.size():
 		return false
@@ -1004,6 +1016,18 @@ func choose_card_option(index: int) -> bool:
 	return true
 
 
+func skip_card_choice() -> bool:
+	if not card_choice_can_skip():
+		return false
+	_pending_card_choice["discard_optional_left"] = 0
+	var options: Array = _pending_card_choice["options"]
+	if _pending_card_choice["reorder"] and options.size() > 1:
+		_pending_card_choice["phase"] = "order"
+	else:
+		_finish_top_inspection()
+	return true
+
+
 func _choose_top_inspection_option(index: int) -> bool:
 	var unit: BattleUnit = _pending_card_choice["unit"]
 	var options: Array = _pending_card_choice["options"]
@@ -1013,7 +1037,8 @@ func _choose_top_inspection_option(index: int) -> bool:
 		"hand":
 			unit.hand.append(selected)
 			_log("%s 将查看的「%s」加入手牌" % [unit.get_display_name(), selected.card_name])
-			if int(_pending_card_choice["discard_left"]) > 0 and not options.is_empty():
+			if (int(_pending_card_choice["discard_left"]) > 0
+				or int(_pending_card_choice["discard_optional_left"]) > 0) and not options.is_empty():
 				_pending_card_choice["phase"] = "discard"
 			elif _pending_card_choice["reorder"] and options.size() > 1:
 				_pending_card_choice["phase"] = "order"
@@ -1022,8 +1047,12 @@ func _choose_top_inspection_option(index: int) -> bool:
 		"discard":
 			unit.discard_pile.append(selected)
 			_log("%s 将查看的「%s」置入弃牌堆" % [unit.get_display_name(), selected.card_name])
-			_pending_card_choice["discard_left"] = int(_pending_card_choice["discard_left"]) - 1
-			if int(_pending_card_choice["discard_left"]) > 0 and not options.is_empty():
+			if int(_pending_card_choice["discard_left"]) > 0:
+				_pending_card_choice["discard_left"] = int(_pending_card_choice["discard_left"]) - 1
+			else:
+				_pending_card_choice["discard_optional_left"] = int(_pending_card_choice["discard_optional_left"]) - 1
+			if (int(_pending_card_choice["discard_left"]) > 0
+				or int(_pending_card_choice["discard_optional_left"]) > 0) and not options.is_empty():
 				pass
 			elif _pending_card_choice["reorder"] and options.size() > 1:
 				_pending_card_choice["phase"] = "order"

@@ -213,6 +213,10 @@ func card_choice_prompt() -> String:
 	return _effect_system.card_choice_prompt() if _effect_system != null else ""
 
 
+func card_choice_can_skip() -> bool:
+	return _effect_system.card_choice_can_skip() if _effect_system != null else false
+
+
 func choose_card_option(index: int) -> bool:
 	if _effect_system == null or not _effect_system.choose_card_option(index):
 		return false

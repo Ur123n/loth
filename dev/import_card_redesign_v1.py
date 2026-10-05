@@ -91,15 +91,21 @@ def target_of(label: str) -> tuple[str, int, int, int]:
 def exact_effects(description: str, kind: str, maximum: int) -> list[dict]:
     # Complete templates only. A partial clause must never become a live card.
     def top_inspect_effect(count: int, pick_to_hand: bool = False,
-                           pick_to_discard: int = 0, reorder_remaining: bool = True) -> dict:
+                           pick_to_discard: int = 0, discard_up_to: int = 0,
+                           reorder_remaining: bool = True) -> dict:
         return effect_from_mechanic("inspect_top_cards", count=count,
                                     pick_to_hand=pick_to_hand,
                                     pick_to_discard=pick_to_discard,
+                                    discard_up_to=discard_up_to,
                                     reorder_remaining=reorder_remaining)
     if kind == "Self":
         top_reorder = re.fullmatch(r"查看抽牌堆顶(\d+)张并任意排序。", description)
         if top_reorder:
             return [top_inspect_effect(int(top_reorder.group(1)))]
+        top_optional_discard = re.fullmatch(r"查看抽牌堆顶(\d+)张；可将其中至多(\d+)张置入弃牌堆，其余任意排序。", description)
+        if top_optional_discard:
+            return [top_inspect_effect(int(top_optional_discard.group(1)),
+                                       discard_up_to=int(top_optional_discard.group(2)))]
         top_pick = re.fullmatch(r"查看抽牌堆顶(\d+)张；选择1张加入手牌，其余按任意顺序放回顶部。", description)
         if top_pick:
             return [top_inspect_effect(int(top_pick.group(1)), pick_to_hand=True)]

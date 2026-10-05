@@ -28,6 +28,7 @@ func _process(_delta: float) -> bool:
 	_test_pick_hand_discard_and_top()
 	_test_block_then_pick()
 	_test_empty_and_short_pile()
+	_test_optional_discard()
 	print("RESULT: passed=%d failed=%d" % [_passed, _failed])
 	quit(0 if _failed == 0 else 1)
 	return true
@@ -70,6 +71,8 @@ func _test_reorder_only() -> void:
 	_check(options == [top, second], "顶牌候选按牌顶到牌底展示")
 	_check(not _manager.choose_card_option(-1) and _manager.has_pending_card_choice(),
 		"非法排序选择不修改事务")
+	_check(not _manager.choose_card_option(-2) and _manager.has_pending_card_choice(),
+		"必选排序不能跳过")
 	_check(_manager.choose_card_option(1) and not _manager.has_pending_card_choice(),
 		"最后一张自动归位，完成排序")
 	_check(_unit.draw_pile == [lower, top, second] and _rng.state == rng_before,
@@ -146,6 +149,42 @@ func _test_empty_and_short_pile() -> void:
 		"不足四张时只展示现有实体")
 	_check(_manager.choose_card_option(0) and _unit.hand == [only]
 		and _unit.draw_pile.is_empty(), "仅一张时入手后无需排序")
+
+
+func _test_optional_discard() -> void:
+	var card := _card("A042")
+	var a := _filler("a")
+	var b := _filler("b")
+	var c := _filler("c")
+	var d := _filler("d")
+	var e := _filler("e")
+	_reset(card, [a, b, c, d, e])
+	_check(_manager.play_card(card) and _manager.card_choice_can_skip(),
+		"A042 可弃置阶段提供结束入口")
+	_check(_manager.choose_card_option(-2) and not _manager.card_choice_can_skip(),
+		"弃置零张后进入必选排序")
+	_check(_manager.choose_card_option(3) and _manager.choose_card_option(0)
+		and _manager.choose_card_option(0) and _manager.choose_card_option(0),
+		"A042 零弃置时可重排全部五张")
+	_check(_unit.draw_pile == [a, c, d, e, b] and _unit.discard_pile == [card],
+		"零弃置的实体全部按指定顺序返回")
+	_reset(card, [a, b, c, d, e])
+	_check(_manager.play_card(card) and _manager.choose_card_option(0)
+		and _manager.card_choice_can_skip(), "弃置一张后仍可提前结束")
+	_check(_manager.choose_card_option(-2) and _manager.choose_card_option(2),
+		"弃置一张后进入余牌排序")
+	_check(_manager.choose_card_option(0) and _manager.choose_card_option(0),
+		"余下牌归位")
+	_check(_unit.draw_pile == [a, c, d, b] and _unit.discard_pile.has(e),
+		"提前结束时只弃所选一张")
+	_reset(card, [a, b, c, d, e])
+	_check(_manager.play_card(card) and _manager.choose_card_option(0)
+		and _manager.choose_card_option(0) and not _manager.card_choice_can_skip(),
+		"弃满两张后自动进入排序")
+	_check(_manager.choose_card_option(2) and _manager.choose_card_option(1)
+		and _unit.draw_pile == [c, b, a], "弃满两张后余牌牌序正确")
+	_check(_unit.discard_pile.has(e) and _unit.discard_pile.has(d),
+		"两张被弃实体进入弃牌堆")
 
 
 func _check(okay: bool, label: String) -> void:
