@@ -5,6 +5,7 @@ extends Resource
 @export var source: String = "draw"
 @export var sample_count: int = 3
 @export var show_all: bool = false
+@export var distinct_by_card_id: bool = false
 @export var destination: String = "draw"
 @export var position: String = "top"
 @export var required_card_type: String = ""

@@ -44,6 +44,7 @@ func _process(_delta: float) -> bool:
 	_test_hand_retain_choice()
 	_test_temporary_choice_costs()
 	_test_persistent_card_sources()
+	_test_attack_deck_choices()
 	print("RESULT: passed=%d failed=%d" % [_passed, _failed])
 	quit(0 if _failed == 0 else 1)
 	return true
@@ -418,6 +419,66 @@ func _test_persistent_card_sources() -> void:
 		and _caster.character_data.deck.size() == 3
 		and _caster.character_data.deck.has(drug_a) and _caster.character_data.deck.has(drug_b),
 		"K058 只生成选中战斗牌，未选牌仍在卡组中")
+
+
+func _test_attack_deck_choices() -> void:
+	_manager.turn_system.current_index = 0
+	var pistol_choice := _card("D055")
+	var attack_choice := _card("D075")
+	var pistol_a := _card("D004")
+	var pistol_b := _card("D006")
+	var dagger := _card("D001")
+	var skill_card := _card("D002")
+	_check(pistol_choice != null and attack_choice != null and pistol_a != null
+		and pistol_b != null and dagger != null, "D055 与 D075 及候选牌已加载")
+	if pistol_choice == null or attack_choice == null or pistol_a == null or pistol_b == null or dagger == null:
+		return
+	_caster.character_data.deck = [pistol_a, pistol_a, pistol_b, dagger, skill_card]
+	_caster.hand = [pistol_choice]
+	_caster.discard_pile.clear()
+	_caster.energy = 20
+	_enemy.current_hp = 100
+	_check(_manager.play_card(pistol_choice) and _manager.has_pending_card_choice(),
+		"D055 从携带卡组请求 Pistol Attack 选择")
+	var shown := _manager.card_choice_options()
+	_check(shown.size() == 3 and shown.count(pistol_a) == 2 and shown.has(pistol_b)
+		and not shown.has(dagger) and not shown.has(skill_card),
+		"D055 按实体槽位展示 Pistol Attack，排除其他类型和标签")
+	_check(_manager.choose_card_option(shown.find(pistol_b)) and _caster.hand.size() == 1,
+		"D055 生成选中牌到手牌")
+	var copy: CardData = _caster.hand[0]
+	_check(copy != pistol_b and copy.card_id == pistol_b.card_id
+		and _manager.effective_card_cost(_caster, copy, _enemy) == maxi(pistol_b.cost - 1, 0)
+		and pistol_b.temporary_cost_reduction == 0 and _caster.character_data.deck.size() == 5,
+		"D055 仅复制品本行动费用减一，持久卡组不变")
+	_check(_manager.play_card(copy, _enemy) and _caster.discard_pile.has(copy),
+		"D055 未写打出消失，复制品按普通攻击牌进入弃牌堆")
+	_caster.hand = [attack_choice]
+	_caster.energy = 20
+	_enemy.current_hp = 100
+	_check(_manager.play_card(attack_choice) and _manager.has_pending_card_choice(),
+		"D075 从携带卡组请求不同 Attack 选择")
+	shown = _manager.card_choice_options()
+	var shown_ids: Dictionary = {}
+	for option in shown:
+		shown_ids[option.card_id] = true
+	_check(shown.size() == 3 and shown_ids.size() == 3 and shown.has(pistol_a)
+		and shown.has(pistol_b) and shown.has(dagger) and not shown.has(skill_card),
+		"D075 同 ID 多槽只占一个展示位，合格不同牌不足四张时全展示")
+	_check(_manager.choose_card_option(shown.find(dagger)) and _caster.hand.size() == 1,
+		"D075 生成所选 Attack 到手牌")
+	copy = _caster.hand[0]
+	_check(copy != dagger and copy.card_id == dagger.card_id and copy.temporary_copy
+		and _manager.effective_card_cost(_caster, copy, _enemy) == 0
+		and dagger.temporary_cost_override == -1 and _caster.character_data.deck.size() == 5,
+		"D075 仅选中复制品费用为零并标记打出后消失")
+	var discard_before := _caster.discard_pile.size()
+	var exhaust_before := _caster.exhaust_pile.size()
+	_check(_manager.play_card(copy, _enemy) and not _caster.discard_pile.has(copy)
+		and not _caster.exhaust_pile.has(copy)
+		and _caster.discard_pile.size() == discard_before
+		and _caster.exhaust_pile.size() == exhaust_before,
+		"D075 复制品打出后消失，不进入弃牌堆或消耗堆")
 
 
 func _test_attack_then_move() -> void:

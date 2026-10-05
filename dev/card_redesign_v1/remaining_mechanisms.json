@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
   "purpose": "design_only mechanism planning; family matches are candidates, not runtime support",
-  "total": 173,
+  "total": 171,
   "families": {
     "player_choice": {
       "name": "玩家选择与随机展示",
-      "count": 29,
+      "count": 27,
       "card_ids": [
         "A023",
         "A035",
@@ -25,11 +25,9 @@
         "B059",
         "B070",
         "D044",
-        "D055",
         "D060",
         "D064",
         "D066",
-        "D075",
         "K047",
         "K059",
         "K069",
@@ -40,7 +38,7 @@
     },
     "pile_operations": {
       "name": "抽牌堆、弃牌堆、牌库与复制品",
-      "count": 15,
+      "count": 13,
       "card_ids": [
         "A037",
         "A038",
@@ -51,8 +49,6 @@
         "A061",
         "A067",
         "A074",
-        "D055",
-        "D075",
         "K059",
         "K071",
         "K074",
@@ -61,7 +57,7 @@
     },
     "hand_operations": {
       "name": "抽牌、主动弃牌、保留",
-      "count": 32,
+      "count": 30,
       "card_ids": [
         "A010",
         "A023",
@@ -88,10 +84,8 @@
         "D039",
         "D053",
         "D054",
-        "D055",
         "D069",
         "D070",
-        "D075",
         "K059",
         "K074",
         "K075"
@@ -333,14 +327,12 @@
     },
     "cost_rules": {
       "name": "条件费用与费用返还",
-      "count": 16,
+      "count": 14,
       "card_ids": [
         "D032",
         "D033",
         "D050",
         "D051",
-        "D055",
-        "D075",
         "K032",
         "K035",
         "K043",
@@ -355,7 +347,7 @@
     },
     "damage_block_conditions": {
       "name": "伤害、格挡与 Armor 条件",
-      "count": 113,
+      "count": 111,
       "card_ids": [
         "A014",
         "A018",
@@ -443,7 +435,6 @@
         "D045",
         "D046",
         "D047",
-        "D055",
         "D060",
         "D062",
         "D064",
@@ -455,7 +446,6 @@
         "D072",
         "D073",
         "D074",
-        "D075",
         "K019",
         "K020",
         "K032",
@@ -1822,19 +1812,6 @@
       "source_line": 79
     },
     {
-      "id": "D055",
-      "families": [
-        "player_choice",
-        "pile_operations",
-        "hand_operations",
-        "cost_rules",
-        "damage_block_conditions"
-      ],
-      "description": "从当前牌组随机展示3张Pistol Attack；选择1张生成临时复制品加入手牌，其本回合费用-1。",
-      "source_file": "迪马斯_完整卡组_重制v1.0.md",
-      "source_line": 80
-    },
-    {
       "id": "D058",
       "families": [
         "battlefield_movement",
@@ -1975,19 +1952,6 @@
       "description": "造成12伤害；然后该敌人与其周围所有可移动单位分别随机移动到一个合法相邻空格，按行动顺序依次结算。",
       "source_file": "迪马斯_完整卡组_重制v1.0.md",
       "source_line": 103
-    },
-    {
-      "id": "D075",
-      "families": [
-        "player_choice",
-        "pile_operations",
-        "hand_operations",
-        "cost_rules",
-        "damage_block_conditions"
-      ],
-      "description": "从当前牌组随机展示4张不同Attack；选择1张生成临时复制品加入手牌，其本回合费用变为0，打出后消失。",
-      "source_file": "迪马斯_完整卡组_重制v1.0.md",
-      "source_line": 104
     },
     {
       "id": "K013",

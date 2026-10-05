@@ -334,6 +334,7 @@ func _parse_effect(data) -> Resource:
 			choice.source = str(data.get("source", "draw"))
 			choice.sample_count = int(data.get("sample_count", 3))
 			choice.show_all = bool(data.get("show_all", false))
+			choice.distinct_by_card_id = bool(data.get("distinct_by_card_id", false))
 			choice.destination = str(data.get("destination", "draw"))
 			choice.position = str(data.get("position", "top"))
 			choice.required_card_type = str(data.get("required_card_type", ""))

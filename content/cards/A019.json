@@ -36,6 +36,7 @@
       "source": "discard",
       "sample_count": 3,
       "show_all": true,
+      "distinct_by_card_id": false,
       "destination": "hand",
       "position": "top",
       "required_card_type": "",

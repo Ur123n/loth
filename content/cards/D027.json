@@ -38,6 +38,7 @@
       "source": "discard",
       "sample_count": 3,
       "show_all": false,
+      "distinct_by_card_id": false,
       "destination": "draw",
       "position": "top",
       "required_card_type": "",

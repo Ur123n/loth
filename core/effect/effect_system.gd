@@ -878,6 +878,17 @@ func request_card_choice(unit: BattleUnit, effect: ChooseFromPileEffect) -> void
 	for i in source.size():
 		if _card_choice_candidate_matches(unit, source[i], effect):
 			remaining.append(i)
+	if effect.distinct_by_card_id:
+		var seen_card_ids: Dictionary = {}
+		var distinct_indices: Array[int] = []
+		for source_index in remaining:
+			var source_card: CardData = source[source_index]
+			var card_key := source_card.card_id if not source_card.card_id.is_empty() else source_card.card_name
+			if seen_card_ids.has(card_key):
+				continue
+			seen_card_ids[card_key] = true
+			distinct_indices.append(source_index)
+		remaining = distinct_indices
 	var indices: Array[int] = []
 	var options: Array[CardData] = []
 	if effect.show_all:
@@ -924,6 +935,8 @@ func request_top_inspection(unit: BattleUnit, effect: InspectTopCardsEffect) -> 
 
 func _card_choice_candidate_matches(unit: BattleUnit, card: CardData, effect: ChooseFromPileEffect) -> bool:
 	if effect.required_card_type == "Skill" and card.card_type != CardData.CardType.ACTION:
+		return false
+	if effect.required_card_type == "Attack" and card.card_type != CardData.CardType.ATTACK:
 		return false
 	if effect.exclude_card_type == "Power" and card.card_type == CardData.CardType.ABILITY:
 		return false

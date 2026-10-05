@@ -36,6 +36,7 @@
       "source": "deck",
       "sample_count": 5,
       "show_all": false,
+      "distinct_by_card_id": false,
       "destination": "hand",
       "position": "top",
       "required_card_type": "",

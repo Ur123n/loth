@@ -119,6 +119,7 @@ def exact_effects(description: str, kind: str, maximum: int) -> list[dict]:
                     top_inspect_effect(int(block_top_pick.group(2)), pick_to_hand=True)]
     def pile_choice_effect(source: str, destination: str = "draw", **filters: object) -> dict:
         params = dict(source=source, sample_count=3, show_all=False,
+                      distinct_by_card_id=False,
                       destination=destination, position="top", required_card_type="",
                       exclude_card_type="Power" if filters.get("non_power") else "",
                       required_rarity="", base_cost=-1, required_tags=[], played_in_battle=False,
@@ -138,6 +139,13 @@ def exact_effects(description: str, kind: str, maximum: int) -> list[dict]:
             return [pile_choice_effect("library", "hand", required_card_type="Skill")]
         if description == "从当前牌组随机展示5张Drug；选择1张加入手牌，另外4张洗回牌库。":
             return [pile_choice_effect("deck", "hand", required_tags=["Drug"], sample_count=5)]
+        if description == "从当前牌组随机展示3张Pistol Attack；选择1张生成临时复制品加入手牌，其本回合费用-1。":
+            return [pile_choice_effect("deck", "hand", required_card_type="Attack",
+                                       required_tags=["Pistol"], selected_cost_reduction=1)]
+        if description == "从当前牌组随机展示4张不同Attack；选择1张生成临时复制品加入手牌，其本回合费用变为0，打出后消失。":
+            return [pile_choice_effect("deck", "hand", required_card_type="Attack",
+                                       distinct_by_card_id=True, sample_count=4,
+                                       selected_cost_override=0, temporary_copy=True)]
         if description == "选择1张其他手牌获得保留；获得5格挡。":
             return [pile_choice_effect("hand", "hand", show_all=True, grant_retain_selected=True),
                     effect_from_mechanic("defense", target="self", value=5)]
