@@ -337,6 +337,8 @@ func _parse_effect(data) -> Resource:
 			choice.distinct_by_card_id = bool(data.get("distinct_by_card_id", false))
 			choice.destination = str(data.get("destination", "draw"))
 			choice.position = str(data.get("position", "top"))
+			for destination in data.get("selection_destinations", []):
+				choice.selection_destinations.append(str(destination))
 			choice.required_card_type = str(data.get("required_card_type", ""))
 			choice.exclude_card_type = str(data.get("exclude_card_type", ""))
 			choice.required_rarity = str(data.get("required_rarity", ""))

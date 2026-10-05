@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
   "purpose": "design_only mechanism planning; family matches are candidates, not runtime support",
-  "total": 171,
+  "total": 169,
   "families": {
     "player_choice": {
       "name": "玩家选择与随机展示",
-      "count": 27,
+      "count": 25,
       "card_ids": [
         "A023",
         "A035",
@@ -19,7 +19,6 @@
         "A065",
         "A066",
         "A067",
-        "A074",
         "B025",
         "B039",
         "B059",
@@ -32,13 +31,12 @@
         "K059",
         "K069",
         "K071",
-        "K074",
         "K075"
       ]
     },
     "pile_operations": {
       "name": "抽牌堆、弃牌堆、牌库与复制品",
-      "count": 13,
+      "count": 11,
       "card_ids": [
         "A037",
         "A038",
@@ -48,16 +46,14 @@
         "A059",
         "A061",
         "A067",
-        "A074",
         "K059",
         "K071",
-        "K074",
         "K075"
       ]
     },
     "hand_operations": {
       "name": "抽牌、主动弃牌、保留",
-      "count": 30,
+      "count": 29,
       "card_ids": [
         "A010",
         "A023",
@@ -87,7 +83,6 @@
         "D069",
         "D070",
         "K059",
-        "K074",
         "K075"
       ]
     },
@@ -944,16 +939,6 @@
       "description": "【灾梦】失去6生命；造成36伤害；结算后进入沉梦。",
       "source_file": "艾莉丝_完整卡组_重制v1.0.md",
       "source_line": 102
-    },
-    {
-      "id": "A074",
-      "families": [
-        "player_choice",
-        "pile_operations"
-      ],
-      "description": "从当前牌组随机展示5张不同非Power牌；选择2张生成临时复制品置入弃牌堆。",
-      "source_file": "艾莉丝_完整卡组_重制v1.0.md",
-      "source_line": 103
     },
     {
       "id": "A075",
@@ -2307,17 +2292,6 @@
       "description": "若目标本回合已至少两次直接失去生命，则再直接失去本回合此前直接生命损失总量的一半，最多8。",
       "source_file": "卡莎_完整卡组_重制v1.0.md",
       "source_line": 102
-    },
-    {
-      "id": "K074",
-      "families": [
-        "player_choice",
-        "pile_operations",
-        "hand_operations"
-      ],
-      "description": "从牌库随机展示3张Drug；选择1张加入手牌，另1张置于牌堆顶，剩余1张置于牌堆底。",
-      "source_file": "卡莎_完整卡组_重制v1.0.md",
-      "source_line": 103
     },
     {
       "id": "K075",

@@ -8,6 +8,7 @@ extends Resource
 @export var distinct_by_card_id: bool = false
 @export var destination: String = "draw"
 @export var position: String = "top"
+@export var selection_destinations: Array[String] = []
 @export var required_card_type: String = ""
 @export var exclude_card_type: String = ""
 @export var required_rarity: String = ""

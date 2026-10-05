@@ -870,10 +870,19 @@ func request_card_choice(unit: BattleUnit, effect: ChooseFromPileEffect) -> void
 				if owned_card != null:
 					source.append(owned_card)
 		_: return
-	if effect.destination not in ["draw", "hand"] or effect.position != "top":
-		return
-	if effect.destination == "hand" and effect.source != "hand" and unit.hand.size() >= MAX_HAND_SIZE:
-		return
+	if not effect.selection_destinations.is_empty():
+		if effect.source not in ["deck", "library"]:
+			return
+		for next_destination in effect.selection_destinations:
+			if next_destination not in ["hand", "draw_top", "draw_bottom", "discard"]:
+				return
+		if effect.selection_destinations[0] == "hand" and unit.hand.size() >= MAX_HAND_SIZE:
+			return
+	else:
+		if effect.destination not in ["draw", "hand"] or effect.position != "top":
+			return
+		if effect.destination == "hand" and effect.source != "hand" and unit.hand.size() >= MAX_HAND_SIZE:
+			return
 	var remaining: Array[int] = []
 	for i in source.size():
 		if _card_choice_candidate_matches(unit, source[i], effect):
@@ -912,6 +921,7 @@ func request_card_choice(unit: BattleUnit, effect: ChooseFromPileEffect) -> void
 		"selected_cost_reduction": effect.selected_cost_reduction,
 		"grant_retain_selected": effect.grant_retain_selected,
 		"temporary_copy": effect.temporary_copy,
+		"selection_destinations": effect.selection_destinations.duplicate(), "selection_step": 0,
 		"indices": indices, "options": options}
 
 
@@ -986,6 +996,13 @@ func card_choice_prompt() -> String:
 				return "可选择 1 张弃置，或结束弃牌" if card_choice_can_skip() \
 					else "从查看的顶牌中选择 1 张加入弃牌堆"
 			"order": return "选择下一张置于最上方（按牌顶到牌底排序）"
+	var sequence: Array = _pending_card_choice.get("selection_destinations", [])
+	if not sequence.is_empty():
+		var step: int = _pending_card_choice["selection_step"]
+		var destination_name: String = str({"hand": "手牌", "draw_top": "抽牌堆顶",
+			"draw_bottom": "抽牌堆底", "discard": "弃牌堆"}.get(sequence[step], "牌区"))
+		return "从%s选择第%d张置入%s" % [pile_label(str(_pending_card_choice["source"])),
+			step + 1, destination_name]
 	if _pending_card_choice["source"] == "hand" and _pending_card_choice["grant_retain_selected"]:
 		return "选择 1 张其他手牌获得保留"
 	var destination := "手牌" if _pending_card_choice["destination"] == "hand" else "抽牌堆顶"
@@ -1002,6 +1019,8 @@ func choose_card_option(index: int) -> bool:
 		return false
 	if _pending_card_choice.get("kind", "pile") == "inspect_top":
 		return _choose_top_inspection_option(index)
+	if not _pending_card_choice.get("selection_destinations", []).is_empty():
+		return _choose_persistent_sequence_option(index)
 	var unit: BattleUnit = _pending_card_choice["unit"]
 	var source: Array[CardData]
 	match _pending_card_choice["source"]:
@@ -1043,6 +1062,36 @@ func choose_card_option(index: int) -> bool:
 	if not continuation.is_empty():
 		_resolve_effects_from(unit, continuation["card"], continuation["target"],
 			continuation["next_index"], continuation["play_context"])
+	return true
+
+
+func _choose_persistent_sequence_option(index: int) -> bool:
+	var unit: BattleUnit = _pending_card_choice["unit"]
+	var options: Array = _pending_card_choice["options"]
+	var destinations: Array = _pending_card_choice["selection_destinations"]
+	var step: int = _pending_card_choice["selection_step"]
+	var destination: String = destinations[step]
+	if destination == "hand" and unit.hand.size() >= MAX_HAND_SIZE:
+		return false
+	var selected: CardData = (options[index] as CardData).duplicate(true) as CardData
+	match destination:
+		"hand": unit.hand.append(selected)
+		"draw_top": unit.draw_pile.append(selected)
+		"draw_bottom": unit.draw_pile.insert(0, selected)
+		"discard": unit.discard_pile.append(selected)
+	options.remove_at(index)
+	_pending_card_choice["selection_step"] = step + 1
+	_log("%s 选择「%s」置入%s" % [unit.get_display_name(), selected.card_name,
+		{"hand": "手牌", "draw_top": "抽牌堆顶", "draw_bottom": "抽牌堆底",
+			"discard": "弃牌堆"}[destination]])
+	if step + 1 >= destinations.size() or options.is_empty():
+		var continuation: Dictionary = _pending_card_choice.get("continuation", {})
+		_pending_card_choice.clear()
+		if not continuation.is_empty():
+			_resolve_effects_from(unit, continuation["card"], continuation["target"],
+				continuation["next_index"], continuation["play_context"])
+	elif options.size() == 1:
+		return _choose_persistent_sequence_option(0)
 	return true
 
 

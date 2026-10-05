@@ -41,6 +41,7 @@
       "distinct_by_card_id": false,
       "destination": "draw",
       "position": "top",
+      "selection_destinations": [],
       "required_card_type": "",
       "exclude_card_type": "",
       "required_rarity": "",

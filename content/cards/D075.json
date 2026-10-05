@@ -41,6 +41,7 @@
       "distinct_by_card_id": true,
       "destination": "hand",
       "position": "top",
+      "selection_destinations": [],
       "required_card_type": "Attack",
       "exclude_card_type": "",
       "required_rarity": "",

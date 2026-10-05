@@ -41,6 +41,7 @@
       "distinct_by_card_id": false,
       "destination": "hand",
       "position": "top",
+      "selection_destinations": [],
       "required_card_type": "Skill",
       "exclude_card_type": "",
       "required_rarity": "",

@@ -45,6 +45,7 @@ func _process(_delta: float) -> bool:
 	_test_temporary_choice_costs()
 	_test_persistent_card_sources()
 	_test_attack_deck_choices()
+	_test_persistent_multi_choices()
 	print("RESULT: passed=%d failed=%d" % [_passed, _failed])
 	quit(0 if _failed == 0 else 1)
 	return true
@@ -479,6 +480,101 @@ func _test_attack_deck_choices() -> void:
 		and _caster.discard_pile.size() == discard_before
 		and _caster.exhaust_pile.size() == exhaust_before,
 		"D075 复制品打出后消失，不进入弃牌堆或消耗堆")
+
+
+func _test_persistent_multi_choices() -> void:
+	_manager.turn_system.current_index = 0
+	var multi_discard := _card("A074")
+	var multi_library := _card("K074")
+	var attack := _card("A001")
+	var action := _card("A002")
+	var other := _card("D001")
+	var power := CardData.new()
+	power.card_id = "TEST_POWER"
+	power.card_type = CardData.CardType.ABILITY
+	_check(multi_discard != null and multi_library != null and attack != null
+		and action != null and other != null, "A074、K074 和候选牌已加载")
+	if multi_discard == null or multi_library == null or attack == null or action == null or other == null:
+		return
+	_caster.character_data.deck = [attack, attack, action, other, power]
+	_caster.hand = [multi_discard.duplicate(true) as CardData]
+	_caster.draw_pile.clear()
+	_caster.discard_pile.clear()
+	_caster.energy = 20
+	_caster.block_value = 0
+	var first_card: CardData = _caster.hand[0]
+	var after_choice := DefenseEffect.new()
+	after_choice.value = 3
+	first_card.effects.append(after_choice)
+	var prompt_count: Array[int] = [0]
+	var on_prompt := func(_prompt: String, _options: Array) -> void: prompt_count[0] += 1
+	_manager.card_choice_requested.connect(on_prompt)
+	_check(_manager.play_card(first_card) and _manager.has_pending_card_choice(),
+		"A074 展示卡组不同非 Power 牌并暂停事务")
+	var shown := _manager.card_choice_options()
+	_check(shown.size() == 3 and shown.has(attack) and shown.has(action)
+		and shown.has(other) and not shown.has(power),
+		"A074 先按 ID 去重并排除 Power，候选不足五张时展示全部")
+	_check(_manager.choose_card_option(shown.find(attack)) and _manager.has_pending_card_choice()
+		and _caster.discard_pile.size() == 1 and _caster.block_value == 0
+		and prompt_count[0] == 2,
+		"A074 第一次选择只放置第一张复制品，后续效果尚未结算")
+	var remaining := _manager.card_choice_options()
+	_check(remaining.size() == 2 and not remaining.has(attack)
+		and _manager.card_choice_prompt().contains("第2张"),
+		"A074 第二次选择不能重复选中同一展示候选")
+	_check(_manager.choose_card_option(0) and not _manager.has_pending_card_choice()
+		and _caster.discard_pile.size() == 2 and _caster.block_value == 3,
+		"A074 两张不同复制品进弃牌堆后才续行后续格挡")
+	_manager.card_choice_requested.disconnect(on_prompt)
+	_check(_caster.discard_pile[0] != attack and _caster.discard_pile[0].card_id == attack.card_id
+		and _caster.character_data.deck.size() == 5 and _caster.character_data.deck[0] == attack,
+		"A074 只生成战斗实体，原卡组和重复槽位不变")
+	var drug_a := _card("K004")
+	var drug_b := _card("K005")
+	var drug_c := _card("K007")
+	_caster.character_data.skill_library.clear()
+	for drug in [drug_a, drug_b, drug_c]:
+		var owned := SkillData.new()
+		owned.skill_name = drug.card_name
+		_caster.character_data.skill_library.append(owned)
+	_caster.hand = [multi_library]
+	_caster.draw_pile = [attack]
+	_caster.discard_pile.clear()
+	_caster.energy = 20
+	_check(_manager.play_card(multi_library) and _manager.has_pending_card_choice(),
+		"K074 从已获牌库展示三张 Drug")
+	shown = _manager.card_choice_options()
+	_check(shown.size() == 3 and shown.has(drug_a) and shown.has(drug_b)
+		and shown.has(drug_c), "K074 候选限定为角色已获 Drug")
+	_check(_manager.choose_card_option(shown.find(drug_a)) and _manager.has_pending_card_choice()
+		and _caster.hand.size() == 1 and _caster.hand[0].card_id == drug_a.card_id,
+		"K074 第一张复制品入手，等待第二次选择")
+	remaining = _manager.card_choice_options()
+	_check(remaining.size() == 2 and not remaining.has(drug_a)
+		and _manager.card_choice_prompt().contains("抽牌堆顶"),
+		"K074 第二次选择指定抽牌堆顶")
+	_check(_manager.choose_card_option(remaining.find(drug_b)) and not _manager.has_pending_card_choice()
+		and _caster.draw_pile.size() == 3
+		and _caster.draw_pile.back().card_id == drug_b.card_id
+		and _caster.draw_pile.front().card_id == drug_c.card_id
+		and _caster.draw_pile[1] == attack,
+		"K074 剩余唯一候选自动置底，原抽牌堆顺序保留")
+	_check(_caster.character_data.skill_library.size() == 3
+		and _caster.character_data.skill_library[0].skill_name == drug_a.card_name,
+		"K074 战斗选择不改变持久牌库")
+	_caster.character_data.skill_library.remove_at(2)
+	_caster.hand = [multi_library.duplicate(true) as CardData]
+	_caster.draw_pile = [attack]
+	_caster.energy = 20
+	_check(_manager.play_card(_caster.hand[0]) and _manager.has_pending_card_choice(),
+		"K074 仅两张合格牌时仍开始选择")
+	shown = _manager.card_choice_options()
+	_check(shown.size() == 2 and _manager.choose_card_option(shown.find(drug_a))
+		and not _manager.has_pending_card_choice()
+		and _caster.hand.size() == 1 and _caster.draw_pile.size() == 2
+		and _caster.draw_pile.back().card_id == drug_b.card_id,
+		"K074 候选不足时自动放置唯一剩余牌并结束事务")
 
 
 func _test_attack_then_move() -> void:
