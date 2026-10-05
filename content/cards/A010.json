@@ -29,7 +29,22 @@
   "icon": "",
   "art": "",
   "animation": "",
-  "effects": [],
-  "mechanism_ids": [],
-  "implementation_status": "design_only"
+  "effects": [
+    {
+      "logic": "choose_hand_discard",
+      "min_count": 1,
+      "max_count": 1,
+      "block_per_card": 0
+    },
+    {
+      "logic": "draw",
+      "value": 1
+    }
+  ],
+  "mechanism_ids": [
+    "effects.choose_hand_discard",
+    "effects.draw",
+    "play_rules.three_dreams"
+  ],
+  "implementation_status": "supported"
 }

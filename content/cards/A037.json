@@ -29,7 +29,45 @@
   "icon": "",
   "art": "",
   "animation": "",
-  "effects": [],
-  "mechanism_ids": [],
-  "implementation_status": "design_only"
+  "effects": [
+    {
+      "logic": "choose_from_pile",
+      "source": "discard",
+      "sample_count": 3,
+      "show_all": true,
+      "distinct_by_card_id": false,
+      "destination": "draw",
+      "position": "top",
+      "selection_destinations": [],
+      "required_card_type": "",
+      "exclude_card_type": "",
+      "required_rarity": "",
+      "base_cost": -1,
+      "required_tags": [],
+      "played_in_battle": false,
+      "not_played_this_turn": false,
+      "exhaust_selected_on_play": false,
+      "selected_cost_override": -1,
+      "selected_cost_reduction": 0,
+      "grant_retain_selected": false,
+      "temporary_copy": false
+    },
+    {
+      "logic": "choose_hand_discard",
+      "min_count": 1,
+      "max_count": 1,
+      "block_per_card": 0
+    },
+    {
+      "logic": "draw",
+      "value": 1
+    }
+  ],
+  "mechanism_ids": [
+    "effects.choose_from_pile",
+    "effects.choose_hand_discard",
+    "effects.draw",
+    "play_rules.three_dreams"
+  ],
+  "implementation_status": "supported"
 }

@@ -366,6 +366,12 @@ func _parse_effect(data) -> Resource:
 			discard.value = int(data.get("value", 1))
 			discard.mode = str(data.get("mode", "random"))
 			return discard
+		"choose_hand_discard":
+			var active_discard := ChooseHandDiscardEffect.new()
+			active_discard.min_count = int(data.get("min_count", 1))
+			active_discard.max_count = int(data.get("max_count", 1))
+			active_discard.block_per_card = int(data.get("block_per_card", 0))
+			return active_discard
 		"add_to_hand":
 			var add_hand := AddToHandEffect.new()
 			add_hand.card_name = str(data.get("card", ""))

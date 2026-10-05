@@ -43,7 +43,8 @@ func _resize_to_viewport() -> void:
 	size = get_viewport_rect().size
 
 
-func show_choices(prompt: String, cards: Array, allow_skip: bool = false) -> void:
+func show_choices(prompt: String, cards: Array, allow_skip: bool = false,
+		skip_label: String = "结束弃牌，开始排序") -> void:
 	_title.text = prompt
 	_scroll.custom_minimum_size.y = minf(maxi(cards.size() + int(allow_skip), 2) * 58.0, 464.0)
 	_scroll.scroll_vertical = 0
@@ -59,7 +60,7 @@ func show_choices(prompt: String, cards: Array, allow_skip: bool = false) -> voi
 		_options.add_child(button)
 	if allow_skip:
 		var skip := Button.new()
-		skip.text = "结束弃牌，开始排序"
+		skip.text = skip_label
 		skip.custom_minimum_size = Vector2(440, 48)
 		skip.pressed.connect(_on_option_pressed.bind(-2))
 		_options.add_child(skip)

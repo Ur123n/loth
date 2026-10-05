@@ -103,6 +103,7 @@ func end_turn() -> void:
 			card.temporary_cost_reduction = 0
 	unit.tags_played_on_targets.clear()
 	unit.played_cards_this_turn.clear()
+	unit.active_discards_this_turn = 0
 	unit.direct_hp_loss_targets.clear()
 	unit.bled_this_turn = false
 	unit.energy = 0
@@ -217,6 +218,10 @@ func card_choice_prompt() -> String:
 
 func card_choice_can_skip() -> bool:
 	return _effect_system.card_choice_can_skip() if _effect_system != null else false
+
+
+func card_choice_skip_label() -> String:
+	return _effect_system.card_choice_skip_label() if _effect_system != null else ""
 
 
 func choose_card_option(index: int) -> bool:
@@ -348,6 +353,7 @@ func _prepare_battle_decks() -> void:
 		unit.last_played_card = null
 		unit.tags_played_on_targets.clear()
 		unit.played_cards_this_turn.clear()
+		unit.active_discards_this_turn = 0
 		unit.played_card_ids_in_battle.clear()
 		unit.direct_hp_loss_targets.clear()
 		unit.bled_this_turn = false

@@ -155,6 +155,12 @@ func _resolve_effects_from(unit: BattleUnit, card: CardData, target, start_index
 				_pending_card_choice["continuation"] = {"card": card, "target": target,
 					"next_index": effect_index + 1, "play_context": play_context}
 				return false
+		elif effect is ChooseHandDiscardEffect:
+			request_hand_discard(unit, effect as ChooseHandDiscardEffect)
+			if has_pending_card_choice():
+				_pending_card_choice["continuation"] = {"card": card, "target": target,
+					"next_index": effect_index + 1, "play_context": play_context}
+				return false
 		elif effect is InspectTopCardsEffect:
 			request_top_inspection(unit, effect as InspectTopCardsEffect)
 			if has_pending_card_choice():
@@ -925,6 +931,15 @@ func request_card_choice(unit: BattleUnit, effect: ChooseFromPileEffect) -> void
 		"indices": indices, "options": options}
 
 
+func request_hand_discard(unit: BattleUnit, effect: ChooseHandDiscardEffect) -> void:
+	if not _pending_card_choice.is_empty() or effect.max_count <= 0 or unit.hand.is_empty():
+		return
+	var available := mini(effect.max_count, unit.hand.size())
+	_pending_card_choice = {"kind": "active_discard", "unit": unit,
+		"options": unit.hand.duplicate(), "min_left": mini(maxi(effect.min_count, 0), available),
+		"max_left": available, "block_per_card": maxi(effect.block_per_card, 0)}
+
+
 func request_top_inspection(unit: BattleUnit, effect: InspectTopCardsEffect) -> void:
 	if not _pending_card_choice.is_empty() or effect.count <= 0 or unit.draw_pile.is_empty():
 		return
@@ -980,15 +995,26 @@ func card_choice_options() -> Array:
 
 
 func card_choice_can_skip() -> bool:
+	if _pending_card_choice.get("kind", "") == "active_discard":
+		return int(_pending_card_choice.get("min_left", 0)) == 0 \
+			and int(_pending_card_choice.get("max_left", 0)) > 0
 	return _pending_card_choice.get("kind", "") == "inspect_top" \
 		and _pending_card_choice.get("phase", "") == "discard" \
 		and int(_pending_card_choice.get("discard_left", 0)) == 0 \
 		and int(_pending_card_choice.get("discard_optional_left", 0)) > 0
 
 
+func card_choice_skip_label() -> String:
+	return "结束弃牌" if _pending_card_choice.get("kind", "") == "active_discard" \
+		else "结束弃牌，开始排序"
+
+
 func card_choice_prompt() -> String:
 	if _pending_card_choice.is_empty():
 		return ""
+	if _pending_card_choice.get("kind", "") == "active_discard":
+		return "选择其他手牌主动弃置（还可弃 %d 张）%s" % [
+			int(_pending_card_choice["max_left"]), "；可结束弃牌" if card_choice_can_skip() else ""]
 	if _pending_card_choice.get("kind", "pile") == "inspect_top":
 		match _pending_card_choice["phase"]:
 			"hand": return "从查看的顶牌中选择 1 张加入手牌"
@@ -1019,6 +1045,8 @@ func choose_card_option(index: int) -> bool:
 		return false
 	if _pending_card_choice.get("kind", "pile") == "inspect_top":
 		return _choose_top_inspection_option(index)
+	if _pending_card_choice.get("kind", "") == "active_discard":
+		return _choose_active_discard_option(index)
 	if not _pending_card_choice.get("selection_destinations", []).is_empty():
 		return _choose_persistent_sequence_option(index)
 	var unit: BattleUnit = _pending_card_choice["unit"]
@@ -1098,6 +1126,9 @@ func _choose_persistent_sequence_option(index: int) -> bool:
 func skip_card_choice() -> bool:
 	if not card_choice_can_skip():
 		return false
+	if _pending_card_choice.get("kind", "") == "active_discard":
+		_finish_active_discard()
+		return true
 	_pending_card_choice["discard_optional_left"] = 0
 	var options: Array = _pending_card_choice["options"]
 	if _pending_card_choice["reorder"] and options.size() > 1:
@@ -1105,6 +1136,38 @@ func skip_card_choice() -> bool:
 	else:
 		_finish_top_inspection()
 	return true
+
+
+func _choose_active_discard_option(index: int) -> bool:
+	var unit: BattleUnit = _pending_card_choice["unit"]
+	if index >= unit.hand.size():
+		return false
+	var selected: CardData = unit.hand[index]
+	unit.hand.remove_at(index)
+	unit.discard_pile.append(selected)
+	unit.active_discards_this_turn += 1
+	_pending_card_choice["min_left"] = maxi(int(_pending_card_choice["min_left"]) - 1, 0)
+	_pending_card_choice["max_left"] = int(_pending_card_choice["max_left"]) - 1
+	var block_gain: int = _pending_card_choice["block_per_card"]
+	if block_gain > 0:
+		unit.block_value += block_gain
+		unit.refresh_block_display()
+	_log("%s 主动弃置「%s」%s" % [unit.get_display_name(), selected.card_name,
+		"，获得 %d 格挡" % block_gain if block_gain > 0 else ""])
+	if int(_pending_card_choice["max_left"]) <= 0 or unit.hand.is_empty():
+		_finish_active_discard()
+	else:
+		_pending_card_choice["options"] = unit.hand.duplicate()
+	return true
+
+
+func _finish_active_discard() -> void:
+	var unit: BattleUnit = _pending_card_choice["unit"]
+	var continuation: Dictionary = _pending_card_choice.get("continuation", {})
+	_pending_card_choice.clear()
+	if not continuation.is_empty():
+		_resolve_effects_from(unit, continuation["card"], continuation["target"],
+			continuation["next_index"], continuation["play_context"])
 
 
 func _choose_top_inspection_option(index: int) -> bool:

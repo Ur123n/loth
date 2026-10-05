@@ -37,6 +37,7 @@ var last_played_card: CardData = null    # 上一张打出的牌（幻梦联动�
 var tags_played_on_targets: Dictionary = {}  # 本回合成功打出的目标牌标签：instance_id -> Array[String]
 var played_cards_this_turn: Array[CardData] = []  # 本行动已成功结算的牌；供标签/类型条件复用
 var played_card_ids_in_battle: Dictionary = {}  # 本场已打出的卡牌 ID；用于检索候选
+var active_discards_this_turn: int = 0  # 玩家主动选择弃置的实体牌数；随机/回合结束弃牌不计
 var direct_hp_loss_targets: Dictionary = {}  # 本回合由自己的牌令其直接失去生命的目标 instance_id -> true
 var bled_this_turn: bool = false
 var pack_id: String = ""                 # 所属敌怪小队（空=散兵，无协同）

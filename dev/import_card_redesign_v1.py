@@ -130,6 +130,15 @@ def exact_effects(description: str, kind: str, maximum: int) -> list[dict]:
         params.update({key: value for key, value in filters.items() if key != "non_power"})
         return effect_from_mechanic("choose_from_pile", **params)
     if kind == "Self":
+        if description == "主动弃置1张其他手牌，然后抽1张。":
+            return [effect_from_mechanic("choose_hand_discard", min_count=1, max_count=1, block_per_card=0),
+                    effect_from_mechanic("draw", value=1)]
+        if description == "选择弃牌堆1张牌置顶；主动弃置1张其他手牌；抽1张。":
+            return [pile_choice_effect("discard", show_all=True),
+                    effect_from_mechanic("choose_hand_discard", min_count=1, max_count=1, block_per_card=0),
+                    effect_from_mechanic("draw", value=1)]
+        if description == "主动弃置至多2张牌；每弃1张，获得3格挡。":
+            return [effect_from_mechanic("choose_hand_discard", min_count=0, max_count=2, block_per_card=3)]
         deck_drug = re.fullmatch(r"从当前牌组随机展示(\d+)张Drug；选择1张置于牌堆顶，并获得(\d+)格挡。", description)
         if deck_drug:
             return [pile_choice_effect("deck", required_tags=["Drug"], sample_count=int(deck_drug.group(1))),
